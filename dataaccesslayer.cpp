@@ -32,10 +32,14 @@
 #include <QMessageBox>
 #include <QCoreApplication>
 #include <QSqlRecord>
+#include <QDir>
 
 DataAccessLayer::DataAccessLayer()
 {
     QString targetpath = QStandardPaths::writableLocation(QStandardPaths::DataLocation);
+    if(!QDir(targetpath).exists()){
+        QDir().mkdir(targetpath);
+    }
     QString appdir = QCoreApplication::applicationDirPath();
     targetpath += "/paperblossoms.db";
     qDebug() << targetpath;
