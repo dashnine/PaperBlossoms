@@ -1,0 +1,247 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Clans",
+    "description": "List of clans",
+    "type": "array",
+    "items": {
+        "description": "Clan",
+        "type": "object",
+        "properties": {
+            "name": {
+                "description": "Name of clan",
+                "type": "string"
+            },
+            "reference": {
+                "description": "Page reference for clan",
+                "type": "object",
+                "properties": {
+                    "book": {
+                        "description": "Book in which reference can be found",
+                        "type": "string",
+                        "enum": [
+                            "Core",
+                            "EE"
+                        ]
+                    },
+                    "page": {
+                        "description": "Page on which reference can be found",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "book",
+                    "page"
+                ],
+                "defaultSnippets": [
+                    {
+                        "label": "New Page reference for clan",
+                        "body": {
+                            "book": "$1",
+                            "page": "^$2"
+                        }
+                    }
+                ]
+            },
+            "type": {
+                "description": "Greatness of clan",
+                "type": "string",
+                "enum": [
+                    "Great",
+                    "Minor",
+                    "Other"
+                ]
+            },
+            "ring_increase": {
+                "description": "Ring for which the clan grants an increase in rank",
+                "type": "string",
+                "enum": [
+                    "Air",
+                    "Earth",
+                    "Fire",
+                    "Water",
+                    "Void"
+                ]
+            },
+            "skill_increase": {
+                "description": "Skill for which the clan grants an increase in rank",
+                "type": "string",
+                "enum": [
+                    "Aesthetics",
+                    "Composition",
+                    "Design",
+                    "Smithing",
+                    "Command",
+                    "Courtesy",
+                    "Games",
+                    "Performance",
+                    "Culture",
+                    "Government",
+                    "Medicine",
+                    "Sentiment",
+                    "Theology",
+                    "Fitness",
+                    "Martial Arts [Melee]",
+                    "Martial Arts [Ranged]",
+                    "Martial Arts [Unarmed]",
+                    "Meditation",
+                    "Tactics",
+                    "Commerce",
+                    "Labor",
+                    "Seafaring",
+                    "Skulduggery",
+                    "Survival"
+                ]
+            },
+            "status": {
+                "description": "Baseline status granted by the clan",
+                "type": "integer"
+            },
+            "families": {
+                "description": "Families which belong to the clan",
+                "type": "array",
+                "items": {
+                    "description": "Family which belongs to the clan",
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "description": "Name of family",
+                            "type": "string"
+                        },
+                        "reference": {
+                            "description": "Page reference for family",
+                            "type": "object",
+                            "properties": {
+                                "book": {
+                                    "description": "Book in which reference can be found",
+                                    "type": "string",
+                                    "enum": [
+                                        "Core",
+                                        "EE"
+                                    ]
+                                },
+                                "page": {
+                                    "description": "Page on which reference can be found",
+                                    "type": "integer"
+                                }
+                            },
+                            "required": [
+                                "book",
+                                "page"
+                            ],
+                            "defaultSnippets": [
+                                {
+                                    "label": "New Page reference for family",
+                                    "body": {
+                                        "book": "$1",
+                                        "page": "^$2"
+                                    }
+                                }
+                            ]
+                        },
+                        "ring_increase": {
+                            "description": "List of rings for which the family may grant a rank",
+                            "type": "array",
+                            "items": {
+                                "description": "Ring for which family may grant a rank",
+                                "type": "string",
+                                "enum": [
+                                    "Air",
+                                    "Earth",
+                                    "Fire",
+                                    "Water",
+                                    "Void"
+                                ]
+                            }
+                        },
+                        "skill_increase": {
+                            "description": "List of skills for which family grants a rank",
+                            "type": "array",
+                            "items": {
+                                "description": "Skill for which family grants a rank",
+                                "type": "string",
+                                "enum": [
+                                    "Aesthetics",
+                                    "Composition",
+                                    "Design",
+                                    "Smithing",
+                                    "Command",
+                                    "Courtesy",
+                                    "Games",
+                                    "Performance",
+                                    "Culture",
+                                    "Government",
+                                    "Medicine",
+                                    "Sentiment",
+                                    "Theology",
+                                    "Fitness",
+                                    "Martial Arts [Melee]",
+                                    "Martial Arts [Ranged]",
+                                    "Martial Arts [Unarmed]",
+                                    "Meditation",
+                                    "Tactics",
+                                    "Commerce",
+                                    "Labor",
+                                    "Seafaring",
+                                    "Skulduggery",
+                                    "Survival"
+                                ]
+                            }
+                        },
+                        "glory": {
+                            "description": "Amount of glory family endows",
+                            "type": "integer"
+                        },
+                        "wealth": {
+                            "description": "Amount of wealth family endows",
+                            "type": "integer"
+                        }
+                    },
+                    "required": [
+                        "name",
+                        "reference",
+                        "ring_increase",
+                        "skill_increase",
+                        "glory",
+                        "wealth"
+                    ],
+                    "defaultSnippets": [
+                        {
+                            "label": "New Family which belongs to the clan",
+                            "body": {
+                                "name": "$1",
+                                "reference": "^$2",
+                                "ring_increase": "^[$3]",
+                                "skill_increase": "^[$4]",
+                                "glory": "^$5",
+                                "wealth": "^$6"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "required": [
+            "name",
+            "reference",
+            "type",
+            "ring_increase",
+            "skill_increase",
+            "status",
+            "families"
+        ],
+        "defaultSnippets": [
+            {
+                "label": "New Clan",
+                "body": {
+                    "name": "$1",
+                    "reference": "^$2",
+                    "type": "$3",
+                    "ring_increase": "$4",
+                    "skill_increase": "$5",
+                    "status": "^$6",
+                    "families": "^[$7]"
+                }
+            }
+        ]
+    }
+}

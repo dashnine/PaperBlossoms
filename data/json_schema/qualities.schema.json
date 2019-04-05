@@ -1,0 +1,56 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Item qualities",
+    "description": "List of item qualities",
+    "type": "array",
+    "items": {
+        "description": "Item quality",
+        "type": "object",
+        "properties": {
+            "name": {
+                "description": "Name of item quality",
+                "type": "string"
+            },
+            "reference": {
+                "description": "Page reference for item quality",
+                "type": "object",
+                "properties": {
+                    "book": {
+                        "description": "Book in which reference can be found",
+                        "type": "string"
+                    },
+                    "page": {
+                        "description": "Page on which reference can be found",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "book",
+                    "page"
+                ],
+                "defaultSnippets": [
+                    {
+                        "label": "New Page reference for item quality",
+                        "body": {
+                            "book": "$1",
+                            "page": "^$2"
+                        }
+                    }
+                ]
+            }
+        },
+        "required": [
+            "name",
+            "reference"
+        ],
+        "defaultSnippets": [
+            {
+                "label": "New Item quality",
+                "body": {
+                    "name": "$1",
+                    "reference": "^$2"
+                }
+            }
+        ]
+    }
+}

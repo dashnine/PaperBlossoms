@@ -1,0 +1,486 @@
+[
+    {
+        "name": "Bottle of Sake",
+        "reference": {
+            "book": "Core",
+            "page": 242
+        },
+        "price": {
+            "value": 1,
+            "unit": "bu"
+        },
+        "rarity": 1
+    },
+    {
+        "name": "Bowyer's Kit",
+        "reference": {
+            "book": "Core",
+            "page": 242
+        },
+        "price": {
+            "value": 2,
+            "unit": "bu"
+        },
+        "rarity": 1
+    },
+    {
+        "name": "Calligraphy Set",
+        "reference": {
+            "book": "Core",
+            "page": 242
+        },
+        "price": {
+            "value": 1,
+            "unit": "bu"
+        },
+        "rarity": 3
+    },
+    {
+        "name": "Chopsticks",
+        "reference": {
+            "book": "Core",
+            "page": 242
+        },
+        "price": {
+            "value": 1,
+            "unit": "zeni"
+        },
+        "rarity": 1
+    },
+    {
+        "name": "Daishō Stand",
+        "reference": {
+            "book": "Core",
+            "page": 242
+        },
+        "price": {
+            "value": 1,
+            "unit": "koku"
+        },
+        "rarity": 4
+    },
+    {
+        "name": "Dice and Cup",
+        "reference": {
+            "book": "Core",
+            "page": 242
+        },
+        "price": {
+            "value": 25,
+            "unit": "zeni"
+        },
+        "rarity": 2
+    },
+    {
+        "name": "Divination Kit",
+        "reference": {
+            "book": "Core",
+            "page": 242
+        },
+        "price": {
+            "value": 1,
+            "unit": "bu"
+        },
+        "rarity": 4
+    },
+    {
+        "name": "Finger of Jade",
+        "reference": {
+            "book": "Core",
+            "page": 242
+        },
+        "price": {
+            "value": 1,
+            "unit": "koku"
+        },
+        "rarity": 6
+    },
+    {
+        "name": "Games",
+        "reference": {
+            "book": "Core",
+            "page": 242
+        },
+        "price": {
+            "value": 1,
+            "unit": "bu"
+        },
+        "rarity": 3
+    },
+    {
+        "name": "Kubi Bukuro",
+        "reference": {
+            "book": "Core",
+            "page": 242
+        },
+        "price": {
+            "value": 2,
+            "unit": "zeni"
+        },
+        "rarity": 2,
+        "qualities": ["Wargear"]
+    },
+    {
+        "name": "Lucky Cricket",
+        "reference": {
+            "book": "Core",
+            "page": 242
+        },
+        "price": {
+            "value": 4,
+            "unit": "bu"
+        },
+        "rarity": 4
+    },
+    {
+        "name": "Medicine Kit",
+        "reference": {
+            "book": "Core",
+            "page": 243
+        },
+        "price": {
+            "value": 1,
+            "unit": "bu"
+        },
+        "rarity": 3
+    },
+    {
+        "name": "Musical Instrument (common)",
+        "reference": {
+            "book": "Core",
+            "page": 243
+        },
+        "price": {
+            "value": 1,
+            "unit": "bu"
+        },
+        "rarity": 2
+    },
+    {
+        "name": "Musical Instrument (fine)",
+        "reference": {
+            "book": "Core",
+            "page": 243
+        },
+        "price": {
+            "value": 5,
+            "unit": "bu"
+        },
+        "rarity": 6
+    },
+    {
+        "name": "Omamori",
+        "reference": {
+            "book": "Core",
+            "page": 243
+        },
+        "price": {
+            "value": 5,
+            "unit": "bu"
+        },
+        "rarity": 2
+    },
+    {
+        "name": "Personal Seal or Chop",
+        "reference": {
+            "book": "Core",
+            "page": 243
+        },
+        "price": {
+            "value": 4,
+            "unit": "bu"
+        },
+        "rarity": 6,
+        "qualities": ["Ceremonial"]
+    },
+    {
+        "name": "Pillow Book",
+        "reference": {
+            "book": "Core",
+            "page": 243
+        },
+        "price": {
+            "value": 3,
+            "unit": "zeni"
+        },
+        "rarity": 2
+    },
+    {
+        "name": "Poison (per vial)",
+        "reference": 
+        {
+            "book": "Core",
+            "page": 244
+        },
+        "price": {
+            "value": 30,
+            "unit": "zeni"
+        },
+        "rarity": 5,
+        "qualities": ["Forbidden"]
+    },
+    {
+        "name": "Quiver of Arrows",
+        "reference": 
+        {
+            "book": "Core",
+            "page": 244
+        },
+        "price": {
+            "value": 20,
+            "unit": "zeni"
+        },
+        "rarity": 1
+    },
+    {
+        "name": "Quiver of Bolts",
+        "reference": 
+        {
+            "book": "Core",
+            "page": 59
+        },
+        "price": {
+            "value": 20,
+            "unit": "zeni"
+        },
+        "rarity": 1
+    },
+    {
+        "name": "Rope (per foot, cheap)",
+        "reference": {
+            "book": "Core",
+            "page": 244
+        },
+        "price": {
+            "value": 5,
+            "unit": "zeni"
+        },
+        "rarity": 1
+    },
+    {
+        "name": "Rope (per foot, expensive)",
+        "reference": {
+            "book": "Core",
+            "page": 244
+        },
+        "price": {
+            "value": 20,
+            "unit": "zeni"
+        },
+        "rarity": 1
+    },
+    {
+        "name": "Sake Cup",
+        "reference": {
+            "book": "Core",
+            "page": 245
+        },
+        "price": {
+            "value": 1,
+            "unit": "bu"
+        },
+        "rarity": 2
+    },
+    {
+        "name": "Spices (common)",
+        "reference": {
+            "book": "Core",
+            "page": 245
+        },
+        "price": {
+            "value": 1,
+            "unit": "bu"
+        },
+        "rarity": 5
+    },
+    {
+        "name": "Spices (rare)",
+        "reference": {
+            "book": "Core",
+            "page": 245
+        },
+        "price": {
+            "value": 5,
+            "unit": "bu"
+        },
+        "rarity": 7
+    },
+    {
+        "name": "Sweets (per four servings)",
+        "reference": {
+            "book": "Core",
+            "page": 245
+        },
+        "price": {
+            "value": 1,
+            "unit": "bu"
+        },
+        "rarity": 1
+    },
+    {
+        "name": "Tattoo Needles (per set)",
+        "reference": {
+            "book": "Core",
+            "page": 245
+        },
+        "price": {
+            "value": 1,
+            "unit": "bu"
+        },
+        "rarity": 4
+    },
+    {
+        "name": "Tea Set (portable)",
+        "reference": {
+            "book": "Core",
+            "page": 245
+        },
+        "price": {
+            "value": 1,
+            "unit": "koku"
+        },
+        "rarity": 6
+    },
+    {
+        "name": "Tent (chomchong)",
+        "reference": {
+            "book": "Core",
+            "page": 245
+        },
+        "price": {
+            "value": 20,
+            "unit": "koku"
+        },
+        "rarity": 7
+    },
+    {
+        "name": "Tent (small)",
+        "reference": {
+            "book": "Core",
+            "page": 245
+        },
+        "price": {
+            "value": 1,
+            "unit": "koku"
+        },
+        "rarity": 3
+    },
+    {
+        "name": "Tent (yurt)",
+        "reference": {
+            "book": "Core",
+            "page": 245
+        },
+        "price": {
+            "value": 10,
+            "unit": "koku"
+        },
+        "rarity": 5
+    },
+    {
+        "name": "Traveling Rations (per meal)",
+        "reference": {
+            "book": "Core",
+            "page": 245
+        },
+        "price": {
+            "value": 5,
+            "unit": "zeni"
+        },
+        "rarity": 1
+    },
+    {
+        "name": "Umbrella",
+        "reference": {
+            "book": "Core",
+            "page": 245
+        },
+        "price": {
+            "value": 2,
+            "unit": "bu"
+        },
+        "rarity": 4
+    },
+    {
+        "name": "Whetstone",
+        "reference": {
+            "book": "Core",
+            "page": 245
+        },
+        "price": {
+            "value": 1,
+            "unit": "zeni"
+        },
+        "rarity": 1
+    },
+    {
+        "name": "Scroll Satchel",
+        "reference": {
+            "book": "Core",
+            "page": 314
+        }
+    },
+    {
+        "name": "Makeup Kit",
+        "reference": {
+            "book": "Core",
+            "page": 60
+        }
+    },
+    {
+        "name": "Attendant",
+        "reference": {
+            "book": "Core",
+            "page": 64
+        }
+    },
+    {
+        "name": "Rokugani Pony",
+        "reference": {
+            "book": "Core",
+            "page": 326
+        }
+    },
+    {
+        "name": "Unicorn Warhorse",
+        "reference": {
+            "book": "Core",
+            "page": 326
+        }
+    },
+    {
+        "name": "Utaku Steed",
+        "reference": {
+            "book": "Core",
+            "page": 327
+        }
+    },
+    {
+        "name": "Set of glass vials",
+        "reference": {
+            "book": "Core",
+            "page": 66
+        }
+    },
+    {
+        "name": "Journal",
+        "reference": {
+            "book": "Core",
+            "page": 66
+        }
+    },
+    {
+        "name": "Assortment of Maps in Scroll Cases",
+        "reference": {
+            "book": "EE",
+            "page": 232
+        } 
+    },
+    {
+        "name": "Satchel of Imperial Proclamations",
+        "reference": {
+            "book": "EE",
+            "page": 233
+        }
+    }
+]

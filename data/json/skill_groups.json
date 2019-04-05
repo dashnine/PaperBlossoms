@@ -1,0 +1,51 @@
+[
+    {
+        "name": "Artisan skills",
+        "skills": [
+            "Aesthetics",
+            "Composition",
+            "Design",
+            "Smithing"
+        ]
+    },
+    {
+        "name": "Social skills",
+        "skills": [
+            "Command",
+            "Courtesy",
+            "Games",
+            "Performance"
+        ]
+    },
+    {
+        "name": "Scholar skills",
+        "skills": [
+            "Culture",
+            "Government",
+            "Medicine",
+            "Sentiment",
+            "Theology"
+        ]
+    },
+    {
+        "name": "Martial skills",
+        "skills": [
+            "Fitness",
+            "Martial Arts [Melee]",
+            "Martial Arts [Ranged]",
+            "Martial Arts [Unarmed]",
+            "Meditation",
+            "Tactics"
+        ]
+    },
+    {
+        "name": "Trade skills",
+        "skills": [
+            "Commerce",
+            "Labor",
+            "Seafaring",
+            "Skulduggery",
+            "Survival"
+        ]
+    }
+]

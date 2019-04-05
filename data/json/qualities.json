@@ -1,0 +1,114 @@
+[
+    {
+        "name": "Ceremonial",
+        "reference": {
+            "book": "Core",
+            "page": 240
+        }
+    },
+    {
+        "name": "Concealable",
+        "reference": {
+            "book": "Core",
+            "page": 240
+        }
+    },
+    {
+        "name": "Cumbersome",
+        "reference": {
+            "book": "Core",
+            "page": 240
+        }
+    },
+    {
+        "name": "Damaged",
+        "reference": {
+            "book": "Core",
+            "page": 240
+        }
+    },
+    {
+        "name": "Destroyed",
+        "reference": {
+            "book": "Core",
+            "page": 240
+        }
+    },
+    {
+        "name": "Durable",
+        "reference": {
+            "book": "Core",
+            "page": 240
+        }
+    },
+    {
+        "name": "Forbidden",
+        "reference": {
+            "book": "Core",
+            "page": 240
+        }
+    },
+    {
+        "name": "Mundane",
+        "reference": {
+            "book": "Core",
+            "page": 240
+        }
+    },
+    {
+        "name": "Prepare",
+        "reference": {
+            "book": "Core",
+            "page": 240
+        }
+    },
+    {
+        "name": "Razor-edged",
+        "reference": {
+            "book": "Core",
+            "page": 241
+        }
+    },
+    {
+        "name": "Resplendent",
+        "reference": {
+            "book": "Core",
+            "page": 241
+        }
+    },
+    {
+        "name": "Sacred",
+        "reference": {
+            "book": "Core",
+            "page": 241
+        }
+    },
+    {
+        "name": "Snaring",
+        "reference": {
+            "book": "Core",
+            "page": 241
+        }
+    },
+    {
+        "name": "Subtle",
+        "reference": {
+            "book": "Core",
+            "page": 241
+        }
+    },
+    {
+        "name": "Unholy",
+        "reference": {
+            "book": "Core",
+            "page": 241
+        }
+    },
+    {
+        "name": "Wargear",
+        "reference": {
+            "book": "Core",
+            "page": 241
+        }
+    }
+]

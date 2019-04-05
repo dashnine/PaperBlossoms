@@ -1,0 +1,146 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Samurai heritage",
+    "description": "List of potential famous relatives",
+    "type": "array",
+    "items": {
+        "description": "Potential famous relative",
+        "type": "object",
+        "properties": {
+            "roll": {
+                "description": "Die value associated with this famous relative",
+                "type": "integer"
+            },
+            "result": {
+                "description": "Description of this famous relative",
+                "type": "string"
+            },
+            "modifiers": {
+                "description": "Effect of famous relative on social attributes",
+                "type": "object",
+                "properties": {
+                    "glory": {
+                        "type": "integer"
+                    },
+                    "honor": {
+                        "type": "integer"
+                    },
+                    "status": {
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "glory",
+                    "honor",
+                    "status"
+                ],
+                "defaultSnippets": [
+                    {
+                        "label": "New Effect of famous relative on social attributes",
+                        "body": {
+                            "glory": "^$1",
+                            "honor": "^$2",
+                            "status": "^$3"
+                        }
+                    }
+                ]
+            },
+            "other_effects": {
+                "description": "Other effects famous relative has",
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "description": "Type of effect",
+                        "type": "string"
+                    },
+                    "instructions": {
+                        "description": "Instructions for determining effect",
+                        "type": "string"
+                    },
+                    "outcomes": {
+                        "description": "For effects determined by die rolls, outcome of effect based die value",
+                        "type": "array",
+                        "items": {
+                            "description": "Mapping from die value to outcome",
+                            "type": "object",
+                            "properties": {
+                                "roll": {
+                                    "description": "Range of die values corresponding to the outcome",
+                                    "type": "object",
+                                    "properties": {
+                                        "min": {
+                                            "type": "integer"
+                                        },
+                                        "max": {
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "required": [
+                                        "min",
+                                        "max"
+                                    ],
+                                    "defaultSnippets": [
+                                        {
+                                            "label": "New Range of die values corresponding to the outcome",
+                                            "body": {
+                                                "min": "^$1",
+                                                "max": "^$2"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "outcome": {
+                                    "description": "Outcome to range of die values",
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "outcome"
+                            ],
+                            "defaultSnippets": [
+                                {
+                                    "label": "New Mapping from die value to outcome",
+                                    "body": {
+                                        "roll": "^$1",
+                                        "outcome": "$2"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "type",
+                    "instructions"
+                ],
+                "defaultSnippets": [
+                    {
+                        "label": "New Other effects famous relative has",
+                        "body": {
+                            "type": "$1",
+                            "instructions": "$2",
+                            "outcomes": "^$3"
+                        }
+                    }
+                ]
+            }
+        },
+        "required": [
+            "roll",
+            "result",
+            "modifiers",
+            "other_effects"
+        ],
+        "defaultSnippets": [
+            {
+                "label": "New Potential famous relative",
+                "body": {
+                    "roll": "^$1",
+                    "result": "$2",
+                    "modifiers": "^$3",
+                    "other_effects": "^$4"
+                }
+            }
+        ]
+    }
+}

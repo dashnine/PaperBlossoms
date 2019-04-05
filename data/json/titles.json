@@ -1,0 +1,543 @@
+[
+    {
+        "name": "Emerald Magistrate",
+        "reference": {
+            "book": "Core",
+            "page": 305
+        },
+        "status_award": {
+            "base_award": 15,
+            "constraint": {
+                "type": "max",
+                "value": 40
+            }
+        },
+        "xp_to_completion": 30,
+        "title_ability": "Voice of Authority",
+        "advancements": [
+            {
+                "name": "Trade skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Fitness",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Martial Arts [Melee]",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Martial Arts [Ranged]",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Martial Arts [Unarmed]",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Performance",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Kata",
+                "type": "technique_group",
+                "special_access": true,
+                "rank": 2
+            },
+            {
+                "name": "Open-Hand Style",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Shallow Waters",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "Advisor",
+        "reference": {
+            "book": "EE",
+            "page": 249
+        },
+        "status_award": {
+            "base_award": 10,
+            "constraint": {
+                "type": "min",
+                "value": 40
+            }
+        },
+        "xp_to_completion": 36,
+        "title_ability": "Skilled Attendant",
+        "advancements": [
+            {
+                "name": "Scholar skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Commerce",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Courtesy",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Design",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Fanning the Flames",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Feigned Opening",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Stonewall Tactics",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "Clan Magistrate",
+        "reference": {
+            "book": "EE",
+            "page": 249
+        },
+        "status_award": {
+            "base_award": 10,
+            "constraint": {
+                "type": "min",
+                "value": 45
+            }
+        },
+        "xp_to_completion": 30,
+        "title_ability": "Justice of the Champion",
+        "advancements": [
+            {
+                "name": "Scholar skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Social skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Fitness",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Martial Arts [Melee]",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Coiling Serpent Style",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Prey on the Weak",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Truth Burns through Lies",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "Daimy\u014d",
+        "reference": {
+            "book": "EE",
+            "page": 250
+        },
+        "status_award": {
+            "base_award": 20,
+            "constraint": {
+                "type": "min",
+                "value": 55
+            }
+        },
+        "xp_to_completion": 36,
+        "title_ability": "Voice of Authority",
+        "advancements": [
+            {
+                "name": "Social skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Culture",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Government",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Tactics",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Courtier's Resolve",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Shallow Waters",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Stirring the Embers",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "Guns\u014d",
+        "reference": {
+            "book": "EE",
+            "page": 250
+        },
+        "status_award": {
+            "base_award": 5,
+            "constraint": {
+                "type": "min",
+                "value": 20
+            }
+        },
+        "xp_to_completion": 24,
+        "title_ability": "Lead from the Front",
+        "advancements": [
+            {
+                "name": "Martial skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Command",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Government",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Kata",
+                "rank": 4,
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "name": "Rallying Cry",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Stirring the Embers",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Touchstone of Courage",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "Monastic Acolyte",
+        "reference": {
+            "book": "EE",
+            "page": 251
+        },
+        "status_award": {
+            "base_award": 0,
+            "constraint": {
+                "type": "equals",
+                "value": 25
+            }
+        },
+        "xp_to_completion": 24,
+        "title_ability": "Enlightened",
+        "advancements": [
+            {
+                "name": "Martial skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Scholar skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Aesthetics",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Composition",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Cleansing Spirit",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Ki Protection",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Still the Elements",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "Priest",
+        "reference": {
+            "book": "EE",
+            "page": 251
+        },
+        "status_award": {
+            "base_award": 10,
+            "constraint": {
+                "type": "min",
+                "value": 40
+            }
+        },
+        "xp_to_completion": 24,
+        "title_ability": "Servant of the Kami",
+        "advancements": [
+            {
+                "name": "Social skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Composition",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Culture",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Theology",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Rituals",
+                "rank": 5,
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "name": "Civility Foremost",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Rouse the Soul",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "Spy",
+        "reference": {
+            "book": "EE",
+            "page": 252
+        },
+        "status_award": {
+            "base_award": -5
+        },
+        "xp_to_completion": 24,
+        "title_ability": "Ears Everywhere",
+        "advancements": [
+            {
+                "name": "Social skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Government",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Sentiment",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Skulduggery",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Air Sh\u016bji",
+                "rank": 5,
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "name": "Shallow Waters",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Skulk",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "Y\u014djimb\u014d",
+        "reference": {
+            "book": "EE",
+            "page": 252
+        },
+        "status_award": {
+            "base_award": 10,
+            "constraint": {
+                "type": "min",
+                "value": 40
+            }
+        },
+        "xp_to_completion": 36,
+        "title_ability": "No Sacrifice Too Greate",
+        "advancements": [
+            {
+                "name": "Martial skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Government",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Medicine",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Sentiment",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Iaijutsu Cut: Crossing Blade",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Iaijutsu Cut: Rising Blade",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Warrior's Resolve",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "Yoriki",
+        "reference": {
+            "book": "EE",
+            "page": 253
+        },
+        "status_award": {
+            "base_award": 5,
+            "constraint": {
+                "type": "min",
+                "value": 35
+            }
+        },
+        "xp_to_completion": 24,
+        "title_ability": "Take Them Alive",
+        "advancements": [
+            {
+                "name": "Social skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Government",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Martial Arts [Melee]",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Skulduggery",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Kata",
+                "rank": 3,
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "name": "Fanning the Flames",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Shallow Waters",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    }
+]

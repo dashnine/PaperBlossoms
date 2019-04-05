@@ -1,0 +1,1546 @@
+[
+    {
+        "name": "Kata",
+        "subcategories": [
+            {
+                "name": "General Kata",
+                "techniques": [
+                    {
+                        "name": "Battle in the Mind",
+                        "rank": 3,
+                        "reference": {
+                            "book": "Core",
+                            "page": 174
+                        }
+                    },
+                    {
+                        "name": "Breath of Wind Style",
+                        "rank": 4,
+                        "reference": {
+                            "book": "Core",
+                            "page": 175
+                        }
+                    },
+                    {
+                        "name": "Crashing Wave Style",
+                        "rank": 4,
+                        "reference": {
+                            "book": "Core",
+                            "page": 175
+                        }
+                    },
+                    {
+                        "name": "Crescent Moon Style",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 175
+                        }
+                    },
+                    {
+                        "name": "Crimson Leaves Strike",
+                        "rank": 3,
+                        "reference": {
+                            "book": "Core",
+                            "page": 175
+                        }
+                    },
+                    {
+                        "name": "Disappearing World Style",
+                        "rank": 4,
+                        "reference": {
+                            "book": "Core",
+                            "page": 175
+                        }
+                    },
+                    {
+                        "name": "Flowing Water Strike",
+                        "rank": 3,
+                        "reference": {
+                            "book": "Core",
+                            "page": 175
+                        }
+                    },
+                    {
+                        "name": "Heartpiercing Strike",
+                        "rank": 3,
+                        "reference": {
+                            "book": "Core",
+                            "page": 176
+                        }
+                    },
+                    {
+                        "name": "Iron in the Mountains Style",
+                        "rank": 4,
+                        "reference": {
+                            "book": "Core",
+                            "page": 176
+                        }
+                    },
+                    {
+                        "name": "Lord Hida's Grip",
+                        "restriction": "Crab",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 176
+                        }
+                    },
+                    {
+                        "name": "Lord Shiba's Valor",
+                        "restriction": "Phoenix",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 177
+                        }
+                    },
+                    {
+                        "name": "Soaring Slice",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 177
+                        }
+                    },
+                    {
+                        "name": "Soul Sunder",
+                        "rank": 5,
+                        "reference": {
+                            "book": "Core",
+                            "page": 177
+                        }
+                    },
+                    {
+                        "name": "Striking as Air",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 177
+                        }
+                    },
+                    {
+                        "name": "Striking as Earth",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 178
+                        }
+                    },
+                    {
+                        "name": "Striking as Fire",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 178
+                        }
+                    },
+                    {
+                        "name": "Striking as Void",
+                        "rank": 5,
+                        "reference": {
+                            "book": "Core",
+                            "page": 178
+                        }
+                    },
+                    {
+                        "name": "Striking as Water",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 178
+                        }
+                    },
+                    {
+                        "name": "Tactical Assessment",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 178
+                        }
+                    },
+                    {
+                        "name": "Warrior's Resolve",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 178
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Close Combat Kata",
+                "techniques": [
+                    {
+                        "name": "Coiling Serpent Style",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 179
+                        }
+                    },
+                    {
+                        "name": "Iaijutsu Cut: Crossing Blade",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 179
+                        }
+                    },
+                    {
+                        "name": "Iaijutsu Cut: Rising Blade",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 179
+                        }
+                    },
+                    {
+                        "name": "Iron Forest Style",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 180
+                        }
+                    },
+                    {
+                        "name": "Open-Hand Style",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 180
+                        }
+                    },
+                    {
+                        "name": "Rushing Avalanche Style",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 180
+                        }
+                    },
+                    {
+                        "name": "Spinning Blades Style",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 180
+                        }
+                    },
+                    {
+                        "name": "Thunderclap Strike",
+                        "rank": 3,
+                        "reference": {
+                            "book": "Core",
+                            "page": 180
+                        }
+                    },
+                    {
+                        "name": "Veiled Menace Style",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 181
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Ranged Combat Kata",
+                "techniques": [
+                    {
+                        "name": "Hawk's Precision",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 181
+                        }
+                    },
+                    {
+                        "name": "Pelting Hail Style",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 181
+                        }
+                    },
+                    {
+                        "name": "Pin the Fan",
+                        "rank": 5,
+                        "reference": {
+                            "book": "Core",
+                            "page": 181
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Kih\u014d",
+        "subcategories": [
+            {
+                "name": "Earth Kih\u014d",
+                "techniques": [
+                    {
+                        "name": "Cleansing Spirit",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 182
+                        }
+                    },
+                    {
+                        "name": "Earth Needs No Eyes",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 182
+                        }
+                    },
+                    {
+                        "name": "Earthen Fist",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 183
+                        }
+                    },
+                    {
+                        "name": "Grasp the Earth Dragon",
+                        "rank": 3,
+                        "reference": {
+                            "book": "Core",
+                            "page": 183
+                        }
+                    },
+                    {
+                        "name": "Way of the Earthquake",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 183
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Air Kih\u014d",
+                "techniques": [
+                    {
+                        "name": "Air Fist",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 183
+                        }
+                    },
+                    {
+                        "name": "Riding the Clouds",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 184
+                        }
+                    },
+                    {
+                        "name": "The Great Silence",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 184
+                        }
+                    },
+                    {
+                        "name": "Way of the Willow",
+                        "rank": 3,
+                        "reference": {
+                            "book": "Core",
+                            "page": 184
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Fire Kih\u014d",
+                "techniques": [
+                    {
+                        "name": "Breaking Blow",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 184
+                        }
+                    },
+                    {
+                        "name": "Channel the Fire Dragon",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 185
+                        }
+                    },
+                    {
+                        "name": "Flame Fist",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 185
+                        }
+                    },
+                    {
+                        "name": "The Body is an Anvil",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 186
+                        }
+                    },
+                    {
+                        "name": "Way of the Falling Star",
+                        "rank": 3,
+                        "reference": {
+                            "book": "Core",
+                            "page": 186
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Water Kih\u014d",
+                "techniques": [
+                    {
+                        "name": "Freezing the Lifeblood",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 186
+                        }
+                    },
+                    {
+                        "name": "Ki Protection",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 186
+                        }
+                    },
+                    {
+                        "name": "Ride the Water Dragon",
+                        "rank": 3,
+                        "reference": {
+                            "book": "Core",
+                            "page": 187
+                        }
+                    },
+                    {
+                        "name": "Water Fist",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 187
+                        }
+                    },
+                    {
+                        "name": "Way of the Seafoam",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 187
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Void Kih\u014d",
+                "techniques": [
+                    {
+                        "name": "Death Touch",
+                        "rank": 4,
+                        "reference": {
+                            "book": "Core",
+                            "page": 188
+                        }
+                    },
+                    {
+                        "name": "Still the Elements",
+                        "rank": 3,
+                        "reference": {
+                            "book": "Core",
+                            "page": 188
+                        }
+                    },
+                    {
+                        "name": "Touch the Void Dragon",
+                        "rank": 5,
+                        "reference": {
+                            "book": "Core",
+                            "page": 188
+                        }
+                    },
+                    {
+                        "name": "Way of the Edgeless Sword",
+                        "rank": 5,
+                        "reference": {
+                            "book": "Core",
+                            "page": 188
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Invocations",
+        "subcategories": [
+            {
+                "name": "Air Invocations",
+                "techniques": [
+                    {
+                        "name": "Blessed Wind",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 192
+                        }
+                    },
+                    {
+                        "name": "By the Light of the Lord Moon",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 192
+                        }
+                    },
+                    {
+                        "name": "Call Upon the Wind",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 192
+                        }
+                    },
+                    {
+                        "name": "Cloak of Night",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 192
+                        }
+                    },
+                    {
+                        "name": "False Realm of the Fox Spirits",
+                        "rank": 4,
+                        "reference": {
+                            "book": "Core",
+                            "page": 193
+                        }
+                    },
+                    {
+                        "name": "Grasp of the Air Dragon",
+                        "rank": 3,
+                        "reference": {
+                            "book": "Core",
+                            "page": 93
+                        }
+                    },
+                    {
+                        "name": "Mask of Wind",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 193
+                        }
+                    },
+                    {
+                        "name": "Nature's Touch",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 194
+                        }
+                    },
+                    {
+                        "name": "Rise, Air",
+                        "rank": 4,
+                        "reference": {
+                            "book": "Core",
+                            "page": 194
+                        }
+                    },
+                    {
+                        "name": "Secrets on the Wind",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 194
+                        }
+                    },
+                    {
+                        "name": "Summon Fog",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 195
+                        }
+                    },
+                    {
+                        "name": "Tempest of Air",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 195
+                        }
+                    },
+                    {
+                        "name": "Token of Memory",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 195
+                        }
+                    },
+                    {
+                        "name": "Vapor of Nightmares",
+                        "rank": 3,
+                        "reference": {
+                            "book": "Core",
+                            "page": 195
+                        }
+                    },
+                    {
+                        "name": "Wrath of Kaze-no-Kami",
+                        "rank": 5,
+                        "reference": {
+                            "book": "Core",
+                            "page": 196
+                        }
+                    },
+                    {
+                        "name": "Yari of Air",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 196
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Earth Invocations",
+                "techniques": [
+                    {
+                        "name": "Armor of Earth",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 197
+                        }
+                    },
+                    {
+                        "name": "Bind the Shadow",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 197
+                        }
+                    },
+                    {
+                        "name": "Caress of Earth",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 197
+                        }
+                    },
+                    {
+                        "name": "Courage of Seven Thunders",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 197
+                        }
+                    },
+                    {
+                        "name": "Earthquake",
+                        "rank": 4,
+                        "reference": {
+                            "book": "Core",
+                            "page": 198
+                        }
+                    },
+                    {
+                        "name": "Earth Becomes Sky",
+                        "rank": 3,
+                        "reference": {
+                            "book": "Core",
+                            "page": 198
+                        }
+                    },
+                    {
+                        "name": "Embrace of Kenro-Ji-Jin",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 198
+                        }
+                    },
+                    {
+                        "name": "Grasp of Earth",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 199
+                        }
+                    },
+                    {
+                        "name": "Jade Strike",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 199
+                        }
+                    },
+                    {
+                        "name": "Jurōjin's Balm",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 199
+                        }
+                    },
+                    {
+                        "name": "Power of the Earth Dragon",
+                        "rank": 3,
+                        "reference": {
+                            "book": "Core",
+                            "page": 200
+                        }
+                    },
+                    {
+                        "name": "Rise, Earth",
+                        "rank": 4,
+                        "reference": {
+                            "book": "Core",
+                            "page": 200
+                        }
+                    },
+                    {
+                        "name": "Symbol of Earth",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 200
+                        }
+                    },
+                    {
+                        "name": "Tetsubō of Earth",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 200
+                        }
+                    },
+                    {
+                        "name": "Tomb of Jade",
+                        "rank": 5,
+                        "reference": {
+                            "book": "Core",
+                            "page": 201
+                        }
+                    },
+                    {
+                        "name": "Wall of Earth",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 201
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Fire Invocations",
+                "techniques": [
+                    {
+                        "name": "Armor of Radiance",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 202
+                        }
+                    },
+                    {
+                        "name": "Biting Steel",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 202
+                        }
+                    },
+                    {
+                        "name": "Breath of the Fire Dragon",
+                        "rank": 3,
+                        "reference": {
+                            "book": "Core",
+                            "page": 202
+                        }
+                    },
+                    {
+                        "name": "Extinguish",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 202
+                        }
+                    },
+                    {
+                        "name": "Fukurokujin's Wit",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 203
+                        }
+                    },
+                    {
+                        "name": "Fury of Osano-wo",
+                        "rank": 3,
+                        "reference": {
+                            "book": "Core",
+                            "page": 203
+                        }
+                    },
+                    {
+                        "name": "Katana of Fire",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 203
+                        }
+                    },
+                    {
+                        "name": "Matsu's Battlecry",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 204
+                        }
+                    },
+                    {
+                        "name": "Ravenous Swarms",
+                        "rank": 3,
+                        "reference": {
+                            "book": "Core",
+                            "page": 204
+                        }
+                    },
+                    {
+                        "name": "Rise, Flame",
+                        "rank": 4,
+                        "reference": {
+                            "book": "Core",
+                            "page": 204
+                        }
+                    },
+                    {
+                        "name": "The Cleansing Fire",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 204
+                        }
+                    },
+                    {
+                        "name": "The Fires from Within",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 205
+                        }
+                    },
+                    {
+                        "name": "The Soul's Blade",
+                        "rank": 5,
+                        "reference": {
+                            "book": "Core",
+                            "page": 205
+                        }
+                    },
+                    {
+                        "name": "Wall of Fire",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 205
+                        }
+                    },
+                    {
+                        "name": "Wings of the Phoenix",
+                        "rank": 4,
+                        "reference": {
+                            "book": "Core",
+                            "page": 206
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Water Invocations",
+                "techniques": [
+                    {
+                        "name": "Bō of Water",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 207
+                        }
+                    },
+                    {
+                        "name": "Dance of Seasons",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 207
+                        }
+                    },
+                    {
+                        "name": "Dominion of Suijin",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 207
+                        }
+                    },
+                    {
+                        "name": "Ever-Changing Waves",
+                        "rank": 5,
+                        "reference": {
+                            "book": "Core",
+                            "page": 208
+                        }
+                    },
+                    {
+                        "name": "Hands of Tides",
+                        "rank": 3,
+                        "reference": {
+                            "book": "Core",
+                            "page": 208
+                        }
+                    },
+                    {
+                        "name": "Heart of the Water Dragon",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 208
+                        }
+                    },
+                    {
+                        "name": "Inari's Blessing",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 209
+                        }
+                    },
+                    {
+                        "name": "Path to Inner Peace",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 209
+                        }
+                    },
+                    {
+                        "name": "Reflections of P'an Ku",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 209
+                        }
+                    },
+                    {
+                        "name": "Rise, Water",
+                        "rank": 4,
+                        "reference": {
+                            "book": "Core",
+                            "page": 210
+                        }
+                    },
+                    {
+                        "name": "Stride the Waves",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 211
+                        }
+                    },
+                    {
+                        "name": "Strike the Tsunami",
+                        "rank": 3,
+                        "reference": {
+                            "book": "Core",
+                            "page": 211
+                        }
+                    },
+                    {
+                        "name": "Suijin's Embrace",
+                        "rank": 4,
+                        "reference": {
+                            "book": "Core",
+                            "page": 211
+                        }
+                    },
+                    {
+                        "name": "Sympathetic Energies",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 211
+                        }
+                    },
+                    {
+                        "name": "The Rushing Wave",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 211
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Rituals",
+        "subcategories": [
+            {
+                "name": "Void",
+                "techniques": [
+                    {
+                        "name": "Cleansing Rite",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 212
+                        }
+                    },
+                    {
+                        "name": "Commune with the Spirits",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 212
+                        }
+                    },
+                    {
+                        "name": "Divination",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 212
+                        }
+                    },
+                    {
+                        "name": "Tea Ceremony",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 213
+                        }
+                    },
+                    {
+                        "name": "Threshold Barrier",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 213
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Shūji",
+        "subcategories": [
+            {
+                "name": "Air Shūji",
+                "techniques": [
+                    {
+                        "name": "Artisan's Appraisal",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 214
+                        }
+                    },
+                    {
+                        "name": "Bend with the Storm",
+                        "rank": 5,
+                        "reference": {
+                            "book": "Core",
+                            "page": 214
+                        }
+                    },
+                    {
+                        "name": "Cadence",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 214
+                        }
+                    },
+                    {
+                        "name": "Feigned Opening",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 214
+                        }
+                    },
+                    {
+                        "name": "Prey on the Weak",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 215
+                        }
+                    },
+                    {
+                        "name": "Rustling of Leaves",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 215
+                        }
+                    },
+                    {
+                        "name": "The Wind Blows Both Ways",
+                        "rank": 3,
+                        "reference": {
+                            "book": "Core",
+                            "page": 215
+                        }
+                    },
+                    {
+                        "name": "Whispers of Court",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 215
+                        }
+                    },
+                    {
+                        "name": "Wolf's Proposal",
+                        "rank": 4,
+                        "reference": {
+                            "book": "Core",
+                            "page": 215
+                        }
+                    },
+                    {
+                        "name": "Spin the Web",
+                        "restriction": "Kolat",
+                        "rank": 3,
+                        "reference": {
+                            "book": "EE",
+                            "page": 248
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Earth Shūji",
+                "techniques": [
+                    {
+                        "name": "Ancestry Unearthed",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 216
+                        }
+                    },
+                    {
+                        "name": "Civility Foremost",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 216
+                        }
+                    },
+                    {
+                        "name": "Honest Assessment",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 216
+                        }
+                    },
+                    {
+                        "name": "Pillar of Calm",
+                        "rank": 4,
+                        "reference": {
+                            "book": "Core",
+                            "page": 216
+                        }
+                    },
+                    {
+                        "name": "Stonewall Tactics",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 216
+                        }
+                    },
+                    {
+                        "name": "Touchstone of Courage",
+                        "rank": 3,
+                        "reference": {
+                            "book": "Core",
+                            "page": 217
+                        }
+                    },
+                    {
+                        "name": "The Immovable Hand of Peace",
+                        "rank": 5,
+                        "reference": {
+                            "book": "Core",
+                            "page": 217
+                        }
+                    },
+                    {
+                        "name": "Weight of Duty",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 217
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Fire Shūji",
+                "techniques": [
+                    {
+                        "name": "Bravado",
+                        "rank": 4,
+                        "reference": {
+                            "book": "Core",
+                            "page": 218
+                        }
+                    },
+                    {
+                        "name": "Dazzling Performance",
+                        "rank": 3,
+                        "reference": {
+                            "book": "Core",
+                            "page": 218
+                        }
+                    },
+                    {
+                        "name": "Fanning the Flames",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 218
+                        }
+                    },
+                    {
+                        "name": "Lightning Raid",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 218
+                        }
+                    },
+                    {
+                        "name": "Rallying Cry",
+                        "rank": 3,
+                        "reference": {
+                            "book": "Core",
+                            "page": 219
+                        }
+                    },
+                    {
+                        "name": "Sear the Wound",
+                        "rank": 5,
+                        "reference": {
+                            "book": "Core",
+                            "page": 219
+                        }
+                    },
+                    {
+                        "name": "Sensational Distraction",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 219
+                        }
+                    },
+                    {
+                        "name": "Stirring the Embers",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 219
+                        }
+                    },
+                    {
+                        "name": "Truth Burns through Lies",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 219
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Water Shūji",
+                "techniques": [
+                    {
+                        "name": "All in Jest",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 220
+                        }
+                    },
+                    {
+                        "name": "Buoyant Arrival",
+                        "rank": 5,
+                        "reference": {
+                            "book": "Core",
+                            "page": 220
+                        }
+                    },
+                    {
+                        "name": "Ebb and Flow",
+                        "rank": 3,
+                        "reference": {
+                            "book": "Core",
+                            "page": 220
+                        }
+                    },
+                    {
+                        "name": "Regal Bearing",
+                        "rank": 4,
+                        "reference": {
+                            "book": "Core",
+                            "page": 220
+                        }
+                    },
+                    {
+                        "name": "Shallow Waters",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 220
+                        }
+                    },
+                    {
+                        "name": "Slippery Maneuvers",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 221
+                        }
+                    },
+                    {
+                        "name": "Tributaries of Trade",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 221
+                        }
+                    },
+                    {
+                        "name": "Well of Desire",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 221
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Void Shūji",
+                "techniques": [
+                    {
+                        "name": "All Arts Are One",
+                        "rank": 3,
+                        "reference": {
+                            "book": "Core",
+                            "page": 222
+                        }
+                    },
+                    {
+                        "name": "A Samurai's Fate",
+                        "rank": 4,
+                        "reference": {
+                            "book": "Core",
+                            "page": 222
+                        }
+                    },
+                    {
+                        "name": "Courtier's Resolve",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 222
+                        }
+                    },
+                    {
+                        "name": "Lady Doji's Decree",
+                        "restriction": "Crane",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 222
+                        }
+                    },
+                    {
+                        "name": "Lady Shinjo's Speed",
+                        "restriction": "Unicorn",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 222
+                        }
+                    },
+                    {
+                        "name": "Lord Akodo's Roar",
+                        "restriction": "Lion",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 223
+                        }
+                    },
+                    {
+                        "name": "Lord Bayushi's Whispers",
+                        "restriction": "Scorpion",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 223
+                        }
+                    },
+                    {
+                        "name": "Lord Togashi's Insight",
+                        "restriction": "Dragon",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 223
+                        }
+                    },
+                    {
+                        "name": "Rouse the Soul",
+                        "rank": 5,
+                        "reference": {
+                            "book": "Core",
+                            "page": 223
+                        }
+                    },
+                    {
+                        "name": "Awe of Heaven",
+                        "restriction": "Imperial",
+                        "rank": 4,
+                        "reference": {
+                            "book": "EE",
+                            "page": 248
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Mahō",
+        "subcategories": [
+            {
+                "name": "",
+                "techniques": [
+                    {
+                        "name": "Incite Haunting",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 224
+                        }
+                    },
+                    {
+                        "name": "Mark of Desecration",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 225
+                        }
+                    },
+                    {
+                        "name": "Sinful Whispers",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 225
+                        }
+                    },
+                    {
+                        "name": "Unholy Fervor",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 225
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Ninjutsu",
+        "subcategories": [
+            {
+                "name": "",
+                "techniques": [
+                    {
+                        "name": "Skulk",
+                        "rank": 1,
+                        "reference": {
+                            "book": "Core",
+                            "page": 226
+                        }
+                    },
+                    {
+                        "name": "Deadly Sting",
+                        "rank": 2,
+                        "reference": {
+                            "book": "Core",
+                            "page": 226
+                        }
+                    },
+                    {
+                        "name": "Noxious Cloud",
+                        "rank": 3,
+                        "reference": {
+                            "book": "Core",
+                            "page": 227
+                        }
+                    },
+                    {
+                        "name": "Silencing Stroke",
+                        "rank": 4,
+                        "reference": {
+                            "book": "Core",
+                            "page": 227
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]

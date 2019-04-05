@@ -1,0 +1,435 @@
+[
+    {
+        "roll": 1,
+        "result": "Famous Deed",
+        "modifiers": {
+            "glory": 3,
+            "honor": 0,
+            "status": 0
+        },
+        "other_effects": {
+            "type": "starting item",
+            "instructions": "Roll a ten-sided die again and add the resulting family heirloom to your starting items. You choose one quality and the GM chooses one quality from the list of item qualities, on page 240; these are applied to the item.",
+            "outcomes": [
+                {
+                    "roll": {
+                        "min": 1,
+                        "max": 3
+                    },
+                    "outcome": "weapon"
+                },
+                {
+                    "roll": {
+                        "min": 4,
+                        "max": 6
+                    },
+                    "outcome": "set of armor"
+                },
+                {
+                    "roll": {
+                        "min": 7,
+                        "max": 8
+                    },
+                    "outcome": "another item"
+                },
+                {
+                    "roll": {
+                        "min": 9,
+                        "max": 9
+                    },
+                    "outcome": "horse or other animal"
+                },
+                {
+                    "roll": {
+                        "min": 10,
+                        "max": 10
+                    },
+                    "outcome": "boat or estate"
+                }
+            ]
+        }
+    },
+    {
+        "roll": 2,
+        "result": "Glorious Sacrifice",
+        "modifiers": {
+            "glory": 5,
+            "honor": 5,
+            "status": 0
+        },
+        "other_effects": {
+            "type": "lost family heirloom",
+            "instructions": "Roll a ten-sided die again to determin your lost family heirloom, which exists somewhere in the world. You choose one quality and the GM chooses one quality; these are applied to the item. You do not know where the heirloom is, but you could later reclaim it during the campaign.",
+            "outcomes": [
+                {
+                    "roll": {
+                        "min": 1,
+                        "max": 3
+                    },
+                    "outcome": "weapon"
+                },
+                {
+                    "roll": {
+                        "min": 4,
+                        "max": 6
+                    },
+                    "outcome": "set of armor"
+                },
+                {
+                    "roll": {
+                        "min": 7,
+                        "max": 8
+                    },
+                    "outcome": "another item"
+                },
+                {
+                    "roll": {
+                        "min": 9,
+                        "max": 9
+                    },
+                    "outcome": "horse or other animal"
+                },
+                {
+                    "roll": {
+                        "min": 10,
+                        "max": 10
+                    },
+                    "outcome": "boat or estate"
+                }
+            ]
+        }
+    },
+    {
+        "roll": 3,
+        "result": "Wondrous Work",
+        "modifiers": {
+            "glory": 5,
+            "honor": 0,
+            "status": 0
+        },
+        "other_effects": {
+            "type": "Artisan skills",
+            "instructions": "Roll a ten-sided die again to determine an Artisan skill; gain +1 rank in that skill.",
+            "outcomes": [
+                {
+                    "roll": {
+                        "min": 1,
+                        "max": 3
+                    },
+                    "outcome": "Aesthetics"
+                },
+                {
+                    "roll": {
+                        "min": 4,
+                        "max": 6
+                    },
+                    "outcome": "Composition"
+                },
+                {
+                    "roll": {
+                        "min": 7,
+                        "max": 8
+                    },
+                    "outcome": "Design"
+                },
+                {
+                    "roll": {
+                        "min": 9,
+                        "max": 10
+                    },
+                    "outcome": "Smithing"
+                }
+            ]
+        }
+    },
+    {
+        "roll": 4,
+        "result": "Dynasty Builder",
+        "modifiers": {
+            "glory": -3,
+            "honor": 0,
+            "status": 0
+        },
+        "other_effects": {
+            "type": "Social skill",
+            "instructions": "Roll a ten-sided die again to determine a Social skill; gain +1 rank in that skill",
+            "outcomes": [
+                {
+                    "roll": {
+                        "min": 1,
+                        "max": 3
+                    },
+                    "outcome": "Command"
+                },
+                {
+                    "roll": {
+                        "min": 4,
+                        "max": 6
+                    },
+                    "outcome": "Courtesy"
+                },
+                {
+                    "roll": {
+                        "min": 7,
+                        "max": 8
+                    },
+                    "outcome": "Games"
+                },
+                {
+                    "roll": {
+                        "min": 9,
+                        "max": 10
+                    },
+                    "outcome": "Performance"
+                }
+            ]
+        }
+    },
+    {
+        "roll": 5,
+        "result": "Discovery",
+        "modifiers": {
+            "glory": 3,
+            "honor": 0,
+            "status": 0
+        },
+        "other_effects": {
+            "type": "Scholar skill",
+            "instructions": "Roll a ten-sided die again to determine a Scholar skill; gain +1 rank in that skill",
+            "outcomes": [
+                {
+                    "roll": {
+                        "min": 1,
+                        "max": 3
+                    },
+                    "outcome": "Culture"
+                },
+                {
+                    "roll": {
+                        "min": 4,
+                        "max": 5
+                    },
+                    "outcome": "Sentiment"
+                },
+                {
+                    "roll": {
+                        "min": 6,
+                        "max": 7
+                    },
+                    "outcome": "Government"
+                },
+                {
+                    "roll": {
+                        "min": 8,
+                        "max": 9
+                    },
+                    "outcome": "Medicine"
+                },
+                {
+                    "roll": {
+                        "min": 10,
+                        "max": 10
+                    },
+                    "outcome": "Theology"
+                }
+            ]
+        }
+    },
+    {
+        "roll": 6,
+        "result": "Ruthless Victor",
+        "modifiers": {
+            "glory": 0,
+            "honor": -5,
+            "status": 0
+        },
+        "other_effects": {
+            "type": "Martial skill",
+            "instructions": "Roll a ten-sided again to determine a Martial skill; gain +1 rank in that skill",
+            "outcomes": [
+                {
+                    "roll": {
+                        "min": 1,
+                        "max": 3
+                    },
+                    "outcome": "Fitness"
+                },
+                {
+                    "roll": {
+                        "min": 4,
+                        "max": 5
+                    },
+                    "outcome": "Martial Arts [Melee]"
+                },
+                {
+                    "roll": {
+                        "min": 6,
+                        "max": 7
+                    },
+                    "outcome": "Martial Arts [Ranged]"
+                },
+                {
+                    "roll": {
+                        "min": 8,
+                        "max": 8
+                    },
+                    "outcome": "Martial Arts [Unarmed]"
+                },
+                {
+                    "roll": {
+                        "min": 9,
+                        "max": 9
+                    },
+                    "outcome": "Tactics"
+                },
+                {
+                    "roll": {
+                        "min": 10,
+                        "max": 10
+                    },
+                    "outcome": "Meditation"
+                }
+            ]
+        }
+    },
+    {
+        "roll": 7,
+        "result": "Elevated for Service",
+        "modifiers": {
+            "glory": -3,
+            "honor": 3,
+            "status": 0
+        },
+        "other_effects": {
+            "type": "Trade skill",
+            "instructions": "Roll a ten-sided die again to determine a Trade skill; gain +1 rank in that skill",
+            "outcomes": [
+                {
+                    "roll": {
+                        "min": 1,
+                        "max": 3
+                    },
+                    "outcome": "Commerce"
+                },
+                {
+                    "roll": {
+                        "min": 4,
+                        "max": 5
+                    },
+                    "outcome": "Labor"
+                },
+                {
+                    "roll": {
+                        "min": 6,
+                        "max": 7
+                    },
+                    "outcome": "Seafaring"
+                },
+                {
+                    "roll": {
+                        "min": 8,
+                        "max": 8
+                    },
+                    "outcome": "Skulduggery"
+                },
+                {
+                    "roll": {
+                        "min": 9,
+                        "max": 10
+                    },
+                    "outcome": "Survival"
+                }
+            ]
+        }
+    },
+    {
+        "roll": 8,
+        "result": "Stolen Knowledge",
+        "modifiers": {
+            "glory": 0,
+            "honor": -5,
+            "status": 0
+        },
+        "other_effects": {
+            "type": "Technique",
+            "instructions": "You know one additional technique. Roll a ten-sided die again to determine the category, and then select one technique with a prerequisite of school rank 1 and learn that technique. You can perform that technique even if it is not normally allowed by your school.",
+            "outcomes": [
+                {
+                    "roll": {
+                        "min": 1,
+                        "max": 3
+                    },
+                    "outcome": "Kata"
+                },
+                {
+                    "roll": {
+                        "min": 4,
+                        "max": 6
+                    },
+                    "outcome": "Shūji"
+                },
+                {
+                    "roll": {
+                        "min": 7,
+                        "max": 7
+                    },
+                    "outcome": "Rituals"
+                },
+                {
+                    "roll": {
+                        "min": 8,
+                        "max": 8
+                    },
+                    "outcome": "Invocations"
+                },
+                {
+                    "roll": {
+                        "min": 9,
+                        "max": 9
+                    },
+                    "outcome": "Kihō"
+                },
+                {
+                    "roll": {
+                        "min": 10,
+                        "max": 10
+                    },
+                    "outcome": "Mahō or Ninjutsu"
+                }
+            ]
+        }
+    },
+    {
+        "roll": 9,
+        "result": "Imperial Heritage",
+        "modifiers": {
+            "glory": 0,
+            "honor": 0,
+            "status": 10
+        },
+        "other_effects": {
+            "type": "Distinction",
+            "instructions": "You gain the Blessed Lineage advantage (see page 103) (this can be assigned in excess of the normal limitations on advantages at character creation).",
+            "outcomes": [
+                { "outcome": "Blessed Lineage" }
+            ]
+        }
+    },
+    {
+        "roll": 10,
+        "result": "Unusual Name Origin",
+        "modifiers": {
+            "glory": -3,
+            "honor": 0,
+            "status": 0
+        },
+        "other_effects": {
+            "type": "other",
+            "instructions": "Choose two of your character's rings; you may reduce the value of one of these rings by 1 to increase the value of the other by 1 (this still cannot raise a ring above 3). If you do not do so, choose one item of rarity 6 or lower and assign it to your starting outfit.",
+            "outcomes": [
+                { "outcome": "Ring Exchange" },
+                { "outcome": "Item (Rank 6 or lower)" }
+            ]
+        }
+    }
+]

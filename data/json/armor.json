@@ -1,0 +1,191 @@
+[
+    {
+        "name": "Sleeping Garb",
+        "reference": {
+            "book": "Core",
+            "page": 239
+        },
+        "resistance_values": [],
+        "qualities": [],
+        "rarity": 2,
+        "price": {
+            "value": 1,
+            "unit": "koku"
+        }
+    },
+    {
+        "name": "Common Clothes",
+        "reference": {
+            "book": "Core",
+            "page": 239
+        },
+        "resistance_values": [
+            {
+                "category": "Physical",
+                "value": 1
+            }
+        ],
+        "qualities": ["Mundane"],
+        "rarity": 1,
+        "price": {
+            "value": 1,
+            "unit": "bu"
+        }
+    },
+    {
+        "name": "Inconspicuous Garb",
+        "reference": {
+            "book": "Core",
+            "page": 80
+        },
+        "resistance_values": [
+            {
+                "category": "Physical",
+                "value": 1
+            }
+        ],
+        "qualities": ["Mundane"],
+        "rarity": 1,
+        "price": {
+            "value": 1,
+            "unit": "bu"
+        }
+    },
+    {
+        "name": "Ceremonial Clothes",
+        "reference": {
+            "book": "Core",
+            "page": 239
+        },
+        "resistance_values": [
+            {
+                "category": "Physical",
+                "value": 1
+            }
+        ],
+        "qualities": ["Ceremonial", "Resplendent"],
+        "rarity": 4,
+        "price": {
+            "value": 1,
+            "unit": "koku"
+        }
+    },
+    {
+        "name": "Sanctified Robes",
+        "reference": {
+            "book": "Core",
+            "page": 239
+        },
+        "resistance_values": [
+            {
+                "category": "Physical",
+                "value": 1
+            },
+            {
+                "category": "Supernatural",
+                "value": 3
+            }
+        ],
+        "qualities": ["Ceremonial"],
+        "rarity": 7,
+        "price": {
+            "value": 4,
+            "unit": "koku"
+        }
+    },
+    {
+        "name": "Traveling Clothes",
+        "reference": {
+            "book": "Core",
+            "page": 239
+        },
+        "resistance_values": [
+            {
+                "category": "Physical",
+                "value": 2
+            }
+        ],
+        "qualities": ["Durable", "Mundane", "Subtle"],
+        "rarity": 2,
+        "price": {
+            "value": 2,
+            "unit": "bu"
+        }
+    },
+    {
+        "name": "Concealed Armor",
+        "reference": {
+            "book": "Core",
+            "page": 239
+        },
+        "resistance_values": [
+            {
+                "category": "Physical",
+                "value": 2
+            }
+        ],
+        "qualities": ["Concealable"],
+        "rarity": 4,
+        "price": {
+            "value": 5,
+            "unit": "koku"
+        }
+    },
+    {
+        "name": "Ashigaru Armor",
+        "reference": {
+            "book": "Core",
+            "page": 239
+        },
+        "resistance_values": [
+            {
+                "category": "Physical",
+                "value": 3
+            }
+        ],
+        "qualities": ["Wargear"],
+        "rarity": 3,
+        "price": {
+            "value": 5,
+            "unit": "koku"
+        }
+    },
+    {
+        "name": "Lacquered Armor",
+        "reference": {
+            "book": "Core",
+            "page": 239
+        },
+        "resistance_values": [
+            {
+                "category": "Physical",
+                "value": 4
+            }
+        ],
+        "qualities": ["Ceremonial", "Cumbersome", "Wargear"],
+        "rarity": 6,
+        "price": {
+            "value": 25,
+            "unit": "koku"
+        }
+    },
+    {
+        "name": "Plated Armor",
+        "reference": {
+            "book": "Core",
+            "page": 239
+        },
+        "resistance_values": [
+            {
+                "category": "Physical",
+                "value": 5
+            }
+        ],
+        "qualities": ["Cumbersome", "Durable", "Wargear"],
+        "rarity": 8,
+        "price": {
+            "value": 40,
+            "unit": "koku"
+        }
+    }
+]

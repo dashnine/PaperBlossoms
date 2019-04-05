@@ -1,0 +1,123 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Techniques",
+    "description": "List of technique categories",
+    "type": "array",
+    "items": {
+        "description": "Technique category",
+        "type": "object",
+        "properties": {
+            "name": {
+                "description": "Name of technique category",
+                "type": "string"
+            },
+            "subcategories": {
+                "description": "List of technique subcategories",
+                "type": "array",
+                "items": {
+                    "description": "Technique subcategory",
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "description": "Name of technique subcategory",
+                            "type": "string"
+                        },
+                        "techniques": {
+                            "description": "List of techniques in subcategory",
+                            "type": "array",
+                            "items": {
+                                "description": "Technique",
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "description": "Name of technique",
+                                        "type": "string"
+                                    },
+                                    "restriction": {
+                                        "description": "Clan to which technique is restricted",
+                                        "type": "string"
+                                    },
+                                    "rank": {
+                                        "description": "Rank of technique",
+                                        "type": "integer"
+                                    },
+                                    "reference": {
+                                        "description": "Page reference for technique",
+                                        "type": "object",
+                                        "properties": {
+                                            "book": {
+                                                "description": "Book in which reference can be found",
+                                                "type": "string",
+                                                "enum": [
+                                                    "Core",
+                                                    "EE"
+                                                ]
+                                            },
+                                            "page": {
+                                                "description": "Page on which reference can be found",
+                                                "type": "integer"
+                                            }
+                                        },
+                                        "required": [
+                                            "book",
+                                            "page"
+                                        ],
+                                        "defaultSnippets": [
+                                            {
+                                                "label": "New Page reference for technique",
+                                                "body": {
+                                                    "book": "$1",
+                                                    "page": "^$2"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                "required": [
+                                    "name",
+                                    "rank"
+                                ],
+                                "defaultSnippets": [
+                                    {
+                                        "label": "New Technique",
+                                        "body": {
+                                            "name": "$1",
+                                            "rank": "^$3",
+                                            "reference": "^$4"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "required": [
+                        "name",
+                        "techniques"
+                    ],
+                    "defaultSnippets": [
+                        {
+                            "label": "New Technique subcategory",
+                            "body": {
+                                "name": "$1",
+                                "techniques": "^[$2]"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "required": [
+            "name",
+            "subcategories"
+        ],
+        "defaultSnippets": [
+            {
+                "label": "New Technique category",
+                "body": {
+                    "name": "$1",
+                    "subcategories": "^[$2]"
+                }
+            }
+        ]
+    }
+}

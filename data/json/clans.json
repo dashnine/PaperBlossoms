@@ -1,0 +1,469 @@
+[
+    {
+        "name": "Crab",
+        "reference": {
+            "book": "Core",
+            "page": 42
+        },
+        "type": "Great",
+        "ring_increase": "Earth",
+        "skill_increase": "Fitness",
+        "status": 30,
+        "families": [
+            {
+                "name": "Hida",
+                "reference": {
+                    "book": "Core",
+                    "page": 49
+                },
+                "ring_increase": ["Earth", "Fire"],
+                "skill_increase": ["Command", "Tactics"],
+                "glory": 44,
+                "wealth": 4
+            },
+            {
+                "name": "Hiruma",
+                "reference": {
+                    "book": "Core",
+                    "page": 49
+                },
+                "ring_increase": ["Air", "Water"],
+                "skill_increase": ["Skulduggery", "Survival"],
+                "glory": 39,
+                "wealth": 3
+            },
+            {
+                "name": "Kaiu",
+                "reference": {
+                    "book": "Core",
+                    "page": 49
+                },
+                "ring_increase": ["Earth", "Fire"],
+                "skill_increase": ["Smithing", "Labor"],
+                "glory": 40,
+                "wealth": 5
+            },
+            {
+                "name": "Kuni",
+                "reference": {
+                    "book": "Core",
+                    "page": 49
+                },
+                "ring_increase": ["Earth", "Fire"],
+                "skill_increase": ["Smithing", "Labor"],
+                "glory": 40,
+                "wealth": 4
+            },
+            {
+                "name": "Yasuki",
+                "reference": {
+                    "book": "Core",
+                    "page": 49
+                },
+                "ring_increase": ["Air", "Water"],
+                "skill_increase": ["Commerce", "Design"],
+                "glory": 39,
+                "wealth": 10
+            }
+        ]
+    },
+    {
+        "name": "Crane",
+        "reference": {
+            "book": "Core",
+            "page": 43
+        },
+        "type": "Great",
+        "ring_increase": "Air",
+        "skill_increase": "Culture",
+        "status": 35,
+        "families": [
+            {
+                "name": "Asahina",
+                "reference": {
+                    "book": "Core",
+                    "page": 50
+                },
+                "ring_increase": ["Water", "Void"],
+                "skill_increase": ["Aesthetics", "Theology"],
+                "glory": 40,
+                "wealth": 6
+            },
+            {
+                "name": "Daidoji",
+                "reference": {
+                    "book": "Core",
+                    "page": 50
+                },
+                "ring_increase": ["Earth", "Water"],
+                "skill_increase": ["Fitness", "Tactics"],
+                "glory": 40,
+                "wealth": 7
+            },
+            {
+                "name": "Doji",
+                "reference": {
+                    "book": "Core",
+                    "page": 50
+                },
+                "ring_increase": ["Air", "Water"],
+                "skill_increase": ["Courtesy", "Design"],
+                "glory": 44,
+                "wealth": 8
+            },
+            {
+                "name": "Kakita",
+                "reference": {
+                    "book": "Core",
+                    "page": 50
+                },
+                "ring_increase": ["Air", "Fire"],
+                "skill_increase": ["Aesthetics", "Meditation"],
+                "glory": 44,
+                "wealth": 7
+            }
+        ]
+    },
+    {
+        "name": "Dragon",
+        "reference": {
+            "book": "Core",
+            "page": 44
+        },
+        "type": "Great",
+        "ring_increase": "Fire",
+        "skill_increase": "Meditation",
+        "status": 30,
+        "families": [
+            {
+                "name": "Agasha",
+                "reference": {
+                    "book": "Core",
+                    "page": 51
+                },
+                "ring_increase": ["Fire", "Void"],
+                "skill_increase": ["Medicine", "Smithing"],
+                "glory": 40,
+                "wealth": 4
+            },
+            {
+                "name": "Kitsuki",
+                "reference": {
+                    "book": "Core",
+                    "page": 51
+                },
+                "ring_increase": ["Air", "Water"],
+                "skill_increase": ["Government", "Sentiment"],
+                "glory": 44,
+                "wealth": 6
+            },
+            {
+                "name": "Mirumoto",
+                "reference": {
+                    "book": "Core",
+                    "page": 51
+                },
+                "ring_increase": ["Earth", "Water"],
+                "skill_increase": ["Fitness", "Tactics"],
+                "glory": 44,
+                "wealth": 5
+            },
+            {
+                "name": "Togashi Order",
+                "reference": {
+                    "book": "Core",
+                    "page": 51
+                },
+                "ring_increase": ["Earth", "Void"],
+                "skill_increase": ["Fitness", "Theology"],
+                "glory": 45,
+                "wealth": 3
+            }
+        ]
+    },
+    {
+        "name": "Lion",
+        "reference": {
+            "book": "Core",
+            "page": 45
+        },
+        "type": "Great",
+        "ring_increase": "Water",
+        "skill_increase": "Tactics",
+        "status": 35,
+        "families": [
+            {
+                "name": "Akodo",
+                "reference": {
+                    "book": "Core",
+                    "page": 52
+                },
+                "ring_increase": ["Air", "Earth"],
+                "skill_increase": ["Command", "Government"],
+                "glory": 44,
+                "wealth": 5
+            },
+            {
+                "name": "Ikoma",
+                "reference": {
+                    "book": "Core",
+                    "page": 52
+                },
+                "ring_increase": ["Air", "Water"],
+                "skill_increase": ["Composition", "Performance"],
+                "glory": 40,
+                "wealth": 5
+            },
+            {
+                "name": "Kitsu",
+                "reference": {
+                    "book": "Core",
+                    "page": 52
+                },
+                "ring_increase": ["Void", "Water"],
+                "skill_increase": ["Meditation", "Theology"],
+                "glory": 40,
+                "wealth": 4
+            },
+            {
+                "name": "Matsu",
+                "reference": {
+                    "book": "Core",
+                    "page": 52
+                },
+                "ring_increase": ["Earth", "Fire"],
+                "skill_increase": ["Command", "Fitness"],
+                "glory": 44,
+                "wealth": 5
+            }
+        ]
+    },
+    {
+        "name": "Phoenix",
+        "reference": {
+            "book": "Core",
+            "page": 46
+        },
+        "type": "Great",
+        "ring_increase": "Void",
+        "skill_increase": "Theology",
+        "status": 30,
+        "families": [
+            {
+                "name": "Asako",
+                "reference": {
+                    "book": "Core",
+                    "page": 53
+                },
+                "ring_increase": ["Air", "Fire"],
+                "skill_increase": ["Culture", "Sentiment"],
+                "glory": 40,
+                "wealth": 5
+            },
+            {
+                "name": "Isawa",
+                "reference": {
+                    "book": "Core",
+                    "page": 53
+                },
+                "ring_increase": ["Fire", "Void"],
+                "skill_increase": ["Meditation", "Theology"],
+                "glory": 44,
+                "wealth": 5
+            },
+            {
+                "name": "Kaito",
+                "reference": {
+                    "book": "Core",
+                    "page": 53
+                },
+                "ring_increase": ["Air", "Void"],
+                "skill_increase": ["Fitness", "Theology"],
+                "glory": 40,
+                "wealth": 4
+            },
+            {
+                "name": "Shiba",
+                "reference": {
+                    "book": "Core",
+                    "page": 53
+                },
+                "ring_increase": ["Earth", "Water"],
+                "skill_increase": ["Meditation", "Tactics"],
+                "glory": 40,
+                "wealth": 5
+            }
+        ]
+    },
+    {
+        "name": "Scorpion",
+        "reference": {
+            "book": "Core",
+            "page": 47
+        },
+        "type": "Great",
+        "ring_increase": "Air",
+        "skill_increase": "Skulduggery",
+        "status": 35,
+        "families": [
+            {
+                "name": "Bayushi",
+                "reference": {
+                    "book": "Core",
+                    "page": 54
+                },
+                "ring_increase": ["Air", "Fire"],
+                "skill_increase": ["Courtesy", "Design"],
+                "glory": 44,
+                "wealth": 8
+            },
+            {
+                "name": "Shosuro",
+                "reference": {
+                    "book": "Core",
+                    "page": 54
+                },
+                "ring_increase": ["Air", "Water"],
+                "skill_increase": ["Courtesy", "Performance"],
+                "glory": 40,
+                "wealth": 6
+            },
+            {
+                "name": "Soshi",
+                "reference": {
+                    "book": "Core",
+                    "page": 54
+                },
+                "ring_increase": ["Air", "Void"],
+                "skill_increase": ["Design", "Theology"],
+                "glory": 40,
+                "wealth": 6
+            },
+            {
+                "name": "Yogo",
+                "reference": {
+                    "book": "Core",
+                    "page": 54
+                },
+                "ring_increase": ["Earth", "Void"],
+                "skill_increase": ["Composition", "Theology"],
+                "glory": 39,
+                "wealth": 4
+            }
+        ]
+    },
+    {
+        "name": "Unicorn",
+        "reference": {
+            "book": "Core",
+            "page": 48
+        },
+        "type": "Great",
+        "ring_increase": "Water",
+        "skill_increase": "Survival",
+        "status": 30,
+        "families": [
+            {
+                "name": "Ide",
+                "reference": {
+                    "book": "Core",
+                    "page": 55
+                },
+                "ring_increase": ["Earth", "Water"],
+                "skill_increase": ["Commerce", "Courtesy"],
+                "glory": 40,
+                "wealth": 9
+            },
+            {
+                "name": "Iuchi",
+                "reference": {
+                    "book": "Core",
+                    "page": 55
+                },
+                "ring_increase": ["Air", "Void"],
+                "skill_increase": ["Meditation", "Theology"],
+                "glory": 40,
+                "wealth": 5
+            },
+            {
+                "name": "Moto",
+                "reference": {
+                    "book": "Core",
+                    "page": 55
+                },
+                "ring_increase": ["Earth", "Fire"],
+                "skill_increase": ["Command", "Survival"],
+                "glory": 40,
+                "wealth": 6
+            },
+            {
+                "name": "Shinjo",
+                "reference": {
+                    "book": "Core",
+                    "page": 55
+                },
+                "ring_increase": ["Fire", "Water"],
+                "skill_increase": ["Sentiment", "Survival"],
+                "glory": 44,
+                "wealth": 8
+            },
+            {
+                "name": "Utaku",
+                "reference": {
+                    "book": "Core",
+                    "page": 55
+                },
+                "ring_increase": ["Earth", "Fire"],
+                "skill_increase": ["Survival", "Tactics"],
+                "glory": 44,
+                "wealth": 6
+            }
+        ]
+    },
+    {
+        "name": "The Imperial Families",
+        "reference": {
+            "book": "EE",
+            "page": 228
+        },
+        "type": "Other",
+        "ring_increase": "Air",
+        "skill_increase": "Government",
+        "status": 40,
+        "families": [
+            {
+                "name": "Miya",
+                "reference": {
+                    "book": "EE",
+                    "page": 229
+                },
+                "ring_increase": ["Air", "Earth"],
+                "skill_increase": ["Courtesy", "Culture"],
+                "glory": 44,
+                "wealth": 8
+            },
+            {
+                "name": "Otomo",
+                "reference": {
+                    "book": "EE",
+                    "page": 230
+                },
+                "ring_increase": ["Air", "Water"],
+                "skill_increase": ["Culture", "Sentiment"],
+                "glory": 43,
+                "wealth": 9
+            },
+            {
+                "name": "Seppun",
+                "reference": {
+                    "book": "EE",
+                    "page": 231
+                },
+                "ring_increase": ["Earth", "Void"],
+                "skill_increase": ["Meditation", "Theology"],
+                "glory": 45,
+                "wealth": 6
+            }
+        ]
+    }
+]

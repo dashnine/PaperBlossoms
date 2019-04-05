@@ -1,0 +1,1562 @@
+[
+    {
+        "name": "Distinctions",
+        "entries": [
+            {
+                "name": "Ally [Name]",
+                "reference": {
+                    "book": "Core",
+                    "page": 101
+                },
+                "ring": "Water",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Ambidexterity",
+                "reference": {
+                    "book": "Core",
+                    "page": 102
+                },
+                "ring": "Air",
+                "types": ["Physical"],
+                "effects":""
+            },
+            {
+                "name": "Benten's Blessing",
+                "reference": {
+                    "book": "Core",
+                    "page": 102
+                },
+                "ring": "Air",
+                "types": ["Interpersonal", "Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Bishamon's Blessing",
+                "reference": {
+                    "book": "Core",
+                    "page": 102
+                },
+                "ring": "Water",
+                "types": ["Physical", "Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Blackmail on [Name]",
+                "reference": {
+                    "book": "Core",
+                    "page": 102
+                },
+                "ring": "Fire",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Blessed Lineage",
+                "reference": {
+                    "book": "Core",
+                    "page": 103
+                },
+                "ring": "Void",
+                "types": ["Interpersonal", "Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Blissful Betrothal",
+                "reference": {
+                    "book": "Core",
+                    "page": 103
+                },
+                "ring": "Water",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Daikoku's Blessing",
+                "reference": {
+                    "book": "Core",
+                    "page": 103
+                },
+                "ring": "Water",
+                "types": ["Interpersonal", "Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Dangerous Allure",
+                "reference": {
+                    "book": "Core",
+                    "page": 103
+                },
+                "ring": "Fire",
+                "types": ["Physical", "Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Ebisu's Blessing",
+                "reference": {
+                    "book": "Core",
+                    "page": 104
+                },
+                "ring": "Earth",
+                "types": ["Physical", "Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Famously Honest",
+                "reference": {
+                    "book": "Core",
+                    "page": 104
+                },
+                "ring": "Air",
+                "types": ["Fame", "Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Famously Lucky",
+                "reference": {
+                    "book": "Core",
+                    "page": 104
+                },
+                "ring": "Void",
+                "types": ["Fame", "Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Famously Reliable",
+                "reference": {
+                    "book": "Core",
+                    "page": 104
+                },
+                "ring": "Earth",
+                "types": ["Fame", "Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Famously Successful",
+                "reference": {
+                    "book": "Core",
+                    "page": 105
+                },
+                "ring": "Fire",
+                "types": ["Fame", "Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Famously Wealthy",
+                "reference": {
+                    "book": "Core",
+                    "page": 105
+                },
+                "ring": "Water",
+                "types": ["Fame", "Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Flexibility",
+                "reference": {
+                    "book": "Core",
+                    "page": 105
+                },
+                "ring": "Water",
+                "types": ["Physical"],
+                "effects": ""
+            },
+            {
+                "name": "Fukurokujin's Blessing",
+                "reference": {
+                    "book": "Core",
+                    "page": 105
+                },
+                "ring": "Fire",
+                "types": ["Mental", "Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Indomitable Will",
+                "reference": {
+                    "book": "Core",
+                    "page": 106
+                },
+                "ring": "Earth",
+                "types": ["Mental", "Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Jurojin's Blessing",
+                "reference": {
+                    "book": "Core",
+                    "page": 106
+                },
+                "ring": "Void",
+                "types": ["Physical", "Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Keen Balance",
+                "reference": {
+                    "book": "Core",
+                    "page": 106
+                },
+                "ring": "Earth",
+                "types": ["Mental", "Physical"],
+                "effects": ""
+            },
+            {
+                "name": "Keen Hearing",
+                "reference": {
+                    "book": "Core",
+                    "page": 107
+                },
+                "ring": "Air",
+                "types": ["Physical", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Keen Sight",
+                "reference": {
+                    "book": "Core",
+                    "page": 107
+                },
+                "ring": "Water",
+                "types": ["Physical", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Keen Smell",
+                "reference": {
+                    "book": "Core",
+                    "page": 107
+                },
+                "ring": "Fire",
+                "types": ["Physical", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Karmic Tie",
+                "reference": {
+                    "book": "Core",
+                    "page": 108
+                },
+                "ring": "Void",
+                "types": ["Interpersonal", "Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Kisshōten's Blessing",
+                "reference": {
+                    "book": "Core",
+                    "page": 108
+                },
+                "ring": "Water",
+                "types": ["Physical", "Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Large Stature",
+                "reference": {
+                    "book": "Core",
+                    "page": 108
+                },
+                "ring": "Earth",
+                "types": ["Physical"],
+                "effects": ""
+            },
+            {
+                "name": "Paragon of Compassion",
+                "reference": {
+                    "book": "Core",
+                    "page": 108
+                },
+                "ring": "Water",
+                "types": ["Mental", "Virtue"],
+                "effects": ""
+            },
+            {
+                "name": "Paragon of Courage",
+                "reference": {
+                    "book": "Core",
+                    "page": 108
+                },
+                "ring": "Fire",
+                "types": ["Mental", "Virtue"],
+                "effects": ""
+            },
+            {
+                "name": "Paragon of Courtesy",
+                "reference": {
+                    "book": "Core",
+                    "page": 108
+                },
+                "ring": "Air",
+                "types": ["Mental", "Virtue"],
+                "effects": ""
+            },
+            {
+                "name": "Paragon of Duty and Loyalty",
+                "reference": {
+                    "book": "Core",
+                    "page": 108
+                },
+                "ring": "Earth",
+                "types": ["Mental", "Virtue"],
+                "effects": ""
+            },
+            {
+                "name": "Paragon of Honor",
+                "reference": {
+                    "book": "Core",
+                    "page": 108
+                },
+                "ring": "Void",
+                "types": ["Mental", "Virtue"],
+                "effects": ""
+            },
+            {
+                "name": "Paragon of Righteousness",
+                "reference": {
+                    "book": "Core",
+                    "page": 108
+                },
+                "ring": "Void",
+                "types": ["Mental", "Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Paragon of Sincerity",
+                "reference": {
+                    "book": "Core",
+                    "page": 108
+                },
+                "ring": "Void",
+                "types": ["Mental", "Virtue"],
+                "effects": ""
+            },
+            {
+                "name": "Precise Memory",
+                "reference": {
+                    "book": "Core",
+                    "page": 109
+                },
+                "ring": "Earth",
+                "types": ["Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Quick Reflexes",
+                "reference": {
+                    "book": "Core",
+                    "page": 109
+                },
+                "ring": "Fire",
+                "types": ["Physical", "Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Seasoned",
+                "reference": {
+                    "book": "Core",
+                    "page": 109
+                },
+                "ring": "Void",
+                "types": ["Mental", "Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Sixth Sense",
+                "reference": {
+                    "book": "Core",
+                    "page": 110
+                },
+                "ring": "Void",
+                "types": ["Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Small Stature",
+                "reference": {
+                    "book": "Core",
+                    "page": 110
+                },
+                "ring": "Air",
+                "types": ["Physical"],
+                "effects": ""
+            },
+            {
+                "name": "Subtle Observer",
+                "reference": {
+                    "book": "Core",
+                    "page": 110
+                },
+                "ring": "Air",
+                "types": ["Interpersonal", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Support of [One Group]",
+                "reference": {
+                    "book": "Core",
+                    "page": 110
+                },
+                "ring": "Water",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Animal Trainer",
+                "reference": {
+                    "book": "EE",
+                    "page": 241
+                },
+                "ring": "Water",
+                "types": ["Interpersonal", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Criminal Connections",
+                "reference": {
+                    "book": "EE",
+                    "page": 241
+                },
+                "ring": "Air",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Expert Tracker",
+                "reference": {
+                    "book": "EE",
+                    "page": 241
+                },
+                "ring": "Air",
+                "types": ["Mental", "Physical"],
+                "effects": ""
+            },
+            {
+                "name": "Friend of the Brotherhood",
+                "reference": {
+                    "book": "EE",
+                    "page": 241
+                },
+                "ring": "Void",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Hero of [Village]",
+                "reference": {
+                    "book": "EE",
+                    "page": 242
+                },
+                "ring": "Fire",
+                "types": ["Fame", "Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Kuge Lineage",
+                "reference": {
+                    "book": "EE",
+                    "page": 242
+                },
+                "ring": "Earth",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Spiritual Protector",
+                "reference": {
+                    "book": "EE",
+                    "page": 242
+                },
+                "ring": "Void",
+                "types": ["Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Well Connected",
+                "reference": {
+                    "book": "EE",
+                    "page": 242
+                },
+                "ring": "Water",
+                "types": ["Interpersonal"],
+                "effects": ""
+            }
+        ]
+    },
+    {
+        "name": "Passions",
+        "entries": [
+            {
+                "name": "Animal Bond",
+                "reference": {
+                    "book": "Core",
+                    "page": 111
+                },
+                "ring": "Earth",
+                "types": ["Interpersonal", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Armament",
+                "reference": {
+                    "book": "Core",
+                    "page": 111
+                },
+                "ring": "Earth",
+                "types": ["Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Brushwork",
+                "reference": {
+                    "book": "Core",
+                    "page": 111
+                },
+                "ring": "Air",
+                "types": ["Mental", "Physical"],
+                "effects": ""
+            },
+            {
+                "name": "Curiosity",
+                "reference": {
+                    "book": "Core",
+                    "page": 112
+                },
+                "ring": "Fire",
+                "types": ["Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Daredevil",
+                "reference": {
+                    "book": "Core",
+                    "page": 112
+                },
+                "ring": "Fire",
+                "types": ["Mental", "Physical"],
+                "effects": ""
+            },
+            {
+                "name": "Enlightenment",
+                "reference": {
+                    "book": "Core",
+                    "page": 112
+                },
+                "ring": "Void",
+                "types": ["Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Fashion",
+                "reference": {
+                    "book": "Core",
+                    "page": 112
+                },
+                "ring": "Fire",
+                "types": ["Interpersonal", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Fortune-Telling",
+                "reference": {
+                    "book": "Core",
+                    "page": 112
+                },
+                "ring": "Void",
+                "types": ["Mental", "Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Generosity",
+                "reference": {
+                    "book": "Core",
+                    "page": 113
+                },
+                "ring": "Water",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Gossip",
+                "reference": {
+                    "book": "Core",
+                    "page": 113
+                },
+                "ring": "Air",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "History",
+                "reference": {
+                    "book": "Core",
+                    "page": 113
+                },
+                "ring": "Earth",
+                "types": ["Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Ikebana",
+                "reference": {
+                    "book": "Core",
+                    "page": 113
+                },
+                "ring": "Water",
+                "types": ["Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Playfulness",
+                "reference": {
+                    "book": "Core",
+                    "page": 114
+                },
+                "ring": "Air",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Provocation",
+                "reference": {
+                    "book": "Core",
+                    "page": 114
+                },
+                "ring": "Fire",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Sake",
+                "reference": {
+                    "book": "Core",
+                    "page": 114
+                },
+                "ring": "Water",
+                "types": ["Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Secrets",
+                "reference": {
+                    "book": "Core",
+                    "page": 115
+                },
+                "ring": "Void",
+                "types": ["Mental", "Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Stories",
+                "reference": {
+                    "book": "Core",
+                    "page": 115
+                },
+                "ring": "Earth",
+                "types": ["Mental", "Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Tea",
+                "reference": {
+                    "book": "Core",
+                    "page": 115
+                },
+                "ring": "Void",
+                "types": ["Physical", "Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Travel",
+                "reference": {
+                    "book": "Core",
+                    "page": 115
+                },
+                "ring": "Water",
+                "types": ["Mental", "Physical"],
+                "effects": ""
+            },
+            {
+                "name": "Wordplay",
+                "reference": {
+                    "book": "Core",
+                    "page": 116
+                },
+                "ring": "Air",
+                "types": ["Interpersonal", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Bonsai",
+                "reference": {
+                    "book": "EE",
+                    "page": 243
+                },
+                "ring": "Air",
+                "types": ["Mental"],
+                "effects": ""
+            },
+            {
+                "name": "City [choose one]",
+                "reference": {
+                    "book": "EE",
+                    "page": 243
+                },
+                "ring": "Water",
+                "types": ["Interpersonal", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Gourmet",
+                "reference": {
+                    "book": "EE",
+                    "page": 243
+                },
+                "ring": "Water",
+                "types": ["Mental", "Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Military History",
+                "reference": {
+                    "book": "EE",
+                    "page": 244
+                },
+                "ring": "Earth",
+                "types": ["Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Navigator",
+                "reference": {
+                    "book": "EE",
+                    "page": 244
+                },
+                "ring": "Fire",
+                "types": ["Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Researcher",
+                "reference": {
+                    "book": "EE",
+                    "page": 244
+                },
+                "ring": "Air",
+                "types": ["Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Rock Gardening",
+                "reference": {
+                    "book": "EE",
+                    "page": 244
+                },
+                "ring": "Void",
+                "types": ["Mental"],
+                "effects": ""
+            }
+        ]
+    },
+    {
+        "name": "Adversities",
+        "entries": [
+            {
+                "name": "Benten's Curse",
+                "reference": {
+                    "book": "Core",
+                    "page": 116
+                },
+                "ring": "Air",
+                "types": ["Interpersonal", "Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Bishamon's Curse",
+                "reference": {
+                    "book": "Core",
+                    "page": 117
+                },
+                "ring": "Water",
+                "types": ["Physical", "Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Bitter Betrothal",
+                "reference": {
+                    "book": "Core",
+                    "page": 117
+                },
+                "ring": "Water",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Blackmailed by [Character's Name]",
+                "reference": {
+                    "book": "Core",
+                    "page": 117
+                },
+                "ring": "Air",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Blindness",
+                "reference": {
+                    "book": "Core",
+                    "page": 118
+                },
+                "ring": "Water",
+                "types": ["Physical", "Scar"],
+                "effects": ""
+            },
+            {
+                "name": "Bluntness",
+                "reference": {
+                    "book": "Core",
+                    "page": 118
+                },
+                "ring": "Air",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Clumsiness",
+                "reference": {
+                    "book": "Core",
+                    "page": 118
+                },
+                "ring": "Fire",
+                "types": ["Physical"],
+                "effects": ""
+            },
+            {
+                "name": "Cognitive Lapses",
+                "reference": {
+                    "book": "Core",
+                    "page": 118
+                },
+                "ring": "Void",
+                "types": ["Mental", "Scar"],
+                "effects": ""
+            },
+            {
+                "name": "Daikoku's Curse",
+                "reference": {
+                    "book": "Core",
+                    "page": 119
+                },
+                "ring": "Water",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Damaged Heart or Organ",
+                "reference": {
+                    "book": "Core",
+                    "page": 119
+                },
+                "ring": "Earth",
+                "types": ["Physical", "Scar"],
+                "effects": ""
+            },
+            {
+                "name": "Deafness",
+                "reference": {
+                    "book": "Core",
+                    "page": 119
+                },
+                "ring": "Air",
+                "types": ["Physical", "Scar"],
+                "effects": ""
+            },
+            {
+                "name": "Discomfiting Countenance",
+                "reference": {
+                    "book": "Core",
+                    "page": 120
+                },
+                "ring": "Air",
+                "types": ["Interpersonal", "Physical"],
+                "effects": ""
+            },
+            {
+                "name": "Disdain for Compassion",
+                "reference": {
+                    "book": "Core",
+                    "page": 120
+                },
+                "ring": "Water",
+                "types": ["Flaw", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Disdain for Courage",
+                "reference": {
+                    "book": "Core",
+                    "page": 120
+                },
+                "ring": "Fire",
+                "types": ["Flaw", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Disdain for Courtesy",
+                "reference": {
+                    "book": "Core",
+                    "page": 120
+                },
+                "ring": "Air",
+                "types": ["Flaw", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Disdain for Duty and Loyalty",
+                "reference": {
+                    "book": "Core",
+                    "page": 120
+                },
+                "ring": "Earth",
+                "types": ["Flaw", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Disdain for Honor",
+                "reference": {
+                    "book": "Core",
+                    "page": 120
+                },
+                "ring": "Void",
+                "types": ["Flaw", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Disdain for Righteousness",
+                "reference": {
+                    "book": "Core",
+                    "page": 120
+                },
+                "ring": "Void",
+                "types": ["Flaw", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Disdain for Sincerity",
+                "reference": {
+                    "book": "Core",
+                    "page": 120
+                },
+                "ring": "Void",
+                "types": ["Flaw", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Ebisu's Curse",
+                "reference": {
+                    "book": "Core",
+                    "page": 120
+                },
+                "ring": "Earth",
+                "types": ["Physical", "Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Fractured Spine",
+                "reference": {
+                    "book": "Core",
+                    "page": 120
+                },
+                "ring": "Earth",
+                "types": ["Physical", "Scar"],
+                "effects": ""
+            },
+            {
+                "name": "Fukurokujin's Curse",
+                "reference": {
+                    "book": "Core",
+                    "page": 121
+                },
+                "ring": "Fire",
+                "types": ["Mental", "Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Gaijin Name, Culture or Appearance",
+                "reference": {
+                    "book": "Core",
+                    "page": 121
+                },
+                "ring": "Fire",
+                "types": ["Interpersonal (Name)", "Mental and Interpersonal (Culture)", "Physical (Appearance)"],
+                "effects": ""
+            },
+            {
+                "name": "Haunting",
+                "reference": {
+                    "book": "Core",
+                    "page": 122
+                },
+                "ring": "Void",
+                "types": ["Interpersonal", "Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Incurable Illness",
+                "reference": {
+                    "book": "Core",
+                    "page": 122
+                },
+                "ring": "Earth",
+                "types": ["Physical (Appearance"],
+                "effects": ""
+            },
+            {
+                "name": "Jurōjin's Curse",
+                "reference": {
+                    "book": "Core",
+                    "page": 123
+                },
+                "ring": "Void",
+                "types": ["Physical", "Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Kisshōten's Curse",
+                "reference": {
+                    "book": "Core",
+                    "page": 123
+                },
+                "ring": "Water",
+                "types": ["Physical", "Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Lost Arm or Lost Hand",
+                "reference": {
+                    "book": "Core",
+                    "page": 123
+                },
+                "ring": "Fire",
+                "types": ["Physical", "Scar"],
+                "effects": ""
+            },
+            {
+                "name": "Lost Eye",
+                "reference": {
+                    "book": "Core",
+                    "page": 124
+                },
+                "ring": "Water",
+                "types": ["Physical", "Scar"],
+                "effects": ""
+            },
+            {
+                "name": "Lost Fingers",
+                "reference": {
+                    "book": "Core",
+                    "page": 124
+                },
+                "ring": "Fire",
+                "types": ["Physical", "Scar"],
+                "effects": ""
+            },
+            {
+                "name": "Lost Leg",
+                "reference": {
+                    "book": "Core",
+                    "page": 124
+                },
+                "ring": "Water",
+                "types": ["Physical", "Scar"],
+                "effects": ""
+            },
+            {
+                "name": "Lost Memories",
+                "reference": {
+                    "book": "Core",
+                    "page": 124
+                },
+                "ring": "Void",
+                "types": ["Mental", "Scar"],
+                "effects": ""
+            },
+            {
+                "name": "Maimed Arm",
+                "reference": {
+                    "book": "Core",
+                    "page": 125
+                },
+                "ring": "Fire",
+                "types": ["Physical", "Scar"],
+                "effects": ""
+            },
+            {
+                "name": "Maimed Visage",
+                "reference": {
+                    "book": "Core",
+                    "page": 125
+                },
+                "ring": "Air",
+                "types": ["Physical", "Interpersonal", "Scar"],
+                "effects": ""
+            },
+            {
+                "name": "Momoku",
+                "reference": {
+                    "book": "Core",
+                    "page": 126
+                },
+                "ring": "Void",
+                "types": ["Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Muteness",
+                "reference": {
+                    "book": "Core",
+                    "page": 126
+                },
+                "ring": "Air",
+                "types": ["Interpersonal", "Physical or Mental", "Scar"],
+                "effects": ""
+            },
+            {
+                "name": "Nerve Damage",
+                "reference": {
+                    "book": "Core",
+                    "page": 126
+                },
+                "ring": "Air",
+                "types": ["Physical", "Scar"],
+                "effects": ""
+            },
+            {
+                "name": "Scorn of [One Group]",
+                "reference": {
+                    "book": "Core",
+                    "page": 127
+                },
+                "ring": "Water",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Shadowlands Taint (Air)",
+                "reference": {
+                    "book": "Core",
+                    "page": 127
+                },
+                "ring": "Air",
+                "types": ["Curse", "Interpersonal", "Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Shadowlands Taint (Earth)",
+                "reference": {
+                    "book": "Core",
+                    "page": 127
+                },
+                "ring": "Earth",
+                "types": ["Curse", "Physical", "Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Shadowlands Taint (Fire)",
+                "reference": {
+                    "book": "Core",
+                    "page": 128
+                },
+                "ring": "Fire",
+                "types": ["Curse", "Mental", "Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Shadowlands Taint (Void)",
+                "reference": {
+                    "book": "Core",
+                    "page": 128
+                },
+                "ring": "Void",
+                "types": ["Curse", "Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Shadowlands Taint (Water)",
+                "reference": {
+                    "book": "Core",
+                    "page": 128
+                },
+                "ring": "Water",
+                "types": ["Curse", "Physical", "Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Sworn Enemy",
+                "reference": {
+                    "book": "Core",
+                    "page": 129
+                },
+                "ring": "Earth",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Whispers of Cruelty",
+                "reference": {
+                    "book": "Core",
+                    "page": 129
+                },
+                "ring": "Earth",
+                "types": ["Interpersonal", "Infamy"],
+                "effects": ""
+            },
+            {
+                "name": "Whispers of Doom",
+                "reference": {
+                    "book": "Core",
+                    "page": 129
+                },
+                "ring": "Void",
+                "types": ["Interpersonal", "Infamy"],
+                "effects": ""
+            },
+            {
+                "name": "Whispers of Failure",
+                "reference": {
+                    "book": "Core",
+                    "page": 130
+                },
+                "ring": "Fire",
+                "types": ["Interpersonal", "Infamy"],
+                "effects": ""
+            },
+            {
+                "name": "Whispers of Poverty",
+                "reference": {
+                    "book": "Core",
+                    "page": 130
+                },
+                "ring": "Water",
+                "types": ["Interpersonal", "Infamy"],
+                "effects": ""
+            },
+            {
+                "name": "Whispers of Treachery",
+                "reference": {
+                    "book": "Core",
+                    "page": 130
+                },
+                "ring": "Air",
+                "types": ["Interpersonal", "Infamy"],
+                "effects": ""
+            },
+            {
+                "name": "Adopted Peasant",
+                "reference": {
+                    "book": "EE",
+                    "page": 245
+                },
+                "ring": "Fire",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Allergy [choose one]",
+                "reference": {
+                    "book": "EE",
+                    "page": 245
+                },
+                "ring": "Air",
+                "types": ["Physical"],
+                "effects": ""
+            },
+            {
+                "name": "Cursed Lineage",
+                "reference": {
+                    "book": "EE",
+                    "page": 245
+                },
+                "ring": "Void",
+                "types": ["Interpersonal", "Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Despised in [City]",
+                "reference": {
+                    "book": "EE",
+                    "page": 246
+                },
+                "ring": "Water",
+                "types": ["Fame", "Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Hunted by Chikushō-dō",
+                "reference": {
+                    "book": "EE",
+                    "page": 246
+                },
+                "ring": "Earth",
+                "types": ["Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Skepticism",
+                "reference": {
+                    "book": "EE",
+                    "page": 246
+                },
+                "ring": "Void",
+                "types": ["Mental", "Spiritual"],
+                "effects": ""
+            }
+        ]
+    },
+    {
+        "name": "Anxieties",
+        "entries": [
+            {
+                "name": "Addiction",
+                "reference": {
+                    "book": "Core",
+                    "page": 131
+                },
+                "ring": "Earth",
+                "types": ["Mental", "Physical"],
+                "effects": ""
+            },
+            {
+                "name": "Battle Trauma",
+                "reference": {
+                    "book": "Core",
+                    "page": 131
+                },
+                "ring": "Fire",
+                "types": ["Mental", "Physical"],
+                "effects": ""
+            },
+            {
+                "name": "Cynicism",
+                "reference": {
+                    "book": "Core",
+                    "page": 131
+                },
+                "ring": "Fire",
+                "types": ["Interpersonal", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Dark Secret",
+                "reference": {
+                    "book": "Core",
+                    "page": 132
+                },
+                "ring": "Void",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Delusions of Grandeur",
+                "reference": {
+                    "book": "Core",
+                    "page": 132
+                },
+                "ring": "Void",
+                "types": ["Mental", "Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Fear of Death",
+                "reference": {
+                    "book": "Core",
+                    "page": 132
+                },
+                "ring": "Earth",
+                "types": ["Mental", "Physical"],
+                "effects": ""
+            },
+            {
+                "name": "Ferocity",
+                "reference": {
+                    "book": "Core",
+                    "page": 132
+                },
+                "ring": "Air",
+                "types": ["Physical", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Impatience",
+                "reference": {
+                    "book": "Core",
+                    "page": 133
+                },
+                "ring": "Earth",
+                "types": ["Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Intolerance",
+                "reference": {
+                    "book": "Core",
+                    "page": 133
+                },
+                "ring": "Water",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Irrepressible Flirtation",
+                "reference": {
+                    "book": "Core",
+                    "page": 134
+                },
+                "ring": "Earth",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Jealousy",
+                "reference": {
+                    "book": "Core",
+                    "page": 134
+                },
+                "ring": "Air",
+                "types": ["Physical", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Materialism",
+                "reference": {
+                    "book": "Core",
+                    "page": 134
+                },
+                "ring": "Void",
+                "types": ["Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Meekness",
+                "reference": {
+                    "book": "Core",
+                    "page": 134
+                },
+                "ring": "Fire",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Painful Honesty",
+                "reference": {
+                    "book": "Core",
+                    "page": 135
+                },
+                "ring": "Air",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Paranoia",
+                "reference": {
+                    "book": "Core",
+                    "page": 135
+                },
+                "ring": "Water",
+                "types": ["Physical", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Perfectionism",
+                "reference": {
+                    "book": "Core",
+                    "page": 135
+                },
+                "ring": "Water",
+                "types": ["Physical", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Phobia",
+                "reference": {
+                    "book": "Core",
+                    "page": 136
+                },
+                "ring": "Water",
+                "types": ["Physical", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Softheartedness",
+                "reference": {
+                    "book": "Core",
+                    "page": 136
+                },
+                "ring": "Fire",
+                "types": ["Interpersonal", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Superstition",
+                "reference": {
+                    "book": "Core",
+                    "page": 136
+                },
+                "ring": "Void",
+                "types": ["Mental", "Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Accustomed to Luxury",
+                "reference": {
+                    "book": "EE",
+                    "page": 246
+                },
+                "ring": "Earth",
+                "types": ["Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Claustrophobia",
+                "reference": {
+                    "book": "EE",
+                    "page": 247
+                },
+                "ring": "Water",
+                "types": ["Mental"],
+                "effects": ""
+            },
+            {
+                "name": "False Identity",
+                "reference": {
+                    "book": "EE",
+                    "page": 247
+                },
+                "ring": "Air",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Loathing for Peasants",
+                "reference": {
+                    "book": "EE",
+                    "page": 247
+                },
+                "ring": "Water",
+                "types": ["Interpersonal", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Loneliness",
+                "reference": {
+                    "book": "EE",
+                    "page": 248
+                },
+                "ring": "Void",
+                "types": ["Interpersonal", "Mental"],
+                "effects": ""
+            }
+        ]
+    }
+]

@@ -1,0 +1,23 @@
+[
+    {
+        "option": "Your character's belief in living by an orthodox interpretation of Bushidō is very staunch.",
+        "outcome": {
+            "attribute": "Glory",
+            "value": 10
+        }
+    },
+    {
+        "option": "Your character diverges from some or all common beliefs about how samurai should behave honorably, gain 1 rank in one of the following skills to reflect past behavior that was unbefitting of a samurai or deeply defied the norm.",
+        "outcome": {
+            "type": "Skills",
+            "values": [
+                "Commerce",
+                "Labor",
+                "Medicine",
+                "Seafaring",
+                "Skulduggery",
+                "Survival"
+            ]
+        }
+    }
+]

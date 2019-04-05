@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Air",
+        "outstanding_quality": "Grace, eloquence or empathy"
+    },
+    {
+        "name": "Earth",
+        "outstanding_quality": "Thoroughness, patience or calm"
+    },
+    {
+        "name": "Fire",
+        "outstanding_quality": "Creativity, passion or drive"
+    },
+    {
+        "name": "Water",
+        "outstanding_quality": "Adaptability, friendliness or awareness"
+    },
+    {
+        "name": "Void",
+        "outstanding_quality": "Self-awareness, insight or mysticism"
+    }
+]

@@ -1,0 +1,276 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Weapons",
+    "description": "List of weapon categories",
+    "type": "array",
+    "items": {
+        "description": "Weapon category",
+        "type": "object",
+        "properties": {
+            "name": {
+                "description": "Name of weapon category",
+                "type": "string"
+            },
+            "entries": {
+                "description": "List of weapons in weapon category",
+                "type": "array",
+                "items": {
+                    "description": "Weapon",
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "description": "Weapon name",
+                            "type": "string"
+                        },
+                        "reference": {
+                            "description": "Page reference for weapon",
+                            "type": "object",
+                            "properties": {
+                                "book": {
+                                    "description": "Book in which reference can be found",
+                                    "type": "string",
+                                    "enum": [
+                                        "Core",
+                                        "EE"
+                                    ]
+                                },
+                                "page": {
+                                    "description": "Page on which reference can be found",
+                                    "type": "integer"
+                                }
+                            },
+                            "required": [
+                                "book",
+                                "page"
+                            ],
+                            "defaultSnippets": [
+                                {
+                                    "label": "New Page reference for weapon",
+                                    "body": {
+                                        "book": "$1",
+                                        "page": "^$2"
+                                    }
+                                }
+                            ]
+                        },
+                        "skill": {
+                            "description": "Specific skill used to wield weapon",
+                            "type": "string",
+                            "enum": [
+                                "Melee",
+                                "Ranged"
+                            ]
+                        },
+                        "range": {
+                            "description": "The distance in range bands at which an attacker can hit a target with a weapon",
+                            "type": "object",
+                            "properties": {
+                                "min": {
+                                    "description": "Lower bound of range",
+                                    "type": "integer"
+                                },
+                                "max": {
+                                    "description": "Upper bound of range",
+                                    "type": "integer"
+                                }
+                            },
+                            "required": [
+                                "min",
+                                "max"
+                            ],
+                            "defaultSnippets": [
+                                {
+                                    "label": "New The distance in range bands at which an attacker can hit a target with a weapon",
+                                    "body": {
+                                        "min": "^$1",
+                                        "max": "^$2"
+                                    }
+                                }
+                            ]
+                        },
+                        "damage": {
+                            "description": "Base damage of weapon",
+                            "type": "integer"
+                        },
+                        "deadliness": {
+                            "description": "Lethality of weapon",
+                            "type": "integer"
+                        },
+                        "grips": {
+                            "description": "The ways to wield the weapon",
+                            "type": "array",
+                            "minItems": 1,
+                            "items": {
+                                "description": "Weapon grip",
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "description": "Name of grip",
+                                        "type": "string"
+                                    },
+                                    "effects": {
+                                        "description": "Alterations to the weapon attributes which the grip applies",
+                                        "type": "array",
+                                        "items": {
+                                            "description": "List of grip effects",
+                                            "type": "object",
+                                            "properties": {
+                                                "attribute": {
+                                                    "description": "Weapon attribute which is modified by grip",
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "damage",
+                                                        "deadliness",
+                                                        "range",
+                                                        "skill",
+                                                        "quality"
+                                                    ]
+                                                },
+                                                "value_increase": {
+                                                    "description": "Value by which attribute is increased by grip",
+                                                    "type": "integer"
+                                                },
+                                                "value": {
+                                                    "description": "Value of attribute under grip's effects",
+                                                    "type": [
+                                                        "integer",
+                                                        "string",
+                                                        "object"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "attribute"
+                                            ],
+                                            "defaultSnippets": [
+                                                {
+                                                    "label": "New List of grip effects",
+                                                    "body": {
+                                                        "attribute": "$1"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "required": [
+                                    "name",
+                                    "effects"
+                                ],
+                                "defaultSnippets": [
+                                    {
+                                        "label": "New Weapon grip",
+                                        "body": {
+                                            "name": "$1",
+                                            "effects": "^[$2]"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        "qualities": {
+                            "description": "Weapon qualities",
+                            "type": "array",
+                            "items": {
+                                "description": "Weapon quality",
+                                "type": "string",
+                                "enum": [
+                                    "Ceremonial",
+                                    "Concealable",
+                                    "Cumbersome",
+                                    "Damaged",
+                                    "Destroyed",
+                                    "Durable",
+                                    "Forbidden",
+                                    "Mundane",
+                                    "Prepare",
+                                    "Razor-edged",
+                                    "Resplendent",
+                                    "Sacred",
+                                    "Snaring",
+                                    "Subtle",
+                                    "Unholy",
+                                    "Wargear"
+                                ]
+                            }
+                        },
+                        "rarity": {
+                            "description": "Weapon rarity",
+                            "type": "integer"
+                        },
+                        "price": {
+                            "description": "Price of weapon",
+                            "type": "object",
+                            "properties": {
+                                "value": {
+                                    "description": "Numeric value",
+                                    "type": "integer"
+                                },
+                                "unit": {
+                                    "description": "Monetary unit",
+                                    "type": "string",
+                                    "enum": [
+                                        "koku",
+                                        "bu",
+                                        "zeni"
+                                    ]
+                                }
+                            },
+                            "required": [
+                                "value",
+                                "unit"
+                            ],
+                            "defaultSnippets": [
+                                {
+                                    "label": "New Price of weapon",
+                                    "body": {
+                                        "value": "^$1",
+                                        "unit": "$2"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "required": [
+                        "name",
+                        "reference",
+                        "skill",
+                        "range",
+                        "damage",
+                        "deadliness",
+                        "grips",
+                        "qualities",
+                        "rarity",
+                        "price"
+                    ],
+                    "defaultSnippets": [
+                        {
+                            "label": "New Weapon",
+                            "body": {
+                                "name": "$1",
+                                "reference": "^$2",
+                                "skill": "$3",
+                                "range": "^$4",
+                                "damage": "^$5",
+                                "deadliness": "^$6",
+                                "grips": "^[$7]",
+                                "qualities": "^[$8]",
+                                "rarity": "^$9",
+                                "price": "^$10"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "defaultSnippets": [
+            {
+                "label": "New Weapon category",
+                "body": {
+                    "name": "$1",
+                    "entries": "^[$2]"
+                }
+            }
+        ]
+    }
+}

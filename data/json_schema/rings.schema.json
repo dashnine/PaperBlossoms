@@ -1,0 +1,33 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Rings",
+    "description": "Defines the schema for rings.json",
+    "type": "array",
+    "items": {
+        "description": "Ring",
+        "type": "object",
+        "properties": {
+            "name": {
+                "description": "Name of the ring",
+                "type": "string"
+            },
+            "outstanding_quality": {
+                "description": "Question 4 quality associated with given ring",
+                "type": "string"
+            }
+        },
+        "required": [
+            "name",
+            "outstanding_quality"
+        ],
+        "defaultSnippets": [
+            {
+                "label": "New Ring",
+                "body": {
+                    "name": "$1",
+                    "outstanding_quality": "$2"
+                }
+            }
+        ]
+    }
+}

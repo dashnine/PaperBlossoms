@@ -1,0 +1,124 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Personal effects",
+    "description": "List of personal effects",
+    "type": "array",
+    "items": {
+        "description": "Personal effect",
+        "type": "object",
+        "properties": {
+            "name": {
+                "description": "Name of personal effect",
+                "type": "string"
+            },
+            "reference": {
+                "description": "Page reference for personal effect",
+                "type": "object",
+                "properties": {
+                    "book": {
+                        "description": "Book in which reference can be found",
+                        "type": "string",
+                        "enum": [
+                            "Core",
+                            "EE"
+                        ]
+                    },
+                    "page": {
+                        "description": "Page on which reference can be found",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "book",
+                    "page"
+                ],
+                "defaultSnippets": [
+                    {
+                        "label": "New Page reference for personal effect",
+                        "body": {
+                            "book": "$1",
+                            "page": "^$2"
+                        }
+                    }
+                ]
+            },
+            "price": {
+                "description": "Price of personal effect",
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "description": "Numeric value",
+                        "type": "integer"
+                    },
+                    "unit": {
+                        "description": "Monetary unit",
+                        "type": "string",
+                        "enum": [
+                            "koku",
+                            "bu",
+                            "zeni"
+                        ]
+                    }
+                },
+                "required": [
+                    "value",
+                    "unit"
+                ],
+                "defaultSnippets": [
+                    {
+                        "label": "New Price of personal effect",
+                        "body": {
+                            "value": "^$1",
+                            "unit": "$2"
+                        }
+                    }
+                ]
+            },
+            "rarity": {
+                "description": "Rarity level",
+                "type": "integer"
+            },
+            "qualities": {
+                "description": "Item qualities",
+                "type": "array",
+                "items": {
+                    "description": "Item quality",
+                    "type": "string",
+                    "enum": [
+                        "Ceremonial",
+                        "Concealable",
+                        "Cumbersome",
+                        "Damaged",
+                        "Destroyed",
+                        "Durable",
+                        "Forbidden",
+                        "Mundane",
+                        "Prepare",
+                        "Razor-edged",
+                        "Resplendent",
+                        "Sacred",
+                        "Snaring",
+                        "Subtle",
+                        "Unholy",
+                        "Wargear"
+                    ]
+                }
+            }
+        },
+        "required": [
+            "name",
+            "reference"
+        ],
+        "defaultSnippets": [
+            {
+                "label": "New Personal effect",
+                "body": {
+                    "name": "$1",
+                    "reference": "^$2",
+                    "price": "^$3",
+                    "rarity": "^$4"
+                }
+            }
+        ]
+    }
+}

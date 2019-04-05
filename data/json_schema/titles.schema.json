@@ -1,0 +1,402 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Titles",
+    "description": "List of titles",
+    "type": "array",
+    "items": {
+        "description": "Title",
+        "type": "object",
+        "properties": {
+            "name": {
+                "description": "Name of title",
+                "type": "string"
+            },
+            "reference": {
+                "description": "Page reference for title",
+                "type": "object",
+                "properties": {
+                    "book": {
+                        "description": "Book in which reference can be found",
+                        "type": "string",
+                        "enum": [
+                            "Core",
+                            "EE"
+                        ]
+                    },
+                    "page": {
+                        "description": "Page on which reference can be found",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "book",
+                    "page"
+                ],
+                "defaultSnippets": [
+                    {
+                        "label": "New Page reference for title",
+                        "body": {
+                            "book": "$1",
+                            "page": "^$2"
+                        }
+                    }
+                ]
+            },
+            "status_award": {
+                "description": "Status awarded by title completion",
+                "type": "object",
+                "properties": {
+                    "base_award": {
+                        "description": "Base amount of status awarded",
+                        "type": "integer"
+                    },
+                    "constraint": {
+                        "description": "Constraint on status award",
+                        "type": "object",
+                        "properties": {
+                            "type": {
+                                "description": "Type of constraint (min, max or equal)",
+                                "type": "string",
+                                "enum": [
+                                    "min",
+                                    "max",
+                                    "equals"
+                                ]
+                            },
+                            "value": {
+                                "description": "Value of constraint",
+                                "type": "integer"
+                            }
+                        },
+                        "defaultSnippets": [
+                            {
+                                "label": "New Constraint on status award",
+                                "body": {
+                                    "type": "$1",
+                                    "value": "^$2"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "defaultSnippets": [
+                    {
+                        "label": "New Status awarded by title completion",
+                        "body": {
+                            "base_award": "^$1",
+                            "constraint": "^$2"
+                        }
+                    }
+                ]
+            },
+            "xp_to_completion": {
+                "description": "Amount of XP necessary to complete title",
+                "type": "integer"
+            },
+            "title_ability": {
+                "description": "Special ability granted by completed title",
+                "type": "string"
+            },
+            "advancements": {
+                "description": "List of advancements available to title",
+                "type": "array",
+                "items": {
+                    "description": "Advancement",
+                    "type": "object",
+                    "properties": {
+                        "rank": {
+                            "description": "Maximum rank associated with advancement",
+                            "type": "integer"
+                        },
+                        "name": {
+                            "description": "Name of advancement",
+                            "type": "string",
+                            "enum": [
+                                "Artisan skills",
+                                "Social skills",
+                                "Scholar skills",
+                                "Martial skills",
+                                "Trade skills",
+                                "Aesthetics",
+                                "Composition",
+                                "Design",
+                                "Smithing",
+                                "Command",
+                                "Courtesy",
+                                "Games",
+                                "Performance",
+                                "Culture",
+                                "Government",
+                                "Medicine",
+                                "Sentiment",
+                                "Theology",
+                                "Fitness",
+                                "Martial Arts [Melee]",
+                                "Martial Arts [Ranged]",
+                                "Martial Arts [Unarmed]",
+                                "Meditation",
+                                "Tactics",
+                                "Commerce",
+                                "Labor",
+                                "Seafaring",
+                                "Skulduggery",
+                                "Survival",
+                                "Kata",
+                                "Kih\u014d",
+                                "Invocations",
+                                "Rituals",
+                                "Sh\u016bji",
+                                "Mah\u014d",
+                                "Ninjutsu",
+                                "General Kata",
+                                "Close Combat Kata",
+                                "Ranged Combat Kata",
+                                "Earth Kih\u014d",
+                                "Air Kih\u014d",
+                                "Fire Kih\u014d",
+                                "Water Kih\u014d",
+                                "Void Kih\u014d",
+                                "Air Invocations",
+                                "Earth Invocations",
+                                "Fire Invocations",
+                                "Water Invocations",
+                                "Void",
+                                "Air Sh\u016bji",
+                                "Earth Sh\u016bji",
+                                "Fire Sh\u016bji",
+                                "Water Sh\u016bji",
+                                "Void Sh\u016bji",
+                                "Battle in the Mind",
+                                "Breath of Wind Style",
+                                "Crashing Wave Style",
+                                "Crescent Moon Style",
+                                "Crimson Leaves Strike",
+                                "Disappearing World Style",
+                                "Flowing Water Strike",
+                                "Heartpiercing Strike",
+                                "Iron in the Mountains Style",
+                                "Lord Hida's Grip",
+                                "Lord Shiba's Valor",
+                                "Soaring Slice",
+                                "Soul Sunder",
+                                "Striking as Air",
+                                "Striking as Earth",
+                                "Striking as Fire",
+                                "Striking as Void",
+                                "Striking as Water",
+                                "Tactical Assessment",
+                                "Warrior's Resolve",
+                                "Coiling Serpent Style",
+                                "Iaijutsu Cut: Crossing Blade",
+                                "Iaijutsu Cut: Rising Blade",
+                                "Iron Forest Style",
+                                "Open-Hand Style",
+                                "Rushing Avalanche Style",
+                                "Spinning Blades Style",
+                                "Thunderclap Strike",
+                                "Veiled Menace Style",
+                                "Hawk's Precision",
+                                "Pelting Hail Style",
+                                "Pin the Fan",
+                                "Cleansing Spirit",
+                                "Earth Needs No Eyes",
+                                "Earthen Fist",
+                                "Grasp the Earth Dragon",
+                                "Way of the Earthquake",
+                                "Air Fist",
+                                "Riding the Clouds",
+                                "The Great Silence",
+                                "Way of the Willow",
+                                "Breaking Blow",
+                                "Channel the Fire Dragon",
+                                "Flame Fist",
+                                "The Body is an Anvil",
+                                "Way of the Falling Star",
+                                "Freezing the Lifeblood",
+                                "Ki Protection",
+                                "Ride the Water Dragon",
+                                "Water Fist",
+                                "Way of the Seafoam",
+                                "Death Touch",
+                                "Still the Elements",
+                                "Touch the Void Dragon",
+                                "Way of the Edgeless Sword",
+                                "Blessed Wind",
+                                "By the Light of the Lord Moon",
+                                "Call Upon the Wind",
+                                "Cloak of Night",
+                                "False Realm of the Fox Spirits",
+                                "Grasp of the Air Dragon",
+                                "Mask of Wind",
+                                "Nature's Touch",
+                                "Rise, Air",
+                                "Secrets on the Wind",
+                                "Summon Fog",
+                                "Tempest of Air",
+                                "Token of Memory",
+                                "Vapor of Nightmares",
+                                "Wrath of Kaze-no-Kami",
+                                "Yari of Air",
+                                "Armor of Earth",
+                                "Bind the Shadow",
+                                "Caress of Earth",
+                                "Courage of Seven Thunders",
+                                "Earthquake",
+                                "Earth Becomes Sky",
+                                "Embrace of Kenro-Ji-Jin",
+                                "Grasp of Earth",
+                                "Jade Strike",
+                                "Jur\u014djin's Balm",
+                                "Power of the Earth Dragon",
+                                "Rise, Earth",
+                                "Symbol of Earth",
+                                "Tetsub\u014d of Earth",
+                                "Tomb of Jade",
+                                "Wall of Earth",
+                                "Armor of Radiance",
+                                "Biting Steel",
+                                "Breath of the Fire Dragon",
+                                "Extinguish",
+                                "Fukurokujin's Wit",
+                                "Fury of Osano-wo",
+                                "Katana of Fire",
+                                "Matsu's Battlecry",
+                                "Ravenous Swarms",
+                                "Rise, Flame",
+                                "The Cleansing Fire",
+                                "The Fires from Within",
+                                "The Soul's Blade",
+                                "Wall of Fire",
+                                "Wings of the Phoenix",
+                                "B\u014d of Water",
+                                "Dance of Seasons",
+                                "Dominion of Suijin",
+                                "Ever-Changing Waves",
+                                "Hands of Tides",
+                                "Heart of the Water Dragon",
+                                "Inari's Blessing",
+                                "Path to Inner Peace",
+                                "Reflections of P'an Ku",
+                                "Rise, Water",
+                                "Stride the Waves",
+                                "Strike the Tsunami",
+                                "Suijin's Embrace",
+                                "Sympathetic Energies",
+                                "The Rushing Wave",
+                                "Cleansing Rite",
+                                "Commune with the Spirits",
+                                "Divination",
+                                "Tea Ceremony",
+                                "Threshold Barrier",
+                                "Artisan's Appraisal",
+                                "Bend with the Storm",
+                                "Cadence",
+                                "Feigned Opening",
+                                "Prey on the Weak",
+                                "Rustling of Leaves",
+                                "The Wind Blows Both Ways",
+                                "Whispers of Court",
+                                "Wolf's Proposal",
+                                "Ancestry Unearthed",
+                                "Civility Foremost",
+                                "Honest Assessment",
+                                "Pillar of Calm",
+                                "Stonewall Tactics",
+                                "Touchstone of Courage",
+                                "The Immovable Hand of Peace",
+                                "Weight of Duty",
+                                "Bravado",
+                                "Dazzling Performance",
+                                "Fanning the Flames",
+                                "Lightning Raid",
+                                "Rallying Cry",
+                                "Sear the Wound",
+                                "Sensational Distraction",
+                                "Stirring the Embers",
+                                "Truth Burns through Lies",
+                                "All in Jest",
+                                "Buoyant Arrival",
+                                "Ebb and Flow",
+                                "Regal Bearing",
+                                "Shallow Waters",
+                                "Slippery Maneuvers",
+                                "Tributaries of Trade",
+                                "Well of Desire",
+                                "All Arts Are One",
+                                "A Samurai's Fate",
+                                "Courtier's Resolve",
+                                "Lady Doji's Decree",
+                                "Lady Shinjo's Speed",
+                                "Lord Akodo's Roar",
+                                "Lord Bayushi's Whispers",
+                                "Lord Togashi's Insight",
+                                "Rouse the Soul",
+                                "Incite Haunting",
+                                "Mark of Desecration",
+                                "Sinful Whispers",
+                                "Unholy Fervor",
+                                "Skulk",
+                                "Deadly Sting",
+                                "Noxious Cloud",
+                                "Silencing Stroke",
+                                "Spin the Web",
+                                "Awe of Heaven"
+                            ]
+                        },
+                        "type": {
+                            "description": "Type of advancement",
+                            "type": "string",
+                            "enum": [
+                                "skill",
+                                "skill_group",
+                                "technique",
+                                "technique_group"
+                            ]
+                        },
+                        "special_access": {
+                            "description": "Privileged access to advance",
+                            "type": "boolean"
+                        }
+                    },
+                    "required": [
+                        "name",
+                        "type",
+                        "special_access"
+                    ],
+                    "defaultSnippets": [
+                        {
+                            "label": "New Advancement",
+                            "body": {
+                                "rank": "^$1",
+                                "name": "$2",
+                                "type": "$3",
+                                "special_access": "^${4:false}"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "required": [
+            "name",
+            "reference",
+            "status_award",
+            "xp_to_completion",
+            "title_ability",
+            "advancements"
+        ],
+        "defaultSnippets": [
+            {
+                "label": "New Title",
+                "body": {
+                    "name": "$1",
+                    "reference": "^$2",
+                    "status_award": "^$3",
+                    "xp_to_completion": "^$4",
+                    "title_ability": "$5",
+                    "advancements": "^[$6]"
+                }
+            }
+        ]
+    }
+}
