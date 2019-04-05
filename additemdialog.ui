@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AddItemDialog</class>
+ <widget class="QDialog" name="AddItemDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>725</width>
+    <height>819</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Add Item</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLabel" name="label_28">
+       <property name="text">
+        <string>Choose a base item:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="itemtemplate_combobox"/>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_4">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Base Item</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="7" column="2">
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>Reference Book:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="1">
+       <widget class="QComboBox" name="unit_comboBox">
+        <item>
+         <property name="text">
+          <string>koku</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>zeni</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>bu</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="8" column="0">
+       <widget class="QLabel" name="label_7">
+        <property name="text">
+         <string>Unit</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="2">
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>Reference Page</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>Short Description</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Name</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="shortdesc_lineEdit"/>
+      </item>
+      <item row="6" column="0">
+       <widget class="QLabel" name="label_8">
+        <property name="text">
+         <string>Rarity</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0">
+       <widget class="QLabel" name="label_6">
+        <property name="text">
+         <string>Price</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0" rowspan="2">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Description</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="QSpinBox" name="rarity_spinBox"/>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="itemname_lineEdit"/>
+      </item>
+      <item row="7" column="1">
+       <widget class="QSpinBox" name="price_spinbox"/>
+      </item>
+      <item row="2" column="4">
+       <widget class="QComboBox" name="qual_comboBox"/>
+      </item>
+      <item row="2" column="3">
+       <widget class="QLabel" name="label_19">
+        <property name="text">
+         <string>Qualities</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="3" colspan="2">
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QPushButton" name="qual_add_pushButton">
+          <property name="text">
+           <string>Add</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="qual_rem_pushButton">
+          <property name="text">
+           <string>Remove</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="5" column="3" colspan="2">
+       <widget class="QListView" name="qual_listView"/>
+      </item>
+      <item row="7" column="3" colspan="2">
+       <widget class="QLineEdit" name="book_lineEdit"/>
+      </item>
+      <item row="8" column="3" colspan="2">
+       <widget class="QLineEdit" name="page_lineEdit"/>
+      </item>
+      <item row="3" column="1" rowspan="3">
+       <widget class="QTextEdit" name="desc_textEdit"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QGroupBox" name="weap_1_groupBox">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="title">
+        <string>Weapon Traits</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_9">
+          <property name="text">
+           <string>Category</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1" colspan="3">
+         <widget class="QComboBox" name="grip1_category_comboBox">
+          <item>
+           <property name="text">
+            <string>Swords</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Axes</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Blunt Weapons</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Hand Weapons</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Polearms</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Bows</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Crossbows</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Specialist Weapons</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Other</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="0" column="4">
+         <widget class="QLabel" name="label_10">
+          <property name="text">
+           <string>Skill</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="5">
+         <widget class="QComboBox" name="grip1_skill_comboBox">
+          <item>
+           <property name="text">
+            <string>Melee</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Ranged</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Unarmed</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_11">
+          <property name="text">
+           <string>Grip</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="4" colspan="2">
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>109</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_16">
+          <property name="text">
+           <string>Grip Notes</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1" colspan="5">
+         <widget class="QTextEdit" name="grip1_notes_textEdit"/>
+        </item>
+        <item row="3" column="0" colspan="2">
+         <widget class="QLabel" name="label_12">
+          <property name="text">
+           <string>Minimum Range</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="2">
+         <widget class="QSpinBox" name="grip1_minrange_spinBox"/>
+        </item>
+        <item row="3" column="3">
+         <widget class="QLabel" name="label_13">
+          <property name="text">
+           <string>Maximum Range</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="4">
+         <widget class="QSpinBox" name="grip1_maxrange_spinBox"/>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="label_14">
+          <property name="text">
+           <string>Damage</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="2">
+         <widget class="QSpinBox" name="grip1_dam_spinBox"/>
+        </item>
+        <item row="4" column="3">
+         <widget class="QLabel" name="label_15">
+          <property name="text">
+           <string>Deadliness</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="4">
+         <widget class="QSpinBox" name="grip1_dls_spinBox"/>
+        </item>
+        <item row="1" column="1" colspan="3">
+         <widget class="QLineEdit" name="grip1_lineEdit"/>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="weap_2_groupBox">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="title">
+        <string>Weapon Traits</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="6" column="0">
+         <widget class="QLabel" name="label_25">
+          <property name="text">
+           <string>Damage</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1" colspan="2">
+         <widget class="QComboBox" name="grip2_category_comboBox">
+          <item>
+           <property name="text">
+            <string>Swords</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Axes</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Blunt Weapons</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Hand Weapons</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Polearms</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Bows</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Crossbows</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Specialist Weapons</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Other</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_22">
+          <property name="text">
+           <string>Grip</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_23">
+          <property name="text">
+           <string>Grip Notes</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <widget class="QLabel" name="label_21">
+          <property name="text">
+           <string>Skill</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QLabel" name="label_24">
+          <property name="text">
+           <string>Minimum Range</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_20">
+          <property name="text">
+           <string>Category</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="2">
+         <widget class="QLabel" name="label_26">
+          <property name="text">
+           <string>Deadliness</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="3">
+         <widget class="QSpinBox" name="grip2_maxrange_spinBox"/>
+        </item>
+        <item row="6" column="3">
+         <widget class="QSpinBox" name="grip2_dls_spinBox"/>
+        </item>
+        <item row="5" column="2">
+         <widget class="QLabel" name="label_27">
+          <property name="text">
+           <string>Maximum Range</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="1">
+         <widget class="QSpinBox" name="grip2_minrange_spinBox"/>
+        </item>
+        <item row="6" column="1">
+         <widget class="QSpinBox" name="grip2_dam_spinBox"/>
+        </item>
+        <item row="0" column="4" colspan="3">
+         <widget class="QComboBox" name="grip2_skill_comboBox">
+          <item>
+           <property name="text">
+            <string>Melee</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Ranged</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Unarmed</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="2" column="3" colspan="4">
+         <spacer name="horizontalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>118</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="3" column="1" colspan="6">
+         <widget class="QTextEdit" name="grip2_notes_textEdit"/>
+        </item>
+        <item row="2" column="1" colspan="2">
+         <widget class="QLineEdit" name="grip2_lineEdit"/>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="armor_groupBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="title">
+      <string>Armor Traits</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="2" column="0">
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="0" column="1">
+       <widget class="QSpinBox" name="armor_phys_spinBox"/>
+      </item>
+      <item row="1" column="1">
+       <widget class="QSpinBox" name="armor_supernatural_spinBox"/>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_17">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Physical Resistance:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_18">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Supernatural Resistance:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>AddItemDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>AddItemDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

@@ -1,0 +1,4 @@
+*.user
+*.autosave
+*.ipynb
+Old_testdb.db

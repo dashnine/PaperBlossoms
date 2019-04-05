@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>resources/colorRings.png</file>
+        <file>resources/colorRingsMed.png</file>
+        <file>resources/sakura_PNG37.png</file>
+        <file>resources/pink-sakura-01-hi.png</file>
+        <file>resources/pink-sakura-01-hi.ico</file>
+        <file>resources/Bradley Hand Bold.ttf</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>data/paperblossoms.db</file>
+        <file>templates/PB_TEMPLATE.html</file>
+    </qresource>
+    <qresource prefix="/fonts"/>
+</RCC>

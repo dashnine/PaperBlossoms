@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+	<style type="text/css">
+	       div.redTable {
+	   border: 2px solid #948473;
+	   background-color: #FFE3C6;
+	               width: 100%;
+	               text-align: center;
+	               font-family: "Helvetica", sans-serif;
+	               page-break-inside:avoid;
+	               /*border-collapse: collapse; */
+	       }
+	       .divTable.redTable .divTableCell, .divTable.redTable .divTableHead {
+	   border: 1px solid #948473;
+	   padding: 3px 3px;
+	       }
+	       .divTable.redTable .divTableBody .divTableCell {
+	               font-size: 13px;
+	       }
+	       /*
+	.divTable.redTable .divTableRow:nth-child(even) {
+	               background: #F5C8BF;
+	       }
+	*/
+	       .divTable.redTable .divTableHeading {
+	  /* background: #948473;
+	   background: -moz-linear-gradient(top, #afa396 0%, #9e9081 66%, #948473 100%);
+	   background: -webkit-linear-gradient(top, #afa396 0%, #9e9081 66%, #948473 100%);
+	   background: linear-gradient(to bottom, #afa396 0%, #9e9081 66%, #948473 100%);   */
+	       }
+	       .divTable.redTable .divTableHeading .divTableHead {
+	               font-size: 14px;
+	               font-weight: bold;
+	               color: #F0F0F0;
+	               text-align: center;
+	               order-left: 2px solid #948473;
+
+
+	               background: #948473;
+	               background: -moz-linear-gradient(top, #afa396 0%, #9e9081 66%, #948473 100%);
+	               background: -webkit-linear-gradient(top, #afa396 0%, #9e9081 66%, #948473 100%);
+	               background: linear-gradient(to bottom, #afa396 0%, #9e9081 66%, #948473 100%);
+
+	       }
+	/*
+	       .divTable.redTable .divTableHeading .divTableHead:first-child {
+	               border-radius: 5px 0px 0px 0px;
+	               border-left: none;
+	       }
+	       .divTable.redTable .divTableHeading .divTableHead:last-child {
+	               border-radius: 0px 5px 0px 0px;
+	               border-right: none;
+	       }
+	*/
+	       .redTable .tableFootStyle {
+	               font-size: 12px;
+	               font-weight: bold;
+	       }
+	       .redTable .tableFootStyle {
+	               font-size: 13px;
+	       }
+	       .redTable .tableFootStyle .links {
+	               text-align: right;
+	       }
+	       .redTable .tableFootStyle .links a{
+	               display: inline-block;
+	               background: #FFFFFF;
+	               color: #A40808;
+	               padding: 2px 8px;
+	               border-radius: 5px;
+	       }
+	       .redTable.outerTableFooter {
+	               border-top: none;
+	       }
+	       .redTable.outerTableFooter .tableFootStyle {
+	               padding: 3px 5px;
+	       }
+	       /* DivTable.com */
+	       
+	       .divTable{ display: table; }
+	       .divTableRow { display: table-row; page-break-inside:avoid; }
+	       .divTableHeading { display: table-header-group;page-break-inside:avoid;}
+	       .divTableCell, .divTableHead { display: table-cell;page-break-inside:avoid;}
+	       .divTableHeading { display: table-header-group;page-break-inside:avoid;}
+	       .divTableFoot { display: table-footer-group;page-break-inside:avoid;}
+	       .divTableBody { display: table-row-group;}
+
+
+
+	</style>
+
+	<title>
+	</title>
+</head>
+
+<body>
+	<div class="divTable redTable" style=" width: 100%; border-width:0px;border-color: clear; background-color: white">
+		<div class="divTableHeading" style="border-width:0px;border-color: clear; background-color: white">
+			<div class="divTableRow" style="border-width:0px;border-color: clear; background-color: white">
+			</div>
+		</div>
+
+
+		<div class="divTableBody">
+		</div>
+	</div>
+
+
+	<p>
+	</p>
+
+
+	<div style='float:left; width:100%; margin-bottom:10px; font-family: "Helvetica", sans-serif; font-size: 35px; font-style: normal; font-variant: normal; font-weight: normal;'>
+		$CHAR_NAME, $SCHOOL_NAME
+	</div>
+
+
+	<div style="margin-bottom: 20">
+		<div style="float:right; width:49%;margin-bottom: 10px">
+		<div class="divTable redTable" style="width: 100%;">
+			<div class="divTableHeading">
+				<div class="divTableRow">
+					<div class="divTableHead">
+						Skill
+					</div>
+
+
+					<div class="divTableHead">
+						Rank
+					</div>
+
+
+					<div class="divTableHead">
+						Group
+					</div>
+				</div>
+			</div>
+
+
+			<div class="divTableBody">
+                $SKILLTABLE
+			</div>
+		</div>
+		<img alt="" src="data:;base64,%20$RINGIMG" style="$RINGVIS;max-width: 75%; overflow: visible;">
+		</div>
+
+
+		<p>
+		</p>
+
+
+		<div style="float:left; width:49%; margin-bottom: 10px">
+			<img alt="" src="data:;base64,%20$PORTIMG" style="$PRTVIS;max-width: 100%; overflow: visible;">
+
+			<div class="divTable redTable" style="width: 100%;">
+				<div class="divTableHeading">
+					<div class="divTableRow">
+						<div class="divTableHead">
+							Clan
+						</div>
+					</div>
+				</div>
+
+
+				<div class="divTableBody">
+					<div class="divTableRow">
+						<div class="divTableCell">
+							$CLAN_NAME
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<p>
+			</p>
+
+
+			<div class="divTable redTable" style="width: 100%;">
+				<div class="divTableHeading">
+					<div class="divTableRow">
+						<div class="divTableHead">
+							Ninjo (Personal Desire)
+						</div>
+					</div>
+				</div>
+
+
+				<div class="divTableBody">
+					<div class="divTableRow">
+						<div class="divTableCell">
+							$NINJO
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<p>
+			</p>
+
+
+			<div class="divTable redTable" style="width: 100%;">
+				<div class="divTableHeading">
+					<div class="divTableRow">
+						<div class="divTableHead">
+							Giri (Sworn Duty)
+						</div>
+					</div>
+				</div>
+
+
+				<div class="divTableBody">
+					<div class="divTableRow">
+						<div class="divTableCell">
+							$GIRI
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<p>
+			</p>
+
+
+			<div class="divTable redTable" style="width: 100%;$NOTEVIS">
+				<div class="divTableHeading">
+					<div class="divTableRow">
+						<div class="divTableHead">
+							Notes
+						</div>
+					</div>
+				</div>
+
+
+				<div class="divTableBody">
+					<div class="divTableRow">
+						<div class="divTableCell">
+							$NOTES
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<p>
+			</p>
+
+
+			<div class="divTable redTable" style="width: 100%;">
+				<div class="divTableHeading">
+					<div class="divTableRow">
+						<div class="divTableHead">
+							Heritage
+						</div>
+					</div>
+				</div>
+
+
+				<div class="divTableBody">
+					<div class="divTableRow">
+						<div class="divTableCell">
+							$HERITAGE
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<p>
+			</p>
+
+
+			<div class="divTable redTable" style=" width: 100%;">
+				<div class="divTableHeading">
+					<div class="divTableRow">
+						<div class="divTableHead">
+							Foc
+						</div>
+
+
+						<div class="divTableHead">
+							Vig
+						</div>
+
+
+						<div class="divTableHead">
+							End
+						</div>
+
+
+						<div class="divTableHead">
+							Fatigue
+						</div>
+
+
+						<div class="divTableHead">
+							Com
+						</div>
+
+
+						<div class="divTableHead">
+							Strife
+						</div>
+					</div>
+				</div>
+
+
+				<div class="divTableBody">
+                    $APTTABLE
+                </div>
+
+
+				<p>
+				</p>
+
+
+				<div>
+					<div class="divTable redTable" style=" width: 100%;">
+						<div class="divTableHeading">
+							<div class="divTableRow">
+								<div class="divTableHead">
+									Honor
+								</div>
+
+
+								<div class="divTableHead">
+									Glory
+								</div>
+
+
+								<div class="divTableHead">
+									Status
+								</div>
+							</div>
+						</div>
+
+
+						<div class="divTableBody">
+							<div class="divTableRow">
+                                $SECSTATTABLE
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<p>
+				</p>
+
+
+				<p>
+				</p>
+
+
+				<div style="">
+					<div class="divTable redTable" style=" width: 100%; border-width:0px;border-color: clear; background-color: white">
+						<div class="divTableHeading" style="border-width:0px;border-color: clear; background-color: white">
+							<div class="divTableRow" style="border-width:0px;border-color: clear; background-color: white">
+							</div>
+						</div>
+
+
+						<div class="divTableBody">
+						</div>
+					</div>
+				</div>
+
+
+				<p>
+				</p>
+
+
+				<div style='float:left; width:100%; margin-bottom:10px; font-family: "Brush Script MT", cursive; font-size: 46px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 92px;'>
+					Equipment
+				</div>
+
+
+				<div>
+					<p>
+					</p>
+
+
+					<div>
+						<div class="divTable redTable" style=" width: 100%;">
+							<div class="divTableHeading">
+								<div class="divTableRow">
+									<div class="divTableHead">
+										Armor
+									</div>
+								</div>
+							</div>
+
+
+							<div class="divTableBody">
+								$ARMORTABLE
+							</div>
+						</div>
+					</div>
+
+
+					<p>
+					</p>
+				</div>
+
+
+				<p>
+				</p>
+
+
+				<div style="$WEAPVIS">
+					<div class="divTable redTable" style="width: 100%;">
+						<div class="divTableHeading">
+							<div class="divTableRow">
+								<div class="divTableHead">
+									WEAPONS
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="divTable redTable" style=" width: 100%;">
+						<div class="divTableHeading">
+							<div class="divTableRow">
+								<div class="divTableHead">
+									Name
+								</div>
+
+
+								<div class="divTableHead">
+									Type
+								</div>
+
+
+								<div class="divTableHead">
+                                    Ref
+								</div>
+
+
+								<div class="divTableHead">
+									Grip
+								</div>
+
+
+								<div class="divTableHead">
+									Skill
+								</div>
+
+
+								<div class="divTableHead">
+									Range
+								</div>
+
+
+								<div class="divTableHead">
+									DAM
+								</div>
+
+
+								<div class="divTableHead">
+									DLS
+                                </div>
+
+
+                                <div class="divTableHead">
+                                    Qual
+                                </div>
+
+							</div>
+						</div>
+
+
+						<div class="divTableBody">
+                            $WEAPONTABLE
+                        </div>
+					</div>
+				</div>
+
+
+				<p>
+				</p>
+
+
+				<div class="divTable redTable" style="width: 100%;">
+					<div class="divTableHeading">
+						<div class="divTableRow">
+							<div class="divTableHead">
+								Personal Effects
+							</div>
+						</div>
+					</div>
+
+
+					<div class="divTableBody">
+						<div class="divTableRow">
+							<div class="divTableCell">
+								$GEARTABLE
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<p>
+				</p>
+
+
+				<div class="divTable redTable" style="width: 100%;">
+					<div class="divTableHeading">
+						<div class="divTableRow">
+							<div class="divTableHead">
+								Koku
+							</div>
+
+
+							<div class="divTableHead">
+								Bu
+							</div>
+
+
+							<div class="divTableHead">
+								Zeni
+							</div>
+						</div>
+					</div>
+
+
+					<div class="divTableBody">
+						<div class="divTableRow">
+                            $CASHTABLE
+						</div>
+					</div>
+				</div>
+
+
+				<p>
+				</p>
+
+
+				<div style="">
+					<div class="divTable redTable" style=" width: 100%; border-width:0px;border-color: clear; background-color: white">
+						<div class="divTableHeading" style="border-width:0px;border-color: clear; background-color: white">
+							<div class="divTableRow" style="border-width:0px;border-color: clear; background-color: white">
+							</div>
+						</div>
+
+
+						<div class="divTableBody">
+						</div>
+					</div>
+				</div>
+
+
+				<p>
+				</p>
+
+                <div style="page-break-before: always;">
+                    <div class="divTable redTable" style=" width: 100%; border-width:0px;border-color: clear; background-color: white">
+                        <div class="divTableHeading" style="border-width:0px;border-color: clear; background-color: white">
+                            <div class="divTableRow" style="border-width:0px;border-color: clear; background-color: white">
+                            </div>
+                        </div>
+
+
+                        <div class="divTableBody">
+                        </div>
+                    </div>
+                </div>
+
+
+                <p>
+                </p>
+
+
+                <div style='float:left; width:100%; margin-bottom:10px; font-family: "Brush Script MT", cursive; font-size: 46px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 92px;'>
+                   Personal Traits
+                </div>
+                $TRAITBLOCKS
+                </div>
+                </div>
+                </div>
+
+                <div style="page-break-before: always;">
+					<div class="divTable redTable" style=" width: 100%; border-width:0px;border-color: clear; background-color: white">
+						<div class="divTableHeading" style="border-width:0px;border-color: clear; background-color: white">
+							<div class="divTableRow" style="border-width:0px;border-color: clear; background-color: white">
+							</div>
+						</div>
+
+
+						<div class="divTableBody">
+						</div>
+					</div>
+				</div>
+
+
+				<p>
+				</p>
+
+
+                <div style='float:left; width:100%; margin-bottom:10px; font-family: "Brush Script MT", cursive; font-size: 20px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 20px;'>
+					Curriculum and Title
+				</div>
+
+
+				<div style="float:left; width: 48%;">
+					<div class="divTable redTable" style="width: 100%;">
+						<div class="divTableHeading">
+							<div class="divTableRow">
+								<div class="divTableHead">
+                                    Curriculum [$CURRICSTATUSTEXT]
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="divTable redTable" style=" width: 100%;">
+						<div class="divTableHeading">
+							<div class="divTableRow">
+								<div class="divTableHead">
+									Rank
+								</div>
+
+
+								<div class="divTableHead">
+									Advance
+								</div>
+
+
+								<div class="divTableHead">
+									Type
+								</div>
+							</div>
+						</div>
+
+
+						<div class="divTableBody">
+                            $CURRTABLE
+                        </div>
+					</div>
+				</div>
+
+
+				<p>
+				</p>
+
+
+				<div style="float:right; width: 48%;">
+					<div>
+                        <div class="divTable redTable" style="width: 100%;">
+							<div class="divTableHeading">
+								<div class="divTableRow">
+									<div class="divTableHead">
+                                        Title Curriculum [$TITLESTATUSTEXT]
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="divTable redTable" style=" width: 100%;">
+							<div class="divTableHeading">
+								<div class="divTableRow">
+									<div class="divTableHead">
+										Source
+									</div>
+
+
+									<div class="divTableHead">
+										Advance
+									</div>
+
+
+									<div class="divTableHead">
+										Type
+									</div>
+								</div>
+							</div>
+
+
+							<div class="divTableBody">
+								$TITLETABLE <!--<div class="divTableCell">cell1_1</div>
+                                        <div class="divTableCell">cell2_1</div>
+                                        <div class="divTableCell">cell3_1</div>
+                                        <div class="divTableCell">cell4_1</div>
+                                        <div class="divTableCell">cell5_1</div>-->
+							</div>
+						</div>
+					</div>
+
+
+					<p>
+					</p>
+
+
+
+                    <div style="float:right; width: 100%; margin-bottom: 10px">
+                    <!--
+                        <div class="divTable redTable" style="width: 100%;">
+                            <div class="divTableHeading">
+                                <div class="divTableRow">
+                                    <div class="divTableHead">
+                                        Titles
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    -->
+
+                        <div class="divTable redTable" style=" width: 100%;">
+                            <div class="divTableHeading">
+                                <div class="divTableRow">
+                                    <div class="divTableHead">
+                                        Titles
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="divTableBody">
+                                $TITLELISTTABLE
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <p>
+                    </p>
+
+                    $ABILTABLE
+
+<!--
+					<div style="float:right; width: 100%; margin-bottom: 10px">
+						<div class="divTable redTable" style="width: 100%;">
+							<div class="divTableHeading">
+								<div class="divTableRow">
+									<div class="divTableHead">
+										Abilities
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="divTable redTable" style=" width: 100%;">
+							<div class="divTableHeading">
+								<div class="divTableRow">
+									<div class="divTableHead">
+										Name
+									</div>
+
+
+									<div class="divTableHead">
+										Source
+									</div>
+
+
+									<div class="divTableHead">
+										Reference
+									</div>
+								</div>
+							</div>
+
+
+							<div class="divTableBody">
+                                $ABILTABLE
+							</div>
+						</div>
+					</div>
+
+
+					<p>
+					</p>
+-->
+
+					<div>
+					</div>
+				</div>
+
+
+				<div style="page-break-before: always;">
+					<div class="divTable redTable" style=" width: 100%; border-width:0px;border-color: clear; background-color: white">
+						<div class="divTableHeading" style="border-width:0px;border-color: clear; background-color: white">
+							<div class="divTableRow" style="border-width:0px;border-color: clear; background-color: white">
+							</div>
+						</div>
+
+
+						<div class="divTableBody">
+						</div>
+					</div>
+				</div>
+
+
+				<p>
+				</p>
+
+
+				<div style='float:left; width:100%; margin-bottom:10px; font-family: "Brush Script MT", cursive; font-size: 46px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 92px;'>
+					Techniques
+				</div>
+				$TECHBLOCKS 
+			</div>
+		</div>
+	</div>
+</body>
+</html>

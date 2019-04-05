@@ -1,0 +1,67 @@
+/*
+ * *******************************************************************
+ * This file is part of the Paper Blossoms application
+ * (https://github.com/dashnine/PaperBlossoms).
+ * Copyright (c) 2019 Kyle Hankins (dashnine)
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, version 3.
+ *
+ * This program is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ *
+ * The Legend of the Five Rings Roleplaying Game is the creation
+ * and property of Fantasy Flight Games.
+ * *******************************************************************
+ */
+
+#ifndef ADDADVANCEDIALOG_H
+#define ADDADVANCEDIALOG_H
+
+#include <QDialog>
+#include <QSortFilterProxyModel>
+#include "dataaccesslayer.h"
+#include "character.h"
+
+namespace Ui {
+class AddAdvanceDialog;
+}
+
+class AddAdvanceDialog : public QDialog
+{
+    Q_OBJECT
+
+public:
+    explicit AddAdvanceDialog(DataAccessLayer *dal, Character *character, QWidget *parent = 0);
+    ~AddAdvanceDialog();
+
+    QString getResult();
+private slots:
+    void on_advtype_currentIndexChanged(const QString &arg1);
+
+    void on_advchooser_combobox_currentIndexChanged(const QString &arg1);
+
+    void on_curriculum_radioButton_clicked();
+
+    void on_title_radioButton_clicked();
+
+    void on_detailTableView_clicked(const QModelIndex &index);
+
+private:
+    Ui::AddAdvanceDialog *ui;
+    DataAccessLayer* dal;
+    Character* character;
+
+    void validatePage();
+    QSqlQueryModel techModel;
+    QSortFilterProxyModel proxyModel;
+    QSqlQueryModel curriculumModel;
+};
+
+#endif // ADDADVANCEDIALOG_H
