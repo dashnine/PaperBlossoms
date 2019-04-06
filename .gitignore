@@ -2,3 +2,4 @@
 *.autosave
 *.ipynb
 Old_testdb.db
+**.vscode
