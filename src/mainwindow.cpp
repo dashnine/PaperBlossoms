@@ -26,7 +26,7 @@
 #include <QWizard>
 #include <QLabel>
 #include <QVBoxLayout>
-#include <newcharacterwizard.h>
+#include "newcharacterwizard.h"
 #include <QDebug>
 #include "character.h"
 #include <QDir>

@@ -25,7 +25,7 @@
 #define NEWCHARWIZARDPAGE3_H
 
 #include <QWizardPage>
-#include <dataaccesslayer.h>
+#include "dataaccesslayer.h"
 #include <QButtonGroup>
 
 namespace Ui {
