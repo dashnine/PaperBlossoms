@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>725</width>
-    <height>819</height>
+    <width>749</width>
+    <height>693</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -20,6 +20,9 @@
    <string>Add Item</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="sizeConstraint">
+    <enum>QLayout::SetMinimumSize</enum>
+   </property>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
@@ -124,13 +127,6 @@
         </property>
        </widget>
       </item>
-      <item row="4" column="0" rowspan="2">
-       <widget class="QLabel" name="label_2">
-        <property name="text">
-         <string>Description</string>
-        </property>
-       </widget>
-      </item>
       <item row="6" column="1">
        <widget class="QSpinBox" name="rarity_spinBox"/>
       </item>
@@ -179,6 +175,13 @@
       </item>
       <item row="3" column="1" rowspan="3">
        <widget class="QTextEdit" name="desc_textEdit"/>
+      </item>
+      <item row="3" column="0" rowspan="3">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Description</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>
@@ -307,7 +310,20 @@
          </widget>
         </item>
         <item row="2" column="1" colspan="5">
-         <widget class="QTextEdit" name="grip1_notes_textEdit"/>
+         <widget class="QTextEdit" name="grip1_notes_textEdit">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>75</height>
+           </size>
+          </property>
+         </widget>
         </item>
         <item row="3" column="0" colspan="2">
          <widget class="QLabel" name="label_12">
@@ -517,7 +533,20 @@
          </spacer>
         </item>
         <item row="3" column="1" colspan="6">
-         <widget class="QTextEdit" name="grip2_notes_textEdit"/>
+         <widget class="QTextEdit" name="grip2_notes_textEdit">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>75</height>
+           </size>
+          </property>
+         </widget>
         </item>
         <item row="2" column="1" colspan="2">
          <widget class="QLineEdit" name="grip2_lineEdit"/>
