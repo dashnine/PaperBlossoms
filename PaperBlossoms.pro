@@ -73,22 +73,22 @@ HEADERS += \
     src/ringviewer.h
 
 FORMS += \
-    newcharwizardpage1.ui \
-    newcharwizardpage2.ui \
-    newcharwizardpage3.ui \
-    dynamicchoicewidget.ui \
-    newcharwizardpage4.ui \
-    newcharwizardpage5.ui \
-    newcharwizardpage6.ui \
-    newcharwizardpage7.ui \
-    ringviewer.ui \
-    addadvancedialog.ui \
-    addtitledialog.ui \
-    additemdialog.ui \
-    adddisadvdialog.ui \
-    renderdialog.ui \
-    aboutdialog.ui \
-    mainwindow.ui
+    ui/aboutdialog.ui \
+    ui/addadvancedialog.ui \
+    ui/adddisadvdialog.ui \
+    ui/additemdialog.ui \
+    ui/addtitledialog.ui \
+    ui/dynamicchoicewidget.ui \
+    ui/mainwindow.ui \
+    ui/newcharwizardpage1.ui \
+    ui/newcharwizardpage2.ui \
+    ui/newcharwizardpage3.ui \
+    ui/newcharwizardpage4.ui \
+    ui/newcharwizardpage5.ui \
+    ui/newcharwizardpage6.ui \
+    ui/newcharwizardpage7.ui \
+    ui/renderdialog.ui \
+    ui/ringviewer.ui
 
 # Copy the DB file into the build whenever build is run.
 # using shell_path() to correct path depending on platform
@@ -107,4 +107,4 @@ RESOURCES += \
 DISTFILES +=
 
 win32:RC_ICONS += resources/pink-sakura-01-hi.ico
-macx: ICON = resources/pink-sakura-01-hi.ico
+macx: ICON =

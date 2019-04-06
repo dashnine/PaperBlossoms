@@ -1180,7 +1180,7 @@
      <x>0</x>
      <y>0</y>
      <width>693</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -1270,15 +1270,15 @@
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
   <customwidget>
-   <class>RingViewer</class>
-   <extends>QWidget</extends>
-   <header location="global">ringviewer.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>ClickLabel</class>
    <extends>QLabel</extends>
-   <header location="global">clicklabel.h</header>
+   <header location="global">src/clicklabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>RingViewer</class>
+   <extends>QWidget</extends>
+   <header location="global">src/ringviewer.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources/>
