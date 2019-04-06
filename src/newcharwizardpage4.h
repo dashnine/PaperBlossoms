@@ -25,7 +25,7 @@
 #define NEWCHARWIZARDPAGE4_H
 
 #include <QWizardPage>
-#include <dataaccesslayer.h>
+#include "dataaccesslayer.h"
 namespace Ui {
 class NewCharWizardPage4;
 }

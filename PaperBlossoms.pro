@@ -25,55 +25,54 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += \
-        main.cpp \
-        mainwindow.cpp \
-    newcharacterwizard.cpp \
-    newcharwizardpage1.cpp \
-    dataaccesslayer.cpp \
-    newcharwizardpage2.cpp \
-    newcharwizardpage3.cpp \
-    dynamicchoicewidget.cpp \
-    newcharwizardpage4.cpp \
-    newcharwizardpage5.cpp \
-    newcharwizardpage6.cpp \
-    newcharwizardpage7.cpp \
-    character.cpp \
-    ringviewer.cpp \
-    addadvancedialog.cpp \
-    addtitledialog.cpp \
-    additemdialog.cpp \
-    clicklabel.cpp \
-    adddisadvdialog.cpp \
-    renderdialog.cpp \
-    pboutputdata.cpp \
-    aboutdialog.cpp
+    src/aboutdialog.cpp \
+    src/mainwindow.cpp \
+    src/addadvancedialog.cpp \
+    src/adddisadvdialog.cpp \
+    src/additemdialog.cpp \
+    src/addtitledialog.cpp \
+    src/character.cpp \
+    src/clicklabel.cpp \
+    src/dataaccesslayer.cpp \
+    src/dynamicchoicewidget.cpp \
+    src/main.cpp \
+    src/newcharacterwizard.cpp \
+    src/newcharwizardpage1.cpp \
+    src/newcharwizardpage2.cpp \
+    src/newcharwizardpage3.cpp \
+    src/newcharwizardpage4.cpp \
+    src/newcharwizardpage5.cpp \
+    src/newcharwizardpage6.cpp \
+    src/newcharwizardpage7.cpp \
+    src/pboutputdata.cpp \
+    src/renderdialog.cpp \
+    src/ringviewer.cpp
 
 HEADERS += \
-        mainwindow.h \
-    newcharacterwizard.h \
-    newcharwizardpage1.h \
-    dataaccesslayer.h \
-    newcharwizardpage2.h \
-    newcharwizardpage3.h \
-    dynamicchoicewidget.h \
-    newcharwizardpage4.h \
-    newcharwizardpage5.h \
-    newcharwizardpage6.h \
-    newcharwizardpage7.h \
-    character.h \
-    ringviewer.h \
-    addadvancedialog.h \
-    addtitledialog.h \
-    additemdialog.h \
-    enums.h \
-    clicklabel.h \
-    adddisadvdialog.h \
-    renderdialog.h \
-    pboutputdata.h \
-    aboutdialog.h
+    src/aboutdialog.h \
+    src/mainwindow.h \
+    src/addadvancedialog.h \
+    src/adddisadvdialog.h \
+    src/additemdialog.h \
+    src/addtitledialog.h \
+    src/character.h \
+    src/clicklabel.h \
+    src/dataaccesslayer.h \
+    src/dynamicchoicewidget.h \
+    src/enums.h \
+    src/newcharacterwizard.h \
+    src/newcharwizardpage1.h \
+    src/newcharwizardpage2.h \
+    src/newcharwizardpage3.h \
+    src/newcharwizardpage4.h \
+    src/newcharwizardpage5.h \
+    src/newcharwizardpage6.h \
+    src/newcharwizardpage7.h \
+    src/pboutputdata.h \
+    src/renderdialog.h \
+    src/ringviewer.h
 
 FORMS += \
-        mainwindow.ui \
     newcharwizardpage1.ui \
     newcharwizardpage2.ui \
     newcharwizardpage3.ui \
@@ -88,7 +87,8 @@ FORMS += \
     additemdialog.ui \
     adddisadvdialog.ui \
     renderdialog.ui \
-    aboutdialog.ui
+    aboutdialog.ui \
+    mainwindow.ui
 
 # Copy the DB file into the build whenever build is run.
 # using shell_path() to correct path depending on platform

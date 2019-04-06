@@ -30,7 +30,7 @@
 #include <QStringListModel>
 #include <QStandardItemModel>
 #include <QSortFilterProxyModel>
-#include <clicklabel.h>
+#include "clicklabel.h"
 
 namespace Ui {
 class MainWindow;
