@@ -95,7 +95,7 @@ void AddAdvanceDialog::validatePage(){
     }
     ok &= (ui->curriculum_radioButton->isChecked() || ui->title_radioButton->isChecked());
     ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(ok);
-    this->window()->adjustSize();
+    //this->window()->adjustSize();
 
 
 }

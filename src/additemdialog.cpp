@@ -51,6 +51,7 @@ AddItemDialog::AddItemDialog(DataAccessLayer* dal, Character* character, QString
         ui->weap_2_groupBox->setVisible(false);
         ui->armor_groupBox->setVisible(false);
     }
+    this->layout()->setSizeConstraint(QLayout::SetMinimumSize);
     this->adjustSize();
     ui->itemtemplate_combobox->addItems(dal->qsl_getitemsbytype(type));
 
