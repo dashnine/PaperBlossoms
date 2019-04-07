@@ -416,7 +416,8 @@ def techniques_to_db(db_conn):
             restriction TEXT,
             reference_book TEXT,
             reference_page INTEGER,
-            rank INTEGER
+            rank INTEGER,
+            xp INTEGER
         )''',
         'name'
     )
@@ -430,7 +431,7 @@ def techniques_to_db(db_conn):
         for subcategory in category['subcategories']:
             for technique in subcategory['techniques']:
                 db_conn.execute(
-                    'INSERT INTO base_techniques VALUES (?,?,?,?,?,?,?)',
+                    'INSERT INTO base_techniques VALUES (?,?,?,?,?,?,?,?)',
                     (
                         category['name'],
                         subcategory['name'],
@@ -438,7 +439,8 @@ def techniques_to_db(db_conn):
                         technique['restriction'] if 'restriction' in technique else None,
                         technique['reference']['book'],
                         technique['reference']['page'],
-                        technique['rank']
+                        technique['rank'],
+                        technique['xp']
                     )
                 )
 
