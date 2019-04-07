@@ -44,7 +44,8 @@ AddAdvanceDialog::AddAdvanceDialog(DataAccessLayer* dal, Character* character,QW
     proxyModel.setSourceModel(&techModel);
     proxyModel.setFilterKeyColumn(1);
 
-
+    ui->reason_label->setVisible(false);
+    ui->reason_lineEdit->setVisible(false);
 
 
     ui->detailTableView->setModel(&proxyModel);
@@ -93,7 +94,7 @@ void AddAdvanceDialog::validatePage(){
             ok &= !character->techniques.contains(name);
         }
     }
-    ok &= (ui->curriculum_radioButton->isChecked() || ui->title_radioButton->isChecked());
+    ok &= (ui->curriculum_radioButton->isChecked() || ui->title_radioButton->isChecked() || ui->free_radioButton->isChecked());
     ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(ok);
     //this->window()->adjustSize();
 
@@ -260,9 +261,17 @@ QString AddAdvanceDialog::getResult(){
     }
     if(ui->curriculum_radioButton->isChecked())
         row += "Curriculum|";
+    else if(ui->free_radioButton->isChecked()){
+        row += ui->reason_lineEdit->text().replace("|","").replace("Title","").replace("Curriculum","")+"|";
+    }
     else
         row += "Title|";
-    row += ui->xp_label->text();
+    if(ui->free_radioButton->isChecked()){
+        row+="0";
+    }
+    else{
+        row += ui->xp_label->text();
+    }
     return row;
 }
 
@@ -271,3 +280,23 @@ void AddAdvanceDialog::on_detailTableView_clicked(const QModelIndex &index)
    validatePage();
 }
 
+
+void AddAdvanceDialog::on_free_radioButton_toggled(bool checked)
+{
+   if(checked){
+       ui->reason_label->setVisible(true);
+       ui->reason_lineEdit->setVisible(true);
+       ui->xp_label->setVisible(false);
+       ui->xp_text_label->setVisible(false);
+       ui->xp_text_label2->setVisible(false);
+   }
+   else{
+       ui->reason_label->setVisible(false);
+       ui->reason_lineEdit->setVisible(false);
+       ui->xp_label->setVisible(true);
+       ui->xp_text_label->setVisible(false);
+       ui->xp_text_label2->setVisible(true);
+
+   }
+   validatePage();
+}
