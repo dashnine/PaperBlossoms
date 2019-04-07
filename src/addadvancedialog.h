@@ -53,6 +53,8 @@ private slots:
 
     void on_detailTableView_clicked(const QModelIndex &index);
 
+    void on_free_radioButton_toggled(bool checked);
+
 private:
     Ui::AddAdvanceDialog *ui;
     DataAccessLayer* dal;
