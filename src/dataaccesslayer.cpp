@@ -897,7 +897,7 @@ void DataAccessLayer::qsm_gettechniquetable(QSqlQueryModel * model, QString rank
 
 
                     "SELECT distinct name, category, subcategory, rank,                                         "
-                    "       reference_book, reference_page,restriction                                          "
+                    "       xp, reference_book, reference_page,restriction                                          "
                     "FROM techniques                                                                            "//First, get title special
                     "WHERE                                                                                      "//  group techs
                 //---------------------Special access groups and katagroups from title-------------------//
@@ -949,10 +949,10 @@ void DataAccessLayer::qsm_gettechniquetable(QSqlQueryModel * model, QString rank
                     "   (SELECT technique from school_techniques_available                                      "
                     "       WHERE school = ?)                                                                   " //16 school
                     ")                                                                                          "
-                //--------------------------MAHO FOR EVERYONE!---------------------------------------------//
+                //--------------------------MAHO (and patterns and scrolls FOR EVERYONE!--------------------//
                     "OR                                                                                         "
-                    "(rank <= ?                                                                                 " //17 rank
-                    "   AND category = 'Mahō'                                                                   "
+                    "((rank <= ? OR rank = NULL)                                                                                " //17 rank
+                    "   AND category IN ('Mahō', 'Item Patterns', 'Signature Scrolls')                                                                   "
                     ")                                                                                          "
                     "ORDER BY category, rank, name                                                              "
                     "");
