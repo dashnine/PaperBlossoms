@@ -481,6 +481,36 @@
                 "ring": "Water",
                 "types": ["Interpersonal"],
                 "effects": ""
+            },
+            {
+                "name": "Dead Eyes",
+                "reference": {
+                    "book": "SL",
+                    "page": 96
+                },
+                "ring": "Earth",
+                "types": ["Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Friend of the Nezumi",
+                "reference": {
+                    "book": "SL",
+                    "page": 96
+                },
+                "ring": "Water",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Light Sleeper",
+                "reference": {
+                    "book": "SL",
+                    "page": 96
+                },
+                "ring": "Water",
+                "types": ["Physical"],
+                "effects": ""
             }
         ]
     },
@@ -754,6 +784,16 @@
                     "page": 244
                 },
                 "ring": "Void",
+                "types": ["Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Creatures",
+                "reference": {
+                    "book": "SL",
+                    "page": 97
+                },
+                "ring": "Fire",
                 "types": ["Mental"],
                 "effects": ""
             }
@@ -1193,6 +1233,56 @@
                 "effects": ""
             },
             {
+                "name": "Shadowlands Taint [Kaisen Whispers]",
+                "reference": {
+                    "book": "SL",
+                    "page": 99
+                },
+                "ring": "Air",
+                "types": ["Curse", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Shadowlands Taint [Distorted Limbs]",
+                "reference": {
+                    "book": "SL",
+                    "page": 99
+                },
+                "ring": "Earth",
+                "types": ["Curse", "Physical"],
+                "effects": ""
+            },
+            {
+                "name": "Shadowlands Taint [Unnatural Skin]",
+                "reference": {
+                    "book": "SL",
+                    "page": 100
+                },
+                "ring": "Fire",
+                "types": ["Curse", "Physical"],
+                "effects": ""
+            },
+            {
+                "name": "Shadowlands Taint [One with the Darkness]",
+                "reference": {
+                    "book": "SL",
+                    "page": 100
+                },
+                "ring": "Void",
+                "types": ["Curse", "Physical", "Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Shadowlands Taint [Blasphemous Appetites]",
+                "reference": {
+                    "book": "SL",
+                    "page": 100
+                },
+                "ring": "Water",
+                "types": ["Curse", "Mental", "Spiritual"],
+                "effects": ""
+            },
+            {
                 "name": "Sworn Enemy",
                 "reference": {
                     "book": "Core",
@@ -1310,6 +1400,26 @@
                 },
                 "ring": "Void",
                 "types": ["Mental", "Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Demon Wound",
+                "reference": {
+                    "book": "SL",
+                    "page": 97
+                },
+                "ring": "Earth",
+                "types": ["Spiritual", "Scar"],
+                "effects": ""
+            },
+            {
+                "name": "Lost Name",
+                "reference": {
+                    "book": "SL",
+                    "page": 97
+                },
+                "ring": "Void",
+                "types": ["Spiritual"],
                 "effects": ""
             }
         ]
@@ -1555,6 +1665,36 @@
                 },
                 "ring": "Void",
                 "types": ["Interpersonal", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Fallen Ancestor",
+                "reference": {
+                    "book": "SL",
+                    "page": 98
+                },
+                "ring": "Void",
+                "types": ["Spiritual", "Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Obtuse",
+                "reference": {
+                    "book": "SL",
+                    "page": 98
+                },
+                "ring": "Air",
+                "types": ["Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Reformed Mahō-Tsukai",
+                "reference": {
+                    "book": "SL",
+                    "page": 98
+                },
+                "ring": "Water",
+                "types": ["Interpersonal"],
                 "effects": ""
             }
         ]
