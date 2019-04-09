@@ -1442,3 +1442,35 @@ void MainWindow::closeEvent (QCloseEvent *event)
         event->accept();
     }
 }
+
+void MainWindow::on_removeweapon_pushbutton_clicked()
+{
+    QModelIndex curIndex = weaponProxyModel.mapToSource(ui->weapon_tableview->currentIndex());
+    if(!curIndex.isValid()) return;
+    QString name = equipmodel.item(curIndex.row(),Equipment::NAME)->text();
+    curCharacter.equipment.removeAt(curIndex.row()); //TODO: TESTING -- is this accurate?
+    populateUI();
+    m_dirtyDataFlag = true;
+}
+
+void MainWindow::on_removearmor_pushbutton_clicked()
+{
+    QModelIndex curIndex = armorProxyModel.mapToSource(ui->armor_tableview->currentIndex());
+    if(!curIndex.isValid()) return;
+    QString name = equipmodel.item(curIndex.row(),Equipment::NAME)->text();
+    curCharacter.equipment.removeAt(curIndex.row()); //TODO: TESTING -- is this accurate?
+    populateUI();
+    m_dirtyDataFlag = true;
+}
+
+void MainWindow::on_removepersonaleffect_pushbutton_clicked()
+{
+    QModelIndex curIndex = perseffProxyModel.mapToSource(ui->other_tableview->currentIndex());
+    if(!curIndex.isValid()) return;
+    QString name = equipmodel.item(curIndex.row(),Equipment::NAME)->text();
+    curCharacter.equipment.removeAt(curIndex.row()); //TODO: TESTING -- is this accurate?
+    populateUI();
+    m_dirtyDataFlag = true;
+}
+
+
