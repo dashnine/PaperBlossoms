@@ -270,7 +270,7 @@ def write_qualities(data_dir, qualities_enum):
     write_enums(
         data_dir.joinpath('json_schema/weapons.schema.json'),
         'qualities',
-        qualities_enum
+        qualities_enum + ['Prepare (2)']
     )
 
 
