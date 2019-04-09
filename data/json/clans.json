@@ -465,5 +465,29 @@
                 "wealth": 6
             }
         ]
+    },
+    {
+        "name": "Falcon",
+        "reference": {
+            "book": "SL",
+            "page": 87
+        },
+        "type": "Minor",
+        "ring_increase": "Void",
+        "skill_increase": "Theology",
+        "status": 26,
+        "families": [
+            {
+                "name": "Toritaka",
+                "reference": {
+                    "book": "SL",
+                    "page": 87
+                },
+                "ring_increase": ["Earth", "Water"],
+                "skill_increase": ["Survival", "Meditation"],
+                "glory": 35,
+                "wealth": 3
+            }
+        ]
     }
 ]
