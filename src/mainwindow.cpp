@@ -720,7 +720,7 @@ QPair<int, int> MainWindow::recalcRank(){
             itemrow << cell;
         }
         if(itemrow.at(2)=="Curriculum"){
-            if(isInCurriculum(itemrow.at(1),itemrow.at(0))){
+            if(isInCurriculum(itemrow.at(1),itemrow.at(0), rank)){
                 curricXP += itemrow.at(3).toInt();
             }
             else{
@@ -902,7 +902,7 @@ QPair<QString, int> MainWindow::recalcTitle(QList<int> xp_list){
     return QPair<QString,int>(currentTitle,curricXP);
 }
 
-int MainWindow::isInCurriculum(QString value, QString type){
+int MainWindow::isInCurriculum(QString value, QString type, int currank){
     //   advheaders << "Type"<<"Advance"<<"Track"<<"Cost";
 
     QStringList skills;
@@ -911,7 +911,8 @@ int MainWindow::isInCurriculum(QString value, QString type){
 
     for(int i = 0; i<curriculummodel.rowCount(); ++i){
         QSqlRecord record = curriculummodel.record(i);
-        if(record.value("rank").toInt()!=curCharacter.rank) continue; //only get items in current rank;
+        //if(record.value("rank").toInt()!=curCharacter.rank) continue; //only get items in current rank;
+        if(record.value("rank").toInt()!=currank) continue; //only get items in current rank;
         if(record.value("type").toString() == "skill_group"){
             QStringList groupskills = dal->qsl_getskillsbygroup(record.value("advance").toString());
             skills.append(groupskills);
