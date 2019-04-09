@@ -611,7 +611,9 @@ def heritage_to_db(db_conn):
     # Create heritage, heritage modifier, heritage effects table
     db_conn.execute(
         '''CREATE TABLE samurai_heritage (
-            roll INTEGER,
+            source TEXT,
+            roll_min INTEGER,
+            roll_max INTEGER,
             ancestor TEXT PRIMARY KEY,
             modifier_glory INTEGER,
             modifier_honor INTEGER,
@@ -638,9 +640,11 @@ def heritage_to_db(db_conn):
 
         # Write to samurai heritage table
         db_conn.execute(
-            'INSERT INTO samurai_heritage VALUES (?,?,?,?,?,?,?)',
+            'INSERT INTO samurai_heritage VALUES (?,?,?,?,?,?,?,?,?)',
             (
-                ancestor['roll'],
+                ancestor['source'],
+                ancestor['roll']['min'],
+                ancestor['roll']['max'],
                 ancestor['result'],
                 ancestor['modifiers']['glory'],
                 ancestor['modifiers']['honor'],
