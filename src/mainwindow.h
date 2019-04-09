@@ -140,7 +140,7 @@ private:
 
 
     QPair<int, int> recalcRank();
-    int isInCurriculum(QString value, QString type);
+    int isInCurriculum(QString value, QString type, int currank);
     int isInTitle(QString value, QString type, QString title);
     QSortFilterProxyModel titleProxyModel;
 
