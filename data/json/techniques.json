@@ -844,6 +844,15 @@
                             "page": 201
                         },
                         "xp": 3
+                    },
+                    {
+                        "name": "Essence of Jade",
+                        "rank": 3,
+                        "reference": {
+                            "book": "SL",
+                            "page": 114
+                        },
+                        "xp": 3
                     }
                 ]
             },
@@ -1177,6 +1186,29 @@
                         "reference": {
                             "book": "Core",
                             "page": 213
+                        },
+                        "xp": 3
+                    }
+                ]
+            },
+            {
+                "name": "",
+                "techniques": [
+                    {
+                        "name": "Blessing of Steel",
+                        "rank": 2,
+                        "reference": {
+                            "book": "SL",
+                            "page": 114
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Craft Shikigami",
+                        "rank": 2,
+                        "reference": {
+                            "book": "SL",
+                            "page": 114
                         },
                         "xp": 3
                     }
@@ -1665,6 +1697,114 @@
                         "reference": {
                             "book": "Core",
                             "page": 225
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "The Blood Price",
+                        "rank": 1,
+                        "reference": {
+                            "book": "SL",
+                            "page": 116
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Accursed Summoning",
+                        "rank": 1,
+                        "reference": {
+                            "book": "SL",
+                            "page": 118
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Bind the Undead",
+                        "rank": 2,
+                        "reference": {
+                            "book": "SL",
+                            "page": 118
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Commune with Evil",
+                        "rank": 1,
+                        "reference": {
+                            "book": "SL",
+                            "page": 118
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Dark Reflection",
+                        "rank": 1,
+                        "reference": {
+                            "book": "SL",
+                            "page": 119
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Entreat the Shadow Steed",
+                        "rank": 2,
+                        "reference": {
+                            "book": "SL",
+                            "page": 119
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Fiend's Retreat",
+                        "rank": 3,
+                        "reference": {
+                            "book": "SL",
+                            "page": 119
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Shape the Flesh",
+                        "rank": 4,
+                        "reference": {
+                            "book": "SL",
+                            "page": 120
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Spiritual Shackles",
+                        "rank": 1,
+                        "reference": {
+                            "book": "SL",
+                            "page": 120
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Spread Corruption",
+                        "rank": 2,
+                        "reference": {
+                            "book": "SL",
+                            "page": 120
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Sword of Blood",
+                        "rank": 2,
+                        "reference": {
+                            "book": "SL",
+                            "page": 121
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Twisted Summons",
+                        "rank": 3,
+                        "reference": {
+                            "book": "SL",
+                            "page": 121
                         },
                         "xp": 3
                     }
