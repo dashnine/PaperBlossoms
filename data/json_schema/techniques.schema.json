@@ -50,7 +50,8 @@
                                                 "type": "string",
                                                 "enum": [
                                                     "Core",
-                                                    "EE"
+                                                    "EE",
+                                                    "SL"
                                                 ]
                                             },
                                             "page": {

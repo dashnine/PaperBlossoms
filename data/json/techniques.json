@@ -1717,5 +1717,42 @@
                 ]
             }
         ]
+    },
+    {
+        "name": "Signature Scrolls",
+        "subcategories": [
+            {
+                "name": "",
+                "techniques": [
+                    {
+                        "name": "Ichi's Second Sight",
+                        "rank": 1,
+                        "reference": {
+                            "book": "SL",
+                            "page": 108
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Hasegawa's Denial",
+                        "rank": 1,
+                        "reference": {
+                            "book": "SL",
+                            "page": 108
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Maikara's Rebuke",
+                        "rank": 1,
+                        "reference": {
+                            "book": "SL",
+                            "page": 108
+                        },
+                        "xp": 3
+                    }
+                ]
+            }
+        ]
     }
 ]

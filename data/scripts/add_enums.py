@@ -332,6 +332,13 @@ def write_books(data_dir, books_enum):
         books_enum
     )
 
+    print('... to techniques')
+    write_enums(
+        data_dir.joinpath('json_schema/techniques.schema.json'),
+        'book',
+        books_enum
+    )
+
     print('... to schools')
     write_enums(
         data_dir.joinpath('json_schema/schools.schema.json'),
