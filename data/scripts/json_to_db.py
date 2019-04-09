@@ -443,6 +443,26 @@ def techniques_to_db(db_conn):
                         technique['xp']
                     )
                 )
+    
+    # Read item patterns JSON
+    with open('json/item_patterns.json', encoding = 'utf8') as f:
+        item_patterns = json.load(f)
+    
+    # Write item patterns to techniques table
+    for pattern in item_patterns:
+        db_conn.execute(
+            'INSERT INTO base_techniques VALUES (?,?,?,?,?,?,?,?)',
+            (
+                'Item Pattern',
+                '',
+                pattern['name'],
+                None,
+                pattern['reference']['book'],
+                pattern['reference']['page'],
+                1,
+                pattern['xp_cost']
+            )
+        )
 
 
 def advantages_to_db(db_conn):
@@ -957,6 +977,40 @@ def titles_to_db(db_conn):
         )
 
 
+def patterns_to_db(db_conn):
+    
+    # Create item patterns table
+    create_tables(
+        db_conn,
+        'item_patterns',
+        '''CREATE TABLE {} (
+            name TEXT PRIMARY KEY,
+            reference_book TEXT,
+            reference_page INTEGER,
+            xp_cost INTEGER,
+            rarity_modifier INTEGER
+        )''',
+        'name'
+    )
+
+    # Read item patterns from JSON
+    with open('json/item_patterns.json') as f:
+        item_patterns = json.load(f)
+    
+    # Write item patterns to item pattern table
+    for pattern in item_patterns:
+        db_conn.execute(
+            'INSERT INTO base_item_patterns VALUES (?,?,?,?,?)',
+            (
+                pattern['name'],
+                pattern['reference']['book'],
+                pattern['reference']['page'],
+                pattern['xp_cost'],
+                pattern['rarity_modifier']
+            )
+        )
+
+
 def desc_to_db(db_conn):
     db_conn.execute(
         '''CREATE TABLE user_descriptions (
@@ -990,6 +1044,7 @@ def main():
     advantages_to_db(db_conn)
     q8_to_db(db_conn)
     titles_to_db(db_conn)
+    patterns_to_db(db_conn)
 
     # Equipment
     qualities_to_db(db_conn)

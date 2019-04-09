@@ -1,0 +1,47 @@
+[
+    {
+        "name": "Kakita Pattern",
+        "reference": {
+            "page": 109,
+            "book": "SL"
+        },
+        "xp_cost": 6,
+        "rarity_modifier": 4
+    },
+    {
+        "name": "Kenzō Blade",
+        "reference": {
+            "book": "SL",
+            "page": 109
+        },
+        "xp_cost": 8,
+        "rarity_modifier": 5
+    },
+    {
+        "name": "Shirogane Jade Inlay",
+        "reference": {
+            "book": "SL",
+            "page": 109
+        },
+        "xp_cost": 3,
+        "rarity_modifier": 2
+    },
+    {
+        "name": "Uchema's Technique",
+        "reference": {
+            "book": "SL",
+            "page": 109
+        },
+        "xp_cost": 4,
+        "rarity_modifier": 3
+    },
+    {
+        "name": "Yasunori Steel",
+        "reference": {
+            "book": "SL",
+            "page": 109
+        },
+        "xp_cost": 5,
+        "rarity_modifier": 4
+    }
+]
