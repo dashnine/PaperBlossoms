@@ -277,7 +277,8 @@ QString AddAdvanceDialog::getResult(){
 
 void AddAdvanceDialog::on_detailTableView_clicked(const QModelIndex &index)
 {
-   validatePage();
+    Q_UNUSED(index)
+    validatePage();
 }
 
 

@@ -25,13 +25,13 @@
 #include <QLabel>
 
 ClickLabel::ClickLabel(QWidget* parent, Qt::WindowFlags f)
-//ClickLabel::ClickLabel(QWidget* parent)
     : QLabel(parent) {
-
+    Q_UNUSED(f)
 }
 
 ClickLabel::~ClickLabel() {}
 
 void ClickLabel::mousePressEvent(QMouseEvent* event) {
+    Q_UNUSED(event)
     emit clicked();
 }

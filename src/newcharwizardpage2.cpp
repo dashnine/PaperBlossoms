@@ -348,11 +348,13 @@ void NewCharWizardPage2::on_nc2_kitsune_comboBox_currentTextChanged(const QStrin
 
 void NewCharWizardPage2::on_nc2_skillOpt_listview_doubleClicked(const QModelIndex &index)
 {
+    Q_UNUSED(index)
     doAddSkill();
 }
 
 void NewCharWizardPage2::on_nc2_skillSel_listview_doubleClicked(const QModelIndex &index)
 {
+    Q_UNUSED(index)
     doRemSkill();
 }
 
