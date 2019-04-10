@@ -54,6 +54,10 @@ NewCharWizardPage6::NewCharWizardPage6(DataAccessLayer *dal, QWidget *parent) :
 
     registerField("q17Text", ui->nc6_q17_lineEdit);
     registerField("personalName",ui->nc6_q19_personalName_lineEdit);
+
+    ui->heritagetable_comboBox->addItem("Core");
+    ui->heritagetable_comboBox->addItem("SL");
+    ui->heritagetable_comboBox->setCurrentIndex(0);
 }
 
 NewCharWizardPage6::~NewCharWizardPage6()
@@ -89,8 +93,8 @@ void NewCharWizardPage6::initializePage()
 
     ui->nc6_q18_ancestor1_comboBox->clear();
     ui->nc6_q18_ancestor2_comboBox->clear();
-    ui->nc6_q18_ancestor1_comboBox->addItems(dal->qsl_getancestors());
-    ui->nc6_q18_ancestor2_comboBox->addItems(dal->qsl_getancestors());
+    ui->nc6_q18_ancestor1_comboBox->addItems(dal->qsl_getancestors("Core"));
+    ui->nc6_q18_ancestor2_comboBox->addItems(dal->qsl_getancestors("Core"));
     ui->nc6_q18_ancestor1_comboBox->setCurrentIndex(-1);
     ui->nc6_q18_ancestor2_comboBox->setCurrentIndex(-1);
 
@@ -100,12 +104,41 @@ void NewCharWizardPage6::initializePage()
 
 void NewCharWizardPage6::on_nc6_q18_ancestor1_rollButton_clicked()
 {
-   ui->nc6_q18_ancestor1_comboBox->setCurrentIndex(rand()%10);
+    QStringList rangestrings = dal->qsl_getancestorranges(ui->heritagetable_comboBox->currentText());
+    int roll = rand()%10+1;
+    int index = 0;
+    foreach (QString str, rangestrings) {
+        qDebug() << "Rangestring = " << str;
+        qDebug() << "Roll = " << roll;
+        if(roll >= str.split(", ")[0].toInt() && roll <= str.split(", ")[1].toInt() ) {// min == [0], max == [1]
+             ui->nc6_q18_ancestor1_comboBox->setCurrentIndex(index);
+             return;
+        }
+        else{
+            ++index;
+        }
+    }
+
+
 }
 
 void NewCharWizardPage6::on_nc6_q18_ancestor2_rollButton_clicked()
 {
-   ui->nc6_q18_ancestor2_comboBox->setCurrentIndex(rand()%10);
+    QStringList rangestrings = dal->qsl_getancestorranges(ui->heritagetable_comboBox->currentText());
+    int roll = rand()%10+1;
+    int index = 0;
+    foreach (QString str, rangestrings) {
+        qDebug() << "Rangestring = " << str;
+        qDebug() << "Roll = " << roll;
+        if(roll >= str.split(", ")[0].toInt() && roll <= str.split(", ")[1].toInt() ) {// min == [0], max == [1]
+             ui->nc6_q18_ancestor2_comboBox->setCurrentIndex(index);
+             return;
+        }
+        else{
+            ++index;
+        }
+    }
+
 
 }
 
@@ -465,4 +498,16 @@ void NewCharWizardPage6::on_nc6_q18_otherrollButton_clicked()
        }
    }
 
+}
+
+void NewCharWizardPage6::on_heritagetable_comboBox_currentIndexChanged(const QString &arg1)
+{
+    ui->nc6_q18_ancestor1_comboBox->clear();
+    ui->nc6_q18_ancestor2_comboBox->clear();
+    ui->nc6_q18_ancestor1_comboBox->addItems(dal->qsl_getancestors(arg1));
+    ui->nc6_q18_ancestor2_comboBox->addItems(dal->qsl_getancestors(arg1));
+    ui->nc6_q18_ancestor1_comboBox->setCurrentIndex(-1);
+    ui->nc6_q18_ancestor2_comboBox->setCurrentIndex(-1);
+
+   buildq18UI();
 }

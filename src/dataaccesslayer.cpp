@@ -616,10 +616,11 @@ QStringList DataAccessLayer::qsl_getitemsbytype(QString type ){
     return out;
 }
 
-QStringList DataAccessLayer::qsl_getancestors(){
+QStringList DataAccessLayer::qsl_getancestors(QString source){
     QStringList out;
     QSqlQuery query;
-    query.prepare("SELECT ancestor FROM samurai_heritage order by roll");
+    query.prepare("SELECT ancestor FROM samurai_heritage WHERE source = ? order by roll_min");
+    query.bindValue(0, source);
     query.exec();
     while (query.next()) {
         QString name = query.value(0).toString();
@@ -754,6 +755,22 @@ QStringList DataAccessLayer::qsl_getheritageranges(QString heritage){
     }
     return out;
 }
+
+QStringList DataAccessLayer::qsl_getancestorranges(QString source){
+    QStringList out;
+    QSqlQuery query;
+        query.prepare("SELECT roll_min, roll_max from samurai_heritage where source = ? ORDER BY roll_min");
+        query.bindValue(0, source);
+    query.exec();
+    while (query.next()) {
+        QString a = query.value(0).toString();
+        QString b = query.value(1).toString();
+//        qDebug() << a + ", " + b;
+        out << a + ", " + b;
+    }
+    return out;
+}
+
 
 int DataAccessLayer::i_getclanstatus(QString clan){
     int out = 0;
