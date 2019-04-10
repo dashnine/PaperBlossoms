@@ -187,5 +187,62 @@
             "value": 40,
             "unit": "koku"
         }
+    },
+    {
+        "name": "Ō-yoroi",
+        "reference": {
+            "book": "SL",
+            "page": 105
+        },
+        "resistance_values": [
+            {
+                "category": "Physical",
+                "value": 6
+            }
+        ],
+        "qualities": ["Cumbersome", "Resplendent", "Wargear"],
+        "rarity": 8,
+        "price": {
+            "value": 60,
+            "unit": "koku"
+        }
+    },
+    {
+        "name": "Tatami Gusoku",
+        "reference": {
+            "book": "SL",
+            "page": 106
+        },
+        "resistance_values": [
+            {
+                "category": "Physical",
+                "value": 3
+            }
+        ],
+        "qualities": ["Wargear"],
+        "rarity": 4,
+        "price": {
+            "value": 7,
+            "unit": "koku"
+        }
+    },
+    {
+        "name": "Tosei-Gusoku",
+        "reference": {
+            "book": "SL",
+            "page": 106
+        },
+        "resistance_values": [
+            {
+                "category": "Physical",
+                "value": 4
+            }
+        ],
+        "qualities": ["Cumbersome", "Durable", "Wargear"],
+        "rarity": 8,
+        "price": {
+            "value": 50,
+            "unit": "koku"
+        }
     }
 ]
