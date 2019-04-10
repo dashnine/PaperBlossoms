@@ -271,7 +271,8 @@ void NewCharWizardPage7::initializePage()
     QStringList specialCases = { //special cases
         "One Weapon of Rarity 6 or Lower",
         "Two Items of Rarity 4 or Lower",
-        "Two Weapons of Rarity 6 or Lower"
+        "Two Weapons of Rarity 6 or Lower",
+        "One Sword of Rarity 7 or Lower"
     };
 
     //-----first, school eq choices -----//

@@ -88,7 +88,8 @@ void NewCharWizardPage2::equipSelectionChanged(QString newText){
     QStringList specialCases = { //special cases
         "One Weapon of Rarity 6 or Lower",
         "Two Items of Rarity 4 or Lower",
-        "Two Weapons of Rarity 6 or Lower"
+        "Two Weapons of Rarity 6 or Lower",
+        "One Sword of Rarity 7 or Lower"
     };
     ui->equipSpecialWidget->clear();
 
@@ -128,6 +129,10 @@ void NewCharWizardPage2::handleSpecCases(QString speccase){
     else if (specCase == "Two Items of Rarity 4 or Lower") {
         ui->equipSpecialWidget->addCBox(dal->qsl_getitemsunderrarity(4));
         ui->equipSpecialWidget->addCBox(dal->qsl_getitemsunderrarity(4));
+
+    }
+    else if (specCase == "One Sword of Rarity 7 or Lower") {
+        ui->equipSpecialWidget->addCBox(dal->qsl_getweapontypeunderrarity(7, "Swords"));
 
     }
 }
@@ -205,40 +210,6 @@ void NewCharWizardPage2::on_nc2_school_ComboBox_currentIndexChanged(const QStrin
     QString schoolname = arg1;
     if(arg1 == "Kitsune Impersonator Tradition") schoolname = ui->nc2_kitsune_comboBox->currentText();
     doEquip(schoolname);
-    /*
-    settingupequip = true;
-    ui->equipSpecialWidget->clear();
-    ui->equipWidget->clear();
-    QStringList specialCases = {
-        "One Weapon of Rarity 6 or Lower",
-        "Two Items of Rarity 4 or Lower",
-        "Two Weapons of Rarity 6 or Lower"
-    };
-    QList<QStringList> equipsets = dal->ql_getlistsofeq(schoolname);              //get a list of equipsets
-    if(equipsets.count()>0){                                                //if this returned nothing, time to bail
-        for(int row = 0; row < equipsets.count(); ++row){                   //otherwise, each row is a set
-            if(equipsets.at(row).count()>2){                                //if the count is two, there's only one choice -- skip it
-                int choosenum = equipsets.at(row).at(0).toInt();            //the first number is how many you can choose
-                for(int boxcount = 0; boxcount < choosenum;++boxcount){     //otherwise, add a box for each count you get to choose
-                    QStringList choicesetforcombobox = equipsets.at(row);   //get the list of choices for the box
-                    choicesetforcombobox.removeFirst();                     //remove the count at the front
-
-                    qDebug() << "Adding Box: " << choicesetforcombobox ;
-                    ui->equipWidget->addCBox(choicesetforcombobox, "Choose an item:");         //add the combobox
-                }
-            }
-            else{                                                           //if it's 1, handle only if it's multiitem
-                QStringList choicesetforcombobox = equipsets.at(row);       //get the list of choices for the box
-                choicesetforcombobox.removeFirst();                         //remove the count at the front
-                if(specialCases.contains(choicesetforcombobox.first())){    //if the 1-off is a special case
-                    handleSpecCases(choicesetforcombobox.first());
-                }
-            }
-        }
-    }
-    settingupequip = false;
-    */
-
 
     //RINGS//
     ui->ringWidget->clear();
@@ -272,7 +243,8 @@ void NewCharWizardPage2::doEquip(QString school){
     QStringList specialCases = {
         "One Weapon of Rarity 6 or Lower",
         "Two Items of Rarity 4 or Lower",
-        "Two Weapons of Rarity 6 or Lower"
+        "Two Weapons of Rarity 6 or Lower",
+        "One Sword of Rarity 7 or Lower"
     };
     QList<QStringList> equipsets = dal->ql_getlistsofeq(schoolname);              //get a list of equipsets
     if(equipsets.count()>0){                                                //if this returned nothing, time to bail

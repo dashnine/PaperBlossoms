@@ -591,6 +591,25 @@ QStringList DataAccessLayer::qsl_getweaponsunderrarity(int rarity ){
     return out;
 }
 
+QStringList DataAccessLayer::qsl_getweapontypeunderrarity(int rarity, QString type ){
+    //bonus query - rings, skills
+    QStringList out;
+    QSqlQuery query;
+    query.prepare("select distinct name from weapons "
+                  "where rarity <= ?                 "
+                  "and category = ?                  ");
+        query.bindValue(0, rarity);
+        query.bindValue(1, type);
+    query.exec();
+    //TODO - replace with multi-line response in special table, rather than splitting?
+    while (query.next()) {
+        QString name = query.value(0).toString();
+//        qDebug() << name;
+        out<< name;
+    }
+    return out;
+}
+
 QStringList DataAccessLayer::qsl_getitemsbytype(QString type ){
     //bonus query - rings, skills
     QStringList out;
