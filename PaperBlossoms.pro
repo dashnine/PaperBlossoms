@@ -104,7 +104,13 @@ FORMS += \
 RESOURCES += \
     resources.qrc
 
-DISTFILES +=
+#DISTFILES +=
+
+TRANSLATIONS += paperblossoms_en.ts \
+                paperblossoms_fr.ts \
+                paperblossoms_es.ts
 
 win32:RC_ICONS += resources/pink-sakura-01-hi.ico
 macx: ICON =
+
+#QMAKE_RESOURCE_FLAGS += -no-compress

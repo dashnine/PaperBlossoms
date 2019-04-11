@@ -12,4 +12,9 @@
         <file>templates/PB_TEMPLATE.html</file>
     </qresource>
     <qresource prefix="/fonts"/>
+    <qresource prefix="/translations">
+        <file>paperblossoms_es.qm</file>
+        <file>paperblossoms_fr.qm</file>
+        <file>paperblossoms_en.qm</file>
+    </qresource>
 </RCC>

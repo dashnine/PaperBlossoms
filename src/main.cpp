@@ -23,10 +23,27 @@
 
 #include "mainwindow.h"
 #include <QApplication>
+#include <QTranslator>
+#include <QDebug>
+#include <QLocale>
+#include <QFile>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+    QString defaultLocale = QLocale::system().name();
+    defaultLocale.truncate(defaultLocale.lastIndexOf('_'));
+    qDebug()<< "locale = " + defaultLocale;
+
+    QTranslator tra;
+    if(tra.load("paperblossoms_"+defaultLocale,":/translations")){
+        a.installTranslator(&tra);
+        qDebug()<<"translation loaded";
+    }
+    else{
+        qWarning() << "Translation not loaded.";
+    }
     MainWindow w;
     w.show();
 
