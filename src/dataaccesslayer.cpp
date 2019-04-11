@@ -981,13 +981,16 @@ void DataAccessLayer::qsm_gettechniquetable(QSqlQueryModel * model, QString rank
                     "OR                                                                                         "
                     "(rank <= ?                                                                                 " //13 rank   //tech group
                     "   AND (restriction IN (?, ?) OR restriction is NULL)                                      " //14 clan, 15 school
-                    "   AND category in                                                                         "
+                    "   AND (category in                                                                         "
                     "   (SELECT technique from school_techniques_available                                      "
                     "       WHERE school = ?)                                                                   " //16 school
+                    "   OR subcategory in                                                                         "
+                    "   (SELECT technique from school_techniques_available                                      "
+                    "       WHERE school = ?))                                                                   " //17 school
                     ")                                                                                          "
                 //--------------------------MAHO (and patterns and scrolls FOR EVERYONE!--------------------//
                     "OR                                                                                         "
-                    "((rank <= ? OR rank = NULL)                                                                                " //17 rank
+                    "((rank <= ? OR rank = NULL)                                                                                " //18 rank
                     "   AND category IN ('Mahō', 'Item Patterns', 'Signature Scrolls')                                                                   "
                     ")                                                                                          "
                     "ORDER BY category, rank, name                                                              "
@@ -1012,7 +1015,8 @@ void DataAccessLayer::qsm_gettechniquetable(QSqlQueryModel * model, QString rank
         query.bindValue(14, clan);
         query.bindValue(15, school);
         query.bindValue(16, school);
-        query.bindValue(17, rank);
+        query.bindValue(17, school);
+        query.bindValue(18, rank);
         query.exec();
         qDebug() << getLastExecutedQuery(query);
     while (query.next()) {
