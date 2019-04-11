@@ -591,6 +591,25 @@ QStringList DataAccessLayer::qsl_getweaponsunderrarity(int rarity ){
     return out;
 }
 
+QStringList DataAccessLayer::qsl_getweapontypeunderrarity(int rarity, QString type ){
+    //bonus query - rings, skills
+    QStringList out;
+    QSqlQuery query;
+    query.prepare("select distinct name from weapons "
+                  "where rarity <= ?                 "
+                  "and category = ?                  ");
+        query.bindValue(0, rarity);
+        query.bindValue(1, type);
+    query.exec();
+    //TODO - replace with multi-line response in special table, rather than splitting?
+    while (query.next()) {
+        QString name = query.value(0).toString();
+//        qDebug() << name;
+        out<< name;
+    }
+    return out;
+}
+
 QStringList DataAccessLayer::qsl_getitemsbytype(QString type ){
     //bonus query - rings, skills
     QStringList out;
@@ -962,13 +981,16 @@ void DataAccessLayer::qsm_gettechniquetable(QSqlQueryModel * model, QString rank
                     "OR                                                                                         "
                     "(rank <= ?                                                                                 " //13 rank   //tech group
                     "   AND (restriction IN (?, ?) OR restriction is NULL)                                      " //14 clan, 15 school
-                    "   AND category in                                                                         "
+                    "   AND (category in                                                                         "
                     "   (SELECT technique from school_techniques_available                                      "
                     "       WHERE school = ?)                                                                   " //16 school
+                    "   OR subcategory in                                                                         "
+                    "   (SELECT technique from school_techniques_available                                      "
+                    "       WHERE school = ?))                                                                   " //17 school
                     ")                                                                                          "
                 //--------------------------MAHO (and patterns and scrolls FOR EVERYONE!--------------------//
                     "OR                                                                                         "
-                    "((rank <= ? OR rank = NULL)                                                                                " //17 rank
+                    "((rank <= ? OR rank = NULL)                                                                                " //18 rank
                     "   AND category IN ('Mahō', 'Item Patterns', 'Signature Scrolls')                                                                   "
                     ")                                                                                          "
                     "ORDER BY category, rank, name                                                              "
@@ -993,7 +1015,8 @@ void DataAccessLayer::qsm_gettechniquetable(QSqlQueryModel * model, QString rank
         query.bindValue(14, clan);
         query.bindValue(15, school);
         query.bindValue(16, school);
-        query.bindValue(17, rank);
+        query.bindValue(17, school);
+        query.bindValue(18, rank);
         query.exec();
         qDebug() << getLastExecutedQuery(query);
     while (query.next()) {

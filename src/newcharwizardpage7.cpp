@@ -107,6 +107,7 @@ void NewCharWizardPage7::initializePage()
     QString special2 = field("q18Spec2").toString();
     QString personalName        = field("personalName").toString();
     QString parents         = field("q17Text").toString();
+    QString heritageSourceTable = field("q18SourceTable").toString();
 
 
 
@@ -122,7 +123,8 @@ void NewCharWizardPage7::initializePage()
         heritage = ancestor2;
     }
     QString lostItem = "";
-    if(ancestorIndex == 2){ //2 is a lost item, and not in starting gear.  Tracking it for use later
+    //if(ancestorIndex == 2){ //2 is a lost item, and not in starting gear.  Tracking it for use later
+    if(heritage == "Glorious Sacrifice"){ //heritage Core 2 is a lost item, and not in starting gear.  Tracking it for use later
         lostItem+= special1 + " " + special2 + " " + secondarychoice + ", ";
     }
 
@@ -141,7 +143,8 @@ void NewCharWizardPage7::initializePage()
     notes += "\n\n16. Existing Relationships With Other Groups: \n" + existing_relationships;
     notes += "\n\n17. Parents: \n" + parents;
 
-    if(ancestorIndex == 2){ //2 is a lost item, and not in starting gear
+    //if(ancestorIndex == 2){ //2 is a lost item, and not in starting gear
+    if(heritage == "Glorious Sacrifice"){ //heritage Core 2 is a lost item, and not in starting gear.  Tracking it for use later
         if(!secondarychoice.isEmpty()){
             notes += "\n\n18. Glorious Sacrifice: \nOne of your ancestors perished honorably in battle, "
                      "and their signature " + special1 + " " + special2 + " " + secondarychoice + " was lost. ";
@@ -252,7 +255,8 @@ void NewCharWizardPage7::initializePage()
         }
     }
     //check for tech on part 8
-    if(ancestorIndex == 8){
+    //if(ancestorIndex == 8){
+    if(heritage == "Stolen Knowledge"){
         if(!secondarychoice.isEmpty()){
             techText+= secondarychoice + ", ";
             techList.append(secondarychoice);
@@ -267,7 +271,8 @@ void NewCharWizardPage7::initializePage()
     QStringList specialCases = { //special cases
         "One Weapon of Rarity 6 or Lower",
         "Two Items of Rarity 4 or Lower",
-        "Two Weapons of Rarity 6 or Lower"
+        "Two Weapons of Rarity 6 or Lower",
+        "One Sword of Rarity 7 or Lower"
     };
 
     //-----first, school eq choices -----//
@@ -302,14 +307,16 @@ void NewCharWizardPage7::initializePage()
     eqText+= q16item+ ", ";
     eqList.append(populateItemFields(q16item,dal->qs_getitemtype(q16item)));
     //check for eq on part 8
-    if(ancestorIndex == 1){ //2 is a lost item, and not in starting gear
+    //if(ancestorIndex == 1){ //2 is a lost item, and not in starting gear
+    if(heritage == "Famous Deed"){ //item
         if(!secondarychoice.isEmpty()){
 
             eqText+= special1 + " " + special2 + " " + secondarychoice + ", ";
             eqList.append(populateItemFields(secondarychoice, dal->qs_getitemtype(secondarychoice),special1,special2));
         }
     }
-    if(ancestorIndex == 10){
+    //if(ancestorIndex == 10){
+    if(heritage == "Unusual Name Origin"){
         if(othereffects == "Item (Rank 6 or Lower)"){
             if(!secondarychoice.isEmpty()){
                 eqText+= secondarychoice + ", ";
@@ -355,10 +362,19 @@ void NewCharWizardPage7::initializePage()
             advList.append(q13disadvantage);
         }
     }
-    //check for tech on part 8
-    if(ancestorIndex == 9){
+
+    //if(ancestorIndex == 9){
+    if(heritage == "Imperial Heritage"|| heritage == "Blood and Mortar"){
         advText+= othereffects + ", ";
         advList.append(othereffects);
+    }
+    else if(heritage == "Vengeance for the Fallen"){
+        advText+= "Haunting, ";
+        advList.append("Haunting");
+    }
+    else if(heritage == "Tainted Blood"){
+        advText+= "Fallen Ancestor, ";
+        advList.append("Fallen Ancestor");
     }
     if(advText.length()>=2) advText.chop(2);
     ui->nc7_advlist_label->setText(advText);
@@ -414,15 +430,33 @@ QMap<QString, int> NewCharWizardPage7::calcSkills(){
     }
     skills.append(field("parentSkill").toString());
     //get q18 skill
+
+
     int ancestorIndex = -1;
+    QString heritage = "";
     if(field("ancestor1checked").toBool()){
         ancestorIndex = field("ancestor1index").toInt()+1;
+        heritage = field("ancestor1").toString();
     }
     else if (field("ancestor2checked").toBool()){
         ancestorIndex = field("ancestor2index").toInt()+1;
+        heritage = field("ancestor2").toString();
     }
-    if(ancestorIndex >= 3 && ancestorIndex <= 7){
+
+    if(    //core
+           heritage == "Wondrous Work" ||
+           heritage ==  "Dynasty Builder" ||
+           heritage ==  "Discovery" ||
+           heritage ==  "Ruthless Victor" ||
+           heritage ==  "Elevated for Service" ||
+           //shadowlands
+           heritage ==   "Infamous Builder" ||
+           heritage ==   "Lost in the Darkness" ||
+           heritage ==   "Vengeance for the Fallen" ||
+           heritage ==   "Tewnty Goblin Thief"
+            ){
         skills.append(field("q18OtherEffects").toString());
+
     }
 
     skills.removeAll("");
@@ -599,7 +633,7 @@ QMap<QString, int> NewCharWizardPage7::calcRings(){
     ringmap[field("schoolSpecialRing").toString()]++;
 
     //check for ringswap on part 6
-    if(field("q18OtherEffects").toString() == "Ring Exchange"){
+    if(field("q18OtherEffects").toString() == "Ring Exchange" || field("q18OtherEffects").toString() == "Void ring exchange"){
         ringmap[field("q18Spec1").toString()]++;
         ringmap[field("q18Spec2").toString()]--;
         qDebug()<< "adjusting based on Ring Exchange";
