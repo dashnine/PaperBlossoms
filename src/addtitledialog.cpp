@@ -52,6 +52,6 @@ void AddTitleDialog::on_title_combobox_currentIndexChanged(const QString &arg1)
     ui->ability_label->setText(dal->qs_gettitleability(arg1));
 }
 
-QString AddTitleDialog::getResult(){
+QString AddTitleDialog::getResult() const {
     return title;
 }

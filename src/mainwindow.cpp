@@ -95,10 +95,11 @@ MainWindow::MainWindow(QWidget *parent) :
     //int id = QFontDatabase::addApplicationFont("C:/Users/flux/git/paperblossom/resources/Bradley Hand Bold.ttf");
     //int id = QFontDatabase::addApplicationFontFromData(fileContents(":/images/resources/Bradley Hand Bold.ttf"));
     //qDebug() << id;
-    QFont scriptfont;
-    scriptfont = QFont("Bradley Hand", 20, QFont::Bold);
-#ifndef Q_OS_MAC
-    scriptfont = QFont("Segoe Script",20, QFont::Bold);
+
+#ifdef Q_OS_MAC
+    const QFont scriptfont = QFont("Bradley Hand", 20, QFont::Bold);
+#else
+    const QFont scriptfont = QFont("Segoe Script", 20, QFont::Bold);
 #endif
     ui->character_name_label->setFont(scriptfont);
 
@@ -214,7 +215,7 @@ void MainWindow::on_actionNew_triggered()
 {
 
     NewCharacterWizard wizard(dal);
-    int result = wizard.exec();
+    const int result = wizard.exec();
     if (result == QDialog::Accepted){
         if(m_dirtyDataFlag == true){ //if data is dirty, allow user to escape out.
             if(QMessageBox::Cancel==QMessageBox::information(this, tr("Closing Character Profile"), "Warning: All unsaved progress will be lost. Continue?",QMessageBox::Yes|QMessageBox::Cancel)){
@@ -252,7 +253,7 @@ void MainWindow::populateUI(){
     ui->image_label->clear();
     ui->image_label->setText("Click to add a portrait...");
     if (!curCharacter.portrait.isNull()) {
-        QPixmap p = QPixmap::fromImage(curCharacter.portrait);
+        const QPixmap p = QPixmap::fromImage(curCharacter.portrait);
         ui->image_label->setPixmap(p.scaled(ui->image_label->size(),Qt::KeepAspectRatio,Qt::SmoothTransformation));
 
         ui->image_label->adjustSize();
@@ -260,13 +261,13 @@ void MainWindow::populateUI(){
 
     //---------------INITIALIZE SKILL AND RING RANKS --------------------
     //note -- doesn't touch base values on the character
-    QStringList skills = dal->qsl_getskills(); //get all skills
+    const QStringList skills = dal->qsl_getskills(); //get all skills
     //initialise skillranks
-    foreach (QString skill, skills) {
+    foreach (const QString skill, skills) {
         curCharacter.skillranks[skill] = 0;
     }
-    QStringList rings = dal->qsl_getrings(); //get all rings
-    foreach (QString ring, rings) {
+    const QStringList rings = dal->qsl_getrings(); //get all rings
+    foreach (const QString ring, rings) {
         curCharacter.ringranks[ring] = 0;
     }
 
@@ -277,7 +278,7 @@ void MainWindow::populateUI(){
     advheaders << "Type"<<"Advance"<<"Track"<<"Cost";
     advanceStack.setHorizontalHeaderLabels(advheaders);
 
-    foreach (QString advance, curCharacter.advanceStack) {
+    foreach (const QString advance, curCharacter.advanceStack) {
         QList<QStandardItem*> itemrow;
         foreach(QString cell, advance.split("|")){
             itemrow << new QStandardItem(cell);
@@ -313,9 +314,9 @@ void MainWindow::populateUI(){
     //---------------------TITLE-----------------------------------------------
     titlemodel.clear();
     if(curCharacter.titles.count()>0)
-        foreach (QString title, curCharacter.titles) {
+        foreach (const QString title, curCharacter.titles) {
             QStringList track = dal->qsl_gettitletrack(title);
-            foreach (QString row, track) {
+            foreach (const QString row, track) {
                 QStringList cells = row.split("|");
                 QString tname = cells.at(0);
                 QString advname = cells.at(1);
@@ -342,9 +343,9 @@ void MainWindow::populateUI(){
 
     //-------------------SET RANK ---------------------------
     //note - rank and title must be calculated after curric and title curric are set.
-    QPair<int, int> rankdata = recalcRank();
+    const QPair<int, int> rankdata = recalcRank();
     curCharacter.rank = rankdata.first;
-    int curricXP = rankdata.second;
+    const int curricXP = rankdata.second;
 
     ui->curric_status_label->setText("Rank: " + QString::number(curCharacter.rank)+", XP in Rank: "+ QString::number(curricXP));
 
@@ -353,9 +354,9 @@ void MainWindow::populateUI(){
     foreach(QString title, curCharacter.titles) {
         titleXPcounts << dal->qs_gettitlexp(title).toInt();
     }
-    QPair<QString, int> titledata = recalcTitle(titleXPcounts);
+    const QPair<QString, int> titledata = recalcTitle(titleXPcounts);
     QString curTitle = titledata.first;
-    int titleXP = titledata.second;
+    const int titleXP = titledata.second;
 
     ui->title_status_label->setText("Title: " + curTitle+", Title XP: "+ QString::number(titleXP));
     this->incompleteTitle = curTitle;
@@ -378,10 +379,10 @@ void MainWindow::populateUI(){
         curCharacter.abilities << dal->qsl_getschoolmastery(curCharacter.school);
         abiltext+= dal->qsl_getschoolmastery(curCharacter.school).at(0)+", ";
     }
-    foreach (QString title, curCharacter.titles) {
+    foreach (const QString title, curCharacter.titles) {
         if(title != curTitle) { //there should be no way to get a title that isn't curtitle without finishing it.  So the extras are fininshed - get abilities
                 curCharacter.abilities << dal->qsl_gettitlemastery(title);
-                QStringList abl = dal->qsl_gettitlemastery(title);
+                const QStringList abl = dal->qsl_gettitlemastery(title);
                 if(abl.count()>0){
                     abiltext+=abl.at(0)+", ";
                 }
@@ -409,8 +410,8 @@ void MainWindow::populateUI(){
     //------------------SET SKILL TABLE AND VALUES -----------------
     skillmodel.clear();
     QString skilltext = "";
-    QStringList skillgrouplist = dal->qsl_getskillsandgroup();
-    foreach (QString skill, skillgrouplist) {
+    const QStringList skillgrouplist = dal->qsl_getskillsandgroup();
+    foreach (const QString skill, skillgrouplist) {
 
         //generate row and add it to skill model
         QList<QStandardItem*> itemrow;
@@ -430,7 +431,7 @@ void MainWindow::populateUI(){
 
     //------------------SET EQ TABLE-------------------------------------//
     equipmodel.clear();
-    foreach (QStringList equiplist, curCharacter.equipment){
+    foreach (const QStringList equiplist, curCharacter.equipment){
         QList<QStandardItem*> itemrow;
         foreach (QString str, equiplist) {
             itemrow << new QStandardItem(str);
@@ -476,24 +477,24 @@ void MainWindow::populateUI(){
     //-------------------TECHNIQUE LISTS -------------------------------------
     techModel.clear();
     QString techlist = "";
-    foreach(QString str, curCharacter.techniques){
+    foreach(const QString str, curCharacter.techniques){
         techlist += str + ", ";
         QList<QStandardItem*> itemrow;
-        foreach (QString t, dal->qsl_gettechbyname(str)){
+        foreach (const QString t, dal->qsl_gettechbyname(str)){
             //now, do the real work for the tables
             itemrow << new QStandardItem(t);
         }
         techModel.appendRow(itemrow);
     }
     //also check advances
-    foreach (QString advance, curCharacter.advanceStack) {   //iterate through advances
+    foreach (const QString advance, curCharacter.advanceStack) {   //iterate through advances
         QList<QStandardItem*> itemrow;                       //generate a row in the advancestack
-        foreach(QString cell, advance.split("|")){           // the advance table is pipe separated for now.  FIx later?
+        foreach(const QString cell, advance.split("|")){           // the advance table is pipe separated for now.  FIx later?
             itemrow << new QStandardItem(cell);              // turn this into qstandarditems to match other paradigms
         }
         if(itemrow.at(0)->text() == "Technique"){            //if it's a tech advance
             QList<QStandardItem*> techrow;                   //create a row for the techModel
-            foreach (QString t, dal->qsl_gettechbyname(itemrow.at(1)->text())){ //grab a qstringlist...
+            foreach (const QString t, dal->qsl_gettechbyname(itemrow.at(1)->text())){ //grab a qstringlist...
                 techrow << new QStandardItem(t);                                //and convert it into qstandarditems for the row
             }
             techlist+=itemrow.at(1)->text()+", ";                                    //add it to the techlist
@@ -516,12 +517,12 @@ void MainWindow::populateUI(){
 
     dis_advmodel.clear();
     QString advlist = ""; //simple text string for the front page, for now
-    foreach(QString str, curCharacter.adv_disadv){
+    foreach(const QString str, curCharacter.adv_disadv){
         advlist += str + ", "; //populate the string
 
-        QStringList dis_advdata = dal->qsl_getadvdisadvbyname(str);
+        const QStringList dis_advdata = dal->qsl_getadvdisadvbyname(str);
         QList<QStandardItem*> itemrow;
-        foreach (QString adv_disadv_str, dis_advdata){
+        foreach (const QString adv_disadv_str, dis_advdata){
             //now, do the real work for the tables
             itemrow << new QStandardItem(adv_disadv_str);
         }
@@ -568,7 +569,7 @@ void MainWindow::on_actionSave_As_triggered()
         QDataStream stream(&file);
 
         //SAVE_FILE_VERSION
-        int version = SAVE_FILE_VERSION;
+        const int version = SAVE_FILE_VERSION;
         stream<<version;
 
 
@@ -608,7 +609,7 @@ void MainWindow::on_actionSave_As_triggered()
 
 void MainWindow::on_actionOpen_triggered()
 {
-    QString fileName = QFileDialog::getOpenFileName( this, tr("Load..."), QDir::homePath(), tr("Paper Blossoms Character (*.pbc);;Any (*)"));
+    const QString fileName = QFileDialog::getOpenFileName( this, tr("Load..."), QDir::homePath(), tr("Paper Blossoms Character (*.pbc);;Any (*)"));
     if (fileName.isEmpty())
         return;
     else
@@ -683,7 +684,7 @@ void MainWindow::on_actionOpen_triggered()
 void MainWindow::on_addadvance_button_clicked()
 {
     AddAdvanceDialog addadvancedialog(dal, &curCharacter);
-    int result = addadvancedialog.exec();
+    const int result = addadvancedialog.exec();
     if (result == QDialog::Accepted){
         qDebug() << "Accepted: getting advance.";
        m_dirtyDataFlag = true;
@@ -701,7 +702,7 @@ void MainWindow::on_remove_pushButton_clicked()
         //curCharacter.advanceStack.pop_back();
 
         if(!ui->advance_tableView->currentIndex().isValid()) return;
-        int row = ui->advance_tableView->currentIndex().row();
+        const int row = ui->advance_tableView->currentIndex().row();
         curCharacter.advanceStack.removeAt(row); //TODO: TESTING -- is this accurate?
         populateUI();
         m_dirtyDataFlag = true;
@@ -714,9 +715,9 @@ QPair<int, int> MainWindow::recalcRank(){
     int curricXP = 0;
     int rank = 1;
 
-    foreach (QString advance, curCharacter.advanceStack) {
+    foreach (const QString advance, curCharacter.advanceStack) {
         QStringList itemrow;
-        foreach(QString cell, advance.split("|")){
+        foreach(const QString cell, advance.split("|")){
             itemrow << cell;
         }
         if(itemrow.at(2)=="Curriculum"){
@@ -855,7 +856,7 @@ void MainWindow::setColumnsHidden(){
     ui->techniqueTableView->resizeColumnsToContents();
 }
 
-QPair<QString, int> MainWindow::recalcTitle(QList<int> xp_list){
+QPair<QString, int> MainWindow::recalcTitle(const QList<int> xp_list){
     bool success = true;
     int curricXP = 0;
     int title_index = 0;
@@ -870,9 +871,9 @@ QPair<QString, int> MainWindow::recalcTitle(QList<int> xp_list){
     }
 
     //   advheaders << "Type"<<"Advance"<<"Track"<<"Cost";
-    foreach (QString advance, curCharacter.advanceStack) {
+    foreach (const QString advance, curCharacter.advanceStack) {
         QStringList itemrow;
-        foreach(QString cell, advance.split("|")){
+        foreach(const QString cell, advance.split("|")){
             itemrow << cell;
         }
         if(itemrow.at(2)=="Title"){
@@ -902,7 +903,7 @@ QPair<QString, int> MainWindow::recalcTitle(QList<int> xp_list){
     return QPair<QString,int>(currentTitle,curricXP);
 }
 
-int MainWindow::isInCurriculum(QString value, QString type, int currank){
+int MainWindow::isInCurriculum(const QString value, const QString type, const int currank){
     //   advheaders << "Type"<<"Advance"<<"Track"<<"Cost";
 
     QStringList skills;
@@ -910,7 +911,7 @@ int MainWindow::isInCurriculum(QString value, QString type, int currank){
 
 
     for(int i = 0; i<curriculummodel.rowCount(); ++i){
-        QSqlRecord record = curriculummodel.record(i);
+        const QSqlRecord record = curriculummodel.record(i);
         //if(record.value("rank").toInt()!=curCharacter.rank) continue; //only get items in current rank;
         if(record.value("rank").toInt()!=currank) continue; //only get items in current rank;
         if(record.value("type").toString() == "skill_group"){
@@ -939,7 +940,7 @@ int MainWindow::isInCurriculum(QString value, QString type, int currank){
     return false;
 }
 
-int MainWindow::isInTitle(QString value, QString adv_type, QString title){
+int MainWindow::isInTitle(const QString value, const QString adv_type, const QString title){
     //   advheaders << "Type"<<"Advance"<<"Track"<<"Cost";
 
     QStringList skills;
@@ -948,14 +949,14 @@ int MainWindow::isInTitle(QString value, QString adv_type, QString title){
 
 
     for(int i = 0; i<titlemodel.rowCount(); ++i){
-        QString titlename = titlemodel.item(i,0)->text();
-        QString advance = titlemodel.item(i,1)->text();
-        QString type = titlemodel.item(i,2)->text();
-        QString spec_acc = titlemodel.item(i,3)->text();
-        QString rank = titlemodel.item(i,4)->text();
+        const QString titlename = titlemodel.item(i,0)->text();
+        const QString advance = titlemodel.item(i,1)->text();
+        const QString type = titlemodel.item(i,2)->text();
+        const QString spec_acc = titlemodel.item(i,3)->text();
+        const QString rank = titlemodel.item(i,4)->text();
         if(titlename!=title) continue; //only get items in current title;
         if(type == "skill_group"){
-            QStringList groupskills = dal->qsl_getskillsbygroup(advance);
+            const QStringList groupskills = dal->qsl_getskillsbygroup(advance);
             skills.append(groupskills);
         }
         else if (type == "skill"){
@@ -965,7 +966,7 @@ int MainWindow::isInTitle(QString value, QString adv_type, QString title){
             techniques << advance;
         }
         else if(type == "technique_group"){
-            QStringList grouptech = dal->qsl_gettechbygroup(advance, rank.toInt()); //special -- uses title rank
+            const QStringList grouptech = dal->qsl_gettechbygroup(advance, rank.toInt()); //special -- uses title rank
             techniques.append(grouptech);
         }
         else if(type == "ring"){
@@ -989,7 +990,7 @@ int MainWindow::isInTitle(QString value, QString adv_type, QString title){
 void MainWindow::on_addTitle_pushButton_clicked()
 {
     AddTitleDialog addtitledialog(dal, &curCharacter);
-    int result = addtitledialog.exec();
+    const int result = addtitledialog.exec();
     if (result == QDialog::Accepted){
         qDebug() << "Accepted: getting title.";
        m_dirtyDataFlag = true;
@@ -1001,21 +1002,21 @@ void MainWindow::on_addTitle_pushButton_clicked()
     }
 }
 
-void MainWindow::on_koku_spinBox_valueChanged(int arg1)
+void MainWindow::on_koku_spinBox_valueChanged(const int arg1)
 {
    curCharacter.koku = arg1;
    m_dirtyDataFlag = true;
 
 }
 
-void MainWindow::on_bu_spinBox_valueChanged(int arg1)
+void MainWindow::on_bu_spinBox_valueChanged(const int arg1)
 {
    curCharacter.bu = arg1 ;
    m_dirtyDataFlag = true;
 
 }
 
-void MainWindow::on_zeni_spinBox_valueChanged(int arg1)
+void MainWindow::on_zeni_spinBox_valueChanged(const int arg1)
 {
     curCharacter.zeni = arg1;
    m_dirtyDataFlag = true;
@@ -1026,7 +1027,7 @@ void MainWindow::on_zeni_spinBox_valueChanged(int arg1)
 void MainWindow::on_add_weapon_pushButton_clicked()
 {
     AddItemDialog additemdialog(dal, &curCharacter,"Weapon");
-    int result = additemdialog.exec();
+    const int result = additemdialog.exec();
     if (result == QDialog::Accepted){
         qDebug() << "Accepted: getting item";
        m_dirtyDataFlag = true;
@@ -1041,7 +1042,7 @@ void MainWindow::on_add_weapon_pushButton_clicked()
 void MainWindow::on_add_armor_pushButton_clicked()
 {
     AddItemDialog additemdialog(dal, &curCharacter,"Armor");
-    int result = additemdialog.exec();
+    const int result = additemdialog.exec();
     if (result == QDialog::Accepted){
         qDebug() << "Accepted: getting item";
        m_dirtyDataFlag = true;
@@ -1056,7 +1057,7 @@ void MainWindow::on_add_armor_pushButton_clicked()
 void MainWindow::on_add_other_pushButton_clicked()
 {
     AddItemDialog additemdialog(dal, &curCharacter,"Other");
-    int result = additemdialog.exec();
+    const int result = additemdialog.exec();
     if (result == QDialog::Accepted){
         qDebug() << "Accepted: getting item";
        m_dirtyDataFlag = true;
@@ -1079,7 +1080,7 @@ void MainWindow::on_name_lineEdit_textChanged(const QString &arg1)
 void MainWindow::on_image_label_clicked()
 {
     //QString selfilter = tr("JPEG (*.jpg *.jpeg)");
-    QString fileName = QFileDialog::getOpenFileName(
+    const QString fileName = QFileDialog::getOpenFileName(
             this,
             tr("Open File"),
             QDir::homePath(),
@@ -1096,7 +1097,7 @@ void MainWindow::on_image_label_clicked()
                                      tr("Cannot load %1.").arg(fileName));
             return;
         }
-        QPixmap p = QPixmap::fromImage(curCharacter.portrait);
+        const QPixmap p = QPixmap::fromImage(curCharacter.portrait);
         ui->image_label->setPixmap(p.scaled(ui->image_label->size(),Qt::KeepAspectRatio,Qt::SmoothTransformation));
 
 
@@ -1108,7 +1109,7 @@ void MainWindow::on_image_label_clicked()
 void MainWindow::on_addDistinction_pushButton_clicked()
 {
     AddDisAdvDialog adddisadvdialog(dal, &curCharacter,"Distinctions");
-    int result = adddisadvdialog.exec();
+    const int result = adddisadvdialog.exec();
     if (result == QDialog::Accepted){
         qDebug() << "Accepted: getting distrinction";
        m_dirtyDataFlag = true;
@@ -1123,7 +1124,7 @@ void MainWindow::on_addDistinction_pushButton_clicked()
 void MainWindow::on_addPassion_pushButton_clicked()
 {
     AddDisAdvDialog adddisadvdialog(dal, &curCharacter,"Passions");
-    int result = adddisadvdialog.exec();
+    const int result = adddisadvdialog.exec();
     if (result == QDialog::Accepted){
         qDebug() << "Accepted: getting distrinction";
        m_dirtyDataFlag = true;
@@ -1138,7 +1139,7 @@ void MainWindow::on_addPassion_pushButton_clicked()
 void MainWindow::on_addAdversity_pushButton_clicked()
 {
     AddDisAdvDialog adddisadvdialog(dal, &curCharacter,"Adversities");
-    int result = adddisadvdialog.exec();
+    const int result = adddisadvdialog.exec();
     if (result == QDialog::Accepted){
         qDebug() << "Accepted: getting distrinction";
        m_dirtyDataFlag = true;
@@ -1153,7 +1154,7 @@ void MainWindow::on_addAdversity_pushButton_clicked()
 void MainWindow::on_addAnxiety_pushButton_clicked()
 {
     AddDisAdvDialog adddisadvdialog(dal, &curCharacter,"Anxieties");
-    int result = adddisadvdialog.exec();
+    const int result = adddisadvdialog.exec();
     if (result == QDialog::Accepted){
         qDebug() << "Accepted: getting distrinction";
        m_dirtyDataFlag = true;
@@ -1308,7 +1309,7 @@ void MainWindow::on_actionGenerate_Character_Sheet_triggered()
     charData.portrait = curCharacter.portrait;
 
     RenderDialog renderdlg(&charData);
-    int result = renderdlg.exec();
+    const int result = renderdlg.exec();
     if (result == QDialog::Accepted){
         qDebug() << "Accepted received from RenderDialog";
     }
@@ -1336,25 +1337,25 @@ void MainWindow::on_notes_textEdit_textChanged()
    m_dirtyDataFlag = true;
 }
 
-void MainWindow::on_xpSpinBox_valueChanged(int arg1)
+void MainWindow::on_xpSpinBox_valueChanged(const int arg1)
 {
    curCharacter.totalXP = arg1;
    m_dirtyDataFlag = true;
 }
 
-void MainWindow::on_glory_spinBox_valueChanged(int arg1)
+void MainWindow::on_glory_spinBox_valueChanged(const int arg1)
 {
    curCharacter.glory = arg1;
    m_dirtyDataFlag = true;
 }
 
-void MainWindow::on_honor_spinBox_valueChanged(int arg1)
+void MainWindow::on_honor_spinBox_valueChanged(const int arg1)
 {
     curCharacter.honor = arg1;
    m_dirtyDataFlag = true;
 }
 
-void MainWindow::on_status_spinBox_valueChanged(int arg1)
+void MainWindow::on_status_spinBox_valueChanged(const int arg1)
 {
     curCharacter.status = arg1;
    m_dirtyDataFlag = true;
@@ -1369,7 +1370,7 @@ void MainWindow::on_actionAbout_triggered()
 void MainWindow::on_actionExport_User_Tables_triggered()
 {
     qDebug()<<QString("Homepath = ") + QDir::homePath();
-    QString fileName = QFileDialog::getExistingDirectory( this, tr("Choose an export directory..."), QDir::homePath());
+    const QString fileName = QFileDialog::getExistingDirectory( this, tr("Choose an export directory..."), QDir::homePath());
     if (fileName.isEmpty())
         return;
     else
@@ -1393,7 +1394,7 @@ void MainWindow::on_actionExport_User_Tables_triggered()
 void MainWindow::on_actionImport_User_Data_Tables_triggered()
 {
     QMessageBox::information(this, tr("Warning"), "This feature is in beta; it will attempt to import a folder containing exported user data files.  Errors importing could cause inconsistencies in the data. Proceed with caution. If you experience difficulty, remove the local copy of the DB and relaunch Paper Blossoms.");
-    QString fileName = QFileDialog::getExistingDirectory( this, tr("Choose a folder containing exported data..."), QDir::homePath());
+    const QString fileName = QFileDialog::getExistingDirectory( this, tr("Choose a folder containing exported data..."), QDir::homePath());
     if (fileName.isEmpty())
         return;
     else
@@ -1431,7 +1432,7 @@ void MainWindow::on_actionExit_triggered()
         QApplication::quit();
 }
 
-void MainWindow::closeEvent (QCloseEvent *event)
+void MainWindow::closeEvent (QCloseEvent * const event)
 {
     if(m_dirtyDataFlag == true){ //if data is dirty, allow user to escape out.
         if(QMessageBox::Cancel==QMessageBox::information(this, tr("Closing Character Profile"), "Warning: All unsaved progress will be lost. Continue?",QMessageBox::Yes|QMessageBox::Cancel)){
@@ -1445,9 +1446,9 @@ void MainWindow::closeEvent (QCloseEvent *event)
 
 void MainWindow::on_removeweapon_pushbutton_clicked()
 {
-    QModelIndex curIndex = weaponProxyModel.mapToSource(ui->weapon_tableview->currentIndex());
+    const QModelIndex curIndex = weaponProxyModel.mapToSource(ui->weapon_tableview->currentIndex());
     if(!curIndex.isValid()) return;
-    QString name = equipmodel.item(curIndex.row(),Equipment::NAME)->text();
+    const QString name = equipmodel.item(curIndex.row(),Equipment::NAME)->text();
     curCharacter.equipment.removeAt(curIndex.row()); //TODO: TESTING -- is this accurate?
     populateUI();
     m_dirtyDataFlag = true;
@@ -1455,9 +1456,9 @@ void MainWindow::on_removeweapon_pushbutton_clicked()
 
 void MainWindow::on_removearmor_pushbutton_clicked()
 {
-    QModelIndex curIndex = armorProxyModel.mapToSource(ui->armor_tableview->currentIndex());
+    const QModelIndex curIndex = armorProxyModel.mapToSource(ui->armor_tableview->currentIndex());
     if(!curIndex.isValid()) return;
-    QString name = equipmodel.item(curIndex.row(),Equipment::NAME)->text();
+    const QString name = equipmodel.item(curIndex.row(),Equipment::NAME)->text();
     curCharacter.equipment.removeAt(curIndex.row()); //TODO: TESTING -- is this accurate?
     populateUI();
     m_dirtyDataFlag = true;
@@ -1465,9 +1466,9 @@ void MainWindow::on_removearmor_pushbutton_clicked()
 
 void MainWindow::on_removepersonaleffect_pushbutton_clicked()
 {
-    QModelIndex curIndex = perseffProxyModel.mapToSource(ui->other_tableview->currentIndex());
+    const QModelIndex curIndex = perseffProxyModel.mapToSource(ui->other_tableview->currentIndex());
     if(!curIndex.isValid()) return;
-    QString name = equipmodel.item(curIndex.row(),Equipment::NAME)->text();
+    const QString name = equipmodel.item(curIndex.row(),Equipment::NAME)->text();
     curCharacter.equipment.removeAt(curIndex.row()); //TODO: TESTING -- is this accurate?
     populateUI();
     m_dirtyDataFlag = true;

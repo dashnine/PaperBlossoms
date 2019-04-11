@@ -17,7 +17,7 @@ public:
     explicit AddTitleDialog(DataAccessLayer *dal, Character *character, QWidget *parent = 0);
     ~AddTitleDialog();
 
-    QString getResult();
+    QString getResult() const;
 private slots:
     void on_title_combobox_currentIndexChanged(const QString &arg1);
 

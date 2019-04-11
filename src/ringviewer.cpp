@@ -41,11 +41,12 @@ RingViewer::RingViewer(QWidget *parent) :
     ui->waterring_label->setStyleSheet("QLabel { color : white; }");
 
     //QFontDatabase::addApplicationFont(":/images/resources/Bradley Hand Bold.ttf");
-    QFont scriptfont;
-    scriptfont = QFont("Bradley Hand", 20, QFont::Bold);
-#ifndef Q_OS_MAC
-    scriptfont = QFont("Segoe Script",16, QFont::Bold);
+#ifdef Q_OS_MAC
+    const QFont scriptfont = QFont("Bradley Hand", 20, QFont::Bold);
+#else
+    const QFont scriptfont = QFont("Segoe Script",16, QFont::Bold);
 #endif
+
     ui->airring_label->setFont(scriptfont);
     ui->earthring_label->setFont(scriptfont);
     ui->firering_label->setFont(scriptfont);
@@ -58,7 +59,7 @@ RingViewer::~RingViewer()
     delete ui;
 }
 
-void RingViewer::setRings(QMap<QString, int> ringmap){
+void RingViewer::setRings(const QMap<QString, int> ringmap){
     ui->airring_label->setVisible(true);
     ui->earthring_label->setVisible(true);
     ui->firering_label->setVisible(true);

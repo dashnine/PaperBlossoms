@@ -40,7 +40,7 @@ public:
     explicit AddDisAdvDialog(DataAccessLayer *dal, Character *character, QString type, QWidget *parent = 0);
     ~AddDisAdvDialog();
 
-    QString getResult();
+    QString getResult() const;
 private:
     Ui::AddDisAdvDialog *ui;
     DataAccessLayer* dal;

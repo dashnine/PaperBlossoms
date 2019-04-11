@@ -97,14 +97,14 @@ void NewCharWizardPage4::initializePage(){
     ui->nc4_q13_skill_comboBox->addItems(dal->qsl_getskills());
 }
 
-void NewCharWizardPage4::on_nc4_q13_adv_radioButton_toggled(bool checked)
+void NewCharWizardPage4::on_nc4_q13_adv_radioButton_toggled(const bool checked)
 {
     ui->nc4_q13_adv_comboBox->setVisible(checked);
     ui->nc4_q13_disaadv_comboBox->setVisible(!checked);
     ui->nc4_q13_skill_comboBox->setVisible(!checked);
 }
 
-void NewCharWizardPage4::on_nc4_q13_disadv_radioButton_toggled(bool checked)
+void NewCharWizardPage4::on_nc4_q13_disadv_radioButton_toggled(const bool checked)
 {
     ui->nc4_q13_adv_comboBox->setVisible(!checked);
     ui->nc4_q13_disaadv_comboBox->setVisible(checked);

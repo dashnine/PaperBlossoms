@@ -48,9 +48,9 @@ public:
     void addCBox(QStringList options, QString value= "");
     QStringList getCurrent();
 
-    void updateSelections(QStringList currentList);
+    void updateSelections(const QStringList currentList);
     QString getSelections() const;
-    void setSelections(QString selections);
+    void setSelections(const QString selections);
     void clear();
 signals:
     void dataChanged(QStringList);

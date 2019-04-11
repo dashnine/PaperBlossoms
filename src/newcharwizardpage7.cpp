@@ -48,66 +48,66 @@ NewCharWizardPage7::~NewCharWizardPage7()
 void NewCharWizardPage7::initializePage()
 {
     //p1
-    QString clan                = field("currentClan").toString(); //get clan skills
-    QString family              = field("currentFamily").toString(); //get fam skills
+    const QString clan                = field("currentClan").toString(); //get clan skills
+    const QString family              = field("currentFamily").toString(); //get fam skills
     //QString familyring          = field("familyRing").toString();
 
     //p2
-    QString school              = field("currentSchool").toString();
-    QString techChoices         = field("techChoices").toString();
-    QString equipChoices        = field("equipChoices").toString();
-    QString equipSpecialChoices = field("equipSpecialChoices").toString();
-    QString schoolSkills        = field("schoolSkills").toString();
-    QString schoolSpecialRing   = field("schoolSpecialRing").toString();
-    QString school_standout     = field("q4Text").toString();
+    const QString school              = field("currentSchool").toString();
+    const QString techChoices         = field("techChoices").toString();
+    const QString equipChoices        = field("equipChoices").toString();
+    const QString equipSpecialChoices = field("equipSpecialChoices").toString();
+    const QString schoolSkills        = field("schoolSkills").toString();
+    const QString schoolSpecialRing   = field("schoolSpecialRing").toString();
+    const QString school_standout     = field("q4Text").toString();
 
     //p3
-    bool hasq7GloryBoost            =  field("q7posradio_glory").toBool();
+    const bool hasq7GloryBoost            =  field("q7posradio_glory").toBool();
     //bool hasq7skill                 =  field("q7negradio_skill").toBool();
-    bool hasq8HonorBoost            =  field("q8posradio_honor").toBool();
+    const bool hasq8HonorBoost            =  field("q8posradio_honor").toBool();
     //bool hasq8skill                 =  field("q8negradio_skill").toBool();
-    QString q7skill                 =  field("q7skill").toString();
-    QString q8skill                 =  field("q8skill").toString();
-    QString ninjo                   =  field("q6Text").toString();
-    QString giri                   =   field("q5Text").toString();
-    QString clanrelationship        =   field("q7Text").toString();
-    QString bushido                 =   field("q8Text").toString();
+    const QString q7skill                 =  field("q7skill").toString();
+    const QString q8skill                 =  field("q8skill").toString();
+    const QString ninjo                   =  field("q6Text").toString();
+    const QString giri                   =   field("q5Text").toString();
+    const QString clanrelationship        =   field("q7Text").toString();
+    const QString bushido                 =   field("q8Text").toString();
 
     //p4
-    QString distinction             = field("distinction").toString();
-    QString adversity               = field("adversity").toString();
-    QString passion                 = field("passion").toString();
-    QString anxiety                 = field("anxiety").toString();
-    bool pickedSkillAndDisadv       = field("q13DisadvChecked").toBool();
-    bool pickedAdv                  = field("q13AdvChecked").toBool();
-    QString q13skill                = field("q13skill").toString();
-    QString q13advantage            = field("q13Advantage").toString();
-    QString q13disadvantage         = field("q13Disadvantage").toString();
-    QString q9                      = field("q9Text").toString();
-    QString q10                      = field("q10Text").toString();
-    QString q11                      = field("q11Text").toString();
-    QString q12                      = field("q12Text").toString();
-    QString important_relationship  = field("q13Text").toString();
+    const QString distinction             = field("distinction").toString();
+    const QString adversity               = field("adversity").toString();
+    const QString passion                 = field("passion").toString();
+    const QString anxiety                 = field("anxiety").toString();
+    const bool pickedSkillAndDisadv       = field("q13DisadvChecked").toBool();
+    const bool pickedAdv                  = field("q13AdvChecked").toBool();
+    const QString q13skill                = field("q13skill").toString();
+    const QString q13advantage            = field("q13Advantage").toString();
+    const QString q13disadvantage         = field("q13Disadvantage").toString();
+    const QString q9                      = field("q9Text").toString();
+    const QString q10                      = field("q10Text").toString();
+    const QString q11                      = field("q11Text").toString();
+    const QString q12                      = field("q12Text").toString();
+    const QString important_relationship  = field("q13Text").toString();
 
     //p5
-    QString q16item                 = field("q16Item").toString();
-    QString noticefirst             = field("q14Text").toString();
-    QString understress             = field("q15Text").toString();
-    QString existing_relationships  = field("q16Text").toString();
+    const QString q16item                 = field("q16Item").toString();
+    const QString noticefirst             = field("q14Text").toString();
+    const QString understress             = field("q15Text").toString();
+    const QString existing_relationships  = field("q16Text").toString();
 
     //p6
-    QString parentSkill = field("parentSkill").toString();
-    QString ancestor1 = field("ancestor1").toString();
-    QString ancestor2 = field("ancestor2").toString();
-    bool ancestor1checked = field("ancestor1checked").toBool();
-    bool ancestor2checked = field("ancestor2checked").toBool();
-    QString othereffects = field("q18OtherEffects").toString();
-    QString secondarychoice = field("q18SecondaryChoice").toString();
-    QString special1 = field("q18Spec1").toString();
-    QString special2 = field("q18Spec2").toString();
-    QString personalName        = field("personalName").toString();
-    QString parents         = field("q17Text").toString();
-    QString heritageSourceTable = field("q18SourceTable").toString();
+    const QString parentSkill = field("parentSkill").toString();
+    const QString ancestor1 = field("ancestor1").toString();
+    const QString ancestor2 = field("ancestor2").toString();
+    const bool ancestor1checked = field("ancestor1checked").toBool();
+    const bool ancestor2checked = field("ancestor2checked").toBool();
+    const QString othereffects = field("q18OtherEffects").toString();
+    const QString secondarychoice = field("q18SecondaryChoice").toString();
+    const QString special1 = field("q18Spec1").toString();
+    const QString special2 = field("q18Spec2").toString();
+    const QString personalName        = field("personalName").toString();
+    const QString parents         = field("q17Text").toString();
+    const QString heritageSourceTable = field("q18SourceTable").toString();
 
 
 
@@ -153,9 +153,9 @@ void NewCharWizardPage7::initializePage()
 
 
     //////////////////get social stats //////////////////////
-    int status = dal->i_getclanstatus(clan);
-    int glory = dal->i_getfamilyglory(family);
-    int honor = dal->i_getschoolhonor(school);
+    const int status = dal->i_getclanstatus(clan);
+    const int glory = dal->i_getfamilyglory(family);
+    const int honor = dal->i_getschoolhonor(school);
     QMap<QString, int> socialmap = dal->qm_heritagehonorglorystatus(heritage);
     socialmap["Status"]+=status;
     socialmap["Glory"]+=glory;
@@ -163,7 +163,7 @@ void NewCharWizardPage7::initializePage()
     if(hasq7GloryBoost) socialmap["Glory"]+=5;
     if(hasq8HonorBoost) socialmap["Honor"] += 10;
 
-    int wealth = dal->i_getfamilywealth(family);
+    const int wealth = dal->i_getfamilywealth(family);
 
 
     //////////////////// Calculate which fields should be tracked and assign the contents
@@ -191,7 +191,7 @@ void NewCharWizardPage7::initializePage()
     ///////////// POPULATE THE RING BOXES AND STRING//////////////////
     ui->nc7_repRing_1_comboBox->clear();
     ui->nc7_repRing_2_comboBox->clear();
-    QMap<QString, int> ringmap = calcRings();
+    const QMap<QString, int> ringmap = calcRings();
     QString ringText = "";
     QStringList replaceList;
     QMapIterator<QString, int> i(ringmap);
@@ -217,7 +217,7 @@ void NewCharWizardPage7::initializePage()
 
     ///////////// POPULATE THE SKILL BOXES AND STRING//////////////////
 
-    QMap<QString, int> skillmap = calcSkills();
+    const QMap<QString, int> skillmap = calcSkills();
 
     QString skillText = "";
     QStringList forbiddenList;
@@ -233,7 +233,7 @@ void NewCharWizardPage7::initializePage()
     ui->nc7_skilllist_label->setText(skillText);
     QStringList allskills = dal->qsl_getskills();
 
-    foreach (QString string, forbiddenList) { //remove any that were at 3+
+    foreach (const QString string, forbiddenList) { //remove any that were at 3+
         allskills.removeAll(string);
     }
 
@@ -248,7 +248,7 @@ void NewCharWizardPage7::initializePage()
 
     QString techText = "";
     QStringList techList;
-    foreach(QString str, techChoices.split("|")){
+    foreach(const QString str, techChoices.split("|")){
         if (!str.isEmpty()){
             techText+= str + ", ";
             techList.append(str);
@@ -268,7 +268,7 @@ void NewCharWizardPage7::initializePage()
     ///////////// POPULATE THE EQUIP STRING//////////////////
     QString eqText = "";
     QList<QStringList> eqList;
-    QStringList specialCases = { //special cases
+    const QStringList specialCases = { //special cases
         "One Weapon of Rarity 6 or Lower",
         "Two Items of Rarity 4 or Lower",
         "Two Weapons of Rarity 6 or Lower",
@@ -276,7 +276,7 @@ void NewCharWizardPage7::initializePage()
     };
 
     //-----first, school eq choices -----//
-    QList<QStringList> equipsets = dal->ql_getlistsofeq(school);              //get a list of equipsets
+    const QList<QStringList> equipsets = dal->ql_getlistsofeq(school);              //get a list of equipsets
     if(equipsets.count()>0){                                                //if this returned nothing, time to bail
         for(int row = 0; row < equipsets.count(); ++row){                   //otherwise, each row is a set
             if(equipsets.at(row).count()==2){                                //if the count is two, there's only one choice -- this is fixed
@@ -291,13 +291,13 @@ void NewCharWizardPage7::initializePage()
         }
     }
 
-    foreach(QString str, equipChoices.split("|")){
+    foreach(const QString str, equipChoices.split("|")){
         if (!str.isEmpty() && !specialCases.contains(str)){ //skip special choices here too -- getting them next
             eqText+= str + ", ";
             eqList.append(populateItemFields(str,dal->qs_getitemtype(str)));
         }
     }
-    foreach(QString str, equipSpecialChoices.split("|")){ //NOW add special choices
+    foreach(const QString str, equipSpecialChoices.split("|")){ //NOW add special choices
         if (!str.isEmpty()){
             eqText+= str + ", ";
             eqList.append(populateItemFields(str,dal->qs_getitemtype(str)));
@@ -343,7 +343,7 @@ void NewCharWizardPage7::initializePage()
     advList.append(passion);
     advList.append(anxiety);
 
-    QString schooladv = dal->qs_getschooladvdisadv(school);
+    const QString schooladv = dal->qs_getschooladvdisadv(school);
     if(!schooladv.isEmpty()) {
         advList.append(schooladv);
         advText+=schooladv+", ";
@@ -465,7 +465,7 @@ QMap<QString, int> NewCharWizardPage7::calcSkills(){
     //skills start at 0.
 
     //clan
-    foreach(QString skill, skills){
+    foreach(const QString skill, skills){
         skillmap[skill]++;
     }
 
@@ -483,13 +483,13 @@ QMap<QString, int> NewCharWizardPage7::calcSkills(){
             }
         }
     }
-    foreach (QString remskill, remStrings) {
+    foreach (const QString remskill, remStrings) {
         skillmap[remskill]--;
     }
 
-    QString repskill1 = ui->nc7_repSkill_1_comboBox->currentText();
-    QString repskill2 = ui->nc7_repSkill_2_comboBox->currentText();
-    QString repskill3 = ui->nc7_repSkill_3_comboBox->currentText();
+    const QString repskill1 = ui->nc7_repSkill_1_comboBox->currentText();
+    const QString repskill2 = ui->nc7_repSkill_2_comboBox->currentText();
+    const QString repskill3 = ui->nc7_repSkill_3_comboBox->currentText();
 
     if(!repskill1.isEmpty()) {
         skillmap[repskill1]++;
@@ -513,7 +513,7 @@ QMap<QString, int> NewCharWizardPage7::calcSkills(){
     return skillmap;
 }
 
-QList<QStringList> NewCharWizardPage7::populateItemFields(QString name, QString type, QString cust_qual_1, QString cust_qual_2){
+QList<QStringList> NewCharWizardPage7::populateItemFields(const QString name, const QString type, const QString cust_qual_1, const QString cust_qual_2) const {
     QList<QStringList> out;
     QStringList row;
     if(type == "Unknown"){
@@ -530,7 +530,7 @@ QList<QStringList> NewCharWizardPage7::populateItemFields(QString name, QString 
         row << "";//qualities                                                                                    //9
     }
     else{
-        QStringList basedata = dal->qsl_getbaseitemdata(name, type);
+        const QStringList basedata = dal->qsl_getbaseitemdata(name, type);
         if (type == "Personal Effect") row << "Other";                                                                                        //0
         else row << type;                                                                                        //0
         row << basedata.at(ItemData::NAME);                                                                 //1
@@ -542,9 +542,9 @@ QList<QStringList> NewCharWizardPage7::populateItemFields(QString name, QString 
         row << basedata.at(ItemData::PRICE_UNIT);                                                           //7
         row << basedata.at(ItemData::RARITY);                                                               //8
 
-        QStringList qualities = dal->qsl_getitemqualities(name,type);
+        const QStringList qualities = dal->qsl_getitemqualities(name,type);
         QString qualstring = "";
-        foreach (QString q, qualities) {
+        foreach (const QString q, qualities) {
             qualstring += q + " ";
         }
         if(!cust_qual_1.isEmpty()) qualstring += cust_qual_1 + " ";
@@ -552,9 +552,9 @@ QList<QStringList> NewCharWizardPage7::populateItemFields(QString name, QString 
         row << qualstring;                                                                                   //9
     }
     if(type == "Weapon"){
-        QStringList baserow = row; //make a copy of row for output, since this may have multiple copies
-        QList<QStringList> weapondata = dal->ql_getweapondata(name);
-        foreach (QStringList gripdata, weapondata) {
+        const QStringList baserow = row; //make a copy of row for output, since this may have multiple copies
+        const QList<QStringList> weapondata = dal->ql_getweapondata(name);
+        foreach (const QStringList gripdata, weapondata) {
             row = baserow;      //set row to baserow and then append this grip's weapon data
             row << gripdata.at(WeaponData::CATEGORY);
             row << gripdata.at(WeaponData::SKILL);
@@ -569,11 +569,11 @@ QList<QStringList> NewCharWizardPage7::populateItemFields(QString name, QString 
         }
     }
     else if (type == "Armor"){
-        QList<QStringList> armordata = dal->ql_getarmordata(name);
+        const QList<QStringList> armordata = dal->ql_getarmordata(name);
         int physresist = 0;
         int supresist = 0;
 
-        foreach (QStringList resistdata, armordata) {
+        foreach (const QStringList resistdata, armordata) {
             if(resistdata.at(ArmorData::RESIST_CATEGORY) == "Physical")
                 physresist = resistdata.at(ArmorData::RESIST_VALUE).toInt();
             else if (resistdata.at(ArmorData::RESIST_CATEGORY) == "Supernatural")
@@ -612,8 +612,8 @@ QMap<QString, int> NewCharWizardPage7::calcRings(){
 
     //initialize the ring map
     QMap<QString, int> ringmap;
-    QStringList ringlist = dal->qsl_getrings();
-    foreach (QString ring, ringlist) {
+    const QStringList ringlist = dal->qsl_getrings();
+    foreach (const QString ring, ringlist) {
         ringmap[ring] = 1;
     }
 
@@ -626,7 +626,7 @@ QMap<QString, int> NewCharWizardPage7::calcRings(){
     QStringList schoolrings = field("ringChoices").toString().split("|");
     schoolrings.removeAll("");
     //QStringList schoolrings = dal->qsl_getschoolrings(field("currentSchool").toString());
-    foreach (QString r, schoolrings){
+    foreach (const QString r, schoolrings){
         ringmap[r]++;
     }
     //standout
@@ -651,12 +651,12 @@ QMap<QString, int> NewCharWizardPage7::calcRings(){
             }
         }
     }
-    foreach (QString remring, oldRings) {
+    foreach (const QString remring, oldRings) {
         ringmap[remring]--;
     }
 
-    QString repring1 = ui->nc7_repRing_1_comboBox->currentText();
-    QString repring2 = ui->nc7_repRing_2_comboBox->currentText();
+    const QString repring1 = ui->nc7_repRing_1_comboBox->currentText();
+    const QString repring2 = ui->nc7_repRing_2_comboBox->currentText();
 
     if(!repring1.isEmpty()) {
         ringmap[repring1]++;
@@ -674,7 +674,7 @@ QMap<QString, int> NewCharWizardPage7::calcRings(){
 }
 
 bool NewCharWizardPage7::validatePage(){
-    QMap<QString, int> ringmap = this->calcRings();
+    const QMap<QString, int> ringmap = this->calcRings();
     QMapIterator<QString, int> i(ringmap);
     while (i.hasNext()) {
         i.next();
@@ -701,7 +701,7 @@ bool NewCharWizardPage7::validatePage(){
     return true;
 }
 
-void NewCharWizardPage7::ringsChanged(QString dynamicRingString){
+void NewCharWizardPage7::ringsChanged(const QString dynamicRingString){
     QMap<QString, int> ringmap = calcRings();
     foreach (QString ring, dynamicRingString.split("|")) {
         if (ring != ""){
@@ -722,7 +722,7 @@ void NewCharWizardPage7::ringsChanged(QString dynamicRingString){
 void NewCharWizardPage7::on_nc7_repRing_1_comboBox_currentIndexChanged(const QString &arg1)
 {
     ui->nc7_repRing_2_comboBox->clear();
-    QMap<QString, int> ringmap = calcRings();
+    const QMap<QString, int> ringmap = calcRings();
     QString ringText = "";
     QStringList replaceList;
     QMapIterator<QString, int> i(ringmap);
@@ -744,7 +744,7 @@ void NewCharWizardPage7::on_nc7_repRing_1_comboBox_currentIndexChanged(const QSt
 
 void NewCharWizardPage7::on_nc7_repRing_2_comboBox_currentIndexChanged(const QString &arg1)
 {
-    QMap<QString, int> ringmap = calcRings();
+    const QMap<QString, int> ringmap = calcRings();
     QString ringText = "";
     QStringList replaceList;
     QMapIterator<QString, int> i(ringmap);
@@ -761,7 +761,7 @@ void NewCharWizardPage7::on_nc7_repSkill_1_comboBox_currentIndexChanged(const QS
 {
     ui->nc7_repSkill_2_comboBox->clear();
 
-    QMap<QString, int> skillmap = calcSkills();
+    const QMap<QString, int> skillmap = calcSkills();
 
     QString skillText = "";
     QStringList forbiddenList;
@@ -777,7 +777,7 @@ void NewCharWizardPage7::on_nc7_repSkill_1_comboBox_currentIndexChanged(const QS
     ui->nc7_skilllist_label->setText(skillText);
     QStringList allskills = dal->qsl_getskills();
 
-    foreach (QString string, forbiddenList) { //remove any that were at 3+
+    foreach (const QString string, forbiddenList) { //remove any that were at 3+
         allskills.removeAll(string);
     }
 
@@ -792,7 +792,7 @@ void NewCharWizardPage7::on_nc7_repSkill_2_comboBox_currentIndexChanged(const QS
 {
     ui->nc7_repSkill_3_comboBox->clear();
 
-    QMap<QString, int> skillmap = calcSkills();
+    const QMap<QString, int> skillmap = calcSkills();
 
     QString skillText = "";
     QStringList forbiddenList;
@@ -808,7 +808,7 @@ void NewCharWizardPage7::on_nc7_repSkill_2_comboBox_currentIndexChanged(const QS
     ui->nc7_skilllist_label->setText(skillText);
     QStringList allskills = dal->qsl_getskills();
 
-    foreach (QString string, forbiddenList) { //remove any that were at 3+
+    foreach (const QString string, forbiddenList) { //remove any that were at 3+
         allskills.removeAll(string);
     }
 
@@ -822,7 +822,7 @@ void NewCharWizardPage7::on_nc7_repSkill_2_comboBox_currentIndexChanged(const QS
 void NewCharWizardPage7::on_nc7_repSkill_3_comboBox_currentIndexChanged(const QString &arg1)
 {
 
-    QMap<QString, int> skillmap = calcSkills();
+    const QMap<QString, int> skillmap = calcSkills();
 
     QString skillText = "";
     QMapIterator<QString, int> sli(skillmap);

@@ -86,8 +86,8 @@ bool NewCharWizardPage3::validatePage(){
 void NewCharWizardPage3::initializePage()
 {
     //TODO - CLEAN UP SKILL MANAGEMENT
-    QString clan = field("currentClan").toString();
-    QString family = field("currentFamily").toString();
+    const QString clan = field("currentClan").toString();
+    const QString family = field("currentFamily").toString();
 
     //qDebug() << field("techChoices").toString();
     QStringList skills;
@@ -96,7 +96,7 @@ void NewCharWizardPage3::initializePage()
     skills.append(dal->qsl_getfamilyskills(family));
     qDebug()<<skills;
     QStringList skillList = dal->qsl_getskills();
-    QStringList q8skills = {"Commerce", "Labor", "Medicine", "Seafaring", "Skulduggery", "Survival"};
+    const QStringList q8skills = {"Commerce", "Labor", "Medicine", "Seafaring", "Skulduggery", "Survival"};
     ui->nc3_q7_comboBox->clear();
     ui->nc3_q8_comboBox->clear();
     foreach (QString string, skills) {
@@ -117,13 +117,13 @@ void NewCharWizardPage3::initializePage()
 }
 
 
-void NewCharWizardPage3::on_nc3_q7_neg_radioButton_toggled(bool checked)
+void NewCharWizardPage3::on_nc3_q7_neg_radioButton_toggled(const bool checked)
 {
     ui->nc3_q7_comboBox->setEnabled(checked);
     if(!checked) ui->nc3_q7_comboBox->setCurrentIndex(-1);
 }
 
-void NewCharWizardPage3::on_nc3_q8_neg_radioButton_toggled(bool checked)
+void NewCharWizardPage3::on_nc3_q8_neg_radioButton_toggled(const bool checked)
 {
     ui->nc3_q8_comboBox->setEnabled(checked);
     if(!checked) ui->nc3_q8_comboBox->setCurrentIndex(-1);

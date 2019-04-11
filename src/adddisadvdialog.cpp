@@ -41,6 +41,6 @@ AddDisAdvDialog::~AddDisAdvDialog()
     delete ui;
 }
 
-QString AddDisAdvDialog::getResult(){
+QString AddDisAdvDialog::getResult() const {
     return ui->traitComboBox->currentText();
 }

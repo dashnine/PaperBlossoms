@@ -46,9 +46,9 @@ private slots:
     void on_printButton_clicked();
     void on_cancelButton_clicked();
 
-    void on_hideskill_checkbox_toggled(bool checked);
+    void on_hideskill_checkbox_toggled(const bool checked);
 
-    void on_hideportrait_checkbox_toggled(bool checked);
+    void on_hideportrait_checkbox_toggled(const bool checked);
 
     void on_browserButton_clicked();
 
@@ -60,7 +60,7 @@ private:
     QString m_template;
     QByteArray m_img;
     QByteArray m_ringimg;
-    void setTemplate(QString filename);
+    void setTemplate(const QString filename);
     QString generateHtml();
 
     QPrinter printer;

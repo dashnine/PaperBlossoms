@@ -73,8 +73,8 @@ void NewCharWizardPage6::initializePage()
 
     /////////////////SKILLBOX - Q17
     //TODO - CLEAN UP SKILL MANAGEMENT
-    QString clan = field("currentClan").toString();
-    QString family = field("currentFamily").toString();
+    const QString clan = field("currentClan").toString();
+    const QString family = field("currentFamily").toString();
 
     //qDebug() << field("techChoices").toString();
     QStringList skills;
@@ -89,7 +89,7 @@ void NewCharWizardPage6::initializePage()
     }
     QStringList skillList = dal->qsl_getskills();
 
-    foreach (QString string, skills) {
+    foreach (const QString string, skills) {
         skillList.removeAll(string);
     }
     ui->nc6_q17_comboBox->clear();
@@ -152,7 +152,7 @@ void NewCharWizardPage6::on_nc6_q18_ancestor1_comboBox_currentIndexChanged(const
        ui->nc6_q18_ancestor1_modLabel->setText("");
        return;
    }
-   QStringList mods = dal->qsl_getancestormods(arg1);
+   const QStringList mods = dal->qsl_getancestormods(arg1);
    QString modstr = "";
    if(mods.at(0).toInt() != 0){
        modstr+= "H:"+mods.at(0) + " ";
@@ -178,7 +178,7 @@ void NewCharWizardPage6::on_nc6_q18_ancestor2_comboBox_currentIndexChanged(const
         ui->nc6_q18_ancestor2_modLabel->setText("");
         return;
     }
-    QStringList mods = dal->qsl_getancestormods(arg1);
+    const QStringList mods = dal->qsl_getancestormods(arg1);
     QString modstr = "";
     if(mods.at(0).toInt() != 0){
         modstr+= "H:"+mods.at(0) + " ";
@@ -198,7 +198,7 @@ void NewCharWizardPage6::on_nc6_q18_ancestor2_comboBox_currentIndexChanged(const
     }
 }
 
-void NewCharWizardPage6::on_nc6_q18_ancestor1_radioButton_toggled(bool checked)
+void NewCharWizardPage6::on_nc6_q18_ancestor1_radioButton_toggled(const bool checked)
 {
     Q_UNUSED(checked)
 
@@ -215,7 +215,7 @@ void NewCharWizardPage6::on_nc6_q18_ancestor1_radioButton_toggled(bool checked)
 }
 
 
-void NewCharWizardPage6::on_nc6_q18_ancestor2_radioButton_toggled(bool checked)
+void NewCharWizardPage6::on_nc6_q18_ancestor2_radioButton_toggled(const bool checked)
 {
     Q_UNUSED(checked)
     
@@ -233,7 +233,7 @@ void NewCharWizardPage6::on_nc6_q18_ancestor2_radioButton_toggled(bool checked)
 void NewCharWizardPage6::doPopulateEffects(){
     if(curAncestorBox == NULL) return; //TODO: error handling here?
     ui->nc6_q18_otherComboBox->clear();
-    QString ancestor = curAncestorBox->currentText();
+    const QString ancestor = curAncestorBox->currentText();
 
 
 
@@ -438,11 +438,11 @@ void NewCharWizardPage6::buildq18UI(){ //this is all still in initializePage
 void NewCharWizardPage6::on_nc6_q18_otherComboBox_currentIndexChanged(const QString &arg1)
 {
     if(curAncestorBox == NULL) return; //TODO: error handling here?
-    int heritageRow = curAncestorBox->currentIndex()+1;
+    const int heritageRow = curAncestorBox->currentIndex()+1;
     ui->nc6_q18_secondaryChoice_comboBox->clear();
     ui->nc6_q18_special1_comboBox->clear();
     ui->nc6_q18_special2_comboBox->clear();
-    QString effectresult = arg1;
+    const QString effectresult = arg1;
 
     if(effectresult == ""){
         //nothing selected
@@ -547,7 +547,7 @@ void NewCharWizardPage6::on_nc6_q18_otherComboBox_currentIndexChanged(const QStr
                 ui->nc6_q18_special2_comboBox->clear();
             }
             else{
-                QMap<QString, int> ringmap = calcCurrentRings();
+                const QMap<QString, int> ringmap = calcCurrentRings();
 
                 QMapIterator<QString, int> i(ringmap);
                 while (i.hasNext()) {
@@ -568,7 +568,7 @@ void NewCharWizardPage6::on_nc6_q18_otherComboBox_currentIndexChanged(const QStr
 QMap<QString, int> NewCharWizardPage6::calcCurrentRings(){
     QMap<QString, int> ringmap;
     QStringList ringlist = dal->qsl_getrings();
-    foreach (QString ring, ringlist) {
+    foreach (const QString ring, ringlist) {
         ringmap[ring] = 1;
     }
 
@@ -582,7 +582,7 @@ QMap<QString, int> NewCharWizardPage6::calcCurrentRings(){
     QStringList schoolrings = field("ringChoices").toString().split("|");
     schoolrings.removeAll("");
 
-    foreach (QString r, schoolrings){
+    foreach (const QString r, schoolrings){
         ringmap[r]++;
     }
     //standout
@@ -594,10 +594,10 @@ QMap<QString, int> NewCharWizardPage6::calcCurrentRings(){
 void NewCharWizardPage6::on_nc6_q18_otherrollButton_clicked()
 {
    if (curAncestorBox->currentText() == "") return;
-   QStringList rangestrings = dal->qsl_getheritageranges(curAncestorBox->currentText());
+   const QStringList rangestrings = dal->qsl_getheritageranges(curAncestorBox->currentText());
    int roll = rand()%10+1;
    int index = 0;
-   foreach (QString str, rangestrings) {
+   foreach (const QString str, rangestrings) {
        qDebug() << "Rangestring = " << str;
        qDebug() << "Roll = " << roll;
        if(roll >= str.split(", ")[0].toInt() && roll <= str.split(", ")[1].toInt() ) {// min == [0], max == [1]

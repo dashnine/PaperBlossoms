@@ -84,10 +84,10 @@ void AddItemDialog::on_itemtemplate_combobox_currentIndexChanged(const QString &
     //ui->qual_comboBox->addItems(dal->qsl_getqualities());
 
     if(type == "Weapon"){
-        QList<QStringList> weapondata = dal->ql_getweapondata(arg1);
+        const QList<QStringList> weapondata = dal->ql_getweapondata(arg1);
         bool didFirst = false;
         bool didSecond = false;
-        foreach (QStringList gripdata, weapondata) {
+        foreach (const QStringList gripdata, weapondata) {
 
             if(!didFirst){
                 ui->grip1_category_comboBox->setCurrentText(gripdata.at(WeaponData::CATEGORY));
@@ -115,8 +115,8 @@ void AddItemDialog::on_itemtemplate_combobox_currentIndexChanged(const QString &
         }
     }
     else if (type == "Armor"){
-        QList<QStringList> armordata = dal->ql_getarmordata(arg1);
-        foreach (QStringList resistdata, armordata) {
+        const QList<QStringList> armordata = dal->ql_getarmordata(arg1);
+        foreach (const QStringList resistdata, armordata) {
             if(resistdata.at(ArmorData::RESIST_CATEGORY) == "Physical")
                 ui->armor_phys_spinBox->setValue(resistdata.at(ArmorData::RESIST_VALUE).toInt());
             else if (resistdata.at(ArmorData::RESIST_CATEGORY) == "Supernatural")
@@ -161,7 +161,7 @@ void AddItemDialog::clearFields(){
     ui->armor_supernatural_spinBox->setValue(0);
 }
 
-QList<QStringList> AddItemDialog::getResult(){
+QList<QStringList> AddItemDialog::getResult() const {
     QList<QStringList> out;
     QStringList row;
 
@@ -178,7 +178,7 @@ QList<QStringList> AddItemDialog::getResult(){
     row << QString::number(ui->rarity_spinBox->value());
 
     QString qualitiestr = "";
-    foreach (QString str, qualities.stringList()) {
+    foreach (const QString str, qualities.stringList()) {
         qualitiestr += str + " ";
     }
     row << qualitiestr;
@@ -238,15 +238,15 @@ QList<QStringList> AddItemDialog::getResult(){
 void AddItemDialog::on_qual_add_pushButton_clicked()
 {
     QStringList curlist = qualities.stringList();
-    QString newqual = ui->qual_comboBox->currentText();
+    const QString newqual = ui->qual_comboBox->currentText();
     if(!newqual.isEmpty() && !curlist.contains(newqual)) curlist.append(newqual);
     qualities.setStringList(curlist);
 }
 
 void AddItemDialog::on_qual_rem_pushButton_clicked()
 {
-    QModelIndex index = ui->qual_listView->currentIndex();
-    QString itemText = index.data(Qt::DisplayRole).toString();
+    const QModelIndex index = ui->qual_listView->currentIndex();
+    const QString itemText = index.data(Qt::DisplayRole).toString();
 
 
     QStringList curlist = qualities.stringList();

@@ -83,9 +83,9 @@ NewCharWizardPage2::~NewCharWizardPage2()
     delete ui;
 }
 
-void NewCharWizardPage2::equipSelectionChanged(QString newText){
+void NewCharWizardPage2::equipSelectionChanged(const QString newText){
     if(settingupequip) return;
-    QStringList specialCases = { //special cases
+    const QStringList specialCases = { //special cases
         "One Weapon of Rarity 6 or Lower",
         "Two Items of Rarity 4 or Lower",
         "Two Weapons of Rarity 6 or Lower",
@@ -93,15 +93,15 @@ void NewCharWizardPage2::equipSelectionChanged(QString newText){
     };
     ui->equipSpecialWidget->clear();
 
-    QStringList selected = ui->equipWidget->getCurrent();
-    foreach (QString box, selected) {
-        QString choice = box.split('|').at(1);
+    const QStringList selected = ui->equipWidget->getCurrent();
+    foreach (const QString box, selected) {
+        const QString choice = box.split('|').at(1);
         if(specialCases.contains(choice)){    //if the 1-off is a special case
             handleSpecCases(choice);
         }
 
     }
-    QList<QStringList> equipsets = dal->ql_getlistsofeq(ui->nc2_school_ComboBox->currentText());              //get a list of equipsets
+    const QList<QStringList> equipsets = dal->ql_getlistsofeq(ui->nc2_school_ComboBox->currentText());              //get a list of equipsets
     if(equipsets.count()>0){                                                //if this returned nothing, time to bail
         for(int row = 0; row < equipsets.count(); ++row){                   //otherwise, each row is a set
             if(equipsets.at(row).count()==2){                                //if the count is two, there's only one choice -- skip it
@@ -117,7 +117,7 @@ void NewCharWizardPage2::equipSelectionChanged(QString newText){
 }
 
 void NewCharWizardPage2::handleSpecCases(QString speccase){
-    QString specCase = speccase;        //get thespecial case value
+    const QString specCase = speccase;        //get thespecial case value
     if(specCase == "One Weapon of Rarity 6 or Lower"){
         ui->equipSpecialWidget->addCBox(dal->qsl_getweaponsunderrarity(6));
     }
@@ -139,7 +139,7 @@ void NewCharWizardPage2::handleSpecCases(QString speccase){
 
 void NewCharWizardPage2::initializePage(){
 
-    QString clan = field("currentClan").toString();
+    const QString clan = field("currentClan").toString();
     qDebug()<< "Initializing page 2 with clan = " << clan;
     schoolModel->setStringList(dal->qsl_getschools(field("currentClan").toString()));
     ui->nc2_school_ComboBox->setCurrentIndex(-1);
@@ -160,7 +160,7 @@ bool NewCharWizardPage2::validatePage(){
 }
 
 ///////////// Allow schools outside of clan. /////////////////////////
-void NewCharWizardPage2::on_nc2_unrestrictedSchool_checkBox_toggled(bool checked)
+void NewCharWizardPage2::on_nc2_unrestrictedSchool_checkBox_toggled(const bool checked)
 {
     schoolModel->setStringList(dal->qsl_getschools(field("currentClan").toString(), checked));
 }
@@ -185,16 +185,16 @@ void NewCharWizardPage2::on_nc2_school_ComboBox_currentIndexChanged(const QStrin
 
     qDebug() << "School changed to:  " + arg1;
     //ui->nc2_schooldesc_textEdit->setText(dal->qs_getschooldesc(arg1));
-    int skillcount = dal->i_getschoolskillcount(arg1);
+    const int skillcount = dal->i_getschoolskillcount(arg1);
     qDebug()<< skillcount;
-    QString skilllabel = "Choose " + QString::number(skillcount) + " skills:";
+    const QString skilllabel = "Choose " + QString::number(skillcount) + " skills:";
     ui->nc2_skill_Label->setText(skilllabel);
     skillOptModel->setStringList(dal->qsl_getschoolskills(arg1)); //set list with school contents
     skillSelModel->setStringList( QStringList{} );  //clear prior selections, since this changed
 
     //TECHNIQUES//
     ui->techWidget->clear();
-    QList<QStringList> techsets = dal->ql_getlistsoftech(arg1);
+    const QList<QStringList> techsets = dal->ql_getlistsoftech(arg1);
     for(int row = 0; row < techsets.count(); ++row){
         int choosenum = techsets.at(row).at(0).toInt();
         for(int boxcount = 0; boxcount < choosenum;++boxcount){
@@ -213,8 +213,8 @@ void NewCharWizardPage2::on_nc2_school_ComboBox_currentIndexChanged(const QStrin
 
     //RINGS//
     ui->ringWidget->clear();
-    QStringList schoolrings = dal->qsl_getschoolrings(arg1);
-    foreach(QString ring, schoolrings){
+    const QStringList schoolrings = dal->qsl_getschoolrings(arg1);
+    foreach(const QString ring, schoolrings){
 
         QStringList choicesetforcombobox;
 
@@ -234,19 +234,19 @@ void NewCharWizardPage2::on_nc2_school_ComboBox_currentIndexChanged(const QStrin
 }
 
 
-void NewCharWizardPage2::doEquip(QString school){
-    QString schoolname = school;
+void NewCharWizardPage2::doEquip(const QString school){
+    const QString schoolname = school;
 
     settingupequip = true;
     ui->equipSpecialWidget->clear();
     ui->equipWidget->clear();
-    QStringList specialCases = {
+    const QStringList specialCases = {
         "One Weapon of Rarity 6 or Lower",
         "Two Items of Rarity 4 or Lower",
         "Two Weapons of Rarity 6 or Lower",
         "One Sword of Rarity 7 or Lower"
     };
-    QList<QStringList> equipsets = dal->ql_getlistsofeq(schoolname);              //get a list of equipsets
+    const QList<QStringList> equipsets = dal->ql_getlistsofeq(schoolname);              //get a list of equipsets
     if(equipsets.count()>0){                                                //if this returned nothing, time to bail
         for(int row = 0; row < equipsets.count(); ++row){                   //otherwise, each row is a set
             if(equipsets.at(row).count()>2){                                //if the count is two, there's only one choice -- skip it
@@ -279,8 +279,8 @@ void NewCharWizardPage2::on_nc2_skillAdd_pushButton_clicked()
 }
 
 void NewCharWizardPage2::doAddSkill(){
-    QModelIndex index = ui->nc2_skillOpt_listview->currentIndex();
-    QString itemText = index.data(Qt::DisplayRole).toString();
+    const QModelIndex index = ui->nc2_skillOpt_listview->currentIndex();
+    const QString itemText = index.data(Qt::DisplayRole).toString();
     if(itemText.isEmpty()) return;
     qDebug()<<itemText;
     QStringList sellist = skillSelModel->stringList();
@@ -302,8 +302,8 @@ void NewCharWizardPage2::on_nc2_skillRem_pushButton_clicked()
 }
 
 void NewCharWizardPage2::doRemSkill(){
-    QModelIndex index = ui->nc2_skillSel_listview->currentIndex();
-    QString itemText = index.data(Qt::DisplayRole).toString();
+    const QModelIndex index = ui->nc2_skillSel_listview->currentIndex();
+    const QString itemText = index.data(Qt::DisplayRole).toString();
     qDebug()<<itemText;
     QStringList sellist = skillSelModel->stringList();
     if (sellist.contains(itemText)){
