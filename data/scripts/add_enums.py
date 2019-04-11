@@ -285,9 +285,11 @@ def write_equipment(data_dir, equipment_enum):
             equipment_enum +
             [
                 "Traveling Pack",
+                "Kitsune Starting Outfit",
                 "Two Weapons of Rarity 6 or Lower",
                 "One Weapon of Rarity 6 or Lower",
-                "Two Items of Rarity 4 or Lower"
+                "Two Items of Rarity 4 or Lower",
+                "One Sword of Rarity 7 or Lower"
             ]
         )
     )

@@ -443,26 +443,6 @@ def techniques_to_db(db_conn):
                         technique['xp']
                     )
                 )
-    
-    # Read item patterns JSON
-    with open('json/item_patterns.json', encoding = 'utf8') as f:
-        item_patterns = json.load(f)
-    
-    # Write item patterns to techniques table
-    for pattern in item_patterns:
-        db_conn.execute(
-            'INSERT INTO base_techniques VALUES (?,?,?,?,?,?,?,?)',
-            (
-                'Item Pattern',
-                '',
-                pattern['name'],
-                None,
-                pattern['reference']['book'],
-                pattern['reference']['page'],
-                1,
-                pattern['xp_cost']
-            )
-        )
 
 
 def advantages_to_db(db_conn):
