@@ -20,7 +20,8 @@
                         "type": "string",
                         "enum": [
                             "Core",
-                            "EE"
+                            "EE",
+                            "SL"
                         ]
                     },
                     "page": {
@@ -60,12 +61,20 @@
                                 "enum": [
                                     "min",
                                     "max",
-                                    "equals"
+                                    "equals",
+                                    "between"
                                 ]
                             },
                             "value": {
                                 "description": "Value of constraint",
                                 "type": "integer"
+                            },
+                            "range": {
+                                "description": "Range of values for 'between' constraint",
+                                "type": "array",
+                                "items": { "type": "integer" },
+                                "minItems": 2,
+                                "maxItems": 2
                             }
                         },
                         "defaultSnippets": [
@@ -367,7 +376,6 @@
                         {
                             "label": "New Advancement",
                             "body": {
-                                "rank": "^$1",
                                 "name": "$2",
                                 "type": "$3",
                                 "special_access": "^${4:false}"

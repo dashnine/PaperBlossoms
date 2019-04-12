@@ -1,6 +1,9 @@
 [
     {
-        "roll": 1,
+        "roll": {
+            "min": 1,
+            "max": 1
+        },
         "result": "Famous Deed",
         "modifiers": {
             "glory": 3,
@@ -47,10 +50,14 @@
                     "outcome": "boat or estate"
                 }
             ]
-        }
+        },
+        "source": "Core"
     },
     {
-        "roll": 2,
+        "roll": {
+            "min": 2,
+            "max": 2
+        },
         "result": "Glorious Sacrifice",
         "modifiers": {
             "glory": 5,
@@ -97,10 +104,14 @@
                     "outcome": "boat or estate"
                 }
             ]
-        }
+        },
+        "source": "Core"
     },
     {
-        "roll": 3,
+        "roll": {
+            "min": 3,
+            "max": 3
+        },
         "result": "Wondrous Work",
         "modifiers": {
             "glory": 5,
@@ -140,10 +151,14 @@
                     "outcome": "Smithing"
                 }
             ]
-        }
+        },
+        "source": "Core"
     },
     {
-        "roll": 4,
+        "roll": {
+            "min": 4,
+            "max": 4
+        },
         "result": "Dynasty Builder",
         "modifiers": {
             "glory": -3,
@@ -183,10 +198,14 @@
                     "outcome": "Performance"
                 }
             ]
-        }
+        },
+        "source": "Core"
     },
     {
-        "roll": 5,
+        "roll": {
+            "min": 5,
+            "max": 5
+        },
         "result": "Discovery",
         "modifiers": {
             "glory": 3,
@@ -233,10 +252,14 @@
                     "outcome": "Theology"
                 }
             ]
-        }
+        },
+        "source": "Core"
     },
     {
-        "roll": 6,
+        "roll": {
+            "min": 6,
+            "max": 6
+        },
         "result": "Ruthless Victor",
         "modifiers": {
             "glory": 0,
@@ -290,10 +313,14 @@
                     "outcome": "Meditation"
                 }
             ]
-        }
+        },
+        "source": "Core"
     },
     {
-        "roll": 7,
+        "roll": {
+            "min": 7,
+            "max": 7
+        },
         "result": "Elevated for Service",
         "modifiers": {
             "glory": -3,
@@ -340,10 +367,14 @@
                     "outcome": "Survival"
                 }
             ]
-        }
+        },
+        "source": "Core"
     },
     {
-        "roll": 8,
+        "roll": {
+            "min": 8,
+            "max": 8
+        },
         "result": "Stolen Knowledge",
         "modifiers": {
             "glory": 0,
@@ -366,7 +397,7 @@
                         "min": 4,
                         "max": 6
                     },
-                    "outcome": "Shūji"
+                    "outcome": "Sh\u016bji"
                 },
                 {
                     "roll": {
@@ -387,20 +418,24 @@
                         "min": 9,
                         "max": 9
                     },
-                    "outcome": "Kihō"
+                    "outcome": "Kih\u014d"
                 },
                 {
                     "roll": {
                         "min": 10,
                         "max": 10
                     },
-                    "outcome": "Mahō or Ninjutsu"
+                    "outcome": "Mah\u014d or Ninjutsu"
                 }
             ]
-        }
+        },
+        "source": "Core"
     },
     {
-        "roll": 9,
+        "roll": {
+            "min": 9,
+            "max": 9
+        },
         "result": "Imperial Heritage",
         "modifiers": {
             "glory": 0,
@@ -411,12 +446,18 @@
             "type": "Distinction",
             "instructions": "You gain the Blessed Lineage advantage (see page 103) (this can be assigned in excess of the normal limitations on advantages at character creation).",
             "outcomes": [
-                { "outcome": "Blessed Lineage" }
+                {
+                    "outcome": "Blessed Lineage"
+                }
             ]
-        }
+        },
+        "source": "Core"
     },
     {
-        "roll": 10,
+        "roll": {
+            "min": 10,
+            "max": 10
+        },
         "result": "Unusual Name Origin",
         "modifiers": {
             "glory": -3,
@@ -427,9 +468,245 @@
             "type": "other",
             "instructions": "Choose two of your character's rings; you may reduce the value of one of these rings by 1 to increase the value of the other by 1 (this still cannot raise a ring above 3). If you do not do so, choose one item of rarity 6 or lower and assign it to your starting outfit.",
             "outcomes": [
-                { "outcome": "Ring Exchange" },
-                { "outcome": "Item (Rank 6 or lower)" }
+                {
+                    "outcome": "Ring Exchange"
+                },
+                {
+                    "outcome": "Item (Rank 6 or lower)"
+                }
             ]
-        }
+        },
+        "source": "Core"
+    },
+    {
+        "roll": {
+            "min": 1,
+            "max": 1
+        },
+        "result": "Blood and Mortar",
+        "modifiers": {
+            "glory": 0,
+            "honor": 0,
+            "status": 3
+        },
+        "other_effects": {
+            "type": "Distinction",
+            "instructions": "You gain the Blessed Lineage advantage (see page 103 of the core rulebook). This can be assigned in excess of the normal limitations on disadvantages at character creation. While on the Wall, your glory rank is treated as 1 higher.",
+            "outcomes": [
+                {
+                    "outcome": "Blessed Lineage"
+                }
+            ]
+        },
+        "source": "SL"
+    },
+    {
+        "roll": {
+            "min": 2,
+            "max": 3
+        },
+        "result": "Infamous Builder",
+        "modifiers": {
+            "glory": -5,
+            "honor": 0,
+            "status": 0
+        },
+        "other_effects": {
+            "type": "Skill",
+            "instructions": "Roll a ten-sided die again to determine a skill to aoid in restoring your ancestor's name; gain +1 rank in that skill.",
+            "outcomes": [
+                {
+                    "roll": {
+                        "min": 1,
+                        "max": 3
+                    },
+                    "outcome": "Government"
+                },
+                {
+                    "roll": {
+                        "min": 4,
+                        "max": 6
+                    },
+                    "outcome": "Labor"
+                },
+                {
+                    "roll": {
+                        "min": 7,
+                        "max": 10
+                    },
+                    "outcome": "Smithing"
+                }
+            ]
+        },
+        "source": "SL"
+    },
+    {
+        "roll": {
+            "min": 4,
+            "max": 5
+        },
+        "result": "Lost in the Darkness",
+        "modifiers": {
+            "glory": -5,
+            "honor": 5,
+            "status": 0
+        },
+        "other_effects": {
+            "type": "Skill",
+            "instructions": "Roll a ten-sided die again to determine a skill to aid in learning of your ancestor's fate; gain +1 rank in that skill. Additionally, your ancestor might still be alive, in the Shadowlands...waiting.",
+            "outcomes": [
+                {
+                    "roll": {
+                        "min": 1,
+                        "max": 3
+                    },
+                    "outcome": "Culture"
+                },
+                {
+                    "roll": {
+                        "min": 4,
+                        "max": 6
+                    },
+                    "outcome": "Survival"
+                },
+                {
+                    "roll": {
+                        "min": 7,
+                        "max": 10
+                    },
+                    "outcome": "Theology"
+                }
+            ]
+        },
+        "source": "SL"
+    },
+    {
+        "roll": {
+            "min": 6,
+            "max": 7
+        },
+        "result": "Vengeance for the Fallen",
+        "modifiers": {
+            "glory": 0,
+            "honor": 5,
+            "status": 0
+        },
+        "other_effects": {
+            "type": "Adversity and Skill",
+            "instructions": "You gain the Haunting (Void) adversity (see page 122 of the core rulebook). This can be assigned in excess of the normal limitations on disadvantages at character creation. Roll a ten-sided die again to determine a Martial skill; gain +1 rank in that skill.",
+            "outcomes": [
+                {
+                    "outcome": "Haunting"
+                },
+                {
+                    "roll": {
+                        "min": 1,
+                        "max": 3
+                    },
+                    "outcome": "Fitness"
+                },
+                {
+                    "roll": {
+                        "min": 4,
+                        "max": 5
+                    },
+                    "outcome": "Martial Arts [Melee]"
+                },
+                {
+                    "roll": {
+                        "min": 6,
+                        "max": 7
+                    },
+                    "outcome": "Martial Arts [Ranged]"
+                },
+                {
+                    "roll": {
+                        "min": 8,
+                        "max": 8
+                    },
+                    "outcome": "Martial Arts [Unarmed]"
+                },
+                {
+                    "roll": {
+                        "min": 9,
+                        "max": 9
+                    },
+                    "outcome": "Tactics"
+                },
+                {
+                    "roll": {
+                        "min": 10,
+                        "max": 10
+                    },
+                    "outcome": "Meditation"
+                }
+            ]
+        },
+        "source": "SL"
+    },
+    {
+        "roll": {
+            "min": 8,
+            "max": 9
+        },
+        "result": "Tewnty Goblin Thief",
+        "modifiers": {
+            "glory": -3,
+            "honor": 0,
+            "status": 0
+        },
+        "other_effects": {
+            "type": "Skill",
+            "instructions": "Roll a ten-sided die again to determine a skill to aid in learning of your ancestor's fate; gain +1 rank in that skill.",
+            "outcomes": [
+                {
+                    "roll": {
+                        "min": 1,
+                        "max": 3
+                    },
+                    "outcome": "Culture"
+                },
+                {
+                    "roll": {
+                        "min": 4,
+                        "max": 6
+                    },
+                    "outcome": "Skulduggery"
+                },
+                {
+                    "roll": {
+                        "min": 7,
+                        "max": 10
+                    },
+                    "outcome": "Theology"
+                }
+            ]
+        },
+        "source": "SL"
+    },
+    {
+        "roll": {
+            "min": 10,
+            "max": 10
+        },
+        "result": "Tainted Blood",
+        "modifiers": {
+            "glory": 0,
+            "honor": 0,
+            "status": -3
+        },
+        "other_effects": {
+            "type": "Anxiety and other",
+            "instructions": "You gain the Fallen Ancestor disadvantage (see 98). Choose one of your character's rings; you may reduce the value of that ring by 1 to increase the value of your Void Ring by 1 (this still cannot raise it above 3).",
+            "outcomes": [
+                {
+                    "outcome": "Fallen Ancestor"
+                },
+                {
+                    "outcome": "Void ring exchange"
+                }
+            ]
+        },
+        "source": "SL"
     }
 ]

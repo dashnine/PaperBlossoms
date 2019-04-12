@@ -11,7 +11,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 174
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Breath of Wind Style",
@@ -19,7 +20,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 175
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Crashing Wave Style",
@@ -27,7 +29,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 175
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Crescent Moon Style",
@@ -35,7 +38,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 175
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Crimson Leaves Strike",
@@ -43,7 +47,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 175
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Disappearing World Style",
@@ -51,7 +56,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 175
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Flowing Water Strike",
@@ -59,7 +65,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 175
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Heartpiercing Strike",
@@ -67,7 +74,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 176
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Iron in the Mountains Style",
@@ -75,7 +83,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 176
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Lord Hida's Grip",
@@ -84,7 +93,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 176
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Lord Shiba's Valor",
@@ -93,7 +103,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 177
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Soaring Slice",
@@ -101,7 +112,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 177
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Soul Sunder",
@@ -109,7 +121,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 177
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Striking as Air",
@@ -117,7 +130,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 177
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Striking as Earth",
@@ -125,7 +139,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 178
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Striking as Fire",
@@ -133,7 +148,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 178
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Striking as Void",
@@ -141,7 +157,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 178
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Striking as Water",
@@ -149,7 +166,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 178
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Tactical Assessment",
@@ -157,7 +175,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 178
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Warrior's Resolve",
@@ -165,7 +184,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 178
-                        }
+                        },
+                        "xp": 3
                     }
                 ]
             },
@@ -178,7 +198,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 179
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Iaijutsu Cut: Crossing Blade",
@@ -186,7 +207,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 179
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Iaijutsu Cut: Rising Blade",
@@ -194,7 +216,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 179
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Iron Forest Style",
@@ -202,7 +225,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 180
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Open-Hand Style",
@@ -210,7 +234,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 180
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Rushing Avalanche Style",
@@ -218,7 +243,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 180
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Spinning Blades Style",
@@ -226,7 +252,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 180
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Thunderclap Strike",
@@ -234,7 +261,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 180
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Veiled Menace Style",
@@ -242,7 +270,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 181
-                        }
+                        },
+                        "xp": 3
                     }
                 ]
             },
@@ -255,7 +284,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 181
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Pelting Hail Style",
@@ -263,7 +293,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 181
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Pin the Fan",
@@ -271,7 +302,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 181
-                        }
+                        },
+                        "xp": 3
                     }
                 ]
             }
@@ -289,7 +321,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 182
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Earth Needs No Eyes",
@@ -297,7 +330,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 182
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Earthen Fist",
@@ -305,7 +339,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 183
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Grasp the Earth Dragon",
@@ -313,7 +348,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 183
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Way of the Earthquake",
@@ -321,7 +357,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 183
-                        }
+                        },
+                        "xp": 3
                     }
                 ]
             },
@@ -334,7 +371,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 183
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Riding the Clouds",
@@ -342,7 +380,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 184
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "The Great Silence",
@@ -350,7 +389,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 184
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Way of the Willow",
@@ -358,7 +398,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 184
-                        }
+                        },
+                        "xp": 3
                     }
                 ]
             },
@@ -371,7 +412,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 184
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Channel the Fire Dragon",
@@ -379,7 +421,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 185
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Flame Fist",
@@ -387,7 +430,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 185
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "The Body is an Anvil",
@@ -395,7 +439,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 186
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Way of the Falling Star",
@@ -403,7 +448,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 186
-                        }
+                        },
+                        "xp": 3
                     }
                 ]
             },
@@ -416,7 +462,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 186
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Ki Protection",
@@ -424,7 +471,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 186
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Ride the Water Dragon",
@@ -432,7 +480,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 187
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Water Fist",
@@ -440,7 +489,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 187
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Way of the Seafoam",
@@ -448,7 +498,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 187
-                        }
+                        },
+                        "xp": 3
                     }
                 ]
             },
@@ -461,7 +512,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 188
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Still the Elements",
@@ -469,7 +521,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 188
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Touch the Void Dragon",
@@ -477,7 +530,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 188
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Way of the Edgeless Sword",
@@ -485,7 +539,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 188
-                        }
+                        },
+                        "xp": 3
                     }
                 ]
             }
@@ -503,7 +558,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 192
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "By the Light of the Lord Moon",
@@ -511,7 +567,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 192
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Call Upon the Wind",
@@ -519,7 +576,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 192
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Cloak of Night",
@@ -527,7 +585,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 192
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "False Realm of the Fox Spirits",
@@ -535,7 +594,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 193
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Grasp of the Air Dragon",
@@ -543,7 +603,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 193
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Mask of Wind",
@@ -551,7 +612,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 193
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Nature's Touch",
@@ -559,7 +621,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 194
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Rise, Air",
@@ -567,7 +630,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 194
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Secrets on the Wind",
@@ -575,7 +639,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 194
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Summon Fog",
@@ -583,7 +648,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 195
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Tempest of Air",
@@ -591,7 +657,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 195
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Token of Memory",
@@ -599,7 +666,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 195
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Vapor of Nightmares",
@@ -607,7 +675,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 195
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Wrath of Kaze-no-Kami",
@@ -615,7 +684,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 196
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Yari of Air",
@@ -623,7 +693,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 196
-                        }
+                        },
+                        "xp": 3
                     }
                 ]
             },
@@ -636,7 +707,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 197
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Bind the Shadow",
@@ -644,7 +716,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 197
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Caress of Earth",
@@ -652,7 +725,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 197
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Courage of Seven Thunders",
@@ -660,7 +734,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 197
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Earthquake",
@@ -668,7 +743,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 198
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Earth Becomes Sky",
@@ -676,7 +752,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 198
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Embrace of Kenro-Ji-Jin",
@@ -684,7 +761,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 198
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Grasp of Earth",
@@ -692,7 +770,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 199
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Jade Strike",
@@ -700,15 +779,17 @@
                         "reference": {
                             "book": "Core",
                             "page": 199
-                        }
+                        },
+                        "xp": 3
                     },
                     {
-                        "name": "Jurōjin's Balm",
+                        "name": "Jur\u014djin's Balm",
                         "rank": 1,
                         "reference": {
                             "book": "Core",
                             "page": 199
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Power of the Earth Dragon",
@@ -716,7 +797,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 200
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Rise, Earth",
@@ -724,7 +806,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 200
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Symbol of Earth",
@@ -732,15 +815,17 @@
                         "reference": {
                             "book": "Core",
                             "page": 200
-                        }
+                        },
+                        "xp": 3
                     },
                     {
-                        "name": "Tetsubō of Earth",
+                        "name": "Tetsub\u014d of Earth",
                         "rank": 1,
                         "reference": {
                             "book": "Core",
                             "page": 200
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Tomb of Jade",
@@ -748,7 +833,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 201
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Wall of Earth",
@@ -756,7 +842,17 @@
                         "reference": {
                             "book": "Core",
                             "page": 201
-                        }
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Essence of Jade",
+                        "rank": 3,
+                        "reference": {
+                            "book": "SL",
+                            "page": 114
+                        },
+                        "xp": 3
                     }
                 ]
             },
@@ -769,7 +865,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 202
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Biting Steel",
@@ -777,7 +874,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 202
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Breath of the Fire Dragon",
@@ -785,7 +883,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 202
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Extinguish",
@@ -793,7 +892,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 202
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Fukurokujin's Wit",
@@ -801,7 +901,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 203
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Fury of Osano-wo",
@@ -809,7 +910,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 203
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Katana of Fire",
@@ -817,7 +919,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 203
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Matsu's Battlecry",
@@ -825,7 +928,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 204
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Ravenous Swarms",
@@ -833,7 +937,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 204
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Rise, Flame",
@@ -841,7 +946,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 204
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "The Cleansing Fire",
@@ -849,7 +955,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 204
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "The Fires from Within",
@@ -857,7 +964,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 205
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "The Soul's Blade",
@@ -865,7 +973,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 205
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Wall of Fire",
@@ -873,7 +982,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 205
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Wings of the Phoenix",
@@ -881,7 +991,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 206
-                        }
+                        },
+                        "xp": 3
                     }
                 ]
             },
@@ -889,12 +1000,13 @@
                 "name": "Water Invocations",
                 "techniques": [
                     {
-                        "name": "Bō of Water",
+                        "name": "B\u014d of Water",
                         "rank": 1,
                         "reference": {
                             "book": "Core",
                             "page": 207
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Dance of Seasons",
@@ -902,7 +1014,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 207
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Dominion of Suijin",
@@ -910,7 +1023,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 207
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Ever-Changing Waves",
@@ -918,7 +1032,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 208
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Hands of Tides",
@@ -926,7 +1041,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 208
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Heart of the Water Dragon",
@@ -934,7 +1050,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 208
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Inari's Blessing",
@@ -942,7 +1059,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 209
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Path to Inner Peace",
@@ -950,7 +1068,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 209
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Reflections of P'an Ku",
@@ -958,7 +1077,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 209
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Rise, Water",
@@ -966,7 +1086,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 210
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Stride the Waves",
@@ -974,7 +1095,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 211
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Strike the Tsunami",
@@ -982,7 +1104,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 211
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Suijin's Embrace",
@@ -990,7 +1113,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 211
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Sympathetic Energies",
@@ -998,7 +1122,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 211
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "The Rushing Wave",
@@ -1006,7 +1131,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 211
-                        }
+                        },
+                        "xp": 3
                     }
                 ]
             }
@@ -1024,7 +1150,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 212
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Commune with the Spirits",
@@ -1032,7 +1159,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 212
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Divination",
@@ -1040,7 +1168,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 212
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Tea Ceremony",
@@ -1048,7 +1177,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 213
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Threshold Barrier",
@@ -1056,17 +1186,41 @@
                         "reference": {
                             "book": "Core",
                             "page": 213
-                        }
+                        },
+                        "xp": 3
+                    }
+                ]
+            },
+            {
+                "name": "",
+                "techniques": [
+                    {
+                        "name": "Blessing of Steel",
+                        "rank": 2,
+                        "reference": {
+                            "book": "SL",
+                            "page": 114
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Craft Shikigami",
+                        "rank": 2,
+                        "reference": {
+                            "book": "SL",
+                            "page": 114
+                        },
+                        "xp": 3
                     }
                 ]
             }
         ]
     },
     {
-        "name": "Shūji",
+        "name": "Sh\u016bji",
         "subcategories": [
             {
-                "name": "Air Shūji",
+                "name": "Air Sh\u016bji",
                 "techniques": [
                     {
                         "name": "Artisan's Appraisal",
@@ -1074,7 +1228,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 214
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Bend with the Storm",
@@ -1082,7 +1237,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 214
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Cadence",
@@ -1090,7 +1246,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 214
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Feigned Opening",
@@ -1098,7 +1255,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 214
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Prey on the Weak",
@@ -1106,7 +1264,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 215
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Rustling of Leaves",
@@ -1114,7 +1273,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 215
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "The Wind Blows Both Ways",
@@ -1122,7 +1282,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 215
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Whispers of Court",
@@ -1130,7 +1291,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 215
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Wolf's Proposal",
@@ -1138,7 +1300,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 215
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Spin the Web",
@@ -1147,12 +1310,13 @@
                         "reference": {
                             "book": "EE",
                             "page": 248
-                        }
+                        },
+                        "xp": 3
                     }
                 ]
             },
             {
-                "name": "Earth Shūji",
+                "name": "Earth Sh\u016bji",
                 "techniques": [
                     {
                         "name": "Ancestry Unearthed",
@@ -1160,7 +1324,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 216
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Civility Foremost",
@@ -1168,7 +1333,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 216
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Honest Assessment",
@@ -1176,7 +1342,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 216
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Pillar of Calm",
@@ -1184,7 +1351,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 216
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Stonewall Tactics",
@@ -1192,7 +1360,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 216
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Touchstone of Courage",
@@ -1200,7 +1369,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 217
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "The Immovable Hand of Peace",
@@ -1208,7 +1378,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 217
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Weight of Duty",
@@ -1216,12 +1387,13 @@
                         "reference": {
                             "book": "Core",
                             "page": 217
-                        }
+                        },
+                        "xp": 3
                     }
                 ]
             },
             {
-                "name": "Fire Shūji",
+                "name": "Fire Sh\u016bji",
                 "techniques": [
                     {
                         "name": "Bravado",
@@ -1229,7 +1401,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 218
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Dazzling Performance",
@@ -1237,7 +1410,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 218
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Fanning the Flames",
@@ -1245,7 +1419,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 218
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Lightning Raid",
@@ -1253,7 +1428,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 218
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Rallying Cry",
@@ -1261,7 +1437,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 219
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Sear the Wound",
@@ -1269,7 +1446,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 219
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Sensational Distraction",
@@ -1277,7 +1455,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 219
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Stirring the Embers",
@@ -1285,7 +1464,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 219
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Truth Burns through Lies",
@@ -1293,12 +1473,13 @@
                         "reference": {
                             "book": "Core",
                             "page": 219
-                        }
+                        },
+                        "xp": 3
                     }
                 ]
             },
             {
-                "name": "Water Shūji",
+                "name": "Water Sh\u016bji",
                 "techniques": [
                     {
                         "name": "All in Jest",
@@ -1306,7 +1487,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 220
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Buoyant Arrival",
@@ -1314,7 +1496,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 220
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Ebb and Flow",
@@ -1322,7 +1505,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 220
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Regal Bearing",
@@ -1330,7 +1514,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 220
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Shallow Waters",
@@ -1338,7 +1523,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 220
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Slippery Maneuvers",
@@ -1346,7 +1532,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 221
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Tributaries of Trade",
@@ -1354,7 +1541,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 221
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Well of Desire",
@@ -1362,12 +1550,13 @@
                         "reference": {
                             "book": "Core",
                             "page": 221
-                        }
+                        },
+                        "xp": 3
                     }
                 ]
             },
             {
-                "name": "Void Shūji",
+                "name": "Void Sh\u016bji",
                 "techniques": [
                     {
                         "name": "All Arts Are One",
@@ -1375,7 +1564,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 222
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "A Samurai's Fate",
@@ -1383,7 +1573,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 222
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Courtier's Resolve",
@@ -1391,7 +1582,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 222
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Lady Doji's Decree",
@@ -1400,7 +1592,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 222
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Lady Shinjo's Speed",
@@ -1409,7 +1602,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 222
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Lord Akodo's Roar",
@@ -1418,7 +1612,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 223
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Lord Bayushi's Whispers",
@@ -1427,7 +1622,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 223
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Lord Togashi's Insight",
@@ -1436,7 +1632,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 223
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Rouse the Soul",
@@ -1444,7 +1641,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 223
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Awe of Heaven",
@@ -1453,14 +1651,15 @@
                         "reference": {
                             "book": "EE",
                             "page": 248
-                        }
+                        },
+                        "xp": 3
                     }
                 ]
             }
         ]
     },
     {
-        "name": "Mahō",
+        "name": "Mah\u014d",
         "subcategories": [
             {
                 "name": "",
@@ -1471,7 +1670,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 224
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Mark of Desecration",
@@ -1479,7 +1679,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 225
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Sinful Whispers",
@@ -1487,7 +1688,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 225
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Unholy Fervor",
@@ -1495,7 +1697,116 @@
                         "reference": {
                             "book": "Core",
                             "page": 225
-                        }
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "The Blood Price",
+                        "rank": 1,
+                        "reference": {
+                            "book": "SL",
+                            "page": 116
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Accursed Summoning",
+                        "rank": 1,
+                        "reference": {
+                            "book": "SL",
+                            "page": 118
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Bind the Undead",
+                        "rank": 2,
+                        "reference": {
+                            "book": "SL",
+                            "page": 118
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Commune with Evil",
+                        "rank": 1,
+                        "reference": {
+                            "book": "SL",
+                            "page": 118
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Dark Reflection",
+                        "rank": 1,
+                        "reference": {
+                            "book": "SL",
+                            "page": 119
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Entreat the Shadow Steed",
+                        "rank": 2,
+                        "reference": {
+                            "book": "SL",
+                            "page": 119
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Fiend's Retreat",
+                        "rank": 3,
+                        "reference": {
+                            "book": "SL",
+                            "page": 119
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Shape the Flesh",
+                        "rank": 4,
+                        "reference": {
+                            "book": "SL",
+                            "page": 120
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Spiritual Shackles",
+                        "rank": 1,
+                        "reference": {
+                            "book": "SL",
+                            "page": 120
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Spread Corruption",
+                        "rank": 2,
+                        "reference": {
+                            "book": "SL",
+                            "page": 120
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Sword of Blood",
+                        "rank": 2,
+                        "reference": {
+                            "book": "SL",
+                            "page": 121
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Twisted Summons",
+                        "rank": 3,
+                        "reference": {
+                            "book": "SL",
+                            "page": 121
+                        },
+                        "xp": 3
                     }
                 ]
             }
@@ -1513,7 +1824,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 226
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Deadly Sting",
@@ -1521,7 +1833,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 226
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Noxious Cloud",
@@ -1529,7 +1842,8 @@
                         "reference": {
                             "book": "Core",
                             "page": 227
-                        }
+                        },
+                        "xp": 3
                     },
                     {
                         "name": "Silencing Stroke",
@@ -1537,7 +1851,100 @@
                         "reference": {
                             "book": "Core",
                             "page": 227
-                        }
+                        },
+                        "xp": 3
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Signature Scrolls",
+        "subcategories": [
+            {
+                "name": "",
+                "techniques": [
+                    {
+                        "name": "Ichi's Second Sight",
+                        "rank": 1,
+                        "reference": {
+                            "book": "SL",
+                            "page": 108
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Hasegawa's Denial",
+                        "rank": 1,
+                        "reference": {
+                            "book": "SL",
+                            "page": 108
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Maikara's Rebuke",
+                        "rank": 1,
+                        "reference": {
+                            "book": "SL",
+                            "page": 108
+                        },
+                        "xp": 3
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Item Patterns",
+        "subcategories": [
+            {
+                "name": "",
+                "techniques": [
+                    {
+                        "name": "Kakita Pattern",
+                        "rank": 1,
+                        "reference": {
+                            "page": 109,
+                            "book": "SL"
+                        },
+                        "xp": 6
+                    },
+                    {
+                        "name": "Kenz\u014d Blade",
+                        "rank": 1,
+                        "reference": {
+                            "book": "SL",
+                            "page": 109
+                        },
+                        "xp": 8
+                    },
+                    {
+                        "name": "Shirogane Jade Inlay",
+                        "rank": 1,
+                        "reference": {
+                            "book": "SL",
+                            "page": 109
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Uchema's Technique",
+                        "rank": 1,
+                        "reference": {
+                            "book": "SL",
+                            "page": 109
+                        },
+                        "xp": 4
+                    },
+                    {
+                        "name": "Yasunori Steel",
+                        "rank": 1,
+                        "reference": {
+                            "book": "SL",
+                            "page": 109
+                        },
+                        "xp": 5
                     }
                 ]
             }

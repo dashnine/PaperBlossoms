@@ -482,5 +482,108 @@
             "book": "EE",
             "page": 233
         }
+    },
+    {
+        "name": "Climbing Kit",
+        "reference": {
+            "book": "SL",
+            "page": 106
+        },
+        "price": {
+            "value": 2,
+            "unit": "bu"
+        },
+        "rarity": 3
+    },
+    {
+        "name": "Engineer's Kit",
+        "reference": {
+            "book": "SL",
+            "page": 107
+        },
+        "price": {
+            "value": 3,
+            "unit": "bu"
+        },
+        "rarity": 3
+    },
+    {
+        "name": "Sapper's Kit",
+        "reference": {
+            "book": "SL",
+            "page": 107
+        },
+        "price": {
+            "value": 1,
+            "unit": "bu"
+        },
+        "rarity": 3
+    },
+    {
+        "name": "Smithy's Kit",
+        "reference": {
+            "book": "SL",
+            "page": 107
+        },
+        "price": {
+            "value": 3,
+            "unit": "bu"
+        },
+        "rarity": 3
+    },
+    {
+        "name": "Smoke Arrows",
+        "reference": {
+            "book": "SL",
+            "page": 107
+        },
+        "price": {
+            "value": 3,
+            "unit": "bu"
+        },
+        "rarity": 4
+    },
+    {
+        "name": "Spyglass",
+        "reference": {
+            "book": "SL",
+            "page": 107
+        },
+        "price": {
+            "value": 2,
+            "unit": "koku"
+        },
+        "rarity": 5
+    },
+    {
+        "name": "Taketaba",
+        "reference": {
+            "book": "SL",
+            "page": 107
+        },
+        "price": {
+            "value": 4,
+            "unit": "bu"
+        },
+        "rarity": 4
+    },
+    {
+        "name": "Tate",
+        "reference": {
+            "book": "SL",
+            "page": 107
+        },
+        "price": {
+            "value": 3,
+            "unit": "bu"
+        },
+        "rarity": 3
+    },
+    {
+        "name": "Satchel of Medicinal Supplies",
+        "reference": {
+            "book": "SL",
+            "page": 90
+        }
     }
 ]

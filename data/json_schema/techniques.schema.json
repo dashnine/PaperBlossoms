@@ -50,7 +50,8 @@
                                                 "type": "string",
                                                 "enum": [
                                                     "Core",
-                                                    "EE"
+                                                    "EE",
+                                                    "SL"
                                                 ]
                                             },
                                             "page": {
@@ -71,11 +72,16 @@
                                                 }
                                             }
                                         ]
+                                    },
+                                    "xp": {
+                                        "description": "Amount of XP required to purchase the technique",
+                                        "type": "integer"
                                     }
                                 },
                                 "required": [
                                     "name",
-                                    "rank"
+                                    "rank",
+                                    "xp"
                                 ],
                                 "defaultSnippets": [
                                     {
@@ -83,7 +89,8 @@
                                         "body": {
                                             "name": "$1",
                                             "rank": "^$3",
-                                            "reference": "^$4"
+                                            "reference": "^$4",
+                                            "xp": "^${5:3}"
                                         }
                                     }
                                 ]

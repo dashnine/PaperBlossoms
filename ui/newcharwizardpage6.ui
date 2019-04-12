@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>704</width>
-    <height>588</height>
+    <height>594</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -54,7 +54,14 @@
       <string>18. Who were you named to honor?</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_6">
-      <item row="0" column="2" colspan="2">
+      <item row="2" column="3">
+       <widget class="QRadioButton" name="nc6_q18_ancestor2_radioButton">
+        <property name="text">
+         <string>Choose Ancestor 2</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2" colspan="2">
        <widget class="QGroupBox" name="nc6_q18_ancestor2_groupBox">
         <property name="title">
          <string>Ancestor 2</string>
@@ -97,23 +104,29 @@
         </layout>
        </widget>
       </item>
-      <item row="0" column="0" colspan="2">
+      <item row="2" column="2">
+       <spacer name="horizontalSpacer_4">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>207</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="1" column="0" colspan="2">
        <widget class="QGroupBox" name="nc6_q18_ancestor1_groupBox">
         <property name="title">
          <string>Ancestor 1</string>
         </property>
         <layout class="QGridLayout" name="gridLayout">
-         <item row="0" column="0">
+         <item row="1" column="0">
           <widget class="QComboBox" name="nc6_q18_ancestor1_comboBox"/>
          </item>
-         <item row="0" column="1">
-          <widget class="QPushButton" name="nc6_q18_ancestor1_rollButton">
-           <property name="text">
-            <string>Roll</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0" colspan="2">
+         <item row="2" column="0" colspan="2">
           <layout class="QHBoxLayout" name="horizontalLayout">
            <item>
             <spacer name="horizontalSpacer">
@@ -137,10 +150,37 @@
            </item>
           </layout>
          </item>
+         <item row="1" column="1">
+          <widget class="QPushButton" name="nc6_q18_ancestor1_rollButton">
+           <property name="text">
+            <string>Roll</string>
+           </property>
+          </widget>
+         </item>
         </layout>
        </widget>
       </item>
-      <item row="2" column="0" colspan="4">
+      <item row="2" column="0">
+       <widget class="QRadioButton" name="nc6_q18_ancestor1_radioButton">
+        <property name="text">
+         <string>Choose Ancestor 1</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <spacer name="horizontalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>207</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="3" column="0" colspan="4">
        <widget class="QGroupBox" name="groupBox_6">
         <property name="title">
          <string>Other Effects</string>
@@ -228,45 +268,15 @@
         </layout>
        </widget>
       </item>
-      <item row="1" column="1">
-       <spacer name="horizontalSpacer_3">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>207</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="1" column="0">
-       <widget class="QRadioButton" name="nc6_q18_ancestor1_radioButton">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_2">
         <property name="text">
-         <string>Choose Ancestor 1</string>
+         <string>Heritage Table:</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="2">
-       <spacer name="horizontalSpacer_4">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>207</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="1" column="3">
-       <widget class="QRadioButton" name="nc6_q18_ancestor2_radioButton">
-        <property name="text">
-         <string>Choose Ancestor 2</string>
-        </property>
-       </widget>
+      <item row="0" column="1" colspan="3">
+       <widget class="QComboBox" name="heritagetable_comboBox"/>
       </item>
      </layout>
     </widget>

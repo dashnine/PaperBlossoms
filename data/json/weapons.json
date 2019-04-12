@@ -165,6 +165,41 @@
                 }
             },
             {
+                "name": "Kakita Katana",
+                "reference": {
+                    "book": "SL",
+                    "page": 89
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 1,
+                    "max": 1
+                },
+                "damage": 4,
+                "deadliness": 6,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": []
+                    },
+                    {
+                        "name": "2-hand",
+                        "effects": [
+                            {
+                                "attribute": "deadliness",
+                                "value_increase": 2
+                            }
+                        ]
+                    }
+                ],
+                "qualities": ["Ceremonial", "Razor-edged"],
+                "rarity": 11,
+                "price": {
+                    "value": 20,
+                    "unit": "koku"
+                }
+            },
+            {
                 "name": "Nodachi",
                 "reference": {
                     "book": "Core",
@@ -276,6 +311,107 @@
                     "value": 40,
                     "unit": "koku"
                 }
+            },
+            {
+                "name": "Flyssa",
+                "reference": {
+                    "book": "SL",
+                    "page": 102
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 1,
+                    "max": 1
+                },
+                "damage": 4,
+                "deadliness": 4,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": []
+                    },
+                    {
+                        "name": "2-hand",
+                        "effects": [
+                            {
+                                "attribute": "quality",
+                                "value": "Razor-Edged"
+                            }
+                        ]
+                    }
+                ],
+                "qualities": ["Wargear"],
+                "rarity": 8,
+                "price": {
+                    "value": 15,
+                    "unit": "koku"
+                }
+            },
+            {
+                "name": "Kabutowari",
+                "reference": {
+                    "book": "SL",
+                    "page": 102
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 0,
+                    "max": 1
+                },
+                "damage": 3,
+                "deadliness": 3,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": []
+                    }
+                ],
+                "qualities": ["Durable", "Snaring"],
+                "rarity": 7,
+                "price": {
+                    "value": 6,
+                    "unit": "koku"
+                }
+            },
+            {
+                "name": "Tekkan",
+                "reference": {
+                    "book": "SL",
+                    "page": 102
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 1,
+                    "max": 2
+                },
+                "damage": 4,
+                "deadliness": 3,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": [
+                            {
+                                "attribute": "quality",
+                                "value": "Cumbersome"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2-hand",
+                        "effects": [
+                            {
+                                "attribute": "damage",
+                                "value_increase": 2
+                            }
+                        ]
+                    }
+                ],
+                "qualities": ["Durable", "Wargear"],
+                "rarity": 8,
+                "price": {
+                    "value": 50,
+                    "unit": "koku"
+                }
             }
         ]
     },
@@ -345,6 +481,81 @@
                 "price": {
                     "value": 5,
                     "unit": "koku"
+                }
+            },
+            {
+                "name": "Genno",
+                "reference": {
+                    "book": "SL",
+                    "page": 102
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 0,
+                    "max": 1
+                },
+                "damage": 3,
+                "deadliness": 3,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": []
+                    },
+                    {
+                        "name": "2-hand",
+                        "effects": [
+                            {
+                                "attribute": "damage",
+                                "value_increase": 4
+                            }
+                        ]
+                    }
+                ],
+                "qualities": ["Durable", "Mundane"],
+                "rarity": 5,
+                "price": {
+                    "value": 1,
+                    "unit": "koku"
+                }
+            },
+            {
+                "name": "Tsuruhashi",
+                "reference": {
+                    "book": "SL",
+                    "page": 102
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 1,
+                    "max": 1
+                },
+                "damage": 4,
+                "deadliness": 3,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": [
+                            {
+                                "attribute": "quality",
+                                "value": "Cumbersome"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2-hand",
+                        "effects": [
+                            {
+                                "attribute": "deadliness",
+                                "value_increase": 2
+                            }
+                        ]
+                    }
+                ],
+                "qualities": ["Mundane"],
+                "rarity": 4,
+                "price": {
+                    "value": 5,
+                    "unit": "bu"
                 }
             }
         ]
@@ -894,6 +1105,32 @@
                     "value": 3,
                     "unit": "koku"
                 }
+            },
+            {
+                "name": "Storm Bow",
+                "reference": {
+                    "book": "SL",
+                    "page": 103
+                },
+                "skill": "Ranged",
+                "range": {
+                    "min": 1,
+                    "max": 4
+                },
+                "damage": 4,
+                "deadliness": 3,
+                "grips": [
+                    {
+                        "name": "2-hand",
+                        "effects": []
+                    }
+                ],
+                "qualities": ["Cumbersome", "Prepare", "Wargear"],
+                "rarity": 9,
+                "price": {
+                    "value": 60,
+                    "unit": "koku"
+                }
             }
         ]
     },
@@ -923,6 +1160,58 @@
                 "rarity": 8,
                 "price": {
                     "value": 40,
+                    "unit": "koku"
+                }
+            },
+            {
+                "name": "Doom Crossbow",
+                "reference": {
+                    "book": "SL",
+                    "page": 103
+                },
+                "skill": "Ranged",
+                "range": {
+                    "min": 3,
+                    "max": 5
+                },
+                "damage": 8,
+                "deadliness": 6,
+                "grips": [
+                    {
+                        "name": "2-hand",
+                        "effects": []
+                    }
+                ],
+                "qualities": ["Cumbersome", "Prepare", "Wargear"],
+                "rarity": 10,
+                "price": {
+                    "value": 80,
+                    "unit": "koku"
+                }
+            },
+            {
+                "name": "Kaiu no Oyumi",
+                "reference": {
+                    "book": "SL",
+                    "page": 103
+                },
+                "skill": "Ranged",
+                "range": {
+                    "min": 2,
+                    "max": 5
+                },
+                "damage": 7,
+                "deadliness": 3,
+                "grips": [
+                    {
+                        "name": "2-hand",
+                        "effects": []
+                    }
+                ],
+                "qualities": ["Cumbersome", "Prepare", "Wargear"],
+                "rarity": 8,
+                "price": {
+                    "value": 60,
                     "unit": "koku"
                 }
             }
@@ -1060,6 +1349,146 @@
                 "rarity": 6,
                 "price": {
                     "value": 1,
+                    "unit": "koku"
+                }
+            }
+        ]
+    },
+    {
+        "name": "Shields",
+        "entries": [
+            {
+                "name": "Sode",
+                "reference": {
+                    "book": "SL",
+                    "page": 103
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 0,
+                    "max": 0
+                },
+                "damage": 1,
+                "deadliness": 1,
+                "grips": [
+                    {
+                        "name": "Shoulder",
+                        "effects": []
+                    }
+                ],
+                "qualities": ["Durable", "Wargear"],
+                "rarity": 8,
+                "price": {
+                    "value": 8,
+                    "unit": "koku"
+                }
+            },
+            {
+                "name": "Large Shield",
+                "reference": {
+                    "book": "SL",
+                    "page": 104
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 0,
+                    "max": 0
+                },
+                "damage": 3,
+                "deadliness": 2,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": []
+                    }
+                ],
+                "qualities": ["Cumbersome", "Durable", "Wargear"],
+                "rarity": 8,
+                "price": {
+                    "value": 10,
+                    "unit": "koku"
+                }
+            },
+            {
+                "name": "Small Shield",
+                "reference": {
+                    "book": "SL",
+                    "page": 104
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 0,
+                    "max": 0
+                },
+                "damage": 2,
+                "deadliness": 2,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": []
+                    }
+                ],
+                "qualities": ["Cumbersome", "Durable", "Wargear"],
+                "rarity": 8,
+                "price": {
+                    "value": 6,
+                    "unit": "koku"
+                }
+            }
+        ]
+    },
+    {
+        "name": "Siege Wepaons",
+        "entries": [
+            {
+                "name": "Ballista",
+                "reference": {
+                    "book": "SL",
+                    "page": 105
+                },
+                "skill": "Ranged",
+                "range": {
+                    "min": 3,
+                    "max": 5
+                },
+                "damage": 14,
+                "deadliness": 8,
+                "grips": [
+                    {
+                        "name": "2-hand",
+                        "effects": []
+                    }
+                ],
+                "qualities": ["Durable", "Prepare (2)"],
+                "rarity": 7,
+                "price": {
+                    "value": 60,
+                    "unit": "koku"
+                }
+            },
+            {
+                "name": "O-Gata Dohou",
+                "reference": {
+                    "book": "SL",
+                    "page": 105
+                },
+                "skill": "Ranged",
+                "range": {
+                    "min": 4,
+                    "max": 5
+                },
+                "damage": 16,
+                "deadliness": 6,
+                "grips": [
+                    {
+                        "name": "2-hand",
+                        "effects": []
+                    }
+                ],
+                "qualities": ["Durable", "Prepare (2)"],
+                "rarity": 7,
+                "price": {
+                    "value": 120,
                     "unit": "koku"
                 }
             }

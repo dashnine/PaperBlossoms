@@ -56,6 +56,8 @@ AddItemDialog::AddItemDialog(DataAccessLayer* dal, Character* character, QString
     ui->itemtemplate_combobox->addItems(dal->qsl_getitemsbytype(type));
 
     ui->qual_listView->setModel(&qualities);
+    ui->qual_comboBox->addItems(dal->qsl_getqualities());
+    ui->pattern_comboBox->addItems(dal->qsl_getpatterns());
 
 }
 
@@ -79,7 +81,7 @@ void AddItemDialog::on_itemtemplate_combobox_currentIndexChanged(const QString &
     ui->rarity_spinBox->setValue( basedata.at(ItemData::RARITY).toInt());
 
     qualities.setStringList(dal->qsl_getitemqualities(arg1,type));
-    ui->qual_comboBox->addItems(dal->qsl_getqualities());
+    //ui->qual_comboBox->addItems(dal->qsl_getqualities());
 
     if(type == "Weapon"){
         QList<QStringList> weapondata = dal->ql_getweapondata(arg1);
@@ -137,7 +139,7 @@ void AddItemDialog::clearFields(){
     ui->rarity_spinBox->setValue(0);
 
     qualities.setStringList(QStringList{});
-    ui->qual_comboBox->clear();
+    //ui->qual_comboBox->clear();
 
     ui->grip1_category_comboBox->setCurrentIndex(-1);
     ui->grip1_skill_comboBox->setCurrentIndex(-1);
@@ -237,7 +239,7 @@ void AddItemDialog::on_qual_add_pushButton_clicked()
 {
     QStringList curlist = qualities.stringList();
     QString newqual = ui->qual_comboBox->currentText();
-    if(!curlist.contains(newqual)) curlist.append(newqual);
+    if(!newqual.isEmpty() && !curlist.contains(newqual)) curlist.append(newqual);
     qualities.setStringList(curlist);
 }
 
@@ -249,5 +251,13 @@ void AddItemDialog::on_qual_rem_pushButton_clicked()
 
     QStringList curlist = qualities.stringList();
     curlist.removeAll(itemText);
+    qualities.setStringList(curlist);
+}
+
+void AddItemDialog::on_pattern_add_pushButton_clicked()
+{
+    QStringList curlist = qualities.stringList();
+    QString newqual = ui->pattern_comboBox->currentText();
+    if(!newqual.isEmpty() && !curlist.contains(newqual)) curlist.append(newqual);
     qualities.setStringList(curlist);
 }

@@ -1,0 +1,67 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Item patterns",
+    "description": "List of item patterns",
+    "type": "array",
+    "items": {
+        "description": "Item pattern",
+        "type": "object",
+        "properties": {
+            "name": {
+                "description": "Name of item pattern",
+                "type": "string"
+            },
+            "reference": {
+                "description": "Page reference for item pattern",
+                "type": "object",
+                "properties": {
+                    "book": {
+                        "description": "Book in which reference can be found",
+                        "type": "string",
+                        "enum": [
+                            "Core",
+                            "EE",
+                            "SL"
+                        ]
+                    },
+                    "page": {
+                        "description": "Page on which reference can be found",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "book",
+                    "page"
+                ],
+                "defaultSnippets": [
+                    {
+                        "label": "New Page reference for item pattern",
+                        "body": {
+                            "book": "$1",
+                            "page": "^$2"
+                        }
+                    }
+                ]
+            },
+            "xp_cost": {
+                "description": "XP cost of item pattern",
+                "type": "integer"
+            },
+            "rarity_modifier": {
+                "description": "Rarity modifier endowed by item pattern",
+                "type": "integer"
+            }
+        },
+        "defaultSnippets": [
+            {
+                "label": "New Item pattern",
+                "body": {
+                    "name": "$1",
+                    "reference": "^$2",
+                    "xp_cost": "^$3",
+                    "rarity_modifier": "^$4"
+                }
+            }
+        ]
+    }
+}

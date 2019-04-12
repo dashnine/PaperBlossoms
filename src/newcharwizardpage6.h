@@ -56,6 +56,8 @@ private slots:
 
     void on_nc6_q18_otherrollButton_clicked();
 
+    void on_heritagetable_comboBox_currentIndexChanged(const QString &arg1);
+
 private:
     Ui::NewCharWizardPage6 *ui;
     DataAccessLayer* dal;

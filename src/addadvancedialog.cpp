@@ -94,9 +94,24 @@ void AddAdvanceDialog::validatePage(){
             ok &= !character->techniques.contains(name);
         }
     }
+    if(ok && !ui->free_radioButton->isChecked()){
+        //if everything but radio buttons are set, show XP cost unless free is checked
+        ui->xp_label->setVisible(true);
+        ui->xp_text_label->setVisible(true);
+        ui->xp_text_label2->setVisible(true);
+
+    }
+    else{
+        ui->xp_label->setVisible(false);
+        ui->xp_text_label->setVisible(false);
+        ui->xp_text_label2->setVisible(false);
+
+    }
+
+
     ok &= (ui->curriculum_radioButton->isChecked() || ui->title_radioButton->isChecked() || ui->free_radioButton->isChecked());
     ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(ok);
-    //this->window()->adjustSize();
+       //this->window()->adjustSize();
 
 
 }
@@ -147,7 +162,13 @@ void AddAdvanceDialog::on_advtype_currentIndexChanged(const QString &arg1)
 
         qSort(typelist);
         ui->advchooser_combobox->addItems(typelist);
-        ui->xp_label->setText(QString::number(3));
+
+        //tech cost is variable now -- hide the text and clear it
+        ui->xp_label->setText(QString::number(0));
+        ui->xp_label->setVisible(false);
+        ui->xp_text_label->setVisible(false);
+        ui->xp_text_label2->setVisible(false);
+
         ui->detailTableView->resizeColumnsToContents();
         ui->detailTableView->setVisible(true);
     }
@@ -278,6 +299,12 @@ QString AddAdvanceDialog::getResult(){
 void AddAdvanceDialog::on_detailTableView_clicked(const QModelIndex &index)
 {
     Q_UNUSED(index)
+
+    QModelIndex curIndex = proxyModel.mapToSource(index);
+    QSqlRecord record = techModel.record(curIndex.row());
+
+    ui->xp_label->setText(record.value("xp").toString());
+
     validatePage();
 }
 

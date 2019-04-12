@@ -416,7 +416,8 @@ def techniques_to_db(db_conn):
             restriction TEXT,
             reference_book TEXT,
             reference_page INTEGER,
-            rank INTEGER
+            rank INTEGER,
+            xp INTEGER
         )''',
         'name'
     )
@@ -430,7 +431,7 @@ def techniques_to_db(db_conn):
         for subcategory in category['subcategories']:
             for technique in subcategory['techniques']:
                 db_conn.execute(
-                    'INSERT INTO base_techniques VALUES (?,?,?,?,?,?,?)',
+                    'INSERT INTO base_techniques VALUES (?,?,?,?,?,?,?,?)',
                     (
                         category['name'],
                         subcategory['name'],
@@ -438,7 +439,8 @@ def techniques_to_db(db_conn):
                         technique['restriction'] if 'restriction' in technique else None,
                         technique['reference']['book'],
                         technique['reference']['page'],
-                        technique['rank']
+                        technique['rank'],
+                        technique['xp']
                     )
                 )
 
@@ -609,7 +611,9 @@ def heritage_to_db(db_conn):
     # Create heritage, heritage modifier, heritage effects table
     db_conn.execute(
         '''CREATE TABLE samurai_heritage (
-            roll INTEGER,
+            source TEXT,
+            roll_min INTEGER,
+            roll_max INTEGER,
             ancestor TEXT PRIMARY KEY,
             modifier_glory INTEGER,
             modifier_honor INTEGER,
@@ -636,9 +640,11 @@ def heritage_to_db(db_conn):
 
         # Write to samurai heritage table
         db_conn.execute(
-            'INSERT INTO samurai_heritage VALUES (?,?,?,?,?,?,?)',
+            'INSERT INTO samurai_heritage VALUES (?,?,?,?,?,?,?,?,?)',
             (
-                ancestor['roll'],
+                ancestor['source'],
+                ancestor['roll']['min'],
+                ancestor['roll']['max'],
                 ancestor['result'],
                 ancestor['modifiers']['glory'],
                 ancestor['modifiers']['honor'],
@@ -874,6 +880,8 @@ def titles_to_db(db_conn):
             base_status_award INTEGER,
             status_award_constraint_type TEXT,
             status_award_constraint_value INTEGER,
+            status_award_constraint_min INTEGER,
+            status_award_constraint_max INTEGER,
             xp_to_completion INTEGER,
             title_ability_name TEXT
         )'''
@@ -922,14 +930,16 @@ def titles_to_db(db_conn):
 
         # Write to titles table
         db_conn.execute(
-            'INSERT INTO base_titles VALUES (?,?,?,?,?,?,?,?)',
+            'INSERT INTO base_titles VALUES (?,?,?,?,?,?,?,?,?,?)',
             (
                 title['name'],
                 title['reference']['book'],
                 title['reference']['page'],
                 title['status_award']['base_award'],
-                title['status_award']['constraint']['type'] if 'constraint' in title['status_award'] else None,
-                title['status_award']['constraint']['value'] if 'constraint' in title['status_award'] else None,
+                title['status_award']['constraint']['type'] if 'constraint' in title['status_award'] and 'value' in title['status_award']['constraint'] else None,
+                title['status_award']['constraint']['value'] if 'constraint' in title['status_award'] and 'value' in title['status_award']['constraint'] else None,
+                title['status_award']['constraint']['range'][0] if 'constraint' in title['status_award'] and 'range' in title['status_award']['constraint'] else None,
+                title['status_award']['constraint']['range'][1] if 'constraint' in title['status_award'] and 'range' in title['status_award']['constraint'] else None,
                 title['xp_to_completion'],
                 title['title_ability'],
             )
@@ -948,6 +958,40 @@ def titles_to_db(db_conn):
                 )
                 for advancement in title['advancements']
             ]
+        )
+
+
+def patterns_to_db(db_conn):
+    
+    # Create item patterns table
+    create_tables(
+        db_conn,
+        'item_patterns',
+        '''CREATE TABLE {} (
+            name TEXT PRIMARY KEY,
+            reference_book TEXT,
+            reference_page INTEGER,
+            xp_cost INTEGER,
+            rarity_modifier INTEGER
+        )''',
+        'name'
+    )
+
+    # Read item patterns from JSON
+    with open('json/item_patterns.json') as f:
+        item_patterns = json.load(f)
+    
+    # Write item patterns to item pattern table
+    for pattern in item_patterns:
+        db_conn.execute(
+            'INSERT INTO base_item_patterns VALUES (?,?,?,?,?)',
+            (
+                pattern['name'],
+                pattern['reference']['book'],
+                pattern['reference']['page'],
+                pattern['xp_cost'],
+                pattern['rarity_modifier']
+            )
         )
 
 
@@ -984,6 +1028,7 @@ def main():
     advantages_to_db(db_conn)
     q8_to_db(db_conn)
     titles_to_db(db_conn)
+    patterns_to_db(db_conn)
 
     # Equipment
     qualities_to_db(db_conn)

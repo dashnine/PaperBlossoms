@@ -31,7 +31,8 @@
                                     "type": "string",
                                     "enum": [
                                         "Core",
-                                        "EE"
+                                        "EE",
+                                        "SL"
                                     ]
                                 },
                                 "page": {
@@ -190,7 +191,8 @@
                                     "Snaring",
                                     "Subtle",
                                     "Unholy",
-                                    "Wargear"
+                                    "Wargear",
+                                    "Prepare (2)"
                                 ]
                             }
                         },

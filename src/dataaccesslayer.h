@@ -84,7 +84,7 @@ public:
     QStringList qsl_getadv();
     QStringList qsl_getdisadv();
     QStringList qsl_getitemsunderrarity(int rarity);
-    QStringList qsl_getancestors();
+    QStringList qsl_getancestors(QString source);
     QStringList qsl_getancestormods(QString ancestor);
     QStringList qsl_getancestorseffects(QString ancestor);
     QStringList qsl_getitemsbytype(QString type);
@@ -136,6 +136,9 @@ public:
     QString qs_getschooladvdisadv(QString school);
     bool queryToCsv(QString filepath, QString tablename);
     bool importCSV(QString filepath, QString tablename);
+    QStringList qsl_getancestorranges(QString ancestor);
+    QStringList qsl_getweapontypeunderrarity(int rarity, QString type);
+    QStringList qsl_getpatterns();
 private:
     QSqlDatabase db;
     QStringList qsl_getschooltechsetids(QString school);
