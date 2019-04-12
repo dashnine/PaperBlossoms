@@ -13962,7 +13962,7 @@
             "set": ["Courtesy", "Culture", "Martial Arts [Melee]", "Sentiment", "Survival", "Theology"]
         },
         "honor": 44,
-        "techniques_available": ["Air Invocations", "Earth Invocations", "Rituals", "Void Shūji"],
+        "techniques_available": ["Air Invocations", "Earth Invocations", "Rituals", "Shūji"],
         "starting_techniques": [
             {
                 "size": 1,
