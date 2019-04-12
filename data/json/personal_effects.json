@@ -578,5 +578,12 @@
             "unit": "bu"
         },
         "rarity": 3
+    },
+    {
+        "name": "Satchel of Medicinal Supplies",
+        "reference": {
+            "book": "SL",
+            "page": 90
+        }
     }
 ]

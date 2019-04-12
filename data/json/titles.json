@@ -539,5 +539,223 @@
                 "special_access": true
             }
         ]
+    },
+    {
+        "name": "The Damned",
+        "reference": {
+            "book": "SL",
+            "page": 128
+        },
+        "status_award": {
+            "base_award": -20,
+            "constraint": {
+                "type": "max",
+                "value": 30
+            }
+        },
+        "xp_to_completion": 20,
+        "title_ability": "Tainted Warrior",
+        "advancements": [
+            {
+                "name": "Martial skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Medicine",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Survival",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Theology",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "name": "Kata",
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "name": "Heartpiercing Strike",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Rallying Cry",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "Harvester",
+        "reference": {
+            "book": "SL",
+            "page": 128
+        },
+        "status_award": {
+            "base_award": 10,
+            "constraint": {
+                "type": "max",
+                "value": 45
+            }
+        },
+        "xp_to_completion": 20,
+        "title_ability": "Capture Evil",
+        "advancements": [
+            {
+                "name": "Martial skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Smithing",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Survival",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Theology",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "name": "Kata",
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "rank": 2,
+                "name": "Rituals",
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "name": "Skulk",
+                "type": "technique",
+                "special_access": false
+            }
+        ]
+    },
+    {
+        "name": "Twenty-Goblin Crab",
+        "reference": {
+            "book": "SL",
+            "page": 128
+        },
+        "status_award": {
+            "base_award": 15,
+            "constraint": {
+                "type": "between",
+                "range": [30, 40]
+            }
+        },
+        "xp_to_completion": 20,
+        "title_ability": "Goblin Killer",
+        "advancements": [
+            {
+                "name": "Martial skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Social skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Culture",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Government",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "name": "Kata",
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "name": "Thunderclap Strike",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Stonewall Tactics",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "Witch Hunter",
+        "reference": {
+            "book": "SL",
+            "page": 129
+        },
+        "status_award": {
+            "base_award": 10,
+            "constraint": {
+                "type": "min",
+                "value": 30
+            }
+        },  
+        "xp_to_completion": 45,
+        "title_ability": "Bane of Sorcerers",
+        "advancements": [
+            {
+                "name": "Martial skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Scholar skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Command",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Skulduggery",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "name": "Kata",
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "rank": 5,
+                "name": "Rituals",
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "name": "Honest Assessment",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
     }
 ]
