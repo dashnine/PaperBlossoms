@@ -49,6 +49,8 @@ private slots:
 
     void on_qual_rem_pushButton_clicked();
 
+    void on_pattern_add_pushButton_clicked();
+
 private:
     Ui::AddItemDialog *ui;
     DataAccessLayer* dal;

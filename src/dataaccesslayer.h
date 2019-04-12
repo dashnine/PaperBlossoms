@@ -138,6 +138,7 @@ public:
     bool importCSV(QString filepath, QString tablename);
     QStringList qsl_getancestorranges(QString ancestor);
     QStringList qsl_getweapontypeunderrarity(int rarity, QString type);
+    QStringList qsl_getpatterns();
 private:
     QSqlDatabase db;
     QStringList qsl_getschooltechsetids(QString school);

@@ -760,6 +760,19 @@ QStringList DataAccessLayer::qsl_getqualities(){
     return out;
 }
 
+QStringList DataAccessLayer::qsl_getpatterns(){
+    QStringList out;
+    QSqlQuery query;
+    query.prepare("select name from item_patterns");
+    query.exec();
+    while (query.next()) {
+        QString name = query.value(0).toString();
+//        qDebug() << name;
+        out<< name;
+    }
+    return out;
+}
+
 QStringList DataAccessLayer::qsl_getheritageranges(QString heritage){
     QStringList out;
     QSqlQuery query;
