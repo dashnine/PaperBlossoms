@@ -348,6 +348,13 @@ def write_books(data_dir, books_enum):
         books_enum
     )
 
+    print('... to titles')
+    write_enums(
+        data_dir.joinpath('json_schema/titles.schema.json'),
+        'book',
+        books_enum
+    )
+
 
 def write_resistance(data_dir, resistance_enum):
 
