@@ -298,11 +298,13 @@ QString AddAdvanceDialog::getResult(){
 
 void AddAdvanceDialog::on_detailTableView_clicked(const QModelIndex &index)
 {
+    Q_UNUSED(index)
 
     QModelIndex curIndex = proxyModel.mapToSource(index);
     QSqlRecord record = techModel.record(curIndex.row());
 
     ui->xp_label->setText(record.value("xp").toString());
+
     validatePage();
 }
 

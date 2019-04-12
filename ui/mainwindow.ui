@@ -610,6 +610,18 @@
             <layout class="QGridLayout" name="gridLayout_9">
              <item row="0" column="0" colspan="3">
               <widget class="QTableView" name="other_tableview">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="editTriggers">
+                <set>QAbstractItemView::NoEditTriggers</set>
+               </property>
+               <property name="selectionBehavior">
+                <enum>QAbstractItemView::SelectRows</enum>
+               </property>
                <attribute name="horizontalHeaderStretchLastSection">
                 <bool>true</bool>
                </attribute>
@@ -639,7 +651,7 @@
               </widget>
              </item>
              <item row="1" column="2">
-              <widget class="QPushButton" name="pushButton_6">
+              <widget class="QPushButton" name="removepersonaleffect_pushbutton">
                <property name="text">
                 <string>Remove</string>
                </property>
@@ -721,6 +733,12 @@
                   <verstretch>0</verstretch>
                  </sizepolicy>
                 </property>
+                <property name="editTriggers">
+                 <set>QAbstractItemView::NoEditTriggers</set>
+                </property>
+                <property name="selectionBehavior">
+                 <enum>QAbstractItemView::SelectRows</enum>
+                </property>
                 <attribute name="horizontalHeaderStretchLastSection">
                  <bool>true</bool>
                 </attribute>
@@ -750,7 +768,7 @@
                </widget>
               </item>
               <item row="1" column="2">
-               <widget class="QPushButton" name="pushButton_2">
+               <widget class="QPushButton" name="removeweapon_pushbutton">
                 <property name="text">
                  <string>Remove</string>
                 </property>
@@ -770,6 +788,12 @@
                   <horstretch>0</horstretch>
                   <verstretch>0</verstretch>
                  </sizepolicy>
+                </property>
+                <property name="editTriggers">
+                 <set>QAbstractItemView::NoEditTriggers</set>
+                </property>
+                <property name="selectionBehavior">
+                 <enum>QAbstractItemView::SelectRows</enum>
                 </property>
                 <attribute name="horizontalHeaderStretchLastSection">
                  <bool>true</bool>
@@ -800,7 +824,7 @@
                </widget>
               </item>
               <item row="1" column="2">
-               <widget class="QPushButton" name="pushButton_4">
+               <widget class="QPushButton" name="removearmor_pushbutton">
                 <property name="text">
                  <string>Remove</string>
                 </property>

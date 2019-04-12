@@ -200,6 +200,8 @@ void NewCharWizardPage6::on_nc6_q18_ancestor2_comboBox_currentIndexChanged(const
 
 void NewCharWizardPage6::on_nc6_q18_ancestor1_radioButton_toggled(bool checked)
 {
+    Q_UNUSED(checked)
+
     //TODO: clean this up
     if(ui->nc6_q18_ancestor1_radioButton->isChecked())
         curAncestorBox = ui->nc6_q18_ancestor1_comboBox;
@@ -215,6 +217,8 @@ void NewCharWizardPage6::on_nc6_q18_ancestor1_radioButton_toggled(bool checked)
 
 void NewCharWizardPage6::on_nc6_q18_ancestor2_radioButton_toggled(bool checked)
 {
+    Q_UNUSED(checked)
+    
     if(ui->nc6_q18_ancestor1_radioButton->isChecked())
         curAncestorBox = ui->nc6_q18_ancestor1_comboBox;
     else if(ui->nc6_q18_ancestor2_radioButton->isChecked()){
