@@ -230,13 +230,13 @@ def write_skills(data_dir, skills_enum):
     )
 
 
-def write_techniques(data_dir, techniques_enum, technique_categories_enum):
+def write_techniques(data_dir, techniques_enum, technique_subcategories_enum, technique_categories_enum):
 
     print('Writing technique categories to school available techniques')
     write_enums(
         data_dir.joinpath('json_schema/schools.schema.json'),
         'techniques_available',
-        technique_categories_enum
+        technique_categories_enum + technique_subcategories_enum
     )
 
     print('Writing techniques to school starting techniques')
@@ -410,7 +410,7 @@ def main(option):
         write_skills(data_dir, skills_enum)
     if option is None or 'techniques' in option:
         technique_categories_enum, technique_subcategories_enum, techniques_enum = get_techniques(data_dir)
-        write_techniques(data_dir, techniques_enum, technique_categories_enum)
+        write_techniques(data_dir, techniques_enum, technique_subcategories_enum, technique_categories_enum)
     if option is None or 'qualities' in option:
         write_qualities(data_dir, get_qualities(data_dir))
     if option is None or 'equipment' in option:

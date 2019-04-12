@@ -165,6 +165,41 @@
                 }
             },
             {
+                "name": "Kakita Katana",
+                "reference": {
+                    "book": "SL",
+                    "page": 89
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 1,
+                    "max": 1
+                },
+                "damage": 4,
+                "deadliness": 6,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": []
+                    },
+                    {
+                        "name": "2-hand",
+                        "effects": [
+                            {
+                                "attribute": "deadliness",
+                                "value_increase": 2
+                            }
+                        ]
+                    }
+                ],
+                "qualities": ["Ceremonial", "Razor-edged"],
+                "rarity": 11,
+                "price": {
+                    "value": 20,
+                    "unit": "koku"
+                }
+            },
+            {
                 "name": "Nodachi",
                 "reference": {
                     "book": "Core",

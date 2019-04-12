@@ -82,7 +82,8 @@
                     "Phoenix",
                     "Scorpion",
                     "Unicorn",
-                    "The Imperial Families"
+                    "The Imperial Families",
+                    "Falcon"
                 ]
             },
             "ring_increase": {
@@ -177,7 +178,25 @@
                         "Mah\u014d",
                         "Ninjutsu",
                         "Signature Scrolls",
-                        "Item Pattern"
+                        "Item Pattern",
+                        "General Kata",
+                        "Close Combat Kata",
+                        "Ranged Combat Kata",
+                        "Earth Kih\u014d",
+                        "Air Kih\u014d",
+                        "Fire Kih\u014d",
+                        "Water Kih\u014d",
+                        "Void Kih\u014d",
+                        "Air Invocations",
+                        "Earth Invocations",
+                        "Fire Invocations",
+                        "Water Invocations",
+                        "Void",
+                        "Air Sh\u016bji",
+                        "Earth Sh\u016bji",
+                        "Fire Sh\u016bji",
+                        "Water Sh\u016bji",
+                        "Void Sh\u016bji"
                     ]
                 }
             },
@@ -469,6 +488,7 @@
                                     "Dao",
                                     "Jian",
                                     "Katana",
+                                    "Kakita Katana",
                                     "Nodachi",
                                     "Scimitar",
                                     "Wakizashi",
@@ -563,6 +583,7 @@
                                     "Spyglass",
                                     "Taketaba",
                                     "Tate",
+                                    "Satchel of Medicinal Supplies",
                                     "Traveling Pack",
                                     "Kitsune Starting Outfit",
                                     "Two Weapons of Rarity 6 or Lower",
