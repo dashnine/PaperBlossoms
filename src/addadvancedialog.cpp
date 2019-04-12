@@ -179,21 +179,23 @@ void AddAdvanceDialog::on_advtype_currentIndexChanged(const QString &arg1)
         //TODO - filter to allowable rings
 
 
-        QMapIterator<QString, int> i(character->baserings);
+        QMapIterator<QString, int> ringiterator(character->baserings);
         int voidring = 0;
         QString lowestring = "";
         int lowestval = 99;
-        while (i.hasNext()) {
-            i.next();
-            int value = i.value()+character->ringranks[i.key()];
-            if(value < lowestval) {
-                if(i.key() != "Void"){
-                    lowestring = i.key();
-                    lowestval = value;
+        while (ringiterator.hasNext()) {
+            ringiterator.next();
+            if(!ringiterator.key().isEmpty()){
+                int value = ringiterator.value()+character->ringranks[ringiterator.key()];
+                if(value < lowestval) {
+                    if(ringiterator.key() != "Void"){
+                        lowestring = ringiterator.key();
+                        lowestval = value;
+                    }
                 }
-            }
-            if(i.key() == "Void"){ //void
-                voidring = value;
+                if(ringiterator.key() == "Void"){ //void
+                    voidring = value;
+                }
             }
         }
 
