@@ -41,7 +41,7 @@ public:
     ~NewCharWizardPage7();
 
 private slots:
-    void ringsChanged(QString dynamicRingString);
+    void ringsChanged(const QString dynamicRingString);
     void on_nc7_repRing_1_comboBox_currentIndexChanged(const QString &arg1);
 
     void on_nc7_repRing_2_comboBox_currentIndexChanged(const QString &arg1);
@@ -63,7 +63,7 @@ private:
     int ring_overflow;
     int skill_overflow;
     void setVis();
-    QList<QStringList> populateItemFields(QString name, QString type, QString cust_qual_1="", QString cust_qual_2="");
+    QList<QStringList> populateItemFields(const QString name, const QString type, const QString cust_qual_1="", const QString cust_qual_2="") const;
 };
 
 #endif // NEWCHARWIZARDPAGE7_H

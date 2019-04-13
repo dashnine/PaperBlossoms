@@ -67,18 +67,18 @@ void AddAdvanceDialog::validatePage(){
         ok &= ui->detailTableView->currentIndex().isValid();
 
         if(ok){
-            QModelIndex curIndex = proxyModel.mapToSource(ui->detailTableView->currentIndex());
-            QSqlRecord record = techModel.record(curIndex.row());
-            QString name =  record.value("name").toString();
+            const QModelIndex curIndex = proxyModel.mapToSource(ui->detailTableView->currentIndex());
+            const QSqlRecord record = techModel.record(curIndex.row());
+            const QString name =  record.value("name").toString();
 
             if(character->techniques.contains(name)){
                 ui->warnlabel->setText("Invalid selection: '"+name+"' is already learned.");
             }
             else{
                 //also check advances
-                foreach (QString advance, character->advanceStack) {   //iterate through advances
+                foreach (const QString advance, character->advanceStack) {   //iterate through advances
                     QList<QStandardItem*> itemrow;                       //generate a row in the advancestack
-                    foreach(QString cell, advance.split("|")){           // the advance table is pipe separated for now.  FIx later?
+                    foreach(const QString cell, advance.split("|")){           // the advance table is pipe separated for now.  FIx later?
                         itemrow << new QStandardItem(cell);              // turn this into qstandarditems to match other paradigms
                     }
                     if(itemrow.at(0)->text() == "Technique"){            //if it's a tech advance
@@ -120,14 +120,14 @@ void AddAdvanceDialog::on_advtype_currentIndexChanged(const QString &arg1)
 {
     if(arg1 == "Skill"){
         ui->advchooser_combobox->clear();
-       QStringList skillsopts = dal->qsl_getskills();
+        QStringList skillsopts = dal->qsl_getskills();
         ui->detailTableView->setVisible(false);
         //TODO - filter to allowable skills
         int maxrank = 5;
         QMapIterator<QString, int> j(character->baseskills);
         while (j.hasNext()) {
             j.next();
-            int value = j.value()+character->skillranks[j.key()];
+            const int value = j.value()+character->skillranks[j.key()];
             if(value>=maxrank){
                 skillsopts.removeAll(j.key());
             }
@@ -151,7 +151,7 @@ void AddAdvanceDialog::on_advtype_currentIndexChanged(const QString &arg1)
             dal->qsm_gettechniquetable(&techModel, QString::number(character->rank),character->school, character->titles.last(), character->clan);
        }
         for(int i = 0; i<techModel.rowCount(); ++i){
-            QSqlRecord record = techModel.record(i);
+            const QSqlRecord record = techModel.record(i);
             types << record.value("Category").toString();
         }
         qDebug()<< types;
@@ -223,13 +223,13 @@ void AddAdvanceDialog::on_advchooser_combobox_currentIndexChanged(const QString 
 
 
     if(ui->advtype->currentText() == "Skill"){
-        int currentrank = character->baseskills[arg1] + character->skillranks[arg1];
-        int cost = (currentrank+1)*2;
+        const int currentrank = character->baseskills[arg1] + character->skillranks[arg1];
+        const int cost = (currentrank+1)*2;
         ui->xp_label->setText(QString::number(cost));
     }
     if(ui->advtype->currentText() == "Ring"){
-        int currentrank = character->baserings[arg1] + character->ringranks[arg1];
-        int cost = (currentrank+1)*3;
+        const int currentrank = character->baserings[arg1] + character->ringranks[arg1];
+        const int cost = (currentrank+1)*3;
         ui->xp_label->setText(QString::number(cost));
     }
     else{
@@ -271,12 +271,12 @@ void AddAdvanceDialog::on_title_radioButton_clicked()
     validatePage();
 }
 
-QString AddAdvanceDialog::getResult(){
+QString AddAdvanceDialog::getResult() const {
     QString row = "";
     row += ui->advtype->currentText() + "|";
     if(ui->advtype->currentText() == "Technique"){
-       QModelIndex curIndex = proxyModel.mapToSource(ui->detailTableView->currentIndex());
-       QSqlRecord record = techModel.record(curIndex.row());
+       const QModelIndex curIndex = proxyModel.mapToSource(ui->detailTableView->currentIndex());
+       const QSqlRecord record = techModel.record(curIndex.row());
        row += record.value("name").toString()+"|";
     }
     else{
@@ -311,7 +311,7 @@ void AddAdvanceDialog::on_detailTableView_clicked(const QModelIndex &index)
 }
 
 
-void AddAdvanceDialog::on_free_radioButton_toggled(bool checked)
+void AddAdvanceDialog::on_free_radioButton_toggled(const bool checked)
 {
    if(checked){
        ui->reason_label->setVisible(true);

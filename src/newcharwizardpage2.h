@@ -49,14 +49,14 @@ public:
     QStringListModel* ringModel;
 
 private slots:
-    void on_nc2_unrestrictedSchool_checkBox_toggled(bool checked);
+    void on_nc2_unrestrictedSchool_checkBox_toggled(const bool checked);
     void on_nc2_school_ComboBox_currentIndexChanged(const QString &arg1);
     void on_nc2_skillAdd_pushButton_clicked();
     void on_nc2_skillRem_pushButton_clicked();
 
 
 
-    void equipSelectionChanged(QString newText);
+    void equipSelectionChanged(const QString newText);
     void on_nc2_kitsune_comboBox_currentTextChanged(const QString &arg1);
 
     void on_nc2_skillOpt_listview_doubleClicked(const QModelIndex &index);
@@ -70,8 +70,8 @@ private:
     void initializePage();
     bool validatePage();
     bool settingupequip;
-    void handleSpecCases(QString speccase);
-    void doEquip(QString school);
+    void handleSpecCases(const QString speccase);
+    void doEquip(const QString school);
     void doAddSkill();
     void doRemSkill();
 };

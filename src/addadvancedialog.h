@@ -41,7 +41,7 @@ public:
     explicit AddAdvanceDialog(DataAccessLayer *dal, Character *character, QWidget *parent = 0);
     ~AddAdvanceDialog();
 
-    QString getResult();
+    QString getResult() const;
 private slots:
     void on_advtype_currentIndexChanged(const QString &arg1);
 
@@ -53,7 +53,7 @@ private slots:
 
     void on_detailTableView_clicked(const QModelIndex &index);
 
-    void on_free_radioButton_toggled(bool checked);
+    void on_free_radioButton_toggled(const bool checked);
 
 private:
     Ui::AddAdvanceDialog *ui;

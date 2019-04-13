@@ -41,7 +41,7 @@ public:
     explicit AddItemDialog(DataAccessLayer *dal, Character *character, QString type, QWidget *parent = 0);
     ~AddItemDialog();
 
-    QList<QStringList> getResult();
+    QList<QStringList> getResult() const;
 private slots:
     void on_itemtemplate_combobox_currentIndexChanged(const QString &arg1);
 

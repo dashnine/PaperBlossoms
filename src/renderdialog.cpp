@@ -79,7 +79,7 @@ RenderDialog::RenderDialog(PBOutputData* charData, QWidget *parent) :
     ui->webView->setContextMenuPolicy(Qt::NoContextMenu);
     ui->webView->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, false);
 
-    QString html = generateHtml();
+    const QString html = generateHtml();
     ui->webView->setHtml(html);
 
 }
@@ -92,7 +92,7 @@ RenderDialog::~RenderDialog()
     delete ui;
 }
 
-void RenderDialog::setTemplate(QString filename){
+void RenderDialog::setTemplate(const QString filename){
     QFile file(filename);
     if (!file.open(QFile::ReadOnly))
     {
@@ -100,7 +100,7 @@ void RenderDialog::setTemplate(QString filename){
         QMessageBox::information(this, tr("Unable to open file"), file.errorString());
         return;
     }
-    QDataStream stream(&file);
+    const QDataStream stream(&file);
     QString html_template = "";
     while (!file.atEnd()) {
         QString input_line = file.readLine();
@@ -109,7 +109,7 @@ void RenderDialog::setTemplate(QString filename){
     m_template = html_template;
 }
 
-QString RenderDialog::generateHtml(){
+QString RenderDialog::generateHtml() {
     QString html = m_template;
     QString skilltable = "";
     QString abiltable = "";
@@ -133,10 +133,10 @@ QString RenderDialog::generateHtml(){
     QString titlelisttable = "";
 
 
-    foreach(QStringList skillLine,m_character->skills){
-        QString skill = skillLine[0];
-        QString rank = skillLine[1];
-        QString group = skillLine[2];
+    foreach(const QStringList skillLine,m_character->skills){
+        const QString skill = skillLine[0];
+        const QString rank = skillLine[1];
+        const QString group = skillLine[2];
         if(rank == "0" && ui->hideskill_checkbox->isChecked()) continue;
         skilltable+= "<div class=\"divTableRow\">"
                 "<div class=\"divTableCell\">" + skill.toHtmlEscaped() + "</div>" +
@@ -167,16 +167,16 @@ QString RenderDialog::generateHtml(){
         derattrtable+="<div class=\"divTableCell\">""</div>";
         derattrtable+="</div>";
     }
-    foreach(QStringList equipment, m_character->weapons){
-        QString weapon = equipment[Equipment::NAME];
-        QString type = equipment[Equipment::W_CATEGORY];
-        QString ref= equipment[Equipment::BOOK] + " " + equipment[Equipment::PAGE];
-        QString grip = equipment[Equipment::W_GRIP];
-        QString skill = equipment[Equipment::W_SKILL];
-        QString range = equipment[Equipment::W_MINRANGE] + "-" + equipment[Equipment::W_MAXRANGE];
-        QString dam = equipment[Equipment::W_DAM];
-        QString dls = equipment[Equipment::W_DLS];
-        QString qualities = equipment[Equipment::QUALITIES];
+    foreach(const QStringList equipment, m_character->weapons){
+        const QString weapon = equipment[Equipment::NAME];
+        const QString type = equipment[Equipment::W_CATEGORY];
+        const QString ref= equipment[Equipment::BOOK] + " " + equipment[Equipment::PAGE];
+        const QString grip = equipment[Equipment::W_GRIP];
+        const QString skill = equipment[Equipment::W_SKILL];
+        const QString range = equipment[Equipment::W_MINRANGE] + "-" + equipment[Equipment::W_MAXRANGE];
+        const QString dam = equipment[Equipment::W_DAM];
+        const QString dls = equipment[Equipment::W_DLS];
+        const QString qualities = equipment[Equipment::QUALITIES];
         weaponammotable+= "<div class=\"divTableRow\">"
                                 "<div class=\"divTableCell\">"+weapon.toHtmlEscaped() + "</div>"+
                                 "<div class=\"divTableCell\">"+type.toHtmlEscaped() + "</div>"+
@@ -190,12 +190,12 @@ QString RenderDialog::generateHtml(){
                                 "</div>";
     }
 
-    foreach(QStringList ability, m_character->abilities){
+    foreach(const QStringList ability, m_character->abilities){
         if(ability.count()<=0) continue;
-        QString aname = ability[Abilities::NAME];
-        QString asource = ability[Abilities::SOURCE];
-        QString aref = ability[Abilities::REF_BOOK] + " " + ability[Abilities::REF_PAGE];
-        QString adesc = ability[Abilities::DESCRIPTION];
+        const QString aname = ability[Abilities::NAME];
+        const QString asource = ability[Abilities::SOURCE];
+        const QString aref = ability[Abilities::REF_BOOK] + " " + ability[Abilities::REF_PAGE];
+        const QString adesc = ability[Abilities::DESCRIPTION];
         abiltable+= "<div class=\"divTableRow\">"
                                 "<div class=\"divTableCell\">"+aname.toHtmlEscaped() + "</div>"+
                                 "<div class=\"divTableCell\">"+asource.toHtmlEscaped() + "</div>"+
@@ -260,14 +260,14 @@ QString RenderDialog::generateHtml(){
 
     }
 
-    foreach(QStringList technique, m_character->techniques){
+    foreach(const QStringList technique, m_character->techniques){
         if(technique.count()<=0) continue;
-        QString tname = technique[Tech::NAME];
-        QString ttype = technique[Tech::TYPE];
-        QString tsubtype = technique[Tech::SUBTYPE];
-        QString trank = technique[Tech::RANK];
-        QString tref = technique[Tech::BOOK]+ " " + technique[Tech::PAGE];
-        QString tdesc = tref+" "+technique[Tech::DESCRIPTION];
+        const QString tname = technique[Tech::NAME];
+        const QString ttype = technique[Tech::TYPE];
+        const QString tsubtype = technique[Tech::SUBTYPE];
+        const QString trank = technique[Tech::RANK];
+        const QString tref = technique[Tech::BOOK]+ " " + technique[Tech::PAGE];
+        const QString tdesc = tref+" "+technique[Tech::DESCRIPTION];
         techTable+= "<div class=\"divTableRow\">"
                                 "<div class=\"divTableCell\">"+tname.toHtmlEscaped() + "</div>"+
                                 "<div class=\"divTableCell\">"+ttype.toHtmlEscaped() + "</div>"+
@@ -303,11 +303,11 @@ QString RenderDialog::generateHtml(){
     }
 
 
-    foreach(QStringList str, m_character->distinctions){
-        QString adname = str[Adv_Disadv::NAME];
-        QString adring = str[Adv_Disadv::RING];
-        QString adref = str[Adv_Disadv::BOOK]+ " " + str[Adv_Disadv::PAGE];
-        QString addesc = adref + ":\n" + str[Adv_Disadv::DESC];
+    foreach(const QStringList str, m_character->distinctions){
+        const QString adname = str[Adv_Disadv::NAME];
+        const QString adring = str[Adv_Disadv::RING];
+        const QString adref = str[Adv_Disadv::BOOK]+ " " + str[Adv_Disadv::PAGE];
+        const QString addesc = adref + ":\n" + str[Adv_Disadv::DESC];
         distTable+= "<div class=\"divTableRow\">"
                                 "<div class=\"divTableCell\">"+adname.toHtmlEscaped() + "</div>"+
                                 "<div class=\"divTableCell\">"+adring.toHtmlEscaped() + "</div>"+
@@ -342,11 +342,11 @@ QString RenderDialog::generateHtml(){
 
     }
 
-    foreach(QStringList str, m_character->adversities){
-        QString adname = str[Adv_Disadv::NAME];
-        QString adring = str[Adv_Disadv::RING];
-        QString adref = str[Adv_Disadv::BOOK]+ " " + str[Adv_Disadv::PAGE];
-        QString addesc = adref + ":\n" + str[Adv_Disadv::DESC];
+    foreach(const QStringList str, m_character->adversities){
+        const QString adname = str[Adv_Disadv::NAME];
+        const QString adring = str[Adv_Disadv::RING];
+        const QString adref = str[Adv_Disadv::BOOK]+ " " + str[Adv_Disadv::PAGE];
+        const QString addesc = adref + ":\n" + str[Adv_Disadv::DESC];
         distTable+= "<div class=\"divTableRow\">"
                                 "<div class=\"divTableCell\">"+adname.toHtmlEscaped() + "</div>"+
                                 "<div class=\"divTableCell\">"+adring.toHtmlEscaped() + "</div>"+
@@ -381,11 +381,11 @@ QString RenderDialog::generateHtml(){
 
     }
 
-    foreach(QStringList str, m_character->passions){
-        QString adname = str[Adv_Disadv::NAME];
-        QString adring = str[Adv_Disadv::RING];
-        QString adref = str[Adv_Disadv::BOOK]+ " " + str[Adv_Disadv::PAGE];
-        QString addesc = adref + ":\n" + str[Adv_Disadv::DESC];
+    foreach(const QStringList str, m_character->passions){
+        const QString adname = str[Adv_Disadv::NAME];
+        const QString adring = str[Adv_Disadv::RING];
+        const QString adref = str[Adv_Disadv::BOOK]+ " " + str[Adv_Disadv::PAGE];
+        const QString addesc = adref + ":\n" + str[Adv_Disadv::DESC];
         distTable+= "<div class=\"divTableRow\">"
                                 "<div class=\"divTableCell\">"+adname.toHtmlEscaped() + "</div>"+
                                 "<div class=\"divTableCell\">"+adring.toHtmlEscaped() + "</div>"+
@@ -420,11 +420,11 @@ QString RenderDialog::generateHtml(){
 
     }
 
-    foreach(QStringList str, m_character->anxieties){
-        QString adname = str[Adv_Disadv::NAME];
-        QString adring = str[Adv_Disadv::RING];
-        QString adref = str[Adv_Disadv::BOOK]+ " " + str[Adv_Disadv::PAGE];
-        QString addesc = adref + ":\n" + str[Adv_Disadv::DESC];
+    foreach(const QStringList str, m_character->anxieties){
+        const QString adname = str[Adv_Disadv::NAME];
+        const QString adring = str[Adv_Disadv::RING];
+        const QString adref = str[Adv_Disadv::BOOK]+ " " + str[Adv_Disadv::PAGE];
+        const QString addesc = adref + ":\n" + str[Adv_Disadv::DESC];
         distTable+= "<div class=\"divTableRow\">"
                                 "<div class=\"divTableCell\">"+adname.toHtmlEscaped() + "</div>"+
                                 "<div class=\"divTableCell\">"+adring.toHtmlEscaped() + "</div>"+
@@ -460,43 +460,43 @@ QString RenderDialog::generateHtml(){
     }
 
 
-    foreach(QStringList str, m_character->curriculum){
-        QString crank = str[Curric::RANK];
+    foreach(const QStringList str, m_character->curriculum){
+        const QString crank = str[Curric::RANK];
         QString cadvance = str[Curric::ADVANCE];
                 if(str[Curric::SPEC]=="1")cadvance +="*";
-        QString ctype = str[Curric::TYPE];
+        const QString ctype = str[Curric::TYPE];
         currictable+= "<div class=\"divTableRow\">"
                                 "<div class=\"divTableCell\">"+crank.toHtmlEscaped() + "</div>"+
                                 "<div class=\"divTableCell\">"+cadvance.toHtmlEscaped() + "</div>"+
                                 "<div class=\"divTableCell\">"+ctype.toHtmlEscaped() + "</div>"+
                                 "</div>";
     }
-    foreach(QStringList str, m_character->curTitle){
-        QString csource = str[Title::SOURCE];
+    foreach(const QStringList str, m_character->curTitle){
+        const QString csource = str[Title::SOURCE];
         QString cadvance = str[Title::ADVANCE];
                 if(str[Title::SPEC]=="1")cadvance +="*";
-        QString ctype = str[Title::TYPE];
+        const QString ctype = str[Title::TYPE];
         titletable+= "<div class=\"divTableRow\">"
                                 "<div class=\"divTableCell\">"+csource.toHtmlEscaped() + "</div>"+
                                 "<div class=\"divTableCell\">"+cadvance.toHtmlEscaped() + "</div>"+
                                 "<div class=\"divTableCell\">"+ctype.toHtmlEscaped() + "</div>"+
                                 "</div>";
     }
-    foreach(QStringList armor,m_character->armor){
+    foreach(const QStringList armor,m_character->armor){
         armortable+= "<div class=\"divTableRow\"><div class=\"divTableCell\">"+(armor[Equipment::NAME] + " Physical :"+
                 armor[Equipment::A_PHYSRES] + " Supernatural: "+ armor[Equipment::A_SUPERRES] + " " +
                 "("+armor[Equipment::QUALITIES]).toHtmlEscaped()+")</div></div>";
     }
 
     bool onedone = false;
-    foreach(QStringList gearLine,m_character->personaleffects){
+    foreach(const QStringList gearLine,m_character->personaleffects){
             geartable+=gearLine[Equipment::NAME] + ", ";
             onedone = true;
     }
     if(onedone) geartable.chop(2);
 
     onedone = false;
-    foreach(QString tline,m_character->titles){
+    foreach(const QString tline,m_character->titles){
             titlelisttable+=tline + ", ";
             onedone = true;
     }
@@ -595,12 +595,12 @@ void RenderDialog::on_cancelButton_clicked()
    this->close();
 }
 
-void RenderDialog::on_hideskill_checkbox_toggled(bool checked)
+void RenderDialog::on_hideskill_checkbox_toggled(const bool checked)
 {
     ui->webView->setHtml(generateHtml());
 }
 
-void RenderDialog::on_hideportrait_checkbox_toggled(bool checked)
+void RenderDialog::on_hideportrait_checkbox_toggled(const bool checked)
 {
     ui->webView->setHtml(generateHtml());
 }
@@ -608,7 +608,7 @@ void RenderDialog::on_hideportrait_checkbox_toggled(bool checked)
 void RenderDialog::on_browserButton_clicked()
 {
     if(tempFile->open() ){
-        QString filename = tempFile->fileName();
+        const QString filename = tempFile->fileName();
         const QUrl url("file:///"+filename);
         QDesktopServices::openUrl ( url );
     }

@@ -44,7 +44,7 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-    QPair<QString, int> recalcTitle(QList<int> xp_list);
+    QPair<QString, int> recalcTitle(const QList<int> xp_list);
 private slots:
     void on_actionNew_triggered();
 
@@ -58,11 +58,11 @@ private slots:
 
     void on_addTitle_pushButton_clicked();
 
-    void on_koku_spinBox_valueChanged(int arg1);
+    void on_koku_spinBox_valueChanged(const int arg1);
 
-    void on_bu_spinBox_valueChanged(int arg1);
+    void on_bu_spinBox_valueChanged(const int arg1);
 
-    void on_zeni_spinBox_valueChanged(int arg1);
+    void on_zeni_spinBox_valueChanged(const int arg1);
 
 
 
@@ -102,13 +102,13 @@ private slots:
 
     void on_notes_textEdit_textChanged();
 
-    void on_xpSpinBox_valueChanged(int arg1);
+    void on_xpSpinBox_valueChanged(const int arg1);
 
-    void on_glory_spinBox_valueChanged(int arg1);
+    void on_glory_spinBox_valueChanged(const int arg1);
 
-    void on_honor_spinBox_valueChanged(int arg1);
+    void on_honor_spinBox_valueChanged(const int arg1);
 
-    void on_status_spinBox_valueChanged(int arg1);
+    void on_status_spinBox_valueChanged(const int arg1);
 
     void on_actionAbout_triggered();
 
@@ -133,9 +133,9 @@ private:
     Character curCharacter;
     void populateUI();
     bool m_dirtyDataFlag;
-    int SAVE_FILE_VERSION = 1;
-    int MIN_FILE_VERSION = 1;
-    int MAX_FILE_VERSION = 1;
+    const int SAVE_FILE_VERSION = 1;
+    const int MIN_FILE_VERSION = 1;
+    const int MAX_FILE_VERSION = 1;
 
     QStandardItemModel skillmodel;
     QStandardItemModel advanceStack;
@@ -147,8 +147,8 @@ private:
 
 
     QPair<int, int> recalcRank();
-    int isInCurriculum(QString value, QString type, int currank);
-    int isInTitle(QString value, QString type, QString title);
+    int isInCurriculum(const QString value, const QString type, const int currank);
+    int isInTitle(const QString value, const QString type, const QString title);
     QSortFilterProxyModel titleProxyModel;
 
 
@@ -164,7 +164,7 @@ private:
     QString incompleteTitle;
 
     void setColumnsHidden();
-    void closeEvent(QCloseEvent *event);
+    void closeEvent(QCloseEvent * const event);
 };
 
 #endif // MAINWINDOW_H

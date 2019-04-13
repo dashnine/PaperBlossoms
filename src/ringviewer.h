@@ -41,7 +41,7 @@ public:
     void setBackgroundWhite();
     void setBackgroundClear();
 public slots:
-    void setRings(QMap<QString, int> ringmap);
+    void setRings(const QMap<QString, int> ringmap);
 private:
     Ui::RingViewer *ui;
 };

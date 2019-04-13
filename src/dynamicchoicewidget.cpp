@@ -65,7 +65,7 @@ void DynamicChoiceWidget::addCBox(QStringList options, QString value){
         cbox->addItem(option);
     }
     int count = frameLayout->rowCount();
-    if(count == 1 && frameLayout->itemAt(0)==NULL) count = 0; //Layout COME WITH one null row when empty--so use 0.
+    if (count == 1 && frameLayout->itemAt(0)==NULL) count = 0; //Layout COME WITH one null row when empty--so use 0.
     frameLayout->addWidget(label,count,COLUMNS::Label);
     frameLayout->addWidget(cbox,count,COLUMNS::ComboBox);
     //this->setMinimumHeight(this->minimumHeight()+30);
@@ -85,8 +85,8 @@ void DynamicChoiceWidget::addCBox(QStringList options, QString value){
 }
 
 void DynamicChoiceWidget::dataEntered(){
-    QComboBox* box = qobject_cast<QComboBox *>(QObject::sender());
-    QLineEdit* lineEdit = qobject_cast<QLineEdit *>(QObject::sender());
+    const QComboBox* box = qobject_cast<QComboBox *>(QObject::sender());
+    const QLineEdit* lineEdit = qobject_cast<QLineEdit *>(QObject::sender());
 
     for(int i = 0; i<frameLayout->rowCount();++i){
 
@@ -121,8 +121,8 @@ QStringList DynamicChoiceWidget::getCurrent(){
     if(colcount == 1 && rowcount == 1) return result;
     for(int i = 0; i<rowcount;++i){
 
-        QLabel* val = dynamic_cast<QLabel*>(frameLayout->itemAtPosition(i,0)->widget());
-        QComboBox* cbox = dynamic_cast<QComboBox*>(frameLayout->itemAtPosition(i,COLUMNS::ComboBox)->widget());
+        const QLabel* val = dynamic_cast<QLabel*>(frameLayout->itemAtPosition(i,0)->widget());
+        const QComboBox* cbox = dynamic_cast<QComboBox*>(frameLayout->itemAtPosition(i,COLUMNS::ComboBox)->widget());
 
         QLineEdit* field = 0;
         if( frameLayout->columnCount()>2){
@@ -130,22 +130,16 @@ QStringList DynamicChoiceWidget::getCurrent(){
                     field = dynamic_cast<QLineEdit*>(frameLayout->itemAtPosition(i,COLUMNS::LineEdit)->widget());
             }
         }
-        QString fieldText;
-        if(field!=NULL) {
-            fieldText = field->text();
-        }
-            else {
-            fieldText = "";
-        }
-        QString value = val->text();
-        QString curtext = cbox->currentText();
+        const QString fieldText = (field != NULL ? field->text() : "");
+        const QString value = val->text();
+        const QString curtext = cbox->currentText();
         result << value + "|" + curtext + "|" + fieldText;
 
     }
     return result;
 }
 
-void DynamicChoiceWidget::updateSelections(QStringList currentList){
+void DynamicChoiceWidget::updateSelections(const QStringList currentList){
     QString result = "";
 
     foreach(QString row,currentList){
@@ -160,7 +154,7 @@ QString DynamicChoiceWidget::getSelections() const
    return m_selections;
 }
 
-void DynamicChoiceWidget::setSelections(QString selections)
+void DynamicChoiceWidget::setSelections(const QString selections)
 {
     m_selections = selections;
 }
@@ -169,12 +163,12 @@ void DynamicChoiceWidget::validateBox(){
     //qDebug()<<"m_isValid=true";
     m_isValid = true; //set to false if error found
     if(frameLayout->itemAt(0)==NULL) return;
-    QStringList boxData = getCurrent();
+    const QStringList boxData = getCurrent();
     for(int i = 0; i<frameLayout->rowCount();++i){
 
         //Set field visibility
         //QLabel* val = dynamic_cast<QLabel*>(frameLayout->itemAtPosition(i,0)->widget());
-        QComboBox* cbox = dynamic_cast<QComboBox*>(frameLayout->itemAtPosition(i,COLUMNS::ComboBox)->widget());
+        const QComboBox* cbox = dynamic_cast<QComboBox*>(frameLayout->itemAtPosition(i,COLUMNS::ComboBox)->widget());
         QLineEdit* field = 0;
         if( frameLayout->columnCount()>2){
             if(frameLayout->itemAtPosition(i,2)!=NULL){
@@ -183,7 +177,7 @@ void DynamicChoiceWidget::validateBox(){
         }
 
         QString fieldText="";
-        QString txt = cbox->currentText();
+        const QString txt = cbox->currentText();
         if(field!=NULL) {
             fieldText = field->text();
 
@@ -207,7 +201,7 @@ void DynamicChoiceWidget::validateBox(){
         for(int i = 0; i<frameLayout->rowCount();++i){
 
             QLabel* val = dynamic_cast<QLabel*>(frameLayout->itemAtPosition(i,COLUMNS::Label)->widget());
-            QComboBox* cbox = dynamic_cast<QComboBox*>(frameLayout->itemAtPosition(i,COLUMNS::ComboBox)->widget());
+            const QComboBox* cbox = dynamic_cast<QComboBox*>(frameLayout->itemAtPosition(i,COLUMNS::ComboBox)->widget());
             QLineEdit* field = 0;
             if( frameLayout->columnCount()>2){
             if(frameLayout->itemAtPosition(i,2)!=NULL){
@@ -215,7 +209,7 @@ void DynamicChoiceWidget::validateBox(){
                     }
             }
             QString fieldText="";
-            QString curBoxText = cbox->currentText();
+            const QString curBoxText = cbox->currentText();
             if(field!=NULL) fieldText = field->text();
 
             if(curBoxText.isEmpty()){
@@ -226,9 +220,9 @@ void DynamicChoiceWidget::validateBox(){
             }
             else{
                 val->setStyleSheet("QLabel { color: black}");
-                QString frameRow = (cbox->currentText()+'|'+ fieldText);
+                const QString frameRow = (cbox->currentText()+'|'+ fieldText);
                 foreach(QString row,foundRows){
-                    QString curRow = row.split('|')[COLUMNS::ComboBox]+'|'+row.split('|')[COLUMNS::LineEdit];
+                    const QString curRow = row.split('|')[COLUMNS::ComboBox]+'|'+row.split('|')[COLUMNS::LineEdit];
                     if(frameRow == curRow || curBoxText.isEmpty()){
                         qDebug()<<"m_isValid=false  "<<frameRow <<" found twice or no choice is made.";
                         m_isValid = false;

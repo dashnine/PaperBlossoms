@@ -41,9 +41,9 @@ public:
     ~NewCharWizardPage3();
 
 private slots:
-    void on_nc3_q7_neg_radioButton_toggled(bool checked);
+    void on_nc3_q7_neg_radioButton_toggled(const bool checked);
 
-    void on_nc3_q8_neg_radioButton_toggled(bool checked);
+    void on_nc3_q8_neg_radioButton_toggled(const bool checked);
 
 private:
     Ui::NewCharWizardPage3 *ui;
