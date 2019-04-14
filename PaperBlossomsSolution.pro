@@ -1,2 +1,3 @@
 TEMPLATE = subdirs  
-SUBDIRS += PaperBlossoms
+SUBDIRS += PaperBlossoms \
+    TestPaperBlossoms
