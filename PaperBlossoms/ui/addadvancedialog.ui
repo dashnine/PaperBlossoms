@@ -109,6 +109,13 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
+      <widget class="QCheckBox" name="halfxp_checkBox">
+       <property name="text">
+        <string>Special Training: Half the XP cost (Requres GM Approval)</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <spacer name="horizontalSpacer">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>

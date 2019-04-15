@@ -225,12 +225,14 @@ void AddAdvanceDialog::on_advchooser_combobox_currentIndexChanged(const QString 
     if(ui->advtype->currentText() == "Skill"){
         const int currentrank = character->baseskills[arg1] + character->skillranks[arg1];
         const int cost = (currentrank+1)*2;
-        ui->xp_label->setText(QString::number(cost));
+        const int rounded = qRound(double(cost)/2.0);
+        ui->xp_label->setText(QString::number((ui->halfxp_checkBox->isChecked()?rounded:cost)));
     }
     if(ui->advtype->currentText() == "Ring"){
         const int currentrank = character->baserings[arg1] + character->ringranks[arg1];
         const int cost = (currentrank+1)*3;
-        ui->xp_label->setText(QString::number(cost));
+        const int rounded = qRound(double(cost)/2.0);
+        ui->xp_label->setText(QString::number((ui->halfxp_checkBox->isChecked()?rounded:cost)));
     }
     else{
         //QSet<QString> types;
@@ -304,8 +306,11 @@ void AddAdvanceDialog::on_detailTableView_clicked(const QModelIndex &index)
 
     QModelIndex curIndex = proxyModel.mapToSource(index);
     QSqlRecord record = techModel.record(curIndex.row());
+    const int cost = record.value("xp").toInt();
+    const int rounded = qRound(double(cost)/2.0);
+    const QString text = QString::number(ui->halfxp_checkBox->isChecked()?rounded:cost);
 
-    ui->xp_label->setText(record.value("xp").toString());
+    ui->xp_label->setText(text);
 
     validatePage();
 }
@@ -329,4 +334,11 @@ void AddAdvanceDialog::on_free_radioButton_toggled(const bool checked)
 
    }
    validatePage();
+}
+
+void AddAdvanceDialog::on_halfxp_checkBox_toggled(bool checked)
+{
+    on_detailTableView_clicked(ui->detailTableView->currentIndex());
+    on_advchooser_combobox_currentIndexChanged(ui->advchooser_combobox->currentText());
+    validatePage();
 }
