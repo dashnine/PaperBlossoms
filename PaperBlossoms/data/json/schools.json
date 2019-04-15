@@ -15337,5 +15337,283 @@
             }
         ],
         "mastery_ability": "Storm Surge"
+    },
+    {
+        "name": "Kasuga Smuggler School",
+        "reference": {
+            "book": "GMK",
+            "page": 9
+        },
+        "role": ["Courtier"],
+        "clan": "Tortoise",
+        "ring_increase": ["Air", "Water"],
+        "starting_skills": {
+            "size": 5,
+            "set": ["Commerce", "Culture", "Courtesy", "Martial Arts [Melee]", "Seafaring", "Skulduggery"]
+        },
+        "honor": 29,
+        "techniques_available": ["Kata", "Rituals", "Shūji"],
+        "starting_techniques": [
+            {
+                "size": 1,
+                "set": ["Rushing Avalanche Style"]
+            },
+            {
+                "size": 1,
+                "set": ["Honest Assessment", "Well of Desire"]
+            }
+        ],
+        "school_ability": "Way of the Tortoise",
+        "starting_outfit": [
+            {
+                "size": 1,
+                "set": ["Traveling Clothes"]
+            },
+            {
+                "size": 1,
+                "set": ["Wakizashi"]
+            },
+            {
+                "size": 1,
+                "set": ["One Weapon of Rarity 6 or Lower"]
+            },
+            {
+                "size": 1,
+                "set": ["Calligraphy Set"]
+            },
+            {
+                "size": 1,
+                "set": ["Knife"]
+            },
+            {
+                "size": 1,
+                "set": ["Kiseru"]
+            },
+            {
+                "size": 1,
+                "set": ["Abacus", "Gaijin Compass"]
+            },
+            {
+                "size": 1,
+                "set": ["Traveling Pack"]
+            },
+            {
+                "size": 1,
+                "set": ["Pouch of Gaijin Coins"]
+            }
+        ],
+        "curriculum": [
+            {
+                "rank": 1,
+                "advance": "Trade skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Culture",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Courtesy",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Martial Arts [Melee]",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Water Shūji",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Coiling Serpent Style",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 1,
+                "advance": "Courtier's Resolve",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Social skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Commerce",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Seafaring",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Skulduggery",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Kata",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Ebb and Flow",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 2,
+                "advance": "Tributaries of Trade",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Trade skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Fitness",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Government",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Martial Arts [Ranged]",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Air Shūji",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "All Arts Are One",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Breath of Wind Style",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 4,
+                "advance": "Scholar skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Design",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Martial Arts [Unarmed]",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Skulduggery",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Kata",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Buoyant Arrival",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 4,
+                "advance": "Regal Bearing",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Trade skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Aesthetics",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Courtesy",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Sentiment",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Water Shūji",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Bend with the Storm",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "The Immovable Hand of Peace",
+                "type": "technique",
+                "special_access": false
+            }
+        ],
+        "mastery_ability": "Shell of the Tortoise"
     }
 ]

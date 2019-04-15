@@ -645,5 +645,26 @@
             "unit": "koku"
         },
         "rarity": 4
+    },
+    {
+        "name": "Abacus",
+        "reference": {
+            "book": "GMK",
+            "page": 9
+        }
+    },
+    {
+        "name": "Gaijin Compass",
+        "reference": {
+            "book": "GMK",
+            "page": 9
+        }
+    },
+    {
+        "name": "Pouch of Gaijin Coins",
+        "reference": {
+            "book": "GMK",
+            "page": 9
+        }
     }
 ]
