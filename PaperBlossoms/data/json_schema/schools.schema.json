@@ -42,7 +42,8 @@
                             "Core",
                             "EE",
                             "SL",
-                            "Mantis"
+                            "Mantis",
+                            "GMK"
                         ]
                     },
                     "page": {
@@ -85,7 +86,8 @@
                     "Unicorn",
                     "The Imperial Families",
                     "Falcon",
-                    "Mantis"
+                    "Mantis",
+                    "Tortoise"
                 ]
             },
             "ring_increase": {
@@ -600,6 +602,9 @@
                                     "Astrolabe",
                                     "Fishing Rod and Line",
                                     "Taraibune",
+                                    "Abacus",
+                                    "Gaijin Compass",
+                                    "Pouch of Gaijin Coins",
                                     "Traveling Pack",
                                     "Kitsune Starting Outfit",
                                     "Two Weapons of Rarity 6 or Lower",

@@ -513,5 +513,29 @@
                 "wealth": 7
             }
         ]
+    },
+    {
+        "name": "Tortoise",
+        "reference": {
+            "book": "GMK",
+            "page": 8
+        },
+        "type": "Minor",
+        "ring_increase": "Air",
+        "skill_increase": "Commerce",
+        "status": 25,
+        "families": [
+            {
+                "name": "Kasuga",
+                "reference": {
+                    "book": "GMK",
+                    "page": 8
+                },
+                "ring_increase": ["Earth", "Water"],
+                "skill_increase": ["Skulduggery", "Government"],
+                "glory": 33,
+                "wealth": 9
+            }
+        ]
     }
 ]

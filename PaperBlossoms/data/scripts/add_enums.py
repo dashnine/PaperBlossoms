@@ -149,7 +149,7 @@ def get_equipment(data_dir):
 
 
 def get_books():
-    books_enum = ['Core', 'EE', 'SL', 'Mantis']
+    books_enum = ['Core', 'EE', 'SL', 'Mantis', 'GMK']
 
     return books_enum
 
