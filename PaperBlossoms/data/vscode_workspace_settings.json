@@ -1,0 +1,88 @@
+{
+    "python.pythonPath": "/usr/bin/python3",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "editor.tabCompletion": "on",
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "skill_groups.json"
+            ],
+            "url": "./PaperBlossoms/data/json_schema/skill_groups.schema.json"
+        },
+        {
+            "fileMatch": [
+                "advantages_disadvantages.json"
+            ],
+            "url": "./PaperBlossoms/data/json_schema/advantages_disadvantages.schema.json"
+        },
+        {
+            "fileMatch": [
+                "titles.json"
+            ],
+            "url": "./PaperBlossoms/data/json_schema/titles.schema.json"
+        },
+        {
+            "fileMatch": [
+                "clans.json"
+            ],
+            "url": "./PaperBlossoms/data/json_schema/clans.schema.json"
+        },
+        {
+            "fileMatch": [
+                "personal_effects.json"
+            ],
+            "url": "./PaperBlossoms/data/json_schema/personal_effects.schema.json"
+        },
+        {
+            "fileMatch": [
+                "samurai_heritage.json"
+            ],
+            "url": "./PaperBlossoms/data/json_schema/samurai_heritage.schema.json"
+        },
+        {
+            "fileMatch": [
+                "armor.json"
+            ],
+            "url": "./PaperBlossoms/data/json_schema/armor.schema.json"
+        },
+        {
+            "fileMatch": [
+                "schools.json"
+            ],
+            "url": "./PaperBlossoms/data/json_schema/schools.schema.json"
+        },
+        {
+            "fileMatch": [
+                "techniques.json"
+            ],
+            "url": "./PaperBlossoms/data/json_schema/techniques.schema.json"
+        },
+        {
+            "fileMatch": [
+                "qualities.json"
+            ],
+            "url": "./PaperBlossoms/data/json_schema/qualities.schema.json"
+        },
+        {
+            "fileMatch": [
+                "rings.json"
+            ],
+            "url": "./PaperBlossoms/data/json_schema/rings.schema.json"
+        },
+        {
+            "fileMatch": [
+                "weapons.json"
+            ],
+            "url": "./PaperBlossoms/data/json_schema/weapons.schema.json"
+        },
+        {
+            "fileMatch": [
+                "item_patterns.json"
+            ],
+            "url": "./PaperBlossoms/data/json_schema/item_patterns.schema.json"
+        }
+    ],
+    "editor.suggest.localityBonus": true,
+    "editor.suggestSelection": "recentlyUsedByPrefix"
+}
