@@ -111,7 +111,8 @@
      <item>
       <widget class="QCheckBox" name="halfxp_checkBox">
        <property name="text">
-        <string>Special Training: Half the XP cost (Requres GM Approval)</string>
+        <string>Special Training: Half the XP cost 
+(Requires GM Approval)</string>
        </property>
       </widget>
      </item>
