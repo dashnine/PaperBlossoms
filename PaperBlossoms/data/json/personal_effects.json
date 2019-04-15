@@ -72,6 +72,18 @@
         "rarity": 2
     },
     {
+        "name": "Playing Cards",
+        "reference": {
+            "book": "Mantis",
+            "page": 5
+        },
+        "price": {
+            "value": 25,
+            "unit": "zeni"
+        },
+        "rarity": 2
+    },
+    {
         "name": "Divination Kit",
         "reference": {
             "book": "Core",
@@ -266,6 +278,18 @@
         "price": {
             "value": 20,
             "unit": "zeni"
+        },
+        "rarity": 1
+    },
+    {
+        "name": "Rope (twenty feet)",
+        "reference": {
+            "book": "Mantis",
+            "page": 5
+        },
+        "price": {
+            "value": 2,
+            "unit": "koku"
         },
         "rarity": 1
     },

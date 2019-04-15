@@ -14777,5 +14777,565 @@
             }
         ],
         "mastery_ability": "Kingdom of Paper and Ink"
+    },
+    {
+        "name": "Storm Fleet Sailor School",
+        "reference": {
+            "book": "Mantis",
+            "page": 5
+        },
+        "role": ["Bushi"],
+        "clan": "Mantis",
+        "ring_increase": ["Fire", "Water"],
+        "starting_skills": {
+            "size": 5,
+            "set": ["Commerce", "Fitness", "Games", "Labor", "Martial Arts [Melee]", "Martial Arts [Ranged]", "Seafaring"]
+        },
+        "honor": 35,
+        "techniques_available": ["Kata", "Rituals", "Shūji"],
+        "starting_techniques": [
+            {
+                "size": 1,
+                "set": ["Pelting Hail Style"]
+            },
+            {
+                "size": 1,
+                "set": ["All in Jest"]
+            },
+            {
+                "size": 1,
+                "set": ["Stirring the Embers"]
+            }
+        ],
+        "school_ability": "Sailor's Fortune",
+        "starting_outfit": [
+            {
+                "size": 1,
+                "set": ["Sailor's Garb"]
+            },
+            {
+                "size": 1,
+                "set": ["Wakizashi"]
+            },
+            {
+                "size": 1,
+                "set": ["Knife"]
+            },
+            {
+                "size": 1,
+                "set": ["Two Weapons of Rarity 6 or Lower"]
+            },
+            {
+                "size": 1,
+                "set": ["Yumi"]
+            },
+            {
+                "size": 1,
+                "set": ["Quiver of Arrows"]
+            },
+            {
+                "size": 1,
+                "set": ["Traveling Pack"]
+            },
+            {
+                "size": 1,
+                "set": ["Rope (twenty feet)"]
+            },
+            {
+                "size": 1,
+                "set": ["Dice and Cup", "Playing Cards"]
+            }
+        ],
+        "curriculum": [
+            {
+                "rank": 1,
+                "advance": "Trade skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Fitness",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Games",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Martial Arts [Ranged]",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Kata",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Skulk",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 1,
+                "advance": "Shallow Waters",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Martial skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Commerce",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Seafaring",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Survival",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Fire Shūji",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Flowing Water Strike",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 2,
+                "advance": "Osano-wo's Boast",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 3,
+                "advance": "Social skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Martial Arts [Melee]",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Martial Arts [Ranged]",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Seafaring",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Water Shūji",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Bravado",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 3,
+                "advance": "Heartpiercing Strike",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Trade skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Command",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Martial Arts [Ranged]",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Tactics",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Kata",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Buoyant Arrival",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 4,
+                "advance": "Crashing Wave Style",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Martial skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Commerce",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Seafaring",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Sentiment",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Kata",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Rouse the Soul",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Sear the Wound",
+                "type": "technique",
+                "special_access": false
+            }
+        ],
+        "mastery_ability": "Storm Lord's Gambit"
+    },
+    {
+        "name": "Storm Fleet Tide Seer",
+        "reference": {
+            "book": "Mantis",
+            "page": 6
+        },
+        "role": ["Shugenja"],
+        "clan": "Mantis",
+        "ring_increase": ["Air", "Water"],
+        "starting_skills": {
+            "size": 3,
+            "set": ["Commerce", "Fitness", "Games", "Labor", "Martial Arts [Melee]", "Seafaring", "Theology"]
+        },
+        "honor": 40,
+        "techniques_available": ["Air Invocations", "Water Invocations", "Rituals", "Shūji"],
+        "starting_techniques": [
+            {
+                "size": 1,
+                "set": ["Dominion of Suijin"]
+            },
+            {
+                "size": 1,
+                "set": ["Tempest of Air"]
+            },
+            {
+                "size": 1,
+                "set": ["Bō of Water", "Path to Inner Peace", "Yari of Air"]
+            },
+            {
+                "size": 1,
+                "set": ["Commune with the Spirits"]
+            },
+            {
+                "size": 1,
+                "set": ["Divination"]
+            }
+        ],
+        "school_ability": "Eye of the Storm",
+        "starting_outfit": [
+            {
+                "size": 1,
+                "set": ["Sailor's Garb"]
+            },
+            {
+                "size": 1,
+                "set": ["Wakizashi"]
+            },
+            {
+                "size": 1,
+                "set": ["One Weapon of Rarity 6 or Lower"]
+            },
+            {
+                "size": 1,
+                "set": ["Knife"]
+            },
+            {
+                "size": 1,
+                "set": ["Traveling Pack"]
+            },
+            {
+                "size": 1,
+                "set": ["Divination Kit"]
+            }
+        ],
+        "curriculum": [
+            {
+                "rank": 1,
+                "advance": "Scholar skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Fitness",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Labor",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Seafaring",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Water Shūji",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Summon Fog",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 1,
+                "advance": "Reflections of P'an Ku",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Trade skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Fitness",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Tactics",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Tea Ceremony",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Air Invocations",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Hands of Tides",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 2,
+                "advance": "Call Upon the Wind",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Scholar skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Performance",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Seafaring",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Survival",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Rituals",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Fury of Osano-wo",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 3,
+                "advance": "Osano-wo's Boast",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Trade skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Command",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Games",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Theology",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Water Invocations",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Wrath of Kaze-no-Kami",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 4,
+                "advance": "Rise, Water",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Scholar skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Courtesy",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Seafaring",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Survival",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Void Shūji",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Ever-Changing Waves",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Rise, Air",
+                "type": "technique",
+                "special_access": false
+            }
+        ],
+        "mastery_ability": "Storm Surge"
     }
 ]
