@@ -1475,6 +1475,16 @@
                             "page": 219
                         },
                         "xp": 3
+                    },
+                    {
+                        "name": "Osano-wo's Boast",
+                        "restriction": "Mantis",
+                        "rank": 3,
+                        "reference": {
+                            "book": "Mantis",
+                            "page": 7
+                        },
+                        "xp": 3
                     }
                 ]
             },
