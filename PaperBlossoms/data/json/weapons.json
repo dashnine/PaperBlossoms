@@ -412,6 +412,32 @@
                     "value": 50,
                     "unit": "koku"
                 }
+            },
+            {
+                "name": "Butterfly Sword",
+                "reference": {
+                    "book": "Mantis",
+                    "page": 8
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 0,
+                    "max": 1
+                },
+                "damage": 3,
+                "deadliness": 5,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": []
+                    }
+                ],
+                "qualities": ["Concealable", "Snaring"],
+                "rarity": 6,
+                "price": {
+                    "value": 10,
+                    "unit": "koku"
+                }
             }
         ]
     },
@@ -844,6 +870,58 @@
                     "value": 15,
                     "unit": "koku"
                 }
+            },
+            {
+                "name": "Sai",
+                "reference": {
+                    "book": "Mantis",
+                    "page": 8
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 0,
+                    "max": 0
+                },
+                "damage": 2,
+                "deadliness": 2,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": []
+                    }
+                ],
+                "qualities": ["Concealable", "Snaring"],
+                "rarity": 6,
+                "price": {
+                    "value": 2,
+                    "unit": "koku"
+                }
+            },
+            {
+                "name": "Tonfa",
+                "reference": {
+                    "book": "Mantis",
+                    "page": 9
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 0,
+                    "max": 1
+                },
+                "damage": 3,
+                "deadliness": 3,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": []
+                    }
+                ],
+                "qualities": ["Concealable", "Durable"],
+                "rarity": 5,
+                "price": {
+                    "value": 4,
+                    "unit": "koku"
+                }
             }
         ]
     },
@@ -1020,6 +1098,58 @@
                 "rarity": 3,
                 "price": {
                     "value": 5,
+                    "unit": "koku"
+                }
+            },
+            {
+                "name": "Eku",
+                "reference": {
+                    "book": "Mantis",
+                    "page": 8
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 2,
+                    "max": 2
+                },
+                "damage": 6,
+                "deadliness": 4,
+                "grips": [
+                    {
+                        "name": "2-hand",
+                        "effects": []
+                    }
+                ],
+                "qualities": ["Cumbersome"],
+                "rarity": 5,
+                "price": {
+                    "value": 3,
+                    "unit": "koku"
+                }
+            },
+            {
+                "name": "Tinbe",
+                "reference": {
+                    "book": "Mantis",
+                    "page": 8
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 0,
+                    "max": 1
+                },
+                "damage": 3,
+                "deadliness": 5,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": []
+                    }
+                ],
+                "qualities": [],
+                "rarity": 6,
+                "price": {
+                    "value": 15,
                     "unit": "koku"
                 }
             }
@@ -1432,6 +1562,32 @@
                 "rarity": 8,
                 "price": {
                     "value": 6,
+                    "unit": "koku"
+                }
+            },
+            {
+                "name": "Rochin",
+                "reference": {
+                    "book": "Mantis",
+                    "page": 8
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 0,
+                    "max": 0
+                },
+                "damage": 2,
+                "deadliness": 2,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": []
+                    }
+                ],
+                "qualities": ["Durable"],
+                "rarity": 6,
+                "price": {
+                    "value": 25,
                     "unit": "koku"
                 }
             }

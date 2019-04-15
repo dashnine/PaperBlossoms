@@ -72,6 +72,18 @@
         "rarity": 2
     },
     {
+        "name": "Playing Cards",
+        "reference": {
+            "book": "Mantis",
+            "page": 5
+        },
+        "price": {
+            "value": 25,
+            "unit": "zeni"
+        },
+        "rarity": 2
+    },
+    {
         "name": "Divination Kit",
         "reference": {
             "book": "Core",
@@ -266,6 +278,18 @@
         "price": {
             "value": 20,
             "unit": "zeni"
+        },
+        "rarity": 1
+    },
+    {
+        "name": "Rope (twenty feet)",
+        "reference": {
+            "book": "Mantis",
+            "page": 5
+        },
+        "price": {
+            "value": 2,
+            "unit": "koku"
         },
         "rarity": 1
     },
@@ -585,5 +609,41 @@
             "book": "SL",
             "page": 90
         }
+    },
+    {
+        "name": "Astrolabe",
+        "reference": {
+            "book": "Mantis",
+            "page": 9
+        },
+        "price": {
+            "value": 30,
+            "unit": "koku"
+        },
+        "rarity": 10
+    },
+    {
+        "name": "Fishing Rod and Line",
+        "reference": {
+            "book": "Mantis",
+            "page": 9
+        },
+        "price": {
+            "value": 1,
+            "unit": "bu"
+        },
+        "rarity": 1
+    },
+    {
+        "name": "Taraibune",
+        "reference": {
+            "book": "Mantis",
+            "page": 9
+        },
+        "price": {
+            "value": 1,
+            "unit": "koku"
+        },
+        "rarity": 4
     }
 ]

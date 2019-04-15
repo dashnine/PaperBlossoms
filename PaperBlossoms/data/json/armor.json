@@ -244,5 +244,43 @@
             "value": 50,
             "unit": "koku"
         }
+    },
+    {
+        "name": "Sailor's Garb",
+        "reference": {
+            "book": "Mantis",
+            "page": 9
+        },
+        "resistance_values": [
+            {
+                "category": "Physical",
+                "value": 1
+            }
+        ],
+        "qualities": ["Durable", "Mundane"],
+        "rarity": 2,
+        "price": {
+            "value": 1,
+            "unit": "bu"
+        }
+    },
+    {
+        "name": "Shark Leather Armor",
+        "reference": {
+            "book": "Mantis",
+            "page": 9
+        },
+        "resistance_values": [
+            {
+                "category": "Physical",
+                "value": 2
+            }
+        ],
+        "qualities": ["Resplendent"],
+        "rarity": 7,
+        "price": {
+            "value": 12,
+            "unit": "koku"
+        }
     }
 ]

@@ -489,5 +489,29 @@
                 "wealth": 3
             }
         ]
+    },
+    {
+        "name": "Mantis",
+        "reference": {
+            "book": "Mantis",
+            "page": 4
+        },
+        "type": "Minor",
+        "ring_increase": "Water",
+        "skill_increase": "Seafaring",
+        "status": 25,
+        "families": [
+            {
+                "name": "The Families of the Fleet",
+                "reference": {
+                    "book": "Mantis",
+                    "page": 4
+                },
+                "ring_increase": ["Fire", "Water"],
+                "skill_increase": ["Commerce", "Survival"],
+                "glory": 36,
+                "wealth": 7
+            }
+        ]
     }
 ]

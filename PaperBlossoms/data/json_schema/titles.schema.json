@@ -21,7 +21,8 @@
                         "enum": [
                             "Core",
                             "EE",
-                            "SL"
+                            "SL",
+                            "Mantis"
                         ]
                     },
                     "page": {
@@ -72,7 +73,9 @@
                             "range": {
                                 "description": "Range of values for 'between' constraint",
                                 "type": "array",
-                                "items": { "type": "integer" },
+                                "items": {
+                                    "type": "integer"
+                                },
                                 "minItems": 2,
                                 "maxItems": 2
                             }

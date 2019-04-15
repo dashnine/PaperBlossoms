@@ -511,6 +511,26 @@
                 "ring": "Water",
                 "types": ["Physical"],
                 "effects": ""
+            },
+            {
+                "name": "Blood of Osano-wo",
+                "reference": {
+                    "book": "Mantis",
+                    "page": 7
+                },
+                "ring": "Fire",
+                "types": ["Mental", "Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Sea Legs",
+                "reference": {
+                    "book": "Mantis",
+                    "page": 7
+                },
+                "ring": "Water",
+                "types": ["Physical"],
+                "effects": ""
             }
         ]
     },
@@ -794,6 +814,16 @@
                     "page": 97
                 },
                 "ring": "Fire",
+                "types": ["Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Knotwork",
+                "reference": {
+                    "book": "Mantis",
+                    "page": 7
+                },
+                "ring": "Air",
                 "types": ["Mental"],
                 "effects": ""
             }
@@ -1420,6 +1450,16 @@
                 },
                 "ring": "Void",
                 "types": ["Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Sailor's Tongue",
+                "reference": {
+                    "book": "Mantis",
+                    "page": 7
+                },
+                "ring": "Air",
+                "types": ["Mental", "Interpersonal"],
                 "effects": ""
             }
         ]
