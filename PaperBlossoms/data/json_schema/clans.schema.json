@@ -22,7 +22,8 @@
                             "Core",
                             "EE",
                             "SL",
-                            "Mantis"
+                            "Mantis",
+                            "GMK"
                         ]
                     },
                     "page": {
@@ -120,7 +121,8 @@
                                         "Core",
                                         "EE",
                                         "SL",
-                                        "Mantis"
+                                        "Mantis",
+                                        "GMK"
                                     ]
                                 },
                                 "page": {
