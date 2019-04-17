@@ -295,7 +295,7 @@ QString RenderDialog::generateHtml() {
         "    </div>                                                                                           "
         "</div>                                                                                               "
         "<div class=\"divTable redTable\" style=\"width: 100%\">                                              "
-        "   <div class=\"divTableRow\"><div class=\"divTableCell\" style=\"height:300px;\">"+tdesc.toHtmlEscaped()+"</div>  "
+        "   <div class=\"divTableRow\"><div class=\"divTableCell\" style=\"height:225px;\">"+tdesc.toHtmlEscaped()+"</div>  "
         "</div>                                                                                               "
         "</div>                                                                                               "
         "</div>                                                                                               "
