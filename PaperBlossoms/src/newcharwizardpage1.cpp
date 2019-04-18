@@ -73,7 +73,19 @@ void NewCharWizardPage1::on_nc1_clan_ComboBox_currentIndexChanged(const QString 
     qDebug() << "Selecting Families for clan = " + arg1;
     //populate model from data
     familyModel->setStringList(dal->qsl_getfamilies(arg1));
-    ui->nc1_clan_TextEdit->setText(dal->qs_getclandesc(arg1) + " " + dal->qs_getclanref(arg1));
+
+    QString clanring = "+1 " + dal->qs_getclanring(arg1);
+    QString clanskills = "";
+
+    foreach (QString skill, dal->qsl_getclanskills(arg1)){
+        clanskills += "+1 " + skill + "\n";
+    }
+
+
+    ui->nc1_clan_TextEdit->setText(dal->qs_getclandesc(arg1) + " " + dal->qs_getclanref(arg1)+"\n"+clanring+"\n"+clanskills);
+
+
+
     regenSummary();
 }
 
@@ -81,7 +93,15 @@ void NewCharWizardPage1::on_nc1_family_ComboBox_currentIndexChanged(const QStrin
 {
     qDebug() << "Selecting Rings for family = " + arg1;
     famRingModel->setStringList(dal->qsl_getfamilyrings( arg1 ));
-    ui->nc1_family_TextEdit->setText(dal->qs_getfamilydesc(arg1) + " " + dal->qs_getfamilyref(arg1));
+    QString famskills = "";
+
+    foreach (QString skill, dal->qsl_getfamilyskills(arg1)){
+        famskills += "+1 " + skill + "\n";
+    }
+
+
+    ui->nc1_family_TextEdit->setText(dal->qs_getfamilydesc(arg1) + " " + dal->qs_getfamilyref(arg1) +
+                                     "\n"+famskills  );
     regenSummary();
 }
 
