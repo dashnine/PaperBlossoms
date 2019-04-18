@@ -463,6 +463,9 @@ QMap<QString, int> NewCharWizardPage2::calcSkills(){
 
 void NewCharWizardPage2::on_nc2_schoolSpecialtRing_ComboBox_currentIndexChanged(const QString &arg1)
 {
+    //if(ui->nc2_q4_lineEdit->text().isEmpty()){
+        ui->nc2_q4_lineEdit->setText(dal->qs_getringdesc(arg1));
+    //}
     regenSummary();
 
 }
