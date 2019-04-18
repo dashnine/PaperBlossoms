@@ -49,9 +49,14 @@ private slots:
 
     void on_nc1_family_ComboBox_currentIndexChanged(const QString &arg1);
 
+    void on_nc1_ring_ComboBox_currentIndexChanged(const QString &arg1);
+
 private:
     Ui::NewCharWizardPage1 *ui;
     DataAccessLayer* dal;
+    void regenSummary();
+    QMap<QString, int> calcCurrentRings();
+    QMap<QString, int> calcSkills();
 };
 
 #endif // NEWCHARWIZARDPAGE1_H
