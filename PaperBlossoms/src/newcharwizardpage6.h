@@ -58,6 +58,10 @@ private slots:
 
     void on_heritagetable_comboBox_currentIndexChanged(const QString &arg1);
 
+    void on_nc6_q18_special1_comboBox_currentIndexChanged(const QString &arg1);
+
+    void on_nc6_q18_special2_comboBox_currentIndexChanged(const QString &arg1);
+
 private:
     Ui::NewCharWizardPage6 *ui;
     DataAccessLayer* dal;
@@ -66,6 +70,9 @@ private:
     void buildq18UI();
     QComboBox* curAncestorBox;
     QMap<QString, int> calcCurrentRings();
+    void regenSummary();
+    QMap<QString, int> calcSkills();
+    QMap<QString, int> calcSumRings();
 };
 
 #endif // NEWCHARWIZARDPAGE6_H

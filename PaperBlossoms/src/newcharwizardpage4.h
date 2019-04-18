@@ -43,11 +43,16 @@ private slots:
 
     void on_nc4_q13_disadv_radioButton_toggled(const bool checked);
 
+    void on_nc4_q13_skill_comboBox_currentIndexChanged(const QString &arg1);
+
 private:
     Ui::NewCharWizardPage4 *ui;
     DataAccessLayer* dal;
     void initializePage();
     bool validatePage();
+    void regenSummary();
+    QMap<QString, int> calcCurrentRings();
+    QMap<QString, int> calcSkills();
 };
 
 #endif // NEWCHARWIZARDPAGE4_H

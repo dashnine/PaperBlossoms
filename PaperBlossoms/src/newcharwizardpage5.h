@@ -43,6 +43,9 @@ private:
     Ui::NewCharWizardPage5 *ui;
     DataAccessLayer* dal;
     void initializePage();
+    void regenSummary();
+    QMap<QString, int> calcCurrentRings();
+    QMap<QString, int> calcSkills();
 };
 
 #endif // NEWCHARWIZARDPAGE5_H

@@ -433,6 +433,7 @@ void NewCharWizardPage6::buildq18UI(){ //this is all still in initializePage
         ui->nc6_q18_spec1_label->setText("");
         ui->nc6_q18_spec2_label->setText("");
     }
+    regenSummary();
 }
 
 void NewCharWizardPage6::on_nc6_q18_otherComboBox_currentIndexChanged(const QString &arg1)
@@ -621,4 +622,139 @@ void NewCharWizardPage6::on_heritagetable_comboBox_currentIndexChanged(const QSt
     ui->nc6_q18_ancestor2_comboBox->setCurrentIndex(-1);
 
    buildq18UI();
+}
+
+
+void NewCharWizardPage6::regenSummary(){
+   QString skills = "";
+   QString rings = "";
+
+   const QMap<QString, int> ringmap = calcSumRings();
+
+   QMapIterator<QString, int> i(ringmap);
+   while (i.hasNext()) {
+       i.next();
+       if(!i.key().isEmpty()){
+        rings+="  "+i.key()+": "+QString::number(i.value())+ "\n";
+       }
+   }
+
+   const QMap<QString, int> skillmap = calcSkills();
+
+   QMapIterator<QString, int> si(skillmap);
+   while (si.hasNext()) {
+       si.next();
+       if(!si.key().isEmpty()){
+        skills+="  "+si.key()+": "+QString::number(si.value())+ "\n";
+       }
+   }
+
+    ui->summary_label->setText("Rings:\n"+rings+"\n\nSkills:\n"+skills);
+
+}
+
+
+QMap<QString, int> NewCharWizardPage6::calcSumRings(){
+
+    //initialize the ring map
+    QMap<QString, int> ringmap;
+    const QStringList ringlist = dal->qsl_getrings();
+    foreach (const QString ring, ringlist) {
+        ringmap[ring] = 1;
+    }
+
+    //NOW - CALCULATE EXISTING RINGS
+    //clan
+    ringmap[dal->qs_getclanring(field("currentClan").toString())]++;
+    //family
+    ringmap[field("familyRing").toString()]++;
+    //school
+    QStringList schoolrings = field("ringChoices").toString().split("|");
+    schoolrings.removeAll("");
+    //QStringList schoolrings = dal->qsl_getschoolrings(field("currentSchool").toString());
+    foreach (const QString r, schoolrings){
+        ringmap[r]++;
+    }
+    //standout
+    ringmap[field("schoolSpecialRing").toString()]++;
+
+    //check for ringswap on part 6
+    if(field("q18OtherEffects").toString() == "Ring Exchange" || field("q18OtherEffects").toString() == "Void ring exchange"){
+        ringmap[field("q18Spec1").toString()]++;
+        ringmap[field("q18Spec2").toString()]--;
+        qDebug()<< "adjusting based on Ring Exchange";
+    }
+    return ringmap;
+
+}
+
+QMap<QString, int> NewCharWizardPage6::calcSkills(){
+
+
+    QStringList skills;
+    skills.append(dal->qsl_getclanskills(field("currentClan").toString()));
+    skills.append(dal->qsl_getfamilyskills(field("currentFamily").toString()));
+    skills.append(field("schoolSkills").toString().split("|"));
+    skills.append(field("q7skill").toString());
+    skills.append(field("q8skill").toString());
+    if(field("q13DisadvChecked").toBool() == true){
+        qDebug() << "Question 13 chose disadvantage.  Adding skill: " << field("q13skill").toString();
+        skills.append(field("q13skill").toString());
+    }
+    skills.append(field("parentSkill").toString());
+    //get q18 skill
+
+
+    int ancestorIndex = -1;
+    QString heritage = "";
+    if(field("ancestor1checked").toBool()){
+        ancestorIndex = field("ancestor1index").toInt()+1;
+        heritage = field("ancestor1").toString();
+    }
+    else if (field("ancestor2checked").toBool()){
+        ancestorIndex = field("ancestor2index").toInt()+1;
+        heritage = field("ancestor2").toString();
+    }
+
+    if(    //core
+           heritage == "Wondrous Work" ||
+           heritage ==  "Dynasty Builder" ||
+           heritage ==  "Discovery" ||
+           heritage ==  "Ruthless Victor" ||
+           heritage ==  "Elevated for Service" ||
+           //shadowlands
+           heritage ==   "Infamous Builder" ||
+           heritage ==   "Lost in the Darkness" ||
+           heritage ==   "Vengeance for the Fallen" ||
+           heritage ==   "Tewnty Goblin Thief"
+            ){
+        skills.append(field("q18OtherEffects").toString());
+
+    }
+
+    skills.removeAll("");
+    //initialize the skill map
+    QMap<QString, int> skillmap;
+    //skills start at 0.
+
+    //clan
+    foreach(const QString skill, skills){
+        skillmap[skill]++;
+    }
+
+    return skillmap;
+}
+
+
+
+void NewCharWizardPage6::on_nc6_q18_special1_comboBox_currentIndexChanged(const QString &arg1)
+{
+    regenSummary();
+
+}
+
+void NewCharWizardPage6::on_nc6_q18_special2_comboBox_currentIndexChanged(const QString &arg1)
+{
+    regenSummary();
+
 }

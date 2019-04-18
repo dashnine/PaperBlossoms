@@ -45,6 +45,10 @@ private slots:
 
     void on_nc3_q8_neg_radioButton_toggled(const bool checked);
 
+    void on_nc3_q7_comboBox_currentIndexChanged(const QString &arg1);
+
+    void on_nc3_q8_comboBox_currentIndexChanged(const QString &arg1);
+
 private:
     Ui::NewCharWizardPage3 *ui;
     void initializePage();
@@ -54,6 +58,9 @@ private:
     DataAccessLayer* dal;
 
     bool validatePage();
+    void regenSummary();
+    QMap<QString, int> calcCurrentRings();
+    QMap<QString, int> calcSkills();
 };
 
 #endif // NEWCHARWIZARDPAGE3_H
