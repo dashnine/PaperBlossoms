@@ -347,9 +347,6 @@
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_3">
       <item>
-       <widget class="QLineEdit" name="nc2_q4_lineEdit"/>
-      </item>
-      <item>
        <layout class="QGridLayout" name="gridLayout_2">
         <item row="0" column="0">
          <widget class="QLabel" name="label_6">
@@ -362,6 +359,9 @@
          <widget class="QComboBox" name="nc2_schoolSpecialtRing_ComboBox"/>
         </item>
        </layout>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="nc2_q4_lineEdit"/>
       </item>
      </layout>
     </widget>

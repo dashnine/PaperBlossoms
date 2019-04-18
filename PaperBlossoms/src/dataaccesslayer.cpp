@@ -259,6 +259,21 @@ QString DataAccessLayer::qs_getschooldesc(const QString school ){
 
 }
 
+QString DataAccessLayer::qs_getringdesc(const QString ring ){
+    QString out;
+    QSqlQuery query;
+        query.prepare("SELECT outstanding_quality FROM rings WHERE name = :ring");
+        query.bindValue(0, ring);
+    query.exec();
+    while (query.next()) {
+        const QString result = query.value(0).toString();
+//        qDebug() << result;
+        out = result;
+    }
+    return out;
+
+}
+
 QString DataAccessLayer::qs_getschooladvdisadv(const QString school ){
     QString out;
     QSqlQuery query;
