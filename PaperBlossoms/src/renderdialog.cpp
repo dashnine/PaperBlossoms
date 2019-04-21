@@ -542,6 +542,8 @@ QString RenderDialog::generateHtml() {
     html.replace("$CURRICSTATUSTEXT",m_character->curricStatus);
 
     html.replace("$PRTVIS",portVis);
+
+    /*
      //create test HTML file
     QFile file("test.html");
     //QTemporaryFile file;
@@ -558,6 +560,7 @@ QString RenderDialog::generateHtml() {
 
         file.close();
     }
+    */
 
     delete tempFile; //clear the old file
     tempFile = new QTemporaryFile("XXXXXX.printfile.html");
