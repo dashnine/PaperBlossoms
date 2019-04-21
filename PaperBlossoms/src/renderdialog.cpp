@@ -42,6 +42,7 @@ RenderDialog::RenderDialog(PBOutputData* charData, QWidget *parent) :
     this->setWindowIcon(QIcon(":/images/resources/pink-sakura-01-hi.png"));
     this->m_character = charData;
     tempFile = new QTemporaryFile;
+    //qDebug()<<QDir::tempPath();
 
 //#ifndef Q_OS_MAC
 //#endif
@@ -563,7 +564,7 @@ QString RenderDialog::generateHtml() {
     */
 
     delete tempFile; //clear the old file
-    tempFile = new QTemporaryFile("XXXXXX.printfile.html");
+    tempFile = new QTemporaryFile(QDir::tempPath() + "/XXXXXX.printfile.html");
     if (!tempFile->open())
     {
         qDebug()<<"tempfile unable to be opened.";
