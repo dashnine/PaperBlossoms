@@ -289,11 +289,20 @@ void NewCharWizardPage2::doAddSkill(){
     const QString itemText = index.data(Qt::DisplayRole).toString();
     if(itemText.isEmpty()) return;
     qDebug()<<itemText;
+
     QStringList sellist = skillSelModel->stringList();
-    if (!sellist.contains(itemText) && sellist.count() < dal->i_getschoolskillcount(ui->nc2_school_ComboBox->currentText())){
-        sellist.append(itemText);
-        skillSelModel->setStringList(sellist);
-    }
+    if (sellist.count() >= dal->i_getschoolskillcount(ui->nc2_school_ComboBox->currentText())) return;
+
+    Q_ASSERT_X(!sellist.contains(itemText), "doAddSkill", "Skill selection list view already contained the selected item text");
+    sellist.append(itemText);
+    sellist.sort();
+    skillSelModel->setStringList(sellist);
+
+    QStringList optlist = skillOptModel->stringList();
+    Q_ASSERT_X(optlist.contains(itemText), "doAddSkill", "Skill options list view didn't contain the selected item text");
+    optlist.removeAll(itemText);
+    skillOptModel->setStringList(optlist);
+
     QString skillstring = "";
     foreach(QString skill, skillSelModel->stringList()){
         skillstring += skill + "|";
@@ -313,12 +322,20 @@ void NewCharWizardPage2::on_nc2_skillRem_pushButton_clicked()
 void NewCharWizardPage2::doRemSkill(){
     const QModelIndex index = ui->nc2_skillSel_listview->currentIndex();
     const QString itemText = index.data(Qt::DisplayRole).toString();
+    if(itemText.isEmpty()) return;
     qDebug()<<itemText;
+
     QStringList sellist = skillSelModel->stringList();
-    if (sellist.contains(itemText)){
-        sellist.removeAll(itemText);
-        skillSelModel->setStringList(sellist);
-    }
+    Q_ASSERT_X(sellist.contains(itemText), "doRemSkill", "Skill selection list view didn't contain the selected item text");
+    sellist.removeAll(itemText);
+    skillSelModel->setStringList(sellist);
+
+    QStringList optlist = skillOptModel->stringList();
+    Q_ASSERT_X(!optlist.contains(itemText), "doRemSkill", "Skill options list view already contained the selected item text");
+    optlist.append(itemText);
+    optlist.sort();
+    skillOptModel->setStringList(optlist);
+
     QString skillstring = "";
     foreach(QString skill, skillSelModel->stringList()){
         skillstring += skill + "|";
