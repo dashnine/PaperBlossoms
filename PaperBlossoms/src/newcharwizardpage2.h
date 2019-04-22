@@ -64,6 +64,8 @@ private slots:
     void on_nc2_skillSel_listview_doubleClicked(const QModelIndex &index);
 
 
+    void on_nc2_schoolSpecialtRing_ComboBox_currentIndexChanged(const QString &arg1);
+
 private:
     Ui::NewCharWizardPage2 *ui;
     DataAccessLayer* dal;
@@ -74,6 +76,9 @@ private:
     void doEquip(const QString school);
     void doAddSkill();
     void doRemSkill();
+    QMap<QString, int> calcSkills();
+    QMap<QString, int> calcCurrentRings();
+    void regenSummary();
 };
 
 #endif // NEWCHARWIZARDPAGE2_H

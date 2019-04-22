@@ -139,6 +139,7 @@ public:
     QStringList qsl_getancestorranges(const QString ancestor);
     QStringList qsl_getweapontypeunderrarity(const int rarity, const QString type);
     QStringList qsl_getpatterns();
+    QString qs_getringdesc(const QString ring);
 private:
     QSqlDatabase db;
     QStringList qsl_getschooltechsetids(const QString school);

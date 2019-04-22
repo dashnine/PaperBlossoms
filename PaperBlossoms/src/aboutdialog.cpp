@@ -31,7 +31,7 @@ AboutDialog::AboutDialog(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowIcon(QIcon(":/images/resources/pink-sakura-01-hi.png"));
-    ui->versionlabel->setText("Version: 0.2.1-rc1 (Compiled "+ QString(__DATE__) + QString(__TIME__)+")");
+    ui->versionlabel->setText("Version: 1.0.0 (Compiled "+ QString(__DATE__) + QString(__TIME__)+")");
 }
 
 AboutDialog::~AboutDialog()
