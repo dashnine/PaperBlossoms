@@ -111,6 +111,6 @@ TRANSLATIONS += paperblossoms_en.ts \
                 paperblossoms_es.ts
 
 win32:RC_ICONS += resources/pink-sakura-01-hi.ico
-macx: ICON =
+macx: ICON = resources/sakura.icns
 
 #QMAKE_RESOURCE_FLAGS += -no-compress
