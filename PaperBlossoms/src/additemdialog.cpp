@@ -31,7 +31,7 @@ AddItemDialog::AddItemDialog(DataAccessLayer* dal, Character* character, QString
     ui(new Ui::AddItemDialog)
 {
     ui->setupUi(this);
-    this->setWindowIcon(QIcon(":/images/resources/pink-sakura-01-hi.png"));
+    this->setWindowIcon(QIcon(":/images/resources/sakura.png"));
     this->dal = dal;
     this->character = character;
     this->type = type;

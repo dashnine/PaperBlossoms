@@ -29,7 +29,7 @@ AddTitleDialog::AddTitleDialog(DataAccessLayer* dal, Character* character, QWidg
     ui(new Ui::AddTitleDialog)
 {
     ui->setupUi(this);
-    this->setWindowIcon(QIcon(":/images/resources/pink-sakura-01-hi.png"));
+    this->setWindowIcon(QIcon(":/images/resources/sakura.png"));
     this->dal = dal;
     this->character = character;
     ui->title_combobox->addItems(dal->qsl_gettitles());
