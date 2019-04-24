@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>467</width>
-    <height>517</height>
+    <height>551</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -51,42 +51,11 @@
       <string>Paper Blossoms is an Open Source character generator for Legend of the Five Rings, a roleplaying game by Fantasy Flight Games.  The application and author(s) are not affiliated with FFG or any other official L5R party.  Legend of the Five Rings and all associated content is property of Fantasy Flight Games.  PaperBlossoms is licensed under the GPLv3, and is Copyright (c) 2019 Kyle Hankins (dashnine).  Data modeling and data entry provided by @meow9th. 
 
 To contact the project, send an email to paperblossoms.L5R@gmail.com!
-</string>
+Ring images are property of FFG; the assets used here were taken from www.imperialadvisor.com and modified to work with the application; these can be removed immediately upon request by any owning party. 
+This application is created using Qt 5, which is licenced under the LGPLv3: https://doc.qt.io/qt-5/lgpl.html.  A copy of this license is also available in the application directory.  While this application is distributed with binaries for Qt, any compatible Qt binaries may be used in place of those distributed, limited only by version incompatibilities. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3.  </string>
      </property>
      <property name="alignment">
       <set>Qt::AlignJustify|Qt::AlignTop</set>
-     </property>
-     <property name="wordWrap">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLabel" name="label_3">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="text">
-      <string>Ring images are property of FFG; the assets used here were taken from www.imperialadvisor.com and modified to work with the application; these can be removed immediately upon request by any owning party. </string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignJustify|Qt::AlignTop</set>
-     </property>
-     <property name="wordWrap">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLabel" name="label_4">
-     <property name="text">
-      <string>This application is created using Qt 5, which is licenced under the LGPLv3: https://doc.qt.io/qt-5/lgpl.html.  A copy of this license is also available in the application directory.  While this application is distributed with binaries for Qt, any compatible Qt binaries may be used in place of those distributed, limited only by version incompatibilities. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3.  </string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignJustify|Qt::AlignVCenter</set>
      </property>
      <property name="wordWrap">
       <bool>true</bool>
@@ -96,7 +65,8 @@ To contact the project, send an email to paperblossoms.L5R@gmail.com!
    <item>
     <widget class="QLabel" name="label_5">
      <property name="text">
-      <string>Sakura imagery on the splashscreen is from http://pngimg.com/download/49821, and is Licensed under Creative Commons: https://creativecommons.org/licenses/by-nc/4.0/</string>
+      <string>Sakura imagery on the splashscreen is from http://pngimg.com/download/49821, and is Licensed under Creative Commons: https://creativecommons.org/licenses/by-nc/4.0/ . 
+ The icon is a modified version of &quot;sakura&quot; by Pham Duy Phuong Hung from the Noun Project ( https://thenounproject.com/term/sakura/1565575/ ), which is CC licenced.</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>

@@ -29,7 +29,7 @@ AddDisAdvDialog::AddDisAdvDialog(DataAccessLayer* dal, Character* character, QSt
     ui(new Ui::AddDisAdvDialog)
 {
     ui->setupUi(this);
-    this->setWindowIcon(QIcon(":/images/resources/pink-sakura-01-hi.png"));
+    this->setWindowIcon(QIcon(":/images/resources/sakura.png"));
     this->character = character;
     this->dal = dal;
 

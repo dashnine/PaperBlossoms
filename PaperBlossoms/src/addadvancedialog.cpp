@@ -33,7 +33,7 @@ AddAdvanceDialog::AddAdvanceDialog(DataAccessLayer* dal, Character* character,QW
     ui(new Ui::AddAdvanceDialog)
 {
     ui->setupUi(this);
-    this->setWindowIcon(QIcon(":/images/resources/pink-sakura-01-hi.png"));
+    this->setWindowIcon(QIcon(":/images/resources/sakura.png"));
     ui->advtype->setCurrentIndex(-1);
     this->dal = dal;
     this->character = character;
