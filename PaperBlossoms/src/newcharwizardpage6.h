@@ -62,6 +62,8 @@ private slots:
 
     void on_nc6_q18_special2_comboBox_currentIndexChanged(const QString &arg1);
 
+    void on_nc6_q17_comboBox_currentIndexChanged(const QString &arg1);
+
 private:
     Ui::NewCharWizardPage6 *ui;
     DataAccessLayer* dal;
