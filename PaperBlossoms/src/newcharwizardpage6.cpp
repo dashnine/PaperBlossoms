@@ -758,3 +758,8 @@ void NewCharWizardPage6::on_nc6_q18_special2_comboBox_currentIndexChanged(const 
     regenSummary();
 
 }
+
+void NewCharWizardPage6::on_nc6_q17_comboBox_currentIndexChanged(const QString &arg1)
+{
+   regenSummary();
+}
