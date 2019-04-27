@@ -978,7 +978,7 @@ def patterns_to_db(db_conn):
     )
 
     # Read item patterns from JSON
-    with open('json/item_patterns.json') as f:
+    with open('json/item_patterns.json', encoding = 'utf8') as f:
         item_patterns = json.load(f)
     
     # Write item patterns to item pattern table
