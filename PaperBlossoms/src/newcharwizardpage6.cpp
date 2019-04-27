@@ -749,17 +749,20 @@ QMap<QString, int> NewCharWizardPage6::calcSkills(){
 
 void NewCharWizardPage6::on_nc6_q18_special1_comboBox_currentIndexChanged(const QString &arg1)
 {
+    Q_UNUSED(arg1);
     regenSummary();
 
 }
 
 void NewCharWizardPage6::on_nc6_q18_special2_comboBox_currentIndexChanged(const QString &arg1)
 {
+    Q_UNUSED(arg1);
     regenSummary();
 
 }
 
 void NewCharWizardPage6::on_nc6_q17_comboBox_currentIndexChanged(const QString &arg1)
 {
+    Q_UNUSED(arg1);
    regenSummary();
 }

@@ -246,12 +246,14 @@ QMap<QString, int> NewCharWizardPage3::calcSkills(){
 
 void NewCharWizardPage3::on_nc3_q7_comboBox_currentIndexChanged(const QString &arg1)
 {
+    Q_UNUSED(arg1);
     regenSummary();
 
 }
 
 void NewCharWizardPage3::on_nc3_q8_comboBox_currentIndexChanged(const QString &arg1)
 {
+    Q_UNUSED(arg1);
     regenSummary();
 
 }

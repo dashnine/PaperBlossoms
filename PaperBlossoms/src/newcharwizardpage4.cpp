@@ -230,6 +230,7 @@ QMap<QString, int> NewCharWizardPage4::calcSkills(){
 
 void NewCharWizardPage4::on_nc4_q13_skill_comboBox_currentIndexChanged(const QString &arg1)
 {
+    Q_UNUSED(arg1);
     regenSummary();
 
 }
