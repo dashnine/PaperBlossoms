@@ -369,7 +369,7 @@ int DataAccessLayer::i_getschoolskillcount(const QString school ){
     }
     return count;
 }
-
+/*
 int DataAccessLayer::i_getschooltechcount(const QString school){
     QSqlQuery query;
     query.prepare("SELECT count(distinct set_id) FROM school_starting_techniques WHERE school = :school");
@@ -383,7 +383,7 @@ int DataAccessLayer::i_getschooltechcount(const QString school){
     return count;
 
 }
-
+*/
 QStringList DataAccessLayer::qsl_getschooltechsetids(const QString school){
     QSqlQuery query;
     QStringList out;
@@ -1054,6 +1054,7 @@ void DataAccessLayer::qsm_gettechniquetable(QSqlQueryModel * const model, const 
 
 }
 
+/*
 void DataAccessLayer::qsm_getfilteredtechniquetable(QSqlQueryModel * const model, const QString category, const QString rank, const QString school)
 {
     //technique query
@@ -1098,7 +1099,7 @@ void DataAccessLayer::qsm_getfilteredtechniquetable(QSqlQueryModel * const model
     model->setQuery(query);
 
 }
-
+*/
 void DataAccessLayer::qsm_getschoolcurriculum(QSqlQueryModel * const model, const QString school)
 {
 
@@ -1116,7 +1117,7 @@ void DataAccessLayer::qsm_getschoolcurriculum(QSqlQueryModel * const model, cons
     model->setQuery(query);
 
 }
-
+/*
 void DataAccessLayer::qsm_getschoolcurriculumbyrank(QSqlQueryModel * const model, const QString school, const int rank)
 {
 
@@ -1135,13 +1136,13 @@ void DataAccessLayer::qsm_getschoolcurriculumbyrank(QSqlQueryModel * const model
     model->setQuery(query);
 
 }
-
+*/
 QStringList DataAccessLayer::qsl_gettechbygroup(const QString group,const int rank){
     //have to use Like here, since the subcategory for Kata is 'General Kata' or 'Close Combat Kata'
     QStringList out;
     QSqlQuery query;
     query.prepare("SELECT name FROM techniques WHERE subcategory LIKE ? and rank <= ?");
-    query.bindValue(0, QString("\%%1\%").arg(group));
+    query.bindValue(0, QString("%%1%").arg(group));
     query.bindValue(1, rank);
     query.exec();
     while (query.next()) {
@@ -1202,7 +1203,7 @@ QString DataAccessLayer::qs_gettitleability(const QString title){
     }
     return out;
 }
-
+/*
 void DataAccessLayer::qsm_gettitletrack(QSqlQueryModel * const model, const QString title)
 {
 
@@ -1220,7 +1221,7 @@ void DataAccessLayer::qsm_gettitletrack(QSqlQueryModel * const model, const QStr
     model->setQuery(query);
 
 }
-
+*/
 QStringList DataAccessLayer::qsl_gettitletrack(const QString title)
 {
     QStringList out;
@@ -1290,6 +1291,7 @@ QString DataAccessLayer::qs_getitemtype(const QString name){
     return "Unknown";
 }
 
+/*
 QStringList DataAccessLayer::qsl_getweapon(const QString name){
     //      0       1               2           3               4                   5               6           7
     //    name  |description    |short_desc |reference_book |reference_page    |price_value    |price_unit |rarity |
@@ -1324,7 +1326,8 @@ QStringList DataAccessLayer::qsl_getweapon(const QString name){
     }
     return out;
 }
-
+*/
+/*
 QString DataAccessLayer::qs_getarmor(const QString name){
     //      0       1               2           3               4                   5               6           7
     //    name  |description    |short_desc |reference_book |reference_page    |price_value    |price_unit |rarity |
@@ -1360,7 +1363,8 @@ QString DataAccessLayer::qs_getarmor(const QString name){
     }
     return out;
 }
-
+*/
+/*
 QString DataAccessLayer::qs_getperseffects(const QString name){
     //      0       1               2           3               4                   5               6           7
     //    name  |description    |short_desc |reference_book |reference_page    |price_value    |price_unit |rarity |
@@ -1396,7 +1400,7 @@ QString DataAccessLayer::qs_getperseffects(const QString name){
     }
     return out;
 }
-
+*/
 QStringList DataAccessLayer::qsl_getbaseitemdata(const QString name, const QString type){
     //      0       1               2           3               4                   5               6           7
     //    name  |description    |short_desc |reference_book |reference_page    |price_value    |price_unit |rarity |
