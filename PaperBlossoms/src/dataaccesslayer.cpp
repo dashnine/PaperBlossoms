@@ -65,7 +65,7 @@ DataAccessLayer::DataAccessLayer()
         }
     }
 
-
+    //implicitly fails if the file already exists at the target!
     QFile::copy(":/data/paperblossoms.db", targetpath);
     QFile::setPermissions(targetpath, QFile::WriteOwner | QFile::ReadOwner);
     //QFile::copy(appdir + "/paperblossoms.db", targetpath);
@@ -1700,6 +1700,9 @@ bool DataAccessLayer::importCSV(const QString filepath, const QString tablename)
             success &= isuccess;
         }
         f.close ();
+    }
+    else { //couldn't open file
+        return !success;
     }
     return success;
 }

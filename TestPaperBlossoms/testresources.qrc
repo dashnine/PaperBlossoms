@@ -1,0 +1,29 @@
+<RCC>
+    <qresource prefix="/exports">
+        <file>export_sample/user_advantages_disadvantages.csv</file>
+        <file>export_sample/user_armor_qualities.csv</file>
+        <file>export_sample/user_armor_resistance.csv</file>
+        <file>export_sample/user_armor.csv</file>
+        <file>export_sample/user_clans.csv</file>
+        <file>export_sample/user_curriculum.csv</file>
+        <file>export_sample/user_descriptions.csv</file>
+        <file>export_sample/user_families.csv</file>
+        <file>export_sample/user_family_rings.csv</file>
+        <file>export_sample/user_family_skills.csv</file>
+        <file>export_sample/user_personal_effect_qualities.csv</file>
+        <file>export_sample/user_personal_effects.csv</file>
+        <file>export_sample/user_qualities.csv</file>
+        <file>export_sample/user_school_rings.csv</file>
+        <file>export_sample/user_school_starting_outfit.csv</file>
+        <file>export_sample/user_school_starting_skills.csv</file>
+        <file>export_sample/user_school_starting_techniques.csv</file>
+        <file>export_sample/user_school_techniques_available.csv</file>
+        <file>export_sample/user_schools.csv</file>
+        <file>export_sample/user_skills.csv</file>
+        <file>export_sample/user_techniques.csv</file>
+        <file>export_sample/user_title_advancements.csv</file>
+        <file>export_sample/user_titles.csv</file>
+        <file>export_sample/user_weapon_qualities.csv</file>
+        <file>export_sample/user_weapons.csv</file>
+    </qresource>
+</RCC>
