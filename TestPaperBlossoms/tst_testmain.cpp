@@ -26,6 +26,11 @@ private slots:
     void test_dal_qsl_getfamilyrings();
     void test_dal_qs_getclandesc();
     void test_dal_qs_getfamilydesc();
+    void test_dal_qsl_getschools();
+    void test_dal_qs_getschooldesc();
+    void test_dal_qsl_getschoolskills();
+    void test_dal_i_getschoolskillcount();
+
 
 };
 
@@ -116,6 +121,43 @@ void TestMain::test_dal_qs_getfamilydesc(){
     QString desc = dal->qs_getfamilydesc("Kakita");
     QVERIFY(!desc.isEmpty());
 }
+
+void TestMain::test_dal_qsl_getschools(){
+    QStringList schools = dal->qsl_getschools("Crane");
+    QStringList schools2 = dal->qsl_getschools("Crane",true);
+    int count1 = schools.size();
+    int count2 = schools2.size();
+    QVERIFY2(count1>0,"No schools found for Crane");
+    QVERIFY2(count1<count2,"Extra schools not added for 'allschools=true");
+}
+
+void TestMain::test_dal_qs_getschooldesc(){
+    QString desc = dal->qs_getschooldesc("Kakita Duelist School");
+    QVERIFY(!desc.isEmpty());
+}
+
+void TestMain::test_dal_qsl_getschoolskills(){
+    QStringList schools = dal->qsl_getschools("Crane",true); //all schools
+    foreach (QString school, schools){
+        QStringList skills = dal->qsl_getschoolskills(school);
+        QString errmessage = QString("Error: no skills in ")+school;
+        QVERIFY2(skills.count()>0,errmessage.toLatin1());
+    }
+}
+
+void TestMain::test_dal_i_getschoolskillcount(){
+    QStringList schools = dal->qsl_getschools("Crane",true); //all schools
+    foreach (QString school, schools){
+        int count = dal->i_getschoolskillcount(school);
+        QString errmessage = QString("Error: bad skill count in ")+school;
+        QVERIFY2(count>0,errmessage.toLatin1());
+    }
+}
+
+
+QStringList qsl_getschoolskills(const QString school);
+int i_getschoolskillcount(const QString school);
+
 
 QTEST_MAIN(TestMain)
 
