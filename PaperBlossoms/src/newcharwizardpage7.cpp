@@ -721,6 +721,7 @@ void NewCharWizardPage7::ringsChanged(const QString dynamicRingString){
 
 void NewCharWizardPage7::on_nc7_repRing_1_comboBox_currentIndexChanged(const QString &arg1)
 {
+    Q_UNUSED(arg1);
     ui->nc7_repRing_2_comboBox->clear();
     const QMap<QString, int> ringmap = calcRings();
     QString ringText = "";
@@ -744,6 +745,7 @@ void NewCharWizardPage7::on_nc7_repRing_1_comboBox_currentIndexChanged(const QSt
 
 void NewCharWizardPage7::on_nc7_repRing_2_comboBox_currentIndexChanged(const QString &arg1)
 {
+    Q_UNUSED(arg1);
     const QMap<QString, int> ringmap = calcRings();
     QString ringText = "";
     QStringList replaceList;
@@ -759,6 +761,7 @@ void NewCharWizardPage7::on_nc7_repRing_2_comboBox_currentIndexChanged(const QSt
 
 void NewCharWizardPage7::on_nc7_repSkill_1_comboBox_currentIndexChanged(const QString &arg1)
 {
+    Q_UNUSED(arg1);
     ui->nc7_repSkill_2_comboBox->clear();
 
     const QMap<QString, int> skillmap = calcSkills();
@@ -790,6 +793,7 @@ void NewCharWizardPage7::on_nc7_repSkill_1_comboBox_currentIndexChanged(const QS
 
 void NewCharWizardPage7::on_nc7_repSkill_2_comboBox_currentIndexChanged(const QString &arg1)
 {
+    Q_UNUSED(arg1);
     ui->nc7_repSkill_3_comboBox->clear();
 
     const QMap<QString, int> skillmap = calcSkills();
@@ -821,6 +825,7 @@ void NewCharWizardPage7::on_nc7_repSkill_2_comboBox_currentIndexChanged(const QS
 
 void NewCharWizardPage7::on_nc7_repSkill_3_comboBox_currentIndexChanged(const QString &arg1)
 {
+    Q_UNUSED(arg1);
 
     const QMap<QString, int> skillmap = calcSkills();
 

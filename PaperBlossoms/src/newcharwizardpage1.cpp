@@ -218,5 +218,6 @@ QMap<QString, int> NewCharWizardPage1::calcSkills(){
 
 void NewCharWizardPage1::on_nc1_ring_ComboBox_currentIndexChanged(const QString &arg1)
 {
+    Q_UNUSED(arg1);
    regenSummary();
 }

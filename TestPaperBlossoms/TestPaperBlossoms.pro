@@ -7,4 +7,5 @@ TEMPLATE = app
 SOURCES +=  tst_testmain.cpp
 
 RESOURCES += \
-    ../PaperBlossoms/resources.qrc
+    ../PaperBlossoms/resources.qrc \
+    testresources.qrc

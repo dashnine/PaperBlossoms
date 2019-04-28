@@ -601,11 +601,13 @@ void RenderDialog::on_cancelButton_clicked()
 
 void RenderDialog::on_hideskill_checkbox_toggled(const bool checked)
 {
+    Q_UNUSED(checked);
     ui->webView->setHtml(generateHtml());
 }
 
 void RenderDialog::on_hideportrait_checkbox_toggled(const bool checked)
 {
+    Q_UNUSED(checked);
     ui->webView->setHtml(generateHtml());
 }
 

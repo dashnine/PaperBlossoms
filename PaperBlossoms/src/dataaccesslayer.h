@@ -62,8 +62,8 @@ public:
         "user_weapons"
     }; //list of tables to export/import
 
-    void qsm_getclans(const QSqlQueryModel* model);
-    void qsm_getfamilies(const QSqlQueryModel* model, const QString clan);
+    //void qsm_getclans(const QSqlQueryModel* model);
+    //void qsm_getfamilies(const QSqlQueryModel* model, const QString clan);
     QStringList qsl_getclans();
     QStringList qsl_getfamilies(const QString clan);
     QStringList qsl_getfamilyrings(const QString family);
@@ -73,7 +73,7 @@ public:
     QString qs_getschooldesc(const QString school);
     QStringList qsl_getschoolskills(const QString school);
     int i_getschoolskillcount(const QString school);
-    int i_getschooltechcount(const QString school);
+    //int i_getschooltechcount(const QString school);
     QList<QStringList> ql_getlistsoftech(const QString school);
     QStringList qsl_getrings();
     QList<QStringList> ql_getlistsofeq(const QString school);
@@ -94,7 +94,7 @@ public:
     QStringList qsl_getschoolrings(const QString clan);
     QStringList qsl_getqualities();
     QStringList qsl_getheritageranges(const QString heritage);
-    QStringList qsl_getstartingeqfixed(const QString school);
+    //QStringList qsl_getstartingeqfixed(const QString school);
     int i_getclanstatus(const QString clan);
     int i_getfamilyglory(const QString family);
     int i_getfamilywealth(const QString family);
@@ -103,9 +103,9 @@ public:
     //QStringList qsl_getschooltechavailable(QString school, bool maho_allowed);
 
     void qsm_gettechniquetable(QSqlQueryModel * const model, const QString rank, const QString school, const QString title, const QString clan);
-    void qsm_getfilteredtechniquetable(QSqlQueryModel * const model, const QString category, const QString rank, const QString school);
+    //void qsm_getfilteredtechniquetable(QSqlQueryModel * const model, const QString category, const QString rank, const QString school);
     void qsm_getschoolcurriculum(QSqlQueryModel * const model, const QString school);
-    void qsm_getschoolcurriculumbyrank(QSqlQueryModel * const model, const QString school, const int rank);
+    //void qsm_getschoolcurriculumbyrank(QSqlQueryModel * const model, const QString school, const int rank);
     QStringList qsl_getskillsbygroup(const QString group);
     QStringList qsl_gettechbygroup(const QString group, const int rank);
     QStringList qsl_getskillsandgroup();
@@ -113,13 +113,13 @@ public:
     QString qs_gettitleref(const QString title);
     QString qs_gettitlexp(const QString title);
     QString qs_gettitleability(const QString title);
-    void qsm_gettitletrack(QSqlQueryModel * const model, const QString title);
+    //void qsm_gettitletrack(QSqlQueryModel * const model, const QString title);
     QStringList qsl_gettitletrack(const QString title);
     int i_gettitletechgrouprank(const QString title);
     QString qs_getitemtype(const QString name);
-    QStringList qsl_getweapon(const QString name);
-    QString qs_getarmor(const QString name);
-    QString qs_getperseffects(const QString name);
+    //QStringList qsl_getweapon(const QString name);
+    //QString qs_getarmor(const QString name);
+    //QString qs_getperseffects(const QString name);
     QStringList qsl_getbaseitemdata(const QString name, const QString type);
     QStringList qsl_getitemqualities(const QString name, const QString type);
     QList<QStringList> ql_getweapondata(const QString name);
