@@ -14,23 +14,23 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/aboutdialog.ui" line="41"/>
-        <source>Paper Blossoms is an Open Source character generator for Legend of the Five Rings, a roleplaying game by Fantasy Flight Games.  The application and author(s) are not affiliated with FFG or any other official L5R party.  Legend of the Five Rings and all associated content is property of Fantasy Flight Games.  PaperBlossoms is licensed under the GPLv3, and is Copyright (c) 2019 Kyle Hankins (dashnine).  Data modeling and data entry provided by @meow9th.</source>
+        <location filename="ui/aboutdialog.ui" line="35"/>
+        <source>VersionLabel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/aboutdialog.ui" line="60"/>
-        <source>Ring images are property of FFG; the assets used here were taken from www.imperialadvisor.com and modified to work with the application; these can be removed immediately upon request by any owning party. </source>
+        <location filename="ui/aboutdialog.ui" line="51"/>
+        <source>Paper Blossoms is an Open Source character generator for Legend of the Five Rings, a roleplaying game by Fantasy Flight Games.  The application and author(s) are not affiliated with FFG or any other official L5R party.  Legend of the Five Rings and all associated content is property of Fantasy Flight Games.  PaperBlossoms is licensed under the GPLv3, and is Copyright (c) 2019 Kyle Hankins (dashnine).  Data modeling and data entry provided by @meow9th. 
+
+To contact the project, send an email to paperblossoms.L5R@gmail.com!
+Ring images are property of FFG; the assets used here were taken from www.imperialadvisor.com and modified to work with the application; these can be removed immediately upon request by any owning party. 
+This application is created using Qt 5, which is licenced under the LGPLv3: https://doc.qt.io/qt-5/lgpl.html.  A copy of this license is also available in the application directory.  While this application is distributed with binaries for Qt, any compatible Qt binaries may be used in place of those distributed, limited only by version incompatibilities. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3.  </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/aboutdialog.ui" line="73"/>
-        <source>This application is created using Qt 5, which is licenced under the LGPLv3: https://doc.qt.io/qt-5/lgpl.html.  A copy of this license is also available in the application directory.  While this application is distributed with binaries for Qt, any compatible Qt binaries may be used in place of those distributed, limited only by version incompatibilities. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3.  </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="ui/aboutdialog.ui" line="86"/>
-        <source>Sakura imagery on the splashscreen is from http://pngimg.com/download/49821, and is Licensed under Creative Commons: https://creativecommons.org/licenses/by-nc/4.0/</source>
+        <location filename="ui/aboutdialog.ui" line="68"/>
+        <source>Sakura imagery on the splashscreen is from http://pngimg.com/download/49821, and is Licensed under Creative Commons: https://creativecommons.org/licenses/by-nc/4.0/ . 
+ The icon is a modified version of &quot;sakura&quot; by Pham Duy Phuong Hung from the Noun Project ( https://thenounproject.com/term/sakura/1565575/ ), which is CC licenced.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -72,47 +72,53 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="127"/>
+        <location filename="ui/addadvancedialog.ui" line="114"/>
+        <source>Special Training: Half the XP cost 
+(Requires GM Approval)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/addadvancedialog.ui" line="135"/>
         <source>This will cost: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="134"/>
+        <location filename="ui/addadvancedialog.ui" line="142"/>
         <source>##</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="141"/>
+        <location filename="ui/addadvancedialog.ui" line="149"/>
         <source>XP.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="163"/>
+        <location filename="ui/addadvancedialog.ui" line="171"/>
         <source>Advance progress in:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="169"/>
+        <location filename="ui/addadvancedialog.ui" line="177"/>
         <source>Curriculum</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="176"/>
+        <location filename="ui/addadvancedialog.ui" line="184"/>
         <source>Title</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="191"/>
+        <location filename="ui/addadvancedialog.ui" line="199"/>
         <source>Reason:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="207"/>
+        <location filename="ui/addadvancedialog.ui" line="215"/>
         <source>Tattoo, GM Award</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="216"/>
+        <location filename="ui/addadvancedialog.ui" line="224"/>
         <source>Free (None)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -138,223 +144,234 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/additemdialog.ui" line="31"/>
+        <location filename="ui/additemdialog.ui" line="28"/>
         <source>Choose a base item:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/additemdialog.ui" line="56"/>
+        <location filename="ui/additemdialog.ui" line="53"/>
         <source>Base Item</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/additemdialog.ui" line="62"/>
+        <location filename="ui/additemdialog.ui" line="70"/>
+        <source>Add a Quality</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/additemdialog.ui" line="78"/>
+        <source>Quality:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/additemdialog.ui" line="98"/>
+        <source>Add a Pattern</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/additemdialog.ui" line="106"/>
+        <source>Pattern:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/additemdialog.ui" line="179"/>
         <source>Reference Book:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/additemdialog.ui" line="70"/>
+        <location filename="ui/additemdialog.ui" line="203"/>
         <source>koku</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/additemdialog.ui" line="75"/>
+        <location filename="ui/additemdialog.ui" line="208"/>
         <source>zeni</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/additemdialog.ui" line="80"/>
+        <location filename="ui/additemdialog.ui" line="213"/>
         <source>bu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/additemdialog.ui" line="88"/>
-        <source>Unit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="ui/additemdialog.ui" line="95"/>
+        <location filename="ui/additemdialog.ui" line="169"/>
         <source>Reference Page</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/additemdialog.ui" line="102"/>
+        <location filename="ui/additemdialog.ui" line="129"/>
         <source>Short Description</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/additemdialog.ui" line="109"/>
+        <location filename="ui/additemdialog.ui" line="59"/>
         <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/additemdialog.ui" line="119"/>
+        <location filename="ui/additemdialog.ui" line="149"/>
         <source>Rarity</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/additemdialog.ui" line="126"/>
+        <location filename="ui/additemdialog.ui" line="159"/>
         <source>Price</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/additemdialog.ui" line="145"/>
-        <source>Qualities</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="ui/additemdialog.ui" line="154"/>
+        <location filename="ui/additemdialog.ui" line="90"/>
+        <location filename="ui/additemdialog.ui" line="118"/>
         <source>Add</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/additemdialog.ui" line="161"/>
-        <source>Remove</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="ui/additemdialog.ui" line="182"/>
+        <location filename="ui/additemdialog.ui" line="136"/>
         <source>Description</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/additemdialog.ui" line="200"/>
-        <location filename="ui/additemdialog.ui" line="383"/>
+        <location filename="ui/additemdialog.ui" line="189"/>
+        <source>Remove Quality/Pattern</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/additemdialog.ui" line="232"/>
+        <location filename="ui/additemdialog.ui" line="415"/>
         <source>Weapon Traits</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/additemdialog.ui" line="206"/>
-        <location filename="ui/additemdialog.ui" line="473"/>
+        <location filename="ui/additemdialog.ui" line="238"/>
+        <location filename="ui/additemdialog.ui" line="505"/>
         <source>Category</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/additemdialog.ui" line="214"/>
-        <location filename="ui/additemdialog.ui" line="397"/>
+        <location filename="ui/additemdialog.ui" line="246"/>
+        <location filename="ui/additemdialog.ui" line="429"/>
         <source>Swords</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/additemdialog.ui" line="219"/>
-        <location filename="ui/additemdialog.ui" line="402"/>
+        <location filename="ui/additemdialog.ui" line="251"/>
+        <location filename="ui/additemdialog.ui" line="434"/>
         <source>Axes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/additemdialog.ui" line="224"/>
-        <location filename="ui/additemdialog.ui" line="407"/>
+        <location filename="ui/additemdialog.ui" line="256"/>
+        <location filename="ui/additemdialog.ui" line="439"/>
         <source>Blunt Weapons</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/additemdialog.ui" line="229"/>
-        <location filename="ui/additemdialog.ui" line="412"/>
+        <location filename="ui/additemdialog.ui" line="261"/>
+        <location filename="ui/additemdialog.ui" line="444"/>
         <source>Hand Weapons</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/additemdialog.ui" line="234"/>
-        <location filename="ui/additemdialog.ui" line="417"/>
+        <location filename="ui/additemdialog.ui" line="266"/>
+        <location filename="ui/additemdialog.ui" line="449"/>
         <source>Polearms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/additemdialog.ui" line="239"/>
-        <location filename="ui/additemdialog.ui" line="422"/>
+        <location filename="ui/additemdialog.ui" line="271"/>
+        <location filename="ui/additemdialog.ui" line="454"/>
         <source>Bows</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/additemdialog.ui" line="244"/>
-        <location filename="ui/additemdialog.ui" line="427"/>
+        <location filename="ui/additemdialog.ui" line="276"/>
+        <location filename="ui/additemdialog.ui" line="459"/>
         <source>Crossbows</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/additemdialog.ui" line="249"/>
-        <location filename="ui/additemdialog.ui" line="432"/>
+        <location filename="ui/additemdialog.ui" line="281"/>
+        <location filename="ui/additemdialog.ui" line="464"/>
         <source>Specialist Weapons</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/additemdialog.ui" line="254"/>
-        <location filename="ui/additemdialog.ui" line="437"/>
+        <location filename="ui/additemdialog.ui" line="286"/>
+        <location filename="ui/additemdialog.ui" line="469"/>
         <source>Other</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/additemdialog.ui" line="262"/>
-        <location filename="ui/additemdialog.ui" line="459"/>
+        <location filename="ui/additemdialog.ui" line="294"/>
+        <location filename="ui/additemdialog.ui" line="491"/>
         <source>Skill</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/additemdialog.ui" line="270"/>
-        <location filename="ui/additemdialog.ui" line="507"/>
+        <location filename="ui/additemdialog.ui" line="302"/>
+        <location filename="ui/additemdialog.ui" line="539"/>
         <source>Melee</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/additemdialog.ui" line="275"/>
-        <location filename="ui/additemdialog.ui" line="512"/>
+        <location filename="ui/additemdialog.ui" line="307"/>
+        <location filename="ui/additemdialog.ui" line="544"/>
         <source>Ranged</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/additemdialog.ui" line="280"/>
-        <location filename="ui/additemdialog.ui" line="517"/>
+        <location filename="ui/additemdialog.ui" line="312"/>
+        <location filename="ui/additemdialog.ui" line="549"/>
         <source>Unarmed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/additemdialog.ui" line="288"/>
-        <location filename="ui/additemdialog.ui" line="445"/>
+        <location filename="ui/additemdialog.ui" line="320"/>
+        <location filename="ui/additemdialog.ui" line="477"/>
         <source>Grip</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/additemdialog.ui" line="308"/>
-        <location filename="ui/additemdialog.ui" line="452"/>
+        <location filename="ui/additemdialog.ui" line="340"/>
+        <location filename="ui/additemdialog.ui" line="484"/>
         <source>Grip Notes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/additemdialog.ui" line="331"/>
-        <location filename="ui/additemdialog.ui" line="466"/>
+        <location filename="ui/additemdialog.ui" line="363"/>
+        <location filename="ui/additemdialog.ui" line="498"/>
         <source>Minimum Range</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/additemdialog.ui" line="341"/>
-        <location filename="ui/additemdialog.ui" line="493"/>
+        <location filename="ui/additemdialog.ui" line="373"/>
+        <location filename="ui/additemdialog.ui" line="525"/>
         <source>Maximum Range</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/additemdialog.ui" line="351"/>
-        <location filename="ui/additemdialog.ui" line="389"/>
+        <location filename="ui/additemdialog.ui" line="383"/>
+        <location filename="ui/additemdialog.ui" line="421"/>
         <source>Damage</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/additemdialog.ui" line="361"/>
-        <location filename="ui/additemdialog.ui" line="480"/>
+        <location filename="ui/additemdialog.ui" line="393"/>
+        <location filename="ui/additemdialog.ui" line="512"/>
         <source>Deadliness</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/additemdialog.ui" line="568"/>
+        <location filename="ui/additemdialog.ui" line="600"/>
         <source>Armor Traits</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/additemdialog.ui" line="599"/>
+        <location filename="ui/additemdialog.ui" line="631"/>
         <source>Physical Resistance:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/additemdialog.ui" line="612"/>
+        <location filename="ui/additemdialog.ui" line="644"/>
         <source>Supernatural Resistance:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -741,110 +758,110 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="220"/>
-        <location filename="src/mainwindow.cpp" line="1426"/>
-        <location filename="src/mainwindow.cpp" line="1437"/>
+        <location filename="src/mainwindow.cpp" line="221"/>
+        <location filename="src/mainwindow.cpp" line="1427"/>
+        <location filename="src/mainwindow.cpp" line="1438"/>
         <source>Closing Character Profile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="553"/>
+        <location filename="src/mainwindow.cpp" line="554"/>
         <source>Save File As...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="553"/>
+        <location filename="src/mainwindow.cpp" line="554"/>
         <source>Paper Blossoms Character Profile (*.pbc)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="564"/>
-        <location filename="src/mainwindow.cpp" line="624"/>
+        <location filename="src/mainwindow.cpp" line="565"/>
+        <location filename="src/mainwindow.cpp" line="625"/>
         <source>Unable to open file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="611"/>
+        <location filename="src/mainwindow.cpp" line="612"/>
         <source>Load...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="611"/>
+        <location filename="src/mainwindow.cpp" line="612"/>
         <source>Paper Blossoms Character (*.pbc);;Any (*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="617"/>
+        <location filename="src/mainwindow.cpp" line="618"/>
         <source>Opening Profile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="637"/>
+        <location filename="src/mainwindow.cpp" line="638"/>
         <source>Incompatible Save File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="901"/>
+        <location filename="src/mainwindow.cpp" line="902"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="901"/>
+        <location filename="src/mainwindow.cpp" line="902"/>
         <source>Unable to load some Title data. This character depends on data that isn&apos;t present, and may be inconsistent. Did you need to import custom data?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1084"/>
+        <location filename="src/mainwindow.cpp" line="1085"/>
         <source>Open File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1086"/>
+        <location filename="src/mainwindow.cpp" line="1087"/>
         <source>All files (*.*);;JPEG (*.jpg *.jpeg);;PNG (*.png)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1095"/>
+        <location filename="src/mainwindow.cpp" line="1096"/>
         <source>Image Viewer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1096"/>
+        <location filename="src/mainwindow.cpp" line="1097"/>
         <source>Cannot load %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1372"/>
+        <location filename="src/mainwindow.cpp" line="1373"/>
         <source>Choose an export directory...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1382"/>
+        <location filename="src/mainwindow.cpp" line="1383"/>
         <source>Error Exporting Data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1386"/>
+        <location filename="src/mainwindow.cpp" line="1387"/>
         <source>Export Complete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1395"/>
+        <location filename="src/mainwindow.cpp" line="1396"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1396"/>
+        <location filename="src/mainwindow.cpp" line="1397"/>
         <source>Choose a folder containing exported data...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1407"/>
+        <location filename="src/mainwindow.cpp" line="1408"/>
         <source>Error Importing Data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1411"/>
+        <location filename="src/mainwindow.cpp" line="1412"/>
         <source>Import Complete</source>
         <translation type="unfinished"></translation>
     </message>
@@ -862,12 +879,22 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage1.ui" line="39"/>
+        <location filename="ui/newcharwizardpage1.ui" line="57"/>
+        <source>Summary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/newcharwizardpage1.ui" line="63"/>
+        <source>SUMMARY</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/newcharwizardpage1.ui" line="79"/>
         <source>2. What Family do you belong to?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage1.ui" line="64"/>
+        <location filename="ui/newcharwizardpage1.ui" line="104"/>
         <source>Choose a Ring:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -925,12 +952,22 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage2.ui" line="306"/>
+        <location filename="ui/newcharwizardpage2.ui" line="318"/>
+        <source>Summary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/newcharwizardpage2.ui" line="324"/>
+        <source>SUMMARY</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/newcharwizardpage2.ui" line="346"/>
         <source>4. How do you stand out within your school?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage2.ui" line="317"/>
+        <location filename="ui/newcharwizardpage2.ui" line="354"/>
         <source>Choose a ring to represent this:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -948,33 +985,43 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage3.ui" line="36"/>
-        <source>6. What do you long for, and how might this impede your duty?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="ui/newcharwizardpage3.ui" line="52"/>
-        <source>7. What is your relationship with your clan?</source>
+        <location filename="ui/newcharwizardpage3.ui" line="54"/>
+        <source>Summary</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="ui/newcharwizardpage3.ui" line="60"/>
+        <source>SUMMARY</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/newcharwizardpage3.ui" line="76"/>
+        <source>6. What do you long for, and how might this impede your duty?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/newcharwizardpage3.ui" line="92"/>
+        <source>7. What is your relationship with your clan?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/newcharwizardpage3.ui" line="100"/>
         <source>Positive - +5 Glory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage3.ui" line="67"/>
-        <location filename="ui/newcharwizardpage3.ui" line="106"/>
+        <location filename="ui/newcharwizardpage3.ui" line="107"/>
+        <location filename="ui/newcharwizardpage3.ui" line="146"/>
         <source>Conflicted - Choose a Skill</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage3.ui" line="85"/>
+        <location filename="ui/newcharwizardpage3.ui" line="125"/>
         <source>8. What do you think of Bushido?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage3.ui" line="93"/>
+        <location filename="ui/newcharwizardpage3.ui" line="133"/>
         <source>Positive - +10 Honor</source>
         <translation type="unfinished"></translation>
     </message>
@@ -993,10 +1040,10 @@
     </message>
     <message>
         <location filename="ui/newcharwizardpage4.ui" line="26"/>
-        <location filename="ui/newcharwizardpage4.ui" line="55"/>
-        <location filename="ui/newcharwizardpage4.ui" line="94"/>
-        <location filename="ui/newcharwizardpage4.ui" line="123"/>
-        <location filename="ui/newcharwizardpage4.ui" line="165"/>
+        <location filename="ui/newcharwizardpage4.ui" line="95"/>
+        <location filename="ui/newcharwizardpage4.ui" line="134"/>
+        <location filename="ui/newcharwizardpage4.ui" line="163"/>
+        <location filename="ui/newcharwizardpage4.ui" line="205"/>
         <source>HIDDEN DESCRIPTION</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1006,47 +1053,57 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage4.ui" line="49"/>
+        <location filename="ui/newcharwizardpage4.ui" line="67"/>
+        <source>Summary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/newcharwizardpage4.ui" line="73"/>
+        <source>SUMMARY</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/newcharwizardpage4.ui" line="89"/>
         <source>10. What holds you back most in life?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage4.ui" line="65"/>
+        <location filename="ui/newcharwizardpage4.ui" line="105"/>
         <source>Choose an Adversity:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage4.ui" line="78"/>
+        <location filename="ui/newcharwizardpage4.ui" line="118"/>
         <source>11. What activity most makes you feel at peace?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage4.ui" line="87"/>
+        <location filename="ui/newcharwizardpage4.ui" line="127"/>
         <source>Choose a Passion:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage4.ui" line="107"/>
+        <location filename="ui/newcharwizardpage4.ui" line="147"/>
         <source>12. What concern, fear, or foible troubles you the most?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage4.ui" line="113"/>
+        <location filename="ui/newcharwizardpage4.ui" line="153"/>
         <source>Choose an Anxiety:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage4.ui" line="142"/>
+        <location filename="ui/newcharwizardpage4.ui" line="182"/>
         <source>13.  Who have you learned the most from during your life?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage4.ui" line="148"/>
+        <location filename="ui/newcharwizardpage4.ui" line="188"/>
         <source>Gain a Disadvantage and a skill:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage4.ui" line="182"/>
+        <location filename="ui/newcharwizardpage4.ui" line="222"/>
         <source>Gain an Advantage:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1064,17 +1121,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage5.ui" line="36"/>
+        <location filename="ui/newcharwizardpage5.ui" line="54"/>
+        <source>Summary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/newcharwizardpage5.ui" line="60"/>
+        <source>SUMMARY</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/newcharwizardpage5.ui" line="76"/>
         <source>15. How do you react to stressful situations?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage5.ui" line="52"/>
+        <location filename="ui/newcharwizardpage5.ui" line="92"/>
         <source>16. What are your preexisting relationships with other clans, families, organizations, and traditions?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage5.ui" line="61"/>
+        <location filename="ui/newcharwizardpage5.ui" line="101"/>
         <source>Choose an item symbolizing this history:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1097,75 +1164,90 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage6.ui" line="54"/>
+        <location filename="ui/newcharwizardpage6.ui" line="66"/>
+        <source>Summary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/newcharwizardpage6.ui" line="72"/>
+        <source>SUMMARY</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/newcharwizardpage6.ui" line="94"/>
         <source>18. Who were you named to honor?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage6.ui" line="60"/>
+        <location filename="ui/newcharwizardpage6.ui" line="107"/>
         <source>Ancestor 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage6.ui" line="69"/>
-        <location filename="ui/newcharwizardpage6.ui" line="112"/>
-        <location filename="ui/newcharwizardpage6.ui" line="178"/>
+        <location filename="ui/newcharwizardpage6.ui" line="116"/>
+        <location filename="ui/newcharwizardpage6.ui" line="196"/>
+        <location filename="ui/newcharwizardpage6.ui" line="258"/>
         <source>Roll</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage6.ui" line="91"/>
-        <location filename="ui/newcharwizardpage6.ui" line="134"/>
+        <location filename="ui/newcharwizardpage6.ui" line="138"/>
+        <location filename="ui/newcharwizardpage6.ui" line="187"/>
         <source>MOD</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage6.ui" line="103"/>
+        <location filename="ui/newcharwizardpage6.ui" line="163"/>
         <source>Ancestor 1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage6.ui" line="146"/>
+        <location filename="ui/newcharwizardpage6.ui" line="226"/>
         <source>Other Effects</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage6.ui" line="156"/>
+        <location filename="ui/newcharwizardpage6.ui" line="236"/>
         <source>Gain:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage6.ui" line="166"/>
+        <location filename="ui/newcharwizardpage6.ui" line="246"/>
         <source>Choose from:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage6.ui" line="189"/>
+        <location filename="ui/newcharwizardpage6.ui" line="269"/>
         <source>SPECIAL:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage6.ui" line="196"/>
+        <location filename="ui/newcharwizardpage6.ui" line="276"/>
         <source>SPEC_1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage6.ui" line="206"/>
+        <location filename="ui/newcharwizardpage6.ui" line="286"/>
         <source>SPEC_2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage6.ui" line="247"/>
+        <location filename="ui/newcharwizardpage6.ui" line="206"/>
         <source>Choose Ancestor 1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage6.ui" line="267"/>
+        <location filename="ui/newcharwizardpage6.ui" line="100"/>
         <source>Choose Ancestor 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage6.ui" line="283"/>
+        <location filename="ui/newcharwizardpage6.ui" line="314"/>
+        <source>Heritage Table:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/newcharwizardpage6.ui" line="333"/>
         <source>19. What is your personal name?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1291,9 +1373,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/renderdialog.cpp" line="100"/>
-        <location filename="src/renderdialog.cpp" line="551"/>
-        <location filename="src/renderdialog.cpp" line="567"/>
+        <location filename="src/renderdialog.cpp" line="101"/>
+        <location filename="src/renderdialog.cpp" line="571"/>
         <source>Unable to open file</source>
         <translation type="unfinished"></translation>
     </message>
