@@ -1735,6 +1735,18 @@ void MainWindow::on_actionExport_to_XML_triggered()
          xpspent.setAttribute("value", ui->xpSpentLabel->text()); //TODO - separate this from UI
          root.appendChild(xpspent);
 
+         QByteArray byteArray;
+         QString base64 = "";
+         QBuffer buffer(&byteArray); // use buffer to store pixmap into byteArray
+         buffer.open(QIODevice::WriteOnly);
+         if(!curCharacter.portrait.isNull()){
+             curCharacter.portrait.save(&buffer, "PNG");
+             base64 = QString(byteArray.toBase64());
+         }
+         QDomElement portrait = document.createElement("Portrait");
+         portrait.setAttribute("base64image", base64);
+         root.appendChild(portrait);
+
         //now, output the document to the file
         QTextStream stream(&file);
         stream << document.toString();
