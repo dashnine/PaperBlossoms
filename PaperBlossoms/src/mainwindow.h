@@ -127,6 +127,8 @@ private slots:
 
     void on_removepersonaleffect_pushbutton_clicked();
 
+    void on_actionExport_to_XML_triggered();
+
 private:
     Ui::MainWindow *ui;
     DataAccessLayer* dal;

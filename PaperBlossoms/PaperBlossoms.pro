@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sql webenginewidgets widgets printsupport
+QT       += core gui sql webenginewidgets widgets printsupport xml
 
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
