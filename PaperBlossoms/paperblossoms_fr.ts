@@ -49,16 +49,22 @@ This application is created using Qt 5, which is licenced under the LGPLv3: http
     </message>
     <message>
         <location filename="ui/addadvancedialog.ui" line="39"/>
+        <location filename="src/addadvancedialog.cpp" line="225"/>
         <source>Skill</source>
         <translation>Compétence</translation>
     </message>
     <message>
         <location filename="ui/addadvancedialog.ui" line="44"/>
+        <location filename="src/addadvancedialog.cpp" line="66"/>
+        <location filename="src/addadvancedialog.cpp" line="139"/>
+        <location filename="src/addadvancedialog.cpp" line="279"/>
         <source>Technique</source>
         <translation></translation>
     </message>
     <message>
         <location filename="ui/addadvancedialog.ui" line="49"/>
+        <location filename="src/addadvancedialog.cpp" line="175"/>
+        <location filename="src/addadvancedialog.cpp" line="231"/>
         <source>Ring</source>
         <translation>Anneau</translation>
     </message>
@@ -704,167 +710,183 @@ This application is created using Qt 5, which is licenced under the LGPLv3: http
         <translation>Fichier</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1256"/>
+        <location filename="ui/mainwindow.ui" line="1259"/>
         <source>Tools</source>
         <translation>Outils</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1266"/>
+        <location filename="ui/mainwindow.ui" line="1269"/>
         <source>Help</source>
         <translation>Aide</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1285"/>
+        <location filename="ui/mainwindow.ui" line="1288"/>
         <source>New...</source>
         <translation>Nouveau ...</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1290"/>
+        <location filename="ui/mainwindow.ui" line="1293"/>
         <source>Save As...</source>
         <translation>Enregistrer sous ...</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1295"/>
+        <location filename="ui/mainwindow.ui" line="1298"/>
         <source>Open...</source>
         <translation>Ouvrir ...</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1300"/>
+        <location filename="ui/mainwindow.ui" line="1303"/>
         <source>Generate Character Sheet...</source>
         <translation>Générer Feuille de Perso ...</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1305"/>
+        <location filename="ui/mainwindow.ui" line="1308"/>
         <source>About</source>
         <translation>A propos</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1310"/>
+        <location filename="ui/mainwindow.ui" line="1313"/>
         <source>Export User Data Tables...</source>
         <translation>Exporter données utilisateurs ...</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1315"/>
+        <location filename="ui/mainwindow.ui" line="1318"/>
         <source>Import User Data Tables...</source>
         <translation>Importer données utilisateurs ...</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1320"/>
+        <location filename="ui/mainwindow.ui" line="1323"/>
         <source>Open Application Data Directory</source>
         <translation>Ouvrir dossier données de l&apos;application</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1325"/>
+        <location filename="ui/mainwindow.ui" line="1328"/>
         <source>Exit</source>
         <translation>Sortie</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="221"/>
-        <location filename="src/mainwindow.cpp" line="1427"/>
-        <location filename="src/mainwindow.cpp" line="1438"/>
+        <location filename="ui/mainwindow.ui" line="1333"/>
+        <source>Export to XML...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/mainwindow.cpp" line="225"/>
+        <location filename="src/mainwindow.cpp" line="1437"/>
+        <location filename="src/mainwindow.cpp" line="1448"/>
         <source>Closing Character Profile</source>
         <translation>Fermer profil</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="554"/>
+        <location filename="src/mainwindow.cpp" line="561"/>
+        <location filename="src/mainwindow.cpp" line="1497"/>
         <source>Save File As...</source>
         <translation>enregistrer fichier sous ...</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="554"/>
+        <location filename="src/mainwindow.cpp" line="561"/>
         <source>Paper Blossoms Character Profile (*.pbc)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="565"/>
-        <location filename="src/mainwindow.cpp" line="625"/>
+        <location filename="src/mainwindow.cpp" line="572"/>
+        <location filename="src/mainwindow.cpp" line="632"/>
         <source>Unable to open file</source>
         <translation>Impossible d&apos;ouvrir fichier</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="612"/>
+        <location filename="src/mainwindow.cpp" line="619"/>
         <source>Load...</source>
         <translation>Charger ...</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="612"/>
+        <location filename="src/mainwindow.cpp" line="619"/>
         <source>Paper Blossoms Character (*.pbc);;Any (*)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="618"/>
+        <location filename="src/mainwindow.cpp" line="625"/>
         <source>Opening Profile</source>
         <translation>Ouverture du profil</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="638"/>
+        <location filename="src/mainwindow.cpp" line="645"/>
         <source>Incompatible Save File</source>
         <translation>Fichier enregistré incompatible</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="902"/>
+        <location filename="src/mainwindow.cpp" line="912"/>
         <source>Error</source>
         <translation>Erreur</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="902"/>
+        <location filename="src/mainwindow.cpp" line="912"/>
         <source>Unable to load some Title data. This character depends on data that isn&apos;t present, and may be inconsistent. Did you need to import custom data?</source>
         <translation>Impossible de charger une donnée du titre. Ce personnage dépend de données non présentes et est peut-être inconsistant. Deviez-vous importer des données personnelles ?</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1085"/>
+        <location filename="src/mainwindow.cpp" line="1095"/>
         <source>Open File</source>
         <translation>Ouvrir fichier</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1087"/>
+        <location filename="src/mainwindow.cpp" line="1097"/>
         <source>All files (*.*);;JPEG (*.jpg *.jpeg);;PNG (*.png)</source>
         <translation>Tous les fichiers (*.*);JPEG (*.jpg *.jpeg);;PNG (*.png)&quot; )</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1096"/>
+        <location filename="src/mainwindow.cpp" line="1106"/>
         <source>Image Viewer</source>
         <translation>Visionneuse</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1097"/>
+        <location filename="src/mainwindow.cpp" line="1107"/>
         <source>Cannot load %1.</source>
         <translation>Impossible de charger%1.</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1373"/>
+        <location filename="src/mainwindow.cpp" line="1383"/>
         <source>Choose an export directory...</source>
         <translation>Choisir un répertoire d&apos;exportation ...</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1383"/>
+        <location filename="src/mainwindow.cpp" line="1393"/>
         <source>Error Exporting Data</source>
         <translation>Erreur d&apos;imporation de données</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1387"/>
+        <location filename="src/mainwindow.cpp" line="1397"/>
         <source>Export Complete</source>
         <translation>Exportation terminée</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1396"/>
+        <location filename="src/mainwindow.cpp" line="1406"/>
         <source>Warning</source>
         <translation>Attention</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1397"/>
+        <location filename="src/mainwindow.cpp" line="1407"/>
         <source>Choose a folder containing exported data...</source>
         <translation>Choisir un dossier qui contient les données exportées ...</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1408"/>
+        <location filename="src/mainwindow.cpp" line="1418"/>
         <source>Error Importing Data</source>
         <translation>Erreur d&apos;importation de données</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1412"/>
+        <location filename="src/mainwindow.cpp" line="1422"/>
         <source>Import Complete</source>
         <translation>Importation terminée</translation>
+    </message>
+    <message>
+        <location filename="src/mainwindow.cpp" line="1497"/>
+        <source>Paper Blossoms Character XML (*.xml)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/mainwindow.cpp" line="1508"/>
+        <source>Unable to open XML file for writing.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
