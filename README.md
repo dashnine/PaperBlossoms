@@ -45,3 +45,4 @@ Since Github is not always good about listing who has helped out on a project, I
 * meow9th
 * aajabrams
 * OpenNinjia
+* ruronin (French UI Translation)
