@@ -335,7 +335,7 @@ This application is created using Qt 5, which is licenced under the LGPLv3: http
         <location filename="ui/additemdialog.ui" line="340"/>
         <location filename="ui/additemdialog.ui" line="484"/>
         <source>Grip Notes</source>
-        <translation>Notes sur la saisie</translation>
+        <translation>Notes</translation>
     </message>
     <message>
         <location filename="ui/additemdialog.ui" line="363"/>
@@ -983,7 +983,7 @@ This application is created using Qt 5, which is licenced under the LGPLv3: http
     <message>
         <location filename="ui/newcharwizardpage3.ui" line="20"/>
         <source>5. Who is your lord, and what is your duty to them?</source>
-        <translation type="unfinished">5- Qui est votre Seigneur et quel est votre devoir envers lui ?</translation>
+        <translation>5- Qui est votre Seigneur et quel est votre devoir envers lui ?</translation>
     </message>
     <message>
         <location filename="ui/newcharwizardpage3.ui" line="54"/>
@@ -1066,7 +1066,7 @@ This application is created using Qt 5, which is licenced under the LGPLv3: http
     <message>
         <location filename="ui/newcharwizardpage4.ui" line="89"/>
         <source>10. What holds you back most in life?</source>
-        <translation type="unfinished">10- Qu&apos;est-ce qui empêche le plus votre épanouissement ?</translation>
+        <translation>10- Qu&apos;est-ce qui empêche le plus votre épanouissement ?</translation>
     </message>
     <message>
         <location filename="ui/newcharwizardpage4.ui" line="105"/>
@@ -1101,7 +1101,8 @@ This application is created using Qt 5, which is licenced under the LGPLv3: http
     <message>
         <location filename="ui/newcharwizardpage4.ui" line="188"/>
         <source>Gain a Disadvantage and a skill:</source>
-        <translation>1 Désavantage et 1 Comp :</translation>
+        <translation>ou 1 Désavantage et 
+1 Comp :</translation>
     </message>
     <message>
         <location filename="ui/newcharwizardpage4.ui" line="222"/>
