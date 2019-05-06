@@ -51,6 +51,7 @@
 #include <QApplication>
 #include <QFontDatabase>
 #include <QtXml>
+#include "edituserdescriptionsdialog.h"
 
 
 
@@ -1753,4 +1754,21 @@ void MainWindow::on_actionExport_to_XML_triggered()
         file.close();
     }
 
+}
+
+void MainWindow::on_actionDescription_Editor_triggered()
+{
+    EditUserDescriptionsDialog dialog(dal);
+    const int result = dialog.exec();
+    if (result == QDialog::Accepted){
+        dialog.doFinish(true);
+        qDebug() << "Accepted: data comitted";
+       //m_dirtyDataFlag = true;
+       //curCharacter.advanceStack.append(addadvancedialog.getResult());
+       //populateUI();
+    }
+    else{
+        dialog.doFinish(false);
+        qDebug() << "Rejected: data discarded";
+    }
 }

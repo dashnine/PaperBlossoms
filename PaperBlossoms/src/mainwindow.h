@@ -129,6 +129,8 @@ private slots:
 
     void on_actionExport_to_XML_triggered();
 
+    void on_actionDescription_Editor_triggered();
+
 private:
     Ui::MainWindow *ui;
     DataAccessLayer* dal;

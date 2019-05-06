@@ -33,6 +33,7 @@
 #include <QCoreApplication>
 #include <QSqlRecord>
 #include <QDir>
+#include <QSqlTableModel>
 
 DataAccessLayer::DataAccessLayer()
 {
@@ -88,6 +89,7 @@ DataAccessLayer::DataAccessLayer()
     }
 
 }
+
 
 QStringList DataAccessLayer::qsl_getclans()
 {
@@ -272,6 +274,34 @@ QString DataAccessLayer::qs_getringdesc(const QString ring ){
     }
     return out;
 
+}
+
+QStringList DataAccessLayer::qsl_getdescribablenames()
+{
+    QStringList out;
+    QSqlQuery query;
+    query.prepare(
+                "           select name                    FROM advantages_disadvantages       "
+                "UNION      SELECT name                    FROM armor                          "
+                "UNION      SELECT name                    FROM clans                          "
+                "UNION      SELECT name                    FROM families                       "
+                "UNION      SELECT name                    FROM personal_effects               "
+                "UNION      SELECT quality                 FROM qualities                      "
+                "UNION      SELECT name                    FROM schools                        "
+                "UNION      SELECT school_ability_name     FROM schools                        "
+                "UNION      SELECT mastery_ability_name    FROM schools                        "
+                "UNION      SELECT name                    FROM techniques                     "
+                "UNION      SELECT name                    FROM titles                         "
+                "UNION      SELECT title_ability_name      FROM titles                         "
+                "UNION      SELECT name                    FROM weapons                        "
+
+                );
+    query.exec();
+    while (query.next()) {
+        const QString name = query.value(0).toString();
+        out<< name;
+    }
+    return out;
 }
 
 QString DataAccessLayer::qs_getschooladvdisadv(const QString school ){
