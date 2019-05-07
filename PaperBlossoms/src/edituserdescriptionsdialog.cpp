@@ -3,6 +3,7 @@
 #include "dataaccesslayer.h"
 #include <QSqlField>
 #include <QSqlRecord>
+#include <QMessageBox>
 
 EditUserDescriptionsDialog::EditUserDescriptionsDialog(DataAccessLayer* dal, QWidget *parent) :
     QDialog(parent),
@@ -21,6 +22,9 @@ EditUserDescriptionsDialog::EditUserDescriptionsDialog(DataAccessLayer* dal, QWi
 
     ui->descTableView->setModel(this->model);
     ui->optionComboBox->addItems(dal->qsl_getdescribablenames());
+    ui->apply_pushbutton->setEnabled(false);
+    ui->descTableView->resizeColumnToContents(2);
+    connect(model,SIGNAL(dataChanged (const QModelIndex &, const QModelIndex &)),this,SLOT(dataChanged()));
 }
 
 EditUserDescriptionsDialog::~EditUserDescriptionsDialog()
@@ -40,6 +44,7 @@ void EditUserDescriptionsDialog::doFinish(bool accepted)
 
 void EditUserDescriptionsDialog::on_pushButton_clicked()
 {
+    //TODO: Move this into DAL?
     QSqlField namefield("name",QVariant::String);
     namefield.setValue(ui->optionComboBox->currentText().toHtmlEscaped());  // casts QString to int
     QSqlField descfield("description",QVariant::String);
@@ -53,4 +58,38 @@ void EditUserDescriptionsDialog::on_pushButton_clicked()
     record.append(sdescfield);
 
     model->insertRecord(-1,record);
+    ui->apply_pushbutton->setEnabled(true);
+    ui->descTableView->resizeColumnToContents(2);
+
+}
+
+void EditUserDescriptionsDialog::on_apply_pushbutton_clicked()
+{
+    model->submitAll();
+    for(int i=0; i<model->rowCount(); ++i){
+        ui->descTableView->showRow(i);
+    }
+    ui->apply_pushbutton->setEnabled(false);
+}
+
+void EditUserDescriptionsDialog::dataChanged()
+{
+    ui->apply_pushbutton->setEnabled(true);
+}
+
+void EditUserDescriptionsDialog::on_delete_pushButton_clicked()
+{
+    const QModelIndex curIndex = ui->descTableView->currentIndex();
+
+    if(curIndex.isValid()){
+        if(QMessageBox::Cancel==QMessageBox::information(this, tr("Warning: Unreversable Change"), "Warning: This will immediately save all changes. This action cannot be undone. Continue?",QMessageBox::Yes|QMessageBox::Cancel)){
+            return;
+        }
+        //ui->descTableView->hideRow(curIndex.row());
+        model->removeRow(curIndex.row());
+        model->submitAll();
+        ui->apply_pushbutton->setEnabled(false);
+
+    }
+
 }

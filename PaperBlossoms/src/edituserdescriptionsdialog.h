@@ -21,6 +21,13 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+
+    void on_apply_pushbutton_clicked();
+
+    void dataChanged();
+
+    void on_delete_pushButton_clicked();
+
 private:
     Ui::EditUserDescriptionsDialog *ui;
     QSqlTableModel* model;
