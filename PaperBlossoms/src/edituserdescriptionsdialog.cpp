@@ -25,6 +25,12 @@ EditUserDescriptionsDialog::EditUserDescriptionsDialog(DataAccessLayer* dal, QWi
     ui->apply_pushbutton->setEnabled(false);
     ui->descTableView->resizeColumnToContents(2);
     connect(model,SIGNAL(dataChanged (const QModelIndex &, const QModelIndex &)),this,SLOT(dataChanged()));
+    ui->optionComboBox->setCurrentIndex(-1);
+    ui->label->setVisible(false);
+
+
+
+
 }
 
 EditUserDescriptionsDialog::~EditUserDescriptionsDialog()
@@ -61,6 +67,11 @@ void EditUserDescriptionsDialog::on_pushButton_clicked()
     ui->apply_pushbutton->setEnabled(true);
     ui->descTableView->resizeColumnToContents(2);
 
+    //clear the data
+    ui->lineEdit->clear();
+    ui->textEdit->setText("");
+    ui->optionComboBox->setCurrentIndex(-1);
+
 }
 
 void EditUserDescriptionsDialog::on_apply_pushbutton_clicked()
@@ -70,11 +81,14 @@ void EditUserDescriptionsDialog::on_apply_pushbutton_clicked()
         ui->descTableView->showRow(i);
     }
     ui->apply_pushbutton->setEnabled(false);
+    ui->label->setVisible(true);
 }
 
 void EditUserDescriptionsDialog::dataChanged()
 {
     ui->apply_pushbutton->setEnabled(true);
+    //ui->label->setVisible(true);
+
 }
 
 void EditUserDescriptionsDialog::on_delete_pushButton_clicked()
@@ -91,5 +105,11 @@ void EditUserDescriptionsDialog::on_delete_pushButton_clicked()
         ui->apply_pushbutton->setEnabled(false);
 
     }
+    ui->label->setVisible(true);
 
+}
+
+void EditUserDescriptionsDialog::on_optionComboBox_currentIndexChanged(int index)
+{
+    ui->pushButton->setEnabled(index>=0);
 }

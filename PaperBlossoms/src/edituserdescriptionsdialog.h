@@ -28,6 +28,8 @@ private slots:
 
     void on_delete_pushButton_clicked();
 
+    void on_optionComboBox_currentIndexChanged(int index);
+
 private:
     Ui::EditUserDescriptionsDialog *ui;
     QSqlTableModel* model;
