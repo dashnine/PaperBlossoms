@@ -51,6 +51,7 @@
 #include <QApplication>
 #include <QFontDatabase>
 #include <QtXml>
+#include "edituserdescriptionsdialog.h"
 
 
 
@@ -1753,4 +1754,20 @@ void MainWindow::on_actionExport_to_XML_triggered()
         file.close();
     }
 
+}
+
+void MainWindow::on_actionDescription_Editor_triggered()
+{
+    EditUserDescriptionsDialog dialog(dal);
+    const int result = dialog.exec();
+    if (result == QDialog::Accepted){
+        dialog.doFinish(true);
+        qDebug() << "Accepted: data comitted";
+
+    }
+    else{
+        dialog.doFinish(false);
+        qDebug() << "Rejected: data discarded";
+    }
+    //QMessageBox::information(this, tr("Back up data"), "Note: Custom user data will be lost if you update Paper Blossoms.  You should back up your data using Tools->Export User Data....",QMessageBox::Ok);
 }
