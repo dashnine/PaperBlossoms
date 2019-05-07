@@ -4,6 +4,7 @@
 #include <QSqlField>
 #include <QSqlRecord>
 #include <QMessageBox>
+#include <QTimer>
 
 EditUserDescriptionsDialog::EditUserDescriptionsDialog(DataAccessLayer* dal, QWidget *parent) :
     QDialog(parent),
@@ -20,6 +21,8 @@ EditUserDescriptionsDialog::EditUserDescriptionsDialog(DataAccessLayer* dal, QWi
     model->setHeaderData(1, Qt::Horizontal, tr("Description"));
     model->setHeaderData(2, Qt::Horizontal, tr("Short Desc"));
 
+
+
     ui->descTableView->setModel(this->model);
     ui->optionComboBox->addItems(dal->qsl_getdescribablenames());
     ui->apply_pushbutton->setEnabled(false);
@@ -28,9 +31,12 @@ EditUserDescriptionsDialog::EditUserDescriptionsDialog(DataAccessLayer* dal, QWi
     ui->optionComboBox->setCurrentIndex(-1);
     ui->label->setVisible(false);
 
+    ui->descTableView->horizontalHeader()->swapSections(1,2);
+    ui->descTableView->horizontalHeader()->setStretchLastSection(true);
+    ui->descTableView->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
 
-
-
+    //Horrible hack to make row resizing work right.  Make this not so, plz.
+    QTimer::singleShot(1, ui->descTableView, SLOT(resizeRowsToContents()));
 }
 
 EditUserDescriptionsDialog::~EditUserDescriptionsDialog()

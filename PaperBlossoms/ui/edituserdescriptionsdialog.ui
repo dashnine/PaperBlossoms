@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Edit Custom User Descriptions</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="5" column="0">
