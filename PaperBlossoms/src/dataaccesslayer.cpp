@@ -1589,11 +1589,20 @@ QString DataAccessLayer::escapedCSV(QString unexc)
     return unexc.replace("\n","%0A"); //escape newlines
 }
 
-bool DataAccessLayer::queryToCsv(const QString filepath, const QString tablename) //DANGER - DO NOT ALLOW USERS TO CONTROL THIS
+bool DataAccessLayer::queryToCsv(const QString filepath, const QString tablename, bool isDir) //DANGER - DO NOT ALLOW USERS TO CONTROL THIS
 {
     QSqlQuery query;
     query.prepare("select * from "+tablename); //DANGER - DO NOT ALLOW USERS TO CONTROL THIS
-    QFile csvFile (filepath + "/" + tablename + ".csv");
+    //QFile csvFile (filepath + "/" + tablename + ".csv");
+
+    QFile csvFile;
+    if(isDir){
+        csvFile.setFileName(filepath+"/"+tablename+".csv");
+    }
+    else{
+        csvFile.setFileName(filepath);
+    }
+
     if (!csvFile.open(QFile::WriteOnly | QFile::Text)){
         qDebug("failed to open csv file");
         return false;
@@ -1699,9 +1708,16 @@ QStringList DataAccessLayer::parseCSV(const QString &string)
 
 //NOTE - THIS ALLOWS DIRECT INJECTION OF DATA--BAD THINGS CAN HAPPEN.
 //based on https://dustri.org/b/import-cvs-to-sqlite-with-qt.html
-bool DataAccessLayer::importCSV(const QString filepath, const QString tablename){
+bool DataAccessLayer::importCSV(const QString filepath, const QString tablename, bool isDir){
     bool success = true;
-    QFile f(filepath+"/"+tablename+".csv");
+    QFile f;
+    if(isDir){
+        f.setFileName(filepath+"/"+tablename+".csv");
+    }
+    else{
+        f.setFileName(filepath);
+    }
+    //QFile f(filepath+"/"+tablename+".csv");
     if(f.open (QIODevice::ReadOnly)){
         QSqlQuery query;
         success &= query.exec("DELETE FROM "+tablename);

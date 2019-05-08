@@ -131,6 +131,10 @@ private slots:
 
     void on_actionDescription_Editor_triggered();
 
+    void on_actionExport_User_Descriptions_Table_triggered();
+
+    void on_actionImport_User_Descriptions_Table_triggered();
+
 private:
     Ui::MainWindow *ui;
     DataAccessLayer* dal;

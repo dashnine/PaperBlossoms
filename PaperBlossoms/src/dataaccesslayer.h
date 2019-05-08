@@ -135,8 +135,8 @@ public:
     QString qs_getclanref(const QString clan);
     QStringList qsl_getweaponsunderrarity(const int rarity);
     QString qs_getschooladvdisadv(const QString school);
-    bool queryToCsv(const QString filepath, const QString tablename);
-    bool importCSV(const QString filepath, const QString tablename);
+    bool queryToCsv(const QString filepath, const QString tablename, bool isDir = true);
+    bool importCSV(const QString filepath, const QString tablename, bool isDir = true);
     QStringList qsl_getancestorranges(const QString ancestor);
     QStringList qsl_getweapontypeunderrarity(const int rarity, const QString type);
     QStringList qsl_getpatterns();

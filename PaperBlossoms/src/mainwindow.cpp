@@ -1771,3 +1771,52 @@ void MainWindow::on_actionDescription_Editor_triggered()
     }
     //QMessageBox::information(this, tr("Back up data"), "Note: Custom user data will be lost if you update Paper Blossoms.  You should back up your data using Tools->Export User Data....",QMessageBox::Ok);
 }
+
+void MainWindow::on_actionExport_User_Descriptions_Table_triggered()
+{
+    qDebug()<<QString("Homepath = ") + QDir::homePath();
+    QString cname = this->curCharacter.family + " " + curCharacter.name;
+    if (cname.isEmpty())
+        cname = "untitled";
+    cname.remove(QRegExp("[^a-zA-Z\\d\\s]"));
+    QString fileName = QFileDialog::getSaveFileName( this, tr("Export User Descriptions..."), QDir::homePath()+"/user_descriptions.csv", tr("CSV (*.csv)"));
+    if (fileName.isEmpty())
+        return;
+    else
+    {
+        qDebug()<<QString("Filename = ") + fileName;
+
+        bool success = true;
+        success &= dal->queryToCsv(fileName,"user_descriptions", false);
+        if(!success){
+            QMessageBox::information(this, tr("Error Exporting Data"), "One or more errors occured exporting user data. Please check write permissions for the target file.");
+
+        }
+        else{
+            QMessageBox::information(this, tr("Export Complete"), "User description data export completed.");
+
+        }
+
+    }
+}
+
+void MainWindow::on_actionImport_User_Descriptions_Table_triggered()
+{
+    const QString fileName = QFileDialog::getOpenFileName( this, tr("Import User Descriptions..."), QDir::homePath(), tr("CSV (*.csv);;Any (*)"));
+    if (fileName.isEmpty())
+        return;
+    else
+    {
+        bool success = true;
+        success &= dal->importCSV(fileName, "user_descriptions", false);
+        if(!success){
+            QMessageBox::information(this, tr("Error Importing Data"), "Data import encoutered one or more errors. Your database may be inconsistent or incomplete. Recommend restoring default DB.");
+
+        }
+        else{
+            QMessageBox::information(this, tr("Import Complete"), "User data import completed. This feature is in beta; please verify that your data still functions normally.");
+
+        }
+    }
+
+}

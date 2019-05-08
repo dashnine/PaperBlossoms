@@ -1258,13 +1258,27 @@
     <property name="title">
      <string>Tools</string>
     </property>
+    <widget class="QMenu" name="menuExport">
+     <property name="title">
+      <string>Export</string>
+     </property>
+     <addaction name="actionExport_User_Descriptions_Table"/>
+     <addaction name="actionExport_User_Tables"/>
+    </widget>
+    <widget class="QMenu" name="menuImport">
+     <property name="title">
+      <string>Import</string>
+     </property>
+     <addaction name="actionImport_User_Descriptions_Table"/>
+     <addaction name="actionImport_User_Data_Tables"/>
+    </widget>
     <addaction name="actionGenerate_Character_Sheet"/>
     <addaction name="separator"/>
     <addaction name="actionDescription_Editor"/>
     <addaction name="separator"/>
-    <addaction name="actionExport_User_Tables"/>
-    <addaction name="actionImport_User_Data_Tables"/>
     <addaction name="actionOpen_Application_Data_Directory"/>
+    <addaction name="menuExport"/>
+    <addaction name="menuImport"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -1310,12 +1324,12 @@
     <string>About</string>
    </property>
   </action>
-  <action name="actionExport_User_Tables">
+  <action name="actionExport_User_Tablesold">
    <property name="text">
     <string>Export User Data Tables...</string>
    </property>
   </action>
-  <action name="actionImport_User_Data_Tables">
+  <action name="actionImport_User_Data_Tablesold">
    <property name="text">
     <string>Import User Data Tables...</string>
    </property>
@@ -1338,6 +1352,26 @@
   <action name="actionDescription_Editor">
    <property name="text">
     <string>Description Editor</string>
+   </property>
+  </action>
+  <action name="actionExport_User_Tables">
+   <property name="text">
+    <string>Export All User Data Tables...</string>
+   </property>
+  </action>
+  <action name="actionImport_User_Data_Tables">
+   <property name="text">
+    <string>Import All User Data Tables...</string>
+   </property>
+  </action>
+  <action name="actionExport_User_Descriptions_Table">
+   <property name="text">
+    <string>Export User Descriptions Table...</string>
+   </property>
+  </action>
+  <action name="actionImport_User_Descriptions_Table">
+   <property name="text">
+    <string>Import User Descriptions Table...</string>
    </property>
   </action>
  </widget>
