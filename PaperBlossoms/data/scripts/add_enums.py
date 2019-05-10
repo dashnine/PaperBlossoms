@@ -148,6 +148,20 @@ def get_equipment(data_dir):
     return equipment_enum
 
 
+def get_advantages(data_dir):
+
+    # Load advantages/disadvantages
+    with open(data_dir.joinpath('json/advantages_disadvantages.json'), encoding = 'utf8') as f:
+        advantages = json.load(f)
+    advantages_enum = [
+        entry['name']
+        for category in advantages
+        for entry in category['entries']
+    ]
+
+    return advantages_enum
+
+
 def get_books():
     books_enum = ['Core', 'EE', 'SL', 'Mantis', 'GMK']
 
@@ -295,6 +309,16 @@ def write_equipment(data_dir, equipment_enum):
     )
 
 
+def write_advantages(data_dir, advantages_enum):
+
+    print('Writing advantages and disadvantages to school')
+    write_enums(
+        data_dir.joinpath('json_schema/schools.schema.json'),
+        'advantage_disadvantage',
+        advantages_enum
+    )
+
+
 def write_books(data_dir, books_enum):
 
     print('Writing books ...')
@@ -422,6 +446,8 @@ def main(option):
         write_qualities(data_dir, get_qualities(data_dir))
     if option is None or 'equipment' in option:
         write_equipment(data_dir, get_equipment(data_dir))
+    if option is None or 'advantages' in option:
+        write_advantages(data_dir, get_advantages(data_dir))
     if option is None or 'books' in option:
         write_books(data_dir, get_books())
     if option is None or 'resistance' in option:
@@ -436,7 +462,7 @@ if __name__ == '__main__':
     parser.add_argument(
         '--option',
         nargs = '*',
-        choices = ['rings', 'clans', 'skills', 'techniques', 'qualities', 'equipment', 'books', 'resistance', 'currency'],
+        choices = ['rings', 'clans', 'skills', 'techniques', 'qualities', 'equipment', 'advantages', 'books', 'resistance', 'currency'],
         help = 'Which enums you want to write to json schemas (defaults to all with no arguments specified)'
     )
     args = parser.parse_args()
