@@ -49,7 +49,9 @@ This application is created using Qt 5, which is licenced under the LGPLv3: http
     </message>
     <message>
         <location filename="ui/addadvancedialog.ui" line="39"/>
+        <location filename="src/addadvancedialog.cpp" line="121"/>
         <location filename="src/addadvancedialog.cpp" line="225"/>
+        <location filename="src/addadvancedialog.cpp" line="278"/>
         <source>Skill</source>
         <translation>Compétence</translation>
     </message>
@@ -57,7 +59,8 @@ This application is created using Qt 5, which is licenced under the LGPLv3: http
         <location filename="ui/addadvancedialog.ui" line="44"/>
         <location filename="src/addadvancedialog.cpp" line="66"/>
         <location filename="src/addadvancedialog.cpp" line="139"/>
-        <location filename="src/addadvancedialog.cpp" line="279"/>
+        <location filename="src/addadvancedialog.cpp" line="281"/>
+        <location filename="src/addadvancedialog.cpp" line="289"/>
         <source>Technique</source>
         <translation></translation>
     </message>
@@ -422,6 +425,69 @@ This application is created using Qt 5, which is licenced under the LGPLv3: http
     </message>
 </context>
 <context>
+    <name>EditUserDescriptionsDialog</name>
+    <message>
+        <location filename="ui/edituserdescriptionsdialog.ui" line="14"/>
+        <source>Edit Custom User Descriptions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/edituserdescriptionsdialog.ui" line="20"/>
+        <source>Apply Changes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/edituserdescriptionsdialog.ui" line="33"/>
+        <source>Set a Description</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/edituserdescriptionsdialog.ui" line="54"/>
+        <source>Enter Description</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/edituserdescriptionsdialog.ui" line="67"/>
+        <source>Enter Short Description</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/edituserdescriptionsdialog.ui" line="80"/>
+        <source>Add</source>
+        <translation type="unfinished">Ajouter</translation>
+    </message>
+    <message>
+        <location filename="ui/edituserdescriptionsdialog.ui" line="138"/>
+        <source>Delete Selected Row</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/edituserdescriptionsdialog.ui" line="151"/>
+        <source>Warning: custom user data will be lost when updating Paper Blossoms. Export User Data Tables to save work.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/edituserdescriptionsdialog.cpp" line="20"/>
+        <source>Field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/edituserdescriptionsdialog.cpp" line="21"/>
+        <source>Description</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/edituserdescriptionsdialog.cpp" line="22"/>
+        <source>Short Desc</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/edituserdescriptionsdialog.cpp" line="105"/>
+        <source>Warning: Unreversable Change</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MainWindow</name>
     <message>
         <location filename="ui/mainwindow.ui" line="14"/>
@@ -715,177 +781,236 @@ This application is created using Qt 5, which is licenced under the LGPLv3: http
         <translation>Outils</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1269"/>
+        <location filename="ui/mainwindow.ui" line="1263"/>
+        <source>Export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/mainwindow.ui" line="1270"/>
+        <source>Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/mainwindow.ui" line="1285"/>
         <source>Help</source>
         <translation>Aide</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1288"/>
+        <location filename="ui/mainwindow.ui" line="1304"/>
         <source>New...</source>
         <translation>Nouveau ...</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1293"/>
+        <location filename="ui/mainwindow.ui" line="1309"/>
         <source>Save As...</source>
         <translation>Enregistrer sous ...</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1298"/>
+        <location filename="ui/mainwindow.ui" line="1314"/>
         <source>Open...</source>
         <translation>Ouvrir ...</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1303"/>
+        <location filename="ui/mainwindow.ui" line="1319"/>
         <source>Generate Character Sheet...</source>
         <translation>Générer Feuille de Perso ...</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1308"/>
+        <location filename="ui/mainwindow.ui" line="1324"/>
         <source>About</source>
         <translation>A propos</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1313"/>
+        <location filename="ui/mainwindow.ui" line="1329"/>
         <source>Export User Data Tables...</source>
         <translation>Exporter données utilisateurs ...</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1318"/>
+        <location filename="ui/mainwindow.ui" line="1334"/>
         <source>Import User Data Tables...</source>
         <translation>Importer données utilisateurs ...</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1323"/>
+        <location filename="ui/mainwindow.ui" line="1339"/>
         <source>Open Application Data Directory</source>
         <translation>Ouvrir dossier données de l&apos;application</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1328"/>
+        <location filename="ui/mainwindow.ui" line="1344"/>
         <source>Exit</source>
         <translation>Sortie</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1333"/>
+        <location filename="ui/mainwindow.ui" line="1349"/>
         <source>Export to XML...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="225"/>
-        <location filename="src/mainwindow.cpp" line="1437"/>
-        <location filename="src/mainwindow.cpp" line="1448"/>
+        <location filename="ui/mainwindow.ui" line="1354"/>
+        <source>Description Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/mainwindow.ui" line="1359"/>
+        <source>Export All User Data Tables...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/mainwindow.ui" line="1364"/>
+        <source>Import All User Data Tables...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/mainwindow.ui" line="1369"/>
+        <source>Export User Descriptions Table...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/mainwindow.ui" line="1374"/>
+        <source>Import User Descriptions Table...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/mainwindow.cpp" line="226"/>
+        <location filename="src/mainwindow.cpp" line="1438"/>
+        <location filename="src/mainwindow.cpp" line="1449"/>
         <source>Closing Character Profile</source>
         <translation>Fermer profil</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="561"/>
-        <location filename="src/mainwindow.cpp" line="1497"/>
+        <location filename="src/mainwindow.cpp" line="562"/>
+        <location filename="src/mainwindow.cpp" line="1498"/>
         <source>Save File As...</source>
         <translation>enregistrer fichier sous ...</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="561"/>
+        <location filename="src/mainwindow.cpp" line="562"/>
         <source>Paper Blossoms Character Profile (*.pbc)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="572"/>
-        <location filename="src/mainwindow.cpp" line="632"/>
+        <location filename="src/mainwindow.cpp" line="573"/>
+        <location filename="src/mainwindow.cpp" line="633"/>
         <source>Unable to open file</source>
         <translation>Impossible d&apos;ouvrir fichier</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="619"/>
+        <location filename="src/mainwindow.cpp" line="620"/>
         <source>Load...</source>
         <translation>Charger ...</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="619"/>
+        <location filename="src/mainwindow.cpp" line="620"/>
         <source>Paper Blossoms Character (*.pbc);;Any (*)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="625"/>
+        <location filename="src/mainwindow.cpp" line="626"/>
         <source>Opening Profile</source>
         <translation>Ouverture du profil</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="645"/>
+        <location filename="src/mainwindow.cpp" line="646"/>
         <source>Incompatible Save File</source>
         <translation>Fichier enregistré incompatible</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="912"/>
+        <location filename="src/mainwindow.cpp" line="913"/>
         <source>Error</source>
         <translation>Erreur</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="912"/>
+        <location filename="src/mainwindow.cpp" line="913"/>
         <source>Unable to load some Title data. This character depends on data that isn&apos;t present, and may be inconsistent. Did you need to import custom data?</source>
         <translation>Impossible de charger une donnée du titre. Ce personnage dépend de données non présentes et est peut-être inconsistant. Deviez-vous importer des données personnelles ?</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1095"/>
+        <location filename="src/mainwindow.cpp" line="1096"/>
         <source>Open File</source>
         <translation>Ouvrir fichier</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1097"/>
+        <location filename="src/mainwindow.cpp" line="1098"/>
         <source>All files (*.*);;JPEG (*.jpg *.jpeg);;PNG (*.png)</source>
         <translation>Tous les fichiers (*.*);JPEG (*.jpg *.jpeg);;PNG (*.png)&quot; )</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1106"/>
+        <location filename="src/mainwindow.cpp" line="1107"/>
         <source>Image Viewer</source>
         <translation>Visionneuse</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1107"/>
+        <location filename="src/mainwindow.cpp" line="1108"/>
         <source>Cannot load %1.</source>
         <translation>Impossible de charger%1.</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1383"/>
+        <location filename="src/mainwindow.cpp" line="1384"/>
         <source>Choose an export directory...</source>
         <translation>Choisir un répertoire d&apos;exportation ...</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1393"/>
+        <location filename="src/mainwindow.cpp" line="1394"/>
+        <location filename="src/mainwindow.cpp" line="1792"/>
         <source>Error Exporting Data</source>
         <translation>Erreur d&apos;imporation de données</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1397"/>
+        <location filename="src/mainwindow.cpp" line="1398"/>
+        <location filename="src/mainwindow.cpp" line="1796"/>
         <source>Export Complete</source>
         <translation>Exportation terminée</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1406"/>
+        <location filename="src/mainwindow.cpp" line="1407"/>
         <source>Warning</source>
         <translation>Attention</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1407"/>
+        <location filename="src/mainwindow.cpp" line="1408"/>
         <source>Choose a folder containing exported data...</source>
         <translation>Choisir un dossier qui contient les données exportées ...</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1418"/>
+        <location filename="src/mainwindow.cpp" line="1419"/>
+        <location filename="src/mainwindow.cpp" line="1813"/>
         <source>Error Importing Data</source>
         <translation>Erreur d&apos;importation de données</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1422"/>
+        <location filename="src/mainwindow.cpp" line="1423"/>
+        <location filename="src/mainwindow.cpp" line="1817"/>
         <source>Import Complete</source>
         <translation>Importation terminée</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1497"/>
+        <location filename="src/mainwindow.cpp" line="1498"/>
         <source>Paper Blossoms Character XML (*.xml)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1508"/>
+        <location filename="src/mainwindow.cpp" line="1509"/>
         <source>Unable to open XML file for writing.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/mainwindow.cpp" line="1782"/>
+        <source>Export User Descriptions...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/mainwindow.cpp" line="1782"/>
+        <source>CSV (*.csv)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/mainwindow.cpp" line="1805"/>
+        <source>Import User Descriptions...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/mainwindow.cpp" line="1805"/>
+        <source>CSV (*.csv);;Any (*)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -902,22 +1027,22 @@ This application is created using Qt 5, which is licenced under the LGPLv3: http
         <translation>1 - A quel Clan appartenez vous ?</translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage1.ui" line="57"/>
+        <location filename="ui/newcharwizardpage1.ui" line="79"/>
         <source>Summary</source>
         <translation>Résumé</translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage1.ui" line="63"/>
+        <location filename="ui/newcharwizardpage1.ui" line="85"/>
         <source>SUMMARY</source>
         <translation>RESUME</translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage1.ui" line="79"/>
+        <location filename="ui/newcharwizardpage1.ui" line="101"/>
         <source>2. What Family do you belong to?</source>
         <translation>2- A quelle Famille appartenez-vous ?</translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage1.ui" line="104"/>
+        <location filename="ui/newcharwizardpage1.ui" line="126"/>
         <source>Choose a Ring:</source>
         <translation>Choisir un Anneau :</translation>
     </message>
@@ -950,47 +1075,47 @@ This application is created using Qt 5, which is licenced under the LGPLv3: http
         <translation>Imitant:</translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage2.ui" line="133"/>
+        <location filename="ui/newcharwizardpage2.ui" line="136"/>
         <source>Choose # Skills:</source>
         <translation>Choisir Compétence:</translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage2.ui" line="172"/>
+        <location filename="ui/newcharwizardpage2.ui" line="175"/>
         <source>&gt;&gt;</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage2.ui" line="179"/>
+        <location filename="ui/newcharwizardpage2.ui" line="182"/>
         <source>&lt;&lt;</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage2.ui" line="223"/>
+        <location filename="ui/newcharwizardpage2.ui" line="226"/>
         <source>Techniques</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage2.ui" line="254"/>
+        <location filename="ui/newcharwizardpage2.ui" line="257"/>
         <source>Equipment</source>
         <translation>Equipement</translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage2.ui" line="318"/>
+        <location filename="ui/newcharwizardpage2.ui" line="321"/>
         <source>Summary</source>
         <translation>Résumé</translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage2.ui" line="324"/>
+        <location filename="ui/newcharwizardpage2.ui" line="327"/>
         <source>SUMMARY</source>
         <translation>RESUME</translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage2.ui" line="346"/>
+        <location filename="ui/newcharwizardpage2.ui" line="349"/>
         <source>4. How do you stand out within your school?</source>
         <translation>4- Comment vous démarquez-vous au sein de votre école ?</translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage2.ui" line="354"/>
+        <location filename="ui/newcharwizardpage2.ui" line="357"/>
         <source>Choose a ring to represent this:</source>
         <translation>Choisir un anneau pour symboliser ceci:</translation>
     </message>
