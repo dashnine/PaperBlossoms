@@ -1844,3 +1844,34 @@ void MainWindow::on_curriculum_tableView_doubleClicked(const QModelIndex &index)
         qDebug() << "Not accepted; discarding changes.";
     }
 }
+
+void MainWindow::on_title_tableview_doubleClicked(const QModelIndex &index)
+{
+   QModelIndex srcindex = titleProxyModel.mapToSource(index);
+    QString title = titlemodel.item(srcindex.row(),Title::SOURCE)->text();
+    QString type = titlemodel.item(srcindex.row(),Title::TYPE)->text();
+    QString advance = titlemodel.item(srcindex.row(),Title::ADVANCE)->text();
+
+
+
+    //QSqlRecord clickedrow = titlemodel.record(index.row());
+    //int rank = clickedrow.value("rank").toInt();
+    //QString advance = clickedrow.value("advance").toString();
+    //QString type = clickedrow.value("type").toString();
+
+    //if(rank != curCharacter.rank){
+    //    return;
+    //}
+
+    AddAdvanceDialog addadvancedialog(dal, &curCharacter, type, advance);
+    const int result = addadvancedialog.exec();
+    if (result == QDialog::Accepted){
+        qDebug() << "Accepted: getting advance.";
+       m_dirtyDataFlag = true;
+       curCharacter.advanceStack.append(addadvancedialog.getResult());
+       populateUI();
+    }
+    else{
+        qDebug() << "Not accepted; discarding changes.";
+    }
+}
