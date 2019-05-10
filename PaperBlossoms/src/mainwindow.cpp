@@ -1820,3 +1820,27 @@ void MainWindow::on_actionImport_User_Descriptions_Table_triggered()
     }
 
 }
+
+void MainWindow::on_curriculum_tableView_doubleClicked(const QModelIndex &index)
+{
+    QSqlRecord clickedrow = curriculummodel.record(index.row());
+    int rank = clickedrow.value("rank").toInt();
+    QString advance = clickedrow.value("advance").toString();
+    QString type = clickedrow.value("type").toString();
+
+    //if(rank != curCharacter.rank){
+    //    return;
+    //}
+
+    AddAdvanceDialog addadvancedialog(dal, &curCharacter, type, advance);
+    const int result = addadvancedialog.exec();
+    if (result == QDialog::Accepted){
+        qDebug() << "Accepted: getting advance.";
+       m_dirtyDataFlag = true;
+       curCharacter.advanceStack.append(addadvancedialog.getResult());
+       populateUI();
+    }
+    else{
+        qDebug() << "Not accepted; discarding changes.";
+    }
+}

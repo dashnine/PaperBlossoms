@@ -135,6 +135,8 @@ private slots:
 
     void on_actionImport_User_Descriptions_Table_triggered();
 
+    void on_curriculum_tableView_doubleClicked(const QModelIndex &index);
+
 private:
     Ui::MainWindow *ui;
     DataAccessLayer* dal;
