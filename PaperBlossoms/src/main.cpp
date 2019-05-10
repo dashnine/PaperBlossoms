@@ -32,8 +32,20 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    QString defaultLocale = QLocale::system().name();
-    defaultLocale.truncate(defaultLocale.lastIndexOf('_'));
+
+    QString defaultLocale;
+
+    //support forcing a locale.  NOTE: hardvoded list to avoid injection risks
+    if(argc>0){
+        QString arg1(argv[1]);
+        if(arg1.toLower()=="en") defaultLocale = "en";
+        else if(arg1.toLower()=="es") defaultLocale = "es";
+        else if(arg1.toLower()=="fr") defaultLocale = "fr";
+    }
+    else{
+        defaultLocale = QLocale::system().name();
+        defaultLocale.truncate(defaultLocale.lastIndexOf('_'));
+    }
     qDebug()<< "locale = " + defaultLocale;
 
     QTranslator tra;
