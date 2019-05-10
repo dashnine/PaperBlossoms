@@ -12005,6 +12005,7 @@
             ]
         },
         "honor": 30,
+        "advantage_disadvantage": "False Identity",
         "techniques_available": [
             "Invocations",
             "Rituals",
@@ -12279,6 +12280,7 @@
             ]
         },
         "honor": 20,
+        "advantage_disadvantage": "False Identity",
         "techniques_available": [
             "Kata",
             "Sh\u016bji"
