@@ -1853,16 +1853,6 @@ void MainWindow::on_title_tableview_doubleClicked(const QModelIndex &index)
     QString advance = titlemodel.item(srcindex.row(),Title::ADVANCE)->text();
 
 
-
-    //QSqlRecord clickedrow = titlemodel.record(index.row());
-    //int rank = clickedrow.value("rank").toInt();
-    //QString advance = clickedrow.value("advance").toString();
-    //QString type = clickedrow.value("type").toString();
-
-    //if(rank != curCharacter.rank){
-    //    return;
-    //}
-
     AddAdvanceDialog addadvancedialog(dal, &curCharacter, type, advance);
     const int result = addadvancedialog.exec();
     if (result == QDialog::Accepted){
