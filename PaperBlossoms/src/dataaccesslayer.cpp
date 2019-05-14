@@ -1662,7 +1662,8 @@ bool DataAccessLayer::queryToCsv(const QString querystr, QString filename) //DAN
 
 bool DataAccessLayer::exportTranslatableCSV(QString filename){
     QString q =
-            "select distinct *, NULL as tr from (                                                                      "
+            "select strings.term, i18n.tr from (                                                                          "
+            "select distinct * from (                                                                                   "
             "select distinct name as term from advantages_disadvantages                                                "
             "union select distinct ring as term from advantages_disadvantages                                   "
             "union select distinct types as term from advantages_disadvantages                                   "
@@ -1724,6 +1725,8 @@ bool DataAccessLayer::exportTranslatableCSV(QString filename){
             "union select distinct grip from weapons                                                                      "
             "union select distinct price_unit from weapons                                                                      "
             ") where term is not NULL and term is not ''                                                                      "
+            ") strings                                                                                                          "
+            "left join i18n on strings.term = i18n.string                                                                       "
             ;
 
 
