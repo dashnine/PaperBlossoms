@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
     QString defaultLocale;
 
     //support forcing a locale.  NOTE: hardvoded list to avoid injection risks
-    if(argc>0){
+    if(argc>1){
         QString arg1(argv[1]);
         if(arg1.toLower()=="en") defaultLocale = "en";
         else if(arg1.toLower()=="es") defaultLocale = "es";
@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
     else{
         qWarning() << "Translation not loaded.";
     }
-    MainWindow w;
+    MainWindow w(defaultLocale);
     w.show();
 
     return a.exec();

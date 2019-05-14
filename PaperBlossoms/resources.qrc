@@ -17,5 +17,6 @@
         <file>paperblossoms_es.qm</file>
         <file>paperblossoms_fr.qm</file>
         <file>paperblossoms_en.qm</file>
+        <file>data/i18n/i18n_en.csv</file>
     </qresource>
 </RCC>
