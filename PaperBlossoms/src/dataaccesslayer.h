@@ -142,6 +142,7 @@ public:
     QStringList qsl_getpatterns();
     QString qs_getringdesc(const QString ring);
     QStringList qsl_getdescribablenames();
+    QString qs_gettechtypebyname(const QString tech);
 private:
     QSqlDatabase db;
     QStringList qsl_getschooltechsetids(const QString school);

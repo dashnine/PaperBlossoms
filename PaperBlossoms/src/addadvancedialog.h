@@ -38,7 +38,7 @@ class AddAdvanceDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit AddAdvanceDialog(DataAccessLayer *dal, Character *character, QWidget *parent = 0);
+    explicit AddAdvanceDialog(DataAccessLayer *dal, Character *character, QString sel = "", QString option = "", QWidget *parent = 0);
     ~AddAdvanceDialog();
 
     QString getResult() const;
