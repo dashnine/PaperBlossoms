@@ -35,7 +35,7 @@
 #include <QDir>
 #include <QSqlTableModel>
 
-DataAccessLayer::DataAccessLayer()
+DataAccessLayer::DataAccessLayer(QString locale)
 {
     QString targetpath = QStandardPaths::writableLocation(QStandardPaths::DataLocation);
     if(!QDir(targetpath).exists()){
@@ -87,6 +87,10 @@ DataAccessLayer::DataAccessLayer()
         if(!db.open())
             qWarning() << "ERROR: " << db.lastError();
     }
+
+    //import translation table for locale (if possible)
+    importCSV(":/translations/data/i18n/i18n_"+locale+".csv","i18n",false);
+    //:/translations/data/i18n/i18n_en.csv
 
 }
 
@@ -1589,7 +1593,7 @@ QString DataAccessLayer::escapedCSV(QString unexc)
     return unexc.replace("\n","%0A"); //escape newlines
 }
 
-bool DataAccessLayer::queryToCsv(const QString filepath, const QString tablename, bool isDir) //DANGER - DO NOT ALLOW USERS TO CONTROL THIS
+bool DataAccessLayer::tableToCsv(const QString filepath, const QString tablename, bool isDir) //DANGER - DO NOT ALLOW USERS TO CONTROL THIS
 {
     QSqlQuery query;
     query.prepare("select * from "+tablename); //DANGER - DO NOT ALLOW USERS TO CONTROL THIS
@@ -1623,6 +1627,110 @@ bool DataAccessLayer::queryToCsv(const QString filepath, const QString tablename
         outStream << '\n';
     }
     return true;
+}
+
+bool DataAccessLayer::queryToCsv(const QString querystr, QString filename) //DANGER - DO NOT ALLOW USERS TO CONTROL THIS
+{
+    QSqlQuery query;
+    query.prepare(querystr); //DANGER - DO NOT ALLOW USERS TO CONTROL THIS
+    //QFile csvFile (filepath + "/" + tablename + ".csv");
+
+    QFile csvFile;
+    csvFile.setFileName(filename);
+
+    if (!csvFile.open(QFile::WriteOnly | QFile::Text)){
+        qDebug("failed to open csv file");
+        return false;
+    }
+    if (!query.exec()){
+        qDebug("failed to run query");
+        return false;
+    }
+    QTextStream outStream(&csvFile);
+    outStream.setCodec("UTF-8");
+    while (query.next()){
+        const QSqlRecord record = query.record();
+        for (int i=0, recCount = record.count() ; i<recCount ; ++i){
+            if (i>0)
+                outStream << ',';
+            outStream << escapedCSV("\""+record.value(i).toString()+"\"");
+        }
+        outStream << '\n';
+    }
+    return true;
+}
+
+bool DataAccessLayer::exportTranslatableCSV(QString filename){
+    QString q =
+            "select strings.term, i18n.tr from (                                                                          "
+            "select distinct * from (                                                                                   "
+            "select distinct name as term from advantages_disadvantages                                                "
+            "union select distinct ring as term from advantages_disadvantages                                   "
+            "union select distinct types as term from advantages_disadvantages                                   "
+            "union select distinct name as term from armor                                                                      "
+            "union select distinct price_unit as term from armor                                                                      "
+            "union select distinct quality as term from armor_qualities                                   "
+            "union select distinct name as term from clans                                                                      "
+            "union select distinct type as term from clans                                                                      "
+            "union select distinct ring as term from clans                                                                      "
+            "union select distinct skill as term from clans                                                                      "
+            "union select distinct school as term from curriculum                                                                      "
+            "union select distinct advance as term from curriculum                                                                      "
+            "union select distinct clan as term from families                                                                      "
+            "union select distinct name as term from families                                                                      "
+            "union select distinct family as term from family_rings                                                                      "
+            "union select distinct family as term from family_skills                                                                      "
+            "union select distinct skill as term from family_skills                                                                      "
+            "union select distinct ancestor as term from heritage_effects                                                                      "
+            "union select distinct outcome as term from heritage_effects                                                                      "
+            "union select distinct name as term from item_patterns                                                                      "
+            "union select distinct quality as term from personal_effect_qualities                                                                      "
+            "union select distinct price_unit as term from personal_effects                                                                      "
+            "union select distinct quality as term from qualities                                                                      "
+            "union select distinct name as term from rings                                                                      "
+            "union select distinct outstanding_quality as term from rings                                                                      "
+            "union select distinct ancestor as term from samurai_heritage                                                                      "
+            "union select distinct effect_type as term from samurai_heritage                                                                      "
+            "union select distinct effect_instructions as term from samurai_heritage                                                                      "
+            "union select distinct school as term from school_rings                                                                      "
+            "union select distinct ring as term from school_rings                                                                      "
+            "union select distinct school as term from school_starting_outfit                                                                      "
+            "union select distinct equipment as term from school_starting_outfit                                                                      "
+            "union select distinct school as term from school_starting_skills                                                                      "
+            "union select distinct school from school_starting_techniques                                                                      "
+            "union select distinct technique from school_starting_techniques                                                                      "
+            "union select distinct school from school_techniques_available                                                                      "
+            "union select distinct technique from school_techniques_available                                                                      "
+            "union select distinct name from schools                                                                      "
+            "union select distinct role from schools                                                                      "
+            "union select distinct clan from schools                                                                      "
+            "union select distinct school_ability_name from schools                                                                      "
+            "union select distinct mastery_ability_name from schools                                                                      "
+            "union select distinct skill_group from skills                                                                      "
+            "union select distinct skill from skills                                                                      "
+            "union select distinct category from techniques                                                                      "
+            "union select distinct subcategory from techniques                                                                      "
+            "union select distinct name from techniques                                                                      "
+            "union select distinct restriction from techniques                                                                      "
+            "union select distinct title from title_advancements                                                                      "
+            "union select distinct name from title_advancements                                                                      "
+            "union select distinct type from title_advancements                                                                      "
+            "union select distinct name from titles                                                                      "
+            "union select distinct title_ability_name from titles                                                                      "
+            "union select distinct weapon from weapon_qualities                                                                      "
+            "union select distinct quality from weapon_qualities                                                                      "
+            "union select distinct category from weapons                                                                      "
+            "union select distinct name from weapons                                                                      "
+            "union select distinct skill from weapons                                                                      "
+            "union select distinct grip from weapons                                                                      "
+            "union select distinct price_unit from weapons                                                                      "
+            ") where term is not NULL and term is not ''                                                                      "
+            ") strings                                                                                                          "
+            "left join i18n on strings.term = i18n.string                                                                       "
+            ;
+
+
+    return queryToCsv(q, filename);
 }
 
 //pulled from https://stackoverflow.com/questions/27318631/parsing-through-a-csv-file-in-qt

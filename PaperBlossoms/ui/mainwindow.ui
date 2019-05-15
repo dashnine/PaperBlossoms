@@ -1272,6 +1272,12 @@
      <addaction name="actionImport_User_Descriptions_Table"/>
      <addaction name="actionImport_User_Data_Tables"/>
     </widget>
+    <widget class="QMenu" name="menuAdvanced">
+     <property name="title">
+      <string>Advanced</string>
+     </property>
+     <addaction name="actionExport_Translation_CSV"/>
+    </widget>
     <addaction name="actionGenerate_Character_Sheet"/>
     <addaction name="separator"/>
     <addaction name="actionDescription_Editor"/>
@@ -1279,6 +1285,7 @@
     <addaction name="actionOpen_Application_Data_Directory"/>
     <addaction name="menuExport"/>
     <addaction name="menuImport"/>
+    <addaction name="menuAdvanced"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -1372,6 +1379,11 @@
   <action name="actionImport_User_Descriptions_Table">
    <property name="text">
     <string>Import User Descriptions Table...</string>
+   </property>
+  </action>
+  <action name="actionExport_Translation_CSV">
+   <property name="text">
+    <string>Export Translation CSV...</string>
    </property>
   </action>
  </widget>

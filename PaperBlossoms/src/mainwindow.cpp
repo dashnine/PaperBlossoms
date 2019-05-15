@@ -86,7 +86,7 @@ public:
 //-----------------------------------------------------------------------
 
 
-MainWindow::MainWindow(QWidget *parent) :
+MainWindow::MainWindow(QString locale, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
@@ -105,7 +105,7 @@ MainWindow::MainWindow(QWidget *parent) :
 #endif
     ui->character_name_label->setFont(scriptfont);
 
-    dal = new DataAccessLayer;
+    dal = new DataAccessLayer(locale);
 
     ui->character_name_label->setVisible(false);
     ui->tabWidget->setVisible(false);
@@ -1388,7 +1388,7 @@ void MainWindow::on_actionExport_User_Tables_triggered()
     {
         bool success = true;
         foreach(QString tablename, dal->user_tables){
-            success &= dal->queryToCsv(fileName,tablename);
+            success &= dal->tableToCsv(fileName,tablename);
         }
         if(!success){
             QMessageBox::information(this, tr("Error Exporting Data"), "One or more errors occured exporting user data. Please check write permissions in the target folder.");
@@ -1787,7 +1787,7 @@ void MainWindow::on_actionExport_User_Descriptions_Table_triggered()
         qDebug()<<QString("Filename = ") + fileName;
 
         bool success = true;
-        success &= dal->queryToCsv(fileName,"user_descriptions", false);
+        success &= dal->tableToCsv(fileName,"user_descriptions", false);
         if(!success){
             QMessageBox::information(this, tr("Error Exporting Data"), "One or more errors occured exporting user data. Please check write permissions for the target file.");
 
@@ -1817,6 +1817,29 @@ void MainWindow::on_actionImport_User_Descriptions_Table_triggered()
             QMessageBox::information(this, tr("Import Complete"), "User data import completed. This feature is in beta; please verify that your data still functions normally.");
 
         }
+    }
+
+}
+
+void MainWindow::on_actionExport_Translation_CSV_triggered()
+{
+    bool success = false;
+    qDebug()<<QString("Homepath = ") + QDir::homePath();
+    QString fileName = QFileDialog::getSaveFileName( this, tr("Export User Descriptions..."), QDir::homePath()+"/tr.csv", tr("CSV (*.csv)"));
+    if (fileName.isEmpty())
+        return;
+    else
+    {
+        qDebug()<<QString("Filename = ") + fileName;
+        success = dal->exportTranslatableCSV(fileName);
+    }
+    if(!success){
+        QMessageBox::information(this, tr("Error exporting translation data"), "Data export encoutered one or more errors. Your file may be corrupt or incomplete.");
+
+    }
+    else{
+        QMessageBox::information(this, tr("Translation Template Export Complete"), "User data export completed. This feature is in beta; please verify that your data is consistent.");
+
     }
 
 }
