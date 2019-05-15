@@ -46,3 +46,4 @@ Since Github is not always good about listing who has helped out on a project, I
 * aajabrams
 * OpenNinjia
 * ruronin (French UI Translation)
+* Albertorius (Spanish UI Translation)
