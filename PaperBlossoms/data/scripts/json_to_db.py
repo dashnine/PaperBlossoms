@@ -579,7 +579,7 @@ def clans_to_db(db_conn):
             family TEXT,
             ring TEXT
         )''',
-        tr_fields = ['family']
+        tr_fields = ['family', 'ring']
     )
     create_tables(
         db_conn,
