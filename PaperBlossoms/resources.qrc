@@ -17,5 +17,6 @@
         <file>paperblossoms_es.qm</file>
         <file>paperblossoms_fr.qm</file>
         <file>paperblossoms_en.qm</file>
+        <file>paperblossoms_de.qm</file>
     </qresource>
 </RCC>

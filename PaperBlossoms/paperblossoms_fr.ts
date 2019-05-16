@@ -49,25 +49,29 @@ This application is created using Qt 5, which is licenced under the LGPLv3: http
     </message>
     <message>
         <location filename="ui/addadvancedialog.ui" line="39"/>
-        <location filename="src/addadvancedialog.cpp" line="121"/>
-        <location filename="src/addadvancedialog.cpp" line="225"/>
-        <location filename="src/addadvancedialog.cpp" line="278"/>
+        <location filename="src/addadvancedialog.cpp" line="55"/>
+        <location filename="src/addadvancedialog.cpp" line="60"/>
+        <location filename="src/addadvancedialog.cpp" line="156"/>
+        <location filename="src/addadvancedialog.cpp" line="260"/>
+        <location filename="src/addadvancedialog.cpp" line="313"/>
         <source>Skill</source>
         <translation>Compétence</translation>
     </message>
     <message>
         <location filename="ui/addadvancedialog.ui" line="44"/>
-        <location filename="src/addadvancedialog.cpp" line="66"/>
-        <location filename="src/addadvancedialog.cpp" line="139"/>
-        <location filename="src/addadvancedialog.cpp" line="281"/>
-        <location filename="src/addadvancedialog.cpp" line="289"/>
+        <location filename="src/addadvancedialog.cpp" line="65"/>
+        <location filename="src/addadvancedialog.cpp" line="80"/>
+        <location filename="src/addadvancedialog.cpp" line="101"/>
+        <location filename="src/addadvancedialog.cpp" line="174"/>
+        <location filename="src/addadvancedialog.cpp" line="316"/>
+        <location filename="src/addadvancedialog.cpp" line="324"/>
         <source>Technique</source>
         <translation></translation>
     </message>
     <message>
         <location filename="ui/addadvancedialog.ui" line="49"/>
-        <location filename="src/addadvancedialog.cpp" line="175"/>
-        <location filename="src/addadvancedialog.cpp" line="231"/>
+        <location filename="src/addadvancedialog.cpp" line="210"/>
+        <location filename="src/addadvancedialog.cpp" line="266"/>
         <source>Ring</source>
         <translation>Anneau</translation>
     </message>
@@ -77,58 +81,63 @@ This application is created using Qt 5, which is licenced under the LGPLv3: http
         <translation>Choisir :</translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="72"/>
         <source>Warning: Mahō can only be taken with GM approval.</source>
-        <translation>Attention : La Maho ne peut être choise qu&apos;avec  ave accord  MJ.</translation>
+        <translation type="vanished">Attention : La Maho ne peut être choise qu&apos;avec  ave accord  MJ.</translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="114"/>
+        <location filename="ui/addadvancedialog.ui" line="73"/>
+        <source>Warning: Mahō/Patterns/Signature Scrolls 
+can only be taken with GM approval.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/addadvancedialog.ui" line="116"/>
         <source>Special Training: Half the XP cost 
 (Requires GM Approval)</source>
         <translation>Entrainement spécial: coûite 1/2 XP (accord MJ)</translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="135"/>
+        <location filename="ui/addadvancedialog.ui" line="137"/>
         <source>This will cost: </source>
         <translation>Coût total : </translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="142"/>
+        <location filename="ui/addadvancedialog.ui" line="144"/>
         <source>##</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="149"/>
+        <location filename="ui/addadvancedialog.ui" line="151"/>
         <source>XP.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="171"/>
+        <location filename="ui/addadvancedialog.ui" line="173"/>
         <source>Advance progress in:</source>
         <translation>Progression dans:</translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="177"/>
+        <location filename="ui/addadvancedialog.ui" line="179"/>
         <source>Curriculum</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="184"/>
+        <location filename="ui/addadvancedialog.ui" line="186"/>
         <source>Title</source>
         <translation>Titre</translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="199"/>
+        <location filename="ui/addadvancedialog.ui" line="201"/>
         <source>Reason:</source>
         <translation>Raison:</translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="215"/>
+        <location filename="ui/addadvancedialog.ui" line="217"/>
         <source>Tattoo, GM Award</source>
         <translation>Tatouage , récompense MJ</translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="224"/>
+        <location filename="ui/addadvancedialog.ui" line="226"/>
         <source>Free (None)</source>
         <translation>Libre (aucune)</translation>
     </message>

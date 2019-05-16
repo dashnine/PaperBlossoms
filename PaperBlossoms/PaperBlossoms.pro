@@ -111,7 +111,8 @@ RESOURCES += \
 
 TRANSLATIONS += paperblossoms_en.ts \
                 paperblossoms_fr.ts \
-                paperblossoms_es.ts
+                paperblossoms_es.ts \
+                paperblossoms_de.ts
 
 win32:RC_ICONS += resources/sakura.ico
 macx: ICON = resources/sakura.icns
