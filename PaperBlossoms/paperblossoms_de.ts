@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="en_US">
+<TS version="2.1" language="de_DE">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -168,6 +168,11 @@ can only be taken with GM approval.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="ui/additemdialog.ui" line="59"/>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="ui/additemdialog.ui" line="70"/>
         <source>Add a Quality</source>
         <translation type="unfinished"></translation>
@@ -175,6 +180,12 @@ can only be taken with GM approval.</source>
     <message>
         <location filename="ui/additemdialog.ui" line="78"/>
         <source>Quality:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/additemdialog.ui" line="90"/>
+        <location filename="ui/additemdialog.ui" line="118"/>
+        <source>Add</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -188,8 +199,38 @@ can only be taken with GM approval.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="ui/additemdialog.ui" line="129"/>
+        <source>Short Description</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/additemdialog.ui" line="136"/>
+        <source>Description</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/additemdialog.ui" line="149"/>
+        <source>Rarity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/additemdialog.ui" line="159"/>
+        <source>Price</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/additemdialog.ui" line="169"/>
+        <source>Reference Page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="ui/additemdialog.ui" line="179"/>
         <source>Reference Book:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/additemdialog.ui" line="189"/>
+        <source>Remove Quality/Pattern</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -205,47 +246,6 @@ can only be taken with GM approval.</source>
     <message>
         <location filename="ui/additemdialog.ui" line="213"/>
         <source>bu</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="ui/additemdialog.ui" line="169"/>
-        <source>Reference Page</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="ui/additemdialog.ui" line="129"/>
-        <source>Short Description</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="ui/additemdialog.ui" line="59"/>
-        <source>Name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="ui/additemdialog.ui" line="149"/>
-        <source>Rarity</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="ui/additemdialog.ui" line="159"/>
-        <source>Price</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="ui/additemdialog.ui" line="90"/>
-        <location filename="ui/additemdialog.ui" line="118"/>
-        <source>Add</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="ui/additemdialog.ui" line="136"/>
-        <source>Description</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="ui/additemdialog.ui" line="189"/>
-        <source>Remove Quality/Pattern</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1331,6 +1331,11 @@ can only be taken with GM approval.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="ui/newcharwizardpage6.ui" line="100"/>
+        <source>Choose Ancestor 2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="ui/newcharwizardpage6.ui" line="107"/>
         <source>Ancestor 2</source>
         <translation type="unfinished"></translation>
@@ -1351,6 +1356,11 @@ can only be taken with GM approval.</source>
     <message>
         <location filename="ui/newcharwizardpage6.ui" line="163"/>
         <source>Ancestor 1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/newcharwizardpage6.ui" line="206"/>
+        <source>Choose Ancestor 1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1381,16 +1391,6 @@ can only be taken with GM approval.</source>
     <message>
         <location filename="ui/newcharwizardpage6.ui" line="286"/>
         <source>SPEC_2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="ui/newcharwizardpage6.ui" line="206"/>
-        <source>Choose Ancestor 1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="ui/newcharwizardpage6.ui" line="100"/>
-        <source>Choose Ancestor 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -52,25 +52,29 @@ Las imágenes de los anillos son propiedad de FFG; los recursos utilizados en es
     </message>
     <message>
         <location filename="ui/addadvancedialog.ui" line="39"/>
-        <location filename="src/addadvancedialog.cpp" line="121"/>
-        <location filename="src/addadvancedialog.cpp" line="225"/>
-        <location filename="src/addadvancedialog.cpp" line="278"/>
+        <location filename="src/addadvancedialog.cpp" line="55"/>
+        <location filename="src/addadvancedialog.cpp" line="60"/>
+        <location filename="src/addadvancedialog.cpp" line="156"/>
+        <location filename="src/addadvancedialog.cpp" line="260"/>
+        <location filename="src/addadvancedialog.cpp" line="313"/>
         <source>Skill</source>
         <translation>Habilidad</translation>
     </message>
     <message>
         <location filename="ui/addadvancedialog.ui" line="44"/>
-        <location filename="src/addadvancedialog.cpp" line="66"/>
-        <location filename="src/addadvancedialog.cpp" line="139"/>
-        <location filename="src/addadvancedialog.cpp" line="281"/>
-        <location filename="src/addadvancedialog.cpp" line="289"/>
+        <location filename="src/addadvancedialog.cpp" line="65"/>
+        <location filename="src/addadvancedialog.cpp" line="80"/>
+        <location filename="src/addadvancedialog.cpp" line="101"/>
+        <location filename="src/addadvancedialog.cpp" line="174"/>
+        <location filename="src/addadvancedialog.cpp" line="316"/>
+        <location filename="src/addadvancedialog.cpp" line="324"/>
         <source>Technique</source>
         <translation>Técnica</translation>
     </message>
     <message>
         <location filename="ui/addadvancedialog.ui" line="49"/>
-        <location filename="src/addadvancedialog.cpp" line="175"/>
-        <location filename="src/addadvancedialog.cpp" line="231"/>
+        <location filename="src/addadvancedialog.cpp" line="210"/>
+        <location filename="src/addadvancedialog.cpp" line="266"/>
         <source>Ring</source>
         <translation>Anillo</translation>
     </message>
@@ -80,58 +84,63 @@ Las imágenes de los anillos son propiedad de FFG; los recursos utilizados en es
         <translation>Elige:</translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="72"/>
         <source>Warning: Mahō can only be taken with GM approval.</source>
-        <translation>Aviso: Sólo se puede adquirir mahō con el permiso del DJ.</translation>
+        <translation type="vanished">Aviso: Sólo se puede adquirir mahō con el permiso del DJ.</translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="114"/>
+        <location filename="ui/addadvancedialog.ui" line="73"/>
+        <source>Warning: Mahō/Patterns/Signature Scrolls 
+can only be taken with GM approval.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/addadvancedialog.ui" line="116"/>
         <source>Special Training: Half the XP cost 
 (Requires GM Approval)</source>
         <translation>Entrenamiento especial: El coste en Pe es la mitad del normal (Requiere el permiso del DJ)</translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="135"/>
+        <location filename="ui/addadvancedialog.ui" line="137"/>
         <source>This will cost: </source>
         <translation>Esto costará: </translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="142"/>
+        <location filename="ui/addadvancedialog.ui" line="144"/>
         <source>##</source>
         <translation>##</translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="149"/>
+        <location filename="ui/addadvancedialog.ui" line="151"/>
         <source>XP.</source>
         <translation>PE.</translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="171"/>
+        <location filename="ui/addadvancedialog.ui" line="173"/>
         <source>Advance progress in:</source>
         <translation>Esta mejora cuenta para:</translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="177"/>
+        <location filename="ui/addadvancedialog.ui" line="179"/>
         <source>Curriculum</source>
         <translation>Programa de estudios</translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="184"/>
+        <location filename="ui/addadvancedialog.ui" line="186"/>
         <source>Title</source>
         <translation>Título</translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="199"/>
+        <location filename="ui/addadvancedialog.ui" line="201"/>
         <source>Reason:</source>
         <translation>Motivo:</translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="215"/>
+        <location filename="ui/addadvancedialog.ui" line="217"/>
         <source>Tattoo, GM Award</source>
         <translation>Tatuaje,otorgado por el DJ</translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="224"/>
+        <location filename="ui/addadvancedialog.ui" line="226"/>
         <source>Free (None)</source>
         <translation>Libre (Ninguno)</translation>
     </message>
