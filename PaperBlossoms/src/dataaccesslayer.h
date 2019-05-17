@@ -144,12 +144,20 @@ public:
     QStringList qsl_getdescribablenames();
     QString qs_gettechtypebyname(const QString tech);
 private:
+    struct SqlQueryValueBinding {
+        int pos;
+        QVariant val;
+    };
+    typedef std::vector<const SqlQueryValueBinding> SqlQueryValueBindingCollection;
+
     QSqlDatabase db;
     QStringList qsl_getschooltechsetids(const QString school);
     QStringList qsl_getschoolequipsetids(const QString school);
     QString getLastExecutedQuery(const QSqlQuery &query);
     QString escapedCSV(QString unexc);
     QStringList parseCSV(const QString &string);
+
+    QStringList executeAndHandleQuery(const QString& queryString, const SqlQueryValueBindingCollection& bindings, const std::function<QStringList(QSqlQuery& executedQuery)>& queryExecutionCallback);
 };
 
 #endif // DATAACCESSLAYER_H

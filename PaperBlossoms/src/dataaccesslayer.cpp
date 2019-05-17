@@ -106,18 +106,21 @@ QStringList DataAccessLayer::qsl_getclans()
 
 QStringList DataAccessLayer::qsl_getfamilies(const QString clan)
 {
-    QStringList out;
-    //family query
-    QSqlQuery query;
-    query.prepare("SELECT name FROM families WHERE clan = :clan ORDER BY name");
-    query.bindValue(0, clan);
-    query.exec();
-    while (query.next()) {
-        const QString fname = query.value(0).toString();
-        out << fname;
-//        qDebug() << fname;
-    }
-    return out;
+    const QString query = "SELECT name FROM families WHERE clan = :clan ORDER BY name";
+    const SqlQueryValueBindingCollection bindings = {
+        SqlQueryValueBinding{ 0, clan }
+    };
+    return executeAndHandleQuery(query, bindings,
+        [](QSqlQuery& query) {
+            QStringList out;
+            while (query.next()) {
+                const QString fname = query.value(0).toString();
+                out << fname;
+                //qDebug() << fname;
+            }
+            return out;
+        }
+    );
 }
 
 QString DataAccessLayer::qs_getclandesc(const QString clan)
@@ -1767,4 +1770,15 @@ bool DataAccessLayer::importCSV(const QString filepath, const QString tablename,
         return !success;
     }
     return success;
+}
+
+QStringList DataAccessLayer::executeAndHandleQuery(const QString& queryString, const SqlQueryValueBindingCollection& bindings, const std::function<QStringList(QSqlQuery& executedQuery)>& queryExecutionCallback) {
+    QSqlQuery query;
+    query.prepare(queryString);
+    for (const SqlQueryValueBinding& valueBinding : bindings) {
+        query.bindValue(valueBinding.pos, valueBinding.val);
+    }
+    query.exec();
+
+    return queryExecutionCallback(query);
 }
