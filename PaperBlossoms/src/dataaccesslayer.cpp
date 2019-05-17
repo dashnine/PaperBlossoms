@@ -351,7 +351,7 @@ QString DataAccessLayer::qs_getschooladvdisadv(const QString school ){
 QString DataAccessLayer::qs_getschoolref(const QString school)
 {
     QSqlQuery query;
-    query.prepare("SELECT reference_book, reference_page FROM schools WHERE name = :school");
+    query.prepare("SELECT reference_book, reference_page FROM schools WHERE name_tr = :school");
     query.bindValue(0, school);
     query.exec();
     while (query.next()) {
@@ -633,8 +633,8 @@ QStringList DataAccessLayer::qsl_getitemsunderrarity(const int rarity ){
     //bonus query - rings, skills
     QStringList out;
     QSqlQuery query;
-    query.prepare("select name_tr from personal_effects where rarity <= ? union select distinct name_tr from weapons "
-                  "where rarity <= ? union select name_tr from armor where rarity <= ?");
+    query.prepare("select distinct name_tr from personal_effects where rarity <= ? union select distinct name_tr from weapons "
+                  "where rarity <= ? union select distinct name_tr from armor where rarity <= ?");
         query.bindValue(0, rarity);
         query.bindValue(1, rarity);
         query.bindValue(2, rarity);
@@ -1200,7 +1200,7 @@ QStringList DataAccessLayer::qsl_gettechbygroup(const QString group,const int ra
     //have to use Like here, since the subcategory for Kata is 'General Kata' or 'Close Combat Kata'
     QStringList out;
     QSqlQuery query;
-    query.prepare("SELECT name FROM techniques_tr WHERE subcategory LIKE ? and rank <= ?");
+    query.prepare("SELECT name_tr FROM techniques_tr WHERE subcategory LIKE ? and rank <= ?");
     query.bindValue(0, QString("%%1%").arg(group));
     query.bindValue(1, rank);
     query.exec();
@@ -1285,7 +1285,7 @@ QStringList DataAccessLayer::qsl_gettitletrack(const QString title)
 {
     QStringList out;
     QSqlQuery query;
-    query.prepare(  "SELECT title, name_tr, type, special_access,rank           " //select main list
+    query.prepare(  "SELECT title_tr, name_tr, type, special_access,rank           " //select main list
                     "FROM title_advancements                                     " // from table
                     "WHERE title_tr = ?                                             "
                     );
@@ -1547,7 +1547,7 @@ QList<QStringList> DataAccessLayer::ql_getweapondata(const QString name){
 QList<QStringList> DataAccessLayer::ql_getarmordata(const QString name){
     QList<QStringList> out;
     QSqlQuery query;
-    query.prepare("SELECT resistance_category, resistance_value                                               "
+    query.prepare("SELECT resistance_category_tr, resistance_value                                               "
                   "from armor_resistance where armor_tr = ?                                                      ");
 
     query.bindValue(0, name);
@@ -1687,7 +1687,7 @@ bool DataAccessLayer::queryToCsv(const QString querystr, QString filename) //DAN
 
 bool DataAccessLayer::exportTranslatableCSV(QString filename){
     QString q =
-            "select strings.term, i18n.tr from (                                                                          "
+            "select strings.term, i18n.string_tr from (                                                                            "
             "select distinct * from (                                                                                   "
             "select distinct name as term from advantages_disadvantages                                                "
             "union select distinct ring as term from advantages_disadvantages                                   "
@@ -1749,9 +1749,10 @@ bool DataAccessLayer::exportTranslatableCSV(QString filename){
             "union select distinct skill from weapons                                                                      "
             "union select distinct grip from weapons                                                                      "
             "union select distinct price_unit from weapons                                                                      "
+            "union select distinct name from personal_effects                                                                       "
             ") where term is not NULL and term is not ''                                                                      "
             ") strings                                                                                                          "
-            "left join i18n on strings.term = i18n.string                                                                       "
+            "left join i18n on strings.term = i18n.string                                                                        "
             ;
 
 

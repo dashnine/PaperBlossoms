@@ -1825,6 +1825,7 @@ void MainWindow::on_actionExport_Translation_CSV_triggered()
 {
     bool success = false;
     qDebug()<<QString("Homepath = ") + QDir::homePath();
+
     QString fileName = QFileDialog::getSaveFileName( this, tr("Export User Descriptions..."), QDir::homePath()+"/tr.csv", tr("CSV (*.csv)"));
     if (fileName.isEmpty())
         return;

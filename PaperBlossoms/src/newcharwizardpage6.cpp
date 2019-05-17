@@ -155,13 +155,13 @@ void NewCharWizardPage6::on_nc6_q18_ancestor1_comboBox_currentIndexChanged(const
    const QStringList mods = dal->qsl_getancestormods(arg1);
    QString modstr = "";
    if(mods.at(0).toInt() != 0){
-       modstr+= "H:"+mods.at(0) + " ";
+       modstr+= tr("H:")+mods.at(0) + " ";
    }
    if(mods.at(1).toInt() != 0){
-       modstr+= "G:"+mods.at(1)+ " ";
+       modstr+= tr("G:")+mods.at(1)+ " ";
    }
    if(mods.at(2).toInt() != 0){
-       modstr+= "S:"+mods.at(2);
+       modstr+= tr("S:")+mods.at(2);
    }
 
 
@@ -181,13 +181,13 @@ void NewCharWizardPage6::on_nc6_q18_ancestor2_comboBox_currentIndexChanged(const
     const QStringList mods = dal->qsl_getancestormods(arg1);
     QString modstr = "";
     if(mods.at(0).toInt() != 0){
-        modstr+= "H:"+mods.at(0) + " ";
+        modstr+= tr("H:")+mods.at(0) + " ";
     }
     if(mods.at(1).toInt() != 0){
-        modstr+= "G:"+mods.at(1)+ " ";
+        modstr+= tr("G:")+mods.at(1)+ " ";
     }
     if(mods.at(2).toInt() != 0){
-        modstr+= "S:"+mods.at(2);
+        modstr+= tr("S:")+mods.at(2);
     }
 
 
@@ -241,11 +241,11 @@ void NewCharWizardPage6::doPopulateEffects(){
 
     ////////
     ///Shadowlands
-    if(effects.contains("Fallen Ancestor")){
-        effects.removeAll("Fallen Ancestor");
-        effects.append("No Change");
+    if(effects.contains(dal->translate("Fallen Ancestor"))){
+        effects.removeAll(dal->translate("Fallen Ancestor"));
+        effects.append(tr("No Change"));
     }
-    effects.removeAll("Haunting");
+    effects.removeAll(dal->translate("Haunting"));
     //end shadowlands custom code
 
     ui->nc6_q18_otherComboBox->addItems(effects);
@@ -275,7 +275,7 @@ void NewCharWizardPage6::buildq18UI(){ //this is all still in initializePage
         ui->nc6_q18_spec2_label->setText("");
 
     }
-    else if(curAncestor == "Famous Deed" || curAncestor == "Glorious Sacrifice"){
+    else if(curAncestor == dal->translate("Famous Deed") || curAncestor == dal->translate("Glorious Sacrifice")){
         //Item Selection
         ui->nc6_q18_secondaryChoice_comboBox->setVisible(true);
         ui->nc6_q18_secondaryChoice_label->setVisible(true);
@@ -285,13 +285,13 @@ void NewCharWizardPage6::buildq18UI(){ //this is all still in initializePage
         ui->nc6_q18_special1_comboBox->setVisible(true);
         ui->nc6_q18_special2_comboBox->setVisible(true);
         ui->nc6_q18_specialInstruction_label->setVisible(true);
-        ui->nc6_q18_specialInstruction_label->setText("Choose an item quality. The GM chooses another item quality.");
+        ui->nc6_q18_specialInstruction_label->setText(tr("Choose an item quality. The GM chooses another item quality."));
         ui->nc6_q18_spec1_label->setVisible(true);
         ui->nc6_q18_spec2_label->setVisible(true);
-        ui->nc6_q18_spec1_label->setText("Player-chosen Quality:");
-        ui->nc6_q18_spec2_label->setText("GM-chosen Quality:");
+        ui->nc6_q18_spec1_label->setText(tr("Player-chosen Quality:"));
+        ui->nc6_q18_spec2_label->setText(tr("GM-chosen Quality:"));
     }
-    else if (curAncestor == "Stolen Knowledge"){
+    else if (curAncestor == dal->translate("Stolen Knowledge")){
         //Technique
         ui->nc6_q18_secondaryChoice_comboBox->setVisible(true);
         ui->nc6_q18_secondaryChoice_label->setVisible(true);
@@ -308,7 +308,7 @@ void NewCharWizardPage6::buildq18UI(){ //this is all still in initializePage
         ui->nc6_q18_spec2_label->setText("");
 
     }
-    else if (curAncestor == "Imperial Heritage"){
+    else if (curAncestor == dal->translate("Imperial Heritage")){
         //Advantage - Blessed Lineage
         ui->nc6_q18_secondaryChoice_comboBox->setVisible(false);
         ui->nc6_q18_secondaryChoice_label->setVisible(false);
@@ -324,7 +324,7 @@ void NewCharWizardPage6::buildq18UI(){ //this is all still in initializePage
         ui->nc6_q18_spec1_label->setText("");
         ui->nc6_q18_spec2_label->setText("");
     }
-    else if (curAncestor == "Unusual Name Origin"){
+    else if (curAncestor == dal->translate("Unusual Name Origin")){
         ui->nc6_q18_otherLabel->setVisible(true);
         ui->nc6_q18_otherComboBox->setVisible(true);
         ui->nc6_q18_otherrollButton->setVisible(false);
@@ -341,17 +341,17 @@ void NewCharWizardPage6::buildq18UI(){ //this is all still in initializePage
             ui->nc6_q18_spec1_label->setText("");
             ui->nc6_q18_spec2_label->setText("");
         }
-        if(ui->nc6_q18_otherComboBox->currentText() == "Ring Exchange"){
+        if(ui->nc6_q18_otherComboBox->currentText() == dal->translate("Ring Exchange")){
             ui->nc6_q18_secondaryChoice_comboBox->setVisible(false);
             ui->nc6_q18_secondaryChoice_label->setVisible(false);
             ui->nc6_q18_special1_comboBox->setVisible(true);
             ui->nc6_q18_special2_comboBox->setVisible(true);
             ui->nc6_q18_specialInstruction_label->setVisible(true);
-            ui->nc6_q18_specialInstruction_label->setText("Choose a ring to raise, and a ring to lower.");
+            ui->nc6_q18_specialInstruction_label->setText(tr("Choose a ring to raise, and a ring to lower."));
             ui->nc6_q18_spec1_label->setVisible(true);
             ui->nc6_q18_spec2_label->setVisible(true);
-            ui->nc6_q18_spec1_label->setText("Raise:");
-            ui->nc6_q18_spec2_label->setText("Lower:");
+            ui->nc6_q18_spec1_label->setText(tr("Raise:"));
+            ui->nc6_q18_spec2_label->setText(tr("Lower:"));
         }
         else{ //equipment
             ui->nc6_q18_secondaryChoice_comboBox->setVisible(true);
@@ -371,7 +371,7 @@ void NewCharWizardPage6::buildq18UI(){ //this is all still in initializePage
     /////////////////////////////////////////////
     //// Shadowlands
     ///
-    else if (curAncestor == "Blood and Mortar"){
+    else if (curAncestor == dal->translate("Blood and Mortar")){
         //Advantage - Blessed Lineage
         ui->nc6_q18_secondaryChoice_comboBox->setVisible(false);
         ui->nc6_q18_secondaryChoice_label->setVisible(false);
@@ -387,21 +387,21 @@ void NewCharWizardPage6::buildq18UI(){ //this is all still in initializePage
         ui->nc6_q18_spec1_label->setText("");
         ui->nc6_q18_spec2_label->setText("");
     }
-    else if (curAncestor == "Tainted Blood"){
+    else if (curAncestor == dal->translate("Tainted Blood")){
         ui->nc6_q18_otherLabel->setVisible(true);
         ui->nc6_q18_otherComboBox->setVisible(true);
         ui->nc6_q18_otherrollButton->setVisible(false);
-        if(ui->nc6_q18_otherComboBox->currentText() == "Void ring exchange"){
+        if(ui->nc6_q18_otherComboBox->currentText() == dal->translate("Void ring exchange")){
             ui->nc6_q18_secondaryChoice_comboBox->setVisible(false);
             ui->nc6_q18_secondaryChoice_label->setVisible(false);
             ui->nc6_q18_special1_comboBox->setVisible(true);
             ui->nc6_q18_special2_comboBox->setVisible(true);
             ui->nc6_q18_specialInstruction_label->setVisible(true);
-            ui->nc6_q18_specialInstruction_label->setText("You may raise the Void Ring and choose a ring to lower.");
+            ui->nc6_q18_specialInstruction_label->setText(tr("You may raise the Void Ring and choose a ring to lower."));
             ui->nc6_q18_spec1_label->setVisible(true);
             ui->nc6_q18_spec2_label->setVisible(true);
-            ui->nc6_q18_spec1_label->setText("Raise:");
-            ui->nc6_q18_spec2_label->setText("Lower:");
+            ui->nc6_q18_spec1_label->setText(tr("Raise:"));
+            ui->nc6_q18_spec2_label->setText(tr("Lower:"));
         }
 
         else{ //no change - hide it all
@@ -454,25 +454,25 @@ void NewCharWizardPage6::on_nc6_q18_otherComboBox_currentIndexChanged(const QStr
         case 1:
         case 2:
             //heritage 1-2//////////////////////////
-            if (effectresult == "weapon"){
+            if (effectresult == dal->translate("weapon")){
                 ui->nc6_q18_secondaryChoice_comboBox->addItems(dal->qsl_getitemsbytype("Weapon"));
             }
-            else if (effectresult == "set of armor"){
+            else if (effectresult == dal->translate("set of armor")){
                 ui->nc6_q18_secondaryChoice_comboBox->addItems(dal->qsl_getitemsbytype("Armor"));
 
             }
-            else if (effectresult == "another item"){
+            else if (effectresult == dal->translate("another item")){
                 ui->nc6_q18_secondaryChoice_comboBox->addItems(dal->qsl_getitemsbytype("Item"));
 
             }
-            else if (effectresult == "horse or other animal"){
-                ui->nc6_q18_secondaryChoice_comboBox->addItem("Horse");
-                ui->nc6_q18_secondaryChoice_comboBox->addItem("Animal");
+            else if (effectresult == dal->translate("horse or other animal")){
+                ui->nc6_q18_secondaryChoice_comboBox->addItem(dal->translate("Horse"));
+                ui->nc6_q18_secondaryChoice_comboBox->addItem(dal->translate("Animal"));
 
             }
-            else if (effectresult == "boat or estate"){
-                ui->nc6_q18_secondaryChoice_comboBox->addItem("Estate");
-                ui->nc6_q18_secondaryChoice_comboBox->addItem("Boat");
+            else if (effectresult == dal->translate("boat or estate")){
+                ui->nc6_q18_secondaryChoice_comboBox->addItem(dal->translate("Estate"));
+                ui->nc6_q18_secondaryChoice_comboBox->addItem(dal->translate("Boat"));
 
             }
             ui->nc6_q18_special1_comboBox->addItems(dal->qsl_getqualities());
@@ -492,20 +492,20 @@ void NewCharWizardPage6::on_nc6_q18_otherComboBox_currentIndexChanged(const QStr
         case 8:
             /// heritage 8
             // in tech?
-            if(effectresult == "Mahō or Ninjutsu")
+            if(effectresult == dal->translate("Mahō or Ninjutsu"))
                 ui->nc6_q18_secondaryChoice_comboBox->addItems(dal->qsl_getmahoninjutsu(1));
             else
-                ui->nc6_q18_secondaryChoice_comboBox->addItems(dal->qsl_gettechbytyperank(effectresult,1));
+                ui->nc6_q18_secondaryChoice_comboBox->addItems(dal->qsl_gettechbytyperank(dal->untranslate(effectresult),1));
             break;
         case 9:
             // heritage 9
-            if (effectresult == "Blessed Lineage"){
+            if (effectresult == dal->translate("Blessed Lineage")){
                 //add blessed lineage -- no secondary pick.  Set in data?
             }
             break;
         case 10:
             ////////////////// Heritage 10
-            if (effectresult == "Item (Rank 6 or lower)"){
+            if (effectresult == dal->translate("Item (Rank 6 or lower)")){
                 //do item adds
                 ui->nc6_q18_secondaryChoice_comboBox->addItems(dal->qsl_getitemsunderrarity(6));
             }
@@ -528,7 +528,7 @@ void NewCharWizardPage6::on_nc6_q18_otherComboBox_currentIndexChanged(const QStr
     else{ //SL - SHadowlands heritage table
         switch(heritageRow){
         case 1:
-            if (effectresult == "Blessed Lineage"){
+            if (effectresult == dal->translate("Blessed Lineage")){
                 //add blessed lineage -- no secondary pick.  Set in data?
             }
             break;
@@ -542,7 +542,7 @@ void NewCharWizardPage6::on_nc6_q18_otherComboBox_currentIndexChanged(const QStr
             break;
         case 6:
 
-            if (effectresult == "No Change"){
+            if (effectresult == tr("No Change")){
                 //do item adds
                 ui->nc6_q18_special1_comboBox->clear();
                 ui->nc6_q18_special2_comboBox->clear();
@@ -553,7 +553,7 @@ void NewCharWizardPage6::on_nc6_q18_otherComboBox_currentIndexChanged(const QStr
                 QMapIterator<QString, int> i(ringmap);
                 while (i.hasNext()) {
                     i.next();
-                    if(i.key() == "Void")
+                    if(i.key() == dal->translate("Void"))
                         ui->nc6_q18_special1_comboBox->addItem (i.key());
                     if (i.value() > 1)
                         ui->nc6_q18_special2_comboBox->addItem (i.key());
@@ -649,7 +649,7 @@ void NewCharWizardPage6::regenSummary(){
        }
    }
 
-    ui->summary_label->setText("Rings:\n"+rings+"\n\nSkills:\n"+skills);
+    ui->summary_label->setText(tr("Rings:")+"\n"+rings+"\n\n"+tr("Skills:")+"\n"+skills);
 
 }
 
@@ -679,7 +679,7 @@ QMap<QString, int> NewCharWizardPage6::calcSumRings(){
     ringmap[field("schoolSpecialRing").toString()]++;
 
     //check for ringswap on part 6
-    if(field("q18OtherEffects").toString() == "Ring Exchange" || field("q18OtherEffects").toString() == "Void ring exchange"){
+    if(field("q18OtherEffects").toString() == dal->translate("Ring Exchange") || field("q18OtherEffects").toString() == dal->translate("Void ring exchange")){
         ringmap[field("q18Spec1").toString()]++;
         ringmap[field("q18Spec2").toString()]--;
         qDebug()<< "adjusting based on Ring Exchange";
@@ -709,11 +709,11 @@ QMap<QString, int> NewCharWizardPage6::calcSkills(){
     QString heritage = "";
     if(field("ancestor1checked").toBool()){
         ancestorIndex = field("ancestor1index").toInt()+1;
-        heritage = field("ancestor1").toString();
+        heritage = dal->untranslate(field("ancestor1").toString());
     }
     else if (field("ancestor2checked").toBool()){
         ancestorIndex = field("ancestor2index").toInt()+1;
-        heritage = field("ancestor2").toString();
+        heritage = dal->untranslate(field("ancestor2").toString());
     }
 
     if(    //core
