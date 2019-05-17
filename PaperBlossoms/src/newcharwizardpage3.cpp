@@ -98,7 +98,12 @@ void NewCharWizardPage3::initializePage()
     skills.append(dal->qsl_getfamilyskills(family));
     qDebug()<<skills;
     QStringList skillList = dal->qsl_getskills();
-    const QStringList q8skills = {"Commerce", "Labor", "Medicine", "Seafaring", "Skulduggery", "Survival"};
+    const QStringList q8skills = {dal->translate("Commerce"),
+                                  dal->translate( "Labor"),
+                                  dal->translate( "Medicine"),
+                                  dal->translate( "Seafaring"),
+                                  dal->translate( "Skulduggery"),
+                                  dal->translate( "Survival")};
     ui->nc3_q7_comboBox->clear();
     ui->nc3_q8_comboBox->clear();
     foreach (QString string, skills) {

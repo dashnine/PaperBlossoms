@@ -94,12 +94,37 @@ DataAccessLayer::DataAccessLayer(QString locale)
 
 }
 
+QString DataAccessLayer::untranslate(QString string_tr){
+    QSqlQuery query;
+    query.prepare("SELECT string FROM i18n WHERE string_tr = ?");
+    query.bindValue(0, string_tr);
+    query.exec();
+    while (query.next()) {
+        QString out = query.value(0).toString();
+        return out;
+    }
+    qWarning() << "ERROR - Untranslated value"+ string_tr+" not found.";
+    return "";
+}
+
+QString DataAccessLayer::translate(QString string){
+    QSqlQuery query;
+    query.prepare("SELECT string_tr FROM i18n WHERE string = ?");
+    query.bindValue(0, string);
+    query.exec();
+    while (query.next()) {
+        QString out = query.value(0).toString();
+        return out;
+    }
+    qWarning() << "ERROR - Translated value for "+ string +" not found.";
+    return "";
+}
 
 QStringList DataAccessLayer::qsl_getclans()
 {
     QStringList out;
     //clan query
-    QSqlQuery query("SELECT * FROM clans ORDER BY name");
+    QSqlQuery query("SELECT name_tr FROM clans ORDER BY name_tr");
     while (query.next()) {
         const QString cname = query.value(0).toString();
         out << cname;
@@ -113,7 +138,7 @@ QStringList DataAccessLayer::qsl_getfamilies(const QString clan)
     QStringList out;
     //family query
     QSqlQuery query;
-    query.prepare("SELECT name FROM families WHERE clan = :clan ORDER BY name");
+    query.prepare("SELECT name_tr FROM families WHERE clan_tr = :clan ORDER BY name_tr");
     query.bindValue(0, clan);
     query.exec();
     while (query.next()) {
@@ -127,7 +152,7 @@ QStringList DataAccessLayer::qsl_getfamilies(const QString clan)
 QString DataAccessLayer::qs_getclandesc(const QString clan)
 {
     QSqlQuery query;
-    query.prepare("SELECT description FROM clans WHERE name = :clan");
+    query.prepare("SELECT description FROM clans WHERE name_tr = :clan");
     query.bindValue(0, clan);
     query.exec();
     while (query.next()) {
@@ -142,7 +167,7 @@ QString DataAccessLayer::qs_getclandesc(const QString clan)
 QString DataAccessLayer::qs_getclanref(const QString clan)
 {
     QSqlQuery query;
-    query.prepare("SELECT reference_book, reference_page FROM clans WHERE name = :clan");
+    query.prepare("SELECT reference_book, reference_page FROM clans WHERE name_tr = :clan");
     query.bindValue(0, clan);
     query.exec();
     while (query.next()) {
@@ -158,7 +183,7 @@ QString DataAccessLayer::qs_getclanref(const QString clan)
 QString DataAccessLayer::qs_getfamilydesc(const QString family)
 {
     QSqlQuery query;
-    query.prepare("SELECT description FROM families WHERE name = :family");
+    query.prepare("SELECT description FROM families WHERE name_tr = :family");
     query.bindValue(0, family);
     query.exec();
     while (query.next()) {
@@ -173,7 +198,7 @@ QString DataAccessLayer::qs_getfamilydesc(const QString family)
 QString DataAccessLayer::qs_getfamilyref(const QString family)
 {
     QSqlQuery query;
-    query.prepare("SELECT reference_book, reference_page FROM families WHERE name = :family");
+    query.prepare("SELECT reference_book, reference_page FROM families WHERE name_tr = :family");
     query.bindValue(0, family);
     query.exec();
     while (query.next()) {
@@ -190,7 +215,7 @@ QStringList DataAccessLayer::qsl_getfamilyrings(const QString fam ){
     //bonus query - rings, skills
     QStringList out;
     QSqlQuery query;
-    query.prepare("SELECT ring FROM family_rings WHERE family = :family");
+    query.prepare("SELECT ring_tr FROM family_rings WHERE family_tr = :family");
     query.bindValue(0, fam);
     query.exec();
     while (query.next()) {
@@ -206,7 +231,7 @@ QStringList DataAccessLayer::qsl_getschools(const QString clan, const bool allcl
     QStringList out;
     QSqlQuery query;
     if(!allclans){
-        query.prepare("SELECT name FROM schools WHERE clan = :clan");
+        query.prepare("SELECT name_tr FROM schools WHERE clan_tr = :clan");
         query.bindValue(0, clan);
     }
     else{
@@ -226,7 +251,7 @@ QStringList DataAccessLayer::qsl_getschools(const QString clan, const bool allcl
 QStringList DataAccessLayer::qsl_getclanskills(const QString clan ){
     QStringList out;
     QSqlQuery query;
-    query.prepare("SELECT skill FROM clans WHERE name = :clan");
+    query.prepare("SELECT skill_tr FROM clans WHERE name_tr = :clan");
     query.bindValue(0, clan);
     query.exec();
     while (query.next()) {
@@ -240,7 +265,7 @@ QStringList DataAccessLayer::qsl_getclanskills(const QString clan ){
 QStringList DataAccessLayer::qsl_getfamilyskills(const QString family ){
     QStringList out;
     QSqlQuery query;
-    query.prepare("SELECT skill FROM family_skills WHERE family = :family");
+    query.prepare("SELECT skill_tr FROM family_skills WHERE family_tr = :family");
     query.bindValue(0, family);
     query.exec();
     while (query.next()) {
@@ -253,7 +278,7 @@ QStringList DataAccessLayer::qsl_getfamilyskills(const QString family ){
 QString DataAccessLayer::qs_getschooldesc(const QString school ){
     QString out;
     QSqlQuery query;
-        query.prepare("SELECT description FROM schools WHERE name = :school");
+        query.prepare("SELECT description FROM schools WHERE name_tr = :school");
         query.bindValue(0, school);
     query.exec();
     while (query.next()) {
@@ -268,7 +293,7 @@ QString DataAccessLayer::qs_getschooldesc(const QString school ){
 QString DataAccessLayer::qs_getringdesc(const QString ring ){
     QString out;
     QSqlQuery query;
-        query.prepare("SELECT outstanding_quality FROM rings WHERE name = :ring");
+        query.prepare("SELECT outstanding_quality_tr FROM rings WHERE name_tr = :ring");
         query.bindValue(0, ring);
     query.exec();
     while (query.next()) {
@@ -311,7 +336,7 @@ QStringList DataAccessLayer::qsl_getdescribablenames()
 QString DataAccessLayer::qs_getschooladvdisadv(const QString school ){
     QString out;
     QSqlQuery query;
-        query.prepare("SELECT advantage_disadvantage FROM schools WHERE name = :school");
+        query.prepare("SELECT advantage_disadvantage_tr FROM schools WHERE name_tr = :school");
         query.bindValue(0, school);
     query.exec();
     while (query.next()) {
@@ -343,7 +368,7 @@ QString DataAccessLayer::qs_getschoolref(const QString school)
 QStringList DataAccessLayer::qsl_getschoolskills(const QString school ){
     QStringList out;
     QSqlQuery query;
-    query.prepare("SELECT skill FROM school_starting_skills WHERE school = :school");
+    query.prepare("SELECT skill_tr FROM school_starting_skills WHERE school_tr = :school");
     query.bindValue(0, school);
     query.exec();
     while (query.next()) {
@@ -357,7 +382,7 @@ QStringList DataAccessLayer::qsl_getschoolskills(const QString school ){
 QStringList DataAccessLayer::qsl_getskills(){
     QStringList out;
     QSqlQuery query;
-    query.prepare("SELECT skill FROM skills ");
+    query.prepare("SELECT skill_tr FROM skills ");
     query.exec();
     while (query.next()) {
         const QString cname = query.value(0).toString();
@@ -369,7 +394,7 @@ QStringList DataAccessLayer::qsl_getskills(){
 QStringList DataAccessLayer::qsl_getskillsandgroup(){
     QStringList out;
     QSqlQuery query;
-    query.prepare("SELECT skill, skill_group FROM skills ");
+    query.prepare("SELECT skill_tr, skill_group_tr FROM skills ");
     query.exec();
     while (query.next()) {
         const QString s = query.value(0).toString()+"|"+query.value(1).toString();
@@ -381,7 +406,7 @@ QStringList DataAccessLayer::qsl_getskillsandgroup(){
 QStringList DataAccessLayer::qsl_getskillsbygroup(const QString group){
     QStringList out;
     QSqlQuery query;
-    query.prepare("SELECT skill FROM skills WHERE skill_group = ?");
+    query.prepare("SELECT skill_tr FROM skills WHERE skill_group_tr = ?");
     query.bindValue(0, group);
     query.exec();
     while (query.next()) {
@@ -393,7 +418,7 @@ QStringList DataAccessLayer::qsl_getskillsbygroup(const QString group){
 
 int DataAccessLayer::i_getschoolskillcount(const QString school ){
     QSqlQuery query;
-    query.prepare("SELECT starting_skills_size FROM schools WHERE name = :school");
+    query.prepare("SELECT starting_skills_size FROM schools WHERE name_tr = :school");
     query.bindValue(0, school);
     query.exec();
     int count = 0;
@@ -421,7 +446,7 @@ int DataAccessLayer::i_getschooltechcount(const QString school){
 QStringList DataAccessLayer::qsl_getschooltechsetids(const QString school){
     QSqlQuery query;
     QStringList out;
-    query.prepare("SELECT distinct set_id FROM school_starting_techniques WHERE school = :school");
+    query.prepare("SELECT distinct set_id FROM school_starting_techniques WHERE school_tr = :school");
     query.bindValue(0, school);
     query.exec();
     while (query.next()) {
@@ -434,7 +459,7 @@ QStringList DataAccessLayer::qsl_getschooltechsetids(const QString school){
 QStringList DataAccessLayer::qsl_getschoolequipsetids(const QString school){
     QSqlQuery query;
     QStringList out;
-    query.prepare("SELECT distinct set_id FROM school_starting_outfit WHERE school = :school");
+    query.prepare("SELECT distinct set_id FROM school_starting_outfit WHERE school_tr = :school");
     query.bindValue(0, school);
     query.exec();
     while (query.next()) {
@@ -453,7 +478,7 @@ QList<QStringList> DataAccessLayer::ql_getlistsoftech(const QString school)
     foreach (const QString id, techids) {
 
         QSqlQuery query;
-        query.prepare("SELECT set_size, technique FROM school_starting_techniques WHERE school = :school and set_id = :id");
+        query.prepare("SELECT set_size, technique_tr FROM school_starting_techniques WHERE school_tr = :school and set_id = :id");
         query.bindValue(0, school);
         query.bindValue(1, id);
         query.exec();
@@ -489,7 +514,7 @@ QList<QStringList> DataAccessLayer::ql_getlistsofeq(const QString school)
     foreach (QString id, ids) {
 
         QSqlQuery query;
-        query.prepare("SELECT set_size, equipment FROM school_starting_outfit WHERE school = :school and set_id = :id");
+        query.prepare("SELECT set_size, equipment_tr FROM school_starting_outfit WHERE school_tr = :school and set_id = :id");
         query.bindValue(0, school);
         query.bindValue(1, id);
         query.exec();
@@ -535,7 +560,7 @@ QStringList DataAccessLayer::qsl_getstartingeqfixed(QString school){
 QStringList DataAccessLayer::qsl_getrings( ){
     QStringList out;
     QSqlQuery query;
-    query.prepare("SELECT name FROM rings");
+    query.prepare("SELECT name_tr FROM rings");
     query.exec();
     while (query.next()) {
         const QString name = query.value(0).toString();
@@ -548,7 +573,7 @@ QStringList DataAccessLayer::qsl_getrings( ){
 QStringList DataAccessLayer::qsl_getadvdisadv(const QString category ){
     QStringList out;
     QSqlQuery query;
-    query.prepare("SELECT name FROM advantages_disadvantages WHERE category = :category");
+    query.prepare("SELECT name_tr FROM advantages_disadvantages WHERE category = :category");
     query.bindValue(0, category);
     query.exec();
     while (query.next()) {
@@ -562,7 +587,7 @@ QStringList DataAccessLayer::qsl_getadvdisadv(const QString category ){
 QStringList DataAccessLayer::qsl_getadvdisadvbyname(const QString name ){
     QStringList out;
     QSqlQuery query;
-    query.prepare("SELECT category, name, ring, description, short_desc, reference_book, reference_page, types FROM advantages_disadvantages WHERE name = :name");
+    query.prepare("SELECT category, name_tr, ring_tr, description, short_desc, reference_book, reference_page, types FROM advantages_disadvantages WHERE name_tr = :name");
     query.bindValue(0, name);
     query.exec();
     while (query.next()) {
@@ -582,7 +607,7 @@ QStringList DataAccessLayer::qsl_getadvdisadvbyname(const QString name ){
 QStringList DataAccessLayer::qsl_getadv(){
     QStringList out;
     QSqlQuery query;
-    query.prepare("SELECT name FROM advantages_disadvantages WHERE category IN ('Distinctions', 'Passions')");
+    query.prepare("SELECT name_tr FROM advantages_disadvantages WHERE category IN ('Distinctions', 'Passions')");
     query.exec();
     while (query.next()) {
         const QString name = query.value(0).toString();
@@ -594,7 +619,7 @@ QStringList DataAccessLayer::qsl_getadv(){
 QStringList DataAccessLayer::qsl_getdisadv(){
     QStringList out;
     QSqlQuery query;
-    query.prepare("SELECT name FROM advantages_disadvantages WHERE category IN ('Adversities', 'Anxieties')");
+    query.prepare("SELECT name_tr FROM advantages_disadvantages WHERE category IN ('Adversities', 'Anxieties')");
     query.exec();
     while (query.next()) {
         const QString name = query.value(0).toString();
@@ -608,8 +633,8 @@ QStringList DataAccessLayer::qsl_getitemsunderrarity(const int rarity ){
     //bonus query - rings, skills
     QStringList out;
     QSqlQuery query;
-    query.prepare("select name from personal_effects where rarity <= ? union select distinct name from weapons "
-                  "where rarity <= ? union select name from armor where rarity <= ?");
+    query.prepare("select name_tr from personal_effects where rarity <= ? union select distinct name_tr from weapons "
+                  "where rarity <= ? union select name_tr from armor where rarity <= ?");
         query.bindValue(0, rarity);
         query.bindValue(1, rarity);
         query.bindValue(2, rarity);
@@ -627,7 +652,7 @@ QStringList DataAccessLayer::qsl_getweaponsunderrarity(const int rarity ){
     //bonus query - rings, skills
     QStringList out;
     QSqlQuery query;
-    query.prepare("select distinct name from weapons "
+    query.prepare("select distinct name_tr from weapons "
                   "where rarity <= ?");
         query.bindValue(0, rarity);
     query.exec();
@@ -644,7 +669,7 @@ QStringList DataAccessLayer::qsl_getweapontypeunderrarity(const int rarity, cons
     //bonus query - rings, skills
     QStringList out;
     QSqlQuery query;
-    query.prepare("select distinct name from weapons "
+    query.prepare("select distinct name_tr from weapons "
                   "where rarity <= ?                 "
                   "and category = ?                  ");
         query.bindValue(0, rarity);
@@ -664,14 +689,14 @@ QStringList DataAccessLayer::qsl_getitemsbytype(const QString type ){
     QStringList out;
     QSqlQuery query;
     if(type == "Weapon"){
-        query.prepare("select distinct name from weapons");
+        query.prepare("select distinct name_tr from weapons");
     }
     else if (type == "Armor"){
-        query.prepare("select name from armor");
+        query.prepare("select name_tr from armor");
 
     }
     else{
-        query.prepare("select name from personal_effects");
+        query.prepare("select name_tr from personal_effects");
 
     }
     query.exec();
@@ -687,7 +712,7 @@ QStringList DataAccessLayer::qsl_getitemsbytype(const QString type ){
 QStringList DataAccessLayer::qsl_getancestors(QString source){
     QStringList out;
     QSqlQuery query;
-    query.prepare("SELECT ancestor FROM samurai_heritage WHERE source = ? order by roll_min");
+    query.prepare("SELECT ancestor_tr FROM samurai_heritage WHERE source = ? order by roll_min");
     query.bindValue(0, source);
     query.exec();
     while (query.next()) {
@@ -707,7 +732,7 @@ QStringList DataAccessLayer::qsl_getancestormods(const QString ancestor){
     map["Glory"] = 0;
     map["Status"] = 0;
     QSqlQuery query;
-    query.prepare("SELECT modifier_honor, modifier_glory, modifier_status FROM samurai_heritage WHERE ancestor = :ancestor");
+    query.prepare("SELECT modifier_honor, modifier_glory, modifier_status FROM samurai_heritage WHERE ancestor_tr = :ancestor");
     query.bindValue(0, ancestor);
     query.exec();
     while (query.next()) {
@@ -727,7 +752,7 @@ QStringList DataAccessLayer::qsl_getancestormods(const QString ancestor){
 QStringList DataAccessLayer::qsl_getancestorseffects(const QString ancestor){
     QStringList out;
     QSqlQuery query;
-    query.prepare("SELECT outcome FROM heritage_effects where ancestor = :ancestor order by roll_min");
+    query.prepare("SELECT outcome_tr FROM heritage_effects where ancestor_tr = :ancestor order by roll_min");
     query.bindValue(0, ancestor);
     query.exec();
     while (query.next()) {
@@ -741,7 +766,7 @@ QStringList DataAccessLayer::qsl_getancestorseffects(const QString ancestor){
 QStringList DataAccessLayer::qsl_gettechbytyperank(const QString type, const int rank){
     QStringList out;
     QSqlQuery query;
-    query.prepare("select name from techniques where category = :type and rank <= :rank");
+    query.prepare("select name_tr from techniques where category = :type and rank <= :rank");
     query.bindValue(0, type);
     query.bindValue(1, rank);
     query.exec();
@@ -756,7 +781,7 @@ QStringList DataAccessLayer::qsl_gettechbytyperank(const QString type, const int
 QStringList DataAccessLayer::qsl_getmahoninjutsu(const int rank){
     QStringList out;
     QSqlQuery query;
-    query.prepare("select name from techniques where category IN ('Mahō', 'Ninjutsu') and rank <= :rank");
+    query.prepare("select name_tr from techniques where category IN ('Mahō', 'Ninjutsu') and rank <= :rank");
     query.bindValue(0, rank);
     query.exec();
     while (query.next()) {
@@ -770,7 +795,7 @@ QStringList DataAccessLayer::qsl_getmahoninjutsu(const int rank){
 QString DataAccessLayer::qs_getclanring(const QString clan)
 {
     QSqlQuery query;
-    query.prepare("SELECT ring FROM clans WHERE name = :clan");
+    query.prepare("SELECT ring_tr FROM clans WHERE name_tr = :clan");
     query.bindValue(0, clan);
     query.exec();
     while (query.next()) {
@@ -785,7 +810,7 @@ QString DataAccessLayer::qs_getclanring(const QString clan)
 QStringList DataAccessLayer::qsl_getschoolrings(const QString school ){
     QStringList out;
     QSqlQuery query;
-        query.prepare("SELECT ring FROM school_rings WHERE school = :school");
+        query.prepare("SELECT ring_tr FROM school_rings WHERE school_tr = :school");
         query.bindValue(0, school);
     query.exec();
     while (query.next()) {
@@ -799,7 +824,7 @@ QStringList DataAccessLayer::qsl_getschoolrings(const QString school ){
 QStringList DataAccessLayer::qsl_getqualities(){
     QStringList out;
     QSqlQuery query;
-    query.prepare("select quality from qualities");
+    query.prepare("select quality_tr from qualities");
     query.exec();
     while (query.next()) {
         const QString name = query.value(0).toString();
@@ -812,7 +837,7 @@ QStringList DataAccessLayer::qsl_getqualities(){
 QStringList DataAccessLayer::qsl_getpatterns(){
     QStringList out;
     QSqlQuery query;
-    query.prepare("select name from item_patterns");
+    query.prepare("select name_tr from item_patterns");
     query.exec();
     while (query.next()) {
         QString name = query.value(0).toString();
@@ -825,7 +850,7 @@ QStringList DataAccessLayer::qsl_getpatterns(){
 QStringList DataAccessLayer::qsl_getheritageranges(const QString heritage){
     QStringList out;
     QSqlQuery query;
-        query.prepare("SELECT roll_min, roll_max from HERITAGE_EFFECTS where ancestor = :heritage ORDER BY roll_min");
+        query.prepare("SELECT roll_min, roll_max from HERITAGE_EFFECTS where ancestor_tr = :heritage ORDER BY roll_min");
         query.bindValue(0, heritage);
     query.exec();
     while (query.next()) {
@@ -855,7 +880,7 @@ QStringList DataAccessLayer::qsl_getancestorranges(const QString source){
 int DataAccessLayer::i_getclanstatus(const QString clan){
     int out = 0;
     QSqlQuery query;
-    query.prepare("SELECT status FROM clans WHERE name = :clan");
+    query.prepare("SELECT status FROM clans WHERE name_tr = :clan");
     query.bindValue(0, clan);
     query.exec();
     while (query.next()) {
@@ -867,7 +892,7 @@ int DataAccessLayer::i_getclanstatus(const QString clan){
 int DataAccessLayer::i_getfamilyglory(const QString family){
     int out = 0;
     QSqlQuery query;
-    query.prepare("SELECT glory FROM families WHERE name = :family");
+    query.prepare("SELECT glory FROM families WHERE name_tr = :family");
     query.bindValue(0, family);
     query.exec();
     while (query.next()) {
@@ -879,7 +904,7 @@ int DataAccessLayer::i_getfamilyglory(const QString family){
 int DataAccessLayer::i_getfamilywealth(const QString family){
     int out = 0;
     QSqlQuery query;
-    query.prepare("SELECT wealth FROM families WHERE name = :family");
+    query.prepare("SELECT wealth FROM families WHERE name_tr = :family");
     query.bindValue(0, family);
     query.exec();
     while (query.next()) {
@@ -892,7 +917,7 @@ int DataAccessLayer::i_getfamilywealth(const QString family){
 int DataAccessLayer::i_getschoolhonor(const QString school){
     int out = 0;
     QSqlQuery query;
-    query.prepare("SELECT honor FROM schools WHERE name = :school");
+    query.prepare("SELECT honor FROM schools WHERE name_tr = :school");
     query.bindValue(0, school);
     query.exec();
     while (query.next()) {
@@ -910,7 +935,7 @@ QMap<QString, int> DataAccessLayer::qm_heritagehonorglorystatus(const QString he
     map["Glory"] = 0;
     map["Status"] = 0;
     QSqlQuery query;
-    query.prepare("SELECT modifier_honor, modifier_glory, modifier_status FROM samurai_heritage WHERE ancestor = :ancestor");
+    query.prepare("SELECT modifier_honor, modifier_glory, modifier_status FROM samurai_heritage WHERE ancestor_tr = :ancestor");
     query.bindValue(0, heritage);
     query.exec();
     while (query.next()) {
@@ -943,8 +968,8 @@ QStringList DataAccessLayer::qsl_gettechbyname(const QString name ){
     QStringList out;
     QSqlQuery query;
         query.prepare(
-        "SELECT distinct name, category, subcategory, rank,                                         "
-        "       reference_book, reference_page,restriction,                                         "
+        "SELECT distinct name_tr, category, subcategory, rank,                                         "
+        "       reference_book, reference_page,restriction_tr,                                         "
         "       short_desc, description                                                             "
         "FROM techniques                                                                            "
         "WHERE name = :name                                                                         "
@@ -993,65 +1018,65 @@ void DataAccessLayer::qsm_gettechniquetable(QSqlQueryModel * const model, const 
     query.prepare(
 
 
-                    "SELECT distinct name, category, subcategory, rank,                                         "
-                    "       xp, reference_book, reference_page,restriction                                          "
+                    "SELECT distinct name_tr, category, subcategory, rank,                                         "
+                    "       xp, reference_book, reference_page,restriction_tr                                          "
                     "FROM techniques                                                                            "//First, get title special
                     "WHERE                                                                                      "//  group techs
                 //---------------------Special access groups and katagroups from title-------------------//
                     "(rank <= ? and subcategory in                                                              " //0 trank
-                    " (SELECT name from title_advancements                                                      "
-                    "   WHERE title = ?                                                                         " //1 title
+                    " (SELECT name_tr from title_advancements                                                      "
+                    "   WHERE title_tr = ?                                                                         " //1 title
                     "   AND type = 'technique_group'                                                            "
                     "   AND special_access = 1                                                                  "
                     "  )  )                                                                                     "
                     "OR                                                                                         " //title Katas (cat v subcat)
                     "(rank <= ? and category in                                                                 " //2 trank //cat is group
-                    " (SELECT name from title_advancements                                                      "
-                    "   WHERE title = ?                                                                         " //3 title
+                    " (SELECT name_tr from title_advancements                                                      "
+                    "   WHERE title_tr = ?                                                                         " //3 title
                     "   and type = 'technique_group'                                                            "
                     "   AND special_access = 1                                                                  "
                     "  ) )                                                                                      "
                 //----------------------Special access groups and katagroups from curriculum---------------//
                     "OR ( rank <= ? and subcategory in                                                          " //4 rank
-                    " (SELECT advance from curriculum                                                           "
-                    "   WHERE school = ?                                                                        " //5 school //subcat is group
+                    " (SELECT advance_tr from curriculum                                                           "
+                    "   WHERE school_tr = ?                                                                        " //5 school //subcat is group
                     "   AND rank = ? and type = 'technique_group'                                               " //6 rank
                     "   AND special_access = 1                                                                  "
                     " )                                                                                         "
                     "OR  rank <= ? and category in                                                              " //7 rank
-                    " (SELECT advance from curriculum                                                           "
-                    "   WHERE school = ?                                                                        " //8 school //subcat is group
+                    " (SELECT advance_tr from curriculum                                                           "
+                    "   WHERE school_tr = ?                                                                        " //8 school //subcat is group
                     "   AND rank = ? and type = 'technique_group'                                               " //9 rank
                     "   AND special_access = 1                                                                  "
                     " )  )                                                                                      "
                 //------------------------special access indiv tech from curric and title------------------//
-                    "OR name in (                                                                               "
-                    "  SELECT advance from curriculum                                                           "
+                    "OR name_tr in (                                                                               "
+                    "  SELECT advance_tr from curriculum                                                           "
                     "   WHERE school = ?                                                                        " //10 school //tech
                     "   AND rank = ?                                                                            " //11 rank
                     "   AND type = 'technique'                                                                  "
                     "   AND special_access = 1                                                                  "
                     "  )                                                                                        "
-                    "OR name in (                                                                               "           //title tech
-                    "  SELECT name from title_advancements                                                      "
-                    "   WHERE title = ?                                                                         " //12 title
+                    "OR name_tr in (                                                                               "           //title tech
+                    "  SELECT name_tr from title_advancements                                                      "
+                    "   WHERE title_tr = ?                                                                         " //12 title
                     "   AND type = 'technique'                                                                  "
                     "   AND special_access = 1                                                                  "
                     "  )                                                                                        "
                 //--------------------------normal tech groups access, restrictions apply-------------------//
                     "OR                                                                                         "
                     "(rank <= ?                                                                                 " //13 rank   //tech group
-                    "   AND (restriction IN (?, ?) OR restriction is NULL)                                      " //14 clan, 15 school
+                    //"   AND (restriction IN (?, ?) OR restriction is NULL)                                      " //xxxxx14 clan, xxxxxx15 school
                     "   AND (category in                                                                         "
-                    "   (SELECT technique from school_techniques_available                                      "
-                    "       WHERE school = ?)                                                                   " //16 school
+                    "   (SELECT technique_tr from school_techniques_available                                      "
+                    "       WHERE school_tr = ?)                                                                   " //14 school
                     "   OR subcategory in                                                                         "
-                    "   (SELECT technique from school_techniques_available                                      "
-                    "       WHERE school = ?))                                                                   " //17 school
+                    "   (SELECT technique_tr from school_techniques_available                                      "
+                    "       WHERE school_tr = ?))                                                                   " //15 school
                     ")                                                                                          "
                 //--------------------------MAHO (and patterns and scrolls FOR EVERYONE!--------------------//
                     "OR                                                                                         "
-                    "((rank <= ? OR rank = NULL)                                                                                " //18 rank
+                    "((rank <= ? OR rank = NULL)                                                                                " //16 rank
                     "   AND category IN ('Mahō', 'Item Patterns', 'Signature Scrolls')                                                                   "
                     ")                                                                                          "
                     "ORDER BY category, rank, name                                                              "
@@ -1073,11 +1098,11 @@ void DataAccessLayer::qsm_gettechniquetable(QSqlQueryModel * const model, const 
         query.bindValue(11, rank);
         query.bindValue(12, title);
         query.bindValue(13, rank);
-        query.bindValue(14, clan);
+        //query.bindValue(14, clan);
+        //query.bindValue(15, school);
+        query.bindValue(14, school);
         query.bindValue(15, school);
-        query.bindValue(16, school);
-        query.bindValue(17, school);
-        query.bindValue(18, rank);
+        query.bindValue(16, rank);
         query.exec();
         qDebug() << getLastExecutedQuery(query);
     while (query.next()) {
@@ -1138,9 +1163,9 @@ void DataAccessLayer::qsm_getschoolcurriculum(QSqlQueryModel * const model, cons
 {
 
     QSqlQuery query;
-    query.prepare(  "SELECT rank, advance, type, special_access                  " //select main list
+    query.prepare(  "SELECT rank, advance_tr, type, special_access                  " //select main list
                     "FROM curriculum                                             " // from table
-                    "WHERE school = ?                                            "
+                    "WHERE school_tr = ?                                            "
                     );
         query.bindValue(0, school);
         query.exec();
@@ -1175,7 +1200,7 @@ QStringList DataAccessLayer::qsl_gettechbygroup(const QString group,const int ra
     //have to use Like here, since the subcategory for Kata is 'General Kata' or 'Close Combat Kata'
     QStringList out;
     QSqlQuery query;
-    query.prepare("SELECT name FROM techniques WHERE subcategory LIKE ? and rank <= ?");
+    query.prepare("SELECT name FROM techniques_tr WHERE subcategory LIKE ? and rank <= ?");
     query.bindValue(0, QString("%%1%").arg(group));
     query.bindValue(1, rank);
     query.exec();
@@ -1189,7 +1214,7 @@ QStringList DataAccessLayer::qsl_gettechbygroup(const QString group,const int ra
 QStringList DataAccessLayer::qsl_gettitles(){
     QStringList out;
     QSqlQuery query;
-    query.prepare("SELECT name FROM titles ");
+    query.prepare("SELECT name_tr FROM titles ");
     query.exec();
     while (query.next()) {
         const QString cname = query.value(0).toString();
@@ -1201,7 +1226,7 @@ QStringList DataAccessLayer::qsl_gettitles(){
 QString DataAccessLayer::qs_gettitleref(const QString title){
     QString out = "";
     QSqlQuery query;
-    query.prepare("SELECT reference_book, reference_page FROM titles where name = ?");
+    query.prepare("SELECT reference_book, reference_page FROM titles where name_tr = ?");
     query.bindValue(0, title);
     query.exec();
     while (query.next()) {
@@ -1215,7 +1240,7 @@ QString DataAccessLayer::qs_gettitleref(const QString title){
 QString DataAccessLayer::qs_gettitlexp(const QString title){
     QString out = "";
     QSqlQuery query;
-    query.prepare("SELECT xp_to_completion FROM titles where name = ?");
+    query.prepare("SELECT xp_to_completion FROM titles where name_tr = ?");
     query.bindValue(0, title);
     query.exec();
     while (query.next()) {
@@ -1228,7 +1253,7 @@ QString DataAccessLayer::qs_gettitlexp(const QString title){
 QString DataAccessLayer::qs_gettitleability(const QString title){
     QString out = "";
     QSqlQuery query;
-    query.prepare("SELECT title_ability_name FROM titles where name = ?");
+    query.prepare("SELECT title_ability_name_tr FROM titles where name_tr = ?");
     query.bindValue(0, title);
     query.exec();
     while (query.next()) {
@@ -1260,9 +1285,9 @@ QStringList DataAccessLayer::qsl_gettitletrack(const QString title)
 {
     QStringList out;
     QSqlQuery query;
-    query.prepare(  "SELECT title, name, type, special_access,rank           " //select main list
+    query.prepare(  "SELECT title, name_tr, type, special_access,rank           " //select main list
                     "FROM title_advancements                                     " // from table
-                    "WHERE title = ?                                             "
+                    "WHERE title_tr = ?                                             "
                     );
         query.bindValue(0, title);
         query.exec();
@@ -1283,7 +1308,7 @@ int DataAccessLayer::i_gettitletechgrouprank(const QString title){
     QSqlQuery query;
     query.prepare(  "SELECT rank                                                 " //select main list
                     "FROM title_advancements                                     " // from table
-                    "WHERE title = ?                                             "
+                    "WHERE title_tr = ?                                             "
                     );
         query.bindValue(0, title);
         query.exec();
@@ -1297,7 +1322,7 @@ int DataAccessLayer::i_gettitletechgrouprank(const QString title){
 
 QString DataAccessLayer::qs_getitemtype(const QString name){
     QSqlQuery query;
-    query.prepare("select count(distinct name) from weapons where name = ?");
+    query.prepare("select count(distinct name_tr) from weapons where name_tr = ?");
         query.bindValue(0, name);
     query.exec();
     while (query.next()) {
@@ -1305,7 +1330,7 @@ QString DataAccessLayer::qs_getitemtype(const QString name){
         if (count>0) return "Weapon";
     }
     query.clear();
-    query.prepare("select count(distinct name) from armor where name = ?");
+    query.prepare("select count(distinct name_tr) from armor where name_tr = ?");
         query.bindValue(0, name);
     query.exec();
     while (query.next()) {
@@ -1313,7 +1338,7 @@ QString DataAccessLayer::qs_getitemtype(const QString name){
         if (count>0) return "Armor";
     }
     query.clear();
-    query.prepare("select count(distinct name) from personal_effects where name = ?");
+    query.prepare("select count(distinct name_tr) from personal_effects where name_tr = ?");
         query.bindValue(0, name);
     query.exec();
     while (query.next()) {
@@ -1445,16 +1470,16 @@ QStringList DataAccessLayer::qsl_getbaseitemdata(const QString name, const QStri
     QStringList out;
     QSqlQuery query;
     if(type=="Weapon"){
-    query.prepare("SELECT name, description, short_desc, reference_book, reference_page, price_value, price_unit, rarity "
-                  "from weapons where name = ?");
+    query.prepare("SELECT name_tr, description, short_desc, reference_book, reference_page, price_value, price_unit, rarity "
+                  "from weapons where name_tr = ?");
     }
     else if(type == "Armor"){
-     query.prepare("SELECT name, description, short_desc, reference_book, reference_page, price_value, price_unit, rarity "
-                  "from armor where name = ?");
+     query.prepare("SELECT name_tr, description, short_desc, reference_book, reference_page, price_value, price_unit, rarity "
+                  "from armor where name_tr = ?");
     }
     else {
-     query.prepare("SELECT name, description, short_desc, reference_book, reference_page, price_value, price_unit, rarity "
-                  "from personal_effects where name = ?");
+     query.prepare("SELECT name_tr, description, short_desc, reference_book, reference_page, price_value, price_unit, rarity "
+                  "from personal_effects where name_tr = ?");
     }
 
      query.bindValue(0, name);
@@ -1476,12 +1501,12 @@ QStringList DataAccessLayer::qsl_getitemqualities(const QString name, const QStr
     QStringList out;
     QSqlQuery query;
     if(type=="Weapon"){
-    query.prepare("SELECT quality "
-                  "from weapon_qualities where weapon = ?");
+    query.prepare("SELECT quality_tr "
+                  "from weapon_qualities where weapon_tr = ?");
     }
     else if(type == "Armor"){
-     query.prepare("SELECT quality "
-                   "from armor_qualities where armor = ?");
+     query.prepare("SELECT quality_tr "
+                   "from armor_qualities where armor_tr = ?");
     }
     else {
         //TODO - handle other qualities
@@ -1499,7 +1524,7 @@ QStringList DataAccessLayer::qsl_getitemqualities(const QString name, const QStr
 QList<QStringList> DataAccessLayer::ql_getweapondata(const QString name){
     QList<QStringList> out;
     QSqlQuery query;
-    query.prepare("SELECT category, skill, grip, range_min, range_max, damage, deadliness           "
+    query.prepare("SELECT category_tr, skill_tr, grip_tr, range_min, range_max, damage, deadliness           "
                   "from weapons where name = ?                                                      ");
 
     query.bindValue(0, name);
@@ -1523,7 +1548,7 @@ QList<QStringList> DataAccessLayer::ql_getarmordata(const QString name){
     QList<QStringList> out;
     QSqlQuery query;
     query.prepare("SELECT resistance_category, resistance_value                                               "
-                  "from armor_resistance where armor = ?                                                      ");
+                  "from armor_resistance where armor_tr = ?                                                      ");
 
     query.bindValue(0, name);
     query.exec();
@@ -1540,7 +1565,7 @@ QList<QStringList> DataAccessLayer::ql_getarmordata(const QString name){
 QStringList DataAccessLayer::qsl_getschoolability(const QString school){
     QStringList out;
     QSqlQuery query;
-    query.prepare("SELECT school_ability_name, reference_book, reference_page, school_ability_description FROM schools WHERE name = ?");
+    query.prepare("SELECT school_ability_name_tr, reference_book, reference_page, school_ability_description FROM schools WHERE name_tr = ?");
     query.bindValue(0, school);
     query.exec();
     while (query.next()) {
@@ -1556,7 +1581,7 @@ QStringList DataAccessLayer::qsl_getschoolability(const QString school){
 QStringList DataAccessLayer::qsl_getschoolmastery(const QString school){
     QStringList out;
     QSqlQuery query;
-    query.prepare("SELECT mastery_ability_name, reference_book, reference_page, mastery_ability_description FROM schools WHERE name = ?");
+    query.prepare("SELECT mastery_ability_name_tr, reference_book, reference_page, mastery_ability_description FROM schools WHERE name_tr = ?");
     query.bindValue(0, school);
     query.exec();
     while (query.next()) {
@@ -1572,7 +1597,7 @@ QStringList DataAccessLayer::qsl_getschoolmastery(const QString school){
 QStringList DataAccessLayer::qsl_gettitlemastery(const QString title){
     QStringList out;
     QSqlQuery query;
-    query.prepare("SELECT title_ability_name, reference_book, reference_page, title_ability_description FROM titles WHERE name = ?");
+    query.prepare("SELECT title_ability_name_tr, reference_book, reference_page, title_ability_description FROM titles WHERE name_tr = ?");
     query.bindValue(0, title);
     query.exec();
     while (query.next()) {

@@ -143,6 +143,8 @@ public:
     QString qs_getringdesc(const QString ring);
     QStringList qsl_getdescribablenames();
     bool exportTranslatableCSV(QString filename);
+    QString untranslate(QString string_tr);
+    QString translate(QString string);
 private:
     QSqlDatabase db;
     QStringList qsl_getschooltechsetids(const QString school);
