@@ -69,7 +69,7 @@ void AddAdvanceDialog::validatePage(){
         if(ok){
             const QModelIndex curIndex = proxyModel.mapToSource(ui->detailTableView->currentIndex());
             const QSqlRecord record = techModel.record(curIndex.row());
-            const QString name =  record.value("name").toString();
+            const QString name =  record.value("name_tr").toString();
 
             if(character->techniques.contains(name)){
                 ui->warnlabel->setText("Invalid selection: '"+name+"' is already learned.");
@@ -188,12 +188,12 @@ void AddAdvanceDialog::on_advtype_currentIndexChanged(const QString &arg1)
             if(!ringiterator.key().isEmpty()){
                 int value = ringiterator.value()+character->ringranks[ringiterator.key()];
                 if(value < lowestval) {
-                    if(ringiterator.key() != "Void"){
+                    if(ringiterator.key() != dal->translate("Void")){
                         lowestring = ringiterator.key();
                         lowestval = value;
                     }
                 }
-                if(ringiterator.key() == "Void"){ //void
+                if(ringiterator.key() == dal->translate("Void")){ //void
                     voidring = value;
                 }
             }
@@ -289,7 +289,7 @@ QString AddAdvanceDialog::getResult() const {
     if(ui->advtype->currentText() == tr("Technique")){
        const QModelIndex curIndex = proxyModel.mapToSource(ui->detailTableView->currentIndex());
        const QSqlRecord record = techModel.record(curIndex.row());
-       row += record.value("name").toString()+"|";
+       row += record.value("name_tr").toString()+"|";
     }
     else{
         row += ui->advchooser_combobox->currentText() + "|";
