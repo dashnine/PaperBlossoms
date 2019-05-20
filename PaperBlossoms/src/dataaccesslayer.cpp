@@ -1349,6 +1349,7 @@ QString DataAccessLayer::qs_getitemtype(const QString name){
     return "Unknown";
 }
 
+
 /*
 QStringList DataAccessLayer::qsl_getweapon(const QString name){
     //      0       1               2           3               4                   5               6           7
@@ -1496,6 +1497,32 @@ QStringList DataAccessLayer::qsl_getbaseitemdata(const QString name, const QStri
     return out;
 }
 
+QStringList DataAccessLayer::qsl_getweaponcategories(){
+    QStringList out;
+    QSqlQuery query;
+    query.prepare("SELECT distinct category_tr "
+                  "from weapons");
+
+    query.exec();
+    while (query.next()) {
+        out << query.value(0).toString();
+    }
+    return out;
+}
+
+QStringList DataAccessLayer::qsl_getweaponskills(){
+    QStringList out;
+    QSqlQuery query;
+    query.prepare("SELECT distinct skill_tr "
+                  "from weapons");
+
+    query.exec();
+    while (query.next()) {
+        out << query.value(0).toString();
+    }
+    return out;
+}
+
 QStringList DataAccessLayer::qsl_getitemqualities(const QString name, const QString type){
     QStringList out;
     QSqlQuery query;
@@ -1524,7 +1551,7 @@ QList<QStringList> DataAccessLayer::ql_getweapondata(const QString name){
     QList<QStringList> out;
     QSqlQuery query;
     query.prepare("SELECT category_tr, skill_tr, grip_tr, range_min, range_max, damage, deadliness           "
-                  "from weapons where name = ?                                                      ");
+                  "from weapons where name_tr = ?                                                      ");
 
     query.bindValue(0, name);
     query.exec();

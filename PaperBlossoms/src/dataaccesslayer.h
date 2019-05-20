@@ -145,6 +145,8 @@ public:
     bool exportTranslatableCSV(QString filename);
     QString untranslate(QString string_tr);
     QString translate(QString string);
+    QStringList qsl_getweaponcategories();
+    QStringList qsl_getweaponskills();
 private:
     QSqlDatabase db;
     QStringList qsl_getschooltechsetids(const QString school);
