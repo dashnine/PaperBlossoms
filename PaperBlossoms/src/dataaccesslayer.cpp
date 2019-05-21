@@ -1910,8 +1910,14 @@ bool DataAccessLayer::importCSV(const QString filepath, const QString tablename,
             /*for every values on a line,
                 append it to the INSERT request*/
             for(int i=0; i<line .length ();++i){
-                req.append("\""+line.at(i)+"\""); //needed quotes to get SQLITE to recognize it
-                req.append(",");
+                if(line.at(i).isEmpty()){
+                    req.append("NULL");
+                    req.append(",");
+                }
+                else{
+                    req.append("\""+line.at(i)+"\""); //needed quotes to get SQLITE to recognize it
+                    req.append(",");
+                }
             }
             req.chop(1); // remove the trailing comma
             req.append(");"); // close the "VALUES([...]" with a ");"
