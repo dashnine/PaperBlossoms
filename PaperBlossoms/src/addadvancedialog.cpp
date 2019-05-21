@@ -28,7 +28,7 @@
 #include <QSqlRecord>
 #include <QDebug>
 
-AddAdvanceDialog::AddAdvanceDialog(DataAccessLayer* dal, Character* character,QWidget *parent) :
+AddAdvanceDialog::AddAdvanceDialog(DataAccessLayer* dal, Character* character, QString sel, QString option, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::AddAdvanceDialog)
 {
@@ -51,6 +51,41 @@ AddAdvanceDialog::AddAdvanceDialog(DataAccessLayer* dal, Character* character,QW
     ui->detailTableView->setModel(&proxyModel);
 
     validatePage();
+    if(sel == "skill"){
+        ui->advtype->setCurrentText(tr("Skill"));
+        ui->advchooser_combobox->setCurrentIndex(-1);
+        ui->advchooser_combobox->setCurrentText(option);
+    }
+    else if(sel == "skill_group"){
+        ui->advtype->setCurrentText(tr("Skill"));
+        ui->advchooser_combobox->setCurrentIndex(-1);
+        //no way to specify a group, so right now default to blank)
+    }
+    else if (sel == "technique"){
+        ui->advtype->setCurrentText(tr("Technique"));
+        if(!option.isEmpty()) {
+            QString category = dal->qs_gettechtypebyname(option);
+            ui->advchooser_combobox->setCurrentIndex(-1);
+            ui->advchooser_combobox->setCurrentText(category);
+            //ui->detailTableView->selectRow(techModel.f)
+            for(int i = 0; i < proxyModel.rowCount(); ++i){
+                QModelIndex index = proxyModel.mapToSource(proxyModel.index(i,0));
+                QSqlRecord r = techModel.record(index.row());
+                QString name = r.value("name").toString();
+                if (name == option) ui->detailTableView->selectRow(i);
+            }
+        }
+    }
+    else if (sel == "technique_group"){
+        ui->advtype->setCurrentText(tr("Technique"));
+        if(!option.isEmpty()) {
+            QString category = dal->qs_gettechtypebyname(option);
+            ui->advchooser_combobox->setCurrentIndex(-1);
+            ui->advchooser_combobox->setCurrentText(category);
+
+        }
+    }
+
 }
 
 AddAdvanceDialog::~AddAdvanceDialog()

@@ -147,6 +147,7 @@ public:
     QString translate(QString string);
     QStringList qsl_getweaponcategories();
     QStringList qsl_getweaponskills();
+    QString qs_gettechtypebyname(const QString tech);
 private:
     QSqlDatabase db;
     QStringList qsl_getschooltechsetids(const QString school);

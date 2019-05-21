@@ -52,25 +52,29 @@ Las imágenes de los anillos son propiedad de FFG; los recursos utilizados en es
     </message>
     <message>
         <location filename="ui/addadvancedialog.ui" line="39"/>
-        <location filename="src/addadvancedialog.cpp" line="121"/>
-        <location filename="src/addadvancedialog.cpp" line="225"/>
-        <location filename="src/addadvancedialog.cpp" line="278"/>
+        <location filename="src/addadvancedialog.cpp" line="55"/>
+        <location filename="src/addadvancedialog.cpp" line="60"/>
+        <location filename="src/addadvancedialog.cpp" line="156"/>
+        <location filename="src/addadvancedialog.cpp" line="260"/>
+        <location filename="src/addadvancedialog.cpp" line="313"/>
         <source>Skill</source>
         <translation>Habilidad</translation>
     </message>
     <message>
         <location filename="ui/addadvancedialog.ui" line="44"/>
-        <location filename="src/addadvancedialog.cpp" line="66"/>
-        <location filename="src/addadvancedialog.cpp" line="139"/>
-        <location filename="src/addadvancedialog.cpp" line="281"/>
-        <location filename="src/addadvancedialog.cpp" line="289"/>
+        <location filename="src/addadvancedialog.cpp" line="65"/>
+        <location filename="src/addadvancedialog.cpp" line="80"/>
+        <location filename="src/addadvancedialog.cpp" line="101"/>
+        <location filename="src/addadvancedialog.cpp" line="174"/>
+        <location filename="src/addadvancedialog.cpp" line="316"/>
+        <location filename="src/addadvancedialog.cpp" line="324"/>
         <source>Technique</source>
         <translation>Técnica</translation>
     </message>
     <message>
         <location filename="ui/addadvancedialog.ui" line="49"/>
-        <location filename="src/addadvancedialog.cpp" line="175"/>
-        <location filename="src/addadvancedialog.cpp" line="231"/>
+        <location filename="src/addadvancedialog.cpp" line="210"/>
+        <location filename="src/addadvancedialog.cpp" line="266"/>
         <source>Ring</source>
         <translation>Anillo</translation>
     </message>
@@ -80,58 +84,63 @@ Las imágenes de los anillos son propiedad de FFG; los recursos utilizados en es
         <translation>Elige:</translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="72"/>
         <source>Warning: Mahō can only be taken with GM approval.</source>
-        <translation>Aviso: Sólo se puede adquirir mahō con el permiso del DJ.</translation>
+        <translation type="vanished">Aviso: Sólo se puede adquirir mahō con el permiso del DJ.</translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="114"/>
+        <location filename="ui/addadvancedialog.ui" line="73"/>
+        <source>Warning: Mahō/Patterns/Signature Scrolls 
+can only be taken with GM approval.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/addadvancedialog.ui" line="116"/>
         <source>Special Training: Half the XP cost 
 (Requires GM Approval)</source>
         <translation>Entrenamiento especial: El coste en Pe es la mitad del normal (Requiere el permiso del DJ)</translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="135"/>
+        <location filename="ui/addadvancedialog.ui" line="137"/>
         <source>This will cost: </source>
         <translation>Esto costará: </translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="142"/>
+        <location filename="ui/addadvancedialog.ui" line="144"/>
         <source>##</source>
         <translation>##</translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="149"/>
+        <location filename="ui/addadvancedialog.ui" line="151"/>
         <source>XP.</source>
         <translation>PE.</translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="171"/>
+        <location filename="ui/addadvancedialog.ui" line="173"/>
         <source>Advance progress in:</source>
         <translation>Esta mejora cuenta para:</translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="177"/>
+        <location filename="ui/addadvancedialog.ui" line="179"/>
         <source>Curriculum</source>
         <translation>Programa de estudios</translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="184"/>
+        <location filename="ui/addadvancedialog.ui" line="186"/>
         <source>Title</source>
         <translation>Título</translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="199"/>
+        <location filename="ui/addadvancedialog.ui" line="201"/>
         <source>Reason:</source>
         <translation>Motivo:</translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="215"/>
+        <location filename="ui/addadvancedialog.ui" line="217"/>
         <source>Tattoo, GM Award</source>
         <translation>Tatuaje,otorgado por el DJ</translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="224"/>
+        <location filename="ui/addadvancedialog.ui" line="226"/>
         <source>Free (None)</source>
         <translation>Libre (Ninguno)</translation>
     </message>
@@ -794,226 +803,248 @@ Las imágenes de los anillos son propiedad de FFG; los recursos utilizados en es
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1285"/>
+        <location filename="ui/mainwindow.ui" line="1277"/>
+        <source>Advanced</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/mainwindow.ui" line="1292"/>
         <source>Help</source>
         <translation>Ayuda</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1304"/>
+        <location filename="ui/mainwindow.ui" line="1311"/>
         <source>New...</source>
         <translation>Nuevo...</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1309"/>
+        <location filename="ui/mainwindow.ui" line="1316"/>
         <source>Save As...</source>
         <translation>Guardar como...</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1314"/>
+        <location filename="ui/mainwindow.ui" line="1321"/>
         <source>Open...</source>
         <translation>Abrir...</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1319"/>
+        <location filename="ui/mainwindow.ui" line="1326"/>
         <source>Generate Character Sheet...</source>
         <translation>Generar hoja de personaje...</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1324"/>
+        <location filename="ui/mainwindow.ui" line="1331"/>
         <source>About</source>
         <translation>Acerca de</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1329"/>
+        <location filename="ui/mainwindow.ui" line="1336"/>
         <source>Export User Data Tables...</source>
         <translation>Exportar tablas de información de usuario...</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1334"/>
+        <location filename="ui/mainwindow.ui" line="1341"/>
         <source>Import User Data Tables...</source>
         <translation>Importar tablas de información de usuario...</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1339"/>
+        <location filename="ui/mainwindow.ui" line="1346"/>
         <source>Open Application Data Directory</source>
         <translation>Abrir directorio de datos de la aplicación</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1344"/>
+        <location filename="ui/mainwindow.ui" line="1351"/>
         <source>Exit</source>
         <translation>Salir</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1349"/>
+        <location filename="ui/mainwindow.ui" line="1356"/>
         <source>Export to XML...</source>
         <translation>Exportar a XML...</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1354"/>
+        <location filename="ui/mainwindow.ui" line="1361"/>
         <source>Description Editor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1359"/>
+        <location filename="ui/mainwindow.ui" line="1366"/>
         <source>Export All User Data Tables...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1364"/>
+        <location filename="ui/mainwindow.ui" line="1371"/>
         <source>Import All User Data Tables...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1369"/>
+        <location filename="ui/mainwindow.ui" line="1376"/>
         <source>Export User Descriptions Table...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1374"/>
+        <location filename="ui/mainwindow.ui" line="1381"/>
         <source>Import User Descriptions Table...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="ui/mainwindow.ui" line="1386"/>
+        <source>Export Translation CSV...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="src/mainwindow.cpp" line="226"/>
-        <location filename="src/mainwindow.cpp" line="1438"/>
-        <location filename="src/mainwindow.cpp" line="1449"/>
+        <location filename="src/mainwindow.cpp" line="1445"/>
+        <location filename="src/mainwindow.cpp" line="1456"/>
         <source>Closing Character Profile</source>
         <translation>Cerrando perfil de personaje</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="562"/>
-        <location filename="src/mainwindow.cpp" line="1498"/>
+        <location filename="src/mainwindow.cpp" line="569"/>
+        <location filename="src/mainwindow.cpp" line="1505"/>
         <source>Save File As...</source>
         <translation>Guardar archivo como...</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="562"/>
+        <location filename="src/mainwindow.cpp" line="569"/>
         <source>Paper Blossoms Character Profile (*.pbc)</source>
         <translation>Perfil de personaje de Pétalos de papel (*.pbc)</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="573"/>
-        <location filename="src/mainwindow.cpp" line="633"/>
+        <location filename="src/mainwindow.cpp" line="580"/>
+        <location filename="src/mainwindow.cpp" line="640"/>
         <source>Unable to open file</source>
         <translation>No es posible abrir el archivo</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="620"/>
+        <location filename="src/mainwindow.cpp" line="627"/>
         <source>Load...</source>
         <translation>Cargar...</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="620"/>
+        <location filename="src/mainwindow.cpp" line="627"/>
         <source>Paper Blossoms Character (*.pbc);;Any (*)</source>
         <translation>Personaje de Pétalos de papel (*.pbc);;Cualquiera(*)</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="626"/>
+        <location filename="src/mainwindow.cpp" line="633"/>
         <source>Opening Profile</source>
         <translation>Abriendo perfil</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="646"/>
+        <location filename="src/mainwindow.cpp" line="653"/>
         <source>Incompatible Save File</source>
         <translation>Archivo guardado incompatible</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="913"/>
+        <location filename="src/mainwindow.cpp" line="920"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="913"/>
+        <location filename="src/mainwindow.cpp" line="920"/>
         <source>Unable to load some Title data. This character depends on data that isn&apos;t present, and may be inconsistent. Did you need to import custom data?</source>
         <translation>No ha sido posible cargar parte de la información de título. Este personaje necesita información que no está presente, y puede presentar inconsistencias. ¿Necesitas importar información personalizada?</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1096"/>
+        <location filename="src/mainwindow.cpp" line="1103"/>
         <source>Open File</source>
         <translation>Abrir archivo</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1098"/>
+        <location filename="src/mainwindow.cpp" line="1105"/>
         <source>All files (*.*);;JPEG (*.jpg *.jpeg);;PNG (*.png)</source>
         <translation>Todos los archivos (*.*);;JPEG (*.jpg *.jpeg);;PNG (*.png)</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1107"/>
+        <location filename="src/mainwindow.cpp" line="1114"/>
         <source>Image Viewer</source>
         <translation>Visualizador de imágenes</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1108"/>
+        <location filename="src/mainwindow.cpp" line="1115"/>
         <source>Cannot load %1.</source>
         <translation>No puede cargarse %1.</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1384"/>
+        <location filename="src/mainwindow.cpp" line="1391"/>
         <source>Choose an export directory...</source>
         <translation>Elige un directorio para exportar...</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1394"/>
-        <location filename="src/mainwindow.cpp" line="1792"/>
+        <location filename="src/mainwindow.cpp" line="1401"/>
+        <location filename="src/mainwindow.cpp" line="1799"/>
         <source>Error Exporting Data</source>
         <translation>Error al exportar datos</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1398"/>
-        <location filename="src/mainwindow.cpp" line="1796"/>
+        <location filename="src/mainwindow.cpp" line="1405"/>
+        <location filename="src/mainwindow.cpp" line="1803"/>
         <source>Export Complete</source>
         <translation>Exporación completa</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1407"/>
+        <location filename="src/mainwindow.cpp" line="1414"/>
         <source>Warning</source>
         <translation>Aviso</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1408"/>
+        <location filename="src/mainwindow.cpp" line="1415"/>
         <source>Choose a folder containing exported data...</source>
         <translation>Elige un directorio que contenga información exportada...</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1419"/>
-        <location filename="src/mainwindow.cpp" line="1813"/>
+        <location filename="src/mainwindow.cpp" line="1426"/>
+        <location filename="src/mainwindow.cpp" line="1820"/>
         <source>Error Importing Data</source>
         <translation>Error al importar información</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1423"/>
-        <location filename="src/mainwindow.cpp" line="1817"/>
+        <location filename="src/mainwindow.cpp" line="1430"/>
+        <location filename="src/mainwindow.cpp" line="1824"/>
         <source>Import Complete</source>
         <translation>Importación completa</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1498"/>
+        <location filename="src/mainwindow.cpp" line="1505"/>
         <source>Paper Blossoms Character XML (*.xml)</source>
         <translation>XML de personaje de Pétalos de papel (*.xml)</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1509"/>
+        <location filename="src/mainwindow.cpp" line="1516"/>
         <source>Unable to open XML file for writing.</source>
         <translation>No ha sido posible abrir el archivo XML para su escritura.</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1782"/>
+        <location filename="src/mainwindow.cpp" line="1789"/>
+        <location filename="src/mainwindow.cpp" line="1836"/>
         <source>Export User Descriptions...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1782"/>
+        <location filename="src/mainwindow.cpp" line="1789"/>
+        <location filename="src/mainwindow.cpp" line="1836"/>
         <source>CSV (*.csv)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1805"/>
+        <location filename="src/mainwindow.cpp" line="1812"/>
         <source>Import User Descriptions...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1805"/>
+        <location filename="src/mainwindow.cpp" line="1812"/>
         <source>CSV (*.csv);;Any (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/mainwindow.cpp" line="1845"/>
+        <source>Error exporting translation data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/mainwindow.cpp" line="1849"/>
+        <source>Translation Template Export Complete</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1402,6 +1433,77 @@ Las imágenes de los anillos son propiedad de FFG; los recursos utilizados en es
         <source>19. What is your personal name?</source>
         <translation>19. ¿Cuál es el nombre personal de tu personaje?</translation>
     </message>
+    <message>
+        <location filename="src/newcharwizardpage6.cpp" line="158"/>
+        <location filename="src/newcharwizardpage6.cpp" line="184"/>
+        <source>H:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage6.cpp" line="161"/>
+        <location filename="src/newcharwizardpage6.cpp" line="187"/>
+        <source>G:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage6.cpp" line="164"/>
+        <location filename="src/newcharwizardpage6.cpp" line="190"/>
+        <source>S:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage6.cpp" line="246"/>
+        <location filename="src/newcharwizardpage6.cpp" line="545"/>
+        <source>No Change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage6.cpp" line="288"/>
+        <source>Choose an item quality. The GM chooses another item quality.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage6.cpp" line="291"/>
+        <source>Player-chosen Quality:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage6.cpp" line="292"/>
+        <source>GM-chosen Quality:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage6.cpp" line="350"/>
+        <source>Choose a ring to raise, and a ring to lower.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage6.cpp" line="353"/>
+        <location filename="src/newcharwizardpage6.cpp" line="403"/>
+        <source>Raise:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage6.cpp" line="354"/>
+        <location filename="src/newcharwizardpage6.cpp" line="404"/>
+        <source>Lower:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage6.cpp" line="400"/>
+        <source>You may raise the Void Ring and choose a ring to lower.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage6.cpp" line="652"/>
+        <source>Rings:</source>
+        <translation type="unfinished">Anillos:</translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage6.cpp" line="652"/>
+        <source>Skills:</source>
+        <translation type="unfinished">Habilidades:</translation>
+    </message>
 </context>
 <context>
     <name>NewCharWizardPage7</name>
@@ -1484,6 +1586,11 @@ Las imágenes de los anillos son propiedad de FFG; los recursos utilizados en es
         <location filename="ui/newcharwizardpage7.ui" line="304"/>
         <source>Social Stats:</source>
         <translation>Atributos sociales:</translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage7.cpp" line="390"/>
+        <source>Wealth:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -137,6 +137,10 @@ private slots:
 
     void on_actionExport_Translation_CSV_triggered();
 
+    void on_curriculum_tableView_doubleClicked(const QModelIndex &index);
+
+    void on_title_tableview_doubleClicked(const QModelIndex &index);
+
 private:
     Ui::MainWindow *ui;
     DataAccessLayer* dal;

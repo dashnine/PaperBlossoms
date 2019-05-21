@@ -1210,6 +1210,22 @@ QStringList DataAccessLayer::qsl_gettechbygroup(const QString group,const int ra
     return out;
 }
 
+QString DataAccessLayer::qs_gettechtypebyname(const QString tech){
+    //NOTE - gets the category of a given teck or tech subcategory
+    QString out;
+    QSqlQuery query;
+    query.prepare("SELECT category FROM techniques WHERE name LIKE ?                "
+                  "UNION SELECT category from techniques where subcategory LIKE ?   ");
+    query.bindValue(0, tech);
+    query.bindValue(1, tech);
+    query.exec();
+    while (query.next()) {
+        QString out =  query.value(0).toString();
+        if(!out.isEmpty()) return out;
+    }
+    return "";
+}
+
 QStringList DataAccessLayer::qsl_gettitles(){
     QStringList out;
     QSqlQuery query;

@@ -41,6 +41,8 @@ int main(int argc, char *argv[])
         if(arg1.toLower()=="en") defaultLocale = "en";
         else if(arg1.toLower()=="es") defaultLocale = "es";
         else if(arg1.toLower()=="fr") defaultLocale = "fr";
+        else if(arg1.toLower()=="de") defaultLocale = "de";
+        else if(arg1.toLower()=="pl") defaultLocale = "pl";
         else if(arg1.toLower()=="test") defaultLocale = "test";
     }
     else{
