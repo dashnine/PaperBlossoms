@@ -41,7 +41,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
+    explicit MainWindow(QString locale = "en", QWidget *parent = 0);
     ~MainWindow();
 
     QPair<QString, int> recalcTitle(const QList<int> xp_list);
@@ -134,6 +134,8 @@ private slots:
     void on_actionExport_User_Descriptions_Table_triggered();
 
     void on_actionImport_User_Descriptions_Table_triggered();
+
+    void on_actionExport_Translation_CSV_triggered();
 
     void on_curriculum_tableView_doubleClicked(const QModelIndex &index);
 

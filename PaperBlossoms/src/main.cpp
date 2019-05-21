@@ -42,6 +42,8 @@ int main(int argc, char *argv[])
         else if(arg1.toLower()=="es") defaultLocale = "es";
         else if(arg1.toLower()=="fr") defaultLocale = "fr";
         else if(arg1.toLower()=="de") defaultLocale = "de";
+        else if(arg1.toLower()=="pl") defaultLocale = "pl";
+        else if(arg1.toLower()=="test") defaultLocale = "test";
     }
     else{
         defaultLocale = QLocale::system().name();
@@ -57,7 +59,7 @@ int main(int argc, char *argv[])
     else{
         qWarning() << "Translation not loaded.";
     }
-    MainWindow w;
+    MainWindow w(defaultLocale);
     w.show();
 
     return a.exec();

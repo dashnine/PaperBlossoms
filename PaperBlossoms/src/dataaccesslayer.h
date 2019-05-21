@@ -33,7 +33,7 @@
 class DataAccessLayer
 {
 public:
-    DataAccessLayer();
+    DataAccessLayer(QString locale = "en");
 
     const QStringList user_tables = {
         "user_advantages_disadvantages",
@@ -135,13 +135,18 @@ public:
     QString qs_getclanref(const QString clan);
     QStringList qsl_getweaponsunderrarity(const int rarity);
     QString qs_getschooladvdisadv(const QString school);
-    bool queryToCsv(const QString filepath, const QString tablename, bool isDir = true);
+    bool tableToCsv(const QString filepath, const QString tablename, bool isDir = true);
     bool importCSV(const QString filepath, const QString tablename, bool isDir = true);
     QStringList qsl_getancestorranges(const QString ancestor);
     QStringList qsl_getweapontypeunderrarity(const int rarity, const QString type);
     QStringList qsl_getpatterns();
     QString qs_getringdesc(const QString ring);
     QStringList qsl_getdescribablenames();
+    bool exportTranslatableCSV(QString filename);
+    QString untranslate(QString string_tr);
+    QString translate(QString string);
+    QStringList qsl_getweaponcategories();
+    QStringList qsl_getweaponskills();
     QString qs_gettechtypebyname(const QString tech);
 private:
     QSqlDatabase db;
@@ -150,6 +155,7 @@ private:
     QString getLastExecutedQuery(const QSqlQuery &query);
     QString escapedCSV(QString unexc);
     QStringList parseCSV(const QString &string);
+    bool queryToCsv(const QString querystr, QString filename);
 };
 
 #endif // DATAACCESSLAYER_H

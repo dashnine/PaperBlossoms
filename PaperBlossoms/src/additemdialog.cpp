@@ -59,6 +59,18 @@ AddItemDialog::AddItemDialog(DataAccessLayer* dal, Character* character, QString
     ui->qual_comboBox->addItems(dal->qsl_getqualities());
     ui->pattern_comboBox->addItems(dal->qsl_getpatterns());
 
+    ui->grip1_category_comboBox->clear();
+    ui->grip1_category_comboBox->addItems(dal->qsl_getweaponcategories());
+
+    ui->grip2_category_comboBox->clear();
+    ui->grip2_category_comboBox->addItems(dal->qsl_getweaponcategories());
+
+    ui->grip1_skill_comboBox->clear();
+    ui->grip1_skill_comboBox->addItems(dal->qsl_getweaponskills());
+
+    ui->grip2_skill_comboBox->clear();
+    ui->grip2_skill_comboBox->addItems(dal->qsl_getweaponskills());
+
 }
 
 AddItemDialog::~AddItemDialog()

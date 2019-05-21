@@ -98,7 +98,12 @@ void NewCharWizardPage3::initializePage()
     skills.append(dal->qsl_getfamilyskills(family));
     qDebug()<<skills;
     QStringList skillList = dal->qsl_getskills();
-    const QStringList q8skills = {"Commerce", "Labor", "Medicine", "Seafaring", "Skulduggery", "Survival"};
+    const QStringList q8skills = {dal->translate("Commerce"),
+                                  dal->translate( "Labor"),
+                                  dal->translate( "Medicine"),
+                                  dal->translate( "Seafaring"),
+                                  dal->translate( "Skulduggery"),
+                                  dal->translate( "Survival")};
     ui->nc3_q7_comboBox->clear();
     ui->nc3_q8_comboBox->clear();
     foreach (QString string, skills) {
@@ -208,11 +213,11 @@ QMap<QString, int> NewCharWizardPage3::calcSkills(){
     QString heritage = "";
     if(field("ancestor1checked").toBool()){
         ancestorIndex = field("ancestor1index").toInt()+1;
-        heritage = field("ancestor1").toString();
+        heritage = dal->translate(field("ancestor1").toString());
     }
     else if (field("ancestor2checked").toBool()){
         ancestorIndex = field("ancestor2index").toInt()+1;
-        heritage = field("ancestor2").toString();
+        heritage = dal->translate(field("ancestor2").toString());
     }
 
     if(    //core
