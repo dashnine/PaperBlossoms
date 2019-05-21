@@ -1895,6 +1895,7 @@ bool DataAccessLayer::importCSV(const QString filepath, const QString tablename,
     }
     //QFile f(filepath+"/"+tablename+".csv");
     if(f.open (QIODevice::ReadOnly)){
+        QSqlDatabase::database().transaction();
         QSqlQuery query;
         success &= query.exec("DELETE FROM "+tablename);
         if(!success) {
@@ -1926,6 +1927,12 @@ bool DataAccessLayer::importCSV(const QString filepath, const QString tablename,
                 qDebug() << "Could not insert using "+ req;
             }
             success &= isuccess;
+        }
+        if(success){
+            QSqlDatabase::database().commit();
+        }
+        else{
+            QSqlDatabase::database().rollback();
         }
         f.close ();
     }
