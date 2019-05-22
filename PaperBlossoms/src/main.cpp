@@ -27,6 +27,7 @@
 #include <QDebug>
 #include <QLocale>
 #include <QFile>
+#include <QSettings>
 
 int main(int argc, char *argv[])
 {
@@ -34,8 +35,28 @@ int main(int argc, char *argv[])
 
 
     QString defaultLocale;
+    defaultLocale = QLocale::system().name();
+    defaultLocale.truncate(defaultLocale.lastIndexOf('_'));
+    QSettings settings("Paper Blossoms", "Paper Blossoms");
+    if(!settings.contains("locale")){
+        //initialize the locale to the system locale (which would be the default anyways).
+        settings.setValue("locale",defaultLocale);
+    }
+    else{
+        //if there is a setting, and it matches an allowed locale, use it.
+        QString settinglocale = settings.value("locale").toString();
+        if(settinglocale.toLower()=="en") defaultLocale = "en";
+        else if(settinglocale.toLower()=="es") defaultLocale = "es";
+        else if(settinglocale.toLower()=="fr") defaultLocale = "fr";
+        else if(settinglocale.toLower()=="de") defaultLocale = "de";
+        else if(settinglocale.toLower()=="pl") defaultLocale = "pl";
+        else if(settinglocale.toLower()=="test") defaultLocale = "test";
+        else defaultLocale = "en";
 
-    //support forcing a locale.  NOTE: hardvoded list to avoid injection risks
+    }
+
+    //support forcing a locale.  NOTE: hardcoded list to avoid injection risks
+    //this would override the settings.
     if(argc>1){
         QString arg1(argv[1]);
         if(arg1.toLower()=="en") defaultLocale = "en";
@@ -44,10 +65,6 @@ int main(int argc, char *argv[])
         else if(arg1.toLower()=="de") defaultLocale = "de";
         else if(arg1.toLower()=="pl") defaultLocale = "pl";
         else if(arg1.toLower()=="test") defaultLocale = "test";
-    }
-    else{
-        defaultLocale = QLocale::system().name();
-        defaultLocale.truncate(defaultLocale.lastIndexOf('_'));
     }
     qDebug()<< "locale = " + defaultLocale;
 
