@@ -28,7 +28,7 @@
 #include <QSqlRecord>
 #include <QDebug>
 
-AddAdvanceDialog::AddAdvanceDialog(DataAccessLayer* dal, Character* character,QWidget *parent) :
+AddAdvanceDialog::AddAdvanceDialog(DataAccessLayer* dal, Character* character, QString sel, QString option, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::AddAdvanceDialog)
 {
@@ -51,6 +51,41 @@ AddAdvanceDialog::AddAdvanceDialog(DataAccessLayer* dal, Character* character,QW
     ui->detailTableView->setModel(&proxyModel);
 
     validatePage();
+    if(sel == "skill"){
+        ui->advtype->setCurrentText(tr("Skill"));
+        ui->advchooser_combobox->setCurrentIndex(-1);
+        ui->advchooser_combobox->setCurrentText(option);
+    }
+    else if(sel == "skill_group"){
+        ui->advtype->setCurrentText(tr("Skill"));
+        ui->advchooser_combobox->setCurrentIndex(-1);
+        //no way to specify a group, so right now default to blank)
+    }
+    else if (sel == "technique"){
+        ui->advtype->setCurrentText(tr("Technique"));
+        if(!option.isEmpty()) {
+            QString category = dal->qs_gettechtypebyname(option);
+            ui->advchooser_combobox->setCurrentIndex(-1);
+            ui->advchooser_combobox->setCurrentText(category);
+            //ui->detailTableView->selectRow(techModel.f)
+            for(int i = 0; i < proxyModel.rowCount(); ++i){
+                QModelIndex index = proxyModel.mapToSource(proxyModel.index(i,0));
+                QSqlRecord r = techModel.record(index.row());
+                QString name = r.value("name").toString();
+                if (name == option) ui->detailTableView->selectRow(i);
+            }
+        }
+    }
+    else if (sel == "technique_group"){
+        ui->advtype->setCurrentText(tr("Technique"));
+        if(!option.isEmpty()) {
+            QString category = dal->qs_gettechtypebyname(option);
+            ui->advchooser_combobox->setCurrentIndex(-1);
+            ui->advchooser_combobox->setCurrentText(category);
+
+        }
+    }
+
 }
 
 AddAdvanceDialog::~AddAdvanceDialog()
@@ -63,13 +98,13 @@ void AddAdvanceDialog::validatePage(){
     bool ok = true;
     ok &= !ui->advtype->currentText().isEmpty();
     ok &= !ui->advchooser_combobox->currentText().isEmpty();
-    if(ui->advtype->currentText() == "Technique"){
+    if(ui->advtype->currentText() == tr("Technique")){
         ok &= ui->detailTableView->currentIndex().isValid();
 
         if(ok){
             const QModelIndex curIndex = proxyModel.mapToSource(ui->detailTableView->currentIndex());
             const QSqlRecord record = techModel.record(curIndex.row());
-            const QString name =  record.value("name").toString();
+            const QString name =  record.value("name_tr").toString();
 
             if(character->techniques.contains(name)){
                 ui->warnlabel->setText("Invalid selection: '"+name+"' is already learned.");
@@ -118,7 +153,7 @@ void AddAdvanceDialog::validatePage(){
 
 void AddAdvanceDialog::on_advtype_currentIndexChanged(const QString &arg1)
 {
-    if(arg1 == "Skill"){
+    if(arg1 == tr("Skill")){
         ui->advchooser_combobox->clear();
         QStringList skillsopts = dal->qsl_getskills();
         ui->detailTableView->setVisible(false);
@@ -136,7 +171,7 @@ void AddAdvanceDialog::on_advtype_currentIndexChanged(const QString &arg1)
 
 
     }
-    else if (arg1 == "Technique"){
+    else if (arg1 == tr("Technique")){
         ui->advchooser_combobox->clear();
 
         //get a list of types that can be chosen at this time
@@ -172,7 +207,7 @@ void AddAdvanceDialog::on_advtype_currentIndexChanged(const QString &arg1)
         ui->detailTableView->resizeColumnsToContents();
         ui->detailTableView->setVisible(true);
     }
-    else if (arg1 == "Ring"){
+    else if (arg1 == tr("Ring")){
         ui->advchooser_combobox->clear();
         QStringList rings = (dal->qsl_getrings());
         ui->detailTableView->setVisible(false);
@@ -188,12 +223,12 @@ void AddAdvanceDialog::on_advtype_currentIndexChanged(const QString &arg1)
             if(!ringiterator.key().isEmpty()){
                 int value = ringiterator.value()+character->ringranks[ringiterator.key()];
                 if(value < lowestval) {
-                    if(ringiterator.key() != "Void"){
+                    if(ringiterator.key() != dal->translate("Void")){
                         lowestring = ringiterator.key();
                         lowestval = value;
                     }
                 }
-                if(ringiterator.key() == "Void"){ //void
+                if(ringiterator.key() == dal->translate("Void")){ //void
                     voidring = value;
                 }
             }
@@ -222,13 +257,13 @@ void AddAdvanceDialog::on_advchooser_combobox_currentIndexChanged(const QString 
 
 
 
-    if(ui->advtype->currentText() == "Skill"){
+    if(ui->advtype->currentText() == tr("Skill")){
         const int currentrank = character->baseskills[arg1] + character->skillranks[arg1];
         const int cost = (currentrank+1)*2;
         const int rounded = qRound(double(cost)/2.0);
         ui->xp_label->setText(QString::number((ui->halfxp_checkBox->isChecked()?rounded:cost)));
     }
-    if(ui->advtype->currentText() == "Ring"){
+    if(ui->advtype->currentText() == tr("Ring")){
         const int currentrank = character->baserings[arg1] + character->ringranks[arg1];
         const int cost = (currentrank+1)*3;
         const int rounded = qRound(double(cost)/2.0);
@@ -275,11 +310,21 @@ void AddAdvanceDialog::on_title_radioButton_clicked()
 
 QString AddAdvanceDialog::getResult() const {
     QString row = "";
-    row += ui->advtype->currentText() + "|";
-    if(ui->advtype->currentText() == "Technique"){
+    if(ui->advtype->currentText() == tr("Skill")){
+        row+="Skill|";
+    }
+    else if (ui->advtype->currentText() == tr("Technique")){
+        row += "Technique|";
+    }
+    else{
+        row += "Ring|";
+    }
+
+    //row += ui->advtype->currentText() + "|";
+    if(ui->advtype->currentText() == tr("Technique")){
        const QModelIndex curIndex = proxyModel.mapToSource(ui->detailTableView->currentIndex());
        const QSqlRecord record = techModel.record(curIndex.row());
-       row += record.value("name").toString()+"|";
+       row += record.value("name_tr").toString()+"|";
     }
     else{
         row += ui->advchooser_combobox->currentText() + "|";

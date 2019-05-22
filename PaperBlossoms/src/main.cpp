@@ -27,13 +27,51 @@
 #include <QDebug>
 #include <QLocale>
 #include <QFile>
+#include <QSettings>
+#include <QStandardPaths>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    //a.setOrganizationName("PaperBlossoms");
+    //a.setOrganizationDomain("mycompany.com");
+    //a.setApplicationName("PaperBlossoms");
+    qDebug() << a.applicationName();
 
-    QString defaultLocale = QLocale::system().name();
+    QString defaultLocale;
+    defaultLocale = QLocale::system().name();
     defaultLocale.truncate(defaultLocale.lastIndexOf('_'));
+    QString settingfile = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + "/settings.ini";
+    qDebug()<< settingfile;
+    QSettings settings(settingfile, QSettings::IniFormat);
+    if(!settings.contains("locale")){
+        //initialize the locale to the system locale (which would be the default anyways).
+        settings.setValue("locale",defaultLocale);
+    }
+    else{
+        //if there is a setting, and it matches an allowed locale, use it.
+        QString settinglocale = settings.value("locale").toString();
+        if(settinglocale.toLower()=="en") defaultLocale = "en";
+        else if(settinglocale.toLower()=="es") defaultLocale = "es";
+        else if(settinglocale.toLower()=="fr") defaultLocale = "fr";
+        else if(settinglocale.toLower()=="de") defaultLocale = "de";
+        else if(settinglocale.toLower()=="pl") defaultLocale = "pl";
+        else if(settinglocale.toLower()=="test") defaultLocale = "test";
+        else defaultLocale = "en";
+
+    }
+
+    //support forcing a locale.  NOTE: hardcoded list to avoid injection risks
+    //this would override the settings.
+    if(argc>1){
+        QString arg1(argv[1]);
+        if(arg1.toLower()=="en") defaultLocale = "en";
+        else if(arg1.toLower()=="es") defaultLocale = "es";
+        else if(arg1.toLower()=="fr") defaultLocale = "fr";
+        else if(arg1.toLower()=="de") defaultLocale = "de";
+        else if(arg1.toLower()=="pl") defaultLocale = "pl";
+        else if(arg1.toLower()=="test") defaultLocale = "test";
+    }
     qDebug()<< "locale = " + defaultLocale;
 
     QTranslator tra;
@@ -44,7 +82,7 @@ int main(int argc, char *argv[])
     else{
         qWarning() << "Translation not loaded.";
     }
-    MainWindow w;
+    MainWindow w(defaultLocale);
     w.show();
 
     return a.exec();

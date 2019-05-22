@@ -2219,7 +2219,7 @@
                 "special_access": false
             }
         ],
-        "mastery_ability": "To Tred the Sword"
+        "mastery_ability": "To Tread the Sword"
     },
     {
         "name": "Doji Diplomat School",
@@ -12005,6 +12005,7 @@
             ]
         },
         "honor": 30,
+        "advantage_disadvantage": "False Identity",
         "techniques_available": [
             "Invocations",
             "Rituals",
@@ -12279,6 +12280,7 @@
             ]
         },
         "honor": 20,
+        "advantage_disadvantage": "False Identity",
         "techniques_available": [
             "Kata",
             "Sh\u016bji"

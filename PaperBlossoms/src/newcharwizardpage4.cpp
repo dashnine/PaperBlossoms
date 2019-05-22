@@ -192,11 +192,11 @@ QMap<QString, int> NewCharWizardPage4::calcSkills(){
     QString heritage = "";
     if(field("ancestor1checked").toBool()){
         ancestorIndex = field("ancestor1index").toInt()+1;
-        heritage = field("ancestor1").toString();
+        heritage = dal->translate(field("ancestor1").toString());
     }
     else if (field("ancestor2checked").toBool()){
         ancestorIndex = field("ancestor2index").toInt()+1;
-        heritage = field("ancestor2").toString();
+        heritage = dal->translate(field("ancestor2").toString());
     }
 
     if(    //core

@@ -46,7 +46,8 @@ SOURCES += \
     src/newcharwizardpage7.cpp \
     src/pboutputdata.cpp \
     src/renderdialog.cpp \
-    src/ringviewer.cpp
+    src/ringviewer.cpp \
+    src/edituserdescriptionsdialog.cpp
 
 HEADERS += \
     src/aboutdialog.h \
@@ -70,7 +71,8 @@ HEADERS += \
     src/newcharwizardpage7.h \
     src/pboutputdata.h \
     src/renderdialog.h \
-    src/ringviewer.h
+    src/ringviewer.h \
+    src/edituserdescriptionsdialog.h
 
 FORMS += \
     ui/aboutdialog.ui \
@@ -88,7 +90,8 @@ FORMS += \
     ui/newcharwizardpage6.ui \
     ui/newcharwizardpage7.ui \
     ui/renderdialog.ui \
-    ui/ringviewer.ui
+    ui/ringviewer.ui \
+    ui/edituserdescriptionsdialog.ui
 
 # Copy the DB file into the build whenever build is run.
 # using shell_path() to correct path depending on platform
@@ -108,7 +111,9 @@ RESOURCES += \
 
 TRANSLATIONS += paperblossoms_en.ts \
                 paperblossoms_fr.ts \
-                paperblossoms_es.ts
+                paperblossoms_es.ts \
+                paperblossoms_de.ts \
+                paperblossoms_pl.ts
 
 win32:RC_ICONS += resources/sakura.ico
 macx: ICON = resources/sakura.icns

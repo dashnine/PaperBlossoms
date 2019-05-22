@@ -14,7 +14,15 @@ def connect_db(db_file):
     return conn
 
 
-def create_tables(db_conn, table_stem, create_stmt, foreign_key = None):
+# Create base_{table_stem} and user_{table_stem} from create_stmt
+# Define a {table_stem} view with description fields for desc_fields
+# and translation fields for tr_fields
+# tr_fields should be a list of strings
+# desc_fields should be either a string or a dictionary of strings;
+# if the latter, the key should be the name of the field to be described
+# and the value should be the prefix of the description fields;
+# if the former, no prefix is assumed to be present
+def create_tables(db_conn, table_stem, create_stmt, desc_fields = None, tr_fields = None):
 
     # Set names of base and user tables, respectively
     base_table = 'base_' + table_stem
@@ -24,45 +32,63 @@ def create_tables(db_conn, table_stem, create_stmt, foreign_key = None):
     db_conn.execute(create_stmt.format(base_table))
     db_conn.execute(create_stmt.format(user_table))
 
-    # Create view combining both tables
-    if foreign_key is not None:
-        db_conn.execute(
-            '''CREATE VIEW {table_stem}
-            AS SELECT t.*, desc.description, desc.short_desc
-            FROM (
-                SELECT * FROM {base_table}
-                UNION ALL
-                SELECT * FROM {user_table}
-            ) t
-            LEFT JOIN user_descriptions desc
-            ON t.{foreign_key} = desc.name'''.format(
-                table_stem = table_stem,
-                base_table = base_table,
-                user_table = user_table,
-                foreign_key = foreign_key
-            )
+    # Dynamically create portions of view definition for translated fields
+    tr_select = [
+        ', COALESCE(i18n_{tr_field}.string_tr, t.{tr_field}) AS {tr_field}_tr'.format(tr_field = tr_field)
+        for tr_field in tr_fields
+    ] if tr_fields is not None else []
+    
+    tr_join = [
+        'LEFT JOIN i18n i18n_{tr_field} ON t.{tr_field} = i18n_{tr_field}.string'.format(tr_field = tr_field)
+        for tr_field in tr_fields
+    ] if tr_fields is not None else []
+
+    # Dynamically create portions of view definition for descriptions
+    if type(desc_fields) == str:
+        desc_fields = { desc_fields: '' }
+    desc_select = [
+        ', {field}_desc.description AS '.format(field = field) + (
+            'description' if desc_fields[field] == '' else '_'.join([desc_fields[field], 'description'])
+        ) +
+        ', {field}_desc.short_desc AS '.format(field = field) + (
+            'short_desc' if desc_fields[field] == '' else '_'.join([desc_fields[field], 'short_desc'])
         )
-    else:
-        db_conn.execute(
-            '''CREATE VIEW {table_stem} AS
+        for field in desc_fields
+    ] if desc_fields is not None else []
+    
+    desc_join = [
+        'LEFT JOIN user_descriptions {desc_field}_desc ON t.{desc_field} = {desc_field}_desc.name'.format(desc_field = desc_field)
+        for desc_field in desc_fields
+    ] if desc_fields is not None else []
+    
+    # Build view definition from combination of user and base tables, descriptions and translations
+    view_defn = '\n'.join(
+        ['CREATE VIEW {table_stem} AS'.format(table_stem = table_stem)] +
+        ['SELECT t.*'] +
+        desc_select + tr_select +
+        ['''FROM (
             SELECT * FROM {base_table}
             UNION ALL
-            SELECT * FROM {user_table}'''.format(
-                table_stem = table_stem,
-                base_table = base_table,
-                user_table = user_table
-            )
-        )
+            SELECT * FROM {user_table}
+        ) t'''.format(base_table = base_table, user_table = user_table)] +
+        desc_join + tr_join
+    )
+    
+    # Create view in db
+    db_conn.execute(view_defn)
 
 
 def rings_to_db(db_conn):
 
     # Create rings table
-    db_conn.execute(
-        '''CREATE TABLE rings (
+    create_tables(
+        db_conn,
+        'rings',
+        '''CREATE TABLE {} (
             name TEXT PRIMARY KEY,
             outstanding_quality TEXT
-        )'''
+        )''',
+        tr_fields = ['name', 'outstanding_quality']
     )
 
     # Read rings JSON
@@ -72,7 +98,7 @@ def rings_to_db(db_conn):
     # Write rings to rings table
     for ring in rings:
         db_conn.execute(
-            'INSERT INTO rings VALUES (?,?)',
+            'INSERT INTO base_rings VALUES (?,?)',
             (ring['name'], ring['outstanding_quality'])
         )
 
@@ -86,7 +112,8 @@ def skills_to_db(db_conn):
         '''CREATE TABLE {} (
             skill_group TEXT,
             skill TEXT PRIMARY KEY
-        )'''
+        )''',
+        tr_fields = ['skill_group', 'skill']
     )
 
     # Read skills JSON
@@ -113,7 +140,8 @@ def qualities_to_db(db_conn):
             reference_book TEXT,
             reference_page INTEGER
         )''',
-        'quality'
+        desc_fields = 'quality',
+        tr_fields = ['quality']
     )
 
     # Read qualities JSON
@@ -144,9 +172,10 @@ def personal_effects_to_db(db_conn):
             reference_page INTEGER,
             price_value INTEGER,
             price_unit TEXT,
-            rarity TEXT
+            rarity INTEGER
         )''',
-        'name'
+        desc_fields = 'name',
+        tr_fields = ['name']
     )
 
     # Create personal effects qualities table
@@ -156,7 +185,8 @@ def personal_effects_to_db(db_conn):
         '''CREATE TABLE {} (
             personal_effect TEXT,
             quality TEXT
-        )'''
+        )''',
+        tr_fields = ['personal_effect', 'quality']
     )
 
     # Read personal effects JSON
@@ -204,7 +234,8 @@ def armor_to_db(db_conn):
             price_value INTEGER,
             price_unit TEXT
         )''',
-        'name'
+        desc_fields = 'name',
+        tr_fields = ['name']
     )
     # Create resistance values table
     create_tables(
@@ -214,7 +245,8 @@ def armor_to_db(db_conn):
             armor TEXT,
             resistance_category TEXT,
             resistance_value INTEGER
-        )'''
+        )''',
+        tr_fields = ['armor']
     )
     # Create qualities table
     create_tables(
@@ -223,7 +255,8 @@ def armor_to_db(db_conn):
         '''CREATE TABLE {} (
             armor TEXT,
             quality TEXT
-        )'''
+        )''',
+        tr_fields = ['armor', 'quality']
     )
 
     # Read armor JSON
@@ -285,7 +318,8 @@ def weapons_to_db(db_conn):
             price_unit TEXT,
             PRIMARY KEY (name, grip)
         )''',
-        'name'
+        desc_fields = 'name',
+        tr_fields = ['category', 'name', 'skill', 'grip']
     )
     # Create qualities table
     create_tables(
@@ -295,7 +329,8 @@ def weapons_to_db(db_conn):
             weapon TEXT,
             grip TEXT,
             quality TEXT
-        )'''
+        )''',
+        tr_fields = ['weapon', 'quality']
     )
 
     # Read weapons JSON
@@ -419,7 +454,8 @@ def techniques_to_db(db_conn):
             rank INTEGER,
             xp INTEGER
         )''',
-        'name'
+        desc_fields = 'name',
+        tr_fields = ['category', 'subcategory', 'name', 'restriction']
     )
 
     # Read techniques JSON
@@ -460,7 +496,8 @@ def advantages_to_db(db_conn):
             types TEXT,
             effects TEXT
         )''',
-        'name'
+        desc_fields = 'name',
+        tr_fields = ['name', 'ring', 'types']
     )
 
     # Read advantages JSON
@@ -519,7 +556,8 @@ def clans_to_db(db_conn):
             skill TEXT,
             status INTEGER
         )''',
-        'name'
+        desc_fields = 'name',
+        tr_fields = ['name', 'type', 'ring', 'skill']
     )
     create_tables(
         db_conn,
@@ -532,7 +570,8 @@ def clans_to_db(db_conn):
             glory TEXT,
             wealth TEXT
         )''',
-        'name'
+        desc_fields = 'name',
+        tr_fields = ['clan', 'name']
     )
     create_tables(
         db_conn,
@@ -540,7 +579,8 @@ def clans_to_db(db_conn):
         '''CREATE TABLE {} (
             family TEXT,
             ring TEXT
-        )'''
+        )''',
+        tr_fields = ['family', 'ring']
     )
     create_tables(
         db_conn,
@@ -548,7 +588,8 @@ def clans_to_db(db_conn):
         '''CREATE TABLE {} (
             family TEXT,
             skill TEXT
-        )'''
+        )''',
+        tr_fields = ['family', 'skill']
     )
 
     # Read clans JSON
@@ -609,8 +650,10 @@ def clans_to_db(db_conn):
 def heritage_to_db(db_conn):
 
     # Create heritage, heritage modifier, heritage effects table
-    db_conn.execute(
-        '''CREATE TABLE samurai_heritage (
+    create_tables(
+        db_conn,
+        'samurai_heritage',
+        '''CREATE TABLE {} (
             source TEXT,
             roll_min INTEGER,
             roll_max INTEGER,
@@ -620,15 +663,19 @@ def heritage_to_db(db_conn):
             modifier_status INTEGER,
             effect_type TEXT,
             effect_instructions TEXT
-        )'''
+        )''',
+        tr_fields = ['ancestor', 'effect_type', 'effect_instructions']
     )
-    db_conn.execute(
-        '''CREATE TABLE heritage_effects (
+    create_tables(
+        db_conn,
+        'heritage_effects',
+        '''CREATE TABLE {} (
             ancestor TEXT,
             roll_min INTEGER,
             roll_max INTEGER,
             outcome TEXT
-        )'''
+        )''',
+        tr_fields = ['ancestor', 'outcome']
     )
 
     # Read samurai heritage from JSON
@@ -640,7 +687,7 @@ def heritage_to_db(db_conn):
 
         # Write to samurai heritage table
         db_conn.execute(
-            'INSERT INTO samurai_heritage VALUES (?,?,?,?,?,?,?,?,?)',
+            'INSERT INTO base_samurai_heritage VALUES (?,?,?,?,?,?,?,?,?)',
             (
                 ancestor['source'],
                 ancestor['roll']['min'],
@@ -657,7 +704,7 @@ def heritage_to_db(db_conn):
         # Write to heritage effects table
         if 'outcomes' in ancestor['other_effects']:
             db_conn.executemany(
-                'INSERT INTO heritage_effects VALUES (?,?,?,?)',
+                'INSERT INTO base_heritage_effects VALUES (?,?,?,?)',
                 [
                     (
                         ancestor['result'],
@@ -687,7 +734,13 @@ def schools_to_db(db_conn):
             advantage_disadvantage TEXT,
             school_ability_name TEXT,
             mastery_ability_name TEXT
-        )'''
+        )''',
+        desc_fields = {
+            'name': '',
+            'school_ability_name': 'school_ability',
+            'mastery_ability_name': 'mastery_ability'
+        },
+        tr_fields = ['name', 'role', 'clan', 'school_ability_name', 'mastery_ability_name']
     )
     create_tables(
         db_conn,
@@ -695,7 +748,8 @@ def schools_to_db(db_conn):
         '''CREATE TABLE {} (
             school TEXT,
             ring TEXT
-        )'''
+        )''',
+        tr_fields = ['school', 'ring']
     )
     create_tables(
         db_conn,
@@ -703,7 +757,8 @@ def schools_to_db(db_conn):
         '''CREATE TABLE {} (
             school TEXT,
             skill TEXT
-        )'''
+        )''',
+        tr_fields = ['school', 'skill']
     )
     create_tables(
         db_conn,
@@ -711,7 +766,8 @@ def schools_to_db(db_conn):
         '''CREATE TABLE {} (
             school TEXT,
             technique TEXT
-        )'''
+        )''',
+        tr_fields = ['school', 'technique']
     )
     create_tables(
         db_conn,
@@ -721,7 +777,8 @@ def schools_to_db(db_conn):
             set_id INTEGER,
             set_size INTEGER,
             technique TEXT
-        )'''
+        )''',
+        tr_fields = ['school', 'technique']
     )
     create_tables(
         db_conn,
@@ -731,7 +788,8 @@ def schools_to_db(db_conn):
             set_id INTEGER,
             set_size INTEGER,
             equipment TEXT
-        )'''
+        )''',
+        tr_fields = ['school', 'equipment']
     )
     create_tables(
         db_conn,
@@ -742,32 +800,8 @@ def schools_to_db(db_conn):
             advance TEXT,
             type TEXT,
             special_access INTEGER
-        )'''
-    )
-
-    # Create schools view custom because of multiple description fields
-    db_conn.execute('DROP VIEW schools')
-    db_conn.execute(
-        '''CREATE VIEW schools AS
-        SELECT
-            t.*,
-            desc.description,
-            desc.short_desc,
-            school_ability_desc.description AS school_ability_description,
-            school_ability_desc.short_desc AS school_ability_short_desc,
-            mastery_ability_desc.description AS mastery_ability_description,
-            mastery_ability_desc.short_desc AS mastery_ability_short_desc
-        FROM (
-            SELECT * FROM base_schools
-            UNION ALL
-            SELECT * FROM user_schools
-        ) t
-        LEFT JOIN user_descriptions desc
-            ON t.name = desc.name
-        LEFT JOIN user_descriptions school_ability_desc
-            ON t.school_ability_name = school_ability_desc.name
-        LEFT JOIN user_descriptions mastery_ability_desc
-            ON t.mastery_ability_name = mastery_ability_desc.name'''
+        )''',
+        tr_fields = ['school', 'advance']
     )
 
     # Read schools JSON
@@ -884,7 +918,12 @@ def titles_to_db(db_conn):
             status_award_constraint_max INTEGER,
             xp_to_completion INTEGER,
             title_ability_name TEXT
-        )'''
+        )''',
+        desc_fields = {
+            'name': '',
+            'title_ability_name': 'title_ability'
+        },
+        tr_fields = ['name', 'title_ability_name']
     )
 
     # Create advancement table for titles
@@ -897,28 +936,8 @@ def titles_to_db(db_conn):
             name TEXT,
             type TEXT,
             special_access INTEGER
-        )'''
-    )
-
-    # Create titles view custom because of multiple description fields
-    db_conn.execute('DROP VIEW titles')
-    db_conn.execute(
-        '''CREATE VIEW titles AS
-        SELECT
-            t.*,
-            desc.description,
-            desc.short_desc,
-            title_ability_desc.description AS title_ability_description,
-            title_ability_desc.short_desc AS title_ability_short_desc
-        FROM (
-            SELECT * FROM base_titles
-            UNION ALL
-            SELECT * FROM user_titles
-        ) t
-        LEFT JOIN user_descriptions desc
-            ON t.name = desc.name
-        LEFT JOIN user_descriptions title_ability_desc
-            ON t.title_ability_name = title_ability_desc.name'''
+        )''',
+        tr_fields = ['title', 'name', 'type']
     )
 
     # Read titles from JSON
@@ -974,7 +993,8 @@ def patterns_to_db(db_conn):
             xp_cost INTEGER,
             rarity_modifier INTEGER
         )''',
-        'name'
+        desc_fields = 'name',
+        tr_fields = ['name']
     )
 
     # Read item patterns from JSON
@@ -1005,6 +1025,15 @@ def desc_to_db(db_conn):
     )
 
 
+def translations_to_db(db_conn):
+    db_conn.execute(
+        '''CREATE TABLE i18n (
+            string TEXT PRIMARY KEY,
+            string_tr TEXT
+        )'''
+    )
+
+
 def main():
 
     # Change working directory to data folder
@@ -1018,8 +1047,9 @@ def main():
     # Open connection
     db_conn = connect_db('paperblossoms.db')
 
-    # Descriptions
+    # Descriptions and translations
     desc_to_db(db_conn)
+    translations_to_db(db_conn)
 
     # Easy tables
     rings_to_db(db_conn)

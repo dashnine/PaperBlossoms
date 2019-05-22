@@ -65,11 +65,13 @@
       <widget class="QLabel" name="maho_label">
        <property name="font">
         <font>
+         <pointsize>11</pointsize>
          <italic>true</italic>
         </font>
        </property>
        <property name="text">
-        <string>Warning: Mahō can only be taken with GM approval.</string>
+        <string>Warning: Mahō/Patterns/Signature Scrolls 
+can only be taken with GM approval.</string>
        </property>
       </widget>
      </item>

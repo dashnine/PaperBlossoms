@@ -51,6 +51,8 @@
 #include <QApplication>
 #include <QFontDatabase>
 #include <QtXml>
+#include "edituserdescriptionsdialog.h"
+#include <QFileInfo>
 
 
 
@@ -85,7 +87,7 @@ public:
 //-----------------------------------------------------------------------
 
 
-MainWindow::MainWindow(QWidget *parent) :
+MainWindow::MainWindow(QString locale, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
@@ -104,7 +106,7 @@ MainWindow::MainWindow(QWidget *parent) :
 #endif
     ui->character_name_label->setFont(scriptfont);
 
-    dal = new DataAccessLayer;
+    dal = new DataAccessLayer(locale);
 
     ui->character_name_label->setVisible(false);
     ui->tabWidget->setVisible(false);
@@ -400,19 +402,26 @@ void MainWindow::populateUI(){
     //-------------------SET RINGS ---------------------------
     QString ringtext = "";
     QMap <QString, int> ringmap = curCharacter.baserings; //get base values
+    QMap <QString, int> engringmap;
+    QMapIterator<QString, int> ei(curCharacter.baserings); //grab an english version of the baserings
+    while (ei.hasNext()) {
+        ei.next();
+        engringmap[dal->untranslate(ei.key())] += ei.value();                //add 'Air' (etc) for each extra
+    }
     QMapIterator<QString, int> i(curCharacter.ringranks);
     while (i.hasNext()) {
         i.next();
         ringmap[i.key()] += i.value();                //add 'Air' (etc) for each extra
+        engringmap[dal->untranslate(i.key())] += i.value();
     }
-    ringtext += "Air "+ QString::number(ringmap["Air"]) + ", ";
-    ringtext += "Earth "+ QString::number(ringmap["Earth"]) + ", ";
-    ringtext += "Fire "+ QString::number(ringmap["Fire"]) + ", ";
-    ringtext += "Water "+ QString::number(ringmap["Water"]) + ", ";
-    ringtext += "Void "+ QString::number(ringmap["Void"]);
+    ringtext += dal->translate("Air")+ " " +QString::number(ringmap[dal->translate("Air")]) + ", ";
+    ringtext += dal->translate("Earth")+  " " +QString::number(ringmap[dal->translate("Earth")]) + ", ";
+    ringtext += dal->translate("Fire")+  " " +QString::number(ringmap[dal->translate("Fire")]) + ", ";
+    ringtext += dal->translate("Water")+ " " + QString::number(ringmap[dal->translate("Water")]) + ", ";
+    ringtext += dal->translate("Void")+ " " +QString::number(ringmap[dal->translate("Void")]);
 
     ui->ring_label->setText(ringtext);
-    ui->ringWidget->setRings(ringmap);
+    ui->ringWidget->setRings(engringmap);
 
     //------------------SET SKILL TABLE AND VALUES -----------------
     skillmodel.clear();
@@ -455,23 +464,23 @@ void MainWindow::populateUI(){
     equipmodel.setHorizontalHeaderLabels(eqheaders);
 
     //---------------CALCULATE DERIVED STATS ------------------------------//
-    ui->endurance_label->setText(QString::number(( curCharacter.baserings["Earth"]
-                                                +  curCharacter.ringranks["Earth"]
-                                                +  curCharacter.baserings["Fire"]
-                                                +  curCharacter.ringranks["Fire"])*2));
-    ui->composure_label->setText(QString::number(( curCharacter.baserings["Earth"]
-                                                 + curCharacter.ringranks["Earth"]
-                                                 + curCharacter.baserings["Water"]
-                                                 + curCharacter.ringranks["Water"])*2));
-    ui->focus_label->setText(QString::number( curCharacter.baserings["Fire"]
-                                            + curCharacter.ringranks["Fire"]
-                                            + curCharacter.baserings["Air"]
-                                            + curCharacter.ringranks["Air"]  ));
+    ui->endurance_label->setText(QString::number(( curCharacter.baserings[dal->translate("Earth")]
+                                                +  curCharacter.ringranks[dal->translate("Earth")]
+                                                +  curCharacter.baserings[dal->translate("Fire")]
+                                                +  curCharacter.ringranks[dal->translate("Fire")])*2));
+    ui->composure_label->setText(QString::number(( curCharacter.baserings[dal->translate("Earth")]
+                                                 + curCharacter.ringranks[dal->translate("Earth")]
+                                                 + curCharacter.baserings[dal->translate("Water")]
+                                                 + curCharacter.ringranks[dal->translate("Water")])*2));
+    ui->focus_label->setText(QString::number( curCharacter.baserings[dal->translate("Fire")]
+                                            + curCharacter.ringranks[dal->translate("Fire")]
+                                            + curCharacter.baserings[dal->translate("Air")]
+                                            + curCharacter.ringranks[dal->translate("Air")]  ));
     ui->vigilance_label->setText(
-                QString::number(qRound(double(curCharacter.baserings["Water"]
-                                            + curCharacter.ringranks["Water"]
-                                            + curCharacter.baserings["Air"]
-                                            + curCharacter.ringranks["Air"])/2.0))); //round up, because the FAQ was cruel.
+                QString::number(qRound(double(curCharacter.baserings[dal->translate("Water")]
+                                            + curCharacter.ringranks[dal->translate("Water")]
+                                            + curCharacter.baserings[dal->translate("Air")]
+                                            + curCharacter.ringranks[dal->translate("Air")])/2.0))); //round up, because the FAQ was cruel.
 
     ui->glory_spinBox->setValue(curCharacter.glory );
     ui->honor_spinBox->setValue(curCharacter.honor );
@@ -553,12 +562,24 @@ void MainWindow::populateUI(){
 
 void MainWindow::on_actionSave_As_triggered()
 {
+    QString settingfile = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + "/settings.ini";
+    QSettings settings(settingfile, QSettings::IniFormat);
+    //QSettings settings;
+    QString filepath = QDir::homePath();
+    //if(!settings.contains("savefilepath")){
+        QString path = settings.value("savefilepath").toString();
+        if(!path.isEmpty()){
+            if(QFileInfo::exists(path)) filepath = path;
+        }
+    //}
+
+
     qDebug()<<QString("Homepath = ") + QDir::homePath();
     QString cname = this->curCharacter.family + " " + curCharacter.name;
     if (cname.isEmpty())
         cname = "untitled";
     cname.remove(QRegExp("[^a-zA-Z\\d\\s]"));
-    QString fileName = QFileDialog::getSaveFileName( this, tr("Save File As..."), QDir::homePath()+"/"+cname+".pbc", tr("Paper Blossoms Character Profile (*.pbc)"));
+    QString fileName = QFileDialog::getSaveFileName( this, tr("Save File As..."), filepath+"/"+cname+".pbc", tr("Paper Blossoms Character Profile (*.pbc)"));
     if (fileName.isEmpty())
         return;
     else
@@ -608,6 +629,9 @@ void MainWindow::on_actionSave_As_triggered()
         stream<<curCharacter.totalXP;
 
         file.close();
+        QFileInfo fi(fileName);
+        settings.setValue("savefilepath", fi.canonicalPath());
+        settings.sync();
         m_dirtyDataFlag = false; //reset to false (just saved!)
     }
 
@@ -616,7 +640,18 @@ void MainWindow::on_actionSave_As_triggered()
 
 void MainWindow::on_actionOpen_triggered()
 {
-    const QString fileName = QFileDialog::getOpenFileName( this, tr("Load..."), QDir::homePath(), tr("Paper Blossoms Character (*.pbc);;Any (*)"));
+    QString settingfile = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + "/settings.ini";
+    QSettings settings(settingfile, QSettings::IniFormat);
+    //QSettings settings;
+    QString filepath = QDir::homePath();
+    //if(!settings.contains("savefilepath")){
+        QString path = settings.value("savefilepath").toString();
+        if(!path.isEmpty()){
+            if(QFileInfo::exists(path)) filepath = path;
+        }
+    //}
+
+    const QString fileName = QFileDialog::getOpenFileName( this, tr("Load..."), filepath, tr("Paper Blossoms Character (*.pbc);;Any (*)"));
     if (fileName.isEmpty())
         return;
     else
@@ -675,6 +710,9 @@ void MainWindow::on_actionOpen_triggered()
         stream>>                  curCharacter.totalXP      ;
 
         file.close();
+        QFileInfo fi(fileName);
+        settings.setValue("savefilepath", fi.canonicalPath());
+        settings.sync();
     }
     populateUI();
     ui->character_name_label->setVisible(true);
@@ -684,7 +722,6 @@ void MainWindow::on_actionOpen_triggered()
 
     ui->actionGenerate_Character_Sheet->setEnabled(true);
     ui->status_groupBox->setVisible(true);
-
 
     m_dirtyDataFlag = false; //just loaded!
 }
@@ -925,17 +962,17 @@ int MainWindow::isInCurriculum(const QString value, const QString type, const in
         //if(record.value("rank").toInt()!=curCharacter.rank) continue; //only get items in current rank;
         if(record.value("rank").toInt()!=currank) continue; //only get items in current rank;
         if(record.value("type").toString() == "skill_group"){
-            QStringList groupskills = dal->qsl_getskillsbygroup(record.value("advance").toString());
+            QStringList groupskills = dal->qsl_getskillsbygroup(record.value("advance_tr").toString());
             skills.append(groupskills);
         }
         else if (record.value("type").toString() == "skill"){
-            skills << record.value("advance").toString();
+            skills << record.value("advance_tr").toString();
         }
         else if(record.value("type").toString() == "technique"){
-            techniques << record.value("advance").toString();
+            techniques << record.value("advance_tr").toString();
         }
         else if(record.value("type").toString() == "technique_group"){
-            QStringList grouptech = dal->qsl_gettechbygroup(record.value("advance").toString(), curCharacter.rank);
+            QStringList grouptech = dal->qsl_gettechbygroup(dal->untranslate(record.value("advance_tr").toString()), curCharacter.rank);
             techniques.append(grouptech);
         }
 
@@ -976,7 +1013,7 @@ int MainWindow::isInTitle(const QString value, const QString adv_type, const QSt
             techniques << advance;
         }
         else if(type == "technique_group"){
-            const QStringList grouptech = dal->qsl_gettechbygroup(advance, rank.toInt()); //special -- uses title rank
+            const QStringList grouptech = dal->qsl_gettechbygroup(dal->untranslate(advance), rank.toInt()); //special -- uses title rank
             techniques.append(grouptech);
         }
         else if(type == "ring"){
@@ -1387,7 +1424,7 @@ void MainWindow::on_actionExport_User_Tables_triggered()
     {
         bool success = true;
         foreach(QString tablename, dal->user_tables){
-            success &= dal->queryToCsv(fileName,tablename);
+            success &= dal->tableToCsv(fileName,tablename);
         }
         if(!success){
             QMessageBox::information(this, tr("Error Exporting Data"), "One or more errors occured exporting user data. Please check write permissions in the target folder.");
@@ -1753,4 +1790,138 @@ void MainWindow::on_actionExport_to_XML_triggered()
         file.close();
     }
 
+}
+
+void MainWindow::on_actionDescription_Editor_triggered()
+{
+    EditUserDescriptionsDialog dialog(dal);
+    const int result = dialog.exec();
+    if (result == QDialog::Accepted){
+        dialog.doFinish(true);
+        qDebug() << "Accepted: data comitted";
+
+    }
+    else{
+        dialog.doFinish(false);
+        qDebug() << "Rejected: data discarded";
+    }
+    //QMessageBox::information(this, tr("Back up data"), "Note: Custom user data will be lost if you update Paper Blossoms.  You should back up your data using Tools->Export User Data....",QMessageBox::Ok);
+}
+
+void MainWindow::on_actionExport_User_Descriptions_Table_triggered()
+{
+    qDebug()<<QString("Homepath = ") + QDir::homePath();
+    QString cname = this->curCharacter.family + " " + curCharacter.name;
+    if (cname.isEmpty())
+        cname = "untitled";
+    cname.remove(QRegExp("[^a-zA-Z\\d\\s]"));
+    QString fileName = QFileDialog::getSaveFileName( this, tr("Export User Descriptions..."), QDir::homePath()+"/user_descriptions.csv", tr("CSV (*.csv)"));
+    if (fileName.isEmpty())
+        return;
+    else
+    {
+        qDebug()<<QString("Filename = ") + fileName;
+
+        bool success = true;
+        success &= dal->tableToCsv(fileName,"user_descriptions", false);
+        if(!success){
+            QMessageBox::information(this, tr("Error Exporting Data"), "One or more errors occured exporting user data. Please check write permissions for the target file.");
+
+        }
+        else{
+            QMessageBox::information(this, tr("Export Complete"), "User description data export completed.");
+
+        }
+
+    }
+}
+
+void MainWindow::on_actionImport_User_Descriptions_Table_triggered()
+{
+    const QString fileName = QFileDialog::getOpenFileName( this, tr("Import User Descriptions..."), QDir::homePath(), tr("CSV (*.csv);;Any (*)"));
+    if (fileName.isEmpty())
+        return;
+    else
+    {
+        bool success = true;
+        success &= dal->importCSV(fileName, "user_descriptions", false);
+        if(!success){
+            QMessageBox::information(this, tr("Error Importing Data"), "Data import encoutered one or more errors. Your database may be inconsistent or incomplete. Recommend restoring default DB.");
+
+        }
+        else{
+            QMessageBox::information(this, tr("Import Complete"), "User data import completed. This feature is in beta; please verify that your data still functions normally.");
+
+        }
+    }
+
+}
+
+void MainWindow::on_actionExport_Translation_CSV_triggered()
+{
+    bool success = false;
+    qDebug()<<QString("Homepath = ") + QDir::homePath();
+
+    QString fileName = QFileDialog::getSaveFileName( this, tr("Export User Descriptions..."), QDir::homePath()+"/tr.csv", tr("CSV (*.csv)"));
+    if (fileName.isEmpty())
+        return;
+    else
+    {
+        qDebug()<<QString("Filename = ") + fileName;
+        success = dal->exportTranslatableCSV(fileName);
+    }
+    if(!success){
+        QMessageBox::information(this, tr("Error exporting translation data"), "Data export encoutered one or more errors. Your file may be corrupt or incomplete.");
+
+    }
+    else{
+        QMessageBox::information(this, tr("Translation Template Export Complete"), "User data export completed. This feature is in beta; please verify that your data is consistent.");
+
+    }
+
+}
+
+void MainWindow::on_curriculum_tableView_doubleClicked(const QModelIndex &index)
+{
+    QSqlRecord clickedrow = curriculummodel.record(index.row());
+    int rank = clickedrow.value("rank").toInt();
+    QString advance = clickedrow.value("advance").toString();
+    QString type = clickedrow.value("type").toString();
+
+    //if(rank != curCharacter.rank){
+    //    return;
+    //}
+
+    AddAdvanceDialog addadvancedialog(dal, &curCharacter, type, advance);
+    const int result = addadvancedialog.exec();
+    if (result == QDialog::Accepted){
+        qDebug() << "Accepted: getting advance.";
+       m_dirtyDataFlag = true;
+       curCharacter.advanceStack.append(addadvancedialog.getResult());
+       populateUI();
+    }
+    else{
+        qDebug() << "Not accepted; discarding changes.";
+    }
+}
+
+void MainWindow::on_title_tableview_doubleClicked(const QModelIndex &index)
+{
+   QModelIndex srcindex = titleProxyModel.mapToSource(index);
+    QString title = titlemodel.item(srcindex.row(),Title::SOURCE)->text();
+    QString type = titlemodel.item(srcindex.row(),Title::TYPE)->text();
+    QString advance = titlemodel.item(srcindex.row(),Title::ADVANCE)->text();
+
+
+    AddAdvanceDialog addadvancedialog(dal, &curCharacter, type, advance);
+    const int result = addadvancedialog.exec();
+    if (result == QDialog::Accepted){
+        qDebug() << "Accepted: getting advance.";
+       m_dirtyDataFlag = true;
+       curCharacter.advanceStack.append(addadvancedialog.getResult());
+       populateUI();
+    }
+    else{
+        qDebug() << "Not accepted; discarding changes.";
+    }
 }

@@ -124,7 +124,7 @@ void NewCharWizardPage7::initializePage()
     }
     QString lostItem = "";
     //if(ancestorIndex == 2){ //2 is a lost item, and not in starting gear.  Tracking it for use later
-    if(heritage == "Glorious Sacrifice"){ //heritage Core 2 is a lost item, and not in starting gear.  Tracking it for use later
+    if(heritage == dal->translate("Glorious Sacrifice")){ //heritage Core 2 is a lost item, and not in starting gear.  Tracking it for use later
         lostItem+= special1 + " " + special2 + " " + secondarychoice + ", ";
     }
 
@@ -144,7 +144,7 @@ void NewCharWizardPage7::initializePage()
     notes += "\n\n17. Parents: \n" + parents;
 
     //if(ancestorIndex == 2){ //2 is a lost item, and not in starting gear
-    if(heritage == "Glorious Sacrifice"){ //heritage Core 2 is a lost item, and not in starting gear.  Tracking it for use later
+    if(heritage == dal->translate("Glorious Sacrifice")){ //heritage Core 2 is a lost item, and not in starting gear.  Tracking it for use later
         if(!secondarychoice.isEmpty()){
             notes += "\n\n18. Glorious Sacrifice: \nOne of your ancestors perished honorably in battle, "
                      "and their signature " + special1 + " " + special2 + " " + secondarychoice + " was lost. ";
@@ -256,7 +256,7 @@ void NewCharWizardPage7::initializePage()
     }
     //check for tech on part 8
     //if(ancestorIndex == 8){
-    if(heritage == "Stolen Knowledge"){
+    if(heritage == dal->translate("Stolen Knowledge")){
         if(!secondarychoice.isEmpty()){
             techText+= secondarychoice + ", ";
             techList.append(secondarychoice);
@@ -269,10 +269,10 @@ void NewCharWizardPage7::initializePage()
     QString eqText = "";
     QList<QStringList> eqList;
     const QStringList specialCases = { //special cases
-        "One Weapon of Rarity 6 or Lower",
-        "Two Items of Rarity 4 or Lower",
-        "Two Weapons of Rarity 6 or Lower",
-        "One Sword of Rarity 7 or Lower"
+        dal->translate("One Weapon of Rarity 6 or Lower"),
+        dal->translate("Two Items of Rarity 4 or Lower"),
+        dal->translate("Two Weapons of Rarity 6 or Lower"),
+        dal->translate("One Sword of Rarity 7 or Lower")
     };
 
     //-----first, school eq choices -----//
@@ -308,7 +308,7 @@ void NewCharWizardPage7::initializePage()
     eqList.append(populateItemFields(q16item,dal->qs_getitemtype(q16item)));
     //check for eq on part 8
     //if(ancestorIndex == 1){ //2 is a lost item, and not in starting gear
-    if(heritage == "Famous Deed"){ //item
+    if(heritage == dal->translate("Famous Deed")){ //item
         if(!secondarychoice.isEmpty()){
 
             eqText+= special1 + " " + special2 + " " + secondarychoice + ", ";
@@ -316,8 +316,8 @@ void NewCharWizardPage7::initializePage()
         }
     }
     //if(ancestorIndex == 10){
-    if(heritage == "Unusual Name Origin"){
-        if(othereffects == "Item (Rank 6 or Lower)"){
+    if(heritage == dal->translate("Unusual Name Origin")){
+        if(othereffects == dal->translate("Item (Rank 6 or Lower)")){
             if(!secondarychoice.isEmpty()){
                 eqText+= secondarychoice + ", ";
                 eqList.append(populateItemFields(secondarychoice,dal->qs_getitemtype(secondarychoice)));
@@ -345,8 +345,8 @@ void NewCharWizardPage7::initializePage()
 
     const QString schooladv = dal->qs_getschooladvdisadv(school);
     if(!schooladv.isEmpty()) {
-        advList.append(schooladv);
-        advText+=schooladv+", ";
+        advList.append(dal->translate(schooladv));
+        advText+=dal->translate(schooladv)+", ";
     }
 
     if(pickedAdv){
@@ -364,17 +364,17 @@ void NewCharWizardPage7::initializePage()
     }
 
     //if(ancestorIndex == 9){
-    if(heritage == "Imperial Heritage"|| heritage == "Blood and Mortar"){
+    if(heritage == dal->translate("Imperial Heritage")|| heritage == dal->translate("Blood and Mortar")){
         advText+= othereffects + ", ";
         advList.append(othereffects);
     }
-    else if(heritage == "Vengeance for the Fallen"){
-        advText+= "Haunting, ";
-        advList.append("Haunting");
+    else if(heritage == dal->translate("Vengeance for the Fallen")){
+        advText+= dal->translate("Haunting")+", ";
+        advList.append(dal->translate("Haunting"));
     }
-    else if(heritage == "Tainted Blood"){
-        advText+= "Fallen Ancestor, ";
-        advList.append("Fallen Ancestor");
+    else if(heritage == dal->translate("Tainted Blood")){
+        advText+= dal->translate("Fallen Ancestor")+", ";
+        advList.append(dal->translate("Fallen Ancestor"));
     }
     if(advText.length()>=2) advText.chop(2);
     ui->nc7_advlist_label->setText(advText);
@@ -387,7 +387,7 @@ void NewCharWizardPage7::initializePage()
         si.next();
         socialText += si.key() + ":" + QString::number(si.value())+ " ";
     }
-    socialText+="Wealth:"+QString::number(wealth);
+    socialText+=tr("Wealth:")+QString::number(wealth);
     ui->nc7_sociallist_label->setText(socialText);
 
 
@@ -444,16 +444,16 @@ QMap<QString, int> NewCharWizardPage7::calcSkills(){
     }
 
     if(    //core
-           heritage == "Wondrous Work" ||
-           heritage ==  "Dynasty Builder" ||
-           heritage ==  "Discovery" ||
-           heritage ==  "Ruthless Victor" ||
-           heritage ==  "Elevated for Service" ||
+           heritage ==  dal->translate("Wondrous Work") ||
+           heritage ==  dal->translate("Dynasty Builder") ||
+           heritage ==  dal->translate("Discovery") ||
+           heritage ==  dal->translate("Ruthless Victor") ||
+           heritage ==  dal->translate("Elevated for Service") ||
            //shadowlands
-           heritage ==   "Infamous Builder" ||
-           heritage ==   "Lost in the Darkness" ||
-           heritage ==   "Vengeance for the Fallen" ||
-           heritage ==   "Tewnty Goblin Thief"
+           heritage ==   dal->translate("Infamous Builder") ||
+           heritage ==   dal->translate("Lost in the Darkness") ||
+           heritage ==   dal->translate("Vengeance for the Fallen") ||
+           heritage ==   dal->translate("Tewnty Goblin Thief")
             ){
         skills.append(field("q18OtherEffects").toString());
 
@@ -633,7 +633,7 @@ QMap<QString, int> NewCharWizardPage7::calcRings(){
     ringmap[field("schoolSpecialRing").toString()]++;
 
     //check for ringswap on part 6
-    if(field("q18OtherEffects").toString() == "Ring Exchange" || field("q18OtherEffects").toString() == "Void ring exchange"){
+    if(field("q18OtherEffects").toString() == dal->translate("Ring Exchange") || field("q18OtherEffects").toString() == dal->translate("Void ring exchange")){
         ringmap[field("q18Spec1").toString()]++;
         ringmap[field("q18Spec2").toString()]--;
         qDebug()<< "adjusting based on Ring Exchange";
