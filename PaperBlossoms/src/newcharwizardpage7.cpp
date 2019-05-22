@@ -345,8 +345,8 @@ void NewCharWizardPage7::initializePage()
 
     const QString schooladv = dal->qs_getschooladvdisadv(school);
     if(!schooladv.isEmpty()) {
-        advList.append(schooladv);
-        advText+=schooladv+", ";
+        advList.append(dal->translate(schooladv));
+        advText+=dal->translate(schooladv)+", ";
     }
 
     if(pickedAdv){
