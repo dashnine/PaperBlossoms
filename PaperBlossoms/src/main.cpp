@@ -28,16 +28,22 @@
 #include <QLocale>
 #include <QFile>
 #include <QSettings>
+#include <QStandardPaths>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-
+    //a.setOrganizationName("PaperBlossoms");
+    //a.setOrganizationDomain("mycompany.com");
+    //a.setApplicationName("PaperBlossoms");
+    qDebug() << a.applicationName();
 
     QString defaultLocale;
     defaultLocale = QLocale::system().name();
     defaultLocale.truncate(defaultLocale.lastIndexOf('_'));
-    QSettings settings("Paper Blossoms", "Paper Blossoms");
+    QString settingfile = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + "/settings.ini";
+    qDebug()<< settingfile;
+    QSettings settings(settingfile, QSettings::IniFormat);
     if(!settings.contains("locale")){
         //initialize the locale to the system locale (which would be the default anyways).
         settings.setValue("locale",defaultLocale);

@@ -562,13 +562,17 @@ void MainWindow::populateUI(){
 
 void MainWindow::on_actionSave_As_triggered()
 {
-
-    QSettings settings("Paper Blossoms", "Paper Blossoms");
+    QString settingfile = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + "/settings.ini";
+    QSettings settings(settingfile, QSettings::IniFormat);
+    //QSettings settings;
     QString filepath = QDir::homePath();
-    if(!settings.contains("savefilepath")){
+    //if(!settings.contains("savefilepath")){
         QString path = settings.value("savefilepath").toString();
-        if(QFileInfo::exists(path)) filepath = path;
-    }
+        if(!path.isEmpty()){
+            if(QFileInfo::exists(path)) filepath = path;
+        }
+    //}
+
 
     qDebug()<<QString("Homepath = ") + QDir::homePath();
     QString cname = this->curCharacter.family + " " + curCharacter.name;
@@ -627,7 +631,7 @@ void MainWindow::on_actionSave_As_triggered()
         file.close();
         QFileInfo fi(fileName);
         settings.setValue("savefilepath", fi.canonicalPath());
-
+        settings.sync();
         m_dirtyDataFlag = false; //reset to false (just saved!)
     }
 
@@ -636,12 +640,16 @@ void MainWindow::on_actionSave_As_triggered()
 
 void MainWindow::on_actionOpen_triggered()
 {
-    QSettings settings("Paper Blossoms", "Paper Blossoms");
+    QString settingfile = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + "/settings.ini";
+    QSettings settings(settingfile, QSettings::IniFormat);
+    //QSettings settings;
     QString filepath = QDir::homePath();
-    if(!settings.contains("savefilepath")){
+    //if(!settings.contains("savefilepath")){
         QString path = settings.value("savefilepath").toString();
-        if(QFileInfo::exists(path)) filepath = path;
-    }
+        if(!path.isEmpty()){
+            if(QFileInfo::exists(path)) filepath = path;
+        }
+    //}
 
     const QString fileName = QFileDialog::getOpenFileName( this, tr("Load..."), filepath, tr("Paper Blossoms Character (*.pbc);;Any (*)"));
     if (fileName.isEmpty())
@@ -704,6 +712,7 @@ void MainWindow::on_actionOpen_triggered()
         file.close();
         QFileInfo fi(fileName);
         settings.setValue("savefilepath", fi.canonicalPath());
+        settings.sync();
     }
     populateUI();
     ui->character_name_label->setVisible(true);
