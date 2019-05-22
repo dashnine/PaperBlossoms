@@ -103,8 +103,8 @@ QString DataAccessLayer::untranslate(QString string_tr){
         QString out = query.value(0).toString();
         return out;
     }
-    qWarning() << "ERROR - Untranslated value for "+ string_tr+" not found.";
-    return "";
+    qWarning() << "ERROR - Untranslated value for "+ string_tr+" not found. Using original.";
+    return string_tr;
 }
 
 QString DataAccessLayer::translate(QString string){
@@ -336,7 +336,7 @@ QStringList DataAccessLayer::qsl_getdescribablenames()
 QString DataAccessLayer::qs_getschooladvdisadv(const QString school ){
     QString out;
     QSqlQuery query;
-        query.prepare("SELECT advantage_disadvantage_tr FROM schools WHERE name_tr = :school");
+        query.prepare("SELECT advantage_disadvantage FROM schools WHERE name_tr = :school");
         query.bindValue(0, school);
     query.exec();
     while (query.next()) {
