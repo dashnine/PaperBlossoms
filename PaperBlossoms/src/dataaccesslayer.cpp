@@ -103,8 +103,8 @@ QString DataAccessLayer::untranslate(QString string_tr){
         QString out = query.value(0).toString();
         return out;
     }
-    qWarning() << "ERROR - Untranslated value for "+ string_tr+" not found.";
-    return "";
+    qWarning() << "ERROR - Untranslated value for "+ string_tr+" not found. Using original.";
+    return string_tr;
 }
 
 QString DataAccessLayer::translate(QString string){
@@ -336,7 +336,7 @@ QStringList DataAccessLayer::qsl_getdescribablenames()
 QString DataAccessLayer::qs_getschooladvdisadv(const QString school ){
     QString out;
     QSqlQuery query;
-        query.prepare("SELECT advantage_disadvantage_tr FROM schools WHERE name_tr = :school");
+        query.prepare("SELECT advantage_disadvantage FROM schools WHERE name_tr = :school");
         query.bindValue(0, school);
     query.exec();
     while (query.next()) {
@@ -1589,7 +1589,7 @@ QList<QStringList> DataAccessLayer::ql_getweapondata(const QString name){
 QList<QStringList> DataAccessLayer::ql_getarmordata(const QString name){
     QList<QStringList> out;
     QSqlQuery query;
-    query.prepare("SELECT resistance_category_tr, resistance_value                                               "
+    query.prepare("SELECT resistance_category, resistance_value                                               "
                   "from armor_resistance where armor_tr = ?                                                      ");
 
     query.bindValue(0, name);
@@ -1895,6 +1895,7 @@ bool DataAccessLayer::importCSV(const QString filepath, const QString tablename,
     }
     //QFile f(filepath+"/"+tablename+".csv");
     if(f.open (QIODevice::ReadOnly)){
+        QSqlDatabase::database().transaction();
         QSqlQuery query;
         success &= query.exec("DELETE FROM "+tablename);
         if(!success) {
@@ -1926,6 +1927,12 @@ bool DataAccessLayer::importCSV(const QString filepath, const QString tablename,
                 qDebug() << "Could not insert using "+ req;
             }
             success &= isuccess;
+        }
+        if(success){
+            QSqlDatabase::database().commit();
+        }
+        else{
+            QSqlDatabase::database().rollback();
         }
         f.close ();
     }

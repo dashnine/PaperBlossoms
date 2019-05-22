@@ -186,7 +186,7 @@ def personal_effects_to_db(db_conn):
             personal_effect TEXT,
             quality TEXT
         )''',
-        tr_fields = ['quality']
+        tr_fields = ['personal_effect', 'quality']
     )
 
     # Read personal effects JSON
@@ -245,7 +245,8 @@ def armor_to_db(db_conn):
             armor TEXT,
             resistance_category TEXT,
             resistance_value INTEGER
-        )'''
+        )''',
+        tr_fields = ['armor']
     )
     # Create qualities table
     create_tables(
@@ -255,7 +256,7 @@ def armor_to_db(db_conn):
             armor TEXT,
             quality TEXT
         )''',
-        tr_fields = ['quality']
+        tr_fields = ['armor', 'quality']
     )
 
     # Read armor JSON
