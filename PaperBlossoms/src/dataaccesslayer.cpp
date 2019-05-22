@@ -1589,7 +1589,7 @@ QList<QStringList> DataAccessLayer::ql_getweapondata(const QString name){
 QList<QStringList> DataAccessLayer::ql_getarmordata(const QString name){
     QList<QStringList> out;
     QSqlQuery query;
-    query.prepare("SELECT resistance_category_tr, resistance_value                                               "
+    query.prepare("SELECT resistance_category, resistance_value                                               "
                   "from armor_resistance where armor_tr = ?                                                      ");
 
     query.bindValue(0, name);
