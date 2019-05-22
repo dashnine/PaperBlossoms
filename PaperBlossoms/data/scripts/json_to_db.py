@@ -245,7 +245,8 @@ def armor_to_db(db_conn):
             armor TEXT,
             resistance_category TEXT,
             resistance_value INTEGER
-        )'''
+        )''',
+        tr_fields = ['armor']
     )
     # Create qualities table
     create_tables(
