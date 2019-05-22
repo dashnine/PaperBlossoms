@@ -52,6 +52,7 @@
 #include <QFontDatabase>
 #include <QtXml>
 #include "edituserdescriptionsdialog.h"
+#include <QFileInfo>
 
 
 
@@ -561,12 +562,20 @@ void MainWindow::populateUI(){
 
 void MainWindow::on_actionSave_As_triggered()
 {
+
+    QSettings settings("Paper Blossoms", "Paper Blossoms");
+    QString filepath = QDir::homePath();
+    if(!settings.contains("savefilepath")){
+        QString path = settings.value("savefilepath").toString();
+        if(QFileInfo::exists(path)) filepath = path;
+    }
+
     qDebug()<<QString("Homepath = ") + QDir::homePath();
     QString cname = this->curCharacter.family + " " + curCharacter.name;
     if (cname.isEmpty())
         cname = "untitled";
     cname.remove(QRegExp("[^a-zA-Z\\d\\s]"));
-    QString fileName = QFileDialog::getSaveFileName( this, tr("Save File As..."), QDir::homePath()+"/"+cname+".pbc", tr("Paper Blossoms Character Profile (*.pbc)"));
+    QString fileName = QFileDialog::getSaveFileName( this, tr("Save File As..."), filepath+"/"+cname+".pbc", tr("Paper Blossoms Character Profile (*.pbc)"));
     if (fileName.isEmpty())
         return;
     else
@@ -616,6 +625,9 @@ void MainWindow::on_actionSave_As_triggered()
         stream<<curCharacter.totalXP;
 
         file.close();
+        QFileInfo fi(fileName);
+        settings.setValue("savefilepath", fi.canonicalPath());
+
         m_dirtyDataFlag = false; //reset to false (just saved!)
     }
 
@@ -624,7 +636,14 @@ void MainWindow::on_actionSave_As_triggered()
 
 void MainWindow::on_actionOpen_triggered()
 {
-    const QString fileName = QFileDialog::getOpenFileName( this, tr("Load..."), QDir::homePath(), tr("Paper Blossoms Character (*.pbc);;Any (*)"));
+    QSettings settings("Paper Blossoms", "Paper Blossoms");
+    QString filepath = QDir::homePath();
+    if(!settings.contains("savefilepath")){
+        QString path = settings.value("savefilepath").toString();
+        if(QFileInfo::exists(path)) filepath = path;
+    }
+
+    const QString fileName = QFileDialog::getOpenFileName( this, tr("Load..."), filepath, tr("Paper Blossoms Character (*.pbc);;Any (*)"));
     if (fileName.isEmpty())
         return;
     else
@@ -683,6 +702,8 @@ void MainWindow::on_actionOpen_triggered()
         stream>>                  curCharacter.totalXP      ;
 
         file.close();
+        QFileInfo fi(fileName);
+        settings.setValue("savefilepath", fi.canonicalPath());
     }
     populateUI();
     ui->character_name_label->setVisible(true);
@@ -692,7 +713,6 @@ void MainWindow::on_actionOpen_triggered()
 
     ui->actionGenerate_Character_Sheet->setEnabled(true);
     ui->status_groupBox->setVisible(true);
-
 
     m_dirtyDataFlag = false; //just loaded!
 }
