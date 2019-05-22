@@ -71,8 +71,11 @@ AddAdvanceDialog::AddAdvanceDialog(DataAccessLayer* dal, Character* character, Q
             for(int i = 0; i < proxyModel.rowCount(); ++i){
                 QModelIndex index = proxyModel.mapToSource(proxyModel.index(i,0));
                 QSqlRecord r = techModel.record(index.row());
-                QString name = r.value("name").toString();
-                if (name == option) ui->detailTableView->selectRow(i);
+                QString name = r.value("name_tr").toString();
+                if (name == option) {
+                    ui->detailTableView->selectRow(i);
+                    on_detailTableView_clicked(proxyModel.index(i,0));
+                }
             }
         }
     }

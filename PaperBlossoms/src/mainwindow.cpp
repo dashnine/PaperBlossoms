@@ -92,6 +92,13 @@ MainWindow::MainWindow(QString locale, QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    if(locale == ""){
+        curLocale = "en"; //this should NEVER HAPPEN BUT JUST IN CASE
+    }
+    else{
+        curLocale = locale;
+
+    }
     this->setStyleSheet("QMainWindow {background-image:url(:/images/resources/sakura_PNG37.png); background-position: center;background-repeat:no-repeat }" );
     this->setWindowIcon(QIcon(":/images/resources/sakura.png"));
     //int id = QFontDatabase::addApplicationFont(":/images/resources/Bradley Hand Bold.ttf");
@@ -600,7 +607,10 @@ void MainWindow::on_actionSave_As_triggered()
         const int version = SAVE_FILE_VERSION;
         stream<<version;
 
+        //V 2 fields
+        stream<<curLocale;
 
+        //v1 fields
         stream<<curCharacter.name;
         stream<<curCharacter.titles;
         stream<<curCharacter.clan;
@@ -677,10 +687,27 @@ void MainWindow::on_actionOpen_triggered()
         int version = -1;
         stream>>version;
         if(version<MIN_FILE_VERSION || version > MAX_FILE_VERSION){
-            QMessageBox::information(this, tr("Incompatible Save File"), "This save file was created with an incompatible version of Paper Blossoms. Aborting import.");
+            QMessageBox::information(this, tr("Incompatible Save File"), tr("This save file was created with an incompatible version of Paper Blossoms. Aborting import."));
             return;
         }
-        //CHARACTER-----------------
+
+        //LOCALE------------------- (v2)
+        QString filelocale = "";
+        if(version < 2){ //need to default the locale to en
+            //nothing to stream in on v1 save files - all of them were EN
+            filelocale = "en";
+        }
+        else{
+            stream>>filelocale;
+        }
+        if(filelocale != curLocale){
+            QMessageBox::information(this, tr("Incompatible Locale"), tr("This save file was created with a different locale (")+filelocale+"). "+
+                                                                      tr("Aborting import. To load this save file, you can change your DB locale to ")+filelocale+
+                                                                      tr(" in ")+settingfile+tr(" and relaunch the application.") );
+            return;
+        }
+
+        //CHARACTER----------------- (v1)
 
         stream>>                  curCharacter.name         ;
         stream>>                  curCharacter.titles       ;
@@ -1607,19 +1634,19 @@ void MainWindow::on_actionExport_to_XML_triggered()
         //get rings
         QDomElement rings = document.createElement("Rings");
         QDomElement air = document.createElement("Air");
-        air.setAttribute("value", curCharacter.baserings["Air"]+curCharacter.ringranks["Air"]);
+        air.setAttribute("value", curCharacter.baserings[dal->translate("Air")]+curCharacter.ringranks[dal->translate("Air")]);
         rings.appendChild(air);
         QDomElement earth = document.createElement("Earth");
-        earth.setAttribute("value", curCharacter.baserings["Earth"]+curCharacter.ringranks["Earth"]);
+        earth.setAttribute("value", curCharacter.baserings[dal->translate("Earth")]+curCharacter.ringranks[dal->translate("Earth")]);
         rings.appendChild(earth);
         QDomElement fire = document.createElement("Fire");
-        fire.setAttribute("value", curCharacter.baserings["Fire"]+curCharacter.ringranks["Fire"]);
+        fire.setAttribute("value", curCharacter.baserings[dal->translate("Fire")]+curCharacter.ringranks[dal->translate("Fire")]);
         rings.appendChild(fire);
         QDomElement water = document.createElement("Water");
-        water.setAttribute("value", curCharacter.baserings["Water"]+curCharacter.ringranks["Water"]);
+        water.setAttribute("value", curCharacter.baserings[dal->translate("Water")]+curCharacter.ringranks[dal->translate("Water")]);
         rings.appendChild(water);
         QDomElement voidring = document.createElement("Void");
-        voidring.setAttribute("value", curCharacter.baserings["Void"]+curCharacter.ringranks["Void"]);
+        voidring.setAttribute("value", curCharacter.baserings[dal->translate("Void")]+curCharacter.ringranks[dal->translate("Void")]);
         rings.appendChild(voidring);
         root.appendChild(rings);
         //other character basics
@@ -1885,7 +1912,7 @@ void MainWindow::on_curriculum_tableView_doubleClicked(const QModelIndex &index)
 {
     QSqlRecord clickedrow = curriculummodel.record(index.row());
     int rank = clickedrow.value("rank").toInt();
-    QString advance = clickedrow.value("advance").toString();
+    QString advance = clickedrow.value("advance_tr").toString();
     QString type = clickedrow.value("type").toString();
 
     //if(rank != curCharacter.rank){

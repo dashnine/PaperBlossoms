@@ -103,7 +103,7 @@ QString DataAccessLayer::untranslate(QString string_tr){
         QString out = query.value(0).toString();
         return out;
     }
-    qWarning() << "ERROR - Untranslated value for "+ string_tr+" not found. Using original.";
+    qDebug() << "Untranslated value for "+ string_tr+" not found. Using original.";
     return string_tr;
 }
 
@@ -116,7 +116,7 @@ QString DataAccessLayer::translate(QString string){
         QString out = query.value(0).toString();
         return out;
     }
-    qWarning() << "ERROR - Translated value for "+ string +" not found. Using original.";
+    qDebug() << "Translated value for "+ string +" not found. Using original.";
     return string;
 }
 
@@ -1214,7 +1214,7 @@ QString DataAccessLayer::qs_gettechtypebyname(const QString tech){
     //NOTE - gets the category of a given teck or tech subcategory
     QString out;
     QSqlQuery query;
-    query.prepare("SELECT category FROM techniques WHERE name LIKE ?                "
+    query.prepare("SELECT category FROM techniques WHERE name_tr LIKE ?                "
                   "UNION SELECT category from techniques where subcategory LIKE ?   ");
     query.bindValue(0, tech);
     query.bindValue(1, tech);
