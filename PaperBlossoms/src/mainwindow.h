@@ -147,9 +147,9 @@ private:
     Character curCharacter;
     void populateUI();
     bool m_dirtyDataFlag;
-    const int SAVE_FILE_VERSION = 1;
+    const int SAVE_FILE_VERSION = 2;
     const int MIN_FILE_VERSION = 1;
-    const int MAX_FILE_VERSION = 1;
+    const int MAX_FILE_VERSION = 2;
 
     QStandardItemModel skillmodel;
     QStandardItemModel advanceStack;
@@ -179,6 +179,7 @@ private:
 
     void setColumnsHidden();
     void closeEvent(QCloseEvent * const event);
+    QString curLocale;
 };
 
 #endif // MAINWINDOW_H

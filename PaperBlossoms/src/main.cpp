@@ -29,35 +29,51 @@
 #include <QFile>
 #include <QSettings>
 #include <QStandardPaths>
+#include <QTextCodec>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    //a.setOrganizationName("PaperBlossoms");
-    //a.setOrganizationDomain("mycompany.com");
-    //a.setApplicationName("PaperBlossoms");
-    qDebug() << a.applicationName();
+    //QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
 
-    QString defaultLocale;
-    defaultLocale = QLocale::system().name();
-    defaultLocale.truncate(defaultLocale.lastIndexOf('_'));
+    QString defaultLocaleDB, defaultLocaleUI;
+    defaultLocaleDB = defaultLocaleUI = QLocale::system().name();
+    defaultLocaleDB.truncate(defaultLocaleDB.lastIndexOf('_'));
+    defaultLocaleUI.truncate(defaultLocaleUI.lastIndexOf('_'));
     QString settingfile = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + "/settings.ini";
     qDebug()<< settingfile;
     QSettings settings(settingfile, QSettings::IniFormat);
-    if(!settings.contains("locale")){
+    if(!settings.contains("localeDB")){
         //initialize the locale to the system locale (which would be the default anyways).
-        settings.setValue("locale",defaultLocale);
+        settings.setValue("localeDB",defaultLocaleDB);
     }
     else{
         //if there is a setting, and it matches an allowed locale, use it.
-        QString settinglocale = settings.value("locale").toString();
-        if(settinglocale.toLower()=="en") defaultLocale = "en";
-        else if(settinglocale.toLower()=="es") defaultLocale = "es";
-        else if(settinglocale.toLower()=="fr") defaultLocale = "fr";
-        else if(settinglocale.toLower()=="de") defaultLocale = "de";
-        else if(settinglocale.toLower()=="pl") defaultLocale = "pl";
-        else if(settinglocale.toLower()=="test") defaultLocale = "test";
-        else defaultLocale = "en";
+        QString settinglocale = settings.value("localeDB").toString();
+        if(settinglocale.toLower()=="en") defaultLocaleDB = "en";
+        else if(settinglocale.toLower()=="es") defaultLocaleDB = "es";
+        else if(settinglocale.toLower()=="fr") defaultLocaleDB = "fr";
+        else if(settinglocale.toLower()=="de") defaultLocaleDB = "de";
+        else if(settinglocale.toLower()=="pl") defaultLocaleDB = "pl";
+        else if(settinglocale.toLower()=="test") defaultLocaleDB = "test";
+        else defaultLocaleDB = "en";
+
+    }
+
+    if(!settings.contains("localeUI")){
+        //initialize the locale to the system locale (which would be the default anyways).
+        settings.setValue("localeUI",defaultLocaleUI);
+    }
+    else{
+        //if there is a setting, and it matches an allowed locale, use it.
+        QString settinglocale = settings.value("localeUI").toString();
+        if(settinglocale.toLower()=="en") defaultLocaleUI = "en";
+        else if(settinglocale.toLower()=="es") defaultLocaleUI = "es";
+        else if(settinglocale.toLower()=="fr") defaultLocaleUI = "fr";
+        else if(settinglocale.toLower()=="de") defaultLocaleUI = "de";
+        else if(settinglocale.toLower()=="pl") defaultLocaleUI = "pl";
+        else if(settinglocale.toLower()=="test") defaultLocaleUI = "test";
+        else defaultLocaleUI = "en";
 
     }
 
@@ -65,24 +81,25 @@ int main(int argc, char *argv[])
     //this would override the settings.
     if(argc>1){
         QString arg1(argv[1]);
-        if(arg1.toLower()=="en") defaultLocale = "en";
-        else if(arg1.toLower()=="es") defaultLocale = "es";
-        else if(arg1.toLower()=="fr") defaultLocale = "fr";
-        else if(arg1.toLower()=="de") defaultLocale = "de";
-        else if(arg1.toLower()=="pl") defaultLocale = "pl";
-        else if(arg1.toLower()=="test") defaultLocale = "test";
+        if(arg1.toLower()=="en") defaultLocaleDB = defaultLocaleUI = "en";
+        else if(arg1.toLower()=="es") defaultLocaleDB = defaultLocaleUI = "es";
+        else if(arg1.toLower()=="fr") defaultLocaleDB = defaultLocaleUI = "fr";
+        else if(arg1.toLower()=="de") defaultLocaleDB = defaultLocaleUI = "de";
+        else if(arg1.toLower()=="pl") defaultLocaleDB = defaultLocaleUI = "pl";
+        else if(arg1.toLower()=="test") defaultLocaleDB = defaultLocaleUI = "test";
     }
-    qDebug()<< "locale = " + defaultLocale;
+    qDebug()<< "localeDB = " + defaultLocaleDB;
+    qDebug()<< "localeUI = " + defaultLocaleUI;
 
     QTranslator tra;
-    if(tra.load("paperblossoms_"+defaultLocale,":/translations")){
+    if(tra.load("paperblossoms_"+defaultLocaleUI,":/translations")){
         a.installTranslator(&tra);
         qDebug()<<"translation loaded";
     }
     else{
         qWarning() << "Translation not loaded.";
     }
-    MainWindow w(defaultLocale);
+    MainWindow w(defaultLocaleDB);
     w.show();
 
     return a.exec();
