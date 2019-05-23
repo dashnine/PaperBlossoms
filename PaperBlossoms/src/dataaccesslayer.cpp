@@ -1866,7 +1866,7 @@ QStringList DataAccessLayer::parseCSV(const QString &string)
         }
     }
 
-    if (!value.isEmpty())
+    //if (!value.isEmpty())
         fields.append(value.trimmed());
 
     // Quotes are left in until here; so when fields are trimmed, only whitespace outside of
@@ -1902,6 +1902,7 @@ bool DataAccessLayer::importCSV(const QString filepath, const QString tablename,
             qDebug()<< "Could not delete "+tablename;
         }
         QTextStream ts (&f);
+        ts.setCodec("UTF-8");
 
         while(!ts.atEnd()){
 
