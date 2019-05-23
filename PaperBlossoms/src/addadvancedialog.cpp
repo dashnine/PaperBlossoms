@@ -82,7 +82,7 @@ AddAdvanceDialog::AddAdvanceDialog(DataAccessLayer* dal, Character* character, Q
     else if (sel == "technique_group"){
         ui->advtype->setCurrentText(tr("Technique"));
         if(!option.isEmpty()) {
-            QString category = dal->qs_gettechtypebyname(option);
+            QString category = dal->qs_gettechtypebygroupname(option);
             ui->advchooser_combobox->setCurrentIndex(-1);
             ui->advchooser_combobox->setCurrentText(category);
 
