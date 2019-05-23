@@ -259,7 +259,7 @@ void MainWindow::populateUI(){
     ui->character_name_label->setVisible(true);
     ui->character_name_label->setText(curCharacter.family + " " + curCharacter.name + ", " + curCharacter.school);
     ui->name_lineEdit->setText(curCharacter.name);
-    ui->family_label->setText(curCharacter.family);
+    ui->family_lineEdit->setText(curCharacter.family);
     ui->clan_label->setText(curCharacter.clan);
     ui->ninjo_textEdit->setText(curCharacter.ninjo);
     ui->giri_textEdit->setText(curCharacter.giri);
@@ -1951,4 +1951,10 @@ void MainWindow::on_title_tableview_doubleClicked(const QModelIndex &index)
     else{
         qDebug() << "Not accepted; discarding changes.";
     }
+}
+
+void MainWindow::on_family_lineEdit_textEdited(const QString &arg1)
+{
+    curCharacter.family = arg1;
+    m_dirtyDataFlag = true;
 }

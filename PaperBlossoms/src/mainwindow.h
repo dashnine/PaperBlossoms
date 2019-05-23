@@ -141,6 +141,8 @@ private slots:
 
     void on_title_tableview_doubleClicked(const QModelIndex &index);
 
+    void on_family_lineEdit_textEdited(const QString &arg1);
+
 private:
     Ui::MainWindow *ui;
     DataAccessLayer* dal;

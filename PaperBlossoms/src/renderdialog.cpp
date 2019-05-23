@@ -510,7 +510,7 @@ QString RenderDialog::generateHtml() {
     else
             portVis = "";
 
-    html.replace("$CHAR_NAME", m_character->family + " " + m_character->name.toHtmlEscaped());
+    html.replace("$CHAR_NAME", m_character->family.toHtmlEscaped() + " " + m_character->name.toHtmlEscaped());
     html.replace("$CLAN_NAME", m_character->clan.toHtmlEscaped());
     html.replace("$SCHOOL_NAME", m_character->school.toHtmlEscaped());
     html.replace("$NINJO", m_character->ninjo.toHtmlEscaped());
