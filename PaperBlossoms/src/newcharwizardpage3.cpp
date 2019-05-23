@@ -36,7 +36,7 @@ NewCharWizardPage3::NewCharWizardPage3(DataAccessLayer *dal, QWidget *parent) :
 {
     ui->setupUi(this);
     this->dal = dal;
-    this->setTitle("Part 3: Honor and Glory");
+    this->setTitle(tr("Part 3: Honor and Glory"));
 
     //Add radio buttons to buttongroup to set exclusivity properly
     q7group.addButton(ui->nc3_q7_pos_radioButton);

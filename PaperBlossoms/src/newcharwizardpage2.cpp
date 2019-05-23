@@ -32,7 +32,7 @@ NewCharWizardPage2::NewCharWizardPage2(DataAccessLayer* dal, QWidget *parent) :
 {
     ui->setupUi(this);
     this->dal = dal;
-    this->setTitle("Part 2: Role and School");
+    this->setTitle(tr("Part 2: Role and School"));
     ui->nc2_HIDDEN_skillLineEdit->setVisible(false); //holds a skill string
 
     //Handle special cases

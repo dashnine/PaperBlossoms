@@ -1139,6 +1139,11 @@ können nur mit GM-Genehmigung genommen werden.</translation>
         <source>Choose a Ring:</source>
         <translation>Wähle einen Ring aus:</translation>
     </message>
+    <message>
+        <location filename="src/newcharwizardpage1.cpp" line="37"/>
+        <source>Part 1: Clan and Family</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NewCharWizardPage2</name>
@@ -1214,6 +1219,11 @@ können nur mit GM-Genehmigung genommen werden.</translation>
         <source>Choose a ring to represent this:</source>
         <translation>Wähle einen Ring, um dies darzustellen:</translation>
     </message>
+    <message>
+        <location filename="src/newcharwizardpage2.cpp" line="35"/>
+        <source>Part 2: Role and School</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NewCharWizardPage3</name>
@@ -1269,6 +1279,11 @@ können nur mit GM-Genehmigung genommen werden.</translation>
         <location filename="ui/newcharwizardpage3.ui" line="133"/>
         <source>Positive - +10 Honor</source>
         <translation>Positiv - +10 Ehre</translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage3.cpp" line="39"/>
+        <source>Part 3: Honor and Glory</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1355,6 +1370,11 @@ können nur mit GM-Genehmigung genommen werden.</translation>
         <source>Gain an Advantage:</source>
         <translation>Erhalte einen Vorteil:</translation>
     </message>
+    <message>
+        <location filename="src/newcharwizardpage4.cpp" line="35"/>
+        <source>Part 4: Strengths and Weaknesses</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NewCharWizardPage5</name>
@@ -1394,6 +1414,11 @@ können nur mit GM-Genehmigung genommen werden.</translation>
         <location filename="ui/newcharwizardpage5.ui" line="101"/>
         <source>Choose an item symbolizing this history:</source>
         <translation>Wähle einen Gegenstand, der diese Geschichte symbolisiert:</translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage5.cpp" line="32"/>
+        <source>Part 5: Personality and Behavior</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1506,6 +1531,11 @@ können nur mit GM-Genehmigung genommen werden.</translation>
         <location filename="ui/newcharwizardpage6.ui" line="333"/>
         <source>19. What is your personal name?</source>
         <translation>19. Wie lautet dein persönlicher Name?</translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage6.cpp" line="34"/>
+        <source>Part 6: Ancestry and Family</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/newcharwizardpage6.cpp" line="158"/>
@@ -1665,8 +1695,141 @@ können nur mit GM-Genehmigung genommen werden.</translation>
         <translation>Soziale Statistiken:</translation>
     </message>
     <message>
+        <location filename="src/newcharwizardpage7.cpp" line="35"/>
+        <source>Part 7: Death</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage7.cpp" line="133"/>
+        <source>4. Standing out in school:
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage7.cpp" line="134"/>
+        <source>
+
+7. Clan Relationship: 
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage7.cpp" line="135"/>
+        <source>
+
+8. Bushido: 
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage7.cpp" line="136"/>
+        <source>
+
+9. Accomplishment: 
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage7.cpp" line="137"/>
+        <source>
+
+10. Setback: 
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage7.cpp" line="138"/>
+        <source>
+
+11. At Peace: 
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage7.cpp" line="139"/>
+        <source>
+
+12. Anxiety: 
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage7.cpp" line="140"/>
+        <source>
+
+13. Important Relationship: 
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage7.cpp" line="141"/>
+        <source>
+
+14. Distinctive Traits and Behaviors: 
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage7.cpp" line="142"/>
+        <source>
+
+15. Under Stress: 
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage7.cpp" line="143"/>
+        <source>
+
+16. Existing Relationships With Other Groups: 
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage7.cpp" line="144"/>
+        <source>
+
+17. Parents: 
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage7.cpp" line="149"/>
+        <source>
+
+18. Glorious Sacrifice: 
+One of your ancestors perished honorably in battle, </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage7.cpp" line="150"/>
+        <source>and their signature </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage7.cpp" line="150"/>
+        <source> was lost. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="src/newcharwizardpage7.cpp" line="390"/>
         <source>Wealth:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage7.cpp" line="700"/>
+        <source>
+
+20. Death:
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>NewCharacterWizard</name>
+    <message>
+        <location filename="src/newcharacterwizard.cpp" line="48"/>
+        <source>Twenty Questions</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

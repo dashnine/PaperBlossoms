@@ -29,7 +29,7 @@ NewCharWizardPage5::NewCharWizardPage5(DataAccessLayer *dal, QWidget *parent) :
     QWizardPage(parent),
     ui(new Ui::NewCharWizardPage5)
 {
-    this->setTitle("Part 5: Personality and Behavior");
+    this->setTitle(tr("Part 5: Personality and Behavior"));
     ui->setupUi(this);
     this->dal = dal;
 

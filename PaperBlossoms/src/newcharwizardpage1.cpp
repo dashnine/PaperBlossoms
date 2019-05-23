@@ -34,7 +34,7 @@ NewCharWizardPage1::NewCharWizardPage1(DataAccessLayer* dal, QWidget *parent) :
 {
     ui->setupUi(this);
     this->dal = dal;
-    this->setTitle("Part 1: Clan and Family");
+    this->setTitle(tr("Part 1: Clan and Family"));
 
     //initialize models
     clanModel = new QStringListModel;
