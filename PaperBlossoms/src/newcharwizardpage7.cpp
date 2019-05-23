@@ -32,7 +32,7 @@ NewCharWizardPage7::NewCharWizardPage7(DataAccessLayer *dal, Character *characte
     ui(new Ui::NewCharWizardPage7)
 {
 
-    this->setTitle("Part 7: Death");
+    this->setTitle(tr("Part 7: Death"));
     ui->setupUi(this);
     this->dal = dal;
     this->character = character;
@@ -130,24 +130,24 @@ void NewCharWizardPage7::initializePage()
 
     /////////////////// get free text values ////////////////
     QString notes = "";
-    notes +=     "4. Standing out in school:\n" + school_standout;
-    notes += "\n\n7. Clan Relationship: \n" + clanrelationship;
-    notes += "\n\n8. Bushido: \n" + bushido;
-    notes += "\n\n9. Accomplishment: \n" + q9;
-    notes += "\n\n10. Setback: \n" + q10;
-    notes += "\n\n11. At Peace: \n" + q11;
-    notes += "\n\n12. Anxiety: \n" + q12;
-    notes += "\n\n13. Important Relationship: \n" + important_relationship;
-    notes += "\n\n14. Distinctive Traits and Behaviors: \n" + noticefirst;
-    notes += "\n\n15. Under Stress: \n" + understress;
-    notes += "\n\n16. Existing Relationships With Other Groups: \n" + existing_relationships;
-    notes += "\n\n17. Parents: \n" + parents;
+    notes +=     tr("4. Standing out in school:\n") + school_standout;
+    notes += tr("\n\n7. Clan Relationship: \n") + clanrelationship;
+    notes += tr("\n\n8. Bushido: \n") + bushido;
+    notes += tr("\n\n9. Accomplishment: \n") + q9;
+    notes += tr("\n\n10. Setback: \n") + q10;
+    notes += tr("\n\n11. At Peace: \n") + q11;
+    notes += tr("\n\n12. Anxiety: \n") + q12;
+    notes += tr("\n\n13. Important Relationship: \n") + important_relationship;
+    notes += tr("\n\n14. Distinctive Traits and Behaviors: \n") + noticefirst;
+    notes += tr("\n\n15. Under Stress: \n") + understress;
+    notes += tr("\n\n16. Existing Relationships With Other Groups: \n") + existing_relationships;
+    notes += tr("\n\n17. Parents: \n") + parents;
 
     //if(ancestorIndex == 2){ //2 is a lost item, and not in starting gear
     if(heritage == dal->translate("Glorious Sacrifice")){ //heritage Core 2 is a lost item, and not in starting gear.  Tracking it for use later
         if(!secondarychoice.isEmpty()){
-            notes += "\n\n18. Glorious Sacrifice: \nOne of your ancestors perished honorably in battle, "
-                     "and their signature " + special1 + " " + special2 + " " + secondarychoice + " was lost. ";
+            notes += tr("\n\n18. Glorious Sacrifice: \nOne of your ancestors perished honorably in battle, ")+
+                     tr("and their signature ") + special1 + " " + special2 + " " + secondarychoice + tr(" was lost. ");
         }
     }
 
@@ -697,7 +697,7 @@ bool NewCharWizardPage7::validatePage(){
         msg.exec();
         return false;
     }
-    character->notes.append("\n\nDeath:\n"+ui->nc7_q20_lineEdit->text()); //append the death right before closing.
+    character->notes.append(tr("\n\n20. Death:\n")+ui->nc7_q20_lineEdit->text()); //append the death right before closing.
     return true;
 }
 

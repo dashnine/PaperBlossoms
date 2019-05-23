@@ -45,7 +45,7 @@ NewCharacterWizard::NewCharacterWizard(DataAccessLayer *dal, QWizard *parent) : 
     this->addPage(new NewCharWizardPage6(dal));
     this->addPage(new NewCharWizardPage7(dal, &character)); //pass in a character to set values
 
-    this->setWindowTitle("Twenty Questions");
+    this->setWindowTitle(tr("Twenty Questions"));
 }
 
 Character NewCharacterWizard::getCharacter(){

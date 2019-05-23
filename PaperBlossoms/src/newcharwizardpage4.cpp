@@ -32,7 +32,7 @@ NewCharWizardPage4::NewCharWizardPage4(DataAccessLayer *dal, QWidget *parent) :
 {
     ui->setupUi(this);
     this->dal = dal;
-    this->setTitle("Part 4: Strengths and Weaknesses");
+    this->setTitle(tr("Part 4: Strengths and Weaknesses"));
 
     ui->nc4_q9_desc_label->setVisible(false);
     ui->nc4_q10_desc_label->setVisible(false);

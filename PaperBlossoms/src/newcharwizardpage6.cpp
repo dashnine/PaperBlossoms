@@ -31,7 +31,7 @@ NewCharWizardPage6::NewCharWizardPage6(DataAccessLayer *dal, QWidget *parent) :
     ui(new Ui::NewCharWizardPage6)
 {
 
-    this->setTitle("Part 6: Ancestry and Family");
+    this->setTitle(tr("Part 6: Ancestry and Family"));
     ui->setupUi(this);
     this->dal = dal;
     curAncestorBox = NULL;
