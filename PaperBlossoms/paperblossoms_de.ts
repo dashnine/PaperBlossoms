@@ -440,6 +440,29 @@ können nur mit GM-Genehmigung genommen werden.</translation>
     </message>
 </context>
 <context>
+    <name>DBLocalisationEditorDialog</name>
+    <message>
+        <location filename="ui/dblocalisationeditordialog.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/dblocalisationeditordialog.ui" line="22"/>
+        <source>Apply Changes</source>
+        <translation type="unfinished">Änderungen übernehmen</translation>
+    </message>
+    <message>
+        <location filename="src/dblocalisationeditordialog.cpp" line="23"/>
+        <source>string</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/dblocalisationeditordialog.cpp" line="24"/>
+        <source>string_tr</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DynamicChoiceWidget</name>
     <message>
         <location filename="ui/dynamicchoicewidget.ui" line="26"/>
@@ -824,283 +847,296 @@ können nur mit GM-Genehmigung genommen werden.</translation>
     </message>
     <message>
         <location filename="ui/mainwindow.ui" line="1273"/>
-        <source>Advanced</source>
+        <source>Developer Tools</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1288"/>
+        <location filename="ui/mainwindow.ui" line="1388"/>
+        <source>Translate For Locale...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/mainwindow.ui" line="1289"/>
         <source>Help</source>
         <translation>Hilfe</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1307"/>
+        <location filename="ui/mainwindow.ui" line="1308"/>
         <source>New...</source>
         <translation>Neu...</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1312"/>
+        <location filename="ui/mainwindow.ui" line="1313"/>
         <source>Save As...</source>
         <translation>Speichern als...</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1317"/>
+        <location filename="ui/mainwindow.ui" line="1318"/>
         <source>Open...</source>
         <translation>Öffnen...</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1322"/>
+        <location filename="ui/mainwindow.ui" line="1323"/>
         <source>Generate Character Sheet...</source>
         <translation>Charakterbogen generieren...</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1327"/>
+        <location filename="ui/mainwindow.ui" line="1328"/>
         <source>About</source>
         <translation>Über</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1332"/>
+        <location filename="ui/mainwindow.ui" line="1333"/>
         <source>Export User Data Tables...</source>
         <translation>Benutzerdatentabellen exportieren.....</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1337"/>
+        <location filename="ui/mainwindow.ui" line="1338"/>
         <source>Import User Data Tables...</source>
         <translation>Benutzerdatentabellen importieren.....</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1342"/>
+        <location filename="ui/mainwindow.ui" line="1343"/>
         <source>Open Application Data Directory</source>
         <translation>Anwendungsdatenverzeichnis öffnen</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1347"/>
+        <location filename="ui/mainwindow.ui" line="1348"/>
         <source>Exit</source>
         <translation>Beenden</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1352"/>
+        <location filename="ui/mainwindow.ui" line="1353"/>
         <source>Export to XML...</source>
         <translation>Zu XML exportieren...</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1357"/>
+        <location filename="ui/mainwindow.ui" line="1358"/>
         <source>Description Editor</source>
         <translation>Beschreibungseditor</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1362"/>
+        <location filename="ui/mainwindow.ui" line="1363"/>
         <source>Export All User Data Tables...</source>
         <translation>Alle Benutzerdatentabellen exportieren.....</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1367"/>
+        <location filename="ui/mainwindow.ui" line="1368"/>
         <source>Import All User Data Tables...</source>
         <translation>Alle Benutzerdatentabellen importieren.....</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1372"/>
+        <location filename="ui/mainwindow.ui" line="1373"/>
         <source>Export User Descriptions Table...</source>
         <translation>Benutzerbeschreibungstabelle exportieren.....</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1377"/>
+        <location filename="ui/mainwindow.ui" line="1378"/>
         <source>Import User Descriptions Table...</source>
         <translation>Benutzerbeschreibungstabelle importieren.....</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1382"/>
+        <location filename="ui/mainwindow.ui" line="1383"/>
         <source>Export Translation CSV...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="234"/>
-        <location filename="src/mainwindow.cpp" line="1501"/>
-        <location filename="src/mainwindow.cpp" line="1512"/>
+        <location filename="src/mainwindow.cpp" line="235"/>
+        <location filename="src/mainwindow.cpp" line="1502"/>
+        <location filename="src/mainwindow.cpp" line="1513"/>
         <source>Closing Character Profile</source>
         <translation>Charakterprofil schließen</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="589"/>
-        <location filename="src/mainwindow.cpp" line="1561"/>
+        <location filename="src/mainwindow.cpp" line="590"/>
+        <location filename="src/mainwindow.cpp" line="1562"/>
         <source>Save File As...</source>
         <translation>Speichern als...</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="589"/>
+        <location filename="src/mainwindow.cpp" line="590"/>
         <source>Paper Blossoms Character Profile (*.pbc)</source>
         <translatorcomment>No change</translatorcomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="600"/>
-        <location filename="src/mainwindow.cpp" line="677"/>
+        <location filename="src/mainwindow.cpp" line="601"/>
+        <location filename="src/mainwindow.cpp" line="678"/>
         <source>Unable to open file</source>
         <translation>Kann Datei nicht öffnen</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="664"/>
+        <location filename="src/mainwindow.cpp" line="665"/>
         <source>Load...</source>
         <translation>Lade...</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="664"/>
+        <location filename="src/mainwindow.cpp" line="665"/>
         <source>Paper Blossoms Character (*.pbc);;Any (*)</source>
         <translatorcomment>No Change</translatorcomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="670"/>
+        <location filename="src/mainwindow.cpp" line="671"/>
         <source>Opening Profile</source>
         <translation>Profil öffnen</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="690"/>
+        <location filename="src/mainwindow.cpp" line="691"/>
         <source>Incompatible Save File</source>
         <translation>Inkompatible Speicherdatei</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="690"/>
+        <location filename="src/mainwindow.cpp" line="691"/>
         <source>This save file was created with an incompatible version of Paper Blossoms. Aborting import.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="704"/>
+        <location filename="src/mainwindow.cpp" line="705"/>
         <source>Incompatible Locale</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="704"/>
+        <location filename="src/mainwindow.cpp" line="705"/>
         <source>This save file was created with a different locale (</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="705"/>
+        <location filename="src/mainwindow.cpp" line="706"/>
         <source>Aborting import. To load this save file, you can change your DB locale to </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="706"/>
+        <location filename="src/mainwindow.cpp" line="707"/>
         <source> in </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="706"/>
+        <location filename="src/mainwindow.cpp" line="707"/>
         <source> and relaunch the application.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="976"/>
+        <location filename="src/mainwindow.cpp" line="977"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="976"/>
+        <location filename="src/mainwindow.cpp" line="977"/>
         <source>Unable to load some Title data. This character depends on data that isn&apos;t present, and may be inconsistent. Did you need to import custom data?</source>
         <translation>Es ist nicht möglich, einige Titeldaten zu laden. Dieser Charakter basiert auf Daten, die nicht vorhanden sind, und kann inkonsistent sein. Mussten Sie benutzerdefinierte Daten importieren?</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1159"/>
+        <location filename="src/mainwindow.cpp" line="1160"/>
         <source>Open File</source>
         <translation>Datei öffnen</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1161"/>
+        <location filename="src/mainwindow.cpp" line="1162"/>
         <source>All files (*.*);;JPEG (*.jpg *.jpeg);;PNG (*.png)</source>
         <translatorcomment>No change</translatorcomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1170"/>
+        <location filename="src/mainwindow.cpp" line="1171"/>
         <source>Image Viewer</source>
         <translation>Bildbetrachter</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1171"/>
+        <location filename="src/mainwindow.cpp" line="1172"/>
         <source>Cannot load %1.</source>
         <translatorcomment>May be right syntax?</translatorcomment>
         <translation>Kann %1 nicht laden.</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1447"/>
+        <location filename="src/mainwindow.cpp" line="1448"/>
         <source>Choose an export directory...</source>
         <translation>Wählen Sie ein Exportverzeichnis.....</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1457"/>
-        <location filename="src/mainwindow.cpp" line="1855"/>
+        <location filename="src/mainwindow.cpp" line="1458"/>
+        <location filename="src/mainwindow.cpp" line="1856"/>
         <source>Error Exporting Data</source>
         <translation>Fehler beim Exportieren von Daten</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1461"/>
-        <location filename="src/mainwindow.cpp" line="1859"/>
+        <location filename="src/mainwindow.cpp" line="1462"/>
+        <location filename="src/mainwindow.cpp" line="1860"/>
         <source>Export Complete</source>
         <translation>Export abgeschlossen</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1470"/>
+        <location filename="src/mainwindow.cpp" line="1471"/>
         <source>Warning</source>
         <translation>Warnung</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1471"/>
+        <location filename="src/mainwindow.cpp" line="1472"/>
         <source>Choose a folder containing exported data...</source>
         <translation>Wählen Sie einen Ordner mit exportierten Daten.....</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1482"/>
-        <location filename="src/mainwindow.cpp" line="1876"/>
+        <location filename="src/mainwindow.cpp" line="1483"/>
+        <location filename="src/mainwindow.cpp" line="1877"/>
         <source>Error Importing Data</source>
         <translation>Fehler beim Datenimport</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1486"/>
-        <location filename="src/mainwindow.cpp" line="1880"/>
+        <location filename="src/mainwindow.cpp" line="1487"/>
+        <location filename="src/mainwindow.cpp" line="1881"/>
         <source>Import Complete</source>
         <translation>Import abgeschlossen</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1561"/>
+        <location filename="src/mainwindow.cpp" line="1562"/>
         <source>Paper Blossoms Character XML (*.xml)</source>
         <translatorcomment>No change</translatorcomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1572"/>
+        <location filename="src/mainwindow.cpp" line="1573"/>
         <source>Unable to open XML file for writing.</source>
         <translation>Es ist nicht möglich, die XML-Datei zum Schreiben zu öffnen.</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1845"/>
-        <location filename="src/mainwindow.cpp" line="1892"/>
+        <location filename="src/mainwindow.cpp" line="1846"/>
         <source>Export User Descriptions...</source>
         <translation>Benutzerbeschreibungen exportieren.....</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1845"/>
-        <location filename="src/mainwindow.cpp" line="1892"/>
+        <location filename="src/mainwindow.cpp" line="1846"/>
+        <location filename="src/mainwindow.cpp" line="1893"/>
+        <location filename="src/mainwindow.cpp" line="1972"/>
         <source>CSV (*.csv)</source>
         <translatorcomment>No change</translatorcomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1868"/>
+        <location filename="src/mainwindow.cpp" line="1869"/>
         <source>Import User Descriptions...</source>
         <translation>Benutzerbeschreibungen importieren.....</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1868"/>
+        <location filename="src/mainwindow.cpp" line="1869"/>
         <source>CSV (*.csv);;Any (*)</source>
         <translatorcomment>No change</translatorcomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1901"/>
+        <location filename="src/mainwindow.cpp" line="1893"/>
+        <location filename="src/mainwindow.cpp" line="1972"/>
+        <source>Export Translation File...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/mainwindow.cpp" line="1902"/>
+        <location filename="src/mainwindow.cpp" line="1981"/>
         <source>Error exporting translation data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1905"/>
+        <location filename="src/mainwindow.cpp" line="1906"/>
+        <location filename="src/mainwindow.cpp" line="1985"/>
         <source>Translation Template Export Complete</source>
         <translation type="unfinished"></translation>
     </message>
