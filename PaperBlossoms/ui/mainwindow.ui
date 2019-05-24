@@ -1270,8 +1270,9 @@
     </widget>
     <widget class="QMenu" name="menuAdvanced">
      <property name="title">
-      <string>Advanced</string>
+      <string>Developer Tools</string>
      </property>
+     <addaction name="actionTranslate_For_Locale"/>
      <addaction name="actionExport_Translation_CSV"/>
     </widget>
     <addaction name="actionGenerate_Character_Sheet"/>
@@ -1380,6 +1381,11 @@
   <action name="actionExport_Translation_CSV">
    <property name="text">
     <string>Export Translation CSV...</string>
+   </property>
+  </action>
+  <action name="actionTranslate_For_Locale">
+   <property name="text">
+    <string>Translate For Locale...</string>
    </property>
   </action>
  </widget>

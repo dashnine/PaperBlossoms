@@ -143,6 +143,8 @@ private slots:
 
     void on_family_lineEdit_textEdited(const QString &arg1);
 
+    void on_actionTranslate_For_Locale_triggered();
+
 private:
     Ui::MainWindow *ui;
     DataAccessLayer* dal;
