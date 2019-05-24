@@ -1175,6 +1175,22 @@ void DataAccessLayer::qsm_getschoolcurriculum(QSqlQueryModel * const model, cons
     model->setQuery(query);
 
 }
+
+void DataAccessLayer::qsm_gettranslationmodel(QSqlQueryModel * const model)
+{
+
+    QSqlQuery query;
+    query.prepare(  translationquery
+                    );
+        query.exec();
+    while (query.next()) {
+        const QString cname = query.value(0).toString();
+//        qDebug() << cname;
+    }
+    model->setQuery(query);
+
+}
+
 /*
 void DataAccessLayer::qsm_getschoolcurriculumbyrank(QSqlQueryModel * const model, const QString school, const int rank)
 {
@@ -1621,6 +1637,22 @@ QList<QStringList> DataAccessLayer::ql_getarmordata(const QString name){
     return out;
 }
 
+QList<QStringList> DataAccessLayer::ql_gettrtemplate(){
+    QList<QStringList> out;
+    QSqlQuery query;
+    query.prepare(translationquery);
+
+    query.exec();
+    while (query.next()) {
+        QStringList row;
+        row << query.value(0).toString();
+        row << query.value(1).toString();
+        out << row;
+
+    }
+    return out;
+}
+
 QStringList DataAccessLayer::qsl_getschoolability(const QString school){
     QStringList out;
     QSqlQuery query;
@@ -1745,77 +1777,7 @@ bool DataAccessLayer::queryToCsv(const QString querystr, QString filename) //DAN
 }
 
 bool DataAccessLayer::exportTranslatableCSV(QString filename){
-    QString q =
-            "select strings.term, i18n.string_tr from (                                                                            "
-            "select distinct * from (                                                                                   "
-            "select distinct name as term from advantages_disadvantages                                                "
-            "union select distinct ring as term from advantages_disadvantages                                   "
-            "union select distinct types as term from advantages_disadvantages                                   "
-            "union select distinct name as term from armor                                                                      "
-            "union select distinct price_unit as term from armor                                                                      "
-            "union select distinct quality as term from armor_qualities                                   "
-            "union select distinct name as term from clans                                                                      "
-            "union select distinct type as term from clans                                                                      "
-            "union select distinct ring as term from clans                                                                      "
-            "union select distinct skill as term from clans                                                                      "
-            "union select distinct school as term from curriculum                                                                      "
-            "union select distinct advance as term from curriculum                                                                      "
-            "union select distinct clan as term from families                                                                      "
-            "union select distinct name as term from families                                                                      "
-            "union select distinct family as term from family_rings                                                                      "
-            "union select distinct family as term from family_skills                                                                      "
-            "union select distinct skill as term from family_skills                                                                      "
-            "union select distinct ancestor as term from heritage_effects                                                                      "
-            "union select distinct outcome as term from heritage_effects                                                                      "
-            "union select distinct name as term from item_patterns                                                                      "
-            "union select distinct quality as term from personal_effect_qualities                                                                      "
-            "union select distinct price_unit as term from personal_effects                                                                      "
-            "union select distinct quality as term from qualities                                                                      "
-            "union select distinct name as term from rings                                                                      "
-            "union select distinct outstanding_quality as term from rings                                                                      "
-            "union select distinct ancestor as term from samurai_heritage                                                                      "
-            "union select distinct effect_type as term from samurai_heritage                                                                      "
-            "union select distinct effect_instructions as term from samurai_heritage                                                                      "
-            "union select distinct school as term from school_rings                                                                      "
-            "union select distinct ring as term from school_rings                                                                      "
-            "union select distinct school as term from school_starting_outfit                                                                      "
-            "union select distinct equipment as term from school_starting_outfit                                                                      "
-            "union select distinct school as term from school_starting_skills                                                                      "
-            "union select distinct school from school_starting_techniques                                                                      "
-            "union select distinct technique from school_starting_techniques                                                                      "
-            "union select distinct school from school_techniques_available                                                                      "
-            "union select distinct technique from school_techniques_available                                                                      "
-            "union select distinct name from schools                                                                      "
-            "union select distinct role from schools                                                                      "
-            "union select distinct clan from schools                                                                      "
-            "union select distinct school_ability_name from schools                                                                      "
-            "union select distinct mastery_ability_name from schools                                                                      "
-            "union select distinct skill_group from skills                                                                      "
-            "union select distinct skill from skills                                                                      "
-            "union select distinct category from techniques                                                                      "
-            "union select distinct subcategory from techniques                                                                      "
-            "union select distinct name from techniques                                                                      "
-            "union select distinct restriction from techniques                                                                      "
-            "union select distinct title from title_advancements                                                                      "
-            "union select distinct name from title_advancements                                                                      "
-            "union select distinct type from title_advancements                                                                      "
-            "union select distinct name from titles                                                                      "
-            "union select distinct title_ability_name from titles                                                                      "
-            "union select distinct weapon from weapon_qualities                                                                      "
-            "union select distinct quality from weapon_qualities                                                                      "
-            "union select distinct category from weapons                                                                      "
-            "union select distinct name from weapons                                                                      "
-            "union select distinct skill from weapons                                                                      "
-            "union select distinct grip from weapons                                                                      "
-            "union select distinct price_unit from weapons                                                                      "
-            "union select distinct name from personal_effects                                                                       "
-            ") where term is not NULL and term is not ''                                                                      "
-            ") strings                                                                                                          "
-            "left join i18n on strings.term = i18n.string                                                                        "
-            ;
-
-
-    return queryToCsv(q, filename);
+    return queryToCsv(translationquery, filename);
 }
 
 //pulled from https://stackoverflow.com/questions/27318631/parsing-through-a-csv-file-in-qt

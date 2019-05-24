@@ -26,6 +26,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     src/aboutdialog.cpp \
+    src/dblocalisationeditordialog.cpp \
     src/mainwindow.cpp \
     src/addadvancedialog.cpp \
     src/adddisadvdialog.cpp \
@@ -51,6 +52,7 @@ SOURCES += \
 
 HEADERS += \
     src/aboutdialog.h \
+    src/dblocalisationeditordialog.h \
     src/mainwindow.h \
     src/addadvancedialog.h \
     src/adddisadvdialog.h \
@@ -80,6 +82,7 @@ FORMS += \
     ui/adddisadvdialog.ui \
     ui/additemdialog.ui \
     ui/addtitledialog.ui \
+    ui/dblocalisationeditordialog.ui \
     ui/dynamicchoicewidget.ui \
     ui/mainwindow.ui \
     ui/newcharwizardpage1.ui \
