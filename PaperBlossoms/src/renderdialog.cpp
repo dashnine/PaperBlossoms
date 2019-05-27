@@ -223,7 +223,7 @@ QString RenderDialog::generateHtml() {
                 "    </div>                                                                                                                     "
                 "</div>                                                                                                                         "
                 "<div class=\"divTable redTable\" style=\"width: 100%\">                                                                        "
-                "   <div class=\"divTableRow\"><div class=\"divTableCell\" style=\"height:100px;\">"+adesc.toHtmlEscaped()+"</div>             "
+                "   <div class=\"divTableRow\"><div class=\"divTableCell\" style=\"height:100px;\">"+newlineToBR(adesc.toHtmlEscaped())+"</div>             "
                 "</div>                                                                                                                         "
                 "</div>                                                                                                                         "
                 "</div>                                                                                                                         "
@@ -296,7 +296,7 @@ QString RenderDialog::generateHtml() {
         "    </div>                                                                                           "
         "</div>                                                                                               "
         "<div class=\"divTable redTable\" style=\"width: 100%\">                                              "
-        "   <div class=\"divTableRow\"><div class=\"divTableCell\" style=\"height:215px;\">"+tdesc.toHtmlEscaped()+"</div>  "
+        "   <div class=\"divTableRow\"><div class=\"divTableCell\" style=\"height:215px;\">"+newlineToBR(tdesc.toHtmlEscaped())+"</div>  "
         "</div>                                                                                               "
         "</div>                                                                                               "
         "</div>                                                                                               "
@@ -335,7 +335,7 @@ QString RenderDialog::generateHtml() {
                 "    </div>                                                                                                                     "
                 "</div>                                                                                                                         "
                 "<div class=\"divTable redTable\" style=\"width: 100%\">                                                                        "
-                "   <div class=\"divTableRow\"><div class=\"divTableCell\" style=\"height:150px;\">"+addesc.toHtmlEscaped()+"</div>             "
+                "   <div class=\"divTableRow\"><div class=\"divTableCell\" style=\"height:150px;\">"+newlineToBR(addesc.toHtmlEscaped())+"</div>             "
                 "</div>                                                                                                                         "
                 "</div>                                                                                                                         "
                 "</div>                                                                                                                         "
@@ -374,7 +374,7 @@ QString RenderDialog::generateHtml() {
                 "    </div>                                                                                                                     "
                 "</div>                                                                                                                         "
                 "<div class=\"divTable redTable\" style=\"width: 100%\">                                                                        "
-                "   <div class=\"divTableRow\"><div class=\"divTableCell\" style=\"height:150px;\">"+addesc.toHtmlEscaped()+"</div>             "
+                "   <div class=\"divTableRow\"><div class=\"divTableCell\" style=\"height:150px;\">"+newlineToBR(addesc.toHtmlEscaped())+"</div>             "
                 "</div>                                                                                                                         "
                 "</div>                                                                                                                         "
                 "</div>                                                                                                                         "
@@ -413,7 +413,7 @@ QString RenderDialog::generateHtml() {
                 "    </div>                                                                                                                     "
                 "</div>                                                                                                                         "
                 "<div class=\"divTable redTable\" style=\"width: 100%\">                                                                        "
-                "   <div class=\"divTableRow\"><div class=\"divTableCell\" style=\"height:150px;\">"+addesc.toHtmlEscaped()+"</div>             "
+                "   <div class=\"divTableRow\"><div class=\"divTableCell\" style=\"height:150px;\">"+newlineToBR(addesc.toHtmlEscaped())+"</div>             "
                 "</div>                                                                                                                         "
                 "</div>                                                                                                                         "
                 "</div>                                                                                                                         "
@@ -452,7 +452,7 @@ QString RenderDialog::generateHtml() {
                 "    </div>                                                                                                                     "
                 "</div>                                                                                                                         "
                 "<div class=\"divTable redTable\" style=\"width: 100%\">                                                                        "
-                "   <div class=\"divTableRow\"><div class=\"divTableCell\" style=\"height:150px;\">"+addesc.toHtmlEscaped()+"</div>             "
+                "   <div class=\"divTableRow\"><div class=\"divTableCell\" style=\"height:150px;\">"+newlineToBR(addesc.toHtmlEscaped())+"</div>             "
                 "</div>                                                                                                                         "
                 "</div>                                                                                                                         "
                 "</div>                                                                                                                         "
@@ -513,9 +513,9 @@ QString RenderDialog::generateHtml() {
     html.replace("$CHAR_NAME", m_character->family.toHtmlEscaped() + " " + m_character->name.toHtmlEscaped());
     html.replace("$CLAN_NAME", m_character->clan.toHtmlEscaped());
     html.replace("$SCHOOL_NAME", m_character->school.toHtmlEscaped());
-    html.replace("$NINJO", m_character->ninjo.toHtmlEscaped());
-    html.replace("$GIRI", m_character->giri.toHtmlEscaped());
-    html.replace("$NOTES", m_character->notes.toHtmlEscaped());
+    html.replace("$NINJO", newlineToBR(m_character->ninjo.toHtmlEscaped()));
+    html.replace("$GIRI", newlineToBR(m_character->giri.toHtmlEscaped()));
+    html.replace("$NOTES", newlineToBR(m_character->notes.toHtmlEscaped()));
     html.replace("$HERITAGE", m_character->heritage.toHtmlEscaped());
     html.replace("$PORTIMG", m_img); //base64! calculated in constructor
     html.replace("$RINGIMG", m_ringimg); //base64! calculated in constructor
@@ -582,6 +582,13 @@ QString RenderDialog::generateHtml() {
 
     return html;
 
+}
+
+//newlines get lost when injected into HTML.  Convert desc newlines to <br> tags to enable pretty printing.
+QString RenderDialog::newlineToBR(QString text){
+    text.replace("\r\n","<br>"); //windows, just in case
+    text.replace("\n","<br>"); //other
+    return text;
 }
 
 void RenderDialog::on_printButton_clicked()
