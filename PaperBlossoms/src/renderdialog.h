@@ -65,6 +65,7 @@ private:
 
     QPrinter printer;
     QTemporaryFile* tempFile;
+    QString newlineToBR(QString text);
 };
 
 #endif // RENDERDIALOG_H
