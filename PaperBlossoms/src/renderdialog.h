@@ -66,6 +66,8 @@ private:
     QPrinter printer;
     QTemporaryFile* tempFile;
     QString newlineToBR(QString text);
+    const int MAXSIZE = 500; //max pixels for portrait
+
 };
 
 #endif // RENDERDIALOG_H
