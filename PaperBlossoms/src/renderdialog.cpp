@@ -61,8 +61,21 @@ RenderDialog::RenderDialog(PBOutputData* charData, QWidget *parent) :
     QByteArray byteArray;
     QBuffer buffer(&byteArray); // use buffer to store pixmap into byteArray
     buffer.open(QIODevice::WriteOnly);
-    if(!m_character->portrait.isNull()){
-        m_character->portrait.save(&buffer, "PNG");
+    QImage scaledportrait;
+    if(!m_character->portrait.isNull()){ //scale down absurdly large images to more rational sizes for printing.
+        int w = m_character->portrait.size().width();
+        int h = m_character->portrait.size().height();
+        if(w>=h && w > MAXSIZE){
+            scaledportrait = m_character->portrait.scaledToWidth(500,Qt::SmoothTransformation);
+        }
+        else if(h>w && h > MAXSIZE){
+            scaledportrait = m_character->portrait.scaledToHeight(500,Qt::SmoothTransformation);
+        }
+        else{
+            QImage scaledportrait = m_character->portrait;
+
+        }
+        scaledportrait.save(&buffer, "PNG",0);
         m_img += byteArray.toBase64();
     }
 
