@@ -1411,7 +1411,7 @@ can only be taken with GM approval.</source>
     <message>
         <location filename="ui/newcharwizardpage5.ui" line="101"/>
         <source>Choose an item symbolizing this history:</source>
-        <translation>Elige un objetio que represente esta historia:</translation>
+        <translation>Elije un objeto que represente esta historia:</translation>
     </message>
     <message>
         <location filename="src/newcharwizardpage5.cpp" line="32"/>
