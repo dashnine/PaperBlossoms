@@ -34,7 +34,7 @@ L5R and all associated data is owned by FFG.  You should go buy the books [here]
 ## Additional Notes:
 This application is created using Qt 5, which is licensed under the [LGPLv3](https://doc.qt.io/qt-5/lgpl.html).  A copy of this license is also available in the application directory.  While this application is distributed with binaries for Qt, any compatible Qt binaries may be used in place of those distributed, limited only by version incompatibilities. Sakura imagery on the splashscreen is from http://pngimg.com/download/49821, and is Licensed under Creative Commons: https://creativecommons.org/licenses/by-nc/4.0/ . The icon is a modified version of "sakura" by Pham Duy Phuong Hung from the Noun Project ( https://thenounproject.com/term/sakura/1565575/ ), which is also CC licenced.
 
-Ring images are property of FFG, and were originally created for the original Legend of the Five Rings card game by AEG (1995). The assets used here were taken from www.imperialadvisor.com and modified to work with the application; these can be removed immediately upon request by any owning party. 
+Ring images are property of FFG, and were originally created for the original Legend of the Five Rings card game by AEG (1995). The assets used here were taken from www.imperialadvisor.com, (originally created by u/mproud on Reddit) and modified to work with the application; these can be removed immediately upon request by any owning party. 
 
 
 ### Thanks and Contributor List
