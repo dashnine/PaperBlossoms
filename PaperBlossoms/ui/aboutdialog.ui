@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>467</width>
-    <height>551</height>
+    <width>603</width>
+    <height>478</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -51,7 +51,7 @@
       <string>Paper Blossoms is an Open Source character generator for Legend of the Five Rings, a roleplaying game by Fantasy Flight Games.  The application and author(s) are not affiliated with FFG or any other official L5R party.  Legend of the Five Rings and all associated content is property of Fantasy Flight Games.  PaperBlossoms is licensed under the GPLv3, and is Copyright (c) 2019 Kyle Hankins (dashnine).  Data modeling and data entry provided by @meow9th. 
 
 To contact the project, send an email to paperblossoms.L5R@gmail.com!
-Ring images are property of FFG; the assets used here were taken from www.imperialadvisor.com and modified to work with the application; these can be removed immediately upon request by any owning party. 
+Ring images are property of FFG; the assets used here were taken from www.imperialadvisor.com (original by /u/mproud on reddit) and modified to work with the application; these can be removed immediately upon request by any owning party. 
 This application is created using Qt 5, which is licenced under the LGPLv3: https://doc.qt.io/qt-5/lgpl.html.  A copy of this license is also available in the application directory.  While this application is distributed with binaries for Qt, any compatible Qt binaries may be used in place of those distributed, limited only by version incompatibilities. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3.  </string>
      </property>
      <property name="alignment">
