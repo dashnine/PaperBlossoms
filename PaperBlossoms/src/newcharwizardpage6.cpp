@@ -416,7 +416,7 @@ void NewCharWizardPage6::buildq18UI(){ //this is all still in initializePage
             ui->nc6_q18_spec1_label->setText(tr("Raise:"));
             ui->nc6_q18_spec2_label->setText(tr("Lower:"));
         }
-        if(ui->nc6_q18_otherComboBox->currentText() == dal->translate("Fire or Air Ring exchange")){
+        else if(ui->nc6_q18_otherComboBox->currentText() == dal->translate("Air/Fire ring exchange")){
             ui->nc6_q18_secondaryChoice_comboBox->setVisible(false);
             ui->nc6_q18_secondaryChoice_label->setVisible(false);
             ui->nc6_q18_special1_comboBox->setVisible(true);
@@ -551,7 +551,7 @@ void NewCharWizardPage6::on_nc6_q18_otherComboBox_currentIndexChanged(const QStr
         }
     }
     //SL - SHadowlands heritage table
-    if(ui->heritagetable_comboBox->currentText()=="SL") {
+    else if(ui->heritagetable_comboBox->currentText()=="SL") {
         switch(heritageRow){
         case 1:
             if (effectresult == dal->translate("Blessed Lineage")){
@@ -594,8 +594,6 @@ void NewCharWizardPage6::on_nc6_q18_otherComboBox_currentIndexChanged(const QStr
         case 1:
             break; //skill
         case 2:
-        case 3:
-            //heritage 1-2//////////////////////////
             if (effectresult == dal->translate("weapon")){
                 ui->nc6_q18_secondaryChoice_comboBox->addItems(dal->qsl_getitemsbytype("Weapon"));
             }
@@ -612,7 +610,7 @@ void NewCharWizardPage6::on_nc6_q18_otherComboBox_currentIndexChanged(const QStr
                 ui->nc6_q18_secondaryChoice_comboBox->addItem(dal->translate("Animal"));
 
             }
-            else if (effectresult == dal->translate("Estate near Lion lands")){
+            else if (effectresult == dal->translate("estate near Lion lands")){
                 ui->nc6_q18_secondaryChoice_comboBox->addItem(dal->translate("Estate"));
 
             }
@@ -620,18 +618,15 @@ void NewCharWizardPage6::on_nc6_q18_otherComboBox_currentIndexChanged(const QStr
             ui->nc6_q18_special2_comboBox->addItems(dal->qsl_getqualities());
 
             break;
-        case 4:
-        case 5:
+        case 3:
             break; //skill
-        case 6:
-        case 7:
+        case 4:
             //support of the kakita dueling academy
             break;
-        case 8:
-        case 9:
+        case 5:
             //skill
             break;
-        case 10:
+        case 6:
             if (effectresult == tr("No Change")){
                 //do item adds
                 ui->nc6_q18_special1_comboBox->clear();
@@ -643,7 +638,7 @@ void NewCharWizardPage6::on_nc6_q18_otherComboBox_currentIndexChanged(const QStr
                 QMapIterator<QString, int> i(ringmap);
                 while (i.hasNext()) {
                     i.next();
-                    if(i.value() < 3 && (i.key() == dal->translate("Air") || i.key() == dal->translate("Fire")) )
+                    if((i.key() == dal->translate("Air") || i.key() == dal->translate("Fire")) )
                         ui->nc6_q18_special1_comboBox->addItem (i.key());
                     if (i.value() > 1)
                         ui->nc6_q18_special2_comboBox->addItem (i.key());
