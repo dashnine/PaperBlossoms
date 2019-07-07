@@ -200,16 +200,20 @@ QMap<QString, int> NewCharWizardPage4::calcSkills(){
     }
 
     if(    //core
-           heritage == "Wondrous Work" ||
-           heritage ==  "Dynasty Builder" ||
-           heritage ==  "Discovery" ||
-           heritage ==  "Ruthless Victor" ||
-           heritage ==  "Elevated for Service" ||
-           //shadowlands
-           heritage ==   "Infamous Builder" ||
-           heritage ==   "Lost in the Darkness" ||
-           heritage ==   "Vengeance for the Fallen" ||
-           heritage ==   "Tewnty Goblin Thief"
+                      heritage ==  dal->translate("Wondrous Work") ||
+                      heritage ==  dal->translate("Dynasty Builder") ||
+                      heritage ==  dal->translate("Discovery") ||
+                      heritage ==  dal->translate("Ruthless Victor") ||
+                      heritage ==  dal->translate("Elevated for Service") ||
+                      //shadowlands
+                      heritage ==   dal->translate("Infamous Builder") ||
+                      heritage ==   dal->translate("Lost in the Darkness") ||
+                      heritage ==   dal->translate("Vengeance for the Fallen") ||
+                      heritage ==   dal->translate("Tewnty Goblin Thief") ||
+                      //Courts
+                      heritage ==   dal->translate("Dishonorable Cheat") ||
+                      heritage ==   dal->translate("Unforgivable Performance") ||
+                      heritage ==   dal->translate("A Little Too Close To Heaven")
             ){
         skills.append(field("q18OtherEffects").toString());
 
