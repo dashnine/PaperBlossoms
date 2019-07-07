@@ -32,6 +32,7 @@ AddDisAdvDialog::AddDisAdvDialog(DataAccessLayer* dal, Character* character, QSt
     this->setWindowIcon(QIcon(":/images/resources/sakura.png"));
     this->character = character;
     this->dal = dal;
+    ui->passionwarning->setVisible(type=="Passions");
 
     ui->traitComboBox->addItems(dal->qsl_getadvdisadv(type));
 }

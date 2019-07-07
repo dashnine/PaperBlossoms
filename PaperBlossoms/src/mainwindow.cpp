@@ -1204,6 +1204,7 @@ void MainWindow::on_addPassion_pushButton_clicked()
         qDebug() << "Accepted: getting distrinction";
        m_dirtyDataFlag = true;
        curCharacter.adv_disadv.append(adddisadvdialog.getResult());
+       curCharacter.advanceStack.append("Passion|"+adddisadvdialog.getResult()+"|Curriculum|"+"3");
        populateUI();
     }
     else{
