@@ -62,7 +62,8 @@
                             "type": "string",
                             "enum": [
                                 "Melee",
-                                "Ranged"
+                                "Ranged",
+                                "Unarmed"
                             ]
                         },
                         "range": {
