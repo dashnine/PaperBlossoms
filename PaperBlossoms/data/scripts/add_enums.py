@@ -163,7 +163,7 @@ def get_advantages(data_dir):
 
 
 def get_books():
-    books_enum = ['Core', 'EE', 'SL', 'Mantis', 'GMK']
+    books_enum = ['Core', 'EE', 'SL', 'Mantis', 'GMK', 'CoS']
 
     return books_enum
 
