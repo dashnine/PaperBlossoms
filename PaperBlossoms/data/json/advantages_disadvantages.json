@@ -531,6 +531,36 @@
                 "ring": "Water",
                 "types": ["Physical"],
                 "effects": ""
+            },
+            {
+                "name": "Affect of Harmlessness",
+                "reference": {
+                    "book": "CoS",
+                    "page": 99
+                },
+                "ring": "Air",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Famously Neutral",
+                "reference": {
+                    "book": "CoS",
+                    "page": 99
+                },
+                "ring": "Earth",
+                "types": ["Fame", "Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Well Connected in [City]",
+                "reference": {
+                    "book": "CoS",
+                    "page": 99
+                },
+                "ring": "Water",
+                "types": ["Interpersonal"],
+                "effects": ""
             }
         ]
     },
@@ -825,6 +855,36 @@
                 },
                 "ring": "Air",
                 "types": ["Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Decorum",
+                "reference": {
+                    "book": "CoS",
+                    "page": 100
+                },
+                "ring": "Water",
+                "types": ["Interpersonal", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Local Flare for [Region]",
+                "reference": {
+                    "book": "CoS",
+                    "page": 100
+                },
+                "ring": "Earth",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Pot Stirrer",
+                "reference": {
+                    "book": "CoS",
+                    "page": 101
+                },
+                "ring": "Fire",
+                "types": ["Interpersonal", "Mental"],
                 "effects": ""
             }
         ]
@@ -1461,6 +1521,76 @@
                 "ring": "Air",
                 "types": ["Mental", "Interpersonal"],
                 "effects": ""
+            },
+            {
+                "name": "Overconfidence in Charm",
+                "reference": {
+                    "book": "CoS",
+                    "page": 101
+                },
+                "ring": "Water",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Overconfidence in Creativity",
+                "reference": {
+                    "book": "CoS",
+                    "page": 101
+                },
+                "ring": "Fire",
+                "types": ["Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Overconfidence in Toughness",
+                "reference": {
+                    "book": "CoS",
+                    "page": 101
+                },
+                "ring": "Earth",
+                "types": ["Physical"],
+                "effects": ""
+            },
+            {
+                "name": "Overconfidence in Spiritual Sensitivity",
+                "reference": {
+                    "book": "CoS",
+                    "page": 101
+                },
+                "ring": "Void",
+                "types": ["Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Overconfidence in Subtlety",
+                "reference": {
+                    "book": "CoS",
+                    "page": 101
+                },
+                "ring": "Air",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Lackluster",
+                "reference": {
+                    "book": "CoS",
+                    "page": 101
+                },
+                "ring": "Fire",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Unsavory Past",
+                "reference": {
+                    "book": "CoS",
+                    "page": 102
+                },
+                "ring": "Water",
+                "types": ["Interpersonal"],
+                "effects": ""
             }
         ]
     },
@@ -1734,6 +1864,26 @@
                     "page": 98
                 },
                 "ring": "Water",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Isolation",
+                "reference": {
+                    "book": "CoS",
+                    "page": 103
+                },
+                "ring": "Earth",
+                "types": ["Interpersonal", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Web of Lies",
+                "reference": {
+                    "book": "CoS",
+                    "page": 103
+                },
+                "ring": "Air",
                 "types": ["Interpersonal"],
                 "effects": ""
             }
