@@ -403,6 +403,16 @@
                 "effects": ""
             },
             {
+                "name": "Support of the Kakita Dueling Academy",
+                "reference": {
+                    "book": "CoS",
+                    "page": 104
+                },
+                "ring": "Water",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
                 "name": "Animal Trainer",
                 "reference": {
                     "book": "EE",
