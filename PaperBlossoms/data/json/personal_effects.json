@@ -974,5 +974,47 @@
         },
         "rarity": 3,
         "qualities": ["Forbidden"]
+    },
+    {
+        "name": "Legal Primer",
+        "reference": {
+            "book": "CoS",
+            "page": 91
+        } 
+    },
+    {
+        "name": "Blank Forms",
+        "reference": {
+            "book": "CoS",
+            "page": 91
+        } 
+    },
+    {
+        "name": "Scroll designating rank",
+        "reference": {
+            "book": "CoS",
+            "page": 91
+        }
+    },
+    {
+        "name": "Book of Poetry",
+        "reference": {
+            "book": "CoS",
+            "page": 92
+        }
+    },
+    {
+        "name": "Rope (fifty feet)",
+        "reference": {
+            "book": "CoS",
+            "page": 93
+        }
+    },
+    {
+        "name": "Map of Crab Lands",
+        "reference": {
+            "book": "CoS",
+            "page": 98
+        } 
     }
 ]
