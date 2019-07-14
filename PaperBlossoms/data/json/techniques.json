@@ -272,6 +272,24 @@
                             "page": 181
                         },
                         "xp": 3
+                    },
+                    {
+                        "name": "Pole-Vault",
+                        "rank": 3,
+                        "reference": {
+                            "book": "CoS",
+                            "page": 113
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Trip the Leg",
+                        "rank": 1,
+                        "reference": {
+                            "book": "CoS",
+                            "page": 113
+                        },
+                        "xp": 3
                     }
                 ]
             },
@@ -1188,6 +1206,24 @@
                             "page": 213
                         },
                         "xp": 3
+                    },
+                    {
+                        "name": "Formal Tea Ceremony",
+                        "rank": 5,
+                        "reference": {
+                            "book": "CoS",
+                            "page": 116
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "The Ties that Bind",
+                        "rank": 4,
+                        "reference": {
+                            "book": "CoS",
+                            "page": 117
+                        },
+                        "xp": 3
                     }
                 ]
             },
@@ -1209,6 +1245,15 @@
                         "reference": {
                             "book": "SL",
                             "page": 114
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Treaty Signing",
+                        "rank": 2,
+                        "reference": {
+                            "book": "CoS",
+                            "page": 116
                         },
                         "xp": 3
                     }
@@ -1312,6 +1357,24 @@
                             "page": 248
                         },
                         "xp": 3
+                    },
+                    {
+                        "name": "Assess Strengths",
+                        "rank": 1,
+                        "reference": {
+                            "book": "CoS",
+                            "page": 117
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Hidden in Smoke",
+                        "rank": 4,
+                        "reference": {
+                            "book": "CoS",
+                            "page": 117
+                        },
+                        "xp": 3
                     }
                 ]
             },
@@ -1387,6 +1450,15 @@
                         "reference": {
                             "book": "Core",
                             "page": 217
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Unyielding Terms",
+                        "rank": 2,
+                        "reference": {
+                            "book": "CoS",
+                            "page": 117
                         },
                         "xp": 3
                     }
@@ -1485,6 +1557,42 @@
                             "page": 7
                         },
                         "xp": 3
+                    },
+                    {
+                        "name": "All Shall Fear Me",
+                        "rank": 3,
+                        "reference": {
+                            "book": "CoS",
+                            "page": 118
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Crackling Laughter",
+                        "rank": 3,
+                        "reference": {
+                            "book": "CoS",
+                            "page": 118
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Offend the Sensibilities",
+                        "rank": 2,
+                        "reference": {
+                            "book": "CoS",
+                            "page": 118
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Spiteful Love",
+                        "rank": 1,
+                        "reference": {
+                            "book": "CoS",
+                            "page": 118
+                        },
+                        "xp": 3
                     }
                 ]
             },
@@ -1560,6 +1668,24 @@
                         "reference": {
                             "book": "Core",
                             "page": 221
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Beware the Smallest Mouse",
+                        "rank": 1,
+                        "reference": {
+                            "book": "CoS",
+                            "page": 118
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Fun and Games",
+                        "rank": 1,
+                        "reference": {
+                            "book": "CoS",
+                            "page": 119
                         },
                         "xp": 3
                     }
@@ -1661,6 +1787,15 @@
                         "reference": {
                             "book": "EE",
                             "page": 248
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Foreseen Need",
+                        "rank": 4,
+                        "reference": {
+                            "book": "CoS",
+                            "page": 119
                         },
                         "xp": 3
                     }
@@ -1861,6 +1996,87 @@
                         "reference": {
                             "book": "Core",
                             "page": 227
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Artful Alibi",
+                        "rank": 3,
+                        "reference": {
+                            "book": "CoS",
+                            "page": 114
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Cunning Distraction",
+                        "rank": 2,
+                        "reference": {
+                            "book": "CoS",
+                            "page": 114
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Deceitful Strike",
+                        "rank": 1,
+                        "reference": {
+                            "book": "CoS",
+                            "page": 114
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Like a Ghost",
+                        "rank": 2,
+                        "reference": {
+                            "book": "CoS",
+                            "page": 114
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Slicing Wind Kick",
+                        "rank": 3,
+                        "reference": {
+                            "book": "CoS",
+                            "page": 115
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Silent Elimination",
+                        "rank": 3,
+                        "reference": {
+                            "book": "CoS",
+                            "page": 115
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Stillness of Death",
+                        "rank": 5,
+                        "reference": {
+                            "book": "CoS",
+                            "page": 115
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "To Float or Sink",
+                        "rank": 2,
+                        "reference": {
+                            "book": "CoS",
+                            "page": 115
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "What's Yours Is Mine",
+                        "rank": 2,
+                        "reference": {
+                            "book": "CoS",
+                            "page": 116
                         },
                         "xp": 3
                     }

@@ -537,5 +537,29 @@
                 "wealth": 9
             }
         ]
+    },
+    {
+        "name": "Deer",
+        "reference": {
+            "book": "CoS",
+            "page": 88
+        },
+        "type": "Minor",
+        "ring_increase": "Air",
+        "skill_increase": "Sentiment",
+        "status": 30,
+        "families": [
+            {
+                "name": "Shika",
+                "reference": {
+                    "book": "CoS",
+                    "page": 88
+                },
+                "ring_increase": ["Water", "Fire"],
+                "skill_increase": ["Courtesy", "Culture"],
+                "glory": 35,
+                "wealth": 5
+            }
+        ]
     }
 ]

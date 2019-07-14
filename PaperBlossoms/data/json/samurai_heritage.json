@@ -708,5 +708,261 @@
             ]
         },
         "source": "SL"
+    },
+    {
+        "roll": {
+            "min": 1,
+            "max": 1
+        },
+        "result": "Dishonorable Cheat",
+        "modifiers": {
+            "glory": -5,
+            "honor": 0,
+            "status": 0
+        },
+        "other_effects": {
+            "type": "Skill",
+            "instructions": "Roll a ten-sided die to determine a skill to aid you in bringing your disgraced kin to justice.",
+            "outcomes": [
+                {
+                    "roll": {
+                        "min": 1,
+                        "max": 1
+                    },
+                    "outcome": "Martial Arts [Melee]"
+                },
+                {
+                    "roll": {
+                        "min": 2,
+                        "max": 2
+                    },
+                    "outcome": "Martial Arts [Ranged]"
+                },
+                {
+                    "roll": {
+                        "min": 3,
+                        "max": 3
+                    },
+                    "outcome": "Martial Arts [Unarmed]"
+                },
+                {
+                    "roll": {
+                        "min": 4,
+                        "max": 6
+                    },
+                    "outcome": "Survival"
+                },
+                {
+                    "roll": {
+                        "min": 7,
+                        "max": 10
+                    },
+                    "outcome": "Government"
+                }
+            ]
+        },
+        "source": "CoS"
+    },
+    {
+        "roll": {
+            "min": 2,
+            "max": 3
+        },
+        "result": "Triumph Over the Lion",
+        "modifiers": {
+            "glory": 0,
+            "honor": 5,
+            "status": 0
+        },
+        "other_effects": {
+            "type": "starting item",
+            "instructions": "Roll a ten-sided die and add the resulting family heirloom to your starting items. You choose one quality and the GM chooses one quality from the list of item qualities on page 240 of the core rulebook; these are applied to the item.",
+            "outcomes": [
+                {
+                    "roll": {
+                        "min": 1,
+                        "max": 3
+                    },
+                    "outcome": "Any weapon"
+                },
+                {
+                    "roll": {
+                        "min": 4,
+                        "max": 6
+                    },
+                    "outcome": "Any game set"
+                },
+                {
+                    "roll": {
+                        "min": 7,
+                        "max": 8
+                    },
+                    "outcome": "Other item relevant to your ancestor's victory"
+                },
+                {
+                    "roll": {
+                        "min": 9,
+                        "max": 9
+                    },
+                    "outcome": "horse or other animal"
+                },
+                {
+                    "roll": {
+                        "min": 10,
+                        "max": 10
+                    },
+                    "outcome": "The deed to a small piece of land on the border of Lion territory"
+                }
+            ]
+        },
+        "source": "CoS"
+    },
+    {
+        "roll": {
+            "min": 4,
+            "max": 5
+        },
+        "result": "Unforgivable Performance",
+        "modifiers": {
+            "glory": 0,
+            "honor": 0,
+            "status": -3
+        },
+        "other_effects": {
+            "type": "Skill",
+            "instructions": "You gain the Benten's Curse (air) disadvantage (see page 116 of the core rulebook). Rolla ten-sided die to determine a skill that will help redeem your family.",
+            "outcomes": [
+                {
+                    "roll": {
+                        "min": 1,
+                        "max": 3
+                    },
+                    "outcome": "Performance"
+                },
+                {
+                    "roll": {
+                        "min": 4,
+                        "max": 6
+                    },
+                    "outcome": "Culture"
+                },
+                {
+                    "roll": {
+                        "min": 7,
+                        "max": 9
+                    },
+                    "outcome": "Command"
+                },
+                {
+                    "roll": {
+                        "min": 10,
+                        "max": 10
+                    },
+                    "outcome": "Courtesy"
+                }
+            ]
+        },
+        "source": "CoS"
+    },
+    {
+        "roll": {
+            "min": 6,
+            "max": 7
+        },
+        "result": "Triumph During Gempuku",
+        "modifiers": {
+            "glory": 3,
+            "honor": 3,
+            "status": 0
+        },
+        "other_effects": {
+            "type": "Distinction",
+            "instructions": "You gain the Support of the Kakita Dueling Academy distinction, where the Topaz Championship takes place.",
+            "outcomes": [
+                {
+                    "outcome": "Support of the Kakita Dueling Academy"
+                }
+            ]
+        },
+        "source": "CoS"
+    },
+    {
+        "roll": {
+            "min": 8,
+            "max": 9
+        },
+        "result": "A Little Too Close to Heaven",
+        "modifiers": {
+            "glory": 0,
+            "honor": -5,
+            "status": 5
+        },
+        "other_effects": {
+            "type": "Skill",
+            "instructions": "Roll a ten-sided die to determine a skill that can aid you in discovering the truth about your lineage.",
+            "outcomes": [
+                {
+                    "roll": {
+                        "min": 1,
+                        "max": 2
+                    },
+                    "outcome": "Government"
+                },
+                {
+                    "roll": {
+                        "min": 3,
+                        "max": 4
+                    },
+                    "outcome": "Commerce"
+                },
+                {
+                    "roll": {
+                        "min": 5,
+                        "max": 6
+                    },
+                    "outcome": "Sentiment"
+                },
+                {
+                    "roll": {
+                        "min": 7,
+                        "max": 8
+                    },
+                    "outcome": "Meditation"
+                },
+                {
+                    "roll": {
+                        "min": 9,
+                        "max": 10
+                    },
+                    "outcome": "Theology"
+                }
+            ]
+        },
+        "source": "CoS"
+    },
+    {
+        "roll": {
+            "min": 10,
+            "max": 10
+        },
+        "result": "Elegant Craftsman",
+        "modifiers": {
+            "glory": 5,
+            "honor": 0,
+            "status": 0
+        },
+        "other_effects": {
+            "type": "Anxiety and other",
+            "instructions": "You gain the Isolation anxiety (see page 103). Choose one of your character's rings; you may reduce the value of this ring by 1 to increase the value of your Fire or Air Ring bi 1 (this still cannot raise it above 3).",
+            "outcomes": [
+                {
+                    "outcome": "Isolation"
+                },
+                {
+                    "outcome": "Air/Fire ring exchange"
+                }
+            ]
+        },
+        "source": "CoS"
     }
 ]

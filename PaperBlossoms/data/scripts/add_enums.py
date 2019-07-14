@@ -124,12 +124,12 @@ def get_qualities(data_dir):
 def get_equipment(data_dir):
 
     # Load armour
-    with open(data_dir.joinpath('json/armor.json')) as f:
+    with open(data_dir.joinpath('json/armor.json'), encoding = 'utf8') as f:
         armor = json.load(f)
     armor_enum = [ item['name'] for item in armor ]
 
     # Load weapons
-    with open(data_dir.joinpath('json/weapons.json')) as f:
+    with open(data_dir.joinpath('json/weapons.json'), encoding = 'utf8') as f:
         weapon_categories = json.load(f)
     weapons_enum = [
         weapon['name']
@@ -138,7 +138,7 @@ def get_equipment(data_dir):
     ]
 
     # Load personal effects
-    with open(data_dir.joinpath('json/personal_effects.json')) as f:
+    with open(data_dir.joinpath('json/personal_effects.json'), encoding = 'utf8') as f:
         personal_effects = json.load(f)
     personal_effects_enum = [ personal_effect['name'] for personal_effect in personal_effects ]
 
@@ -163,7 +163,7 @@ def get_advantages(data_dir):
 
 
 def get_books():
-    books_enum = ['Core', 'EE', 'SL', 'Mantis', 'GMK']
+    books_enum = ['Core', 'EE', 'SL', 'Mantis', 'GMK', 'CoS']
 
     return books_enum
 

@@ -438,6 +438,76 @@
                     "value": 10,
                     "unit": "koku"
                 }
+            },
+            {
+                "name": "Ninjatō",
+                "reference": {
+                    "book": "CoS",
+                    "page": 109
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 0,
+                    "max": 1
+                },
+                "damage": 4,
+                "deadliness": 4,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": []
+                    },
+                    {
+                        "name": "2-hand",
+                        "effects": [
+                            {
+                                "attribute": "deadliness",
+                                "value_increase": 1
+                            }
+                        ]
+                    }
+                ],
+                "qualities": ["Concealable", "Forbidden", "Razor-edged"],
+                "rarity": 7,
+                "price": {
+                    "value": 12,
+                    "unit": "koku"
+                }
+            },
+            {
+                "name": "Shinobigatana",
+                "reference": {
+                    "book": "CoS",
+                    "page": 109
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 0,
+                    "max": 1
+                },
+                "damage": 4,
+                "deadliness": 5,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": []
+                    },
+                    {
+                        "name": "2-hand",
+                        "effects": [
+                            {
+                                "attribute": "deadliness",
+                                "value_increase": 1
+                            }
+                        ]
+                    }
+                ],
+                "qualities": ["Ceremonial", "Concealable", "Razor-edged"],
+                "rarity": 8,
+                "price": {
+                    "value": 22,
+                    "unit": "koku"
+                }
             }
         ]
     },
@@ -1261,6 +1331,32 @@
                     "value": 60,
                     "unit": "koku"
                 }
+            },
+            {
+                "name": "Folding Half-Bow",
+                "reference": {
+                    "book": "CoS",
+                    "page": 110
+                },
+                "skill": "Ranged",
+                "range": {
+                    "min": 2,
+                    "max": 3
+                },
+                "damage": 4,
+                "deadliness": 3,
+                "grips": [
+                    {
+                        "name": "2-ahnd",
+                        "effects": []
+                    }
+                ],
+                "qualities": [],
+                "rarity": 5,
+                "price": {
+                    "value": 3,
+                    "unit": "koku"
+                }
             }
         ]
     },
@@ -1480,6 +1576,180 @@
                 "price": {
                     "value": 1,
                     "unit": "koku"
+                }
+            },
+            {
+                "name": "Kamayari",
+                "reference": {
+                    "book": "CoS",
+                    "page": 111
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 2,
+                    "max": 2
+                },
+                "damage": 4,
+                "deadliness": 3,
+                "grips": [
+                    {
+                        "name": "2-hand",
+                        "effects": []
+                    }
+                ],
+                "qualities": ["Durable", "Snaring"],
+                "rarity": 7,
+                "price": {
+                    "value": 8,
+                    "unit": "koku"
+                }
+            },
+            {
+                "name": "Kusarifundo",
+                "reference": {
+                    "book": "CoS",
+                    "page": 111
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 1,
+                    "max": 1
+                },
+                "damage": 2,
+                "deadliness": 2,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": []
+                    },
+                    {
+                        "name": "2-hand",
+                        "effects": [
+                            {
+                                "attribute": "quality",
+                                "value": "Snaring"
+                            }
+                        ]
+                    }
+                ],
+                "qualities": ["Concealable"],
+                "rarity": 5,
+                "price": {
+                    "value": 4,
+                    "unit": "bu"
+                }
+            },
+            {
+                "name": "Kyoketsu Shoge",
+                "reference": {
+                    "book": "CoS",
+                    "page": 111
+                },
+                "skill": "Ranged",
+                "range": {
+                    "min": 1,
+                    "max": 2
+                },
+                "damage": 2,
+                "deadliness": 3,
+                "grips": [
+                    {
+                        "name": "2-hand",
+                        "effects": []
+                    }
+                ],
+                "qualities": ["Concealable", "Forbidden", "Snaring"],
+                "rarity": 6,
+                "price": {
+                    "value": 3,
+                    "unit": "bu"
+                }
+            },
+            {
+                "name": "Shakuhachi",
+                "reference": {
+                    "book": "CoS",
+                    "page": 112
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 0,
+                    "max": 0
+                },
+                "damage": 3,
+                "deadliness": 2,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": []
+                    },
+                    {
+                        "name": "2-hand",
+                        "effects": [
+                            {
+                                "attribute": "damage",
+                                "value_increase": 1
+                            }
+                        ]
+                    }
+                ],
+                "qualities": ["Durable", "Mundane", "Subtle"],
+                "rarity": 4,
+                "price": {
+                    "value": 3,
+                    "unit": "bu"
+                }
+            },
+            {
+                "name": "Tekagi",
+                "reference": {
+                    "book": "CoS",
+                    "page": 112
+                },
+                "skill": "Unarmed",
+                "range": {
+                    "min": 0,
+                    "max": 0
+                },
+                "damage": 1,
+                "deadliness": 3,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": []
+                    }   
+                ],
+                "qualities": ["Durable", "Forbidden"],
+                "rarity": 6,
+                "price": {
+                    "value": 4,
+                    "unit": "bu"
+                }
+            },
+            {
+                "name": "Tekken",
+                "reference": {
+                    "book": "CoS",
+                    "page": 112
+                },
+                "skill": "Unarmed",
+                "range": {
+                    "min": 0,
+                    "max": 0
+                },
+                "damage": 2,
+                "deadliness": 3,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": []
+                    }
+                ],
+                "qualities": ["Concealable", "Durable"],
+                "rarity": 4,
+                "price": {
+                    "value": 3,
+                    "unit": "bu"
                 }
             }
         ]

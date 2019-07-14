@@ -666,5 +666,355 @@
             "book": "GMK",
             "page": 9
         }
+    },
+    {
+        "name": "Ceremonial Tea Set",
+        "reference": {
+            "book": "CoS",
+            "page": 105
+        },
+        "price": {
+            "value": 7,
+            "unit": "koku"
+        },
+        "rarity": 8,
+        "qualities": ["Ceremonial", "Resplendent"]
+    },
+    {
+        "name": "Folding Fan",
+        "reference": {
+            "book": "CoS",
+            "page": 105
+        },
+        "price": {
+            "value": 1,
+            "unit": "koku"
+        },
+        "rarity": 3,
+        "qualities": ["Resplendent"]
+    },
+    {
+        "name": "Makeup Kit (cheap)",
+        "reference": {
+            "book": "CoS",
+            "page": 105
+        },
+        "price": {
+            "value": 1,
+            "unit": "bu"
+        },
+        "rarity": 2
+    },
+    {
+        "name": "Makeup Kit (expensive)",
+        "reference": {
+            "book": "CoS",
+            "page": 105
+        },
+        "price": {
+            "value": 3,
+            "unit": "bu"
+        },
+        "rarity": 2
+    },
+    {
+        "name": "Mari",
+        "reference": {
+            "book": "CoS",
+            "page": 106
+        },
+        "price": {
+            "value": 5,
+            "unit": "zeni"
+        },
+        "rarity": 3
+    },
+    {
+        "name": "Mono Imi Fuda (Taboo Plaque)",
+        "reference": {
+            "book": "CoS",
+            "page": 106
+        },
+        "price": {
+            "value": 8,
+            "unit": "bu"
+        },
+        "rarity": 6,
+        "qualities": ["Sacred"]
+    },
+    {
+        "name": "Norimono (Palanquin)",
+        "reference": {
+            "book": "CoS",
+            "page": 106
+        },
+        "price": {
+            "value": 12,
+            "unit": "koku"
+        },
+        "rarity": 7
+    },
+    {
+        "name": "Perfomers' Boat",
+        "reference": {
+            "book": "CoS",
+            "page": 106
+        },
+        "price": {
+            "value": 20,
+            "unit": "koku"
+        },
+        "rarity": 6
+    },
+    {
+        "name": "Amigasa",
+        "reference": {
+            "book": "CoS",
+            "page": 106
+        },
+        "price": {
+            "value": 4,
+            "unit": "zeni"
+        },
+        "rarity": 2
+    },
+    {
+        "name": "Bamboo Cane",
+        "reference": {
+            "book": "CoS",
+            "page": 107
+        },
+        "price": {
+            "value": 6,
+            "unit": "bu"
+        },
+        "rarity": 6,
+        "qualities": ["Concealable", "Mundane"]
+    },
+    {
+        "name": "Demon Mask",
+        "reference": {
+            "book": "CoS",
+            "page": 107
+        },
+        "price": {
+            "value": 1,
+            "unit": "koku"
+        },
+        "rarity": 5,
+        "qualities": ["Forbidden"]
+    },
+    {
+        "name": "Disguise Kit",
+        "reference": {
+            "book": "CoS",
+            "page": 107
+        },
+        "price": {
+            "value": 9,
+            "unit": "bu"
+        },
+        "rarity": 6
+    },
+    {
+        "name": "Herbal Medicines (per dose)",
+        "reference": {
+            "book": "CoS",
+            "page": 107
+        },
+        "price": {
+            "value": 1,
+            "unit": "bu"
+        },
+        "rarity": 5
+    },
+    {
+        "name": "Invisible Ink (per inkwell)",
+        "reference": {
+            "book": "CoS",
+            "page": 107
+        },
+        "price": {
+            "value": 6,
+            "unit": "bu"
+        },
+        "rarity": 8
+    },
+    {
+        "name": "Makibishi (per handful)",
+        "reference": {
+            "book": "CoS",
+            "page": 107
+        },
+        "price": {
+            "value": 1,
+            "unit": "bu"
+        },
+        "rarity": 4
+    },
+    {
+        "name": "Metsubushi (per dose)",
+        "reference": {
+            "book": "CoS",
+            "page": 107
+        },
+        "price": {
+            "value": 6,
+            "unit": "zeni"
+        },
+        "rarity": 5
+    },
+    {
+        "name": "Mizugumo (Water Spider)",
+        "reference": {
+            "book": "CoS",
+            "page": 108
+        },
+        "price": {
+            "value": 3,
+            "unit": "bu"
+        },
+        "rarity": 6
+    },
+    {
+        "name": "Modified Scabbard",
+        "reference": {
+            "book": "CoS",
+            "page": 108
+        },
+        "price": {
+            "value": 2,
+            "unit": "koku"
+        },
+        "rarity": 6,
+        "qualities": ["Mundane"]
+    },
+    {
+        "name": "Opening and Closing Tools",
+        "reference": {
+            "book": "CoS",
+            "page": 108
+        },
+        "price": {
+            "value": 5,
+            "unit": "bu"
+        },
+        "rarity": 3
+    },
+    {
+        "name": "Portable Boat",
+        "reference": {
+            "book": "CoS",
+            "page": 108
+        },
+        "price": {
+            "value": 3,
+            "unit": "koku"
+        },
+        "rarity": 2
+    },
+    {
+        "name": "Portable Ladder",
+        "reference": {
+            "book": "CoS",
+            "page": 108
+        },
+        "price": {
+            "value": 2,
+            "unit": "bu"
+        },
+        "rarity": 3
+    },
+    {
+        "name": "Sekihitsu",
+        "reference": {
+            "book": "CoS",
+            "page": 109
+        },
+        "price": {
+            "value": 3,
+            "unit": "zeni"
+        },
+        "rarity": 1
+    },
+    {
+        "name": "Sokutoki",
+        "reference": {
+            "book": "CoS",
+            "page": 109
+        },
+        "price": {
+            "value": 2,
+            "unit": "bu"
+        },
+        "rarity": 4,
+        "qualities": ["Concealable", "Prepare", "Subtle"]
+    },
+    {
+        "name": "Tenugui",
+        "reference": {
+            "book": "CoS",
+            "page": 109
+        },
+        "price": {
+            "value": 3,
+            "unit": "zeni"
+        },
+        "rarity": 2
+    },
+    {
+        "name": "Uchitake",
+        "reference": {
+            "book": "CoS",
+            "page": 109
+        },
+        "price": {
+            "value": 12,
+            "unit": "zeni"
+        },
+        "rarity": 3,
+        "qualities": ["Forbidden"]
+    },
+    {
+        "name": "Legal Primer",
+        "reference": {
+            "book": "CoS",
+            "page": 91
+        } 
+    },
+    {
+        "name": "Blank Forms",
+        "reference": {
+            "book": "CoS",
+            "page": 91
+        } 
+    },
+    {
+        "name": "Scroll designating rank",
+        "reference": {
+            "book": "CoS",
+            "page": 91
+        }
+    },
+    {
+        "name": "Book of Poetry",
+        "reference": {
+            "book": "CoS",
+            "page": 92
+        }
+    },
+    {
+        "name": "Rope (fifty feet)",
+        "reference": {
+            "book": "CoS",
+            "page": 93
+        }
+    },
+    {
+        "name": "Map of Crab Lands",
+        "reference": {
+            "book": "CoS",
+            "page": 98
+        } 
     }
 ]

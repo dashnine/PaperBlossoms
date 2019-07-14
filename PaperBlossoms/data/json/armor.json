@@ -282,5 +282,43 @@
             "value": 12,
             "unit": "koku"
         }
+    },
+    {
+        "name": "Firefighter's Coat",
+        "reference": {
+            "book": "CoS",
+            "page": 112
+        },
+        "resistance_values": [
+            {
+                "category": "Physical",
+                "value": 2
+            }
+        ],
+        "qualities": ["Cumbersome"],
+        "rarity": 4,
+        "price": {
+            "value": 6,
+            "unit": "bu"
+        }
+    },
+    {
+        "name": "Stealth Clothing",
+        "reference": {
+            "book": "CoS",
+            "page": 112
+        },
+        "resistance_values": [
+            {
+                "category": "Physical",
+                "value": 2
+            }
+        ],
+        "qualities": ["Forbidden", "Subtle"],
+        "rarity": 7,
+        "price": {
+            "value": 4,
+            "unit": "bu"
+        }
     }
 ]

@@ -34,7 +34,8 @@
                                         "EE",
                                         "SL",
                                         "Mantis",
-                                        "GMK"
+                                        "GMK",
+                                        "CoS"
                                     ]
                                 },
                                 "page": {
@@ -61,7 +62,8 @@
                             "type": "string",
                             "enum": [
                                 "Melee",
-                                "Ranged"
+                                "Ranged",
+                                "Unarmed"
                             ]
                         },
                         "range": {

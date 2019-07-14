@@ -308,7 +308,13 @@ void NewCharWizardPage7::initializePage()
     eqList.append(populateItemFields(q16item,dal->qs_getitemtype(q16item)));
     //check for eq on part 8
     //if(ancestorIndex == 1){ //2 is a lost item, and not in starting gear
-    if(heritage == dal->translate("Famous Deed")){ //item
+    if(
+            //core
+            heritage == dal->translate("Famous Deed") ||
+            //shadowlands
+            //courts
+            heritage == dal->translate("Triumph Over the Lion")
+                ){ //item
         if(!secondarychoice.isEmpty()){
 
             eqText+= special1 + " " + special2 + " " + secondarychoice + ", ";
@@ -363,11 +369,17 @@ void NewCharWizardPage7::initializePage()
         }
     }
 
-    //if(ancestorIndex == 9){
-    if(heritage == dal->translate("Imperial Heritage")|| heritage == dal->translate("Blood and Mortar")){
+    //Handle adv_disadv cases in heritage
+    //core
+    if(heritage == dal->translate("Imperial Heritage")||
+       heritage == dal->translate("Blood and Mortar") ||
+       heritage == dal->translate("Triumph During Gempuku")
+
+            ){
         advText+= othereffects + ", ";
         advList.append(othereffects);
     }
+    //shadowlands
     else if(heritage == dal->translate("Vengeance for the Fallen")){
         advText+= dal->translate("Haunting")+", ";
         advList.append(dal->translate("Haunting"));
@@ -375,6 +387,15 @@ void NewCharWizardPage7::initializePage()
     else if(heritage == dal->translate("Tainted Blood")){
         advText+= dal->translate("Fallen Ancestor")+", ";
         advList.append(dal->translate("Fallen Ancestor"));
+    }
+    //Courts of Stone
+    else if(heritage == dal->translate("Unforgivable Performance")){
+        advText+= dal->translate("Benten's Curse")+", ";
+        advList.append(dal->translate("Benten's Curse"));
+    }
+    else if(heritage == dal->translate("Elegant Craftsman")){
+        advText+= dal->translate("Isolation")+", ";
+        advList.append(dal->translate("Isolation"));
     }
     if(advText.length()>=2) advText.chop(2);
     ui->nc7_advlist_label->setText(advText);
@@ -453,7 +474,11 @@ QMap<QString, int> NewCharWizardPage7::calcSkills(){
            heritage ==   dal->translate("Infamous Builder") ||
            heritage ==   dal->translate("Lost in the Darkness") ||
            heritage ==   dal->translate("Vengeance for the Fallen") ||
-           heritage ==   dal->translate("Tewnty Goblin Thief")
+           heritage ==   dal->translate("Tewnty Goblin Thief") ||
+           //Courts
+           heritage ==   dal->translate("Dishonorable Cheat") ||
+           heritage ==   dal->translate("Unforgivable Performance") ||
+           heritage ==   dal->translate("A Little Too Close To Heaven")
             ){
         skills.append(field("q18OtherEffects").toString());
 
@@ -633,7 +658,10 @@ QMap<QString, int> NewCharWizardPage7::calcRings(){
     ringmap[field("schoolSpecialRing").toString()]++;
 
     //check for ringswap on part 6
-    if(field("q18OtherEffects").toString() == dal->translate("Ring Exchange") || field("q18OtherEffects").toString() == dal->translate("Void ring exchange")){
+    if(field("q18OtherEffects").toString() == dal->translate("Ring Exchange") ||
+       field("q18OtherEffects").toString() == dal->translate("Void ring exchange") ||
+       field("q18OtherEffects").toString() == dal->translate("Air/Fire ring exchange")
+            ){
         ringmap[field("q18Spec1").toString()]++;
         ringmap[field("q18Spec2").toString()]--;
         qDebug()<< "adjusting based on Ring Exchange";
