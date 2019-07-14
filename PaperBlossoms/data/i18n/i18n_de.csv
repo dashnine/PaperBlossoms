@@ -1,947 +1,1083 @@
-﻿1-hand,1-Hand
-1-hand (stab or slash),1-Hand (Stich oder Schnitt)
-1-hand (thrown),1 Hand (geworfen)
-2-hand,2-Hand
-A Bottomless Ocean,Ein bodenloser Ozean
-A Friend in Every City,Ein Freund in jeder Stadt
-A Samurai's Fate,Das Schicksal eines Samurai
-Abacus,Abakus
-Accursed Summoning,Verfluchte Beschwörung
-Accustomed to Luxury,Gewohnt an Luxus
+"2-ahnd",""
+"A Grain of Truth",""
+"A Little Too Close to Heaven",""
+"Affect of Harmlessness",""
+"Air/Fire ring exchange",""
+"All Shall Fear Me",""
+"Amigasa",""
+"Any game set",""
+"Any weapon",""
+"Architect of Tranquility",""
+"Artful Alibi",""
+"Artisan",""
+"Assess Strengths",""
+"Bamboo Cane",""
+"Bayushi Deathdealer School",""
+"Beware the Smallest Mouse",""
+"Blank Forms",""
+"Book of Poetry",""
+"Ceremonial Tea Set",""
+"Claws of the Crab",""
+"Courtier, Monk",""
+"Courtier, Shinobi",""
+"Crackling Laughter",""
+"Cunning Distraction",""
+"Curse of Musubi-no-Kami",""
+"Daidoji Spymaster School",""
+"Deceitful Strike",""
+"Decorum",""
+"Deer",""
+"Demon Mask",""
+"Disciple of Darkness",""
+"Disguise Kit",""
+"Dishonorable Cheat",""
+"Doji Bureaucrat School",""
+"Echoes of Ancient Days",""
+"Elegant Craftsman",""
+"Famously Neutral",""
+"Firefighter's Coat",""
+"Folding Fan",""
+"Folding Half-Bow",""
+"Foreseen Need",""
+"Formal Tea Ceremony",""
+"Fun and Games",""
+"Gift of Musubi-no-Kami",""
+"Herbal Medicines (per dose)",""
+"Hidden in Smoke",""
+"Ikoma Shadow School",""
+"Incisive Insight",""
+"Invisible Ink (per inkwell)",""
+"Isolation",""
+"Kamayari",""
+"Kusarifundo",""
+"Kyoketsu Shoge",""
+"Lackluster",""
+"Legal Primer",""
+"Like a Ghost",""
+"Local Flare for [Region]",""
+"Makeup Kit (cheap)",""
+"Makeup Kit (expensive)",""
+"Makibishi (per handful)",""
+"Map of Crab Lands",""
+"Mari",""
+"Mercenary Ninja Training",""
+"Metsubushi (per dose)",""
+"Mizugumo (Water Spider)",""
+"Modified Scabbard",""
+"Mono Imi Fuda (Taboo Plaque)",""
+"Ninjatō",""
+"Norimono (Palanquin)",""
+"Offend the Sensibilities",""
+"One with the Shadows",""
+"Opening and Closing Tools",""
+"Other item relevant to your ancestor's victory",""
+"Overconfidence in Charm",""
+"Overconfidence in Creativity",""
+"Overconfidence in Spiritual Sensitivity",""
+"Overconfidence in Subtlety",""
+"Overconfidence in Toughness",""
+"Perfomers' Boat",""
+"Pole-Vault",""
+"Portable Boat",""
+"Portable Ladder",""
+"Post Facto",""
+"Pot Stirrer",""
+"Procedure and Protocol",""
+"Roll a ten-sided die and add the resulting family heirloom to your starting items. You choose one quality and the GM chooses one quality from the list of item qualities on page 240 of the core rulebook; these are applied to the item.",""
+"Roll a ten-sided die to determine a skill that can aid you in discovering the truth about your lineage.",""
+"Roll a ten-sided die to determine a skill to aid you in bringing your disgraced kin to justice.",""
+"Rope (fifty feet)",""
+"Scroll designating rank",""
+"Sekihitsu",""
+"Shakuhachi",""
+"Shiba Artist School",""
+"Shika",""
+"Shika Matchmaker School",""
+"Shika Spear Dancer School",""
+"Shinobigatana",""
+"Silent Elimination",""
+"Slicing Wind Kick",""
+"Sokutoki",""
+"Spiteful Love",""
+"Spy Network",""
+"Stealth Clothing",""
+"Stillness of Death",""
+"Strike First, Strike Last",""
+"Sudden Clarity",""
+"Support of the Kakita Dueling Academy",""
+"Tekagi",""
+"Tekken",""
+"Tenugui",""
+"The Lowest Bow",""
+"The Standing Death",""
+"The Ties that Bind",""
+"The deed to a small piece of land on the border of Lion territory",""
+"To Float or Sink",""
+"Togashi Chronicler School",""
+"Treaty Signing",""
+"Trip the Leg",""
+"Triumph During Gempuku",""
+"Triumph Over the Lion",""
+"Typhoon in the Bamboo Grove",""
+"Uchitake",""
+"Unarmed",""
+"Unforgivable Performance",""
+"Unsavory Past",""
+"Unyielding Terms",""
+"Victory before Honor",""
+"Victory is the Greatest Honor",""
+"Way of the Scorpion",""
+"Web of Lies",""
+"Well Connected in [City]",""
+"What's Yours Is Mine",""
+"Yasuki Yōjimbō School",""
+"You gain the Benten's Curse (air) disadvantage (see page 116 of the core rulebook). Rolla ten-sided die to determine a skill that will help redeem your family.",""
+"You gain the Isolation anxiety (see page 103). Choose one of your character's rings; you may reduce the value of this ring by 1 to increase the value of your Fire or Air Ring bi 1 (this still cannot raise it above 3).",""
+"You gain the Support of the Kakita Dueling Academy distinction, where the Topaz Championship takes place.",""
+"1-hand (thrown)","1 Hand (geworfen)"
+"1-hand","1-Hand"
+"1-hand (stab or slash)","1-Hand (Stich oder Schnitt)"
+"2-hand","2-Hand"
+"Abacus","Abakus"
+"Superstition","Aberglaube"
+"Ancestry Unearthed","Abstammung aufgedeckt"
+"Adopted Peasant","Adoptierter Bauer"
+"Agasha","Agasha"
+"Agasha Mystic School","Agasha Mystik Schule"
+"Akodo","Akodo"
+"Akodo Commander School","Akodo Kommandantenschule"
+"Akodo's Final Lesson","Akodos letzte Lektion"
+"All Arts Are One","Alle Künste sind eins"
+"All in Jest","Alle im Scherz"
+"Allergy [choose one]","Allergie[wähle eine aus]"
+"General Kata","Allgemeine Kata"
+"Mundane","Alltäglich"
+"Other","Andere"
+"starting item","Anfangsgegenstand"
+"Fishing Rod and Line","Angelrute und Leine"
+"Anxiety and other","Angst und andere"
+"Fear of Death","Angst vor dem Tod"
+"Grace, eloquence or empathy","Anmut, Wortgewandtheit oder Mitgefühl"
 "Adaptability, friendliness or awareness","Anpassungsfähigkeit, Freundlichkeit oder Aufmerksamkeit"
-Addiction,Sucht
-Adopted Peasant,Adoptierter Bauer
-Adversity and Skill,Widrigkeiten und Fähigkeiten
-Advisor,Berater
-Aesthetics,Ästhetik
-Agasha,Agasha
-Agasha Mystic School,Agasha Mystik Schule
-Air,Luft
-Air Fist,Luftfaust
-Air Invocations,Luftbeschwörungen
-Air Kihō,Luft Kihō
-Air Shūji,Luft Shūji
-Akodo,Akodo
-Akodo Commander School,Akodo Kommandantenschule
-Akodo's Final Lesson,Akodos letzte Lektion
-All Arts Are One,Alle Künste sind eins
-All in Jest,Alle im Scherz
-Allergy [choose one],Allergie[wähle eine aus]
-Ally [Name],Verbündeter[Name]
-Ambidexterity,Beidhändigkeit
-Ancestry Unearthed,Abstammung aufgedeckt
-Animal Bond,Tierbindung
-Animal Trainer,Tiertrainer
-Anxiety and other,Angst und andere
-Armament,Bewaffnung
-Armor of Earth,Rüstung der Erde
-Armor of Radiance,Rüstung der Ausstrahlung
-Artisan skills,Handwerkerische Fähigkeiten
-Artisan's Appraisal,Handwerkliche Beurteilung
-"Artisan, Bushi","Handwerker, Bushi"
-"Artisan, Courtier","Handwerker, Höfling"
-Asahina,Asahina
-Asahina Artificer School,Asahina Künstlerschule
-Asaka Inquisitor School,Asaka Inquisitor Schule
-Asako,Asako
-Asako Loremaster School,Asako Lehrmeister Schule
-Ashidaka's Method,Ashidaka's Methode
-Ashigaru Armor,Ashigaru Rüstung
-Assortment of Maps in Scroll Cases,Sortiment von Karten in Hüllen
-Astrolabe,Astrolabium
-Attendant,Begleiter
-Awe of Heaven,Ehrfurcht vor dem Himmel
-Axes,Äxte
-Ballista,Ballista
-Bane of Sorcerers,Fluch der Zauberer
-Battle Trauma,Kampf Trauma
-Battle in the Mind,Kampf im Kopf
-Bayushi,Bayushi
-Bayushi Manipulator School,Bayushi Manipulator Schule
-Bend with the Storm,Beug dich mit dem Sturm
-Benten's Blessing,Benten's Segen
-Benten's Curse,Benten's Fluch
-Bind the Shadow,Bindet den Schatten
-Bind the Undead,Bindet die Untoten
-Bisentō,Bisentō
-Bishamon's Blessing,Bishamon's Segen
-Bishamon's Curse,Bishamon' s Fluch
-Biting Steel,Beißender Stahl
-Bitter Betrothal,Verbitterte Verlobung
-Blackmail on [Name],Erpressung von [Name]
-Blackmailed by [Character's Name],Erpresst von [Name des Charakters]
-Blessed Lineage,Gesegnete Ahnenlinie
-Blessed Wind,Gesegneter Wind
-Blessing of Steel,Segen des Stahls
-Blessing of the Fortunes,Segen der Glücke
-Blessings of the Emperor,Segnungen des Kaisers
-Blindness,Blindheit
-Blissful Betrothal,Glückselige Verlobung
-Blood and Mortar,Blut und Mörtel
-Blood of Osano-wo,Blut von Osano-wo
-Blood of the Dragon,Blut des Drachens
-Blood of the Kami,Blut der Kami
-Blowgun,Blasrohr
-Blunt Weapons,Stumpfe Waffen
-Bluntness,Direktheit
-Bokken,Bokken
-Bonsai,Bonsai
-Born in the Saddle,Geboren im Sattel
-Bottle of Sake,Eine Flasche Sake
-Bound in Ink,Mit Tinte gebunden
-Bows,Bögen
-Bowyer's Kit,Bogenmacher Kit
-Bravado,Bravado
-Breaking Blow,Brechender Schlag
-Breath of Wind Style,Atem des Windes-Stil
-Breath of the Fire Dragon,Atem des Feuerdrachens
-Brushwork,Pinselführung
-Buoyant Arrival,Schwimmende Ankunft
-Bushi,Bushi
+"Incite Haunting","Ansporn zum Spuk"
+"Labor","Arbeit"
+"Crossbows","Armbrüste"
+"Asahina","Asahina"
+"Asahina Artificer School","Asahina Künstlerschule"
+"Asaka Inquisitor School","Asaka Inquisitor Schule"
+"Asako","Asako"
+"Asako Loremaster School","Asako Lehrmeister Schule"
+"Ashidaka's Method","Ashidaka's Methode"
+"Ashigaru Armor","Ashigaru Rüstung"
+"Astrolabe","Astrolabium"
+"Breath of the Fire Dragon","Atem des Feuerdrachens"
+"Breath of Wind Style","Atem des Windes-Stil"
+"Eye of the Storm","Auge des Sturms"
+"Eyes of Yotogi","Augen von Yotogi"
+"Keen Sight","Ausgeprägte Sicht"
+"Keen Smell","Ausgeprägter Geruchsinn"
+"Keen Hearing","Ausgeprägtes Gehör"
+"Keen Balance","Ausgeprägtes Gleichgewicht"
+"Distinction","Auszeichnung"
+"Ballista","Ballista"
+"Bayushi","Bayushi"
+"Bayushi Manipulator School","Bayushi Manipulator Schule"
+"Command","Befehlen"
+"Attendant","Begleiter"
+"Ambidexterity","Beidhändigkeit"
+"Biting Steel","Beißender Stahl"
+"Siege Wepaons","Belagerungswaffen"
+"Benten's Curse","Benten's Fluch"
+"Benten's Blessing","Benten's Segen"
+"Advisor","Berater"
+"Infamous Builder","Berüchtigter Baumeister"
+"Famously Wealthy","Berühmt Wohlhabend"
+"Famously Successful","Berühmt erfolgreich"
+"Famously Reliable","Berühmt zuverlässig"
+"Famously Honest","Berühmt-berüchtigt ehrlich"
+"Famous Deed","Berühmte Tat"
+"Famously Lucky","Berühmtes Glück"
+"Touch the Void Dragon","Berühre den Leerendrachen"
+"Nature's Touch","Berührung der Natur"
+"Plated Armor","Beschichtete Rüstung"
+"Invocations","Beschwörungen"
+"Damaged","Beschädigt"
+"Bend with the Storm","Beug dich mit dem Sturm"
+"Pouch of Gaijin Coins","Beutel voller Gaijin Münzen"
+"Armament","Bewaffnung"
+"Seasoned","Bewährt"
+"Bind the Shadow","Bindet den Schatten"
+"Bind the Undead","Bindet die Untoten"
+"Bisentō","Bisentō"
+"Bishamon's Curse","Bishamon' s Fluch"
+"Bishamon's Blessing","Bishamon's Segen"
+"Blowgun","Blasrohr"
+"Gaze into Shadow","Blick in den Schatten"
+"Blindness","Blindheit"
+"Lightning Raid","Blitzangriff"
+"Blood of the Kami","Blut der Kami"
+"Blood of the Dragon","Blut des Drachens"
+"Blood and Mortar","Blut und Mörtel"
+"Blood of Osano-wo","Blut von Osano-wo"
+"Crimson Leaves Strike","Blutroter Blätter Schlag"
+"Bowyer's Kit","Bogenmacher Kit"
+"Bokken","Bokken"
+"Bonsai","Bonsai"
+"boat or estate","Boot oder Anwesen"
+"Bravado","Bravado"
+"Breaking Blow","Brechender Schlag"
+"Well of Desire","Brunnen des Verlangens"
+"bu","Bu"
+"Bushi","Bushi"
 "Bushi, Artisan","Bushi, Handwerker"
 "Bushi, Courtier","Bushi, Höfling"
 "Bushi, Monk","Bushi, Mönch"
 "Bushi, Shinobi","Bushi, Shinobi"
-Butterfly Sword,Schmetterlingsschwert
-By the Light of the Lord Moon,Im Licht des Herrn Monds
-Bō,Bō
-Bō of Water,Bō von Wasser
-Cadence,Kadenz
-Call Upon the Wind,Rufe den Wind
-Calligraphy Set,Kalligraphie-Set
-Capture Evil,Fange das Böse ein
-Caress of Earth,Umarmung der Erde
-Ceremonial,Zeremoniell
-Ceremonial Clothes,Zeremonielle Kleidung
-Channel the Fire Dragon,Kanalisiere den Feuerdrachen
-Chokutō,Chokutō
-"Choose two of your character's rings; you may reduce the value of one of these rings by 1 to increase the value of the other by 1 (this still cannot raise a ring above 3). If you do not do so, choose one item of rarity 6 or lower and assign it to your starting outfit.","Wähle zwei der Ringe deines Charakters; du kannst den Wert eines dieser Ringe um 1 verringern, um den Wert des anderen um 1 zu erhöhen (dies kann einen Ring immer noch nicht über 3 erhöhen). Wenn du dies nicht tust, wähle einen Gegenstand der Seltenheit 6 oder niedriger und weise ihn deinem Starteroutfit zu."
-Chopsticks,Essstäbchen
-City [choose one],Stadt[wähle eine aus]
-Civility Foremost,Die Zivillität steht an erster Stelle
-Clan Magistrate,Klan Magistrat
-Claustrophobia,Klaustrophobie
-Cleansing Rite,Reinigungsritual
-Cleansing Spirit,Reinigender Geist
-Climbing Kit,Kletterausrüstung
-Cloak of Night,Umhang der Nacht
-Close Combat Kata,Nahkampf-Kata
-Club,Keule
-Clumsiness,Ungeschicktheit
-Cognitive Lapses,Kognitive Lücken
-Coiling Serpent Style,Stil der wickelnden Schlange
-Command,Befehlen
-Commerce,Handel
-Common Clothes,Gewöhnliche Kleidung
-Commune with Evil,Kommuniziere mit dem Bösen
-Commune with the Spirits,Kommuniziere mit den Geistern
-Composition,Komposition
-Concealable,Versteckbar
-Concealed Armor,Versteckte Rüstung
-Courage of Seven Thunders,Mut der Sieben Donner
-Courtesy,Höflichkeit
-Courtier,Höfling
-Courtier's Resolve,Resolution des Höflings
-"Courtier, Bushi","Höfling, Bushi"
-"Courtier, Shugenja","Höfling, Shugenja"
-Crab,Krabbe
-Craft Shikigami,Shikigami herstellen
-Crane,Kranich
-Crashing Wave Style,Stürzender Wellen-Stil
-"Creativity, passion or drive","Kreativität, Leidenschaft oder Antrieb"
-Creatures,Kreaturen
-Crescent Moon Style,Halbmond-Stil
-Criminal Connections,Kriminelle Verbindungen
-Crimson Leaves Strike,Blutroter Blätter Schlag
-Crossbows,Armbrüste
-Culture,Kultur
-Cumbersome,Schwer
-Curiosity,Neugierde
-"Curse, Interpersonal, Spiritual","Fluch, zwischenmenschlich, spirituell"
+"Bows","Bögen"
+"Bō","Bō"
+"Bō of Water","Bō von Wasser"
+"Chokutō","Chokutō"
+"Daidoji","Daidoji"
+"Daidoji Iron Warrior School","Daidoji Eisenkrieger-Schule"
+"Daikoku's Curse","Daikoku's Fluch"
+"Daikoku's Blessing","Daikoku's Segen"
+"Daikyū","Daikyō"
+"Daimyō","Daimyō"
+"Daishō Stand","Daishō Standfuß"
+"Dao","Dao"
+"Performance","Darbietung"
+"Spin the Web","Das Netz spinnen"
+"Entreat the Shadow Steed","Das Schattenross anflehen"
+"A Samurai's Fate","Das Schicksal eines Samurai"
+"To Tread the Sword","Das Schwert bewandern"
+"Usher in the New Age","Das neue Zeitalter einläuten"
+"The Cleansing Fire","Das reinigende Feuer"
+"The Mountain Does Not Fall","Der Berg fällt nicht"
+"The Blood Price","Der Blutprinz"
+"The Body is an Anvil","Der Körper ist ein Amboss"
+"The Path of Shadows","Der Pfad der Schatten"
+"The Way of Names","Der Weg der Namen"
+"The Wind Blows Both Ways","Der Wind weht in beide Richtungen"
+"The Effortless Path","Der mühelose Weg"
+"Design","Design"
+"The Lady's Grace","Die Anmut der Lady"
+"The Eyes Betray the Heart","Die Augen verraten das Herz"
+"Sensing the Breeze","Die Brise spüren"
+"Still the Elements","Die Elemente besänftigen"
+"The Families of the Fleet","Die Familien der Flotte"
+"The Fires from Within","Die Feuer von innen"
+"The Spirits Unbound","Die Geister ungebunden"
+"Healer's Hands","Die Hände des Heilers"
+"Ide Trader School","Die Händler Schule"
+"The Kami's Whisper","Die Kami flüstern"
+"The Soul's Blade","Die Klinge der Seele"
+"Prey on the Weak","Die Schwachen jagen"
+"The Damned","Die Verdammten"
+"Riding the Clouds","Die Wolken reiten"
+"The Clouds Part","Die Wolken teilen sich"
+"Sear the Wound","Die Wunde verätzen"
+"Civility Foremost","Die Zivillität steht an erster Stelle"
+"The Great Silence","Die große Stille"
+"The Imperial Families","Die kaiserlichen Familien"
+"The Final Silence","Die letzte Stille"
+"The Rushing Wave","Die rauschende Welle"
+"The Immovable Hand of Peace","Die unbewegliche Hand des Friedens"
+"Servant of the Kami","Diener der Kami"
+"Bluntness","Direktheit"
+"Doji","Doji"
+"Doji Diplomat School","Doji-Diplomatenschule"
+"Thunderclap Strike","Donnerschlag Schlag"
+"Dragon","Drache"
+"Daredevil","Draufgänger"
+"Trident","Dreizack"
+"You gain the Fallen Ancestor disadvantage (see 98). Choose one of your character's rings; you may reduce the value of that ring by 1 to increase the value of your Void Ring by 1 (this still cannot raise it above 3).","Du erhältst den Nachteil des gefallenen Vorfahren (siehe 98). Wähle einen der Ringe deines Charakters; du kannst den Wert dieses Rings um 1 verringern, um den Wert deines Leeren Ringes um 1 zu erhöhen (dies kann ihn immer noch nicht über 3 erhöhen)"
+"You gain the Blessed Lineage advantage (see page 103 of the core rulebook). This can be assigned in excess of the normal limitations on disadvantages at character creation. While on the Wall, your glory rank is treated as 1 higher.","Du erhältst den Vorteil der Gesegneten Linie (siehe Seite 103 des Kernregelwerks). Dies kann über die üblichen Einschränkungen der Nachteile bei der Charaktererstellung hinaus erfolgen. Während du an der Wand bist, wird dein Ruhmesrang als 1 höher behandelt."
+"You gain the Blessed Lineage advantage (see page 103) (this can be assigned in excess of the normal limitations on advantages at character creation).","Du erhältst den Vorteil der Gesegneten Linie (siehe Seite 103) (dieser kann über die normalen Einschränkungen der Vorteile bei der Charaktererstellung hinaus vergeben werden)."
+"You gain the Haunting (Void) adversity (see page 122 of the core rulebook). This can be assigned in excess of the normal limitations on disadvantages at character creation. Roll a ten-sided die again to determine a Martial skill; gain +1 rank in that skill.","Du erhältst die Spuk-(Leere)-Widrigkeit (siehe Seite 122 des Kernregelwerks). Dies kann über die üblichen Einschränkungen der Nachteile bei der Charaktererstellung hinaus erfolgen. Würfle erneut einen zehnseitigen Würfel, um eine Kampfkunst zu bestimmen; erhalte +1 Rang in dieser Fähigkeit"
+"You know one additional technique. Roll a ten-sided die again to determine the category, and then select one technique with a prerequisite of school rank 1 and learn that technique. You can perform that technique even if it is not normally allowed by your school.","Du kennst eine zusätzliche Technik. Würfle erneut einen zehnseitigen Würfel, um die Kategorie zu bestimmen, und wähle dann eine Technik mit der Voraussetzung des Schulrangs 1 aus und lerne diese Technik. Du kannst diese Technik anwenden, auch wenn sie normalerweise von deiner Schule nicht erlaubt ist."
+"Dark Reflection","Dunkle Reflexion"
+"Dark Secret","Dunkles Geheimnis"
+"Stride the Waves","Durch die Wellen schreiten"
+"Dynasty Builder","Dynasty Erbauer"
+"Demon, Begone!","Dämon, verschwinde!"
+"Demon Wound","Dämonenwunde"
+"Vapor of Nightmares","Dämpfe der Alpträume"
+"Ebb and Flow","Ebbe und Flut"
+"Ebisu's Curse","Ebisu's Fluch"
+"Ebisu's Blessing","Ebisu's Segen"
+"Stand of Honor","Ehrenstand"
+"Awe of Heaven","Ehrfurcht vor dem Himmel"
+"Honest Assessment","Ehrliche Beurteilung"
+"Jealousy","Eifersucht"
+"A Friend in Every City","Ein Freund in jeder Stadt"
+"One Sword of Rarity 7 or Lower","Ein Schwert der Seltenheit 7 oder niedriger"
+"A Bottomless Ocean","Ein bodenloser Ozean"
+"Bottle of Sake","Eine Flasche Sake"
+"One Weapon of Rarity 6 or Lower","Eine Waffe der Seltenheit 6 oder niedriger"
+"Freezing the Lifeblood","Einfrieren des Lebensblutes"
+"Unicorn","Einhorn"
+"Unicorn Warhorse","Einhorn Schlachtross"
+"One with the Elements","Eins mit den Elementen"
+"One with the Void","Eins mit der Leere"
+"Loneliness","Einsamkeit"
+"Iron in the Mountains Style","Eisen in den Bergen-Stil"
+"Iron Forest Style","Eisenwald-Stil"
+"Eku","Eku"
+"Elemental Transmutation","Elementare Transmutation"
+"Empathic Transfer","Empathischer Transfer"
+"Discovery","Entdeckung"
+"Earth Invocations","Erd Beschwörungen"
+"Earth Kihō","Erd Kihō"
+"Earth Shūji","Erd Shūji"
+"Earthquake","Erdbeben"
+"Earth","Erde"
+"Earth Needs No Eyes","Erde benötigt keine Augen"
+"Earth Becomes Sky","Erde wird Himmel"
+"Earthen Fist","Erdfaust"
+"Rise, Earth","Erhebe dich, Erde"
+"Rise, Flame","Erhebe dich, Feuer"
+"Rise, Air","Erhebe dich, Luft"
+"Rise, Water","Erhebe dich, Wasser"
+"Enlightened","Erleuchtet"
+"Enlightenment","Erleuchtung"
+"Harvester","Ernter"
+"Blackmailed by [Character's Name]","Erpresst von [Name des Charakters]"
+"Blackmail on [Name]","Erpressung von [Name]"
+"Essence of Jade","Essenz der Jade"
+"Chopsticks","Essstäbchen"
+"Experiment and Adapt","Experimentieren und anpassen"
+"Expert Tracker","Experten-Tracker"
+"Falcon","Falke"
+"Hawk's Precision","Falkenpräzision"
+"False Identity","Falsche Identität"
+"False Realm of the Fox Spirits","Falsches Reich der Fuchs-Geister"
+"Capture Evil","Fange das Böse ein"
+"Flaw, Mental","Fehler, mental"
+"Field Medicine","Feldmedizin"
+"Spyglass","Fernglas"
+"Ranged","Fernkampf"
+"Ranged Combat Kata","Fernkampf Kata"
+"Fire","Feuer"
+"Fire Invocations","Feuer Beschwörungen"
+"Fire Kihō","Feuer Kihō"
+"Fire Shūji","Feuer Shūji"
+"Finger of Jade","Finger aus Jade"
+"Fitness","Fitness"
+"Flickering Flame Skirmisher","Flackernder Flammenscharmützler"
+"Flame Fist","Flammenfaust"
+"Flexibility","Flexibilität"
+"Flowing Water Strike","Fließender Wasserschlag"
+"Bane of Sorcerers","Fluch der Zauberer"
 "Curse, Mental","Fluch, Mental"
-"Curse, Mental, Spiritual","Fluch, mental, spirituell"
 "Curse, Physical","Fluch, körperlich"
 "Curse, Physical, Spiritual","Fluch, körperlich, spirituell"
+"Curse, Mental, Spiritual","Fluch, mental, spirituell"
 "Curse, Spiritual","Fluch, spirituell"
-Cursed Lineage,Verfluchte Ahnenreihe
-Cynicism,Zynismus
-Daidoji,Daidoji
-Daidoji Iron Warrior School,Daidoji Eisenkrieger-Schule
-Daikoku's Blessing,Daikoku's Segen
-Daikoku's Curse,Daikoku's Fluch
-Daikyū,Daikyō
-Daimyō,Daimyō
-Daishō Stand,Daishō Standfuß
-Damaged,Beschädigt
-Damaged Heart or Organ,Geschädigtes Herz oder Organ
-Dance of Seasons,Tanz der Jahreszeiten
-Dangerous Allure,Gefährliche Anziehung
-Dao,Dao
-Daredevil,Draufgänger
-Dark Reflection,Dunkle Reflexion
-Dark Secret,Dunkles Geheimnis
-Dazzling Performance,Überwältigende Darbietung
-Dead Eyes,Tote Augen
-Deadly Sting,Tödlicher Stich
-Deafness,Taubheit
-Death Touch,Todesberührung
-Delusions of Grandeur,Größenwahn
-Demon Wound,Dämonenwunde
-"Demon, Begone!","Dämon, verschwinde!"
-Design,Design
-Despised in [City],Verachtet in [Stadt]
-Destroyed,Zerstört
-Dice and Cup,Würfel und Cup
-Disappearing World Style,Verschwindender Welt-Stil
-Discomfiting Countenance,Unangenehmes Antlitz
-Discovery,Entdeckung
-Disdain for Compassion,Verachtung für Mitgefühl
-Disdain for Courage,Verachtung für Mut
-Disdain for Courtesy,Verachtung für die Höflichkeit
-Disdain for Duty and Loyalty,Verachtung für Pflicht und Loyalität
-Disdain for Honor,Verachtung für die Ehre
-Disdain for Righteousness,Verachtung für die Gerechtigkeit
-Disdain for Sincerity,Verachtung für Aufrichtigkeit
-Distinction,Auszeichnung
-Divination,Wahrsagerei
-Divination Kit,Wahrsager-Kit
-Doji,Doji
-Doji Diplomat School,Doji-Diplomatenschule
-Dominion of Suijin,Herrschaft von Suijin
-Doom Crossbow,Verdammnis-Armbrust
-Dragon,Drache
-Durable,Langlebig
-Dynasty Builder,Dynasty Erbauer
-Ears Everywhere,Ohren überall
-Earth,Erde
-Earth Becomes Sky,Erde wird Himmel
-Earth Invocations,Erd Beschwörungen
-Earth Kihō,Erd Kihō
-Earth Needs No Eyes,Erde benötigt keine Augen
-Earth Shūji,Erd Shūji
-Earthen Fist,Erdfaust
-Earthquake,Erdbeben
-Ebb and Flow,Ebbe und Flut
-Ebisu's Blessing,Ebisu's Segen
-Ebisu's Curse,Ebisu's Fluch
-Eku,Eku
-Elemental Transmutation,Elementare Transmutation
-Elevated for Service,Für den Dienst hochgestellt
-Embrace of Kenro-Ji-Jin,Umarmung von Kenro-Ji-Jin
-Embrace the Void,Umarme die Leere
-Emerald Explorer,Smaragdentdecker
-Emerald Magistrate,Smaragd Magistrat
-Empathic Transfer,Empathischer Transfer
-Engineer's Kit,Ingenieurs-Kit
-Enlightened,Erleuchtet
-Enlightenment,Erleuchtung
-Entreat the Shadow Steed,Das Schattenross anflehen
-Essence of Jade,Essenz der Jade
-Ever-Changing Waves,Ständig wechselnde Wellen
-Experiment and Adapt,Experimentieren und anpassen
-Expert Tracker,Experten-Tracker
-Extinguish,Löschen
-Eye of the Storm,Auge des Sturms
-Eyes of Yotogi,Augen von Yotogi
-Falcon,Falke
-Fallen Ancestor,Gefallener Vorfahre
-False Identity,Falsche Identität
-False Realm of the Fox Spirits,Falsches Reich der Fuchs-Geister
-"Fame, Interpersonal","Ruhm, zwischenmenschlich"
-Famous Deed,Berühmte Tat
-Famously Honest,Berühmt-berüchtigt ehrlich
-Famously Lucky,Berühmtes Glück
-Famously Reliable,Berühmt zuverlässig
-Famously Successful,Berühmt erfolgreich
-Famously Wealthy,Berühmt Wohlhabend
-Fanning the Flames,Fächeln der Flammen
-Fashion,Mode
-Favor of the Ancestors,Gunst der Ahnen
-Favor of the Fortunes,Gunst der Glücke
-Fear of Death,Angst vor dem Tod
-Feigned Opening,Vorgetäuschte Öffnung
-Ferocity,Wildheit
-Field Medicine,Feldmedizin
-Fiend's Retreat,Unhold's Rückzugsort
-Finger of Jade,Finger aus Jade
-Fire,Feuer
-Fire Invocations,Feuer Beschwörungen
-Fire Kihō,Feuer Kihō
-Fire Shūji,Feuer Shūji
-Fishing Rod and Line,Angelrute und Leine
-Fitness,Fitness
-Flame Fist,Flammenfaust
-"Flaw, Mental","Fehler, mental"
-Flexibility,Flexibilität
-Flickering Flame Skirmisher,Flackernder Flammenscharmützler
-Flowing Water Strike,Fließender Wasserschlag
-Flyssa,Flyssa
-Forbidden,Verboten
-Foreseen in the Stars,In den Sternen vorhergesehen
-Fortune-Telling,Wahrsagerei
-Fortunist Monk Order,Fortunistischer Mönch Orden
-Fox Spirit,Fuchsgeist
-Fractured Spine,Gebrochene Wirbelsäule
-Freezing the Lifeblood,Einfrieren des Lebensblutes
-Friend of the Brotherhood,Freund der Bruderschaft
-Friend of the Nezumi,Freund der Nezumi
-Fukurokujin's Blessing,Fukurokujins Segen
-Fukurokujin's Curse,Fukurokujins Fluch
-Fukurokujin's Wit,Fukurokujins Verstand
-Fury of Osano-wo,Wut von Osano-Wo
-Gaijin Compass,Gaijin-Kompass
+"Curse, Interpersonal, Spiritual","Fluch, zwischenmenschlich, spirituell"
+"Flyssa","Flyssa"
+"Wings of the Phoenix","Flügel des Phönix"
+"Whispers of Poverty","Flüstern der Armut"
+"Whispers of Cruelty","Flüstern der Grausamkeit"
+"Whispers of Failure","Flüstern des Scheitern"
+"Whispers of Doom","Flüstern des Verderbens"
+"Whispers of Treachery","Flüstern des Verrats"
+"Shape the Flesh","Forme das Fleisch"
+"Researcher","Forscher"
+"Fortunist Monk Order","Fortunistischer Mönch Orden"
+"Friend of the Brotherhood","Freund der Bruderschaft"
+"Friend of the Nezumi","Freund der Nezumi"
+"Summon Fog","Frosch beschwören"
+"Fox Spirit","Fuchsgeist"
+"Fukurokujin's Curse","Fukurokujins Fluch"
+"Fukurokujin's Blessing","Fukurokujins Segen"
+"Fukurokujin's Wit","Fukurokujins Verstand"
+"Fanning the Flames","Fächeln der Flammen"
+"Skill","Fähigkeit"
+"skill","Fähigkeit"
+"skill_group","Fähigkeiten_Gruppe"
+"Elevated for Service","Für den Dienst hochgestellt"
 "Gaijin Name, Culture or Appearance","Gaijin Name, Kultur oder Aussehen"
-Games,Spiele
-Gaze into Shadow,Blick in den Schatten
-General Kata,Allgemeine Kata
-Generosity,Großzügigkeit
-Genno,Genno
-Glorious Sacrifice,Glorreiches Opfer
-Goblin Killer,Goblin-Mörder
-Gossip,Gerede
-Gourmet,Gourmet
-Government,Regierung
-"Grace, eloquence or empathy","Anmut, Wortgewandtheit oder Mitgefühl"
-Grasp of Earth,Griff der Erde
-Grasp of the Air Dragon,Griff des Luftdrachens
-Grasp the Earth Dragon,Griff des Erddrachens
-Great,Groß
-Gunsō,Gunsō
-Hammer,Hammer
-Hand Weapons,Handwaffen
-Hands of Earth and Sky,Hände von Erde und Himmel
-Hands of Tides,Hände der Gezeiten
-Harvester,Ernter
-Hasegawa's Denial,Hasegawa's Verleugnung
-Haunting,Spukend
-Hawk's Precision,Falkenpräzision
-Healer's Hands,Die Hände des Heilers
-Heart of the Dragon,Herz des Drachens
-Heart of the Lion,Herz des Löwen
-Heart of the Water Dragon,Herz des Wasserdrachens
-Heartpiercing Strike,Herzzerreißender Schlag
-Hero of [Village],Held von [Dorf]
-Heroic Charge,Heroischer Sturm
-Hida,Hida
-Hida Defender School,Hida Verteidiger Schule
-Hiruma,Hiruma
-Hiruma Scout School,Hiruma Späher Schule
-History,Geschichte
-Honest Assessment,Ehrliche Beurteilung
-Horsebow,Pferdebogen
-Hunted by Chikushō-dō,Gejagt von Chikushō-dō-dō
-I Will Always Return,Ich werde immer wieder zurückkehren
-Iaijutsu Cut: Crossing Blade,Iaijutsu Schnitt: Kreuzende Klinge
-Iaijutsu Cut: Rising Blade,Iaijutsu Schnitt: Aufsteigende Klinge
-Ichi's Second Sight,Ichi's zweite Sicht
-Ide,Ide
-Ide Trader School,Die Händler Schule
-Ikebana,Ikebana
-Ikoma,Ikoma
-Ikomo Bard School,Ikoma Barden Schule
-Impatience,Ungeduld
-Imperial,Kaiserlich
-Imperial Heritage,Kaiserliches Erbe
-Inari's Blessing,Inari's Segen
-Incite Haunting,Ansporn zum Spuk
-Inconspicuous Garb,Unauffälliges Gewand
-Incurable Illness,Unheilbare Krankheit
-Indomitable Will,Unbezwingbarer Wille
-Infamous Builder,Berüchtigter Baumeister
-Ingenious Design,Geniales Design
-Insufferable Genius,Unerträgliches Genie
-Interpersonal,Zwischenmenschlich
-"Interpersonal (Name), Mental and Interpersonal (Culture), Physical (Appearance)","Zwischenmenschlich (Name), mental und zwischenmenschlich (Kultur), körperlich (Aussehen)"
-"Interpersonal, Infamy","Zwischenmenschlich, Infamie"
-"Interpersonal, Mental","Zwischenmenschlich, mental"
-"Interpersonal, Physical","Zwischenmenschlich, physisch"
-"Interpersonal, Physical or Mental, Scar","Zwischenmenschlich, körperlich oder mental, Narbe"
-"Interpersonal, Spiritual","Zwischenmenschlich, spirituell"
-Intolerance,Intoleranz
-Invocations,Beschwörungen
-Iron Forest Style,Eisenwald-Stil
-Iron in the Mountains Style,Eisen in den Bergen-Stil
-Irrepressible Flirtation,Unbezähmbares Flirten
-Isawa,Isawa
-Isawa Elementalist School,Isawa Elementaristen Schule
-Item (Rank 6 or lower),Gegenstand (Rang 6 oder niedriger)
-Item Patterns,Gegenstand Muster
-Iuchi,Iuchi
-Iuchi Meishōdō Master School,Iuchi Meishōdō Meister Schule
-Jade Strike,Jadeschlag
-Jealousy,Eifersucht
-Ji,Ji
-Jian,Jian
-Jitte,Jitte
-Journal,Tagebuch
-Jurojin's Blessing,Jurōjin's Segen
-Jurōjin's Balm,Jurōjin's Balsam
-Jurōjin's Curse,Jurōjin's Fluch
-Just as Predicted,Genau wie vorhergesagt
-Justice of the Champion,Gerechtigkeit des Champions
-Kabutowari,Kabutowari
-Kaito,Kaito
-Kaito Shrine Keeper School,Kaito Schrein Wächter Schule
-Kaiu,Kaiu
-Kaiu Engineer School,Kaiu Ingeneur Schule
-Kaiu no Oyumi,Kaiu no Oyumi
-Kakita,Kakita
-Kakita Duelist School,Kakita Duelisten Schule
-Kakita Katana,Kakita Katana
-Kakita Pattern,Kakita Muster
-Kakita Swordsmith School,Kakita Waffenschmied Schule
-Kama,Kama
-Karmic Tie,Karmische Verbindung
-Kasuga,Kasuga
-Kasuga Smuggler School,Kasuga Schmuggler Schule
-Kata,Kata
-Katana,Katana
-Katana of Fire,Katana des Feuers
-Keen Balance,Ausgeprägtes Gleichgewicht
-Keen Hearing,Ausgeprägtes Gehör
-Keen Sight,Ausgeprägte Sicht
-Keen Smell,Ausgeprägter Geruchsinn
-Kenzō Blade,Kenzō Klinge
-Ki Protection,Ki Schutz
-Kihō,Kihō
-Kingdom of Paper and Ink,Königreich aus Papier und Tinte
-Kiseru,Kiseru
-Kisshōten's Blessing,Kisshōten's Segen
-Kisshōten's Curse,Kisshōten's Fluch
-Kitsu,Kitsu
-Kitsu Medic School,Mitsu Medizin Schule
-Kitsu Medium School,Kitsu Medium Schule
-Kitsuki,Kitsuki
-Kitsuki Investigator School,Kitsuki Ermittler Schule
-Kitsuki's Method,Kitsuki's Methode
-Kitsune Impersonator Tradition,Kitsune Imitator Tradition
-Kitsune Starting Outfit,Kitsune Starter Outfit
-Knife,Messer
-Knotwork,Knotenarbeit
-Kolat,Kolat
-Kolat Saboteur Conspiracy,Kolat Saboteur Verschwörung
-Kubi Bukuro,Kubi Bukuro
-Kuge Lineage,Kuge Ahnenreihe
-Kuni,Kuni
-Kuni Purifier School,Kuni Reiniger Schule
-Kuni Warden School,Kuni Wächter Schule
-Kusari-Gama,Kusari-Gama
-Labor,Arbeit
-Lacquered Armor,Lackierte Rüstung
-Lady Doji's Decree,Lady Doji's Dekret
-Lady Shinjo's Speed,Lady Shinjo's Geschwindigkeit
-Large Shield,Großer Schild
-Large Stature,Große Statur
-Lead from the Front,Von vorne Führen
-Light Sleeper,Leichter Schläfer
-Lightning Raid,Blitzangriff
-Lion,Löwe
-Lion's Pride,Löwenstolz
-Little Truths,Kleine Wahrheiten
-Loathing for Peasants,Verabscheuung von Bauern
-Loneliness,Einsamkeit
-Lord Akodo's Roar,Lord Akodo's Gebrüll
-Lord Bayushi's Whispers,Lord Bayushi's Geflüster
-Lord Hida's Grip,Lord Hida's Griff
-Lord Shiba's Valor,Lord Shiba's Tapferkeit
-Lord Togashi's Insight,Lord Togashi's Einblick
-Lost Arm or Lost Hand,Verlorener Arm oder verlorene Hand
-Lost Eye,Verlorenes Auge
-Lost Fingers,Verlorene Finger
-Lost Leg,Verlorenes Bein
-Lost Memories,Velorene Erinnerungen
-Lost Name,Verlorener Name
-Lost in the Darkness,Verloren in der Dunkelheit
-Lucky Cricket,Glückliche Grille
-Mahō,Mahō
-Mahō or Ninjutsu,Mahō oder Ninjutsu
-Maikara's Rebuke,Maikara's Rüge
-Maimed Arm,Verstümmelter Arm
-Maimed Visage,Verstümmeltes Gesicht
-Majesty of the Throne,Majestät des Throns
-Makeup Kit,Make-up Kit
-Mantis,Gottesanbeter
-Mark of Desecration,Zeichen der Entweihung
-Martial Arts [Melee],Martial Arts [Nahkampf]
-Martial Arts [Ranged],Martial Arts [Fernkampf]
-Martial Arts [Unarmed],Martial Arts [Unbewaffnet]
-Martial skill,Kampfkunst
-Martial skills,Kampfkünste
-Masakari,Masakari
-Mask of Wind,Maske des Winds
-Master of Elements,Meister der Elemente
-Masterful Builder,Meisterhafter Baumeister
-Materialism,Materialismus
-Matsu,Matsu
-Matsu Berserker School,Matsu Berserker Schule
-Matsu's Battlecry,Matsu's Kampfruf
-Matsu's Fury,Matsu's Zorn
-Medicine,Medizin
-Medicine Kit,Medizin Kit
-Meditation,Meditation
-Meekness,Sanftmut
-Melee,Nahkampf
-Mental,Mental
-"Mental, Interpersonal","Mental, zwischenmenschlich"
-"Mental, Physical","Mental, körperlich"
+"Gaijin Compass","Gaijin-Kompass"
+"Born in the Saddle","Geboren im Sattel"
+"Fractured Spine","Gebrochene Wirbelsäule"
+"Fallen Ancestor","Gefallener Vorfahre"
+"Dangerous Allure","Gefährliche Anziehung"
+"Item (Rank 6 or lower)","Gegenstand (Rang 6 oder niedriger)"
+"Item Patterns","Gegenstand Muster"
+"Secrets","Geheimnisse"
+"Secrets on the Wind","Geheimnisse auf dem Wind"
+"Hunted by Chikushō-dō","Gejagt von Chikushō-dō-dō"
+"Scholar skill","Gelehrten Fähigkeit"
+"Scholar skills","Gelehrten Fähigkeiten"
+"Just as Predicted","Genau wie vorhergesagt"
+"Ingenious Design","Geniales Design"
+"Genno","Genno"
+"Justice of the Champion","Gerechtigkeit des Champions"
+"Gossip","Gerede"
+"Silencing Stroke","Geräuschdämpfender Schlag"
+"History","Geschichte"
+"Stories","Geschichten"
+"Speed of Heaven","Geschwindigkeit des Himmels"
+"Sworn Enemy","Geschworener Feind"
+"Damaged Heart or Organ","Geschädigtes Herz oder Organ"
+"Sharpened Ki","Geschärftes Ki"
+"Warded Shikigami","Geschützter Shikigami"
+"Blessed Lineage","Gesegnete Ahnenlinie"
+"Blessed Wind","Gesegneter Wind"
+"Stolen Knowledge","Gestohlenes Wissen"
+"Sanctified Robes","Geweihte Gewänder"
+"Weight of Duty","Gewicht der Pflicht"
+"Accustomed to Luxury","Gewohnt an Luxus"
+"Common Clothes","Gewöhnliche Kleidung"
+"Spices (common)","Gewürze (gewöhnlich)"
+"Spices (rare)","Gewürze (selten)"
+"Poison (per vial)","Gift (pro Ampulle)"
+"Noxious Cloud","Giftige Wolke"
+"Glorious Sacrifice","Glorreiches Opfer"
+"Stirring the Embers","Glut auffachen"
+"Lucky Cricket","Glückliche Grille"
+"Blissful Betrothal","Glückselige Verlobung"
+"Goblin Killer","Goblin-Mörder"
+"Mantis","Gottesanbeter"
+"Gourmet","Gourmet"
+"Tomb of Jade","Grab aus Jade"
+"Grasp of Earth","Griff der Erde"
+"Grasp the Earth Dragon","Griff des Erddrachens"
+"Grasp of the Air Dragon","Griff des Luftdrachens"
+"Great","Groß"
+"Large Stature","Große Statur"
+"Large Shield","Großer Schild"
+"Generosity","Großzügigkeit"
+"Delusions of Grandeur","Größenwahn"
+"Thoroughness, patience or calm","Gründlichkeit, Geduld oder Ruhe"
+"Favor of the Ancestors","Gunst der Ahnen"
+"Favor of the Fortunes","Gunst der Glücke"
+"Gunsō","Gunsō"
+"Well Traveled","Gut gereist"
+"Well Connected","Gut vernetzt"
+"Shark Leather Armor","Hailederrüstung"
+"Crescent Moon Style","Halbmond-Stil"
+"Hammer","Hammer"
+"Commerce","Handel"
+"Trade skill","Handelsfähigkeit"
+"Trade skills","Handelsfähigkeiten"
+"Hand Weapons","Handwaffen"
+"Artisan, Bushi","Handwerker, Bushi"
+"Artisan, Courtier","Handwerker, Höfling"
+"Artisan skills","Handwerkerische Fähigkeiten"
+"Artisan's Appraisal","Handwerkliche Beurteilung"
+"Hasegawa's Denial","Hasegawa's Verleugnung"
+"Sacred","Heilig"
+"Sacred Fist","Heilige Faust"
+"Sacred Art of Steel","Heilige Kunst des Stahls"
+"Sacred Arrows","Heilige Pfeile"
+"Hero of [Village]","Held von [Dorf]"
+"Heroic Charge","Heroischer Sturm"
+"Dominion of Suijin","Herrschaft von Suijin"
+"Heart of the Dragon","Herz des Drachens"
+"Heart of the Lion","Herz des Löwen"
+"Heart of the Water Dragon","Herz des Wasserdrachens"
+"Heartpiercing Strike","Herzzerreißender Schlag"
+"Witch Hunter","Hexenjäger"
+"Hida","Hida"
+"Hida Defender School","Hida Verteidiger Schule"
+"Skulduggery","Hinterlist"
+"Hiruma","Hiruma"
+"Hiruma Scout School","Hiruma Späher Schule"
+"Whispers of Court","Hofgeflüster"
+"Hands of Tides","Hände der Gezeiten"
+"Hands of Earth and Sky","Hände von Erde und Himmel"
+"Courtesy","Höflichkeit"
+"Courtier","Höfling"
+"Courtier, Bushi","Höfling, Bushi"
+"Courtier, Shugenja","Höfling, Shugenja"
+"Iaijutsu Cut: Rising Blade","Iaijutsu Schnitt: Aufsteigende Klinge"
+"Iaijutsu Cut: Crossing Blade","Iaijutsu Schnitt: Kreuzende Klinge"
+"I Will Always Return","Ich werde immer wieder zurückkehren"
+"Ichi's Second Sight","Ichi's zweite Sicht"
+"Ide","Ide"
+"Ikebana","Ikebana"
+"Ikoma","Ikoma"
+"Ikomo Bard School","Ikoma Barden Schule"
+"By the Light of the Lord Moon","Im Licht des Herrn Monds"
+"Speaking in Silence","In Stille sprechen"
+"Foreseen in the Stars","In den Sternen vorhergesehen"
+"Inari's Blessing","Inari's Segen"
+"Engineer's Kit","Ingenieurs-Kit"
+"Intolerance","Intoleranz"
+"Isawa","Isawa"
+"Isawa Elementalist School","Isawa Elementaristen Schule"
+"Iuchi","Iuchi"
+"Iuchi Meishōdō Master School","Iuchi Meishōdō Meister Schule"
+"Jade Strike","Jadeschlag"
+"Ji","Ji"
+"Jian","Jian"
+"Jitte","Jitte"
+"Jurōjin's Balm","Jurōjin's Balsam"
+"Jurōjin's Curse","Jurōjin's Fluch"
+"Jurojin's Blessing","Jurōjin's Segen"
+"Kabutowari","Kabutowari"
+"Cadence","Kadenz"
+"Imperial","Kaiserlich"
+"Imperial Heritage","Kaiserliches Erbe"
+"Kaito","Kaito"
+"Kaito Shrine Keeper School","Kaito Schrein Wächter Schule"
+"Kaiu","Kaiu"
+"Kaiu Engineer School","Kaiu Ingeneur Schule"
+"Kaiu no Oyumi","Kaiu no Oyumi"
+"Kakita","Kakita"
+"Kakita Duelist School","Kakita Duelisten Schule"
+"Kakita Katana","Kakita Katana"
+"Kakita Pattern","Kakita Muster"
+"Kakita Swordsmith School","Kakita Waffenschmied Schule"
+"Calligraphy Set","Kalligraphie-Set"
+"Kama","Kama"
+"Battle Trauma","Kampf Trauma"
+"Battle in the Mind","Kampf im Kopf"
+"Martial skill","Kampfkunst"
+"Martial skills","Kampfkünste"
+"Channel the Fire Dragon","Kanalisiere den Feuerdrachen"
+"Karmic Tie","Karmische Verbindung"
+"Playing Cards","Karten spielen"
+"Kasuga","Kasuga"
+"Kasuga Smuggler School","Kasuga Schmuggler Schule"
+"Kata","Kata"
+"Katana","Katana"
+"Katana of Fire","Katana des Feuers"
+"No Sacrifice Too Greate","Kein Opfer zu groß"
+"Kenzō Blade","Kenzō Klinge"
+"Club","Keule"
+"Ki Protection","Ki Schutz"
+"Kihō","Kihō"
+"Kiseru","Kiseru"
+"Pillow Book","Kissenbuch"
+"Kisshōten's Curse","Kisshōten's Fluch"
+"Kisshōten's Blessing","Kisshōten's Segen"
+"Kitsu","Kitsu"
+"Kitsu Medium School","Kitsu Medium Schule"
+"Kitsuki","Kitsuki"
+"Kitsuki Investigator School","Kitsuki Ermittler Schule"
+"Kitsuki's Method","Kitsuki's Methode"
+"Kitsune Impersonator Tradition","Kitsune Imitator Tradition"
+"Kitsune Starting Outfit","Kitsune Starter Outfit"
+"Clan Magistrate","Klan Magistrat"
+"Claustrophobia","Klaustrophobie"
+"Small Stature","Kleine Statur"
+"Little Truths","Kleine Wahrheiten"
+"Minor","Kleiner"
+"Small Shield","Kleiner Schild"
+"Pin the Fan","Klemme den Fächer ein"
+"Climbing Kit","Kletterausrüstung"
+"Knotwork","Knotenarbeit"
+"Cognitive Lapses","Kognitive Lücken"
+"koku","Koku"
+"Kolat","Kolat"
+"Kolat Saboteur Conspiracy","Kolat Saboteur Verschwörung"
+"Commune with Evil","Kommuniziere mit dem Bösen"
+"Commune with the Spirits","Kommuniziere mit den Geistern"
+"Composition","Komposition"
+"Spread Corruption","Korruption verbreiten"
+"Crab","Krabbe"
+"Crane","Kranich"
+"Creativity, passion or drive","Kreativität, Leidenschaft oder Antrieb"
+"Creatures","Kreaturen"
+"Warrior's Resolve","Kriegerische Entschlossenheit"
+"Wargear","Kriegsgerät"
+"Criminal Connections","Kriminelle Verbindungen"
+"Kubi Bukuro","Kubi Bukuro"
+"Kuge Lineage","Kuge Ahnenreihe"
+"Culture","Kultur"
+"Kuni","Kuni"
+"Kuni Purifier School","Kuni Reiniger Schule"
+"Kuni Warden School","Kuni Wächter Schule"
+"Kusari-Gama","Kusari-Gama"
+"Quiver of Bolts","Köcher voll Bolzen"
+"Quiver of Arrows","Köcher voll Pfeile"
+"Regal Bearing","Königliches Auftreten"
+"Kingdom of Paper and Ink","Königreich aus Papier und Tinte"
+"Lacquered Armor","Lackierte Rüstung"
+"Lady Doji's Decree","Lady Doji's Dekret"
+"Lady Shinjo's Speed","Lady Shinjo's Geschwindigkeit"
+"Durable","Langlebig"
+"Void","Leere"
+"Void Kihō","Leeren Kihō"
+"Void ring exchange","Leeren Ring Austausch"
+"Void Shūji","Leeren Shūji"
+"Light Sleeper","Leichter Schläfer"
+"Lord Akodo's Roar","Lord Akodo's Gebrüll"
+"Lord Bayushi's Whispers","Lord Bayushi's Geflüster"
+"Lord Hida's Grip","Lord Hida's Griff"
+"Lord Shiba's Valor","Lord Shiba's Tapferkeit"
+"Lord Togashi's Insight","Lord Togashi's Einblick"
+"Air","Luft"
+"Air Kihō","Luft Kihō"
+"Air Shūji","Luft Shūji"
+"Air Invocations","Luftbeschwörungen"
+"Air Fist","Luftfaust"
+"Extinguish","Löschen"
+"Lion","Löwe"
+"Lion's Pride","Löwenstolz"
+"Power of the Earth Dragon","Macht des Erddrachen"
+"Mahō","Mahō"
+"Mahō or Ninjutsu","Mahō oder Ninjutsu"
+"Maikara's Rebuke","Maikara's Rüge"
+"Majesty of the Throne","Majestät des Throns"
+"Makeup Kit","Make-up Kit"
+"Martial Arts [Ranged]","Martial Arts [Fernkampf]"
+"Martial Arts [Melee]","Martial Arts [Nahkampf]"
+"Martial Arts [Unarmed]","Martial Arts [Unbewaffnet]"
+"Masakari","Masakari"
+"Mask of Wind","Maske des Winds"
+"Materialism","Materialismus"
+"Matsu","Matsu"
+"Matsu Berserker School","Matsu Berserker Schule"
+"Matsu's Battlecry","Matsu's Kampfruf"
+"Matsu's Fury","Matsu's Zorn"
+"Touchstone of Courage","Maßstab des Mutes"
+"Meditation","Meditation"
+"Medicine","Medizin"
+"Medicine Kit","Medizin Kit"
+"Master of Elements","Meister der Elemente"
+"Masterful Builder","Meisterhafter Baumeister"
+"Mental","Mental"
 "Mental, Scar","Mental, Narbe"
-"Mental, Spiritual","Mental, spirituell"
 "Mental, Virtue","Mental, Tugend"
-Military History,Militärgeschichte
-Minor,Kleiner
-Mirumoto,Mirumoto
-Mirumoto Taoist Blade School,Mirumoto Taoist Klingen Schule
-Mirumoto Two-Heavens Adept School,Mirumoto Zwei-Himmel Adept Schule
-Miya,Miya
-Miya Cartographer School,Miya Kartographenschule
-Miya Herald School,Miya Herold Schule
-Momoku,Momoku
-Monastic Acolyte,Monastischer Akolyt
-Monk,Mönch
-Moto,Moto
-Moto Avenger School,Moto Rächer Schule
-Moto Conqueror School,Moto Eroberer Schule
-Mundane,Alltäglich
-Musical Instrument (common),Musikinstrument (gewöhnlich)
-Musical Instrument (fine),Musikinstrument (fein)
-Muteness,Stummheit
-Mystical Script,Mystisches Skriptum
-Naginata,Naginata
-Nature's Touch,Berührung der Natur
-Navigator,Navigator
-Necessary Actions,Notwendige Maßnahmen
-Nerve Damage,Nervenschaden
-Ninjutsu,Ninjutsu
-Ninth Tail Ascension,Neunter Schwanz Aufstieg
-No Sacrifice Too Greate,Kein Opfer zu groß
-Nodachi,Nodachi
-Noxious Cloud,Giftige Wolke
-Nunchaku,Nunchaku
-O-Gata Dohou,o-Gata Dohou
-Obtuse,Stumpfsinnig
-Omamori,Omamori
-One Sword of Rarity 7 or Lower,Ein Schwert der Seltenheit 7 oder niedriger
-One Weapon of Rarity 6 or Lower,Eine Waffe der Seltenheit 6 oder niedriger
-One with the Elements,Eins mit den Elementen
-One with the Void,Eins mit der Leere
-Ono,Ono
-Open-Hand Style,Offene Hand-Stil
-Osano-wo's Boast,Osano-wo's Prahlerei
-Other,Andere
-Otomo,Otomo
-Otomo Schemer School,Otomo Schemer Schule
-Oyumi,Oyumi
-Painful Honesty,Schmerzhafte Ehrlichkeit
-Paragon of Compassion,Vorbild des Mitgefühls
-Paragon of Courage,Vorbild des Mutes
-Paragon of Courtesy,Vorbild der Höfflichkeit
-Paragon of Duty and Loyalty,Vorbild der Pflicht und Loyalität
-Paragon of Honor,Vorbild der Ehre
-Paragon of Righteousness,Vorbild der Gerechtigkeit
-Paragon of Sincerity,Vorbild der Ehrlichkeit
-Paranoia,Paranoia
-Path to Inner Peace,Pfad zum inneren Frieden
-Pelting Hail Style,Prasselnder Hagel Stil
-Perfectionism,Perfektionismus
-Performance,Darbietung
-Personal Seal or Chop,Persönliches Siegel oder Chop
-Phobia,Phobie
-Phoenix,Phönix
-Physical,Physisch
-Physical (Appearance,Physisch (Aussehen)
-"Physical, Interpersonal","Physisch, zwischenmenschlich"
-"Physical, Interpersonal, Scar","Physisch, zwischenmenschlich, Narbe"
+"Mental, Physical","Mental, körperlich"
+"Mental, Spiritual","Mental, spirituell"
+"Mental, Interpersonal","Mental, zwischenmenschlich"
+"Knife","Messer"
+"Military History","Militärgeschichte"
+"Mirumoto","Mirumoto"
+"Mirumoto Taoist Blade School","Mirumoto Taoist Klingen Schule"
+"Mirumoto Two-Heavens Adept School","Mirumoto Zwei-Himmel Adept Schule"
+"Bound in Ink","Mit Tinte gebunden"
+"Sympathetic Energies","Mitfühlende Energien"
+"Kitsu Medic School","Mitsu Medizin Schule"
+"Miya","Miya"
+"Miya Herald School","Miya Herold Schule"
+"Miya Cartographer School","Miya Kartographenschule"
+"Fashion","Mode"
+"Momoku","Momoku"
+"Monastic Acolyte","Monastischer Akolyt"
+"Moto","Moto"
+"Moto Conqueror School","Moto Eroberer Schule"
+"Moto Avenger School","Moto Rächer Schule"
+"Musical Instrument (fine)","Musikinstrument (fein)"
+"Musical Instrument (common)","Musikinstrument (gewöhnlich)"
+"Courage of Seven Thunders","Mut der Sieben Donner"
+"Mystical Script","Mystisches Skriptum"
+"Monk","Mönch"
+"Naginata","Naginata"
+"Melee","Nahkampf"
+"Close Combat Kata","Nahkampf-Kata"
+"Navigator","Navigator"
+"Tributaries of Trade","Nebenflüsse des Handels"
+"Nerve Damage","Nervenschaden"
+"Curiosity","Neugierde"
+"Ninth Tail Ascension","Neunter Schwanz Aufstieg"
+"Ninjutsu","Ninjutsu"
+"Nodachi","Nodachi"
+"Necessary Actions","Notwendige Maßnahmen"
+"Nunchaku","Nunchaku"
+"Open-Hand Style","Offene Hand-Stil"
+"Ears Everywhere","Ohren überall"
+"Omamori","Omamori"
+"Ono","Ono"
+"Osano-wo's Boast","Osano-wo's Prahlerei"
+"Otomo","Otomo"
+"Otomo Schemer School","Otomo Schemer Schule"
+"Oyumi","Oyumi"
+"Shell of the Tortoise","Panzer der Schildkröte"
+"Paranoia","Paranoia"
+"Perfectionism","Perfektionismus"
+"Personal Seal or Chop","Persönliches Siegel oder Chop"
+"Path to Inner Peace","Pfad zum inneren Frieden"
+"horse or other animal","Pferd oder ein anderes Tier"
+"Horsebow","Pferdebogen"
+"Phobia","Phobie"
+"Physical","Physisch"
+"Physical (Appearance","Physisch (Aussehen)"
 "Physical, Mental","Physisch, Mental"
 "Physical, Scar","Physisch, Narbe"
 "Physical, Spiritual","Physisch, Spirituell"
-Pillar of Calm,Säule der Ruhe
-Pillow Book,Kissenbuch
-Pin the Fan,Klemme den Fächer ein
-Plated Armor,Beschichtete Rüstung
-Playfulness,Verspieltheit
-Playing Cards,Karten spielen
-Poison (per vial),Gift (pro Ampulle)
-Polearms,Stangenwaffen
-Pouch of Gaijin Coins,Beutel voller Gaijin Münzen
-Power of the Earth Dragon,Macht des Erddrachen
-Precise Memory,Präzieses Gedächtnis
-Prepare,Vorbereiten
-Prepare (2),Vorbereiten (2)
-Prey on the Weak,Die Schwachen jagen
-Priest,Priester
-Professional Saboteur,Professioneller Saboteur
-Provocation,Provokation
-Purge the Wicked,Säubert die Frevler
-Quick Reflexes,Schnelle Reflexe
-Quiver of Arrows,Köcher voll Pfeile
-Quiver of Bolts,Köcher voll Bolzen
-Rallying Cry,Sammelruf
-Ranged,Fernkampf
-Ranged Combat Kata,Fernkampf Kata
-Ravenous Swarms,unersättliche Schwärme
-Razor-Edged,Scharfe Klinge
-Razor-edged,scharfe Klinge
-Reflections of P'an Ku,Reflektionen von P'an Ku
-Reformed Mahō-Tsukai,Reformierter Mahō-Tsukai
-Regal Bearing,Königliches Auftreten
-Rending Jaws of the Lion,Reißende Kiefer des Löwen
-Researcher,Forscher
-Resilient Readiness,Widerstandsfähige Bereitschaft
-Resplendent,Prachtvoll
-Ride the Water Dragon,Reite den Wasserdrachen
-Riding the Clouds,Die Wolken reiten
-Ring Exchange,Ring Austausch
-"Rise, Air","Erhebe dich, Luft"
-"Rise, Earth","Erhebe dich, Erde"
-"Rise, Flame","Erhebe dich, Feuer"
-"Rise, Water","Erhebe dich, Wasser"
-Rituals,Rituale
-Rochin,Rochin
-Rock Gardening,Steingärtnerei
-Rokugani Pony,Rokugani Pony
-Roll a ten-sided again to determine a Martial skill; gain +1 rank in that skill,"Würfle noch einmal einen zehnseitigen Würfel, um eine Kampf-Fähigkeit zu bestimmen; erhalte +1 Rang in dieser Fähigkeit"
-"Roll a ten-sided die again and add the resulting family heirloom to your starting items. You choose one quality and the GM chooses one quality from the list of item qualities, on page 240; these are applied to the item.","Würfle noch einmal einen zehnseitigen Würfel und füge das resultierende Familienerbstück zu deinen Anfangsgegenständen hinzu. Du wählst eine Qualität und der GM wählt eine Qualität aus der Liste der Objektqualitäten, auf Seite 240; diese werden auf das Objekt angewendet."
-"Roll a ten-sided die again to determin your lost family heirloom, which exists somewhere in the world. You choose one quality and the GM chooses one quality; these are applied to the item. You do not know where the heirloom is, but you could later reclaim it during the campaign.","Würfle erneut einen zehnseitigen Würfel, um dein verlorenes Familienerbstück zu bestimmen, das irgendwo auf der Welt existiert. Du wählst eine Qualität und der GM wählt eine Qualität; diese werden auf den Gegenstand angewendet. Du weißt nicht, wo das Erbstück ist, aber du könntest es später während der Kampagne wiedererlangen."
-Roll a ten-sided die again to determine a Scholar skill; gain +1 rank in that skill,"Würfle erneut einen zehnseitigen Würfel, um eine Gelehrten-Fähigkeit zu bestimmen; erhalte +1 Rang in dieser Fähigkeit"
-Roll a ten-sided die again to determine a Social skill; gain +1 rank in that skill,"Würfle erneut einen zehnseitigen Würfel, um eine soziale Fähigkeit zu bestimmen; erhalte +1 Rang in dieser Fähigkeit"
-Roll a ten-sided die again to determine a Trade skill; gain +1 rank in that skill,"Würfle erneut einen zehnseitigen Würfel, um eine Handwerksfähigkeit zu bestimmen; erhalte +1 Rang in dieser Fähigkeit"
-Roll a ten-sided die again to determine a skill to aid in learning of your ancestor's fate; gain +1 rank in that skill.,"Würfle erneut einen zehnseitigen Würfel, um eine Fähigkeit zu bestimmen, die dir hilft, das Schicksal deines Vorfahren zu erkennen; erhalte +1 Rang in dieser Fähigkeit."
-"Roll a ten-sided die again to determine a skill to aid in learning of your ancestor's fate; gain +1 rank in that skill. Additionally, your ancestor might still be alive, in the Shadowlands...waiting.","Würfle erneut einen zehnseitigen Würfel, um eine Fähigkeit zu bestimmen, die dir hilft, das Schicksal deines Vorfahren zu erkennen; erhalte +1 Rang in dieser Fähigkeit. Außerdem könnte dein Vorfahre noch am Leben sein, in den Schattenländern.... wartend..."
-Roll a ten-sided die again to determine a skill to aoid in restoring your ancestor's name; gain +1 rank in that skill.,"Würfle erneut einen zehnseitigen Würfel, um eine Fähigkeit zu bestimmen, die dir hilft, den Namen deines Vorfahren wiederherzustellen; erhalte +1 Rang in dieser Fähigkeit."
-Roll a ten-sided die again to determine an Artisan skill; gain +1 rank in that skill.,"Würfle erneut einen zehnseitigen Würfel, um eine Handwerksfähigkeit zu bestimmen; erhalte +1 Rang in dieser Fähigkeit."
+"Physical, Interpersonal","Physisch, zwischenmenschlich"
+"Physical, Interpersonal, Scar","Physisch, zwischenmenschlich, Narbe"
+"Phoenix","Phönix"
+"Brushwork","Pinselführung"
+"Sapper's Kit","Pionier Kit"
+"Resplendent","Prachtvoll"
+"Pelting Hail Style","Prasselnder Hagel Stil"
+"Priest","Priester"
+"Professional Saboteur","Professioneller Saboteur"
+"Provocation","Provokation"
+"Precise Memory","Präzieses Gedächtnis"
+"Skilled Attendant","Qualifizierter Begleiter"
+"Rustling of Leaves","Rascheln der Blätter"
+"Smoke Arrows","Rauchpfeile"
+"Rushing Avalanche Style","Rauschender Lawinenstil"
+"Reflections of P'an Ku","Reflektionen von P'an Ku"
+"Reformed Mahō-Tsukai","Reformierter Mahō-Tsukai"
+"Umbrella","Regenschirm"
+"Government","Regierung"
+"Cleansing Spirit","Reinigender Geist"
+"Cleansing Rite","Reinigungsritual"
+"Traveling Rations (per meal)","Reise Rationen (pro Mahlzeit)"
+"Traveling Clothes","Reisegewand"
+"Travel","Reisen"
+"Traveling Pack","Reisepacket"
+"Ride the Water Dragon","Reite den Wasserdrachen"
+"Rending Jaws of the Lion","Reißende Kiefer des Löwen"
+"Courtier's Resolve","Resolution des Höflings"
+"Ring Exchange","Ring Austausch"
+"Rituals","Rituale"
+"Rochin","Rochin"
+"Rokugani Pony","Rokugani Pony"
+"Call Upon the Wind","Rufe den Wind"
+"Fame, Interpersonal","Ruhm, zwischenmenschlich"
+"Slippery Maneuvers","Rutschige Manöver"
+"Ruthless Victor","Rücksichtsloser Sieger"
+"Stir the Slumbering Spirit","Rühr die ruhenden Geister"
+"Armor of Radiance","Rüstung der Ausstrahlung"
+"Armor of Earth","Rüstung der Erde"
+"set of armor","Rüstungsset"
+"Sai","Sai"
+"Sake","Sake"
+"Sake Cup","Sake Schale"
+"Rallying Cry","Sammelruf"
+"Meekness","Sanftmut"
+"Set of glass vials","Satz an Glasampullen"
+"Storm Lord's Gambit","Schachzug des Sturmfürsten"
+"Razor-Edged","Scharfe Klinge"
+"Shadowlands Taint (Earth)","Schattenländer Verderbnis (Erde)"
+"Shadowlands Taint (Fire)","Schattenländer Verderbnis (Feuer)"
+"Shadowlands Taint (Void)","Schattenländer Verderbnis (Leere)"
+"Shadowlands Taint (Air)","Schattenländer Verderbnis (Luft)"
+"Shadowlands Taint (Water)","Schattenländer Verderbnis (Wasser)"
+"Shadowlands Taint [Blasphemous Appetites]","Schattenländer Verderbnis [Blasphemischer Appetit]"
+"Shadowlands Taint [One with the Darkness]","Schattenländer Verderbnis [Eins mit der Dunkelheit]"
+"Shadowlands Taint [Kaisen Whispers]","Schattenländer Verderbnis [Kaisen Geflüster]"
+"Shadowlands Taint [Unnatural Skin]","Schattenländer Verderbnis [Unnatürliche Haut]"
+"Shadowlands Taint [Distorted Limbs]","Schattenländer Verderbnis [Verzerrte Gliedmaßen]"
+"Scouring Sirocco","Scheuernder Sirocco"
+"Shields","Schilde"
+"Tortoise","Schildkröte"
+"Sleeping Garb","Schlafgewand"
+"Strike the Tsunami","Schlag den Tsunami"
+"Strike with No Thought","Schlag ohne Gedanken"
+"Skulk","Schleichen"
+"Slayer's Slash","Schlächter Schnitt"
+"Painful Honesty","Schmerzhafte Ehrlichkeit"
+"Butterfly Sword","Schmetterlingsschwert"
+"Smithy's Kit","Schmied Kit"
+"Smithing","Schmiedekunst"
+"Take Them Alive","Schnappt sie lebendig"
+"Quick Reflexes","Schnelle Reflexe"
+"Scroll Satchel","Schriftrollen-Tasche"
+"School of Waves","Schule der Wellen"
+"Shoulder","Schulter"
+"Soaring Slice","Schwebender Schnitt"
+"Threshold Barrier","Schwellenbarriere"
+"Cumbersome","Schwer"
+"Sword of Blood","Schwert aus Blut"
+"Swords","Schwerter"
+"Buoyant Arrival","Schwimmende Ankunft"
+"Spinning Blades Style","Schwingender Klingen Stil"
+"Weakness Is My Strength","Schwäche ist meine Stärke"
+"Treasures of the Carp","Schätze des Karpfen"
+"Scimitar","Scimitar"
+"Sixth Sense","Sechster Sinn"
+"Sea Legs","Seebeine"
+"Seafaring","Seefahrt"
+"Soul Sunder","Seelentrenner"
+"Sailor's Garb","Seemannsgewand"
+"Sailor's Fortune","Seemannsvermögen"
+"Sailor's Tongue","Seemannszunge"
+"Blessing of the Fortunes","Segen der Glücke"
+"Blessing of Steel","Segen des Stahls"
+"Blessings of the Emperor","Segnungen des Kaisers"
+"Shallow Waters","Seichte Gewässer"
 "Rope (per foot, cheap)","Seil (pro Fuß, billig)"
 "Rope (per foot, expensive)","Seil (pro Fuß, teuer)"
-Rope (twenty feet),Seil (zwanzig Fuß)
-Rouse the Soul,Wecke die Seele
-Rushing Avalanche Style,Rauschender Lawinenstil
-Rustling of Leaves,Rascheln der Blätter
-Ruthless Victor,Rücksichtsloser Sieger
-Sacred,Heilig
-Sacred Arrows,Heilige Pfeile
-Sacred Art of Steel,Heilige Kunst des Stahls
-Sacred Fist,Heilige Faust
-Sai,Sai
-Sailor's Fortune,Seemannsvermögen
-Sailor's Garb,Seemannsgewand
-Sailor's Tongue,Seemannszunge
-Sake,Sake
-Sake Cup,Sake Schale
-Sanctified Robes,Geweihte Gewänder
-Sapper's Kit,Pionier Kit
-Satchel of Imperial Proclamations,Umhängetasche der kaiserlichen Proklamationen
-Satchel of Medicinal Supplies,Umhängetasche der medizinischen Versorgung
-Scholar skill,Gelehrten Fähigkeit
-Scholar skills,Gelehrten Fähigkeiten
-School of Waves,Schule der Wellen
-Scimitar,Scimitar
-Scorn of [One Group],Verachtung für [Eine Gruppe]
-Scorpion,Skorpion
-Scouring Sirocco,Scheuernder Sirocco
-Scroll Satchel,Schriftrollen-Tasche
-Sea Legs,Seebeine
-Seafaring,Seefahrt
-Sear the Wound,Die Wunde verätzen
-Seasoned,Bewährt
-Secrets,Geheimnisse
-Secrets on the Wind,Geheimnisse auf dem Wind
+"Rope (twenty feet)","Seil (zwanzig Fuß)"
 "Self-awareness, insight or mysticism","Selbstwahrnehmung, Einsicht oder Mystik"
-Sensational Distraction,Sensationelle Ablenkung
-Sensing the Breeze,Die Brise spüren
-Sentiment,Stimmung
-Seppun,Seppun
-Seppun Astrologer School,Seppun Astrologen Schule
-Seppun Palace Guard School,Seppun Palastwachen Schule
-Servant of the Kami,Diener der Kami
-Set of glass vials,Satz an Glasampullen
-Shadowlands Taint (Air),Schattenländer Verderbnis (Luft)
-Shadowlands Taint (Earth),Schattenländer Verderbnis (Erde)
-Shadowlands Taint (Fire),Schattenländer Verderbnis (Feuer)
-Shadowlands Taint (Void),Schattenländer Verderbnis (Leere)
-Shadowlands Taint (Water),Schattenländer Verderbnis (Wasser)
-Shadowlands Taint [Blasphemous Appetites],Schattenländer Verderbnis [Blasphemischer Appetit]
-Shadowlands Taint [Distorted Limbs],Schattenländer Verderbnis [Verzerrte Gliedmaßen]
-Shadowlands Taint [Kaisen Whispers],Schattenländer Verderbnis [Kaisen Geflüster]
-Shadowlands Taint [One with the Darkness],Schattenländer Verderbnis [Eins mit der Dunkelheit]
-Shadowlands Taint [Unnatural Skin],Schattenländer Verderbnis [Unnatürliche Haut]
-Shallow Waters,Seichte Gewässer
-Shape the Flesh,Forme das Fleisch
-Shark Leather Armor,Hailederrüstung
-Sharpened Ki,Geschärftes Ki
-Shell of the Tortoise,Panzer der Schildkröte
-Shiba,Shiba
-Shiba Guardian School,Shiba Wächter Schule
-Shields,Schilde
-Shinjo,Shinjo
-Shinjo Outrider School,Shinjo Vorreiter Schule
-Shinobi,Shinobi
+"Sensational Distraction","Sensationelle Ablenkung"
+"Seppun","Seppun"
+"Seppun Astrologer School","Seppun Astrologen Schule"
+"Seppun Palace Guard School","Seppun Palastwachen Schule"
+"Shiba","Shiba"
+"Shiba Guardian School","Shiba Wächter Schule"
+"Craft Shikigami","Shikigami herstellen"
+"Shinjo","Shinjo"
+"Shinjo Outrider School","Shinjo Vorreiter Schule"
+"Shinobi","Shinobi"
 "Shinobi, Courtier","Shinobi, Höfling"
-Shinseist Monk Order,Shinseistischer Mönch Orden
-Shirogane Jade Inlay,Shirogane Jade Einlage
-Shosuro,Shosuro
-Shosuro Infiltrator School,Shosuro Infiltratoren Schule
-Shoulder,Schulter
-Shugenja,Shugenja
-"Shugenja, Artisan","Shugenja, Handwerker"
+"Shinseist Monk Order","Shinseistischer Mönch Orden"
+"Shirogane Jade Inlay","Shirogane Jade Einlage"
+"Shosuro","Shosuro"
+"Shosuro Infiltrator School","Shosuro Infiltratoren Schule"
+"Shugenja","Shugenja"
 "Shugenja, Bushi","Shugenja, Bushi"
+"Shugenja, Artisan","Shugenja, Handwerker"
 "Shugenja, Courtier, Shinobi","Shugenja, Höfling, Shinobi"
-Shuriken,Shuriken
-Shūji,Shūji
-Siege Wepaons,Belagerungswaffen
-Signature Scrolls,Signatur Schriftrollen
-Silencing Stroke,Geräuschdämpfender Schlag
-Sinful Whispers,Sündhaftes Geflüster
-Sixth Sense,Sechster Sinn
-Skepticism,Skepsis
-Skill,Fähigkeit
-Skilled Attendant,Qualifizierter Begleiter
-Skulduggery,Hinterlist
-Skulk,Schleichen
-Slayer's Slash,Schlächter Schnitt
-Sleeping Garb,Schlafgewand
-Slippery Maneuvers,Rutschige Manöver
-Small Shield,Kleiner Schild
-Small Stature,Kleine Statur
-Smithing,Schmiedekunst
-Smithy's Kit,Schmied Kit
-Smoke Arrows,Rauchpfeile
-Snaring,fangend
-Soaring Slice,Schwebender Schnitt
-Social skill,Soziale Fähigkeit
-Social skills,Soziale Fähigkeiten
-Sode,Sode
-Softheartedness,Weichherzigkeit
-Soshi,Soshi
-Soshi Illusionist School,Soshi Illusionisten Schule
-Soul Sunder,Seelentrenner
-Speaking in Silence,In Stille sprechen
-Specialist Weapons,Spezialisten Waffen
-Speed of Heaven,Geschwindigkeit des Himmels
-Spices (common),Gewürze (gewöhnlich)
-Spices (rare),Gewürze (selten)
-Spin the Web,Das Netz spinnen
-Spinning Blades Style,Schwingender Klingen Stil
-Spiritual,Spirituell
-Spiritual Artisan,Spiritueller Handwerker
-Spiritual Protector,Spiritueller Beschützer
-Spiritual Shackles,Spirituelle Fesseln
-"Spiritual, Interpersonal","Spirituell, zwischenmenschlich"
+"Shuriken","Shuriken"
+"Shūji","Shūji"
+"Signature Scrolls","Signatur Schriftrollen"
+"Skepticism","Skepsis"
+"Scorpion","Skorpion"
+"Emerald Magistrate","Smaragd Magistrat"
+"Emerald Explorer","Smaragdentdecker"
+"Sode","Sode"
+"Assortment of Maps in Scroll Cases","Sortiment von Karten in Hüllen"
+"Soshi","Soshi"
+"Soshi Illusionist School","Soshi Illusionisten Schule"
+"Social skill","Soziale Fähigkeit"
+"Social skills","Soziale Fähigkeiten"
+"Specialist Weapons","Spezialisten Waffen"
+"Games","Spiele"
+"Spy","Spion"
+"Spiritual","Spirituell"
 "Spiritual, Scar","Spirituell, Narbe"
-Spread Corruption,Korruption verbreiten
-Spy,Spion
-Spyglass,Fernglas
-Stand of Honor,Ehrenstand
-Still the Elements,Die Elemente besänftigen
-Stir the Slumbering Spirit,Rühr die ruhenden Geister
-Stirring the Embers,Glut auffachen
-Stolen Knowledge,Gestohlenes Wissen
-Stonewall Tactics,Steinwand Taktiken
-Stories,Geschichten
-Storm Bow,Sturmbogen
-Storm Fleet Sailor School,Sturmflottenseemann Schule
-Storm Fleet Tide Seer,Sturmflotten Gezeitenseher Schule
-Storm Lord's Gambit,Schachzug des Sturmfürsten
-Storm Surge,Sturmflut
-Strength of a Thousand Ancestors,Stärke tausender Vorfahren
-Stride the Waves,Durch die Wellen schreiten
-Strike the Tsunami,Schlag den Tsunami
-Strike with No Thought,Schlag ohne Gedanken
-Striking as Air,Wie Luft schlagen
-Striking as Earth,Wie Erde schlagen
-Striking as Fire,Wie Feuer schlagen
-Striking as Void,Wie Leere schlagen
-Striking as Water,Wie Wasser schlagen
-Subtle,Subtil
-Subtle Observer,Subtiler Beobachter
-Suijin's Embrace,Suijin's Umarmung
-Summon Fog,Frosch beschwören
-Superstition,Aberglaube
-Support of [One Group],Unterstützung von [Einer Gruppe]
-Suppressing Blows,Unterdrückende Schläge
-Survival,Überleben
-Sweets (per four servings),Süßigkeiten (pro vier Portionen)
-Swirling Desert Wind,Wirbelnder Wüstenwind
-Sword of Blood,Schwert aus Blut
-Swords,Schwerter
-Sworn Enemy,Geschworener Feind
-Symbol of Earth,Symbol der Erde
-Sympathetic Energies,Mitfühlende Energien
-Tactical Assessment,Taktische Beurteilung
-Tactics,Taktiken
-Tainted Blood,Verdorbenes Blut
-Tainted Warrior,Verdorbener Krieger
-Take Them Alive,Schnappt sie lebendig
-Taketaba,Taketaba
-Taraibune,Taraibune
-Tatami Gusoku,Tatami Gusoku
-Tate,Tate
-Tattoo Needles (per set),Tattoo Nadeln (per Set)
-Tea,Tee
-Tea Ceremony,Tee Zeremonie
-Tea Set (portable),Teeset (tragbar)
-Technique,Technik
-Tekkan,Tekkan
-Tempest of Air,Sturm der Luft
-Tent (chomchong),Zelt (chomchong)
-Tent (small),Zelt (klein)
-Tent (yurt),Zelt (yurt)
-Tessen,Tessen
-Tetsubō,Tetsubō
-Tetsubō of Earth,Tetsubōder Erde
-The Blood Price,Der Blutprinz
-The Body is an Anvil,Der Körper ist ein Amboss
-The Cleansing Fire,Das reinigende Feuer
-The Clouds Part,Die Wolken teilen sich
-The Damned,Die Verdammten
-The Effortless Path,Der mühelose Weg
-The Eyes Betray the Heart,Die Augen verraten das Herz
-The Families of the Fleet,Die Familien der Flotte
-The Final Silence,Die letzte Stille
-The Fires from Within,Die Feuer von innen
-The Great Silence,Die große Stille
-The Immovable Hand of Peace,Die unbewegliche Hand des Friedens
-The Imperial Families,Die kaiserlichen Familien
-The Kami's Whisper,Die Kami flüstern
-The Lady's Grace,Die Anmut der Lady
-The Mountain Does Not Fall,Der Berg fällt nicht
-The Path of Shadows,Der Pfad der Schatten
-The Rushing Wave,Die rauschende Welle
-The Soul's Blade,Die Klinge der Seele
-The Spirits Unbound,Die Geister ungebunden
-The Way of Names,Der Weg der Namen
-The Wind Blows Both Ways,Der Wind weht in beide Richtungen
-Theology,Theologie
-"Thoroughness, patience or calm","Gründlichkeit, Geduld oder Ruhe"
-Threshold Barrier,Schwellenbarriere
-Thunderclap Strike,Donnerschlag Schlag
-Tinbe,Tinbe
-To Tread the Sword,Das Schwert bewandern
-Togashi Order,Togashi Orden
-Togashi Tattooed Order,Togashi tätowierter Orden
-Token of Memory,Token der Erinnerung
-Tomb of Jade,Grab aus Jade
-Tonfa,Tonfa
-Toritaka,Toritaka
-Toritaka Phantom Hunter School,Toritaka Phantomjäger Schule
-Tortoise,Schildkröte
-Tosei-Gusoku,Tosei-Gusoku
-Touch the Void Dragon,Berühre den Leerendrachen
-Touchstone of Courage,Maßstab des Mutes
-Traces of Passage,Spuren des Durchganges
-Trade skill,Handelsfähigkeit
-Trade skills,Handelsfähigkeiten
-Travel,Reisen
-Traveling Clothes,Reisegewand
-Traveling Pack,Reisepacket
-Traveling Rations (per meal),Reise Rationen (pro Mahlzeit)
-Treasures of the Carp,Schätze des Karpfen
-Tributaries of Trade,Nebenflüsse des Handels
-Trident,Dreizack
-Truth Burns through Lies,Wahrheit brennt durch Lügen
-Tsuruhashi,Tsuruhashi
-Twenty Goblin Thief,Zwanzig Goblin DIeb
-Twenty-Goblin Crab,Zwanzig Goblin Krabbe
-Twisted Summons,perverse Beschwörungen
-Two Items of Rarity 4 or Lower,Zwei Gegenstände von Seltenheit 4 oder niedriger
-Two Weapons of Rarity 6 or Lower,Zwei Waffen von Seltenheit 6 oder niedriger
-Uchema's Technique,Uchema's Technik
-Umbrella,Regenschirm
-Unholy,Unheilig
-Unholy Fervor,Unheilige Leidenschaft
-Unicorn,Einhorn
-Unicorn Warhorse,Einhorn Schlachtross
-Unusual Name Origin,Unüblicher Namensursprung
-Usher in the New Age,Das neue Zeitalter einläuten
-Utaku,Utaku
-Utaku Battle Maiden School,Utaku Schlachtjungfern Schule
-Utaku Steed,Utaku Ross
-Vapor of Nightmares,Dämpfe der Alpträume
-Veiled Menace Style,Verschleierter Bedrohungs Stil
-Vendor of Strange Wares,Verkäufer von seltsamen Waren
-Vengeance for the Fallen,Vergeltung für die Gefallenen
-Vigilance of Mind,Wachsamkeit des Geistes
-Voice of Authority,Stimme der Authorität
-Voice of the Emperor,Stimme des Kaisers
-Void,Leere
-Void Kihō,Leeren Kihō
-Void Shūji,Leeren Shūji
-Void ring exchange,Leeren Ring Austausch
-Wakizashi,Wakizashi
-Wall of Earth,Wand der Erde
-Wall of Fire,Wand des Feuers
-Warded Shikigami,Geschützter Shikigami
-Wargear,Kriegsgerät
-Warrior's Resolve,Kriegerische Entschlossenheit
-Water,Wasser
-Water Fist,Wasserfaust
-Water Invocations,Wasser Beschwörungen
-Water Kihō,Wasser Kihō
-Water Shūji,Wasser Shūji
-Way of the Carp,Weg des Karpfen
-Way of the Crab,Weg der Krabbe
-Way of the Crane,Weg des Kranichs
-Way of the Dragon,Weg des Drachen
-Way of the Earthquake,Weg des Erdbebens
-Way of the Edgeless Sword,Weg des eckenlosen Schwerts
-Way of the Falling Star,Weg des fallenden Sterns
-Way of the Lion,Weg des Löwen
-Way of the Phoenix,Weg des Phönix
-Way of the Seafoam,Weg des Seeschaums
-Way of the Tortoise,Weg der Schildkröte
-Way of the Willow,Weg der Weide
-Weakness Is My Strength,Schwäche ist meine Stärke
-Weight of Duty,Gewicht der Pflicht
-Well Connected,Gut vernetzt
-Well Traveled,Gut gereist
-Well of Desire,Brunnen des Verlangens
-Whetstone,Wetzstein
-Whispers of Court,Hofgeflüster
-Whispers of Cruelty,Flüstern der Grausamkeit
-Whispers of Doom,Flüstern des Verderbens
-Whispers of Failure,Flüstern des Scheitern
-Whispers of Poverty,Flüstern der Armut
-Whispers of Treachery,Flüstern des Verrats
-Wings of the Phoenix,Flügel des Phönix
-Wisdom of the Ages,Weisheit des Alters
-Witch Hunter,Hexenjäger
-Wolf's Proposal,Wolf's Vorschlag
-Wondrous Work,Wundersame Arbeit
-Wordplay,Wortspiel
-World of Shadows,Welt der Schatten
-Worldly Rōnin Path,Weltlicher Rōnin Pfad
-Wrath of Kaze-no-Kami,Zorn des Kaze-no-kami
-Yari,Yari
-Yari of Air,Yari der Luft
-Yasuki,Yasuki
-Yasuki Merchant School,Yasuki Händler Schule
-Yasunori Steel,Yasunori Stahl
-Yogo,Yogo
-Yogo Preserver School,Yogo Bewahrer Schule
-Yogo Wardmaster School,Yogo Schutzmeister Schule
-Yoriki,Yoriki
-Yotogi's Piercing Gaze,Yotogi's durchdringender Blick
-"You gain the Blessed Lineage advantage (see page 103 of the core rulebook). This can be assigned in excess of the normal limitations on disadvantages at character creation. While on the Wall, your glory rank is treated as 1 higher.","Du erhältst den Vorteil der Gesegneten Linie (siehe Seite 103 des Kernregelwerks). Dies kann über die üblichen Einschränkungen der Nachteile bei der Charaktererstellung hinaus erfolgen. Während du an der Wand bist, wird dein Ruhmesrang als 1 höher behandelt."
-You gain the Blessed Lineage advantage (see page 103) (this can be assigned in excess of the normal limitations on advantages at character creation).,Du erhältst den Vorteil der Gesegneten Linie (siehe Seite 103) (dieser kann über die normalen Einschränkungen der Vorteile bei der Charaktererstellung hinaus vergeben werden).
-You gain the Fallen Ancestor disadvantage (see 98). Choose one of your character's rings; you may reduce the value of that ring by 1 to increase the value of your Void Ring by 1 (this still cannot raise it above 3).,"Du erhältst den Nachteil des gefallenen Vorfahren (siehe 98). Wähle einen der Ringe deines Charakters; du kannst den Wert dieses Rings um 1 verringern, um den Wert deines Leeren Ringes um 1 zu erhöhen (dies kann ihn immer noch nicht über 3 erhöhen)"
-You gain the Haunting (Void) adversity (see page 122 of the core rulebook). This can be assigned in excess of the normal limitations on disadvantages at character creation. Roll a ten-sided die again to determine a Martial skill; gain +1 rank in that skill.,"Du erhältst die Spuk-(Leere)-Widrigkeit (siehe Seite 122 des Kernregelwerks). Dies kann über die üblichen Einschränkungen der Nachteile bei der Charaktererstellung hinaus erfolgen. Würfle erneut einen zehnseitigen Würfel, um eine Kampfkunst zu bestimmen; erhalte +1 Rang in dieser Fähigkeit"
-"You know one additional technique. Roll a ten-sided die again to determine the category, and then select one technique with a prerequisite of school rank 1 and learn that technique. You can perform that technique even if it is not normally allowed by your school.","Du kennst eine zusätzliche Technik. Würfle erneut einen zehnseitigen Würfel, um die Kategorie zu bestimmen, und wähle dann eine Technik mit der Voraussetzung des Schulrangs 1 aus und lerne diese Technik. Du kannst diese Technik anwenden, auch wenn sie normalerweise von deiner Schule nicht erlaubt ist."
-Yumi,Yumi
-Yōjimbō,Yōjimbō
-Zanbatō,Zanbatō
-another item,anderer Gegenstand
-any,beliebig
-boat or estate,Boot oder Anwesen
-bu,Bu
-horse or other animal,Pferd oder ein anderes Tier
-koku,Koku
-lost family heirloom,Verlorenes Familienerbstück
-other,andere
-set of armor,Rüstungsset
-skill,Fähigkeit
-skill_group,Fähigkeiten_Gruppe
-starting item,Anfangsgegenstand
-technique,Technik
-technique_group,Technik_Gruppe
-weapon,Waffe
-zeni,Zeni
-Ō-yoroi,Ō-yoroi
-Ōtsuchi,Ōtsuchi
+"Spiritual, Interpersonal","Spirituell, zwischenmenschlich"
+"Spiritual Shackles","Spirituelle Fesseln"
+"Spiritual Protector","Spiritueller Beschützer"
+"Spiritual Artisan","Spiritueller Handwerker"
+"Haunting","Spukend"
+"Traces of Passage","Spuren des Durchganges"
+"City [choose one]","Stadt[wähle eine aus]"
+"Polearms","Stangenwaffen"
+"Rock Gardening","Steingärtnerei"
+"Stonewall Tactics","Steinwand Taktiken"
+"Coiling Serpent Style","Stil der wickelnden Schlange"
+"Voice of Authority","Stimme der Authorität"
+"Voice of the Emperor","Stimme des Kaisers"
+"Sentiment","Stimmung"
+"Muteness","Stummheit"
+"Blunt Weapons","Stumpfe Waffen"
+"Obtuse","Stumpfsinnig"
+"Tempest of Air","Sturm der Luft"
+"Storm Bow","Sturmbogen"
+"Storm Fleet Tide Seer","Sturmflotten Gezeitenseher Schule"
+"Storm Fleet Sailor School","Sturmflottenseemann Schule"
+"Storm Surge","Sturmflut"
+"Ever-Changing Waves","Ständig wechselnde Wellen"
+"Strength of a Thousand Ancestors","Stärke tausender Vorfahren"
+"Crashing Wave Style","Stürzender Wellen-Stil"
+"Subtle","Subtil"
+"Subtle Observer","Subtiler Beobachter"
+"Addiction","Sucht"
+"Suijin's Embrace","Suijin's Umarmung"
+"Symbol of Earth","Symbol der Erde"
+"Purge the Wicked","Säubert die Frevler"
+"Pillar of Calm","Säule der Ruhe"
+"Sinful Whispers","Sündhaftes Geflüster"
+"Sweets (per four servings)","Süßigkeiten (pro vier Portionen)"
+"Journal","Tagebuch"
+"Taketaba","Taketaba"
+"Tactics","Taktiken"
+"Tactical Assessment","Taktische Beurteilung"
+"Dance of Seasons","Tanz der Jahreszeiten"
+"Taraibune","Taraibune"
+"Tatami Gusoku","Tatami Gusoku"
+"Tate","Tate"
+"Tattoo Needles (per set)","Tattoo Nadeln (per Set)"
+"Deafness","Taubheit"
+"Technique","Technik"
+"technique","Technik"
+"technique_group","Technik_Gruppe"
+"Tea","Tee"
+"Tea Ceremony","Tee Zeremonie"
+"Tea Set (portable)","Teeset (tragbar)"
+"Tekkan","Tekkan"
+"Tessen","Tessen"
+"Tetsubō","Tetsubō"
+"Tetsubō of Earth","Tetsubōder Erde"
+"Theology","Theologie"
+"Animal Bond","Tierbindung"
+"Animal Trainer","Tiertrainer"
+"Tinbe","Tinbe"
+"Death Touch","Todesberührung"
+"Togashi Order","Togashi Orden"
+"Togashi Tattooed Order","Togashi tätowierter Orden"
+"Token of Memory","Token der Erinnerung"
+"Tonfa","Tonfa"
+"Toritaka","Toritaka"
+"Toritaka Phantom Hunter School","Toritaka Phantomjäger Schule"
+"Tosei-Gusoku","Tosei-Gusoku"
+"Dead Eyes","Tote Augen"
+"Tsuruhashi","Tsuruhashi"
+"Deadly Sting","Tödlicher Stich"
+"Uchema's Technique","Uchema's Technik"
+"Embrace the Void","Umarme die Leere"
+"Caress of Earth","Umarmung der Erde"
+"Embrace of Kenro-Ji-Jin","Umarmung von Kenro-Ji-Jin"
+"Cloak of Night","Umhang der Nacht"
+"Satchel of Imperial Proclamations","Umhängetasche der kaiserlichen Proklamationen"
+"Satchel of Medicinal Supplies","Umhängetasche der medizinischen Versorgung"
+"Discomfiting Countenance","Unangenehmes Antlitz"
+"Inconspicuous Garb","Unauffälliges Gewand"
+"Indomitable Will","Unbezwingbarer Wille"
+"Irrepressible Flirtation","Unbezähmbares Flirten"
+"Insufferable Genius","Unerträgliches Genie"
+"Impatience","Ungeduld"
+"Clumsiness","Ungeschicktheit"
+"Incurable Illness","Unheilbare Krankheit"
+"Unholy","Unheilig"
+"Unholy Fervor","Unheilige Leidenschaft"
+"Fiend's Retreat","Unhold's Rückzugsort"
+"Suppressing Blows","Unterdrückende Schläge"
+"Support of [One Group]","Unterstützung von [Einer Gruppe]"
+"Unusual Name Origin","Unüblicher Namensursprung"
+"Utaku","Utaku"
+"Utaku Steed","Utaku Ross"
+"Utaku Battle Maiden School","Utaku Schlachtjungfern Schule"
+"Lost Memories","Velorene Erinnerungen"
+"Loathing for Peasants","Verabscheuung von Bauern"
+"Despised in [City]","Verachtet in [Stadt]"
+"Disdain for Sincerity","Verachtung für Aufrichtigkeit"
+"Disdain for Compassion","Verachtung für Mitgefühl"
+"Disdain for Courage","Verachtung für Mut"
+"Disdain for Duty and Loyalty","Verachtung für Pflicht und Loyalität"
+"Scorn of [One Group]","Verachtung für [Eine Gruppe]"
+"Disdain for Honor","Verachtung für die Ehre"
+"Disdain for Righteousness","Verachtung für die Gerechtigkeit"
+"Disdain for Courtesy","Verachtung für die Höflichkeit"
+"Bitter Betrothal","Verbitterte Verlobung"
+"Forbidden","Verboten"
+"Ally [Name]","Verbündeter[Name]"
+"Doom Crossbow","Verdammnis-Armbrust"
+"Tainted Warrior","Verdorbener Krieger"
+"Tainted Blood","Verdorbenes Blut"
+"Cursed Lineage","Verfluchte Ahnenreihe"
+"Accursed Summoning","Verfluchte Beschwörung"
+"Vengeance for the Fallen","Vergeltung für die Gefallenen"
+"Vendor of Strange Wares","Verkäufer von seltsamen Waren"
+"Lost in the Darkness","Verloren in der Dunkelheit"
+"Lost Fingers","Verlorene Finger"
+"Lost Arm or Lost Hand","Verlorener Arm oder verlorene Hand"
+"Lost Name","Verlorener Name"
+"Lost Eye","Verlorenes Auge"
+"Lost Leg","Verlorenes Bein"
+"lost family heirloom","Verlorenes Familienerbstück"
+"Veiled Menace Style","Verschleierter Bedrohungs Stil"
+"Disappearing World Style","Verschwindender Welt-Stil"
+"Playfulness","Verspieltheit"
+"Concealable","Versteckbar"
+"Concealed Armor","Versteckte Rüstung"
+"Maimed Arm","Verstümmelter Arm"
+"Maimed Visage","Verstümmeltes Gesicht"
+"Lead from the Front","Von vorne Führen"
+"Prepare","Vorbereiten"
+"Prepare (2)","Vorbereiten (2)"
+"Paragon of Honor","Vorbild der Ehre"
+"Paragon of Sincerity","Vorbild der Ehrlichkeit"
+"Paragon of Righteousness","Vorbild der Gerechtigkeit"
+"Paragon of Courtesy","Vorbild der Höfflichkeit"
+"Paragon of Duty and Loyalty","Vorbild der Pflicht und Loyalität"
+"Paragon of Compassion","Vorbild des Mitgefühls"
+"Paragon of Courage","Vorbild des Mutes"
+"Feigned Opening","Vorgetäuschte Öffnung"
+"Vigilance of Mind","Wachsamkeit des Geistes"
+"weapon","Waffe"
+"Truth Burns through Lies","Wahrheit brennt durch Lügen"
+"Divination Kit","Wahrsager-Kit"
+"Divination","Wahrsagerei"
+"Fortune-Telling","Wahrsagerei"
+"Wakizashi","Wakizashi"
+"Wall of Earth","Wand der Erde"
+"Wall of Fire","Wand des Feuers"
+"Water","Wasser"
+"Water Invocations","Wasser Beschwörungen"
+"Water Kihō","Wasser Kihō"
+"Water Shūji","Wasser Shūji"
+"Water Fist","Wasserfaust"
+"Rouse the Soul","Wecke die Seele"
+"Way of the Crab","Weg der Krabbe"
+"Way of the Tortoise","Weg der Schildkröte"
+"Way of the Willow","Weg der Weide"
+"Way of the Dragon","Weg des Drachen"
+"Way of the Earthquake","Weg des Erdbebens"
+"Way of the Carp","Weg des Karpfen"
+"Way of the Crane","Weg des Kranichs"
+"Way of the Lion","Weg des Löwen"
+"Way of the Phoenix","Weg des Phönix"
+"Way of the Seafoam","Weg des Seeschaums"
+"Way of the Edgeless Sword","Weg des eckenlosen Schwerts"
+"Way of the Falling Star","Weg des fallenden Sterns"
+"Softheartedness","Weichherzigkeit"
+"Wisdom of the Ages","Weisheit des Alters"
+"World of Shadows","Welt der Schatten"
+"Worldly Rōnin Path","Weltlicher Rōnin Pfad"
+"Whetstone","Wetzstein"
+"Resilient Readiness","Widerstandsfähige Bereitschaft"
+"Adversity and Skill","Widrigkeiten und Fähigkeiten"
+"Striking as Earth","Wie Erde schlagen"
+"Striking as Fire","Wie Feuer schlagen"
+"Striking as Void","Wie Leere schlagen"
+"Striking as Air","Wie Luft schlagen"
+"Striking as Water","Wie Wasser schlagen"
+"Ferocity","Wildheit"
+"Swirling Desert Wind","Wirbelnder Wüstenwind"
+"Wolf's Proposal","Wolf's Vorschlag"
+"Wordplay","Wortspiel"
+"Wondrous Work","Wundersame Arbeit"
+"Fury of Osano-wo","Wut von Osano-Wo"
+"Choose two of your character's rings; you may reduce the value of one of these rings by 1 to increase the value of the other by 1 (this still cannot raise a ring above 3). If you do not do so, choose one item of rarity 6 or lower and assign it to your starting outfit.","Wähle zwei der Ringe deines Charakters; du kannst den Wert eines dieser Ringe um 1 verringern, um den Wert des anderen um 1 zu erhöhen (dies kann einen Ring immer noch nicht über 3 erhöhen). Wenn du dies nicht tust, wähle einen Gegenstand der Seltenheit 6 oder niedriger und weise ihn deinem Starteroutfit zu."
+"Dice and Cup","Würfel und Cup"
+"Roll a ten-sided die again to determin your lost family heirloom, which exists somewhere in the world. You choose one quality and the GM chooses one quality; these are applied to the item. You do not know where the heirloom is, but you could later reclaim it during the campaign.","Würfle erneut einen zehnseitigen Würfel, um dein verlorenes Familienerbstück zu bestimmen, das irgendwo auf der Welt existiert. Du wählst eine Qualität und der GM wählt eine Qualität; diese werden auf den Gegenstand angewendet. Du weißt nicht, wo das Erbstück ist, aber du könntest es später während der Kampagne wiedererlangen."
+"Roll a ten-sided die again to determine a skill to aid in learning of your ancestor's fate; gain +1 rank in that skill.","Würfle erneut einen zehnseitigen Würfel, um eine Fähigkeit zu bestimmen, die dir hilft, das Schicksal deines Vorfahren zu erkennen; erhalte +1 Rang in dieser Fähigkeit."
+"Roll a ten-sided die again to determine a skill to aid in learning of your ancestor's fate; gain +1 rank in that skill. Additionally, your ancestor might still be alive, in the Shadowlands...waiting.","Würfle erneut einen zehnseitigen Würfel, um eine Fähigkeit zu bestimmen, die dir hilft, das Schicksal deines Vorfahren zu erkennen; erhalte +1 Rang in dieser Fähigkeit. Außerdem könnte dein Vorfahre noch am Leben sein, in den Schattenländern.... wartend..."
+"Roll a ten-sided die again to determine a skill to aoid in restoring your ancestor's name; gain +1 rank in that skill.","Würfle erneut einen zehnseitigen Würfel, um eine Fähigkeit zu bestimmen, die dir hilft, den Namen deines Vorfahren wiederherzustellen; erhalte +1 Rang in dieser Fähigkeit."
+"Roll a ten-sided die again to determine a Scholar skill; gain +1 rank in that skill","Würfle erneut einen zehnseitigen Würfel, um eine Gelehrten-Fähigkeit zu bestimmen; erhalte +1 Rang in dieser Fähigkeit"
+"Roll a ten-sided die again to determine a Trade skill; gain +1 rank in that skill","Würfle erneut einen zehnseitigen Würfel, um eine Handwerksfähigkeit zu bestimmen; erhalte +1 Rang in dieser Fähigkeit"
+"Roll a ten-sided die again to determine an Artisan skill; gain +1 rank in that skill.","Würfle erneut einen zehnseitigen Würfel, um eine Handwerksfähigkeit zu bestimmen; erhalte +1 Rang in dieser Fähigkeit."
+"Roll a ten-sided die again to determine a Social skill; gain +1 rank in that skill","Würfle erneut einen zehnseitigen Würfel, um eine soziale Fähigkeit zu bestimmen; erhalte +1 Rang in dieser Fähigkeit"
+"Roll a ten-sided die again and add the resulting family heirloom to your starting items. You choose one quality and the GM chooses one quality from the list of item qualities, on page 240; these are applied to the item.","Würfle noch einmal einen zehnseitigen Würfel und füge das resultierende Familienerbstück zu deinen Anfangsgegenständen hinzu. Du wählst eine Qualität und der GM wählt eine Qualität aus der Liste der Objektqualitäten, auf Seite 240; diese werden auf das Objekt angewendet."
+"Roll a ten-sided again to determine a Martial skill; gain +1 rank in that skill","Würfle noch einmal einen zehnseitigen Würfel, um eine Kampf-Fähigkeit zu bestimmen; erhalte +1 Rang in dieser Fähigkeit"
+"Yari","Yari"
+"Yari of Air","Yari der Luft"
+"Yasuki","Yasuki"
+"Yasuki Merchant School","Yasuki Händler Schule"
+"Yasunori Steel","Yasunori Stahl"
+"Yogo","Yogo"
+"Yogo Preserver School","Yogo Bewahrer Schule"
+"Yogo Wardmaster School","Yogo Schutzmeister Schule"
+"Yoriki","Yoriki"
+"Yotogi's Piercing Gaze","Yotogi's durchdringender Blick"
+"Yumi","Yumi"
+"Yōjimbō","Yōjimbō"
+"Zanbatō","Zanbatō"
+"Mark of Desecration","Zeichen der Entweihung"
+"Tent (chomchong)","Zelt (chomchong)"
+"Tent (small)","Zelt (klein)"
+"Tent (yurt)","Zelt (yurt)"
+"zeni","Zeni"
+"Ceremonial","Zeremoniell"
+"Ceremonial Clothes","Zeremonielle Kleidung"
+"Destroyed","Zerstört"
+"Wrath of Kaze-no-Kami","Zorn des Kaze-no-kami"
+"Twenty Goblin Thief","Zwanzig Goblin DIeb"
+"Twenty-Goblin Crab","Zwanzig Goblin Krabbe"
+"Two Items of Rarity 4 or Lower","Zwei Gegenstände von Seltenheit 4 oder niedriger"
+"Two Weapons of Rarity 6 or Lower","Zwei Waffen von Seltenheit 6 oder niedriger"
+"Interpersonal","Zwischenmenschlich"
+"Interpersonal (Name), Mental and Interpersonal (Culture), Physical (Appearance)","Zwischenmenschlich (Name), mental und zwischenmenschlich (Kultur), körperlich (Aussehen)"
+"Interpersonal, Infamy","Zwischenmenschlich, Infamie"
+"Interpersonal, Physical or Mental, Scar","Zwischenmenschlich, körperlich oder mental, Narbe"
+"Interpersonal, Mental","Zwischenmenschlich, mental"
+"Interpersonal, Physical","Zwischenmenschlich, physisch"
+"Interpersonal, Spiritual","Zwischenmenschlich, spirituell"
+"Cynicism","Zynismus"
+"other","andere"
+"another item","anderer Gegenstand"
+"any","beliebig"
+"Snaring","fangend"
+"O-Gata Dohou","o-Gata Dohou"
+"Twisted Summons","perverse Beschwörungen"
+"Razor-edged","scharfe Klinge"
+"Ravenous Swarms","unersättliche Schwärme"
+"Aesthetics","Ästhetik"
+"Axes","Äxte"
+"Survival","Überleben"
+"Dazzling Performance","Überwältigende Darbietung"
+"Ō-yoroi","Ō-yoroi"
+"Ōtsuchi","Ōtsuchi"

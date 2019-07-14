@@ -130,6 +130,7 @@ public:
             ") where term is not NULL and term is not ''                                                                      "
             ") strings                                                                                                          "
             "left join i18n on strings.term = i18n.string                                                                        "
+            "order by string_tr, term                                                                        "
             ;
 
     //void qsm_getclans(const QSqlQueryModel* model);

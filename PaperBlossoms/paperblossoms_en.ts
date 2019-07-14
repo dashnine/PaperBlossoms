@@ -23,8 +23,13 @@
         <source>Paper Blossoms is an Open Source character generator for Legend of the Five Rings, a roleplaying game by Fantasy Flight Games.  The application and author(s) are not affiliated with FFG or any other official L5R party.  Legend of the Five Rings and all associated content is property of Fantasy Flight Games.  PaperBlossoms is licensed under the GPLv3, and is Copyright (c) 2019 Kyle Hankins (dashnine).  Data modeling and data entry provided by @meow9th. 
 
 To contact the project, send an email to paperblossoms.L5R@gmail.com!
-Ring images are property of FFG; the assets used here were taken from www.imperialadvisor.com and modified to work with the application; these can be removed immediately upon request by any owning party. 
+Ring images are property of FFG; the assets used here were taken from www.imperialadvisor.com (original by /u/mproud on reddit) and modified to work with the application; these can be removed immediately upon request by any owning party. 
 This application is created using Qt 5, which is licenced under the LGPLv3: https://doc.qt.io/qt-5/lgpl.html.  A copy of this license is also available in the application directory.  While this application is distributed with binaries for Qt, any compatible Qt binaries may be used in place of those distributed, limited only by version incompatibilities. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3.  </source>
+        <oldsource>Paper Blossoms is an Open Source character generator for Legend of the Five Rings, a roleplaying game by Fantasy Flight Games.  The application and author(s) are not affiliated with FFG or any other official L5R party.  Legend of the Five Rings and all associated content is property of Fantasy Flight Games.  PaperBlossoms is licensed under the GPLv3, and is Copyright (c) 2019 Kyle Hankins (dashnine).  Data modeling and data entry provided by @meow9th. 
+
+To contact the project, send an email to paperblossoms.L5R@gmail.com!
+Ring images are property of FFG; the assets used here were taken from www.imperialadvisor.com and modified to work with the application; these can be removed immediately upon request by any owning party. 
+This application is created using Qt 5, which is licenced under the LGPLv3: https://doc.qt.io/qt-5/lgpl.html.  A copy of this license is also available in the application directory.  While this application is distributed with binaries for Qt, any compatible Qt binaries may be used in place of those distributed, limited only by version incompatibilities. This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3.  </oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -147,6 +152,11 @@ can only be taken with GM approval.</source>
     <message>
         <location filename="ui/adddisadvdialog.ui" line="20"/>
         <source>Choose a personal trait to add.  Note: Requires GM approval.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/adddisadvdialog.ui" line="30"/>
+        <source>Note: Adding Passions requires 3 XP. Removing this passion will not automatically remove the associated Advance.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -914,14 +924,14 @@ can only be taken with GM approval.</source>
     </message>
     <message>
         <location filename="src/mainwindow.cpp" line="235"/>
-        <location filename="src/mainwindow.cpp" line="1502"/>
-        <location filename="src/mainwindow.cpp" line="1513"/>
+        <location filename="src/mainwindow.cpp" line="1503"/>
+        <location filename="src/mainwindow.cpp" line="1514"/>
         <source>Closing Character Profile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/mainwindow.cpp" line="590"/>
-        <location filename="src/mainwindow.cpp" line="1562"/>
+        <location filename="src/mainwindow.cpp" line="1563"/>
         <source>Save File As...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1017,91 +1027,91 @@ can only be taken with GM approval.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1448"/>
+        <location filename="src/mainwindow.cpp" line="1449"/>
         <source>Choose an export directory...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1458"/>
-        <location filename="src/mainwindow.cpp" line="1856"/>
+        <location filename="src/mainwindow.cpp" line="1459"/>
+        <location filename="src/mainwindow.cpp" line="1857"/>
         <source>Error Exporting Data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1462"/>
-        <location filename="src/mainwindow.cpp" line="1860"/>
+        <location filename="src/mainwindow.cpp" line="1463"/>
+        <location filename="src/mainwindow.cpp" line="1861"/>
         <source>Export Complete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1471"/>
+        <location filename="src/mainwindow.cpp" line="1472"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1472"/>
+        <location filename="src/mainwindow.cpp" line="1473"/>
         <source>Choose a folder containing exported data...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1483"/>
-        <location filename="src/mainwindow.cpp" line="1877"/>
+        <location filename="src/mainwindow.cpp" line="1484"/>
+        <location filename="src/mainwindow.cpp" line="1878"/>
         <source>Error Importing Data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1487"/>
-        <location filename="src/mainwindow.cpp" line="1881"/>
+        <location filename="src/mainwindow.cpp" line="1488"/>
+        <location filename="src/mainwindow.cpp" line="1882"/>
         <source>Import Complete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1562"/>
+        <location filename="src/mainwindow.cpp" line="1563"/>
         <source>Paper Blossoms Character XML (*.xml)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1573"/>
+        <location filename="src/mainwindow.cpp" line="1574"/>
         <source>Unable to open XML file for writing.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1846"/>
+        <location filename="src/mainwindow.cpp" line="1847"/>
         <source>Export User Descriptions...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1846"/>
-        <location filename="src/mainwindow.cpp" line="1893"/>
-        <location filename="src/mainwindow.cpp" line="1972"/>
+        <location filename="src/mainwindow.cpp" line="1847"/>
+        <location filename="src/mainwindow.cpp" line="1894"/>
+        <location filename="src/mainwindow.cpp" line="1973"/>
         <source>CSV (*.csv)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1869"/>
+        <location filename="src/mainwindow.cpp" line="1870"/>
         <source>Import User Descriptions...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1869"/>
+        <location filename="src/mainwindow.cpp" line="1870"/>
         <source>CSV (*.csv);;Any (*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1893"/>
-        <location filename="src/mainwindow.cpp" line="1972"/>
+        <location filename="src/mainwindow.cpp" line="1894"/>
+        <location filename="src/mainwindow.cpp" line="1973"/>
         <source>Export Translation File...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1902"/>
-        <location filename="src/mainwindow.cpp" line="1981"/>
+        <location filename="src/mainwindow.cpp" line="1903"/>
+        <location filename="src/mainwindow.cpp" line="1982"/>
         <source>Error exporting translation data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1906"/>
-        <location filename="src/mainwindow.cpp" line="1985"/>
+        <location filename="src/mainwindow.cpp" line="1907"/>
+        <location filename="src/mainwindow.cpp" line="1986"/>
         <source>Translation Template Export Complete</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1522,73 +1532,81 @@ can only be taken with GM approval.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="158"/>
-        <location filename="src/newcharwizardpage6.cpp" line="184"/>
+        <location filename="src/newcharwizardpage6.cpp" line="159"/>
+        <location filename="src/newcharwizardpage6.cpp" line="185"/>
         <source>H:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="161"/>
-        <location filename="src/newcharwizardpage6.cpp" line="187"/>
+        <location filename="src/newcharwizardpage6.cpp" line="162"/>
+        <location filename="src/newcharwizardpage6.cpp" line="188"/>
         <source>G:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="164"/>
-        <location filename="src/newcharwizardpage6.cpp" line="190"/>
+        <location filename="src/newcharwizardpage6.cpp" line="165"/>
+        <location filename="src/newcharwizardpage6.cpp" line="191"/>
         <source>S:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="246"/>
-        <location filename="src/newcharwizardpage6.cpp" line="545"/>
+        <location filename="src/newcharwizardpage6.cpp" line="247"/>
+        <location filename="src/newcharwizardpage6.cpp" line="571"/>
+        <location filename="src/newcharwizardpage6.cpp" line="630"/>
         <source>No Change</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="288"/>
+        <location filename="src/newcharwizardpage6.cpp" line="295"/>
         <source>Choose an item quality. The GM chooses another item quality.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="291"/>
+        <location filename="src/newcharwizardpage6.cpp" line="298"/>
         <source>Player-chosen Quality:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="292"/>
+        <location filename="src/newcharwizardpage6.cpp" line="299"/>
         <source>GM-chosen Quality:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="350"/>
+        <location filename="src/newcharwizardpage6.cpp" line="360"/>
         <source>Choose a ring to raise, and a ring to lower.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="353"/>
-        <location filename="src/newcharwizardpage6.cpp" line="403"/>
+        <location filename="src/newcharwizardpage6.cpp" line="363"/>
+        <location filename="src/newcharwizardpage6.cpp" line="416"/>
+        <location filename="src/newcharwizardpage6.cpp" line="428"/>
         <source>Raise:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="354"/>
-        <location filename="src/newcharwizardpage6.cpp" line="404"/>
+        <location filename="src/newcharwizardpage6.cpp" line="364"/>
+        <location filename="src/newcharwizardpage6.cpp" line="417"/>
+        <location filename="src/newcharwizardpage6.cpp" line="429"/>
         <source>Lower:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="400"/>
+        <location filename="src/newcharwizardpage6.cpp" line="413"/>
         <source>You may raise the Void Ring and choose a ring to lower.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="652"/>
+        <location filename="src/newcharwizardpage6.cpp" line="425"/>
+        <source>You may choose a ring to lower and raise the Fire or Air Ring.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage6.cpp" line="737"/>
         <source>Rings:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="652"/>
+        <location filename="src/newcharwizardpage6.cpp" line="737"/>
         <source>Skills:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1793,12 +1811,12 @@ One of your ancestors perished honorably in battle, </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage7.cpp" line="390"/>
+        <location filename="src/newcharwizardpage7.cpp" line="411"/>
         <source>Wealth:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage7.cpp" line="700"/>
+        <location filename="src/newcharwizardpage7.cpp" line="728"/>
         <source>
 
 20. Death:
@@ -1852,8 +1870,8 @@ One of your ancestors perished honorably in battle, </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/renderdialog.cpp" line="101"/>
-        <location filename="src/renderdialog.cpp" line="571"/>
+        <location filename="src/renderdialog.cpp" line="114"/>
+        <location filename="src/renderdialog.cpp" line="584"/>
         <source>Unable to open file</source>
         <translation type="unfinished"></translation>
     </message>
