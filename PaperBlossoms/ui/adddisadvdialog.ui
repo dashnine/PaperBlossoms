@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>155</height>
+    <height>219</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,6 +23,16 @@
    </item>
    <item>
     <widget class="QComboBox" name="traitComboBox"/>
+   </item>
+   <item>
+    <widget class="QLabel" name="passionwarning">
+     <property name="text">
+      <string>Note: Adding Passions requires 3 XP. Removing this passion will not automatically remove the associated Advance.</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
    </item>
    <item>
     <widget class="QDialogButtonBox" name="buttonBox">
