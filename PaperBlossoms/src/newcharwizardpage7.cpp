@@ -313,7 +313,7 @@ void NewCharWizardPage7::initializePage()
             heritage == dal->translate("Famous Deed") ||
             //shadowlands
             //courts
-            heritage == dal->translate("Triumph over the Lion")
+            heritage == dal->translate("Triumph Over the Lion")
                 ){ //item
         if(!secondarychoice.isEmpty()){
 

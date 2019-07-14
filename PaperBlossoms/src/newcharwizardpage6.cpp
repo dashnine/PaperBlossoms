@@ -281,7 +281,7 @@ void NewCharWizardPage6::buildq18UI(){ //this is all still in initializePage
     }
     else if(curAncestor == dal->translate("Famous Deed") ||
             curAncestor == dal->translate("Glorious Sacrifice") ||
-            curAncestor == dal->translate("Triumph over the Lion")
+            curAncestor == dal->translate("Triumph Over the Lion")
             ){
         //Item Selection
         ui->nc6_q18_secondaryChoice_comboBox->setVisible(true);
@@ -594,14 +594,14 @@ void NewCharWizardPage6::on_nc6_q18_otherComboBox_currentIndexChanged(const QStr
         case 1:
             break; //skill
         case 2:
-            if (effectresult == dal->translate("weapon")){
+            if (effectresult == dal->translate("Any weapon")){
                 ui->nc6_q18_secondaryChoice_comboBox->addItems(dal->qsl_getitemsbytype("Weapon"));
             }
-            else if (effectresult == dal->translate("a game set")){
+            else if (effectresult == dal->translate("Any game set")){
                 ui->nc6_q18_secondaryChoice_comboBox->addItem(dal->translate("Game Set"));
 
             }
-            else if (effectresult == dal->translate("another item")){
+            else if (effectresult == dal->translate("Other item relevant to your ancestor's victory")){
                 ui->nc6_q18_secondaryChoice_comboBox->addItems(dal->qsl_getitemsbytype("Item"));
 
             }
@@ -610,7 +610,7 @@ void NewCharWizardPage6::on_nc6_q18_otherComboBox_currentIndexChanged(const QStr
                 ui->nc6_q18_secondaryChoice_comboBox->addItem(dal->translate("Animal"));
 
             }
-            else if (effectresult == dal->translate("estate near Lion lands")){
+            else if (effectresult == dal->translate("The deed to a small piece of land on the border of Lion territory")){
                 ui->nc6_q18_secondaryChoice_comboBox->addItem(dal->translate("Estate"));
 
             }
