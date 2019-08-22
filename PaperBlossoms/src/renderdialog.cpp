@@ -608,6 +608,7 @@ void RenderDialog::on_printButton_clicked()
 {
     //QPrinter printer;
     printer.setOutputFormat(QPrinter::NativeFormat);
+    printer.setPageMargins(0.3,0.3,0.3,0.3,QPrinter::Inch);
     QPrintDialog *dialog = new QPrintDialog(&printer);
     if ( dialog->exec() == QDialog::Accepted)
             //ui->webView->print(&printer);
