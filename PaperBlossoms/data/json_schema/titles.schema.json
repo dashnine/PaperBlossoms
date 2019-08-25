@@ -46,62 +46,76 @@
                     }
                 ]
             },
-            "status_award": {
-                "description": "Status awarded by title completion",
-                "type": "object",
-                "properties": {
-                    "base_award": {
-                        "description": "Base amount of status awarded",
-                        "type": "integer"
-                    },
-                    "constraint": {
-                        "description": "Constraint on status award",
-                        "type": "object",
-                        "properties": {
-                            "type": {
-                                "description": "Type of constraint (min, max or equal)",
-                                "type": "string",
-                                "enum": [
-                                    "min",
-                                    "max",
-                                    "equals",
-                                    "between"
-                                ]
-                            },
-                            "value": {
-                                "description": "Value of constraint",
-                                "type": "integer"
-                            },
-                            "range": {
-                                "description": "Range of values for 'between' constraint",
-                                "type": "array",
-                                "items": {
+            "social_awards": {
+                "description": "Social attributes awarded from title completion",
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "description": "Social attribute awarded from title completion",
+                    "properties": {
+                        "award_attribute": {
+                            "description": "Social attribute awarded by title completion",
+                            "type": "string",
+                            "enum": [
+                                "glory",
+                                "status",
+                                "honor"
+                            ]
+                        },
+                        "base_award": {
+                            "description": "Base amount of social attribute awarded",
+                            "type": "integer"
+                        },
+                        "constraint": {
+                            "description": "Constraint on social attribute award",
+                            "type": "object",
+                            "properties": {
+                                "type": {
+                                    "description": "Type of constraint (min, max or equal)",
+                                    "type": "string",
+                                    "enum": [
+                                        "min",
+                                        "max",
+                                        "equals",
+                                        "between"
+                                    ]
+                                },
+                                "value": {
+                                    "description": "Value of constraint",
                                     "type": "integer"
                                 },
-                                "minItems": 2,
-                                "maxItems": 2
-                            }
-                        },
-                        "defaultSnippets": [
-                            {
-                                "label": "New Constraint on status award",
-                                "body": {
-                                    "type": "$1",
-                                    "value": "^$2"
+                                "range": {
+                                    "description": "Range of values for 'between' constraint",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "integer"
+                                    },
+                                    "minItems": 2,
+                                    "maxItems": 2
                                 }
-                            }
-                        ]
-                    }
-                },
-                "defaultSnippets": [
-                    {
-                        "label": "New Status awarded by title completion",
-                        "body": {
-                            "base_award": "^$1",
-                            "constraint": "^$2"
+                            },
+                            "defaultSnippets": [
+                                {
+                                    "label": "New Constraint on social attribute award",
+                                    "body": {
+                                        "type": "$1",
+                                        "value": "^$2"
+                                    }
+                                }
+                            ]
                         }
-                    }
-                ]
+                    },
+                    "defaultSnippets": [
+                        {
+                            "label": "New Social attribute awarded from title completion",
+                            "body": {
+                                "award_attribute": "$1",
+                                "base_award": "^$2",
+                                "constraint": "^$3"
+                            }
+                        }
+                    ]
+                }
             },
             "xp_to_completion": {
                 "description": "Amount of XP necessary to complete title",
@@ -162,6 +176,8 @@
                                 "Sh\u016bji",
                                 "Mah\u014d",
                                 "Ninjutsu",
+                                "Signature Scrolls",
+                                "Item Patterns",
                                 "General Kata",
                                 "Close Combat Kata",
                                 "Ranged Combat Kata",
@@ -209,6 +225,8 @@
                                 "Spinning Blades Style",
                                 "Thunderclap Strike",
                                 "Veiled Menace Style",
+                                "Pole-Vault",
+                                "Trip the Leg",
                                 "Hawk's Precision",
                                 "Pelting Hail Style",
                                 "Pin the Fan",
@@ -267,6 +285,7 @@
                                 "Tetsub\u014d of Earth",
                                 "Tomb of Jade",
                                 "Wall of Earth",
+                                "Essence of Jade",
                                 "Armor of Radiance",
                                 "Biting Steel",
                                 "Breath of the Fire Dragon",
@@ -302,6 +321,11 @@
                                 "Divination",
                                 "Tea Ceremony",
                                 "Threshold Barrier",
+                                "Formal Tea Ceremony",
+                                "The Ties that Bind",
+                                "Blessing of Steel",
+                                "Craft Shikigami",
+                                "Treaty Signing",
                                 "Artisan's Appraisal",
                                 "Bend with the Storm",
                                 "Cadence",
@@ -311,6 +335,9 @@
                                 "The Wind Blows Both Ways",
                                 "Whispers of Court",
                                 "Wolf's Proposal",
+                                "Spin the Web",
+                                "Assess Strengths",
+                                "Hidden in Smoke",
                                 "Ancestry Unearthed",
                                 "Civility Foremost",
                                 "Honest Assessment",
@@ -319,6 +346,7 @@
                                 "Touchstone of Courage",
                                 "The Immovable Hand of Peace",
                                 "Weight of Duty",
+                                "Unyielding Terms",
                                 "Bravado",
                                 "Dazzling Performance",
                                 "Fanning the Flames",
@@ -328,6 +356,11 @@
                                 "Sensational Distraction",
                                 "Stirring the Embers",
                                 "Truth Burns through Lies",
+                                "Osano-wo's Boast",
+                                "All Shall Fear Me",
+                                "Crackling Laughter",
+                                "Offend the Sensibilities",
+                                "Spiteful Loss",
                                 "All in Jest",
                                 "Buoyant Arrival",
                                 "Ebb and Flow",
@@ -336,6 +369,8 @@
                                 "Slippery Maneuvers",
                                 "Tributaries of Trade",
                                 "Well of Desire",
+                                "Beware the Smallest Mouse",
+                                "Fun and Games",
                                 "All Arts Are One",
                                 "A Samurai's Fate",
                                 "Courtier's Resolve",
@@ -345,16 +380,45 @@
                                 "Lord Bayushi's Whispers",
                                 "Lord Togashi's Insight",
                                 "Rouse the Soul",
+                                "Awe of Heaven",
+                                "Foreseen Need",
                                 "Incite Haunting",
                                 "Mark of Desecration",
                                 "Sinful Whispers",
                                 "Unholy Fervor",
+                                "The Blood Price",
+                                "Accursed Summoning",
+                                "Bind the Undead",
+                                "Commune with Evil",
+                                "Dark Reflection",
+                                "Entreat the Shadow Steed",
+                                "Fiend's Retreat",
+                                "Shape the Flesh",
+                                "Spiritual Shackles",
+                                "Spread Corruption",
+                                "Sword of Blood",
+                                "Twisted Summons",
                                 "Skulk",
                                 "Deadly Sting",
                                 "Noxious Cloud",
                                 "Silencing Stroke",
-                                "Spin the Web",
-                                "Awe of Heaven"
+                                "Artful Alibi",
+                                "Cunning Distraction",
+                                "Deceitful Strike",
+                                "Like a Ghost",
+                                "Slicing Wind Kick",
+                                "Silent Elimination",
+                                "Stillness of Death",
+                                "To Float or Sink",
+                                "What's Yours Is Mine",
+                                "Ichi's Second Sight",
+                                "Hasegawa's Denial",
+                                "Maikara's Rebuke",
+                                "Kakita Pattern",
+                                "Kenz\u014d Blade",
+                                "Shirogane Jade Inlay",
+                                "Uchema's Technique",
+                                "Yasunori Steel"
                             ]
                         },
                         "type": {
@@ -383,7 +447,7 @@
                             "body": {
                                 "name": "$2",
                                 "type": "$3",
-                                "special_access": "^${4:false}"
+                                "special_access": "^$4"
                             }
                         }
                     ]
@@ -393,7 +457,7 @@
         "required": [
             "name",
             "reference",
-            "status_award",
+            "social_awards",
             "xp_to_completion",
             "title_ability",
             "advancements"
@@ -404,7 +468,7 @@
                 "body": {
                     "name": "$1",
                     "reference": "^$2",
-                    "status_award": "^$3",
+                    "social_awards": "^[$3]",
                     "xp_to_completion": "^$4",
                     "title_ability": "$5",
                     "advancements": "^[$6]"

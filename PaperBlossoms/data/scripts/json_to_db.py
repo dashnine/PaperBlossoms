@@ -911,11 +911,6 @@ def titles_to_db(db_conn):
             name TEXT PRIMARY KEY,
             reference_book TEXT,
             reference_page INTEGER,
-            base_status_award INTEGER,
-            status_award_constraint_type TEXT,
-            status_award_constraint_value INTEGER,
-            status_award_constraint_min INTEGER,
-            status_award_constraint_max INTEGER,
             xp_to_completion INTEGER,
             title_ability_name TEXT
         )''',
@@ -924,6 +919,22 @@ def titles_to_db(db_conn):
             'title_ability_name': 'title_ability'
         },
         tr_fields = ['name', 'title_ability_name']
+    )
+
+    # Create awards table for titles
+    create_tables(
+        db_conn,
+        'title_awards',
+        '''CREATE TABLE {} (
+            title TEXT,
+            social_attribute TEXT,
+            base_award INTEGER,
+            constraint_type TEXT,
+            constraint_value INTEGER,
+            constraint_min INTEGER,
+            constraint_max INTEGER
+        )''',
+        tr_fields = ['title']
     )
 
     # Create advancement table for titles
@@ -949,19 +960,31 @@ def titles_to_db(db_conn):
 
         # Write to titles table
         db_conn.execute(
-            'INSERT INTO base_titles VALUES (?,?,?,?,?,?,?,?,?,?)',
+            'INSERT INTO base_titles VALUES (?,?,?,?,?)',
             (
                 title['name'],
                 title['reference']['book'],
                 title['reference']['page'],
-                title['status_award']['base_award'],
-                title['status_award']['constraint']['type'] if 'constraint' in title['status_award'] and 'value' in title['status_award']['constraint'] else None,
-                title['status_award']['constraint']['value'] if 'constraint' in title['status_award'] and 'value' in title['status_award']['constraint'] else None,
-                title['status_award']['constraint']['range'][0] if 'constraint' in title['status_award'] and 'range' in title['status_award']['constraint'] else None,
-                title['status_award']['constraint']['range'][1] if 'constraint' in title['status_award'] and 'range' in title['status_award']['constraint'] else None,
                 title['xp_to_completion'],
                 title['title_ability'],
             )
+        )
+
+        # Write to title awards table
+        db_conn.executemany(
+            'INSERT INTO base_title_awards VALUES (?,?,?,?,?,?,?)',
+            [
+                (
+                    title['name'],
+                    award['award_attribute'],
+                    award['base_award'],
+                    award['constraint']['type'] if 'constraint' in award else None,
+                    award['constraint']['value'] if 'constraint' in award and 'value' in award['constraint'] else None,
+                    award['constraint']['range'][0] if 'constraint' in award and 'range' in award['constraint'] else None,
+                    award['constraint']['range'][1] if 'constraint' in award and 'range' in award['constraint'] else None
+                )
+                for award in title['social_awards']
+            ]
         )
 
         # Write to title advancement table
