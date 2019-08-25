@@ -917,6 +917,8 @@ void MainWindow::setColumnsHidden(){
 
     ui->techniqueTableView->setColumnHidden(Tech::DESCRIPTION,true);
 
+    ui->curriculum_tableView->setColumnHidden(Curric::SPEC, true);
+
     ui->title_tableview->setColumnHidden(0, true); //hide the title -- it's shown above.
 
     ui->weapon_tableview->resizeColumnsToContents();
