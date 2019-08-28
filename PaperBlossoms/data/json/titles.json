@@ -5,13 +5,6 @@
             "book": "Core",
             "page": 305
         },
-        "status_award": {
-            "base_award": 15,
-            "constraint": {
-                "type": "max",
-                "value": 40
-            }
-        },
         "xp_to_completion": 30,
         "title_ability": "Voice of Authority",
         "advancements": [
@@ -61,6 +54,16 @@
                 "type": "technique",
                 "special_access": true
             }
+        ],
+        "social_awards": [
+            {
+                "base_award": 15,
+                "constraint": {
+                    "type": "max",
+                    "value": 40
+                },
+                "award_attribute": "status"
+            }
         ]
     },
     {
@@ -68,13 +71,6 @@
         "reference": {
             "book": "EE",
             "page": 249
-        },
-        "status_award": {
-            "base_award": 10,
-            "constraint": {
-                "type": "min",
-                "value": 40
-            }
         },
         "xp_to_completion": 36,
         "title_ability": "Skilled Attendant",
@@ -114,6 +110,16 @@
                 "type": "technique",
                 "special_access": true
             }
+        ],
+        "social_awards": [
+            {
+                "base_award": 10,
+                "constraint": {
+                    "type": "min",
+                    "value": 40
+                },
+                "award_attribute": "status"
+            }
         ]
     },
     {
@@ -121,13 +127,6 @@
         "reference": {
             "book": "EE",
             "page": 249
-        },
-        "status_award": {
-            "base_award": 10,
-            "constraint": {
-                "type": "min",
-                "value": 45
-            }
         },
         "xp_to_completion": 30,
         "title_ability": "Justice of the Champion",
@@ -167,6 +166,16 @@
                 "type": "technique",
                 "special_access": true
             }
+        ],
+        "social_awards": [
+            {
+                "base_award": 10,
+                "constraint": {
+                    "type": "min",
+                    "value": 45
+                },
+                "award_attribute": "status"
+            }
         ]
     },
     {
@@ -174,13 +183,6 @@
         "reference": {
             "book": "EE",
             "page": 250
-        },
-        "status_award": {
-            "base_award": 20,
-            "constraint": {
-                "type": "min",
-                "value": 55
-            }
         },
         "xp_to_completion": 36,
         "title_ability": "Voice of Authority",
@@ -220,6 +222,16 @@
                 "type": "technique",
                 "special_access": true
             }
+        ],
+        "social_awards": [
+            {
+                "base_award": 20,
+                "constraint": {
+                    "type": "min",
+                    "value": 55
+                },
+                "award_attribute": "status"
+            }
         ]
     },
     {
@@ -227,13 +239,6 @@
         "reference": {
             "book": "EE",
             "page": 250
-        },
-        "status_award": {
-            "base_award": 5,
-            "constraint": {
-                "type": "min",
-                "value": 20
-            }
         },
         "xp_to_completion": 24,
         "title_ability": "Lead from the Front",
@@ -274,6 +279,16 @@
                 "type": "technique",
                 "special_access": true
             }
+        ],
+        "social_awards": [
+            {
+                "base_award": 5,
+                "constraint": {
+                    "type": "min",
+                    "value": 20
+                },
+                "award_attribute": "status"
+            }
         ]
     },
     {
@@ -281,13 +296,6 @@
         "reference": {
             "book": "EE",
             "page": 251
-        },
-        "status_award": {
-            "base_award": 0,
-            "constraint": {
-                "type": "equals",
-                "value": 25
-            }
         },
         "xp_to_completion": 24,
         "title_ability": "Enlightened",
@@ -327,6 +335,16 @@
                 "type": "technique",
                 "special_access": true
             }
+        ],
+        "social_awards": [
+            {
+                "base_award": 0,
+                "constraint": {
+                    "type": "equals",
+                    "value": 25
+                },
+                "award_attribute": "status"
+            }
         ]
     },
     {
@@ -334,13 +352,6 @@
         "reference": {
             "book": "EE",
             "page": 251
-        },
-        "status_award": {
-            "base_award": 10,
-            "constraint": {
-                "type": "min",
-                "value": 40
-            }
         },
         "xp_to_completion": 24,
         "title_ability": "Servant of the Kami",
@@ -381,6 +392,16 @@
                 "type": "technique",
                 "special_access": true
             }
+        ],
+        "social_awards": [
+            {
+                "base_award": 10,
+                "constraint": {
+                    "type": "min",
+                    "value": 40
+                },
+                "award_attribute": "status"
+            }
         ]
     },
     {
@@ -388,9 +409,6 @@
         "reference": {
             "book": "EE",
             "page": 252
-        },
-        "status_award": {
-            "base_award": -5
         },
         "xp_to_completion": 24,
         "title_ability": "Ears Everywhere",
@@ -431,6 +449,12 @@
                 "type": "technique",
                 "special_access": true
             }
+        ],
+        "social_awards": [
+            {
+                "base_award": -5,
+                "award_attribute": "status"
+            }
         ]
     },
     {
@@ -438,13 +462,6 @@
         "reference": {
             "book": "EE",
             "page": 252
-        },
-        "status_award": {
-            "base_award": 10,
-            "constraint": {
-                "type": "min",
-                "value": 40
-            }
         },
         "xp_to_completion": 36,
         "title_ability": "No Sacrifice Too Greate",
@@ -484,6 +501,16 @@
                 "type": "technique",
                 "special_access": true
             }
+        ],
+        "social_awards": [
+            {
+                "base_award": 10,
+                "constraint": {
+                    "type": "min",
+                    "value": 40
+                },
+                "award_attribute": "status"
+            }
         ]
     },
     {
@@ -491,13 +518,6 @@
         "reference": {
             "book": "EE",
             "page": 253
-        },
-        "status_award": {
-            "base_award": 5,
-            "constraint": {
-                "type": "min",
-                "value": 35
-            }
         },
         "xp_to_completion": 24,
         "title_ability": "Take Them Alive",
@@ -538,6 +558,16 @@
                 "type": "technique",
                 "special_access": true
             }
+        ],
+        "social_awards": [
+            {
+                "base_award": 5,
+                "constraint": {
+                    "type": "min",
+                    "value": 35
+                },
+                "award_attribute": "status"
+            }
         ]
     },
     {
@@ -545,13 +575,6 @@
         "reference": {
             "book": "SL",
             "page": 128
-        },
-        "status_award": {
-            "base_award": -20,
-            "constraint": {
-                "type": "max",
-                "value": 30
-            }
         },
         "xp_to_completion": 20,
         "title_ability": "Tainted Warrior",
@@ -592,6 +615,16 @@
                 "type": "technique",
                 "special_access": true
             }
+        ],
+        "social_awards": [
+            {
+                "base_award": -20,
+                "constraint": {
+                    "type": "max",
+                    "value": 30
+                },
+                "award_attribute": "status"
+            }
         ]
     },
     {
@@ -599,13 +632,6 @@
         "reference": {
             "book": "SL",
             "page": 128
-        },
-        "status_award": {
-            "base_award": 10,
-            "constraint": {
-                "type": "max",
-                "value": 45
-            }
         },
         "xp_to_completion": 20,
         "title_ability": "Capture Evil",
@@ -647,6 +673,16 @@
                 "type": "technique",
                 "special_access": false
             }
+        ],
+        "social_awards": [
+            {
+                "base_award": 10,
+                "constraint": {
+                    "type": "max",
+                    "value": 45
+                },
+                "award_attribute": "status"
+            }
         ]
     },
     {
@@ -654,13 +690,6 @@
         "reference": {
             "book": "SL",
             "page": 128
-        },
-        "status_award": {
-            "base_award": 15,
-            "constraint": {
-                "type": "between",
-                "range": [30, 40]
-            }
         },
         "xp_to_completion": 20,
         "title_ability": "Goblin Killer",
@@ -701,6 +730,19 @@
                 "type": "technique",
                 "special_access": true
             }
+        ],
+        "social_awards": [
+            {
+                "base_award": 15,
+                "constraint": {
+                    "type": "between",
+                    "range": [
+                        30,
+                        40
+                    ]
+                },
+                "award_attribute": "status"
+            }
         ]
     },
     {
@@ -709,13 +751,6 @@
             "book": "SL",
             "page": 129
         },
-        "status_award": {
-            "base_award": 10,
-            "constraint": {
-                "type": "min",
-                "value": 30
-            }
-        },  
         "xp_to_completion": 45,
         "title_ability": "Bane of Sorcerers",
         "advancements": [
@@ -753,6 +788,540 @@
             },
             {
                 "name": "Honest Assessment",
+                "type": "technique",
+                "special_access": true
+            }
+        ],
+        "social_awards": [
+            {
+                "base_award": 10,
+                "constraint": {
+                    "type": "min",
+                    "value": 30
+                },
+                "award_attribute": "status"
+            }
+        ]
+    },
+    {
+        "name": "Castellan",
+        "reference": {
+            "book": "CoS",
+            "page": 128
+        },
+        "social_awards": [
+            {
+                "award_attribute": "status",
+                "base_award": 5,
+                "constraint": {
+                    "type": "max",
+                    "value": 30
+                }
+            },
+            {
+                "award_attribute": "glory",
+                "base_award": 10,
+                "constraint": {
+                    "type": "max",
+                    "value": 60
+                }
+            }
+        ],
+        "xp_to_completion": 20,
+        "title_ability": "Every Stone Has Its Place",
+        "advancements": [
+            {
+                "name": "Social skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Culture",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Design",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Government",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Rallying Cry",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Slippery Maneuvers",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Touchstone of Courage",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "Covert Agent",
+        "reference": {
+            "book": "CoS",
+            "page": 128
+        },
+        "social_awards": [
+            {
+                "award_attribute": "honor",
+                "base_award": -10,
+                "constraint": {
+                    "type": "min",
+                    "value": 25
+                }
+            }
+        ],
+        "xp_to_completion": 20,
+        "title_ability": "Practiced Prevaricator",
+        "advancements": [
+            {
+                "name": "Social skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Meditation",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Artful Alibi",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Cadence",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Cunning Distraction",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "To Float or Sink",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "What's Yours Is Mine",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "Dreaded Enforcer",
+        "reference": {
+            "book": "CoS",
+            "page": 129
+        },
+        "social_awards": [
+            {
+                "award_attribute": "honor",
+                "base_award": -10,
+                "constraint": {
+                    "type": "min",
+                    "value": 5
+                }
+            },
+            {
+                "award_attribute": "glory",
+                "base_award": -20,
+                "constraint": {
+                    "type": "min",
+                    "value": 15
+                }
+            }
+        ],
+        "xp_to_completion": 40,
+        "title_ability": "Merciless Eyes",
+        "advancements": [
+            {
+                "name": "Martial skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Medicine",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Skulduggery",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Deceitful Strike",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Like a Ghost",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Silent Elimination",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Stillness of Death",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "Esteemed Negotiator",
+        "reference": {
+            "book": "CoS",
+            "page": 129
+        },
+        "social_awards": [
+            {
+                "award_attribute": "glory",
+                "base_award": 10,
+                "constraint": {
+                    "type": "max",
+                    "value": 65
+                }
+            }
+        ],
+        "xp_to_completion": 34,
+        "title_ability": "Calming Words",
+        "advancements": [
+            {
+                "name": "Social skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Culture",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Government",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Sentiment",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "name": "Earth Shūji",
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "name": "The Ties that Bind",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Treaty Signing",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "Kenshinzen",
+        "reference": {
+            "book": "CoS",
+            "page": 130
+        },
+        "social_awards": [
+            {
+                "award_attribute": "glory",
+                "base_award": 20,
+                "constraint": {
+                    "type": "max",
+                    "value": 75
+                }
+            }
+        ],
+        "xp_to_completion": 24,
+        "title_ability": "A Single Moment",
+        "advancements": [
+            {
+                "name": "Martial skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Social skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Culture",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Sentiment",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "name": "Close Combat Kata",
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "rank": 5,
+                "name": "Void Shūji",
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "name": "Tea Ceremony",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "Kyuden Asako Shieldbearer",
+        "reference": {
+            "book": "CoS",
+            "page": 130
+        },
+        "social_awards": [
+            {
+                "award_attribute": "glory",
+                "base_award": 5,
+                "constraint": {
+                    "type": "max",
+                    "value": 55
+                }
+            }
+        ],
+        "xp_to_completion": 40,
+        "title_ability": "Time-Tested Defense",
+        "advancements": [
+            {
+                "name": "Scholar skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Martial Arts [Melee]",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Martial Arts [Ranged]",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Meditation",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Tactics",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "name": "Kata",
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "name": "Cleansing Rite",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "Master Artisan",
+        "reference": {
+            "book": "CoS",
+            "page": 130
+        },
+        "social_awards": [
+            {
+                "award_attribute": "glory",
+                "base_award": 30,
+                "constraint": {
+                    "type": "max",
+                    "value": 80
+                }
+            }
+        ],
+        "xp_to_completion": 60,
+        "title_ability": "Inspired Creation",
+        "advancements": [
+            {
+                "name": "Artisan skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Courtesy",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Culture",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Medicine",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Meditation",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "All Arts Are One",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Formal Tea Ceremony",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "Winter Court Champion",
+        "reference": {
+            "book": "CoS",
+            "page": 131
+        },
+        "social_awards": [
+            {
+                "award_attribute": "glory",
+                "base_award": 20,
+                "constraint": {
+                    "type": "max",
+                    "value": 75
+                }
+            }
+        ],
+        "xp_to_completion": 16,
+        "title_ability": "Accustomed to Attention",
+        "advancements": [
+            {
+                "name": "Artisan skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Social skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Artisan's Appraisal",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Formal Tea Ceremony",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Fun and Games",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Offend the Sensibilities",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Spiteful Loss",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "Seven Fold Palace Acolyte",
+        "reference": {
+            "book": "CoS",
+            "page": 131
+        },
+        "social_awards": [
+            {
+                "award_attribute": "glory",
+                "base_award": 5,
+                "constraint": {
+                    "type": "max",
+                    "value": 35
+                }
+            }
+        ],
+        "xp_to_completion": 36,
+        "title_ability": "First, Forge Yourself",
+        "advancements": [
+            {
+                "name": "Trade skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Aesthetics",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Design",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Fitness",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Meditation",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Smithing",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Artisan's Appraisal",
                 "type": "technique",
                 "special_access": true
             }

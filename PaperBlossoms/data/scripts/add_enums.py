@@ -425,6 +425,15 @@ def write_advance(data_dir, skill_groups_enum, skills_enum, technique_categories
         skill_groups_enum + skills_enum + technique_categories_enum + technique_subcategories_enum + techniques_enum
     )
 
+    print('Writing skills, skill groups, technique categories and techniques to titles')
+    write_enums_with_parent(
+        data_dir.joinpath('json_schema/titles.schema.json'),
+        'advancements',
+        'name',
+        skill_groups_enum + skills_enum + technique_categories_enum + technique_subcategories_enum + techniques_enum
+    )
+
+
 
 def main(option):
 
