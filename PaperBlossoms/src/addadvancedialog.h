@@ -57,10 +57,14 @@ private slots:
 
     void on_halfxp_checkBox_toggled(bool checked);
 
+    void on_restrictioncheckBox_toggled(bool checked);
+
 private:
     Ui::AddAdvanceDialog *ui;
     DataAccessLayer* dal;
     Character* character;
+
+    bool removerestrictions;
 
     void validatePage();
     QSqlQueryModel techModel;

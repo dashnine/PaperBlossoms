@@ -173,7 +173,7 @@ public:
     QMap<QString, int> qm_heritagehonorglorystatus(const QString heritage);
     //QStringList qsl_getschooltechavailable(QString school, bool maho_allowed);
 
-    void qsm_gettechniquetable(QSqlQueryModel * const model, const QString rank, const QString school, const QString title, const QString clan);
+    void qsm_gettechniquetable(QSqlQueryModel * const model, const QString rank, const QString school, const QString title, const bool norestrictions = false);
     //void qsm_getfilteredtechniquetable(QSqlQueryModel * const model, const QString category, const QString rank, const QString school);
     void qsm_getschoolcurriculum(QSqlQueryModel * const model, const QString school);
     //void qsm_getschoolcurriculumbyrank(QSqlQueryModel * const model, const QString school, const int rank);

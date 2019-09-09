@@ -39,6 +39,7 @@ AddAdvanceDialog::AddAdvanceDialog(DataAccessLayer* dal, Character* character, Q
     this->character = character;
     ui->detailTableView->setVisible(false);
     ui->maho_label->setVisible(false);
+    removerestrictions = false;
 
     proxyModel.setDynamicSortFilter(true);
     proxyModel.setSourceModel(&techModel);
@@ -180,13 +181,13 @@ void AddAdvanceDialog::on_advtype_currentIndexChanged(const QString &arg1)
         //get a list of types that can be chosen at this time
         QSet<QString> types;
         if(character->titles.count()==0){
-            dal->qsm_gettechniquetable(&techModel, QString::number(character->rank),character->school, "", character->clan);
+            dal->qsm_gettechniquetable(&techModel, QString::number(character->rank),character->school, "", removerestrictions);
 
         }
         else{
 
 
-            dal->qsm_gettechniquetable(&techModel, QString::number(character->rank),character->school, character->titles.last(), character->clan);
+            dal->qsm_gettechniquetable(&techModel, QString::number(character->rank),character->school, character->titles.last(), removerestrictions);
        }
         for(int i = 0; i<techModel.rowCount(); ++i){
             const QSqlRecord record = techModel.record(i);
@@ -250,7 +251,7 @@ void AddAdvanceDialog::on_advtype_currentIndexChanged(const QString &arg1)
 
     }
     else{
-
+        ui->detailTableView->setVisible(false);
     }
     validatePage();
 }
@@ -275,13 +276,13 @@ void AddAdvanceDialog::on_advchooser_combobox_currentIndexChanged(const QString 
     else{
         //QSet<QString> types;
         if(character->titles.count()==0){
-            dal->qsm_gettechniquetable(&techModel, QString::number(character->rank),character->school, "", character->clan);
+            dal->qsm_gettechniquetable(&techModel, QString::number(character->rank),character->school, "", removerestrictions);
 
         }
         else{
 
 
-            dal->qsm_gettechniquetable(&techModel, QString::number(character->rank),character->school, character->titles.last(), character->clan);
+            dal->qsm_gettechniquetable(&techModel, QString::number(character->rank),character->school, character->titles.last(), removerestrictions);
        }
         // for(int i = 0; i<techModel.rowCount(); ++i){
        //     QSqlRecord record = techModel.record(i);
@@ -390,4 +391,12 @@ void AddAdvanceDialog::on_halfxp_checkBox_toggled(bool checked)
     on_detailTableView_clicked(ui->detailTableView->currentIndex());
     on_advchooser_combobox_currentIndexChanged(ui->advchooser_combobox->currentText());
     validatePage();
+}
+
+void AddAdvanceDialog::on_restrictioncheckBox_toggled(bool checked)
+{
+    removerestrictions = checked;
+    ui->advtype->setCurrentIndex(-1);
+    ui->advchooser_combobox->setCurrentIndex(-1);
+
 }

@@ -1003,7 +1003,7 @@ QString DataAccessLayer::getLastExecutedQuery(const QSqlQuery& query)
  return str;
 }
 
-void DataAccessLayer::qsm_gettechniquetable(QSqlQueryModel * const model, const QString rank, const QString school, const QString title, const QString clan)
+void DataAccessLayer::qsm_gettechniquetable(QSqlQueryModel * const model, const QString rank, const QString school, const QString title, const bool norestrictions)
 {
     //technique query
     //assembles the technique options from four sources:
@@ -1015,14 +1015,15 @@ void DataAccessLayer::qsm_gettechniquetable(QSqlQueryModel * const model, const 
     const int trank = i_gettitletechgrouprank(title);
 
     QSqlQuery query;
-    query.prepare(
+    if(norestrictions == false){
+        query.prepare(
 
 
                     "SELECT distinct name_tr, category, subcategory, rank,                                         "
                     "       xp, reference_book, reference_page,restriction_tr                                          "
                     "FROM techniques                                                                            "//First, get title special
                     "WHERE                                                                                      "//  group techs
-                //---------------------Special access groups and katagroups from title-------------------//
+                    //---------------------Special access groups and katagroups from title-------------------//
                     "(rank <= ? and subcategory in                                                              " //0 trank
                     " (SELECT name from title_advancements                                                      "
                     "   WHERE title_tr = ?                                                                         " //1 title
@@ -1036,7 +1037,7 @@ void DataAccessLayer::qsm_gettechniquetable(QSqlQueryModel * const model, const 
                     "   and type = 'technique_group'                                                            "
                     "   AND special_access = 1                                                                  "
                     "  ) )                                                                                      "
-                //----------------------Special access groups and katagroups from curriculum---------------//
+                    //----------------------Special access groups and katagroups from curriculum---------------//
                     "OR ( rank <= ? and subcategory in                                                          " //4 rank
                     " (SELECT advance from curriculum                                                           "
                     "   WHERE school_tr = ?                                                                        " //5 school //subcat is group
@@ -1049,7 +1050,7 @@ void DataAccessLayer::qsm_gettechniquetable(QSqlQueryModel * const model, const 
                     "   AND rank = ? and type = 'technique_group'                                               " //9 rank
                     "   AND special_access = 1                                                                  "
                     " )  )                                                                                      "
-                //------------------------special access indiv tech from curric and title------------------//
+                    //------------------------special access indiv tech from curric and title------------------//
                     "OR name_tr in (                                                                               "
                     "  SELECT advance_tr from curriculum                                                           "
                     "   WHERE school_tr = ?                                                                        " //10 school //tech
@@ -1063,7 +1064,7 @@ void DataAccessLayer::qsm_gettechniquetable(QSqlQueryModel * const model, const 
                     "   AND type = 'technique'                                                                  "
                     "   AND special_access = 1                                                                  "
                     "  )                                                                                        "
-                //--------------------------normal tech groups access, restrictions apply-------------------//
+                    //--------------------------normal tech groups access, restrictions apply-------------------//
                     "OR                                                                                         "
                     "(rank <= ?                                                                                 " //13 rank   //tech group
                     "   AND (category in                                                                         "
@@ -1073,10 +1074,10 @@ void DataAccessLayer::qsm_gettechniquetable(QSqlQueryModel * const model, const 
                     "   (SELECT technique from school_techniques_available                                      "
                     "       WHERE school_tr = ?))                                                                   " //15 school
                     ")                                                                                          "
-                //--------------------------MAHO (and patterns and scrolls FOR EVERYONE!--------------------//
+                    //--------------------------MAHO (and patterns and scrolls FOR EVERYONE!--------------------//
                     "OR                                                                                         "
-                    "((rank <= ? OR rank = NULL)                                                                                " //16 rank
-                    "   AND category IN ('Mahō', 'Item Patterns', 'Signature Scrolls')                                                                   "
+                    "((rank <= ? OR rank = NULL)                                                                " //16 rank
+                    "   AND category IN ('Mahō', 'Item Patterns', 'Signature Scrolls')                          "
                     ")                                                                                          "
                     "ORDER BY category, rank, name                                                              "
                     "");
@@ -1104,11 +1105,27 @@ void DataAccessLayer::qsm_gettechniquetable(QSqlQueryModel * const model, const 
         query.bindValue(16, rank);
         query.exec();
         qDebug() << getLastExecutedQuery(query);
-    while (query.next()) {
-        const QString cname = query.value(0).toString();
-//        qDebug() << cname;
+        while (query.next()) {
+            const QString cname = query.value(0).toString();
+        }
+        model->setQuery(query);
     }
-    model->setQuery(query);
+    else{ //norestrictions == true
+        query.prepare(
+
+
+                    "SELECT distinct name_tr, category, subcategory, rank,                                      "
+                    "       xp, reference_book, reference_page,restriction_tr                                   "
+                    "FROM techniques                                                                            "
+                    "ORDER BY category, rank, name                                                              "
+                    );
+        query.exec();
+        qDebug() << getLastExecutedQuery(query);
+        while (query.next()) {
+            const QString cname = query.value(0).toString();
+        }
+        model->setQuery(query);
+    }
 
 }
 
@@ -1246,7 +1263,7 @@ QString DataAccessLayer::qs_gettechtypebygroupname(const QString tech){
     //NOTE - gets the category of a given teck or tech subcategory
     QString out;
     QSqlQuery query;
-    query.prepare("SELECT category FROM techniques WHERE category_tr LIKE ?                "
+    query.prepare("SELECT category FROM techniques WHERE category_tr LIKE ?            "
                   "UNION SELECT category from techniques where subcategory_tr LIKE ?   ");
     query.bindValue(0, tech);
     query.bindValue(1, tech);
