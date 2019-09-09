@@ -11499,7 +11499,7 @@
             {
                 "rank": 2,
                 "advance": "Social skills",
-                "type": "skill",
+                "type": "skill_group",
                 "special_access": false
             },
             {
