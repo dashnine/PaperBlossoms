@@ -362,7 +362,7 @@ void MainWindow::populateUI(){
     //note - rank and title must be calculated after curric and title curric are set.
     const QPair<int, int> rankdata = recalcRank();
     curCharacter.rank = rankdata.first;
-    const int curricXP = rankdata.second;
+    const int curricXP = xp_in_current_rank = rankdata.second;
 
     ui->curric_status_label->setText("Rank: " + QString::number(curCharacter.rank)+", XP in Rank: "+ QString::number(curricXP));
 
@@ -373,7 +373,7 @@ void MainWindow::populateUI(){
     }
     const QPair<QString, int> titledata = recalcTitle(titleXPcounts);
     QString curTitle = titledata.first;
-    const int titleXP = titledata.second;
+    const int titleXP = xp_in_current_title = titledata.second;
 
     ui->title_status_label->setText("Title: " + curTitle+", Title XP: "+ QString::number(titleXP));
     this->incompleteTitle = curTitle;
@@ -1676,10 +1676,13 @@ void MainWindow::on_actionExport_to_XML_triggered()
         derived.setAttribute("composure",ui->composure_label->text());
         root.appendChild(derived);
         QDomElement curricstat = document.createElement("RankStatus");
-        curricstat.setAttribute("curricstatus",ui->curric_status_label->text()); //TODO - separate these from the UI
-        curricstat.setAttribute("titlestatus",ui->title_status_label->text());
+        curricstat.setAttribute("rank",QString::number(curCharacter.rank)); //TODO - separate these from the UI
+        curricstat.setAttribute("xpinrank",QString::number(this->xp_in_current_rank)); //TODO - separate these from the UI
         root.appendChild(curricstat);
-
+        QDomElement titlestat = document.createElement("TitleStatus");
+        titlestat.setAttribute("title",this->incompleteTitle); //TODO - separate these from the UI
+        titlestat.setAttribute("xpintitle",QString::number(this->xp_in_current_title)); //TODO - separate these from the UI
+        root.appendChild(titlestat);
         //curriculumtable
         QDomElement curriculum = document.createElement("Curriculum");
         for(int r = 0; r < curriculummodel.rowCount();++r){
@@ -1800,7 +1803,7 @@ void MainWindow::on_actionExport_to_XML_triggered()
                  //"Type"<<"Advance"<<"Track"<<"Cost";
                  node.setAttribute("type",row.at(0));
                  node.setAttribute("name",row.at(1));
-                 node.setAttribute("ring",row.at(2));
+                 node.setAttribute("track",row.at(2));
                  node.setAttribute("desc",row.at(3));
                  advancetable.appendChild(node);
          }

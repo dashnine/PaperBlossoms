@@ -155,6 +155,9 @@ private:
     const int MIN_FILE_VERSION = 1;
     const int MAX_FILE_VERSION = 2;
 
+    int xp_in_current_rank = 0;
+    int xp_in_current_title = 0;
+
     QStandardItemModel skillmodel;
     QStandardItemModel advanceStack;
     QSqlQueryModel curriculummodel;
