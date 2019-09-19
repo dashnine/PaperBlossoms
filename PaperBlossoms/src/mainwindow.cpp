@@ -1790,6 +1790,21 @@ void MainWindow::on_actionExport_to_XML_triggered()
                 eqtable.appendChild(node);
         }
          root.appendChild(eqtable);
+         QDomElement advancetable = document.createElement("Advances");
+         for(int r = 0; r < advanceStack.rowCount();++r){
+                 QStringList row;
+                 for(int c = 0; c < advanceStack.columnCount();++c){
+                     row<< advanceStack.item(r,c)->text();
+                 }
+                 QDomElement node = document.createElement("Advance");
+                 //"Type"<<"Advance"<<"Track"<<"Cost";
+                 node.setAttribute("type",row.at(0));
+                 node.setAttribute("name",row.at(1));
+                 node.setAttribute("ring",row.at(2));
+                 node.setAttribute("desc",row.at(3));
+                 advancetable.appendChild(node);
+         }
+          root.appendChild(advancetable);
 
          QDomElement heritage = document.createElement("Heritage");
          heritage.setAttribute("value", curCharacter.heritage);
@@ -1799,6 +1814,7 @@ void MainWindow::on_actionExport_to_XML_triggered()
          notes.setAttribute("value", curCharacter.notes);
          root.appendChild(notes);
 
+         /* //replaced this with a read on the advances table, instead of the advances string stack
          QDomElement advances = document.createElement("Advances");
          foreach(QString advance_string, curCharacter.advanceStack){
              QDomElement advancenode = document.createElement("Advance");
@@ -1806,6 +1822,7 @@ void MainWindow::on_actionExport_to_XML_triggered()
              advances.appendChild(advancenode);
          }
          root.appendChild(advances);
+         */
 
          QDomElement totalxp = document.createElement("TotalXP");
          totalxp.setAttribute("value", curCharacter.totalXP);
