@@ -26,6 +26,7 @@
 #include <QDebug>
 #include <QMap>
 #include <QMessageBox>
+#include <QUuid>
 #include "enums.h"
 NewCharWizardPage7::NewCharWizardPage7(DataAccessLayer *dal, Character *character, QWidget *parent) :
     QWizardPage(parent),
@@ -577,6 +578,8 @@ QList<QStringList> NewCharWizardPage7::populateItemFields(const QString name, co
         row << qualstring;                                                                                   //9
     }
     if(type == "Weapon"){
+        QString uuid = QUuid::createUuid().toString();
+
         const QStringList baserow = row; //make a copy of row for output, since this may have multiple copies
         const QList<QStringList> weapondata = dal->ql_getweapondata(name);
         foreach (const QStringList gripdata, weapondata) {
@@ -590,6 +593,7 @@ QList<QStringList> NewCharWizardPage7::populateItemFields(const QString name, co
             row << gripdata.at(WeaponData::DEADLINESS);
             row << ""; //physical resist
             row << ""; //supernatural resist
+            row << uuid;
             out << row; //drop a row for each grip
         }
     }
@@ -616,6 +620,7 @@ QList<QStringList> NewCharWizardPage7::populateItemFields(const QString name, co
             row << ""; //gripdata.at(WeaponData::DEADLINESS);
             row << QString::number(physresist);
             row << QString::number(supresist);
+            row << QUuid::createUuid().toString();
             out << row;  // only one row for armor
     }
     else{ //personal effect - "Other"
@@ -628,6 +633,7 @@ QList<QStringList> NewCharWizardPage7::populateItemFields(const QString name, co
             row << ""; //gripdata.at(WeaponData::DEADLINESS);
             row << ""; //physresist;
             row << ""; //supresist;
+            row << QUuid::createUuid().toString();
             out << row;  // only one row for other, and empty entries for the other cols
     }
     return out;

@@ -82,7 +82,8 @@ enum{
     W_DAM,
     W_DLS,
     A_PHYSRES,
-    A_SUPERRES
+    A_SUPERRES,
+    EQUIP_UUID
 };
 }
 

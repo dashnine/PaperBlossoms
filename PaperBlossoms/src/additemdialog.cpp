@@ -25,6 +25,7 @@
 #include "ui_additemdialog.h"
 #include "enums.h"
 #include <QDebug>
+#include <QUuid>
 
 AddItemDialog::AddItemDialog(DataAccessLayer* dal, Character* character, QString type, QWidget *parent) :
     QDialog(parent),
@@ -176,6 +177,7 @@ void AddItemDialog::clearFields(){
 QList<QStringList> AddItemDialog::getResult() const {
     QList<QStringList> out;
     QStringList row;
+    QString uuid = QUuid::createUuid().toString();
 
 
 
@@ -205,6 +207,7 @@ QList<QStringList> AddItemDialog::getResult() const {
 
     row << QString::number(ui->armor_phys_spinBox->value());
     row << QString::number(ui->armor_supernatural_spinBox->value());
+    row << uuid; //unique ID for the created item, to distinguish multiple grips
 
     out << row;
 
@@ -237,6 +240,8 @@ QList<QStringList> AddItemDialog::getResult() const {
 
         row << QString::number(ui->armor_phys_spinBox->value());
         row << QString::number(ui->armor_supernatural_spinBox->value());
+        row << uuid; //unique ID for the created item, to distinguish multiple grips
+
         out << row;
     }
     return out;

@@ -860,6 +860,7 @@ void MainWindow::setColumnsHidden(){
     ui->weapon_tableview->setColumnHidden(Equipment::W_DLS,false);
     ui->weapon_tableview->setColumnHidden(Equipment::A_PHYSRES,true);
     ui->weapon_tableview->setColumnHidden(Equipment::A_SUPERRES,true);
+    ui->weapon_tableview->setColumnHidden(Equipment::EQUIP_UUID,true);
 
     ui->armor_tableview->setColumnHidden(Equipment::TYPE, true);
     ui->armor_tableview->setColumnHidden(Equipment::NAME,false);
@@ -879,6 +880,7 @@ void MainWindow::setColumnsHidden(){
     ui->armor_tableview->setColumnHidden(Equipment::W_DLS,true);
     ui->armor_tableview->setColumnHidden(Equipment::A_PHYSRES,false);
     ui->armor_tableview->setColumnHidden(Equipment::A_SUPERRES,false);
+    ui->armor_tableview->setColumnHidden(Equipment::EQUIP_UUID,true);
 
     ui->other_tableview->setColumnHidden(Equipment::TYPE, true);
     ui->other_tableview->setColumnHidden(Equipment::NAME,false);
@@ -898,6 +900,8 @@ void MainWindow::setColumnsHidden(){
     ui->other_tableview->setColumnHidden(Equipment::W_DLS,true);
     ui->other_tableview->setColumnHidden(Equipment::A_PHYSRES,true);
     ui->other_tableview->setColumnHidden(Equipment::A_SUPERRES,true);
+    ui->other_tableview->setColumnHidden(Equipment::EQUIP_UUID,true);
+
 
     ui->distinctions_tableView->setColumnHidden(Adv_Disadv::TYPE, true);
     ui->distinctions_tableView->setColumnHidden(Adv_Disadv::DESC, true);
@@ -1370,7 +1374,8 @@ void MainWindow::on_actionGenerate_Character_Sheet_triggered()
             QStringList row;
             for(int c = 0; c < equipmodel.columnCount();++c){
                     //if(!skillmodel.item(r,c)->text().isEmpty()){
-                            row<< equipmodel.item(r,c)->text();
+                    if(equipmodel.item(r,c) == NULL) row << "";
+                    else        row<< equipmodel.item(r,c)->text();
                     //}
             }
             if(row.at(Equipment::TYPE) == "Weapon")
@@ -1736,7 +1741,7 @@ void MainWindow::on_actionExport_to_XML_triggered()
                for(int c = 0; c < dis_advmodel.columnCount();++c){
                    row<< dis_advmodel.item(r,c)->text();
                }
-               QDomElement node = document.createElement("Technique");
+               QDomElement node = document.createElement("Advantage_Disadvantage");
                node.setAttribute("type",row.at(Adv_Disadv::TYPE));
                node.setAttribute("name",row.at(Adv_Disadv::NAME));
                node.setAttribute("ring",row.at(Adv_Disadv::RING));
@@ -1745,7 +1750,7 @@ void MainWindow::on_actionExport_to_XML_triggered()
                node.setAttribute("book",row.at(Adv_Disadv::BOOK));
                node.setAttribute("page",row.at(Adv_Disadv::PAGE));
                node.setAttribute("types",row.at(Adv_Disadv::TYPES));
-               techtable.appendChild(node);
+               personaltable.appendChild(node);
        }
         root.appendChild(personaltable);
         //personal traits
@@ -1753,9 +1758,10 @@ void MainWindow::on_actionExport_to_XML_triggered()
         for(int r = 0; r < equipmodel.rowCount();++r){
                 QStringList row;
                 for(int c = 0; c < equipmodel.columnCount();++c){
-                    row<< equipmodel.item(r,c)->text();
+                    if(equipmodel.item(r,c) == NULL) row << "";
+                    else row<< equipmodel.item(r,c)->text();
                 }
-                QDomElement node = document.createElement("Equipment");
+                QDomElement node = document.createElement("Item");
                 node.setAttribute("type",row.at(Equipment::TYPE));
                 node.setAttribute("name",row.at(Equipment::NAME));
                 node.setAttribute("desc",row.at(Equipment::DESC));
@@ -1775,6 +1781,12 @@ void MainWindow::on_actionExport_to_XML_triggered()
                 node.setAttribute("w_dls",row.at(Equipment::W_DLS));
                 node.setAttribute("a_physres",row.at(Equipment::A_PHYSRES));
                 node.setAttribute("a_superres",row.at(Equipment::A_SUPERRES));
+                if(row.length()>Equipment::EQUIP_UUID) //include equip UUID if one exists. This should always happen, but be "" when one didn't exist
+                    node.setAttribute("uuid",row.at(Equipment::EQUIP_UUID));
+                else
+                    node.setAttribute("uuid","NoUUIDAvailable"); //if you see this, find out why.
+
+
                 eqtable.appendChild(node);
         }
          root.appendChild(eqtable);
