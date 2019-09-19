@@ -1844,6 +1844,22 @@ void MainWindow::on_actionExport_to_XML_triggered()
          portrait.setAttribute("base64image", base64);
          root.appendChild(portrait);
 
+         ui->ringWidget->setBackgroundWhite();
+         QImage ringimg = ui->ringWidget->grab().toImage();
+         ui->ringWidget->setBackgroundClear();
+
+         QByteArray byteArray2;
+         QString base64_2 = "";
+         QBuffer buffer2(&byteArray2); // use buffer to store pixmap into byteArray
+         buffer2.open(QIODevice::WriteOnly);
+         if(!ringimg.isNull()){
+             ringimg.save(&buffer2, "PNG");
+             base64_2 = QString(byteArray2.toBase64());
+         }
+         QDomElement ringportrait = document.createElement("RingImage");
+         ringportrait.setAttribute("base64image", base64_2);
+         root.appendChild(ringportrait);
+
         //now, output the document to the file
         QTextStream stream(&file);
         stream << document.toString();
