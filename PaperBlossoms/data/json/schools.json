@@ -7997,7 +7997,7 @@
             {
                 "rank": 2,
                 "advance": "Martial Arts [Ranged]",
-                "type": "technique",
+                "type": "skill",
                 "special_access": false
             },
             {
@@ -15713,7 +15713,7 @@
             },
             {
                 "rank": 1,
-                "advance": "Spiteful Love",
+                "advance": "Spiteful Loss",
                 "type": "technique",
                 "special_access": false
             },
