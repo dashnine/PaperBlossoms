@@ -95,6 +95,32 @@
                 }
             },
             {
+                "name": "Gao",
+                "reference": {
+                    "book": "Core",
+                    "page": 232
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 1,
+                    "max": 1
+                },
+                "damage": 4,
+                "deadliness": 3,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": []
+                    }
+                ],
+                "qualities": ["Snaring"],
+                "rarity": 7,
+                "price": {
+                    "value": 15,
+                    "unit": "koku"
+                }
+            },
+            {
                 "name": "Jian",
                 "reference": {
                     "book": "Core",
