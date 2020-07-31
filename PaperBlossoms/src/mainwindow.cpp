@@ -2050,3 +2050,13 @@ void MainWindow::on_bondAdd_pushButton_clicked()
         qDebug() << "Not accepted; discarding changes.";
     }
 }
+
+void MainWindow::on_bondRemove_pushButton_clicked()
+{
+    QModelIndex curIndex = ui->bonds_tableView->currentIndex();
+    if(!curIndex.isValid()) return;
+    QString name = bondmodel.item(curIndex.row(),1)->text();
+    curCharacter.bonds.removeAt(curIndex.row()); //TODO: TESTING -- is this accurate?
+    populateUI();
+    m_dirtyDataFlag = true;
+}

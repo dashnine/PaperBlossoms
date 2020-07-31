@@ -147,6 +147,8 @@ private slots:
 
     void on_bondAdd_pushButton_clicked();
 
+    void on_bondRemove_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     DataAccessLayer* dal;
