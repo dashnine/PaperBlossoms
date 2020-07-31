@@ -410,6 +410,13 @@ void MainWindow::populateUI(){
                 }
         }
     }
+    foreach (const QStringList bond, curCharacter.bonds) {
+                curCharacter.abilities << dal->qsl_getbondability(bond.at(0));
+                const QStringList abl = dal->qsl_getbondability(bond.at(0));
+                if(abl.count()>0){
+                    abiltext+=abl.at(0)+", ";
+                }
+    }
     if(abiltext.count()>=2) abiltext.chop(2); //trim the last ", "
     ui->ability_label->setText(abiltext);
     //-------------------SET RINGS ---------------------------
@@ -2055,8 +2062,41 @@ void MainWindow::on_bondRemove_pushButton_clicked()
 {
     QModelIndex curIndex = ui->bonds_tableView->currentIndex();
     if(!curIndex.isValid()) return;
-    QString name = bondmodel.item(curIndex.row(),1)->text();
+    //QString name = bondmodel.item(curIndex.row(),1)->text();
     curCharacter.bonds.removeAt(curIndex.row()); //TODO: TESTING -- is this accurate?
+    populateUI();
+    m_dirtyDataFlag = true;
+}
+
+void MainWindow::on_bondUpgrade_pushButton_clicked()
+{
+    QModelIndex curIndex = ui->bonds_tableView->currentIndex();
+    if(!curIndex.isValid()) return;
+
+    QStringList bondrow = curCharacter.bonds.at(curIndex.row());
+    int currank = bondrow.at(1).toInt();
+
+
+    if(currank<5){
+        int cost = 0; //cost of upgrade
+        switch(currank){
+        case 1: cost = 4; break;
+        case 2: cost = 7; break;
+        case 3: cost = 10; break;
+        case 4: cost = 14; break;
+        default: cost = 0; break    ;
+        }
+        if(QMessageBox::Cancel==QMessageBox::information(this, tr("Upgrading Bond"), "This will spend "+QString::number(cost)+" XP, and is not reversable. Continue?",QMessageBox::Yes|QMessageBox::Cancel)){
+            return;
+            }
+
+        bondrow.replace(1,QString::number(++currank));
+        curCharacter.bonds.replace(curIndex.row(),bondrow);
+        curCharacter.advanceStack.append("Bond Upgrade|"+bondrow.first()+"|None|"+QString::number(cost));
+
+    }
+
+
     populateUI();
     m_dirtyDataFlag = true;
 }

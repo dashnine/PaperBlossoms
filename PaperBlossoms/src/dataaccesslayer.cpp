@@ -1750,6 +1750,22 @@ QStringList DataAccessLayer::qsl_gettitlemastery(const QString title){
     return out;
 }
 
+QStringList DataAccessLayer::qsl_getbondability(const QString bond){
+    QStringList out;
+    QSqlQuery query;
+    query.prepare("SELECT ability_tr, book, page, bond_ability_description FROM bonds WHERE name_tr = ?");
+    query.bindValue(0, bond);
+    query.exec();
+    while (query.next()) {
+        out << query.value(0).toString();
+        out << bond;
+        out << query.value(1).toString();
+        out << query.value(2).toString();
+        out << query.value(3).toString();
+    }
+    return out;
+}
+
 
 QString DataAccessLayer::escapedCSV(QString unexc)
 {

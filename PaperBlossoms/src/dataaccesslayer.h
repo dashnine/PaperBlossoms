@@ -224,6 +224,7 @@ public:
     QString qs_gettechtypebygroupname(const QString tech);
     void qsm_gettranslationmodel(QSqlQueryModel * const model);
     QList<QStringList> ql_gettrtemplate();
+    QStringList qsl_getbondability(const QString bond);
 private:
     QSqlDatabase db;
     QStringList qsl_getschooltechsetids(const QString school);
