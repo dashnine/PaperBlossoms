@@ -628,6 +628,9 @@ void MainWindow::on_actionSave_As_triggered()
         const int version = SAVE_FILE_VERSION;
         stream<<version;
 
+        //V 3 fields
+        stream<<curCharacter.bonds;
+
         //V 2 fields
         stream<<curLocale;
 
@@ -710,6 +713,16 @@ void MainWindow::on_actionOpen_triggered()
         if(version<MIN_FILE_VERSION || version > MAX_FILE_VERSION){
             QMessageBox::information(this, tr("Incompatible Save File"), tr("This save file was created with an incompatible version of Paper Blossoms. Aborting import."));
             return;
+        }
+
+        //BONDS------------------- (v3)
+        if(version < 3){ //need to default the locale to en
+            //nothing to stream in on v1-v2 files: no bond support
+            curCharacter.bonds.clear();
+            qDebug()<<"Old save file: no bonds to import.";
+        }
+        else{
+            stream>>curCharacter.bonds;
         }
 
         //LOCALE------------------- (v2)
@@ -2028,8 +2041,8 @@ void MainWindow::on_bondAdd_pushButton_clicked()
         qDebug() << "Accepted: getting bond";
        m_dirtyDataFlag = true;
        //TODO:SUPPORT BOND SAVING with a BONDMODEL
-       curCharacter.bonds.append({addbonddialog.getResult(),"1"});
-       curCharacter.advanceStack.append("Bond|"+addbonddialog.getResult()+"|None|"+"3");
+       curCharacter.bonds.append(addbonddialog.getResult());
+       curCharacter.advanceStack.append("Bond|"+addbonddialog.getResult().first()+"|None|"+"3");
        //TODO: Refresh Bonds in UI
        populateUI();
     }

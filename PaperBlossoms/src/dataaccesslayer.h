@@ -151,6 +151,7 @@ public:
     QList<QStringList> ql_getlistsofeq(const QString school);
     QStringList qsl_getadvdisadv(const QString category);
     QStringList qsl_getbonds( );
+    QStringList qsl_getbond(const QString name );
     QStringList qsl_getclanskills(const QString clan);
     QStringList qsl_getfamilyskills(const QString family);
     QStringList qsl_getskills();

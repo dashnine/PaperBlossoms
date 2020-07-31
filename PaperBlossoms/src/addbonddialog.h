@@ -40,7 +40,7 @@ public:
     explicit AddBondDialog(DataAccessLayer *dal, Character *character, QString type, QWidget *parent = 0);
     ~AddBondDialog();
 
-    QString getResult() const;
+    QStringList getResult() const;
 private:
     Ui::AddBondDialog *ui;
     DataAccessLayer* dal;

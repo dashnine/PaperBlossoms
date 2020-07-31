@@ -42,6 +42,9 @@ AddBondDialog::~AddBondDialog()
     delete ui;
 }
 
-QString AddBondDialog::getResult() const {
-    return ui->traitComboBox->currentText();
+QStringList AddBondDialog::getResult() const {
+    QStringList resultlist;
+    resultlist.append(dal->qsl_getbond(ui->traitComboBox->currentText()));
+    if(resultlist.count()>0) resultlist.insert(1,"1"); //a new bond is always rank 1
+    return resultlist;
 }
