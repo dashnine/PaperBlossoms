@@ -2078,12 +2078,12 @@ void MainWindow::on_bondUpgrade_pushButton_clicked()
 
 
     if(currank<5){
-        int cost = 0; //cost of upgrade
+        int cost = 0; //cost of upgrade to next rank. Per page 190 PoW (also on CoS)
         switch(currank){
         case 1: cost = 4; break;
-        case 2: cost = 7; break;
-        case 3: cost = 10; break;
-        case 4: cost = 14; break;
+        case 2: cost = 6; break;
+        case 3: cost = 8; break;
+        case 4: cost = 10; break;
         default: cost = 0; break    ;
         }
         if(QMessageBox::Cancel==QMessageBox::information(this, tr("Upgrading Bond"), "This will spend "+QString::number(cost)+" XP, and is not reversable. Continue?",QMessageBox::Yes|QMessageBox::Cancel)){
