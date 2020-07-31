@@ -44,6 +44,7 @@
 #include "enums.h"
 #include "clicklabel.h"
 #include "adddisadvdialog.h"
+#include "addbonddialog.h"
 #include "pboutputdata.h"
 #include "renderdialog.h"
 #include <QDesktopServices>
@@ -1997,5 +1998,23 @@ void MainWindow::on_actionTranslate_For_Locale_triggered()
     else{
         dialog.doFinish(false);
         qDebug() << "Rejected: data discarded";
+    }
+}
+
+void MainWindow::on_bondAdd_pushButton_clicked()
+{
+    AddBondDialog addbonddialog(dal, &curCharacter,"Bonds");
+    const int result = addbonddialog.exec();
+    if (result == QDialog::Accepted){
+        qDebug() << "Accepted: getting bond";
+       m_dirtyDataFlag = true;
+       //TODO:SUPPORT BOND SAVING with a BONDMODEL
+       //curCharacter.adv_disadv.append(addbonddialog.getResult());
+       curCharacter.advanceStack.append("Bond|"+addbonddialog.getResult()+"|None|"+"3");
+       //TODO: Refresh Bonds in UI
+       populateUI();
+    }
+    else{
+        qDebug() << "Not accepted; discarding changes.";
     }
 }

@@ -33,7 +33,7 @@
       <item>
        <widget class="QTabWidget" name="tabWidget">
         <property name="currentIndex">
-         <number>0</number>
+         <number>3</number>
         </property>
         <widget class="QWidget" name="tab">
          <attribute name="title">
@@ -357,10 +357,17 @@
              <string>Advantages</string>
             </property>
             <layout class="QGridLayout" name="gridLayout_11">
-             <item row="0" column="0">
-              <widget class="QLabel" name="label_4">
+             <item row="2" column="4">
+              <widget class="QPushButton" name="addPassion_pushButton">
                <property name="text">
-                <string>Distinctions</string>
+                <string>Add</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="5">
+              <widget class="QPushButton" name="remPassion_pushButton">
+               <property name="text">
+                <string>Remove</string>
                </property>
               </widget>
              </item>
@@ -368,6 +375,13 @@
               <widget class="QLabel" name="label_21">
                <property name="text">
                 <string>Passions</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_4">
+               <property name="text">
+                <string>Distinctions</string>
                </property>
               </widget>
              </item>
@@ -441,20 +455,6 @@
                </property>
               </widget>
              </item>
-             <item row="2" column="4">
-              <widget class="QPushButton" name="addPassion_pushButton">
-               <property name="text">
-                <string>Add</string>
-               </property>
-              </widget>
-             </item>
-             <item row="2" column="5">
-              <widget class="QPushButton" name="remPassion_pushButton">
-               <property name="text">
-                <string>Remove</string>
-               </property>
-              </widget>
-             </item>
             </layout>
            </widget>
           </item>
@@ -464,17 +464,10 @@
              <string>Disadvantages</string>
             </property>
             <layout class="QGridLayout" name="gridLayout_12">
-             <item row="0" column="0">
-              <widget class="QLabel" name="label_22">
+             <item row="2" column="4">
+              <widget class="QPushButton" name="addAnxiety_pushButton">
                <property name="text">
-                <string>Adversities</string>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="3">
-              <widget class="QLabel" name="label_23">
-               <property name="text">
-                <string>Anxieties</string>
+                <string>Add</string>
                </property>
               </widget>
              </item>
@@ -534,24 +527,10 @@
                </attribute>
               </widget>
              </item>
-             <item row="2" column="1">
-              <widget class="QPushButton" name="addAdversity_pushButton">
+             <item row="0" column="3">
+              <widget class="QLabel" name="label_23">
                <property name="text">
-                <string>Add</string>
-               </property>
-              </widget>
-             </item>
-             <item row="2" column="2">
-              <widget class="QPushButton" name="remAdversity_pushButton">
-               <property name="text">
-                <string>Remove</string>
-               </property>
-              </widget>
-             </item>
-             <item row="2" column="4">
-              <widget class="QPushButton" name="addAnxiety_pushButton">
-               <property name="text">
-                <string>Add</string>
+                <string>Anxieties</string>
                </property>
               </widget>
              </item>
@@ -562,7 +541,97 @@
                </property>
               </widget>
              </item>
+             <item row="2" column="1">
+              <widget class="QPushButton" name="addAdversity_pushButton">
+               <property name="text">
+                <string>Add</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_22">
+               <property name="text">
+                <string>Adversities</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="2">
+              <widget class="QPushButton" name="remAdversity_pushButton">
+               <property name="text">
+                <string>Remove</string>
+               </property>
+              </widget>
+             </item>
             </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tab_9">
+         <attribute name="title">
+          <string>Bonds</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_14">
+          <item row="1" column="4">
+           <widget class="QPushButton" name="bondUpgrade_pushButton">
+            <property name="text">
+             <string>Upgrade</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QPushButton" name="bondRemove_pushButton">
+            <property name="text">
+             <string>Remove</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <spacer name="horizontalSpacer_9">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>338</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="1" column="5">
+           <widget class="QPushButton" name="bondAdd_pushButton">
+            <property name="text">
+             <string>Add</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0" colspan="6">
+           <widget class="QTableView" name="bonds_tableView">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="editTriggers">
+             <set>QAbstractItemView::NoEditTriggers</set>
+            </property>
+            <property name="selectionMode">
+             <enum>QAbstractItemView::SingleSelection</enum>
+            </property>
+            <property name="selectionBehavior">
+             <enum>QAbstractItemView::SelectRows</enum>
+            </property>
+            <attribute name="horizontalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <attribute name="verticalHeaderVisible">
+             <bool>false</bool>
+            </attribute>
+            <attribute name="verticalHeaderCascadingSectionResizes">
+             <bool>true</bool>
+            </attribute>
            </widget>
           </item>
          </layout>

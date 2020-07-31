@@ -61,6 +61,7 @@ public:
         "user_titles",
         "user_weapon_qualities",
         "user_weapons"
+        "user_bonds"
     }; //list of tables to export/import
 
     const QString translationquery =
@@ -149,6 +150,7 @@ public:
     QStringList qsl_getrings();
     QList<QStringList> ql_getlistsofeq(const QString school);
     QStringList qsl_getadvdisadv(const QString category);
+    QStringList qsl_getbonds( );
     QStringList qsl_getclanskills(const QString clan);
     QStringList qsl_getfamilyskills(const QString family);
     QStringList qsl_getskills();

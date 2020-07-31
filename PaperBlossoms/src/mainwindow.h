@@ -145,6 +145,8 @@ private slots:
 
     void on_actionTranslate_For_Locale_triggered();
 
+    void on_bondAdd_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     DataAccessLayer* dal;

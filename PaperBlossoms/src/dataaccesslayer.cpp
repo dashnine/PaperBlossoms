@@ -584,6 +584,20 @@ QStringList DataAccessLayer::qsl_getadvdisadv(const QString category ){
     return out;
 }
 
+QStringList DataAccessLayer::qsl_getbonds( ){
+    QStringList out;
+    QSqlQuery query;
+    query.prepare("SELECT name_tr FROM bonds");
+    //query.bindValue(0, category);
+    query.exec();
+    while (query.next()) {
+        const QString name = query.value(0).toString();
+//        qDebug() << name;
+        out<< name;
+    }
+    return out;
+}
+
 QStringList DataAccessLayer::qsl_getadvdisadvbyname(const QString name ){
     QStringList out;
     QSqlQuery query;
