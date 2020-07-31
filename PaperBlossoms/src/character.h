@@ -65,6 +65,7 @@ public:
 
     QList<QStringList> abilities;
     QList<QStringList> equipment;
+    QList<QStringList> bonds;
 
     QString heritage;
     QStringList advanceStack;

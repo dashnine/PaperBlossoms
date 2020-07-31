@@ -164,6 +164,7 @@ private:
     QStandardItemModel equipmodel;
     QStandardItemModel dis_advmodel;
     QStandardItemModel techModel;
+    QStandardItemModel bondmodel;
 
 
     QPair<int, int> recalcRank();

@@ -147,6 +147,10 @@ MainWindow::MainWindow(QString locale, QWidget *parent) :
     disadvheaders << "KEY"<<"Name"<<"Ring"<<"Desc"<<"Short Desc"<<"Book"<<"Page"<<"Types";
     dis_advmodel.setHorizontalHeaderLabels(disadvheaders);
 
+    QStringList bondheaders;
+    bondheaders << "Name"<<"Rank"<<"Ability"<<"Desc"<<"Short Desc"<<"Book"<<"Page";
+    bondmodel.setHorizontalHeaderLabels(bondheaders);
+
     QStringList techheaders;
     techheaders << "Name"<<"Type"<<"Subtype"<<"Rank"<<"Book"<<"Page"<<"Restriction"<<"Desc"<<"Description";
     techModel.setHorizontalHeaderLabels(techheaders);
@@ -186,7 +190,7 @@ MainWindow::MainWindow(QString locale, QWidget *parent) :
     perseffProxyModel.setFilterFixedString("Other");
     ui->other_tableview->setModel(& perseffProxyModel);
 
-
+    ui->bonds_tableView->setModel(&bondmodel);
 
     distinctionsProxyModel.setDynamicSortFilter(true);
     distinctionsProxyModel.setSourceModel(&dis_advmodel);
@@ -471,6 +475,21 @@ void MainWindow::populateUI(){
     eqheaders << "Category"<<"Skill"<<"Grip"<<"Min Range"<<"Max Range"<<"DMG"<<"DLS";
     eqheaders <<"Physical"<<"Supernatural";
     equipmodel.setHorizontalHeaderLabels(eqheaders);
+
+
+    //------------------SET Bond TABLE-------------------------------------//
+    bondmodel.clear();
+    foreach (const QStringList bondlist, curCharacter.bonds){
+        QList<QStandardItem*> bondrow;
+        foreach (QString str, bondlist) {
+            bondrow << new QStandardItem(str);
+        }
+        bondmodel.appendRow(bondrow);
+    }
+    ui->bonds_tableView->resizeColumnsToContents();
+    QStringList bondheaders;
+    bondheaders << "Name"<<"Rank"<<"Ability"<<"Desc"<<"Short Desc"<<"Book"<<"Page";
+    bondmodel.setHorizontalHeaderLabels(bondheaders);
 
     //---------------CALCULATE DERIVED STATS ------------------------------//
     ui->endurance_label->setText(QString::number(( curCharacter.baserings[dal->translate("Earth")]
@@ -2009,7 +2028,7 @@ void MainWindow::on_bondAdd_pushButton_clicked()
         qDebug() << "Accepted: getting bond";
        m_dirtyDataFlag = true;
        //TODO:SUPPORT BOND SAVING with a BONDMODEL
-       //curCharacter.adv_disadv.append(addbonddialog.getResult());
+       curCharacter.bonds.append({addbonddialog.getResult(),"1"});
        curCharacter.advanceStack.append("Bond|"+addbonddialog.getResult()+"|None|"+"3");
        //TODO: Refresh Bonds in UI
        populateUI();
