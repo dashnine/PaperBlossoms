@@ -211,7 +211,7 @@ QString DataAccessLayer::qs_getfamilyref(const QString family)
     return "";
 }
 
-QStringList DataAccessLayer::qsl_getfamilyrings(const QString fam ){
+QStringList DataAccessLayer::qsl_getfamilyrings(const QString fam ){    ///NOTE - ALSO USED FOR UPBRINGINGS (PoW)
     //bonus query - rings, skills
     QStringList out;
     QSqlQuery query;
@@ -226,6 +226,173 @@ QStringList DataAccessLayer::qsl_getfamilyrings(const QString fam ){
     //model->setQuery(query);
     return out;
 }
+
+
+///////////////////////////////////
+/// PATH OF WAVES - Regions and Families
+///
+
+QStringList DataAccessLayer::qsl_getregions()
+{
+    QStringList out;
+    //clan query
+    QSqlQuery query("SELECT name_tr FROM regions ORDER BY name_tr");
+    //query.bindValue(0, type);
+    while (query.next()) {
+        const QString cname = query.value(0).toString();
+        out << cname;
+//        qDebug() << cname;
+    }
+    return out;
+}
+
+QStringList DataAccessLayer::qsl_getupbringings()
+{
+    QStringList out;
+    //family query
+    QSqlQuery query;
+    query.prepare("SELECT name_tr FROM upbringings ORDER BY name_tr");
+    query.exec();
+    while (query.next()) {
+        const QString fname = query.value(0).toString();
+        out << fname;
+//        qDebug() << fname;
+    }
+    return out;
+}
+
+QString DataAccessLayer::qs_getregiondesc(const QString region)
+{
+    QSqlQuery query;
+    query.prepare("SELECT description FROM regions WHERE name_tr = :region");
+    query.bindValue(0, region);
+    query.exec();
+    while (query.next()) {
+        const QString desc = query.value(0).toString();
+//        qDebug() << desc;
+        return desc;
+    }
+    qWarning() << "ERROR - Region" + region + " not found while searching for desc.";
+    return "";
+}
+
+QString DataAccessLayer::qs_getregionref(const QString region)
+{
+    QSqlQuery query;
+    query.prepare("SELECT reference_book, reference_page FROM regions WHERE name_tr = :region");
+    query.bindValue(0, region);
+    query.exec();
+    while (query.next()) {
+        QString ref = query.value(0).toString() + " ";
+        ref += query.value(1).toString();
+//        qDebug() << desc;
+        return ref;
+    }
+    qWarning() << "ERROR - Region" + region + " not found while searching for ref.";
+    return "";
+}
+
+QString DataAccessLayer::qs_getupbringingdesc(const QString upbringing)
+{
+    QSqlQuery query;
+    query.prepare("SELECT description FROM upbringings WHERE name_tr = :upbringing");
+    query.bindValue(0, upbringing);
+    query.exec();
+    while (query.next()) {
+        const QString desc = query.value(0).toString();
+//        qDebug() << desc;
+        return desc;
+    }
+    qWarning() << "ERROR - Family" + upbringing + " not found while searching for desc.";
+    return "";
+}
+
+QString DataAccessLayer::qs_getupbringingref(const QString upbringing)
+{
+    QSqlQuery query;
+    query.prepare("SELECT reference_book, reference_page FROM upbringings WHERE name_tr = :upbringing");
+    query.bindValue(0, upbringing);
+    query.exec();
+    while (query.next()) {
+        QString ref = query.value(0).toString() + " ";
+        ref += query.value(1).toString();
+//        qDebug() << desc;
+        return ref;
+    }
+    qWarning() << "ERROR - Family" + upbringing + " not found while searching for desc.";
+    return "";
+}
+
+
+QStringList DataAccessLayer::qsl_getupbringingskills1(const QString upbringing ){
+    QStringList out;
+    QSqlQuery query;
+    query.prepare("SELECT skill_tr FROM upbringing_skill_1 WHERE upbringing = :upbringing");
+    query.bindValue(0, upbringing);
+    query.exec();
+    while (query.next()) {
+        const QString cname = query.value(0).toString();
+        out<< cname;
+    }
+    return out;
+}
+
+QStringList DataAccessLayer::qsl_getupbringingskills2(const QString upbringing ){
+    QStringList out;
+    QSqlQuery query;
+    query.prepare("SELECT skill_tr FROM upbringing_skill_2 WHERE upbringing = :upbringing");
+    query.bindValue(0, upbringing);
+    query.exec();
+    while (query.next()) {
+        const QString cname = query.value(0).toString();
+        out<< cname;
+    }
+    return out;
+}
+
+
+
+QString DataAccessLayer::qs_getregionring(const QString region)
+{
+    QSqlQuery query;
+    query.prepare("SELECT ring_tr FROM regions WHERE name_tr = :region");
+    query.bindValue(0, region);
+    query.exec();
+    while (query.next()) {
+        const QString ring = query.value(0).toString();
+//        qDebug() << ring;
+        return ring;
+    }
+    qWarning() << "ERROR - Region" + region + " not found while searching for rings.";
+    return "";
+}
+
+//TODO: this is a QStringList, but only returns 1 skill right now.  Refactor?
+QStringList DataAccessLayer::qsl_getregionskills(const QString region ){
+    QStringList out;
+    QSqlQuery query;
+    query.prepare("SELECT skill_tr FROM regions WHERE name_tr = :region");
+    query.bindValue(0, region);
+    query.exec();
+    while (query.next()) {
+        const QString cname = query.value(0).toString();
+//        qDebug() << cname;
+        out<< cname;
+    }
+    return out;
+}
+
+
+
+//////////////////////////////////////////
+
+
+
+
+
+
+
+
 
 QStringList DataAccessLayer::qsl_getschools(const QString clan, const bool allclans ){
     QStringList out;

@@ -224,7 +224,20 @@ public:
     QString qs_gettechtypebygroupname(const QString tech);
     void qsm_gettranslationmodel(QSqlQueryModel * const model);
     QList<QStringList> ql_gettrtemplate();
+
+    //PoW
     QStringList qsl_getbondability(const QString bond);
+    QStringList qsl_getregions();
+    QStringList qsl_getupbringings();
+    QString qs_getregiondesc(const QString region);
+    QString qs_getregionref(const QString region);
+    QString qs_getupbringingdesc(const QString upbringing);
+    QString qs_getupbringingref(const QString upbringing);
+    QStringList qsl_getupbringingskills1(const QString upbringing);
+    QStringList qsl_getupbringingskills2(const QString upbringing);
+
+    QString qs_getregionring(const QString region);
+    QStringList qsl_getregionskills(const QString region);
 private:
     QSqlDatabase db;
     QStringList qsl_getschooltechsetids(const QString school);
