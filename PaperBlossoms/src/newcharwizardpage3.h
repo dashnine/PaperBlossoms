@@ -49,6 +49,10 @@ private slots:
 
     void on_nc3_q8_comboBox_currentIndexChanged(const QString &arg1);
 
+
+
+    void on_nc3_q8_mid_radioButton_toggled(bool checked);
+
 private:
     Ui::NewCharWizardPage3 *ui;
     void initializePage();

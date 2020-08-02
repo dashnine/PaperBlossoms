@@ -42,17 +42,21 @@ NewCharWizardPage3::NewCharWizardPage3(DataAccessLayer *dal, QWidget *parent) :
     q7group.addButton(ui->nc3_q7_pos_radioButton);
     q7group.addButton(ui->nc3_q7_neg_radioButton);
     q8group.addButton(ui->nc3_q8_pos_radioButton);
+    q8group.addButton(ui->nc3_q8_mid_radioButton);
     q8group.addButton(ui->nc3_q8_neg_radioButton);
 
     ui->nc3_q7_comboBox->setEnabled(false);
     ui->nc3_q8_comboBox->setEnabled(false);
+    ui->nc3_q8_item_comboBox->setEnabled(false);
 
     registerField("q7skill", ui->nc3_q7_comboBox, "currentText");
     registerField("q8skill", ui->nc3_q8_comboBox, "currentText");
+    registerField("q8item", ui->nc3_q8_item_comboBox, "currentText");
 
     registerField("q7posradio_glory", ui->nc3_q7_pos_radioButton);
     registerField("q7negradio_skill", ui->nc3_q7_neg_radioButton);
     registerField("q8posradio_honor", ui->nc3_q8_pos_radioButton);
+    registerField("q8midradio_skill", ui->nc3_q8_mid_radioButton);
     registerField("q8negradio_skill", ui->nc3_q8_neg_radioButton);
 
     registerField("q5Text",ui->nc3_q5_textEdit, "plainText");
@@ -87,6 +91,31 @@ bool NewCharWizardPage3::validatePage(){
 
 void NewCharWizardPage3::initializePage()
 {
+
+    //PoW: Set Ronin Questions if needed:
+    //populate model
+    if(field("characterType").toString() == "Samurai"){
+        ui->q5_groupBox->setTitle("5. Who is your lord, and what is your duty to them?");
+        ui->q6_groupBox->setTitle("6. What do you long for, and how might this impede your duty?");
+        ui->q7_groupBox->setTitle("7. What is your relationship with your clan?");
+        ui->q8_groupBox->setTitle("8. What do you think of Bushido?");
+
+        ui->nc3_q8_item_comboBox->setVisible(false);
+        ui->nc3_q8_mid_radioButton->setVisible(false);
+        ui->nc3_q8_mid_radioButton->setChecked(false);
+    }
+    else{
+        ui->q5_groupBox->setTitle("5. What is your past, and how does it affect you?");
+        ui->q6_groupBox->setTitle("6. What do you long for, and how might your past impact your Ninjo?");
+        ui->q7_groupBox->setTitle("7. What are you known for?");
+        ui->q8_groupBox->setTitle("8. What do you think of Bushido?");
+
+        ui->nc3_q8_item_comboBox->setVisible(true);
+        ui->nc3_q8_mid_radioButton->setVisible(true);
+    }
+
+    ui->nc3_q8_item_comboBox->addItems(dal->qsl_getitemsunderrarity(5));
+
     //TODO - CLEAN UP SKILL MANAGEMENT
     const QString clan = field("currentClan").toString();
     const QString family = field("currentFamily").toString();
@@ -119,6 +148,10 @@ void NewCharWizardPage3::initializePage()
     ui->nc3_q8_comboBox->addItems(q8skills);
     ui->nc3_q7_comboBox->setCurrentIndex(-1);
     ui->nc3_q8_comboBox->setCurrentIndex(-1);
+    ui->nc3_q8_item_comboBox->setCurrentIndex(-1);
+
+
+
     regenSummary();
 
 
@@ -136,6 +169,13 @@ void NewCharWizardPage3::on_nc3_q8_neg_radioButton_toggled(const bool checked)
     ui->nc3_q8_comboBox->setEnabled(checked);
     if(!checked) ui->nc3_q8_comboBox->setCurrentIndex(-1);
 
+}
+
+
+void NewCharWizardPage3::on_nc3_q8_mid_radioButton_toggled(bool checked)
+{
+    ui->nc3_q8_item_comboBox->setEnabled(checked);
+    if(!checked) ui->nc3_q8_item_comboBox->setCurrentIndex(-1);
 }
 
 void NewCharWizardPage3::regenSummary(){
@@ -266,3 +306,6 @@ void NewCharWizardPage3::on_nc3_q8_comboBox_currentIndexChanged(const QString &a
     regenSummary();
 
 }
+
+
+

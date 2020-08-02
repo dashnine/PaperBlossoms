@@ -424,7 +424,7 @@ void NewCharWizardPage2::on_nc2_schoolSpecialtRing_ComboBox_currentIndexChanged(
 
 }
 
-
+//TODO: delete me after testing
 /*
 void NewCharWizardPage2::regenSummary(){
    QString skills = "";
