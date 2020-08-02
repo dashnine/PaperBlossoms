@@ -38,6 +38,7 @@ NewCharWizardPage5::NewCharWizardPage5(DataAccessLayer *dal, QWidget *parent) :
     registerField("q14Text", ui->nc5_q14_textEdit, "plainText");
     registerField("q15Text", ui->nc5_q15_textEdit, "plainText");
     registerField("q16Text", ui->nc5_q16_textEdit, "plainText");
+    registerField("q14Item", ui->nc5_q14_item_comboBox,"currentText");
     regenSummary();
 }
 

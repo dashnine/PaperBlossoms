@@ -240,6 +240,11 @@ public:
     QStringList qsl_getregionskills(const QString region);
     QStringList qsl_getgaijinschools(const QString region, const bool allclans);
     QString qs_getregionsubtype(const QString region);
+    int i_getupbringingstatusmod(const QString upbringing);
+    int i_getregionglory(const QString region);
+    int i_getupbringingkoku(const QString upbringing);
+    int i_getupbringingbu(const QString upbringing);
+    int i_getupbringingzeni(const QString upbringing);
 private:
     QSqlDatabase db;
     QStringList qsl_getschooltechsetids(const QString school);

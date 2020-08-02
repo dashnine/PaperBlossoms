@@ -52,10 +52,15 @@ NewCharWizardPage6::NewCharWizardPage6(DataAccessLayer *dal, QWidget *parent) :
     registerField("q18Spec1",ui->nc6_q18_special1_comboBox,"currentText");
     registerField("q18Spec2",ui->nc6_q18_special2_comboBox,"currentText");
 
+
     registerField("q17Text", ui->nc6_q17_lineEdit);
     registerField("personalName",ui->nc6_q19_personalName_lineEdit);
 
     registerField("q18SourceTable",ui->heritagetable_comboBox,"currentText");
+
+    //POW
+    registerField("q17roninBond",ui->nc6_bond_comboBox,"currentText");
+    registerField("q17roninText",ui->nc6_q17r_lineEdit);
 
 }
 
@@ -813,6 +818,7 @@ QMap<QString, int> NewCharWizardPage6::calcSkills(){
     skills.append(dal->qsl_getfamilyskills(field("currentFamily").toString()));
 
 
+    //POW
     skills.append(dal->qsl_getregionskills(field("currentRegion").toString()));
     skills.append(field("upbringingSkill1").toString());
     skills.append(field("upbringingSkill2").toString());

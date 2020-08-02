@@ -400,6 +400,70 @@ QString DataAccessLayer::qs_getregionsubtype(const QString region)
     return "";
 }
 
+int DataAccessLayer::i_getupbringingstatusmod(const QString upbringing){
+    int out = 0;
+    QSqlQuery query;
+    query.prepare("SELECT status_mod FROM upbringings WHERE name_tr = :upbringing");
+    query.bindValue(0, upbringing);
+    query.exec();
+    while (query.next()) {
+        out = query.value(0).toInt();
+    }
+    return out;
+}
+
+int DataAccessLayer::i_getregionglory(const QString region){
+    int out = 0;
+    QSqlQuery query;
+    query.prepare("SELECT glory FROM regions WHERE name_tr = :region");
+    query.bindValue(0, region);
+    query.exec();
+    while (query.next()) {
+        out = query.value(0).toInt();
+    }
+    return out;
+}
+
+int DataAccessLayer::i_getupbringingkoku(const QString upbringing){
+    int out = 0;
+    QSqlQuery query;
+    query.prepare("SELECT koku FROM upbringings WHERE name_tr = :upbringing");
+    query.bindValue(0, upbringing);
+    query.exec();
+    while (query.next()) {
+        out = query.value(0).toInt();
+
+    }
+    return out;
+}
+
+int DataAccessLayer::i_getupbringingbu(const QString upbringing){
+    int out = 0;
+    QSqlQuery query;
+    query.prepare("SELECT bu FROM upbringings WHERE name_tr = :upbringing");
+    query.bindValue(0, upbringing);
+    query.exec();
+    while (query.next()) {
+        out = query.value(0).toInt();
+
+    }
+    return out;
+}
+
+int DataAccessLayer::i_getupbringingzeni(const QString upbringing){
+    int out = 0;
+    QSqlQuery query;
+    query.prepare("SELECT zeni FROM upbringings WHERE name_tr = :upbringing");
+    query.bindValue(0, upbringing);
+    query.exec();
+    while (query.next()) {
+        out = query.value(0).toInt();
+
+    }
+    return out;
+}
+
+
 //////////////////////////////////////////
 
 
