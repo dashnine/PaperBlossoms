@@ -80,12 +80,18 @@ bool NewCharWizardPage3::validatePage(){
         msg.exec();
         return false;
     }
-    if(!ui->nc3_q8_neg_radioButton->isChecked() && !ui->nc3_q8_pos_radioButton->isChecked()){
+    if(!ui->nc3_q8_neg_radioButton->isChecked() && !ui->nc3_q8_pos_radioButton->isChecked()&& !ui->nc3_q8_mid_radioButton->isChecked()){
         QMessageBox msg;
         msg.setText("Error: choose an option for Question 8.");
         msg.exec();
         return false;
     }
+        if(field("characterType").toString() == "Samurai" && ui->nc3_q8_mid_radioButton->isChecked()){
+            QMessageBox msg;
+            msg.setText("Error: choose an option for Question 8.");
+            msg.exec();
+            return false;
+        }
     return true;
 }
 
