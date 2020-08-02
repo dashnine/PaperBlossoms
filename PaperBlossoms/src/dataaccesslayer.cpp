@@ -232,17 +232,20 @@ QStringList DataAccessLayer::qsl_getfamilyrings(const QString fam ){    ///NOTE 
 /// PATH OF WAVES - Regions and Families
 ///
 
-QStringList DataAccessLayer::qsl_getregions()
+QStringList DataAccessLayer::qsl_getregions(QString type)
 {
     QStringList out;
     //clan query
-    QSqlQuery query("SELECT name_tr FROM regions ORDER BY name_tr");
-    //query.bindValue(0, type);
+    QSqlQuery query("SELECT name_tr FROM regions WHERE type = :type ORDER BY name_tr");
+    query.bindValue(0, type);
+    query.exec();
     while (query.next()) {
         const QString cname = query.value(0).toString();
         out << cname;
 //        qDebug() << cname;
     }
+        //qDebug() << getLastExecutedQuery(query);
+
     return out;
 }
 
@@ -383,6 +386,19 @@ QStringList DataAccessLayer::qsl_getregionskills(const QString region ){
 }
 
 
+QString DataAccessLayer::qs_getregionsubtype(const QString region)
+{
+    QSqlQuery query;
+    query.prepare("SELECT subtype FROM regions WHERE name_tr = :region");
+    query.bindValue(0, region);
+    query.exec();
+    while (query.next()) {
+        QString subtype = query.value(0).toString();
+        return subtype;
+    }
+    qWarning() << "ERROR - Region" + region + " not found while searching for ref.";
+    return "";
+}
 
 //////////////////////////////////////////
 
@@ -392,14 +408,27 @@ QStringList DataAccessLayer::qsl_getregionskills(const QString region ){
 
 
 
+//adjusted for PoW
 
-
-QStringList DataAccessLayer::qsl_getschools(const QString clan, const bool allclans ){
+QStringList DataAccessLayer::qsl_getschools(const QString clan, const bool allclans, const QString type ){
     QStringList out;
     QSqlQuery query;
     if(!allclans){
+        if(type == "Samurai"){
         query.prepare("SELECT name_tr FROM schools WHERE clan_tr = :clan");
         query.bindValue(0, clan);
+        }
+        else if (type == "Gaijin"){
+            query.prepare(QString("SELECT name_tr FROM schools WHERE clan_tr = :clan OR clan_tr = :ronin")); // in this case, clan  == region's subtype (Gaijin group, e.g. Ujik)
+            query.bindValue(0, clan);
+            query.bindValue(1, QString("Rōnin"));
+        }
+        else{
+            query.prepare(QString("SELECT name_tr FROM schools WHERE clan_tr = :clan")); // in this case, clan  == region
+            query.bindValue(0, clan);
+        }
+
+
     }
     else{
         query.prepare("SELECT name_tr FROM schools");
@@ -410,6 +439,8 @@ QStringList DataAccessLayer::qsl_getschools(const QString clan, const bool allcl
 //        qDebug() << result;
         out<< result;
     }
+        qDebug() << getLastExecutedQuery(query);
+
     return out;
 
 }

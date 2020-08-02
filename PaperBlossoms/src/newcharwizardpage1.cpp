@@ -69,7 +69,7 @@ NewCharWizardPage1::NewCharWizardPage1(DataAccessLayer* dal, QWidget *parent) :
     clanModel->setStringList(dal->qsl_getclans());
     familyModel->setStringList(dal->qsl_getfamilies(ui->nc1_clan_ComboBox->currentText()));
 
-    regionModel->setStringList(dal->qsl_getregions());
+    regionModel->setStringList(dal->qsl_getregions(ui->characterType_comboBox->currentText()));
     upbringingModel->setStringList(dal->qsl_getupbringings());
 
 
@@ -83,6 +83,7 @@ NewCharWizardPage1::NewCharWizardPage1(DataAccessLayer* dal, QWidget *parent) :
     registerField("familyRingIndex", ui->nc1_ring_ComboBox);
 
     //PoW
+    registerField("characterType", ui->characterType_comboBox,"currentText");
     registerField("currentRegion", ui->nc1_region_ComboBox,"currentText");
     registerField("currentUpbringing", ui->nc1_upbringing_ComboBox,"currentText");
     registerField("upbringingRing", ui->nc1_upbringing_ring_ComboBox,"currentText");
@@ -329,6 +330,9 @@ void NewCharWizardPage1::on_characterType_comboBox_currentIndexChanged(const QSt
 {
     Q_UNUSED(arg1);
     setSamuraiVisibilty(ui->characterType_comboBox->currentText()=="Samurai");
+
+    regionModel->setStringList(dal->qsl_getregions(ui->characterType_comboBox->currentText()));//adjust in case we swapped to gaijin or ronin
+
 
     ui->nc1_clan_ComboBox->setCurrentIndex(-1);
     ui->nc1_family_ComboBox->setCurrentIndex(-1);

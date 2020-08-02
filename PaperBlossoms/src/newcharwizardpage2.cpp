@@ -38,6 +38,8 @@ NewCharWizardPage2::NewCharWizardPage2(DataAccessLayer* dal, QWidget *parent) :
     //Handle special cases
     ui->nc2_kitsune_label->setVisible(false);
     ui->nc2_kitsune_comboBox->setVisible(false);
+
+    //we're getting all schools anyways; no need for PoW handling
     QStringList kitsuneschoollist = dal->qsl_getschools(field("currentClan").toString(), true);
     kitsuneschoollist.removeAll("Kitsune Impersonator Tradition");
     ui->nc2_kitsune_comboBox->addItems(kitsuneschoollist);
@@ -58,7 +60,18 @@ NewCharWizardPage2::NewCharWizardPage2(DataAccessLayer* dal, QWidget *parent) :
     ui->nc2_schoolSpecialtRing_ComboBox->setModel(ringModel);
 
     //populate model
-    schoolModel->setStringList(dal->qsl_getschools(field("currentClan").toString()));
+    if(field("characterType").toString() == "Samurai"){
+        schoolModel->setStringList(dal->qsl_getschools(field("currentClan").toString()));
+    }
+    else if (field("characterType").toString() == "Gaijin") { //gaijin have ronin schools or their local schools
+        schoolModel->setStringList(dal->qsl_getschools(dal->qs_getregionsubtype(field("currentRegion").toString()), false, field("characterType").toString()) );
+    }
+    else{
+        schoolModel->setStringList(dal->qsl_getschools("Rōnin", false, field("characterType").toString() )); //peasants and roning just have ronin schools
+
+    }
+
+
     ringModel->setStringList(dal->qsl_getrings());
 
     registerField("currentSchool",ui->nc2_school_ComboBox,"currentText");
@@ -141,9 +154,32 @@ void NewCharWizardPage2::handleSpecCases(QString speccase){
 
 void NewCharWizardPage2::initializePage(){
 
-    const QString clan = field("currentClan").toString();
-    qDebug()<< "Initializing page 2 with clan = " << clan;
-    schoolModel->setStringList(dal->qsl_getschools(field("currentClan").toString()));
+    //const QString clan = field("currentClan").toString();
+    //qDebug()<< "Initializing page 2 with clan = " << clan;
+    //schoolModel->setStringList(dal->qsl_getschools(field("currentClan").toString()));
+
+
+    //populate model
+    if(field("characterType").toString() == "Samurai"){
+        ui->q3_groupBox->setTitle("3. What is your school, and what roles does that school fall into?");
+        ui->q4_groupBox->setTitle("4. How do you stand out within your school?");
+        schoolModel->setStringList(dal->qsl_getschools(field("currentClan").toString()));
+    }
+    else if (field("characterType").toString() == "Gaijin") { //gaijin have ronin schools or their local schools
+        ui->q3_groupBox->setTitle("3. What is your school, and what are its associated roles?");
+        ui->q4_groupBox->setTitle("4. What gets you in and out of trouble?");
+        schoolModel->setStringList(dal->qsl_getschools(dal->qs_getregionsubtype(field("currentRegion").toString()), false, field("characterType").toString()) );
+    }
+    else{
+        ui->q3_groupBox->setTitle("3. What is your school, and what are its associated roles?");
+        ui->q4_groupBox->setTitle("4. What gets you in and out of trouble?");
+        schoolModel->setStringList(dal->qsl_getschools("Rōnin", false, "Rōnin" )); //peasants and roning just have ronin schools
+
+    }
+
+
+
+
     ui->nc2_school_ComboBox->setCurrentIndex(-1);
 
     ui->nc2_unrestrictedSchool_checkBox->setChecked(false);
@@ -167,6 +203,19 @@ bool NewCharWizardPage2::validatePage(){
 void NewCharWizardPage2::on_nc2_unrestrictedSchool_checkBox_toggled(const bool checked)
 {
     schoolModel->setStringList(dal->qsl_getschools(field("currentClan").toString(), checked));
+
+    if(field("characterType").toString() == "Samurai"){
+        schoolModel->setStringList(dal->qsl_getschools(field("currentClan").toString(), checked));
+    }
+    else if (field("characterType").toString() == "Gaijin") { //gaijin have ronin schools or their local schools
+        schoolModel->setStringList(dal->qsl_getschools(dal->qs_getregionsubtype(field("currentRegion").toString()), checked, "Gaijin") );
+    }
+    else{
+        schoolModel->setStringList(dal->qsl_getschools("Rōnin", checked, "Rōnin" )); //peasants and roning just have ronin schools
+
+    }
+
+
 }
 
 //////////// Reconfigure page based on selected school //////////////////////

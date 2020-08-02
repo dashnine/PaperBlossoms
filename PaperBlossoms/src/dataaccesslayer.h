@@ -141,7 +141,7 @@ public:
     QStringList qsl_getfamilyrings(const QString family);
     QString qs_getclandesc(const QString clan);
     QString qs_getfamilydesc(const QString family);
-    QStringList qsl_getschools(const QString clan, const bool allclans = false);
+    QStringList qsl_getschools(const QString clan, const bool allclans = false, const QString type = "Samurai");
     QString qs_getschooldesc(const QString school);
     QStringList qsl_getschoolskills(const QString school);
     int i_getschoolskillcount(const QString school);
@@ -227,7 +227,7 @@ public:
 
     //PoW
     QStringList qsl_getbondability(const QString bond);
-    QStringList qsl_getregions();
+    QStringList qsl_getregions(QString type);
     QStringList qsl_getupbringings();
     QString qs_getregiondesc(const QString region);
     QString qs_getregionref(const QString region);
@@ -238,6 +238,8 @@ public:
 
     QString qs_getregionring(const QString region);
     QStringList qsl_getregionskills(const QString region);
+    QStringList qsl_getgaijinschools(const QString region, const bool allclans);
+    QString qs_getregionsubtype(const QString region);
 private:
     QSqlDatabase db;
     QStringList qsl_getschooltechsetids(const QString school);

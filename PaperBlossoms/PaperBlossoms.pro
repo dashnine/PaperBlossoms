@@ -49,7 +49,8 @@ SOURCES += \
     src/pboutputdata.cpp \
     src/renderdialog.cpp \
     src/ringviewer.cpp \
-    src/edituserdescriptionsdialog.cpp
+    src/edituserdescriptionsdialog.cpp \
+    src/utils.cpp
 
 HEADERS += \
     src/aboutdialog.h \
@@ -76,7 +77,8 @@ HEADERS += \
     src/pboutputdata.h \
     src/renderdialog.h \
     src/ringviewer.h \
-    src/edituserdescriptionsdialog.h
+    src/edituserdescriptionsdialog.h \
+    src/utils.h
 
 FORMS += \
     ui/aboutdialog.ui \
