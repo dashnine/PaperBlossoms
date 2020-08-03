@@ -1057,7 +1057,7 @@ def bonds_to_db(db_conn):
         tr_fields = ['name', 'bond_ability_name']
     )
 
-    # Read titles from JSON
+    # Read bonds from JSON
     with open('json/bonds.json', encoding = 'utf8') as f:
         bonds = json.load(f)
     
@@ -1070,6 +1070,47 @@ def bonds_to_db(db_conn):
                 bond['ability'],
                 bond['reference']['book'],
                 bond['reference']['page']
+            )
+        )
+
+
+def regions_to_db(db_conn):
+
+    # Create regions table
+    create_tables(
+        db_conn,
+        'regions',
+        '''CREATE TABLE {} (
+            name TEXT PRIMARY KEY,
+            ring_increase TEXT,
+            skill_increase TEXT,
+            glory INTEGER,
+            type TEXT,
+            subtype TEXT,
+            reference_book TEXT,
+            reference_page INTEGER
+        )''',
+        desc_fields = 'name',
+        tr_fields = ['name', 'ring_increase', 'skill_increase', 'type', 'subtype']
+    )
+
+    # Read regions from JSON
+    with open('json/regions.json', encoding = 'utf8') as f:
+        regions = json.load(f)
+    
+    # Write to regions table
+    for region in regions:
+        db_conn.execute(
+            'INSERT INTO base_regions VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+            (
+                region['name'],
+                region['ring_increase'],
+                region['skill_increase'],
+                region['glory'],
+                region['type'],
+                region['subtype'] if 'subtype' in region else None,
+                region['reference']['book'],
+                region['reference']['page']
             )
         )
 
@@ -1119,6 +1160,7 @@ def main():
     titles_to_db(db_conn)
     patterns_to_db(db_conn)
     bonds_to_db(db_conn)
+    regions_to_db(db_conn)
 
     # Equipment
     qualities_to_db(db_conn)

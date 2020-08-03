@@ -207,6 +207,13 @@ def write_rings(data_dir, rings_enum):
         rings_enum + ['any']
     )
 
+    print('... to regions')
+    write_enums(
+        data_dir.joinpath('json_schema/regions.schema.json'),
+        'ring_increase',
+        rings_enum
+    )
+
     return rings_enum
 
 
@@ -240,6 +247,13 @@ def write_skills(data_dir, skills_enum):
         data_dir.joinpath('json_schema/schools.schema.json'),
         'starting_skills',
         'set',
+        skills_enum
+    )
+
+    print('... to regions')
+    write_enums(
+        data_dir.joinpath('json_schema/regions.schema.json'),
+        'skill_increase',
         skills_enum
     )
 
