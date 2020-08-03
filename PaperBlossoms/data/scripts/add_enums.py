@@ -163,7 +163,7 @@ def get_advantages(data_dir):
 
 
 def get_books():
-    books_enum = ['Core', 'EE', 'SL', 'Mantis', 'GMK', 'CoS']
+    books_enum = ['Core', 'EE', 'SL', 'Mantis', 'GMK', 'CoS', 'PoW']
 
     return books_enum
 
@@ -375,6 +375,13 @@ def write_books(data_dir, books_enum):
     print('... to titles')
     write_enums(
         data_dir.joinpath('json_schema/titles.schema.json'),
+        'book',
+        books_enum
+    )
+
+    print('... to bonds')
+    write_enums(
+        data_dir.joinpath('json_schema/bonds.schema.json'),
         'book',
         books_enum
     )
