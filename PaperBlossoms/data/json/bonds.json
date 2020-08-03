@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Family",
+        "ability": "Strong roots grow deep",
+        "reference": {
+            "book": "CoS",
+            "page": 136
+        }
+    },
+    {
+        "name": "Comrade",
+        "ability": "Just like old times",
+        "reference": {
+            "book": "CoS",
+            "page": 137
+        }
+    },
+    {
+        "name": "Lover",
+        "ability": "With you, the storm subsides",
+        "reference": {
+            "book": "CoS",
+            "page": 137
+        }
+    },
+    {
+        "name": "Rival",
+        "ability": "I will surpass you!",
+        "reference": {
+            "book": "CoS",
+            "page": 138
+        }
+    },
+    {
+        "name": "Nemesis",
+        "ability": "They were responsible!",
+        "reference": {
+            "book": "CoS",
+            "page": 138
+        }
+    }
+]

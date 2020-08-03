@@ -21,62 +21,30 @@
  * *******************************************************************
  */
 
-#ifndef CHARACTER_H
-#define CHARACTER_H
+#ifndef ADDBONDDIALOG_H
+#define ADDBONDDIALOG_H
 
-#include <QMap>
-#include <QStringList>
-#include <QStandardItemModel>
-#include <QList>
-#include <QImage>
+#include <QDialog>
+#include "dataaccesslayer.h"
+#include "character.h"
 
-class Character
+namespace Ui {
+class AddBondDialog;
+}
+
+class AddBondDialog : public QDialog
 {
+    Q_OBJECT
+
 public:
-    Character();
-    ~Character();
+    explicit AddBondDialog(DataAccessLayer *dal, Character *character, QString type, QWidget *parent = 0);
+    ~AddBondDialog();
 
-    QString name;
-    QStringList titles;
-
-    QString clan;
-    QString family;
-    QString school;
-
-    QString ninjo;
-    QString giri;
-
-    QMap<QString, int> baseskills;
-    QMap<QString, int> skillranks;
-    QMap<QString, int> baserings;
-    QMap<QString, int> ringranks;
-
-    int honor;
-    int glory;
-    int status;
-    int koku;   //wealth
-    int bu;     //wealth
-    int zeni;   //wealth
-    int rank;
-
-    QStringList techniques;
-
-    QStringList adv_disadv;
-
-    QList<QStringList> abilities;
-    QList<QStringList> equipment;
-    QList<QStringList> bonds;
-
-    QString heritage;
-    QStringList advanceStack;
-
-    QString notes;
-
-    int totalXP;
-
-    void clear();
-
-    QImage portrait;
+    QStringList getResult() const;
+private:
+    Ui::AddBondDialog *ui;
+    DataAccessLayer* dal;
+    Character* character;
 };
 
-#endif // CHARACTER_H
+#endif // ADDDBONDDIALOG_H

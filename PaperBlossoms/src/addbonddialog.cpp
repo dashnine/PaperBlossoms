@@ -21,62 +21,30 @@
  * *******************************************************************
  */
 
-#ifndef CHARACTER_H
-#define CHARACTER_H
+#include "addbonddialog.h"
+#include "ui_addbonddialog.h"
 
-#include <QMap>
-#include <QStringList>
-#include <QStandardItemModel>
-#include <QList>
-#include <QImage>
-
-class Character
+AddBondDialog::AddBondDialog(DataAccessLayer* dal, Character* character, QString type,QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::AddBondDialog)
 {
-public:
-    Character();
-    ~Character();
+    ui->setupUi(this);
+    this->setWindowIcon(QIcon(":/images/resources/sakura.png"));
+    this->character = character;
+    this->dal = dal;
+    ui->passionwarning->setVisible(type=="Bonds");
 
-    QString name;
-    QStringList titles;
+    ui->traitComboBox->addItems(dal->qsl_getbonds());
+}
 
-    QString clan;
-    QString family;
-    QString school;
+AddBondDialog::~AddBondDialog()
+{
+    delete ui;
+}
 
-    QString ninjo;
-    QString giri;
-
-    QMap<QString, int> baseskills;
-    QMap<QString, int> skillranks;
-    QMap<QString, int> baserings;
-    QMap<QString, int> ringranks;
-
-    int honor;
-    int glory;
-    int status;
-    int koku;   //wealth
-    int bu;     //wealth
-    int zeni;   //wealth
-    int rank;
-
-    QStringList techniques;
-
-    QStringList adv_disadv;
-
-    QList<QStringList> abilities;
-    QList<QStringList> equipment;
-    QList<QStringList> bonds;
-
-    QString heritage;
-    QStringList advanceStack;
-
-    QString notes;
-
-    int totalXP;
-
-    void clear();
-
-    QImage portrait;
-};
-
-#endif // CHARACTER_H
+QStringList AddBondDialog::getResult() const {
+    QStringList resultlist;
+    resultlist.append(dal->qsl_getbond(ui->traitComboBox->currentText()));
+    if(resultlist.count()>0) resultlist.insert(1,"1"); //a new bond is always rank 1
+    return resultlist;
+}

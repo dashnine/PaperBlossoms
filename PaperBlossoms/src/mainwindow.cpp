@@ -44,6 +44,7 @@
 #include "enums.h"
 #include "clicklabel.h"
 #include "adddisadvdialog.h"
+#include "addbonddialog.h"
 #include "pboutputdata.h"
 #include "renderdialog.h"
 #include <QDesktopServices>
@@ -146,6 +147,10 @@ MainWindow::MainWindow(QString locale, QWidget *parent) :
     disadvheaders << "KEY"<<"Name"<<"Ring"<<"Desc"<<"Short Desc"<<"Book"<<"Page"<<"Types";
     dis_advmodel.setHorizontalHeaderLabels(disadvheaders);
 
+    QStringList bondheaders;
+    bondheaders << "Name"<<"Rank"<<"Ability"<<"Desc"<<"Short Desc"<<"Book"<<"Page";
+    bondmodel.setHorizontalHeaderLabels(bondheaders);
+
     QStringList techheaders;
     techheaders << "Name"<<"Type"<<"Subtype"<<"Rank"<<"Book"<<"Page"<<"Restriction"<<"Desc"<<"Description";
     techModel.setHorizontalHeaderLabels(techheaders);
@@ -185,7 +190,7 @@ MainWindow::MainWindow(QString locale, QWidget *parent) :
     perseffProxyModel.setFilterFixedString("Other");
     ui->other_tableview->setModel(& perseffProxyModel);
 
-
+    ui->bonds_tableView->setModel(&bondmodel);
 
     distinctionsProxyModel.setDynamicSortFilter(true);
     distinctionsProxyModel.setSourceModel(&dis_advmodel);
@@ -405,6 +410,13 @@ void MainWindow::populateUI(){
                 }
         }
     }
+    foreach (const QStringList bond, curCharacter.bonds) {
+                curCharacter.abilities << dal->qsl_getbondability(bond.at(0));
+                const QStringList abl = dal->qsl_getbondability(bond.at(0));
+                if(abl.count()>0){
+                    abiltext+=abl.at(0)+", ";
+                }
+    }
     if(abiltext.count()>=2) abiltext.chop(2); //trim the last ", "
     ui->ability_label->setText(abiltext);
     //-------------------SET RINGS ---------------------------
@@ -470,6 +482,21 @@ void MainWindow::populateUI(){
     eqheaders << "Category"<<"Skill"<<"Grip"<<"Min Range"<<"Max Range"<<"DMG"<<"DLS";
     eqheaders <<"Physical"<<"Supernatural";
     equipmodel.setHorizontalHeaderLabels(eqheaders);
+
+
+    //------------------SET Bond TABLE-------------------------------------//
+    bondmodel.clear();
+    foreach (const QStringList bondlist, curCharacter.bonds){
+        QList<QStandardItem*> bondrow;
+        foreach (QString str, bondlist) {
+            bondrow << new QStandardItem(str);
+        }
+        bondmodel.appendRow(bondrow);
+    }
+    ui->bonds_tableView->resizeColumnsToContents();
+    QStringList bondheaders;
+    bondheaders << "Name"<<"Rank"<<"Ability"<<"Desc"<<"Short Desc"<<"Book"<<"Page";
+    bondmodel.setHorizontalHeaderLabels(bondheaders);
 
     //---------------CALCULATE DERIVED STATS ------------------------------//
     ui->endurance_label->setText(QString::number(( curCharacter.baserings[dal->translate("Earth")]
@@ -608,6 +635,9 @@ void MainWindow::on_actionSave_As_triggered()
         const int version = SAVE_FILE_VERSION;
         stream<<version;
 
+        //V 3 fields
+        stream<<curCharacter.bonds;
+
         //V 2 fields
         stream<<curLocale;
 
@@ -690,6 +720,16 @@ void MainWindow::on_actionOpen_triggered()
         if(version<MIN_FILE_VERSION || version > MAX_FILE_VERSION){
             QMessageBox::information(this, tr("Incompatible Save File"), tr("This save file was created with an incompatible version of Paper Blossoms. Aborting import."));
             return;
+        }
+
+        //BONDS------------------- (v3)
+        if(version < 3){ //need to default the locale to en
+            //nothing to stream in on v1-v2 files: no bond support
+            curCharacter.bonds.clear();
+            qDebug()<<"Old save file: no bonds to import.";
+        }
+        else{
+            stream>>curCharacter.bonds;
         }
 
         //LOCALE------------------- (v2)
@@ -1998,4 +2038,65 @@ void MainWindow::on_actionTranslate_For_Locale_triggered()
         dialog.doFinish(false);
         qDebug() << "Rejected: data discarded";
     }
+}
+
+void MainWindow::on_bondAdd_pushButton_clicked()
+{
+    AddBondDialog addbonddialog(dal, &curCharacter,"Bonds");
+    const int result = addbonddialog.exec();
+    if (result == QDialog::Accepted){
+        qDebug() << "Accepted: getting bond";
+       m_dirtyDataFlag = true;
+       //TODO:SUPPORT BOND SAVING with a BONDMODEL
+       curCharacter.bonds.append(addbonddialog.getResult());
+       curCharacter.advanceStack.append("Bond|"+addbonddialog.getResult().first()+"|None|"+"3");
+       //TODO: Refresh Bonds in UI
+       populateUI();
+    }
+    else{
+        qDebug() << "Not accepted; discarding changes.";
+    }
+}
+
+void MainWindow::on_bondRemove_pushButton_clicked()
+{
+    QModelIndex curIndex = ui->bonds_tableView->currentIndex();
+    if(!curIndex.isValid()) return;
+    //QString name = bondmodel.item(curIndex.row(),1)->text();
+    curCharacter.bonds.removeAt(curIndex.row()); //TODO: TESTING -- is this accurate?
+    populateUI();
+    m_dirtyDataFlag = true;
+}
+
+void MainWindow::on_bondUpgrade_pushButton_clicked()
+{
+    QModelIndex curIndex = ui->bonds_tableView->currentIndex();
+    if(!curIndex.isValid()) return;
+
+    QStringList bondrow = curCharacter.bonds.at(curIndex.row());
+    int currank = bondrow.at(1).toInt();
+
+
+    if(currank<5){
+        int cost = 0; //cost of upgrade to next rank. Per page 190 PoW (also on CoS)
+        switch(currank){
+        case 1: cost = 4; break;
+        case 2: cost = 6; break;
+        case 3: cost = 8; break;
+        case 4: cost = 10; break;
+        default: cost = 0; break    ;
+        }
+        if(QMessageBox::Cancel==QMessageBox::information(this, tr("Upgrading Bond"), "This will spend "+QString::number(cost)+" XP, and is not reversable. Continue?",QMessageBox::Yes|QMessageBox::Cancel)){
+            return;
+            }
+
+        bondrow.replace(1,QString::number(++currank));
+        curCharacter.bonds.replace(curIndex.row(),bondrow);
+        curCharacter.advanceStack.append("Bond Upgrade|"+bondrow.first()+"|None|"+QString::number(cost));
+
+    }
+
+
+    populateUI();
+    m_dirtyDataFlag = true;
 }

@@ -145,15 +145,21 @@ private slots:
 
     void on_actionTranslate_For_Locale_triggered();
 
+    void on_bondAdd_pushButton_clicked();
+
+    void on_bondRemove_pushButton_clicked();
+
+    void on_bondUpgrade_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     DataAccessLayer* dal;
     Character curCharacter;
     void populateUI();
     bool m_dirtyDataFlag;
-    const int SAVE_FILE_VERSION = 2;
+    const int SAVE_FILE_VERSION = 3;
     const int MIN_FILE_VERSION = 1;
-    const int MAX_FILE_VERSION = 2;
+    const int MAX_FILE_VERSION = 3;
 
     QStandardItemModel skillmodel;
     QStandardItemModel advanceStack;
@@ -162,6 +168,7 @@ private:
     QStandardItemModel equipmodel;
     QStandardItemModel dis_advmodel;
     QStandardItemModel techModel;
+    QStandardItemModel bondmodel;
 
 
     QPair<int, int> recalcRank();
