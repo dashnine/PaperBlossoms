@@ -113,6 +113,19 @@ enum{
 };
 }
 
+namespace TechQuery {
+enum{
+    NAME,
+    CATEGORY,
+    SUBCATEGORY,
+    RANK,
+    XP,
+    BOOK,
+    PAGE,
+    RESTRICTION,
+};
+}
+
 namespace Curric {
 enum{
     RANK,

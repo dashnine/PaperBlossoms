@@ -27,6 +27,7 @@
 #include <QPushButton>
 #include <QSqlRecord>
 #include <QDebug>
+#include "enums.h"
 
 AddAdvanceDialog::AddAdvanceDialog(DataAccessLayer* dal, Character* character, QString sel, QString option, QWidget *parent) :
     QDialog(parent),
@@ -51,7 +52,17 @@ AddAdvanceDialog::AddAdvanceDialog(DataAccessLayer* dal, Character* character, Q
 
     ui->detailTableView->setModel(&proxyModel);
 
+
+
+
+
+
+
     validatePage();
+
+    populateTechModel();
+
+
     if(sel == "skill"){
         ui->advtype->setCurrentText(tr("Skill"));
         ui->advchooser_combobox->setCurrentIndex(-1);
@@ -63,6 +74,16 @@ AddAdvanceDialog::AddAdvanceDialog(DataAccessLayer* dal, Character* character, Q
         //no way to specify a group, so right now default to blank)
     }
     else if (sel == "technique"){
+
+
+
+        //TODOOOOOOOO  - Handle auto-picking techniques based on a double-click.
+        ui->advchooser_combobox->setCurrentIndex(-1);
+        //ui->advchooser_combobox->setCurrentText(category);
+
+
+
+        /*
         ui->advtype->setCurrentText(tr("Technique"));
         if(!option.isEmpty()) {
             QString category = dal->qs_gettechtypebyname(option);
@@ -79,6 +100,7 @@ AddAdvanceDialog::AddAdvanceDialog(DataAccessLayer* dal, Character* character, Q
                 }
             }
         }
+        */
     }
     else if (sel == "technique_group"){
         ui->advtype->setCurrentText(tr("Technique"));
@@ -106,9 +128,18 @@ void AddAdvanceDialog::validatePage(){
         ok &= ui->detailTableView->currentIndex().isValid();
 
         if(ok){
+
+
+            /*
             const QModelIndex curIndex = proxyModel.mapToSource(ui->detailTableView->currentIndex());
             const QSqlRecord record = techModel.record(curIndex.row());
             const QString name =  record.value("name_tr").toString();
+            */
+
+            const QModelIndex curIndex = proxyModel.mapToSource(ui->detailTableView->currentIndex());
+            if(!curIndex.isValid()) return;
+            QString name = techModel.item(curIndex.row(),TechQuery::NAME)->text();
+
 
             if(character->techniques.contains(name)){
                 ui->warnlabel->setText("Invalid selection: '"+name+"' is already learned.");
@@ -155,6 +186,20 @@ void AddAdvanceDialog::validatePage(){
 
 }
 
+void AddAdvanceDialog::populateTechModel(){
+    techModel.clear();
+    QList<QStringList> techlist = dal->ql_getalltechniques();
+    foreach(const QStringList tech, techlist){
+        QList<QStandardItem*> itemrow;
+        foreach (const QString t, tech){
+            //now, do the real work for the tables
+            itemrow << new QStandardItem(t);
+        }
+        techModel.appendRow(itemrow);
+    }
+
+}
+
 void AddAdvanceDialog::on_advtype_currentIndexChanged(const QString &arg1)
 {
     if(arg1 == tr("Skill")){
@@ -181,17 +226,30 @@ void AddAdvanceDialog::on_advtype_currentIndexChanged(const QString &arg1)
         //get a list of types that can be chosen at this time
         QSet<QString> types;
         if(character->titles.count()==0){
-            dal->qsm_gettechniquetable(&techModel, QString::number(character->rank),character->school, "", removerestrictions);
+            //dal->qsm_gettechniquetable(&techModel, QString::number(character->rank),character->school, "", removerestrictions);
+            populateTechModel();
 
         }
         else{
 
 
-            dal->qsm_gettechniquetable(&techModel, QString::number(character->rank),character->school, character->titles.last(), removerestrictions);
+            //dal->qsm_gettechniquetable(&techModel, QString::number(character->rank),character->school, character->titles.last(), removerestrictions);
+            populateTechModel();
        }
         for(int i = 0; i<techModel.rowCount(); ++i){
+            /*
             const QSqlRecord record = techModel.record(i);
             types << record.value("Category").toString();
+            */
+            for(int r = 0; r < techModel.rowCount();++r){
+                    QStringList row;
+                    for(int c = 0; c < techModel.columnCount();++c){
+                            //if(!titlemodel.item(r,c)->text().isEmpty()){
+                                    row<< techModel.item(r,c)->text();
+                            //}
+                    }
+                    types << row.at(TechQuery::CATEGORY);
+            }
         }
         qDebug()<< types;
         QStringList typelist;
@@ -276,13 +334,13 @@ void AddAdvanceDialog::on_advchooser_combobox_currentIndexChanged(const QString 
     else{
         //QSet<QString> types;
         if(character->titles.count()==0){
-            dal->qsm_gettechniquetable(&techModel, QString::number(character->rank),character->school, "", removerestrictions);
+            //dal->qsm_gettechniquetable(&techModel, QString::number(character->rank),character->school, "", removerestrictions);
+            populateTechModel();
 
         }
         else{
-
-
-            dal->qsm_gettechniquetable(&techModel, QString::number(character->rank),character->school, character->titles.last(), removerestrictions);
+            //dal->qsm_gettechniquetable(&techModel, QString::number(character->rank),character->school, character->titles.last(), removerestrictions);
+            populateTechModel();
        }
         // for(int i = 0; i<techModel.rowCount(); ++i){
        //     QSqlRecord record = techModel.record(i);
@@ -327,8 +385,15 @@ QString AddAdvanceDialog::getResult() const {
     //row += ui->advtype->currentText() + "|";
     if(ui->advtype->currentText() == tr("Technique")){
        const QModelIndex curIndex = proxyModel.mapToSource(ui->detailTableView->currentIndex());
-       const QSqlRecord record = techModel.record(curIndex.row());
-       row += record.value("name_tr").toString()+"|";
+       //const QSqlRecord record = techModel.record(curIndex.row());
+       //row += record.value("name_tr").toString()+"|";
+               QStringList tr;
+               for(int c = 0; c < techModel.columnCount();++c){
+                       //if(!titlemodel.item(r,c)->text().isEmpty()){
+                               tr<< techModel.item(curIndex.row(),c)->text();
+                       //}
+               }
+               row += tr.at(TechQuery::NAME);
     }
     else{
         row += ui->advchooser_combobox->currentText() + "|";
@@ -351,11 +416,14 @@ QString AddAdvanceDialog::getResult() const {
 
 void AddAdvanceDialog::on_detailTableView_clicked(const QModelIndex &index)
 {
-    Q_UNUSED(index)
+    //Q_UNUSED(index)
 
     QModelIndex curIndex = proxyModel.mapToSource(index);
-    QSqlRecord record = techModel.record(curIndex.row());
+    /*
+    QSqlRecord record = techModel.curIndex.row());
     const int cost = record.value("xp").toInt();
+    */
+    const int cost = techModel.item(curIndex.row(),TechQuery::XP)->text().toInt();
     const int rounded = qRound(double(cost)/2.0);
     const QString text = QString::number(ui->halfxp_checkBox->isChecked()?rounded:cost);
 
