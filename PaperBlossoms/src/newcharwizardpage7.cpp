@@ -500,7 +500,7 @@ void NewCharWizardPage7::initializePage()
         si.next();
         socialText += si.key() + ":" + QString::number(si.value())+ " ";
     }
-    socialText+=tr("Wealth:")+QString::number(wealth);
+    socialText+=tr("Wealth:")+QString::number(wealth)+" koku, "+QString::number(bu)+" bu,"+QString::number(zeni)+" zeni";
     ui->nc7_sociallist_label->setText(socialText);
 
 
