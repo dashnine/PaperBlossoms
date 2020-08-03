@@ -81,6 +81,12 @@
                 "item_patterns.json"
             ],
             "url": "./PaperBlossoms/data/json_schema/item_patterns.schema.json"
+        },
+        {
+            "fileMatch": [
+                "bonds.json"
+            ],
+            "url": "./PaperBlossoms/data/json_schema/bonds.schema.json"
         }
     ],
     "editor.suggest.localityBonus": true,

@@ -1,0 +1,70 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Bonds",
+    "description": "List of bond types",
+    "type": "array",
+    "items": {
+        "description": "Type of bond",
+        "type": "object",
+        "properties": {
+            "name": {
+                "description": "Name of bond type",
+                "type": "string"
+            },
+            "ability": {
+                "description": "Bond ability",
+                "type": "string"
+            },
+            "reference": {
+                "description": "Page reference for clan",
+                "type": "object",
+                "properties": {
+                    "book": {
+                        "description": "Book in which reference can be found",
+                        "type": "string",
+                        "enum": [
+                            "Core",
+                            "EE",
+                            "SL",
+                            "Mantis",
+                            "GMK",
+                            "CoS"
+                        ]
+                    },
+                    "page": {
+                        "description": "Page on which reference can be found",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "book",
+                    "page"
+                ],
+                "defaultSnippets": [
+                    {
+                        "label": "New Page reference for clan",
+                        "body": {
+                            "book": "$1",
+                            "page": "^$2"
+                        }
+                    }
+                ]
+            }
+        },
+        "required": [
+            "name",
+            "ability",
+            "reference"
+        ],
+        "defaultSnippets": [
+            {
+                "label": "New Type of bond",
+                "body": {
+                    "name": "$1",
+                    "ability": "$2",
+                    "reference": "^$3"
+                }
+            }
+        ]
+    }
+}
