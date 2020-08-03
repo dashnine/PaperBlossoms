@@ -1038,6 +1038,42 @@ def patterns_to_db(db_conn):
         )
 
 
+def bonds_to_db(db_conn):
+
+    # Create bonds table
+    create_tables(
+        db_conn,
+        'bonds',
+        '''CREATE TABLE {} (
+            name TEXT PRIMARY KEY,
+            bond_ability_name TEXT,
+            reference_book TEXT,
+            reference_page INTEGER
+        )''',
+        desc_fields = {
+            'name': '',
+            'bond_ability_name': 'bond_ability'
+        },
+        tr_fields = ['name', 'bond_ability_name']
+    )
+
+    # Read titles from JSON
+    with open('json/bonds.json', encoding = 'utf8') as f:
+        bonds = json.load(f)
+    
+    # Write to bonds table
+    for bond in bonds:
+        db_conn.execute(
+            'INSERT INTO base_bonds VALUES (?,?,?,?)',
+            (
+                bond['name'],
+                bond['ability'],
+                bond['reference']['book'],
+                bond['reference']['page']
+            )
+        )
+
+
 def desc_to_db(db_conn):
     db_conn.execute(
         '''CREATE TABLE user_descriptions (
@@ -1082,6 +1118,7 @@ def main():
     q8_to_db(db_conn)
     titles_to_db(db_conn)
     patterns_to_db(db_conn)
+    bonds_to_db(db_conn)
 
     # Equipment
     qualities_to_db(db_conn)
