@@ -245,6 +245,9 @@ public:
     int i_getupbringingkoku(const QString upbringing);
     int i_getupbringingbu(const QString upbringing);
     int i_getupbringingzeni(const QString upbringing);
+
+    //tech refactor
+    QList<QStringList> ql_getalltechniques();
 private:
     QSqlDatabase db;
     QStringList qsl_getschooltechsetids(const QString school);

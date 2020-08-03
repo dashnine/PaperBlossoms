@@ -1297,6 +1297,31 @@ QString DataAccessLayer::getLastExecutedQuery(const QSqlQuery& query)
  return str;
 }
 
+QList<QStringList> DataAccessLayer::ql_getalltechniques(){
+    QList<QStringList> out;
+    QSqlQuery query;
+    query.prepare(
+    "SELECT distinct name_tr, category, subcategory, rank,                                      "
+    "       xp, reference_book, reference_page,restriction_tr                                   "
+    "FROM techniques                                                                            "
+                );
+    query.exec();
+    while (query.next()) {
+        QStringList row;
+        row << query.value(0).toString();
+        row << query.value(1).toString();
+        row << query.value(2).toString();
+        row << query.value(3).toString();
+        row << query.value(4).toString();
+        row << query.value(5).toString();
+        row << query.value(6).toString();
+        row << query.value(7).toString();
+        out << row;
+
+    }
+    return out;
+}
+
 void DataAccessLayer::qsm_gettechniquetable(QSqlQueryModel * const model, const QString rank, const QString school, const QString title, const bool norestrictions)
 {
     //technique query
