@@ -77,30 +77,31 @@ AddAdvanceDialog::AddAdvanceDialog(DataAccessLayer* dal, Character* character, Q
 
 
 
-        //TODOOOOOOOO  - Handle auto-picking techniques based on a double-click.
-        ui->advchooser_combobox->setCurrentIndex(-1);
-        //ui->advchooser_combobox->setCurrentText(category);
 
-
-
-        /*
+        QString name = "";
         ui->advtype->setCurrentText(tr("Technique"));
         if(!option.isEmpty()) {
             QString category = dal->qs_gettechtypebyname(option);
             ui->advchooser_combobox->setCurrentIndex(-1);
             ui->advchooser_combobox->setCurrentText(category);
-            //ui->detailTableView->selectRow(techModel.f)
+            //ui->detailTableView->selectRow(techModel.findItems())
             for(int i = 0; i < proxyModel.rowCount(); ++i){
-                QModelIndex index = proxyModel.mapToSource(proxyModel.index(i,0));
-                QSqlRecord r = techModel.record(index.row());
-                QString name = r.value("name_tr").toString();
+
+                const QModelIndex curIndex = proxyModel.mapToSource(proxyModel.index(i,0));
+                if(curIndex.isValid()){
+                    name = techModel.item(curIndex.row(),TechQuery::NAME)->text();
+                }
+
+                //QModelIndex index = proxyModel.mapToSource(proxyModel.index(i,0));
+                //QSqlRecord r = techModel.record(index.row());
+                //QString name = r.value("name_tr").toString();
                 if (name == option) {
                     ui->detailTableView->selectRow(i);
-                    on_detailTableView_clicked(proxyModel.index(i,0));
+                    on_detailTableView_clicked(curIndex);
                 }
             }
         }
-        */
+
     }
     else if (sel == "technique_group"){
         ui->advtype->setCurrentText(tr("Technique"));
@@ -581,7 +582,10 @@ void AddAdvanceDialog::on_detailTableView_clicked(const QModelIndex &index)
 {
     //Q_UNUSED(index)
 
-    QModelIndex curIndex = proxyModel.mapToSource(index);
+
+
+    //QModelIndex curIndex = proxyModel.mapToSource(index);
+    QModelIndex curIndex = index;
     /*
     QSqlRecord record = techModel.curIndex.row());
     const int cost = record.value("xp").toInt();
