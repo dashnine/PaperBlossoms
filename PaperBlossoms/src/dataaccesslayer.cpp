@@ -116,7 +116,7 @@ QString DataAccessLayer::translate(QString string){
         QString out = query.value(0).toString();
         return out;
     }
-    qDebug() << "Translated value for "+ string +" not found. Using original.";
+    //qDebug() << "Translated value for "+ string +" not found. Using original.";
     return string;
 }
 
@@ -1322,6 +1322,30 @@ QList<QStringList> DataAccessLayer::ql_getalltechniques(){
     return out;
 }
 
+QList<QStringList> DataAccessLayer::qsl_getschoolcurriculum(const QString school)
+{
+    QList<QStringList> out;
+    QSqlQuery query;
+    query.prepare(  "SELECT rank, advance_tr, type, special_access                  " //select main list
+                    "FROM curriculum                                             " // from table
+                    "WHERE school_tr = ?                                            "
+                    );
+        query.bindValue(0, school);
+        query.exec();
+
+        while (query.next()) {
+            QStringList row;
+            row << query.value(0).toString();
+            row << query.value(1).toString();
+            row << query.value(2).toString();
+            row << query.value(3).toString();
+            out << row;
+
+        }
+        return out;
+
+}
+
 void DataAccessLayer::qsm_gettechniquetable(QSqlQueryModel * const model, const QString rank, const QString school, const QString title, const bool norestrictions)
 {
     //technique query
@@ -1445,6 +1469,20 @@ void DataAccessLayer::qsm_gettechniquetable(QSqlQueryModel * const model, const 
         }
         model->setQuery(query);
     }
+
+}
+
+QStringList DataAccessLayer::qsl_gettechallowedbyschool(QString school){
+    QStringList out;
+    QSqlQuery query;
+    query.prepare("SELECT technique from school_techniques_available WHERE school_tr = :school");
+    query.bindValue(0, school);
+    query.exec();
+    while (query.next()) {
+        out << query.value(0).toString();
+//        qDebug() << name;
+    }
+    return out;
 
 }
 
@@ -1682,6 +1720,29 @@ QStringList DataAccessLayer::qsl_gettitletrack(const QString title)
         const QString sp_ac = query.value(3).toString();
         const QString rank = query.value(4).toString();
         out<< title+"|"+name+"|"+type+"|"+sp_ac+"|"+rank;
+//        qDebug() << out;
+    }
+    return out;
+}
+
+QList<QStringList> DataAccessLayer::ql_gettitletrack(const QString title)
+{
+    QList<QStringList> out;
+    QSqlQuery query;
+    query.prepare(  "SELECT title_tr, name_tr, type, special_access,rank           " //select main list
+                    "FROM title_advancements                                     " // from table
+                    "WHERE title_tr = ?                                             "
+                    );
+        query.bindValue(0, title);
+        query.exec();
+    while (query.next()) {
+        QStringList row;
+        row << query.value(0).toString();
+        row << query.value(1).toString();
+        row << query.value(2).toString();
+        row << query.value(3).toString();
+        row << query.value(4).toString();
+        out <<row;
 //        qDebug() << out;
     }
     return out;

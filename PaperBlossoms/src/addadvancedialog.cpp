@@ -188,16 +188,179 @@ void AddAdvanceDialog::validatePage(){
 
 void AddAdvanceDialog::populateTechModel(){
     techModel.clear();
+
+   /*
+
+
+    //---------------------Special access groups and katagroups from title-------------------//
+    "(rank <= ? and subcategory in                                                              " //0 trank
+    " (SELECT name from title_advancements                                                      "
+    "   WHERE title_tr = ?                                                                         " //1 title
+    "   AND type = 'technique_group'                                                            "
+    "   AND special_access = 1                                                                  "
+    "  )  )                                                                                     "
+    "OR                                                                                         " //title Katas (cat v subcat)
+    "(rank <= ? and category in                                                                 " //2 trank //cat is group
+    " (SELECT name from title_advancements                                                      "
+    "   WHERE title_tr = ?                                                                         " //3 title
+    "   and type = 'technique_group'                                                            "
+    "   AND special_access = 1                                                                  "
+    "  ) )                                                                                      "
+    //----------------------Special access groups and katagroups from curriculum---------------//
+    "OR ( rank <= ? and subcategory in                                                          " //4 rank
+    " (SELECT advance from curriculum                                                           "
+    "   WHERE school_tr = ?                                                                        " //5 school //subcat is group
+    "   AND rank = ? and type = 'technique_group'                                               " //6 rank
+    "   AND special_access = 1                                                                  "
+    " )                                                                                         "
+    "OR  rank <= ? and category in                                                              " //7 rank
+    " (SELECT advance from curriculum                                                           "
+    "   WHERE school_tr = ?                                                                        " //8 school //subcat is group
+    "   AND rank = ? and type = 'technique_group'                                               " //9 rank
+    "   AND special_access = 1                                                                  "
+    " )  )                                                                                      "
+    //------------------------special access indiv tech from curric and title------------------//
+                                                                               "
+    "OR name_tr in (                                                                               "           //title tech
+    "  SELECT name_tr from title_advancements                                                      "
+    "   WHERE title_tr = ?                                                                         " //12 title
+    "   AND type = 'technique'                                                                  "
+    "   AND special_access = 1                                                                  "
+    "  )                                                                                        "
+
+
+    */
+
+
+
+
+    //get full
     QList<QStringList> techlist = dal->ql_getalltechniques();
+
+    //const QString rank, const QString school, const QString title, const bool norestriction
+    int rank = character->rank;
+    QList<QStringList> titletrack;
+    if(character->titles.count()>0) {
+        titletrack = dal->ql_gettitletrack(character->titles.last());
+    }
+    QStringList schooltech = dal->qsl_gettechallowedbyschool(character->school);
+    QList<QStringList> curriculum = dal->qsl_getschoolcurriculum(character->school);
+
     foreach(const QStringList tech, techlist){
-        QList<QStandardItem*> itemrow;
-        foreach (const QString t, tech){
-            //now, do the real work for the tables
-            itemrow << new QStandardItem(t);
+
+        //if it's unrestricted, call it a day
+        if(removerestrictions){
+            addTechRow(tech);
+            continue;
         }
-        techModel.appendRow(itemrow);
+
+
+
+        //now, check this row against filters.  If it is allowable, add the row.
+
+        //IF it is less than or equal to my rank, and....
+        if(rank >= tech.at(TechQuery::RANK).toInt()){
+            //category or subcategory is in my school?
+            if(schooltech.contains(tech.at(TechQuery::CATEGORY))) {
+                addTechRow(tech);
+                continue;
+            }
+            if(schooltech.contains(tech.at(TechQuery::SUBCATEGORY))) {
+                addTechRow(tech);
+                continue;
+            }
+
+            //get tech that everyone has access to:
+            if( (tech.at(TechQuery::CATEGORY)) == "Mahō"                ||
+                    (tech.at(TechQuery::CATEGORY)) == "Item Patterns"       ||
+                    (tech.at(TechQuery::CATEGORY)) == "Signature Scrolls"   ){
+                addTechRow(tech);
+                continue;
+
+            }
+        }
+
+        //check your curriculum for this rank only, looking for special access
+        bool isincurric = false;
+        foreach(QStringList curricrow, curriculum){
+            if((curricrow.at(Curric::RANK).toInt() == rank) && curricrow.at(Curric::SPEC).toInt()==1){
+                if(curricrow.at(Curric::ADVANCE) == tech.at(TechQuery::CATEGORY)) {
+                    addTechRow(tech);
+                    isincurric = true;
+                    break; //break back to main loop
+                }
+                if(curricrow.at(Curric::ADVANCE) == tech.at(TechQuery::SUBCATEGORY)) {
+                    isincurric = true;
+                    addTechRow(tech);
+                    break; //break back to main loop
+                }
+                if(curricrow.at(Curric::ADVANCE) == tech.at(TechQuery::NAME)){
+                    isincurric = true;
+                    addTechRow(tech);
+                    break; //break back to main loop
+                }
+            }
+        }
+        if(isincurric) continue; //next tech if we found it
+        //now do the same for title
+        bool isintitle = false;
+        foreach(QStringList titlerow, titletrack){
+
+
+            if(     (titlerow.at(Title::TRANK).isEmpty()||(tech.at(TechQuery::RANK)<=titlerow.at(Title::TRANK)))
+                     && ( titlerow.at(Title::SPEC).toInt()==1) ){
+                if(titlerow.at(Title::ADVANCE) == tech.at(TechQuery::CATEGORY)) {
+                    addTechRow(tech);
+                    isintitle = true;
+                    break; //break back to main loop
+                }
+                if(titlerow.at(Title::ADVANCE) == tech.at(TechQuery::SUBCATEGORY)) {
+                    addTechRow(tech);
+                    isintitle = true;
+                    break; //break back to main loop
+                }
+                if(titlerow.at(Title::ADVANCE) == tech.at(TechQuery::NAME)){
+                    addTechRow(tech);
+                    isintitle = true;
+                    break; //break back to main loop
+                }
+            }
+        }
+        if(isintitle) continue; //next tech if we found it
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //if it gets here, discard it
+        //addTechRow(tech);
+
+}
+
+void AddAdvanceDialog::addTechRow(QStringList tech){
+    QList<QStandardItem*> itemrow;
+    foreach (const QString t, tech){
+        //now, do the real work for the tables
+        itemrow << new QStandardItem(t);
+    }
+    techModel.appendRow(itemrow);
 }
 
 void AddAdvanceDialog::on_advtype_currentIndexChanged(const QString &arg1)

@@ -248,6 +248,9 @@ public:
 
     //tech refactor
     QList<QStringList> ql_getalltechniques();
+    QList<QStringList> qsl_getschoolcurriculum(const QString school);
+    QStringList qsl_gettechallowedbyschool(QString school);
+    QList<QStringList> ql_gettitletrack(const QString title);
 private:
     QSqlDatabase db;
     QStringList qsl_getschooltechsetids(const QString school);

@@ -72,6 +72,7 @@ private:
     QSortFilterProxyModel proxyModel;
     QSqlQueryModel curriculumModel;
     void populateTechModel();
+    void addTechRow(QStringList tech);
 };
 
 #endif // ADDADVANCEDIALOG_H
