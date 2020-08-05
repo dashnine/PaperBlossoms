@@ -53,11 +53,6 @@ AddAdvanceDialog::AddAdvanceDialog(DataAccessLayer* dal, Character* character, Q
     ui->detailTableView->setModel(&proxyModel);
 
 
-
-
-
-
-
     validatePage();
 
     populateTechModel();
@@ -131,11 +126,7 @@ void AddAdvanceDialog::validatePage(){
         if(ok){
 
 
-            /*
-            const QModelIndex curIndex = proxyModel.mapToSource(ui->detailTableView->currentIndex());
-            const QSqlRecord record = techModel.record(curIndex.row());
-            const QString name =  record.value("name_tr").toString();
-            */
+
 
             const QModelIndex curIndex = proxyModel.mapToSource(ui->detailTableView->currentIndex());
             if(!curIndex.isValid()) return;
@@ -189,48 +180,9 @@ void AddAdvanceDialog::validatePage(){
 
 void AddAdvanceDialog::populateTechModel(){
     techModel.clear();
-
-   /*
-
-
-    //---------------------Special access groups and katagroups from title-------------------//
-    "(rank <= ? and subcategory in                                                              " //0 trank
-    " (SELECT name from title_advancements                                                      "
-    "   WHERE title_tr = ?                                                                         " //1 title
-    "   AND type = 'technique_group'                                                            "
-    "   AND special_access = 1                                                                  "
-    "  )  )                                                                                     "
-    "OR                                                                                         " //title Katas (cat v subcat)
-    "(rank <= ? and category in                                                                 " //2 trank //cat is group
-    " (SELECT name from title_advancements                                                      "
-    "   WHERE title_tr = ?                                                                         " //3 title
-    "   and type = 'technique_group'                                                            "
-    "   AND special_access = 1                                                                  "
-    "  ) )                                                                                      "
-    //----------------------Special access groups and katagroups from curriculum---------------//
-    "OR ( rank <= ? and subcategory in                                                          " //4 rank
-    " (SELECT advance from curriculum                                                           "
-    "   WHERE school_tr = ?                                                                        " //5 school //subcat is group
-    "   AND rank = ? and type = 'technique_group'                                               " //6 rank
-    "   AND special_access = 1                                                                  "
-    " )                                                                                         "
-    "OR  rank <= ? and category in                                                              " //7 rank
-    " (SELECT advance from curriculum                                                           "
-    "   WHERE school_tr = ?                                                                        " //8 school //subcat is group
-    "   AND rank = ? and type = 'technique_group'                                               " //9 rank
-    "   AND special_access = 1                                                                  "
-    " )  )                                                                                      "
-    //------------------------special access indiv tech from curric and title------------------//
-                                                                               "
-    "OR name_tr in (                                                                               "           //title tech
-    "  SELECT name_tr from title_advancements                                                      "
-    "   WHERE title_tr = ?                                                                         " //12 title
-    "   AND type = 'technique'                                                                  "
-    "   AND special_access = 1                                                                  "
-    "  )                                                                                        "
-
-
-    */
+    QStringList techheaders;
+    techheaders << "Name"<<"Type"<<"Subtype"<<"Rank"<<"XP"<<"Book"<<"Page"<<"Restriction";
+    techModel.setHorizontalHeaderLabels(techheaders);
 
 
 
@@ -329,21 +281,6 @@ void AddAdvanceDialog::populateTechModel(){
         }
         if(isintitle) continue; //next tech if we found it
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
