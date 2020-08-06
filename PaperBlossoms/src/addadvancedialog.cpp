@@ -236,18 +236,37 @@ void AddAdvanceDialog::populateTechModel(){
         //check your curriculum for this rank only, looking for special access
         bool isincurric = false;
         foreach(QStringList curricrow, curriculum){
+            //first, get min and maxrank on the curriculum, if there is one.
+            int minrank = 1;
+            int maxrank = rank;
+            if(curricrow.count()>=Curric::MINRANK+1) {
+                if(!curricrow.at(Curric::MINRANK).isEmpty()) minrank=curricrow.at(Curric::MINRANK).toInt();
+            }
+            if(curricrow.count()>=Curric::MAXRANK+1) {
+                if(!curricrow.at(Curric::MAXRANK).isEmpty()) maxrank=curricrow.at(Curric::MAXRANK).toInt();
+            }
+
+
+            //second, check each row of the CURRENT RANK's curriculum for this tech.
             if((curricrow.at(Curric::RANK).toInt() == rank) && curricrow.at(Curric::SPEC).toInt()==1){
-                if(curricrow.at(Curric::ADVANCE) == tech.at(TechQuery::CATEGORY)) {
-                    addTechRow(tech);
-                    isincurric = true;
-                    break; //break back to main loop
-                }
-                if(curricrow.at(Curric::ADVANCE) == tech.at(TechQuery::SUBCATEGORY)) {
-                    isincurric = true;
-                    addTechRow(tech);
-                    break; //break back to main loop
+                //THird: PoW: Verify that the tech we're checking falls within the min and max rank fields.
+                //    Defaults to 1 and current rank, respectively. Note: at this time, all min ranks are 1
+                if(rank>= minrank && rank <= maxrank){
+                    //Does it match category?
+                    if(curricrow.at(Curric::ADVANCE) == tech.at(TechQuery::CATEGORY)) {
+                        addTechRow(tech);
+                        isincurric = true;
+                        break; //break back to main loop
+                    }
+                    //does it match subcategory?
+                    if(curricrow.at(Curric::ADVANCE) == tech.at(TechQuery::SUBCATEGORY)) {
+                        isincurric = true;
+                        addTechRow(tech);
+                        break; //break back to main loop
+                    }
                 }
                 if(curricrow.at(Curric::ADVANCE) == tech.at(TechQuery::NAME)){
+                    //if it maches name, there's no need to check the rank range-- just add it
                     isincurric = true;
                     addTechRow(tech);
                     break; //break back to main loop
@@ -259,7 +278,7 @@ void AddAdvanceDialog::populateTechModel(){
         bool isintitle = false;
         foreach(QStringList titlerow, titletrack){
 
-
+            //at this time, titles don't have a minimum rank -- max rank is TRANK, min rank is 1.
             if(     (titlerow.at(Title::TRANK).isEmpty()||(tech.at(TechQuery::RANK)<=titlerow.at(Title::TRANK)))
                      && ( titlerow.at(Title::SPEC).toInt()==1) ){
                 if(titlerow.at(Title::ADVANCE) == tech.at(TechQuery::CATEGORY)) {
@@ -517,16 +536,7 @@ QString AddAdvanceDialog::getResult() const {
 
 void AddAdvanceDialog::on_detailTableView_clicked(const QModelIndex &index)
 {
-    //Q_UNUSED(index)
-
-
-
-    //QModelIndex curIndex = proxyModel.mapToSource(index);
-    QModelIndex curIndex = index;
-    /*
-    QSqlRecord record = techModel.curIndex.row());
-    const int cost = record.value("xp").toInt();
-    */
+    QModelIndex curIndex = proxyModel.mapToSource(index);
     const int cost = techModel.item(curIndex.row(),TechQuery::XP)->text().toInt();
     const int rounded = qRound(double(cost)/2.0);
     const QString text = QString::number(ui->halfxp_checkBox->isChecked()?rounded:cost);

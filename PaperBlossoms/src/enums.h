@@ -132,6 +132,8 @@ enum{
     ADVANCE,
     TYPE,
     SPEC,
+    MINRANK,
+    MAXRANK
 };
 
 }
