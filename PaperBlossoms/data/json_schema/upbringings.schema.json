@@ -1,0 +1,210 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Upbringing",
+    "description": "List of upbringings for r\u014dnin",
+    "type": "array",
+    "items": {
+        "description": "Upbringing",
+        "type": "object",
+        "properties": {
+            "name": {
+                "description": "Type of upbringing",
+                "type": "string"
+            },
+            "reference": {
+                "description": "Page reference for personal effect",
+                "type": "object",
+                "properties": {
+                    "book": {
+                        "description": "Book in which reference can be found",
+                        "type": "string",
+                        "enum": [
+                            "Core",
+                            "EE",
+                            "SL",
+                            "Mantis",
+                            "GMK",
+                            "CoS",
+                            "PoW"
+                        ]
+                    },
+                    "page": {
+                        "description": "Page on which reference can be found",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "book",
+                    "page"
+                ],
+                "defaultSnippets": [
+                    {
+                        "label": "New Page reference for personal effect",
+                        "body": {
+                            "book": "$1",
+                            "page": "^$2"
+                        }
+                    }
+                ]
+            },
+            "ring_increase": {
+                "description": "Ring for which the upbringing grants an increase in rank",
+                "type": "object",
+                "properties": {
+                    "size": {
+                        "description": "Number of rings for which upbringing grants an increase in rank",
+                        "type": "integer"
+                    },
+                    "set": {
+                        "description": "List of rings which can be elected",
+                        "type": "array",
+                        "items": {
+                            "description": "Ring which can be elected",
+                            "type": "string",
+                            "enum": [
+                                "Air",
+                                "Earth",
+                                "Fire",
+                                "Water",
+                                "Void",
+                                "any"
+                            ]
+                        }
+                    }
+                },
+                "defaultSnippets": [
+                    {
+                        "label": "New Ring for which the upbringing grants an increase in rank",
+                        "body": {
+                            "size": "^$1",
+                            "set": "^[$2]"
+                        }
+                    }
+                ]
+            },
+            "skill_increases": {
+                "description": "List of skills for which upbringing grants an increase in rank",
+                "type": "array",
+                "items": {
+                    "description": "Elective set of skills for which upbringing grants an increase in rank",
+                    "type": "object",
+                    "properties": {
+                        "size": {
+                            "description": "Number of skills which can be elected",
+                            "type": "integer"
+                        },
+                        "set": {
+                            "description": "List of skills which can be elected",
+                            "type": "array",
+                            "items": {
+                                "description": "Skill which can be elected",
+                                "type": "string",
+                                "enum": [
+                                    "Aesthetics",
+                                    "Composition",
+                                    "Design",
+                                    "Smithing",
+                                    "Command",
+                                    "Courtesy",
+                                    "Games",
+                                    "Performance",
+                                    "Culture",
+                                    "Government",
+                                    "Medicine",
+                                    "Sentiment",
+                                    "Theology",
+                                    "Fitness",
+                                    "Martial Arts [Melee]",
+                                    "Martial Arts [Ranged]",
+                                    "Martial Arts [Unarmed]",
+                                    "Meditation",
+                                    "Tactics",
+                                    "Commerce",
+                                    "Labor",
+                                    "Seafaring",
+                                    "Skulduggery",
+                                    "Survival",
+                                    "any"
+                                ]
+                            }
+                        }
+                    },
+                    "required": [
+                        "size",
+                        "set"
+                    ],
+                    "defaultSnippets": [
+                        {
+                            "label": "New Elective set of skills for which upbringing grants an increase in rank",
+                            "body": {
+                                "size": "^$1",
+                                "set": "^[$2]"
+                            }
+                        }
+                    ]
+                }
+            },
+            "status_modification": {
+                "description": "Modification to status",
+                "type": "integer"
+            },
+            "starting_wealth": {
+                "description": "Amount of currency endowed",
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "description": "Numeric value",
+                        "type": "integer"
+                    },
+                    "unit": {
+                        "description": "Monetary unit",
+                        "type": "string",
+                        "enum": [
+                            "koku",
+                            "bu",
+                            "zeni"
+                        ]
+                    }
+                },
+                "required": [
+                    "value",
+                    "unit"
+                ],
+                "defaultSnippets": [
+                    {
+                        "label": "New Amount of currency endowed",
+                        "body": {
+                            "value": "^$1",
+                            "unit": "$2"
+                        }
+                    }
+                ]
+            },
+            "starting_item": {
+                "description": "Personal effect endowed",
+                "type": "string"
+            }
+        },
+        "required": [
+            "name",
+            "reference",
+            "ring_increase",
+            "skill_increase",
+            "status_modification",
+            "starting_wealth"
+        ],
+        "defaultSnippets": [
+            {
+                "label": "New Upbringing",
+                "body": {
+                    "name": "$1",
+                    "reference": "^$2",
+                    "ring_increase": "^$3",
+                    "skill_increase": "^[$4]",
+                    "status_modification": "^$5",
+                    "starting_wealth": "^$6"
+                }
+            }
+        ]
+    }
+}

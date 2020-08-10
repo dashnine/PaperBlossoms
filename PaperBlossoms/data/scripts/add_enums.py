@@ -214,6 +214,14 @@ def write_rings(data_dir, rings_enum):
         rings_enum
     )
 
+    print('... to upbringings')
+    write_enums_with_parent(
+        data_dir.joinpath('json_schema/upbringings.schema.json'),
+        'ring_increase',
+        'set',
+        rings_enum + ['any']
+    )
+
     return rings_enum
 
 
@@ -255,6 +263,14 @@ def write_skills(data_dir, skills_enum):
         data_dir.joinpath('json_schema/regions.schema.json'),
         'skill_increase',
         skills_enum
+    )
+
+    print('... to upbringings')
+    write_enums_with_parent(
+        data_dir.joinpath('json_schema/upbringings.schema.json'),
+        'skill_increase',
+        'set',
+        skills_enum + ['any']
     )
 
 
@@ -432,6 +448,13 @@ def write_currency(data_dir, currency_enum):
     print('... to weapons')
     write_enums(
         data_dir.joinpath('json_schema/weapons.schema.json'),
+        'unit',
+        currency_enum
+    )
+
+    print('... to upbringings')
+    write_enums(
+        data_dir.joinpath('json_schema/upbringings.schema.json'),
         'unit',
         currency_enum
     )

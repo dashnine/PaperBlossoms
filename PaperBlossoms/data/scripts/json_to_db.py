@@ -1115,6 +1115,107 @@ def regions_to_db(db_conn):
         )
 
 
+def upbringings_to_db(db_conn):
+
+    # Create upbringings table
+    create_tables(
+        db_conn,
+        'upbringings',
+        '''CREATE TABLE {} (
+            name TEXT PRIMARY KEY,
+            reference_book TEXT,
+            reference_page INTEGER,
+            status_modification INTEGER,
+            starting_wealth_value INTEGER,
+            starting_wealth_unit TEXT,
+            starting_item TEXT
+        )''',
+        desc_fields = 'name',
+        tr_fields = ['name']
+    )
+    create_tables(
+        db_conn,
+        'upbringing_skill_increases',
+        '''CREATE TABLE {} (
+            upbringing TEXT,
+            set_id INTEGER,
+            set_size INTEGER,
+            skill TEXT
+        )''',
+        tr_fields = ['upbringing', 'skill']
+    )
+    create_tables(
+        db_conn,
+        'upbringing_rings',
+        '''CREATE TABLE {} (
+            upbringing TEXT,
+            ring TEXT
+        )''',
+        tr_fields = ['upbringing', 'ring']
+    )
+
+    # Read upbringings JSON
+    with open('json/upbringings.json', encoding = 'utf8') as f:
+        upbringings = json.load(f)
+    
+    # Write to upbringings tables
+    for upbringing in upbringings:
+
+        # Write to upbringing table
+        db_conn.execute(
+            '''INSERT INTO base_upbringings VALUES (
+                :name,
+                :reference_book,
+                :reference_page,
+                :status_modification,
+                :starting_wealth_value,
+                :starting_wealth_unit,
+                :starting_item
+            )''',
+            {
+                'name': upbringing['name'],
+                'reference_book': upbringing['reference']['book'],
+                'reference_page': upbringing['reference']['page'],
+                'status_modification': upbringing['status_modification'],
+                'starting_wealth_value': upbringing['starting_wealth']['value'],
+                'starting_wealth_unit': upbringing['starting_wealth']['unit'],
+                'starting_item': upbringing['starting_item'] if 'starting_item' in upbringing else None
+            }
+        )
+
+        # Write to upbringing skill increases table
+        for skill_set_id, skill_set in enumerate(upbringing['skill_increases']):
+            db_conn.executemany(
+                '''INSERT INTO base_upbringing_skill_increases VALUES (
+                    :upbringing,
+                    :set_id,
+                    :set_size,
+                    :skill
+                )''',
+                [
+                    {
+                        'upbringing': upbringing['name'],
+                        'set_id': skill_set_id,
+                        'set_size': skill_set['size'],
+                        'skill': skill
+                    }
+                    for skill in skill_set['set']
+                ]
+            )
+        
+        # Write to upbringing rings table
+        db_conn.executemany(
+            'INSERT INTO base_upbringing_rings VALUES (:upbringing, :ring)',
+            [
+                {
+                    'upbringing': upbringing['name'],
+                    'ring': ring
+                }
+                for ring in upbringing['ring_increase']['set']
+            ]
+        )
+
+
 def desc_to_db(db_conn):
     db_conn.execute(
         '''CREATE TABLE user_descriptions (
@@ -1172,6 +1273,7 @@ def main():
     clans_to_db(db_conn)
     heritage_to_db(db_conn)
     schools_to_db(db_conn)
+    upbringings_to_db(db_conn)
 
     # Commit and close connection
     db_conn.commit()
