@@ -863,7 +863,7 @@ QStringList DataAccessLayer::qsl_getbonds( ){
 QStringList DataAccessLayer::qsl_getbond(const QString name ){
     QStringList out;
     QSqlQuery query;
-    query.prepare("SELECT name_tr, ability_tr, desc_tr, shortdesc_tr, book, page FROM bonds WHERE name_tr = :name");
+    query.prepare("SELECT name_tr, bond_ability_name_tr, description, short_desc, reference_book, reference_page FROM bonds WHERE name_tr = :name");
     query.bindValue(0, name);
     query.exec();
     while (query.next()) {
@@ -2015,7 +2015,7 @@ QStringList DataAccessLayer::qsl_gettitlemastery(const QString title){
 QStringList DataAccessLayer::qsl_getbondability(const QString bond){
     QStringList out;
     QSqlQuery query;
-    query.prepare("SELECT ability_tr, book, page, bond_ability_description FROM bonds WHERE name_tr = ?");
+    query.prepare("SELECT bond_ability_name_tr, reference_book, reference_page, bond_ability_description FROM bonds WHERE name_tr = ?");
     query.bindValue(0, bond);
     query.exec();
     while (query.next()) {
