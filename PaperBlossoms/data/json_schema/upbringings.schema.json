@@ -189,7 +189,7 @@
             "name",
             "reference",
             "ring_increase",
-            "skill_increase",
+            "skill_increases",
             "status_modification",
             "starting_wealth"
         ],
@@ -200,7 +200,7 @@
                     "name": "$1",
                     "reference": "^$2",
                     "ring_increase": "^$3",
-                    "skill_increase": "^[$4]",
+                    "skill_increases": "^[$4]",
                     "status_modification": "^$5",
                     "starting_wealth": "^$6"
                 }
