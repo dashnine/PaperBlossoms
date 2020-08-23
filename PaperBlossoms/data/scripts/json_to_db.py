@@ -799,7 +799,9 @@ def schools_to_db(db_conn):
             rank INTEGER,
             advance TEXT,
             type TEXT,
-            special_access INTEGER
+            special_access INTEGER,
+            min_allowable_rank INTEGER,
+            max_allowable_rank INTEGER
         )''',
         tr_fields = ['school', 'advance']
     )
@@ -887,14 +889,16 @@ def schools_to_db(db_conn):
 
         # Write to curriculum table
         db_conn.executemany(
-            'INSERT INTO base_curriculum VALUES (?,?,?,?,?)',
+            'INSERT INTO base_curriculum VALUES (?,?,?,?,?,?,?)',
             [
                 (
                     school['name'],
                     advancement['rank'],
                     advancement['advance'],
                     advancement['type'],
-                    int(advancement['special_access'])
+                    int(advancement['special_access']),
+                    advancement['allowable_rank']['min'] if 'allowable_rank' in advancement else None,
+                    advancement['allowable_rank']['max'] if 'allowable_rank' in advancement else None
                 )
                 for advancement in school['curriculum']
             ]

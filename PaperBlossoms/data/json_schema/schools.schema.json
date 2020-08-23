@@ -1199,6 +1199,20 @@
                         "special_access": {
                             "description": "Privileged access to advance",
                             "type": "boolean"
+                        },
+                        "allowable_rank": {
+                            "description": "Range of ranks allowable for selection",
+                            "type": "object",
+                            "properties": {
+                                "min": {
+                                    "description": "Minimum rank allowable for selection",
+                                    "type": "integer"
+                                },
+                                "max": {
+                                    "description": "Maximum rank allowable for selection",
+                                    "type": "integer"
+                                }
+                            }
                         }
                     },
                     "required": [
