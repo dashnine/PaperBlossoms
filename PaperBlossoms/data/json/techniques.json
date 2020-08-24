@@ -2586,61 +2586,6 @@
         ]
     },
     {
-        "name": "Item Patterns",
-        "subcategories": [
-            {
-                "name": "",
-                "techniques": [
-                    {
-                        "name": "Kakita Pattern",
-                        "rank": 1,
-                        "reference": {
-                            "page": 109,
-                            "book": "SL"
-                        },
-                        "xp": 6
-                    },
-                    {
-                        "name": "Kenz\u014d Blade",
-                        "rank": 1,
-                        "reference": {
-                            "book": "SL",
-                            "page": 109
-                        },
-                        "xp": 8
-                    },
-                    {
-                        "name": "Shirogane Jade Inlay",
-                        "rank": 1,
-                        "reference": {
-                            "book": "SL",
-                            "page": 109
-                        },
-                        "xp": 3
-                    },
-                    {
-                        "name": "Uchema's Technique",
-                        "rank": 1,
-                        "reference": {
-                            "book": "SL",
-                            "page": 109
-                        },
-                        "xp": 4
-                    },
-                    {
-                        "name": "Yasunori Steel",
-                        "rank": 1,
-                        "reference": {
-                            "book": "SL",
-                            "page": 109
-                        },
-                        "xp": 5
-                    }
-                ]
-            }
-        ]
-    },
-    {
         "name": "Astradhari Techniques",
         "subcategories": [
             {

@@ -1028,8 +1028,10 @@ def patterns_to_db(db_conn):
     with open('json/item_patterns.json', encoding = 'utf8') as f:
         item_patterns = json.load(f)
     
-    # Write item patterns to item pattern table
+    # Write item patterns to item pattern and techniques table
     for pattern in item_patterns:
+
+        # Write to item pattern table
         db_conn.execute(
             'INSERT INTO base_item_patterns VALUES (?,?,?,?,?)',
             (
@@ -1040,6 +1042,31 @@ def patterns_to_db(db_conn):
                 pattern['rarity_modifier']
             )
         )
+        
+        # Write to techniques table
+        db_conn.execute(
+            '''INSERT INTO base_techniques VALUES (
+                :category,
+                :subcategory,
+                :name,
+                :restriction,
+                :reference_book,
+                :reference_page,
+                :rank,
+                :xp
+            )''',
+            {
+                'category': 'Item Patterns',
+                'subcategory': None,
+                'name': pattern['name'],
+                'restriction': None,
+                'reference_book': pattern['reference']['book'],
+                'reference_page': pattern['reference']['page'],
+                'rank': 1,
+                'xp': pattern['xp_cost']
+            }
+        )
+
 
 
 def bonds_to_db(db_conn):
