@@ -1016,5 +1016,185 @@
             "book": "CoS",
             "page": 98
         } 
+    },
+    {
+        "name": "Dice Kit",
+        "reference": {
+            "book": "PoW",
+            "page": 114
+        },
+        "price": {
+            "value": 6,
+            "unit": "zeni"
+        },
+        "rarity": 2,
+        "qualities": ["Concealable", "Mundane"]
+    },
+    {
+        "name": "Travel Rations [cheap]",
+        "reference": {
+            "book": "PoW",
+            "page": 114
+        },
+        "price": {
+            "value": 1,
+            "unit": "bu"
+        },
+        "rarity": 1,
+        "qualities": ["Mundane"]
+    },
+    {
+        "name": "Travel Rations [expensive]",
+        "reference": {
+            "book": "PoW",
+            "page": 114
+        },
+        "price": {
+            "value": 3,
+            "unit": "bu"
+        },
+        "rarity": 1,
+        "qualities": ["Mundane"]
+    },
+    {
+        "name": "Alchemy Kit [common]",
+        "reference": {
+            "book": "PoW",
+            "page": 114
+        },
+        "price": {
+            "value": 10,
+            "unit": "koku"
+        },
+        "rarity": 1
+    },
+    {
+        "name": "Alchemy Kit [rare]",
+        "reference": {
+            "book": "PoW",
+            "page": 114
+        },
+        "price": {
+            "value": 10,
+            "unit": "koku"
+        },
+        "rarity": 9
+    },
+    {
+        "name": "Cooking Kit",
+        "reference": {
+            "book": "PoW",
+            "page": 114
+        },
+        "price": {
+            "value": 2,
+            "unit": "koku"
+        },
+        "rarity": 2,
+        "qualities": ["Mundane"]
+    },
+    {
+        "name": "Fishing Kit",
+        "reference": {
+            "book": "PoW",
+            "page": 115
+        },
+        "price": {
+            "value": 1,
+            "unit": "koku"
+        },
+        "rarity": 3,
+        "qualities": ["Mundane"]
+    },
+    {
+        "name": "Mason's Kit",
+        "reference": {
+            "book": "PoW",
+            "page": 115
+        },
+        "price": {
+            "value": 2,
+            "unit": "koku"
+        },
+        "rarity": 5,
+        "qualities": ["Mundane"]
+    },
+    {
+        "name": "Tailor's Kit",
+        "reference": {
+            "book": "PoW",
+            "page": 115
+        },
+        "price": {
+            "value": 3,
+            "unit": "koku"
+        },
+        "rarity": 5,
+        "qualities": ["Mundane"]
+    },
+    {
+        "name": "Weaver's Kit",
+        "reference": {
+            "book": "PoW",
+            "page": 115
+        },
+        "price": {
+            "value": 1,
+            "unit": "koku"
+        },
+        "rarity": 3,
+        "qualities": ["Mundane"]
+    },
+    {
+        "name": "Chandu",
+        "reference": {
+            "book": "PoW",
+            "page": 116
+        },
+        "price": {
+            "value": 4,
+            "unit": "bu"
+        },
+        "rarity": 6,
+        "qualities": ["Forbidden"]
+    },
+    {
+        "name": "Poppy Tea",
+        "reference": {
+            "book": "PoW",
+            "page": 116
+        },
+        "price": {
+            "value": 6,
+            "unit": "bu"
+        },
+        "rarity": 7,
+        "qualities": ["Forbidden"]
+    },
+    {
+        "name": "Shikomizue",
+        "reference": {
+            "book": "PoW",
+            "page": 116
+        },
+        "price": {
+            "value": 2,
+            "unit": "koku"
+        },
+        "rarity": 7,
+        "qualities": ["Forbidden", "Subtle"]
+    },
+    {
+        "name": "Thievery Kit",
+        "reference": {
+            "book": "PoW",
+            "page": 116
+        },
+        "price": {
+            "value": 2,
+            "unit": "koku"
+        },
+        "rarity": 6,
+        "qualities": ["Concealable", "Forbidden", "Subtle"]
     }
 ]
