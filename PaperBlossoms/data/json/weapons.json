@@ -534,6 +534,58 @@
                     "value": 22,
                     "unit": "koku"
                 }
+            },
+            {
+                "name": "Talwar",
+                "reference": {
+                    "book": "PoW",
+                    "page": 110
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 1,
+                    "max": 1
+                },
+                "damage": 4,
+                "deadliness": 6,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": []
+                    }
+                ],
+                "qualities": ["Cumbersome", "Durable", "Razor-edged"],
+                "rarity": 8,
+                "price": {
+                    "value": 35,
+                    "unit": "koku"
+                }
+            },
+            {
+                "name": "Urumi",
+                "reference": {
+                    "book": "PoW",
+                    "page": 111
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 1,
+                    "max": 3
+                },
+                "damage": 4,
+                "deadliness": 5,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": []
+                    }
+                ],
+                "qualities": ["Cumbersome", "Razor-edged", "Snaring"],
+                "rarity": 9,
+                "price": {
+                    "value": 50,
+                    "unit": "koku"
+                }
             }
         ]
     },
@@ -678,6 +730,52 @@
                 "price": {
                     "value": 5,
                     "unit": "bu"
+                }
+            },
+            {
+                "name": "Kuwa",
+                "reference": {
+                    "book": "PoW",
+                    "page": 110
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 1,
+                    "max": 1
+                },
+                "damage": 4,
+                "deadliness": 2,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": []
+                    },
+                    {
+                        "name": "2-hand",
+                        "effects": [
+                            {
+                                "attribute": "damage",
+                                "value_increase": 2
+                            },
+                            {
+                                "attribute": "deadliness",
+                                "value_increase": 2
+                            },
+                            {
+                                "attribute": "range",
+                                "value": {
+                                    "min": 1,
+                                    "max": 2
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "qualities": ["Cumbersome", "Mundane"],
+                "rarity": 3,
+                "price": {
+                    "value": 4,
+                    "unit": "koku"
                 }
             }
         ]
@@ -837,6 +935,41 @@
                 "rarity": 5,
                 "price": {
                     "value": 20,
+                    "unit": "koku"
+                }
+            },
+            {
+                "name": "Gada",
+                "reference": {
+                    "book": "PoW",
+                    "page": 110
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 1,
+                    "max": 1
+                },
+                "damage": 6,
+                "deadliness": 3,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": []
+                    },
+                    {
+                        "name": "2-hand",
+                        "effects": [
+                            {
+                                "attribute": "deadliness",
+                                "value_increase": 3
+                            }
+                        ]
+                    }
+                ],
+                "qualities": ["Ceremonial", "Cumbersome", "Wargear"],
+                "rarity": 9,
+                "price": {
+                    "value": 50,
                     "unit": "koku"
                 }
             }
@@ -1373,7 +1506,7 @@
                 "deadliness": 3,
                 "grips": [
                     {
-                        "name": "2-ahnd",
+                        "name": "2-hand",
                         "effects": []
                     }
                 ],
@@ -1777,6 +1910,58 @@
                     "value": 3,
                     "unit": "bu"
                 }
+            },
+            {
+                "name": "Chain Whip",
+                "reference": {
+                    "book": "PoW",
+                    "page": 110
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 1,
+                    "max": 2
+                },
+                "damage": 3,
+                "deadliness": 5,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": []
+                    }
+                ],
+                "qualities": ["Razor-edged", "Snaring"],
+                "rarity": 6,
+                "price": {
+                    "value": 4,
+                    "unit": "koku"
+                }
+            },
+            {
+                "name": "Sling",
+                "reference": {
+                    "book": "PoW",
+                    "page": 110
+                },
+                "skill": "Ranged",
+                "range": {
+                    "min": 2,
+                    "max": 3
+                },
+                "damage": 3,
+                "deadliness": 3,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": []
+                    }
+                ],
+                "qualities": ["Concealable", "Mundane"],
+                "rarity": 2,
+                "price": {
+                    "value": 1,
+                    "unit": "bu"
+                }
             }
         ]
     },
@@ -1886,6 +2071,58 @@
                     "value": 25,
                     "unit": "koku"
                 }
+            },
+            {
+                "name": "Buckler",
+                "reference": {
+                    "book": "PoW",
+                    "page": 111
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 0,
+                    "max": 0
+                },
+                "damage": 2,
+                "deadliness": 2,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": []
+                    }
+                ],
+                "qualities": ["Ceremonial", "Wargear"],
+                "rarity": 7,
+                "price": {
+                    "value": 4,
+                    "unit": "koku"
+                }
+            },
+            {
+                "name": "Qamarist Heavy Shield",
+                "reference": {
+                    "book": "PoW",
+                    "page": 111
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 0,
+                    "max": 0
+                },
+                "damage": 4,
+                "deadliness": 2,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": []
+                    }
+                ],
+                "qualities": ["Durable", "Cumbersome", "Wargear"],
+                "rarity": 9,
+                "price": {
+                    "value": 50,
+                    "unit": "koku"
+                }
             }
         ]
     },
@@ -1942,6 +2179,338 @@
                 "price": {
                     "value": 120,
                     "unit": "koku"
+                }
+            }
+        ]
+    },
+    {
+        "name": "Improvised Weapons",
+        "entries": [
+            {
+                "name": "Boat Oar",
+                "reference": {
+                    "book": "PoW",
+                    "page": 112
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 1,
+                    "max": 2
+                },
+                "damage": 3,
+                "deadliness": 3,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": []
+                    },
+                    {
+                        "name": "2-hand",
+                        "effects": [
+                            {
+                                "attribute": "damage",
+                                "value_increase": 1
+                            },
+                            {
+                                "attribute": "deadliness",
+                                "value_increase": 3
+                            }
+                        ]
+                    }
+                ],
+                "qualities": ["Mundane"],
+                "rarity": 5,
+                "price": {
+                    "value": 3,
+                    "unit": "bu"
+                }
+            },
+            {
+                "name": "Chair",
+                "reference": {
+                    "book": "PoW",
+                    "page": 112
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 0,
+                    "max": 1
+                },
+                "damage": 3,
+                "deadliness": 3,
+                "grips": [
+                    {
+                        "name": "1-hand (bludgeon)",
+                        "effects": []
+                    },
+                    {
+                        "name": "2-hand (bludgeon)",
+                        "effects": [
+                            {
+                                "attribute": "damage",
+                                "value_increase": 2
+                            }
+                        ]
+                    },
+                    {
+                        "name": "1-hand (thrown)",
+                        "effects": []
+                    },
+                    {
+                        "name": "2-hand (thrown)",
+                        "effects": [
+                            {
+                                "attribute": "deadliness",
+                                "value_increase": 1
+                            },
+                            {
+                                "attribute": "range",
+                                "value": {
+                                    "min": 0,
+                                    "max": 2
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "qualities": ["Mundane"],
+                "rarity": 2,
+                "price": {
+                    "value": 2,
+                    "unit": "bu"
+                }
+            },
+            {
+                "name": "Fishing Net",
+                "reference": {
+                    "book": "PoW",
+                    "page": 112
+                },
+                "skill": "Ranged",
+                "range": {
+                    "min": 0,
+                    "max": 3
+                },
+                "damage": 3,
+                "deadliness": 1,
+                "grips": [
+                    {
+                        "name": "2-hand",
+                        "effects": []
+                    }
+                ],
+                "qualities": ["Durable", "Mundane", "Snaring"],
+                "rarity": 5,
+                "price": {
+                    "value": 5,
+                    "unit": "bu"
+                }
+            },
+            {
+                "name": "Iron Sheath",
+                "reference": {
+                    "book": "PoW",
+                    "page": 112
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 0,
+                    "max": 1
+                },
+                "damage": 3,
+                "deadliness": 3,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": []
+                    },
+                    {
+                        "name": "2-hand",
+                        "effects": [
+                            {
+                                "attribute": "damage",
+                                "value_increase": 2
+                            }
+                        ]
+                    }
+                ],
+                "qualities": ["Durable"],
+                "rarity": 6,
+                "price": {
+                    "value": 2,
+                    "unit": "koku"
+                }
+            },
+            {
+                "name": "Lute",
+                "reference": {
+                    "book": "PoW",
+                    "page": 112
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 0,
+                    "max": 1
+                },
+                "damage": 1,
+                "deadliness": 2,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": []
+                    },
+                    {
+                        "name": "2-hand",
+                        "effects": [
+                            {
+                                "attribute": "damage",
+                                "value_increase": 1
+                            },
+                            {
+                                "attribute": "deadliness",
+                                "value_increase": 1
+                            }
+                        ]
+                    }
+                ],
+                "qualities": ["Mundane"],
+                "rarity": 7,
+                "price": {
+                    "value": 10,
+                    "unit": "koku"
+                }
+            },
+            {
+                "name": "Sake Bottle & Cups",
+                "reference": {
+                    "book": "PoW",
+                    "page": 112
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 0,
+                    "max": 1
+                },
+                "damage": 2,
+                "deadliness": 3,
+                "grips": [
+                    {
+                        "name": "1-hand (bludgeon)",
+                        "effects": []
+                    },
+                    {
+                        "name": "1-hand (thrown)",
+                        "effects": [
+                            {
+                                "attribute": "deadliness",
+                                "value_increase": 2
+                            },
+                            {
+                                "attribute": "range",
+                                "value": {
+                                    "min": 1,
+                                    "max": 3
+                                }
+                            },
+                            {
+                                "attribute": "quality",
+                                "value": "Razor-Edged"
+                            }
+                        ]
+                    }
+                ],
+                "qualities": ["Mundane"],
+                "rarity": 4,
+                "price": {
+                    "value": 5,
+                    "unit": "bu"
+                }
+            },
+            {
+                "name": "Scroll Case",
+                "reference": {
+                    "book": "PoW",
+                    "page": 112
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 0,
+                    "max": 1
+                },
+                "damage": 3,
+                "deadliness": 3,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": []
+                    },
+                    {
+                        "name": "2-hand",
+                        "effects": [
+                            {
+                                "attribute": "damage",
+                                "value_increase": 2
+                            },
+                            {
+                                "attribute": "deadliness",
+                                "value_increase": 1
+                            }
+                        ]
+                    }
+                ],
+                "qualities": ["Durable", "Mundane"],
+                "rarity": 5,
+                "price": {
+                    "value": 1,
+                    "unit": "koku"
+                }
+            },
+            {
+                "name": "Umbrella",
+                "reference": {
+                    "book": "PoW",
+                    "page": 112
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 0,
+                    "max": 1
+                },
+                "damage": 2,
+                "deadliness": 2,
+                "grips": [
+                    {
+                        "name": "1-hand (bludgeon)",
+                        "effects": []
+                    },
+                    {
+                        "name": "2-hand(bludgeon)",
+                        "effects": [
+                            {
+                                "attribute": "damage",
+                                "value_increase": 2
+                            }
+                        ]
+                    },
+                    {
+                        "name": "1-hand (stab)",
+                        "effects": [
+                            {
+                                "attribute": "damage",
+                                "value_increase": 2
+                            },
+                            {
+                                "attribute": "deadliness",
+                                "value_increase": 2
+                            }
+                        ]
+                    }
+                ],
+                "qualities": ["Mundane"],
+                "rarity": 4,
+                "price": {
+                    "value": 3,
+                    "unit": "bu"
                 }
             }
         ]
