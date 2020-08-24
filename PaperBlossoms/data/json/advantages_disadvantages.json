@@ -571,6 +571,66 @@
                 "ring": "Water",
                 "types": ["Interpersonal"],
                 "effects": ""
+            },
+            {
+                "name": "Ardent Leader",
+                "reference": {
+                    "book": "PoW",
+                    "page": 68
+                },
+                "ring": "Fire",
+                "types": ["Interpersonal", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Dashing Scar",
+                "reference": {
+                    "book": "PoW",
+                    "page": 69
+                },
+                "ring": "Air",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Lucky Hunter",
+                "reference": {
+                    "book": "PoW",
+                    "page": 69
+                },
+                "ring": "Void",
+                "types": ["Physical", "Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Scrappy",
+                "reference": {
+                    "book": "PoW",
+                    "page": 69
+                },
+                "ring": "Fire",
+                "types": ["Mental", "Physical"],
+                "effects": ""
+            },
+            {
+                "name": "Scrounger",
+                "reference": {
+                    "book": "PoW",
+                    "page": 69
+                },
+                "ring": "Water",
+                "types": ["Interpersonal", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Urbane and Worldly",
+                "reference": {
+                    "book": "PoW",
+                    "page": 70
+                },
+                "ring": "Void",
+                "types": ["Interpersonal", "Physical"],
+                "effects": ""
             }
         ]
     },
@@ -895,6 +955,36 @@
                 },
                 "ring": "Fire",
                 "types": ["Interpersonal", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Attention",
+                "reference": {
+                    "book": "PoW",
+                    "page": 70
+                },
+                "ring": "Fire",
+                "types": ["Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Honest Work",
+                "reference": {
+                    "book": "PoW",
+                    "page": 70
+                },
+                "ring": "Earth",
+                "types": ["Mental", "Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Passion for [Foreign Performing Art Form]",
+                "reference": {
+                    "book": "PoW",
+                    "page": 71
+                },
+                "ring": "Air",
+                "types": ["Fame", "Interpersonal"],
                 "effects": ""
             }
         ]
@@ -1601,6 +1691,76 @@
                 "ring": "Water",
                 "types": ["Interpersonal"],
                 "effects": ""
+            },
+            {
+                "name": "Bullheaded",
+                "reference": {
+                    "book": "PoW",
+                    "page": 71
+                },
+                "ring": "Earth",
+                "types": ["Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Debt to [Person or Organization]",
+                "reference": {
+                    "book": "PoW",
+                    "page": 71
+                },
+                "ring": "Water",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Encompassing Duty",
+                "reference": {
+                    "book": "PoW",
+                    "page": 72
+                },
+                "ring": "Earth",
+                "types": ["Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Horrible Scar",
+                "reference": {
+                    "book": "PoW",
+                    "page": 72
+                },
+                "ring": "Air",
+                "types": ["Interpersonal", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Many Mouths",
+                "reference": {
+                    "book": "PoW",
+                    "page": 71
+                },
+                "ring": "Earth",
+                "types": ["Interpersonal", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Pursued by [Individual or Group]",
+                "reference": {
+                    "book": "PoW",
+                    "page": 72
+                },
+                "ring": "Water",
+                "types": ["Interpersonal", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Stained Lineage",
+                "reference": {
+                    "book": "PoW",
+                    "page": 73
+                },
+                "ring": "Void",
+                "types": ["Interpersonal", "Mental"],
+                "effects": ""
             }
         ]
     },
@@ -1895,6 +2055,46 @@
                 },
                 "ring": "Air",
                 "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Coming Storm",
+                "reference": {
+                    "book": "PoW",
+                    "page": 73
+                },
+                "ring": "Void",
+                "types": ["Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Eyes of Many",
+                "reference": {
+                    "book": "PoW",
+                    "page": 73
+                },
+                "ring": "Air",
+                "types": ["Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Failure",
+                "reference": {
+                    "book": "PoW",
+                    "page": 74
+                },
+                "ring": "Water",
+                "types": ["Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Fear of Stagnation",
+                "reference": {
+                    "book": "PoW",
+                    "page": 74
+                },
+                "ring": "Earth",
+                "types": ["Mental"],
                 "effects": ""
             }
         ]
