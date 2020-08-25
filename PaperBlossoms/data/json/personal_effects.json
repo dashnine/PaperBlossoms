@@ -1196,5 +1196,26 @@
         },
         "rarity": 6,
         "qualities": ["Concealable", "Forbidden", "Subtle"]
+    },
+    {
+        "name": "Trinket",
+        "reference": {
+            "book": "PoW",
+            "page": 219
+        } 
+    },
+    {
+        "name": "Piece of half finished art",
+        "reference": {
+            "book": "PoW",
+            "page": 53
+        } 
+    },
+    {
+        "name": "Pack of haphazard art supplies",
+        "reference": {
+            "book": "PoW",
+            "page": 53
+        } 
     }
 ]

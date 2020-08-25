@@ -77,6 +77,7 @@ def get_clans(data_dir):
     with open(data_dir.joinpath('json/clans.json')) as f:
         clans = json.load(f)
     clans_enum = [ clan['name'] for clan in clans ]
+    clans_enum = clans_enum + ['Rōnin']
     
     return clans_enum
 
@@ -333,7 +334,13 @@ def write_equipment(data_dir, equipment_enum):
                 "Two Weapons of Rarity 6 or Lower",
                 "One Weapon of Rarity 6 or Lower",
                 "Two Items of Rarity 4 or Lower",
-                "One Sword of Rarity 7 or Lower"
+                "One Sword of Rarity 7 or Lower",
+                "One weapon of your signature weapon category of rarity 8 or lower",
+                "Yumi and quiver of arrows with three special arrows",
+                "One Item of Rarity 3 or Lower",
+                "One Item of Rarity 5 or Lower",
+                "One professional kit",
+                "One Item of Rarity 6 or Lower"
             ]
         )
     )
@@ -412,6 +419,13 @@ def write_books(data_dir, books_enum):
     print('... to bonds')
     write_enums(
         data_dir.joinpath('json_schema/bonds.schema.json'),
+        'book',
+        books_enum
+    )
+
+    print('... to item patterns')
+    write_enums(
+        data_dir.joinpath('json_schema/item_patterns.schema.json'),
         'book',
         books_enum
     )
