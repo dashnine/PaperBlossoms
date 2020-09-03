@@ -77,7 +77,7 @@ def get_clans(data_dir):
     with open(data_dir.joinpath('json/clans.json')) as f:
         clans = json.load(f)
     clans_enum = [ clan['name'] for clan in clans ]
-    clans_enum = clans_enum + ['Rōnin']
+    clans_enum = clans_enum + ['Rōnin', "Ujik", "Qamarist", "Ivory Kingdoms"]
     
     return clans_enum
 
@@ -351,7 +351,8 @@ def write_equipment(data_dir, equipment_enum):
                 "One Item of Rarity 3 or Lower",
                 "One Item of Rarity 5 or Lower",
                 "One professional kit",
-                "One Item of Rarity 6 or Lower"
+                "One Item of Rarity 6 or Lower",
+                "One Item of Rarity 4 or Lower"
             ]
         )
     )

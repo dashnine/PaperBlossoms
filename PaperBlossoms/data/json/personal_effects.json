@@ -1217,5 +1217,47 @@
             "book": "PoW",
             "page": 53
         } 
+    },
+    {
+        "name": "Bag of scrying tools",
+        "reference": {
+            "book": "PoW",
+            "page": 55
+        } 
+    },
+    {
+        "name": "Qamarist Holy Book",
+        "reference": {
+            "book": "PoW",
+            "page": 56
+        }
+    },
+    {
+        "name": "Book of formulae",
+        "reference": {
+            "book": "PoW",
+            "page": 57
+        } 
+    },
+    {
+        "name": "Book of mathematics",
+        "reference": {
+            "book": "PoW",
+            "page": 57
+        }
+    },
+    {
+        "name": "Map from Ivory Kingdoms to Sand Road",
+        "reference": {
+            "book": "PoW",
+            "page": 58
+        } 
+    },
+    {
+        "name": "Trophy from a slain enemy",
+        "reference": {
+            "book": "PoW",
+            "page": 59
+        }
     }
 ]

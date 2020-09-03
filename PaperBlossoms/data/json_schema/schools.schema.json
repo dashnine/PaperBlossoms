@@ -91,7 +91,10 @@
                     "Mantis",
                     "Tortoise",
                     "Deer",
-                    "R\u014dnin"
+                    "R\u014dnin",
+                    "Ujik",
+                    "Qamarist",
+                    "Ivory Kingdoms"
                 ]
             },
             "ring_increase": {
@@ -473,7 +476,7 @@
                                     "Iron Shell Style",
                                     "Mind's Edge",
                                     "Rider's Haste",
-                                    "THunderous Hooves Style",
+                                    "Thunderous Hooves Style",
                                     "Void Embrace Style",
                                     "Coiling Serpent Style",
                                     "Iaijutsu Cut: Crossing Blade",
@@ -975,6 +978,12 @@
                                     "Trinket",
                                     "Piece of half finished art",
                                     "Pack of haphazard art supplies",
+                                    "Bag of scrying tools",
+                                    "Qamarist Holy Book",
+                                    "Book of formulae",
+                                    "Book of mathematics",
+                                    "Map from Ivory Kingdoms to Sand Road",
+                                    "Trophy from a slain enemy",
                                     "Traveling Pack",
                                     "Kitsune Starting Outfit",
                                     "Two Weapons of Rarity 6 or Lower",
@@ -986,7 +995,8 @@
                                     "One Item of Rarity 3 or Lower",
                                     "One Item of Rarity 5 or Lower",
                                     "One professional kit",
-                                    "One Item of Rarity 6 or Lower"
+                                    "One Item of Rarity 6 or Lower",
+                                    "One Item of Rarity 4 or Lower"
                                 ]
                             }
                         }
@@ -1103,7 +1113,7 @@
                                 "Iron Shell Style",
                                 "Mind's Edge",
                                 "Rider's Haste",
-                                "THunderous Hooves Style",
+                                "Thunderous Hooves Style",
                                 "Void Embrace Style",
                                 "Coiling Serpent Style",
                                 "Iaijutsu Cut: Crossing Blade",
