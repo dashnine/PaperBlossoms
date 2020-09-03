@@ -113,6 +113,17 @@ def get_techniques(data_dir):
     return technique_categories_enum, technique_subcategories_enum, techniques_enum
 
 
+def get_item_patterns(data_dir):
+    with open(data_dir.joinpath('json/item_patterns.json'), encoding = 'utf8') as f:
+        item_patterns = json.load(f)
+    item_patterns_enum = [
+        item_pattern['name']
+        for item_pattern in item_patterns
+    ]
+
+    return item_patterns_enum
+
+
 def get_qualities(data_dir):
     with open(data_dir.joinpath('json/qualities.json')) as f:
         qualities = json.load(f)
@@ -503,12 +514,13 @@ def main(option):
         write_rings(data_dir, get_rings(data_dir))
     if option is None or 'clans' in option:
         write_clans(data_dir, get_clans(data_dir))
-    if option is None or 'skills' in option:
+    if option is None or 'skills' in option or 'techniques' in option:
         skill_groups_enum, skills_enum = get_skills(data_dir)
         write_skills(data_dir, skills_enum)
-    if option is None or 'techniques' in option:
         technique_categories_enum, technique_subcategories_enum, techniques_enum = get_techniques(data_dir)
-        write_techniques(data_dir, techniques_enum, technique_subcategories_enum, technique_categories_enum)
+        item_patterns_enum = get_item_patterns(data_dir)
+        write_techniques(data_dir, techniques_enum + item_patterns_enum, technique_subcategories_enum, technique_categories_enum)
+        write_advance(data_dir, skill_groups_enum, skills_enum, technique_categories_enum, technique_subcategories_enum, techniques_enum)
     if option is None or 'qualities' in option:
         write_qualities(data_dir, get_qualities(data_dir))
     if option is None or 'equipment' in option:
@@ -521,8 +533,6 @@ def main(option):
         write_resistance(data_dir, get_resistance())
     if option is None or 'currency' in option:
         write_currency(data_dir, get_currency())
-    if option is None or 'skills' in option or 'techniques' in option:
-        write_advance(data_dir, skill_groups_enum, skills_enum, technique_categories_enum, technique_subcategories_enum, techniques_enum)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description = 'Utility to add enums to json schema')

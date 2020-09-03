@@ -21,7 +21,11 @@
                         "enum": [
                             "Core",
                             "EE",
-                            "SL"
+                            "SL",
+                            "Mantis",
+                            "GMK",
+                            "CoS",
+                            "PoW"
                         ]
                     },
                     "page": {
