@@ -1360,7 +1360,7 @@ QList<QStringList> DataAccessLayer::qsl_getschoolcurriculum(const QString school
 {
     QList<QStringList> out;
     QSqlQuery query;
-    query.prepare(  "SELECT rank, advance_tr, type, special_access                  " //select main list
+    query.prepare(  "SELECT rank, advance_tr, type, special_access, min_allowable_rank, max_allowable_rank                  " //select main list
                     "FROM curriculum                                             " // from table
                     "WHERE school_tr = ?                                            "
                     );
@@ -1373,6 +1373,8 @@ QList<QStringList> DataAccessLayer::qsl_getschoolcurriculum(const QString school
             row << query.value(1).toString();
             row << query.value(2).toString();
             row << query.value(3).toString();
+            row << query.value(4).toString();
+            row << query.value(5).toString();
             out << row;
 
         }

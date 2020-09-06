@@ -83,6 +83,7 @@ AddAdvanceDialog::AddAdvanceDialog(DataAccessLayer* dal, Character* character, Q
             for(int i = 0; i < proxyModel.rowCount(); ++i){
 
                 const QModelIndex curIndex = proxyModel.mapToSource(proxyModel.index(i,0));
+                //const QModelIndex curIndex = proxyModel.index(i,0);
                 if(curIndex.isValid()){
                     name = techModel.item(curIndex.row(),TechQuery::NAME)->text();
                 }
@@ -92,7 +93,8 @@ AddAdvanceDialog::AddAdvanceDialog(DataAccessLayer* dal, Character* character, Q
                 //QString name = r.value("name_tr").toString();
                 if (name == option) {
                     ui->detailTableView->selectRow(i);
-                    on_detailTableView_clicked(curIndex);
+                    //on_detailTableView_clicked(curIndex);
+                    on_detailTableView_clicked(proxyModel.index(i,0));
                 }
             }
         }
@@ -200,7 +202,7 @@ void AddAdvanceDialog::populateTechModel(){
     QList<QStringList> curriculum = dal->qsl_getschoolcurriculum(character->school);
 
     foreach(const QStringList tech, techlist){
-
+        int tech_rank = tech.at(TechQuery::RANK).toInt();
         //if it's unrestricted, call it a day
         if(removerestrictions){
             addTechRow(tech);
@@ -212,7 +214,7 @@ void AddAdvanceDialog::populateTechModel(){
         //now, check this row against filters.  If it is allowable, add the row.
 
         //IF it is less than or equal to my rank, and....
-        if(rank >= tech.at(TechQuery::RANK).toInt()){
+        if(rank >= tech_rank){
             //category or subcategory is in my school?
             if(schooltech.contains(tech.at(TechQuery::CATEGORY))) {
                 addTechRow(tech);
@@ -233,25 +235,25 @@ void AddAdvanceDialog::populateTechModel(){
             }
         }
 
-        //check your curriculum for this rank only, looking for special access
+        //check your curriculum for this currc_rank only, looking for special access
         bool isincurric = false;
         foreach(QStringList curricrow, curriculum){
             //first, get min and maxrank on the curriculum, if there is one.
             int minrank = 1;
             int maxrank = rank;
-            if(curricrow.count()>=Curric::MINRANK+1) {
+            if(curricrow.count()>=Curric::MINRANK+1 && !curricrow.at(Curric::MINRANK).isEmpty()) {
                 if(!curricrow.at(Curric::MINRANK).isEmpty()) minrank=curricrow.at(Curric::MINRANK).toInt();
             }
-            if(curricrow.count()>=Curric::MAXRANK+1) {
+            if(curricrow.count()>=Curric::MAXRANK+1 && !curricrow.at(Curric::MAXRANK).isEmpty()) {
                 if(!curricrow.at(Curric::MAXRANK).isEmpty()) maxrank=curricrow.at(Curric::MAXRANK).toInt();
             }
 
 
-            //second, check each row of the CURRENT RANK's curriculum for this tech.
+            //second, check each row of the CURRENT CURRIC_RANK's curriculum for this tech.
             if((curricrow.at(Curric::RANK).toInt() == rank) && curricrow.at(Curric::SPEC).toInt()==1){
                 //THird: PoW: Verify that the tech we're checking falls within the min and max rank fields.
                 //    Defaults to 1 and current rank, respectively. Note: at this time, all min ranks are 1
-                if(rank>= minrank && rank <= maxrank){
+                if(tech_rank>= minrank && tech_rank <= maxrank){
                     //Does it match category?
                     if(curricrow.at(Curric::ADVANCE) == tech.at(TechQuery::CATEGORY)) {
                         addTechRow(tech);
@@ -536,6 +538,7 @@ QString AddAdvanceDialog::getResult() const {
 
 void AddAdvanceDialog::on_detailTableView_clicked(const QModelIndex &index)
 {
+    //QModelIndex curIndex = proxyModel.mapToSource(index);
     QModelIndex curIndex = proxyModel.mapToSource(index);
     const int cost = techModel.item(curIndex.row(),TechQuery::XP)->text().toInt();
     const int rounded = qRound(double(cost)/2.0);
