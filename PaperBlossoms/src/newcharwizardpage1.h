@@ -49,6 +49,7 @@ public:
     QStringListModel* upbringingRingModel;
     QStringListModel* upbringingSkillModel1;
     QStringListModel* upbringingSkillModel2;
+    QStringListModel* upbringingSkillModel3;
 
 
 private slots:
@@ -67,6 +68,8 @@ private slots:
     void on_nc1_skill1_ComboBox_currentIndexChanged(const QString &arg1);
 
     void on_nc1_skill2_ComboBox_currentIndexChanged(const QString &arg1);
+
+    void on_nc1_skill3_ComboBox_currentIndexChanged(const QString &arg1);
 
     void on_nc1_upbringing_ring_ComboBox_currentIndexChanged(const QString &arg1);
 

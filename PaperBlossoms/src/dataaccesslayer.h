@@ -235,6 +235,8 @@ public:
     QString qs_getupbringingref(const QString upbringing);
     QStringList qsl_getupbringingskills1(const QString upbringing);
     QStringList qsl_getupbringingskills2(const QString upbringing);
+    QStringList qsl_getupbringingskillsbyset(const QString upbringing, const int setID);
+    QStringList qsl_getupbringingrings(const QString upbringing );
 
     QString qs_getregionring(const QString region);
     QStringList qsl_getregionskills(const QString region);

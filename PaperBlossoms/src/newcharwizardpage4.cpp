@@ -212,6 +212,7 @@ QMap<QString, int> NewCharWizardPage4::calcSkills(){
     skills.append(dal->qsl_getregionskills(field("currentRegion").toString()));
     skills.append(field("upbringingSkill1").toString());
     skills.append(field("upbringingSkill2").toString());
+    skills.append(field("upbringingSkill3").toString());
 
 
 

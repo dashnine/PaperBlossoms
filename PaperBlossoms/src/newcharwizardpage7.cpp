@@ -57,6 +57,7 @@ void NewCharWizardPage7::initializePage()
     //QString upbringingring          = field("upbringingRing").toString(); //pow
     const QString upbringingSkill1    = field("upbringingSkill1").toString(); //pow
     const QString upbringingSkill2    = field("upbringingSkill2").toString(); //pow
+    const QString upbringingSkill3    = field("upbringingSkill3").toString(); //pow
 
     //p2
     const QString school              = field("currentSchool").toString();
@@ -556,6 +557,7 @@ QMap<QString, int> NewCharWizardPage7::calcSkills(){
     skills.append(dal->qsl_getregionskills(field("currentRegion").toString()));
     skills.append(field("upbringingSkill1").toString());
     skills.append(field("upbringingSkill2").toString());
+    skills.append(field("upbringingSkill3").toString());
    ////////////////
 
     skills.append(field("schoolSkills").toString().split("|"));

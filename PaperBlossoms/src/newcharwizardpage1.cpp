@@ -48,6 +48,7 @@ NewCharWizardPage1::NewCharWizardPage1(DataAccessLayer* dal, QWidget *parent) :
     upbringingRingModel = new QStringListModel;
     upbringingSkillModel1 = new QStringListModel;
     upbringingSkillModel2 = new QStringListModel;
+    upbringingSkillModel3 = new QStringListModel;
 
 
 
@@ -61,6 +62,10 @@ NewCharWizardPage1::NewCharWizardPage1(DataAccessLayer* dal, QWidget *parent) :
     ui->nc1_upbringing_ring_ComboBox->setModel(upbringingRingModel);
     ui->nc1_skill1_ComboBox->setModel(upbringingSkillModel1);
     ui->nc1_skill2_ComboBox->setModel(upbringingSkillModel2);
+    ui->nc1_skill3_ComboBox->setModel(upbringingSkillModel3);
+
+    //third skill is never visible at first
+    ui->nc1_skill3_ComboBox->setVisible(false);
 
     //set models - PoW
     //ui->nc
@@ -89,6 +94,7 @@ NewCharWizardPage1::NewCharWizardPage1(DataAccessLayer* dal, QWidget *parent) :
     registerField("upbringingRing", ui->nc1_upbringing_ring_ComboBox,"currentText");
     registerField("upbringingSkill1", ui->nc1_skill1_ComboBox,"currentText");
     registerField("upbringingSkill2", ui->nc1_skill2_ComboBox,"currentText");
+    registerField("upbringingSkill3", ui->nc1_skill3_ComboBox,"currentText");
 
     setSamuraiVisibilty(true);
 
@@ -127,7 +133,13 @@ bool NewCharWizardPage1::validatePage(){
                 ui->nc1_upbringing_ring_ComboBox->currentText().isEmpty() ||
                 ui->nc1_skill1_ComboBox->currentText().isEmpty() ||
                 ui->nc1_skill2_ComboBox->currentText().isEmpty() )
-{
+        {
+            QMessageBox msg;
+            msg.setText("Error: please answer all questions to advance.");
+            msg.exec();
+                 return false;
+        }
+        if(ui->nc1_skill3_ComboBox->currentText().isEmpty() && dal->qsl_getupbringingskillsbyset(ui->nc1_upbringing_ComboBox->currentText(),2).count()>0){
             QMessageBox msg;
             msg.setText("Error: please answer all questions to advance.");
             msg.exec();
@@ -262,6 +274,7 @@ QMap<QString, int> NewCharWizardPage1::calcSkills(){
     skills.append(dal->qsl_getregionskills(field("currentRegion").toString()));
     skills.append(field("upbringingSkill1").toString());
     skills.append(field("upbringingSkill2").toString());
+    skills.append(field("upbringingSkill3").toString());
 
 
 
@@ -328,10 +341,11 @@ void NewCharWizardPage1::on_nc1_ring_ComboBox_currentIndexChanged(const QString 
 
 void NewCharWizardPage1::on_characterType_comboBox_currentIndexChanged(const QString &arg1)
 {
-    Q_UNUSED(arg1);
     setSamuraiVisibilty(ui->characterType_comboBox->currentText()=="Samurai");
+    QString type = arg1;
+    if(type == "Peasant") type = "Rōnin"; //for regions, Peasants are treated as Ronin
 
-    regionModel->setStringList(dal->qsl_getregions(ui->characterType_comboBox->currentText()));//adjust in case we swapped to gaijin or ronin
+    regionModel->setStringList(dal->qsl_getregions(type));//adjust in case we swapped to gaijin or ronin
 
 
     ui->nc1_clan_ComboBox->setCurrentIndex(-1);
@@ -342,6 +356,7 @@ void NewCharWizardPage1::on_characterType_comboBox_currentIndexChanged(const QSt
     ui->nc1_upbringing_ring_ComboBox->setCurrentIndex(-1);
     ui->nc1_skill1_ComboBox->setCurrentIndex(-1);
     ui->nc1_skill2_ComboBox->setCurrentIndex(-1);
+    ui->nc1_skill3_ComboBox->setCurrentIndex(-1);
 
     regenSummary();
 }
@@ -369,18 +384,24 @@ void NewCharWizardPage1::on_nc1_region_ComboBox_currentIndexChanged(const QStrin
 void NewCharWizardPage1::on_nc1_upbringing_ComboBox_currentIndexChanged(const QString &arg1)
 {
     qDebug() << "Selecting Rings for upbringing = " + arg1;
-    upbringingRingModel->setStringList(dal->qsl_getfamilyrings( arg1 ));
-    upbringingSkillModel1->setStringList(dal->qsl_getupbringingskills1(arg1));
-    upbringingSkillModel2->setStringList(dal->qsl_getupbringingskills2(arg1));
+    upbringingRingModel->setStringList(dal->qsl_getupbringingrings( arg1 ));
+    upbringingSkillModel1->setStringList(dal->qsl_getupbringingskillsbyset(arg1,0));
+    upbringingSkillModel2->setStringList(dal->qsl_getupbringingskillsbyset(arg1,1));
+    upbringingSkillModel3->setStringList(dal->qsl_getupbringingskillsbyset(arg1,2));
 
+    /*
     QString famskills = "";
 
-    foreach (QString skill, dal->qsl_getupbringingskills1(arg1)){
+    foreach (QString skill, dal->qsl_getupbringingskillsbyset(arg1,0)){
         famskills += "+1 " + skill + "\n";
     }
-    foreach (QString skill, dal->qsl_getupbringingskills2(arg1)){
+    foreach (QString skill, dal->qsl_getupbringingskillsbyset(arg1,1)){
         famskills += "+1 " + skill + "\n";
     }
+    foreach (QString skill, dal->qsl_getupbringingskillsbyset(arg1,2)){
+        famskills += "+1 " + skill + "\n";
+    }
+    */
 
     if(!arg1.isEmpty()){
         ui->nc1_upbringing_TextEdit->setText(dal->qs_getupbringingdesc(arg1) + " \n" + dal->qs_getupbringingref(arg1) );
@@ -388,6 +409,9 @@ void NewCharWizardPage1::on_nc1_upbringing_ComboBox_currentIndexChanged(const QS
     else{
         ui->nc1_upbringing_TextEdit->setText("");
     }
+
+    ui->nc1_skill3_ComboBox->setVisible(dal->qsl_getupbringingskillsbyset(arg1,2).count()>0);
+
     regenSummary();
 }
 
@@ -398,6 +422,12 @@ void NewCharWizardPage1::on_nc1_skill1_ComboBox_currentIndexChanged(const QStrin
 }
 
 void NewCharWizardPage1::on_nc1_skill2_ComboBox_currentIndexChanged(const QString &arg1)
+{
+    Q_UNUSED(arg1);
+    regenSummary();
+}
+
+void NewCharWizardPage1::on_nc1_skill3_ComboBox_currentIndexChanged(const QString &arg1)
 {
     Q_UNUSED(arg1);
     regenSummary();

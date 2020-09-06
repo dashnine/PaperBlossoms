@@ -57,6 +57,7 @@ private slots:
 
 
     void equipSelectionChanged(const QString newText);
+    void schoolRingSelectionChanged(const QString newText);
     void on_nc2_kitsune_comboBox_currentTextChanged(const QString &arg1);
 
     void on_nc2_skillOpt_listview_doubleClicked(const QModelIndex &index);

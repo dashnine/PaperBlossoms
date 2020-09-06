@@ -89,6 +89,9 @@ void NewCharWizardPage6::initializePage()
     skills.append(dal->qsl_getfamilyskills(family));
     skills.append(field("q7skill").toString());
     skills.append(field("q8skill").toString());
+    skills.append(field("upbringingSkill1").toString());
+    skills.append(field("upbringingSkill2").toString());
+    skills.append(field("upbringingSkill3").toString());
     if(field("q13DisadvChecked").toBool() == true){
         qDebug() << "Question 13 chose disadvantage.  Adding skill: " << field("q13skill").toString();
         skills.append(field("q13skill").toString());
@@ -822,6 +825,8 @@ QMap<QString, int> NewCharWizardPage6::calcSkills(){
     skills.append(dal->qsl_getregionskills(field("currentRegion").toString()));
     skills.append(field("upbringingSkill1").toString());
     skills.append(field("upbringingSkill2").toString());
+    skills.append(field("upbringingSkill3").toString());
+
 
 
 
