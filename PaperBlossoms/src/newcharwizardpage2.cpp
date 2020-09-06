@@ -110,7 +110,13 @@ void NewCharWizardPage2::equipSelectionChanged(const QString newText){
         "One Weapon of Rarity 6 or Lower",
         "Two Items of Rarity 4 or Lower",
         "Two Weapons of Rarity 6 or Lower",
-        "One Sword of Rarity 7 or Lower"
+        "One Sword of Rarity 7 or Lower",
+        //PoW
+        "One weapon of your signature weapon category of rarity 8 or lower",
+        "One Item of Rarity 3 or Lower",
+        "One Item of Rarity 5 or Lower",
+        "One Item of Rarity 6 or Lower",
+        //"Yumi and quiver of arrows with three special arrows" //special -- handle at end
     };
     ui->equipSpecialWidget->clear();
 
@@ -156,6 +162,22 @@ void NewCharWizardPage2::handleSpecCases(QString speccase){
         ui->equipSpecialWidget->addCBox(dal->qsl_getweapontypeunderrarity(7, "Swords"));
 
     }
+
+    /////////////
+    //POW
+    else if (specCase == "One weapon of your signature weapon category of rarity 8 or lower") {
+        ui->equipSpecialWidget->addCBox(dal->qsl_getweaponsunderrarity(8));
+    }
+    else if (specCase == "One Items of Rarity 3 or Lower") {
+        ui->equipSpecialWidget->addCBox(dal->qsl_getitemsunderrarity(3));
+    }
+    else if (specCase == "One Items of Rarity 5 or Lower") {
+        ui->equipSpecialWidget->addCBox(dal->qsl_getitemsunderrarity(5));
+    }
+    else if (specCase == "One Items of Rarity 6 or Lower") {
+        ui->equipSpecialWidget->addCBox(dal->qsl_getitemsunderrarity(6));
+    }
+
 }
 
 void NewCharWizardPage2::initializePage(){
@@ -305,7 +327,13 @@ void NewCharWizardPage2::doEquip(const QString school){
         "One Weapon of Rarity 6 or Lower",
         "Two Items of Rarity 4 or Lower",
         "Two Weapons of Rarity 6 or Lower",
-        "One Sword of Rarity 7 or Lower"
+        "One Sword of Rarity 7 or Lower",
+        //PoW
+        "One weapon of your signature weapon category of rarity 8 or lower",
+        "One Item of Rarity 3 or Lower",
+        "One Item of Rarity 5 or Lower",
+        "One Item of Rarity 6 or Lower",
+        "Yumi and quiver of arrows with three special arrows" //special -- handle at end
     };
     const QList<QStringList> equipsets = dal->ql_getlistsofeq(schoolname);              //get a list of equipsets
     if(equipsets.count()>0){                                                //if this returned nothing, time to bail

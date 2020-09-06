@@ -346,11 +346,18 @@ void NewCharWizardPage7::initializePage()
     QString eqText = "";
     QList<QStringList> eqList;
     const QStringList specialCases = { //special cases
-        dal->translate("One Weapon of Rarity 6 or Lower"),
-        dal->translate("Two Items of Rarity 4 or Lower"),
-        dal->translate("Two Weapons of Rarity 6 or Lower"),
-        dal->translate("One Sword of Rarity 7 or Lower")
-    };
+        "One Weapon of Rarity 6 or Lower",
+        "Two Items of Rarity 4 or Lower",
+        "Two Weapons of Rarity 6 or Lower",
+        "One Sword of Rarity 7 or Lower",
+
+                                       //PoW
+        "One weapon of your signature weapon category of rarity 8 or lower",
+        "One Item of Rarity 3 or Lower",
+        "One Item of Rarity 5 or Lower",
+        "One Item of Rarity 6 or Lower"//,
+        //"Yumi and quiver of arrows with three special arrows" //special -- handle at end
+                                     };
 
     //-----first, school eq choices -----//
     const QList<QStringList> equipsets = dal->ql_getlistsofeq(school);              //get a list of equipsets
@@ -364,30 +371,53 @@ void NewCharWizardPage7::initializePage()
                     eqText += choicesetforcombobox.first() + ", ";         //add the combobox
                     eqList.append(populateItemFields(choicesetforcombobox.first(),dal->qs_getitemtype(choicesetforcombobox.first()))) ;
                 }
+
             }
         }
     }
 
     foreach(const QString str, equipChoices.split("|")){
+
         if (!str.isEmpty() && !specialCases.contains(str)){ //skip special choices here too -- getting them next
+
+            if(str=="Yumi and quiver of arrows with three special arrows"){
+                eqText += "Yumi, ";
+                eqList.append(populateItemFields("Yumi",dal->qs_getitemtype("Yumi")));
+                eqText += "armor-piercing arrow, ";
+                eqText += "flesh-cutter arrow, ";
+                eqText += "humming-bulb arrow, ";
+                eqList.append(populateItemFields("armor-piercing arrow",dal->qs_getitemtype("armor-piercing arrow")));
+                eqList.append(populateItemFields("flesh-cutter arrow",dal->qs_getitemtype("flesh-cutter arrow")));
+                eqList.append(populateItemFields("humming-bulb arrow",dal->qs_getitemtype("humming-bulb arrow")));
+
+
+            }
+            else{
+
+
             eqText+= str + ", ";
             eqList.append(populateItemFields(str,dal->qs_getitemtype(str)));
+            }
         }
+
     }
     foreach(const QString str, equipSpecialChoices.split("|")){ //NOW add special choices
-        if (!str.isEmpty()){
+        if(!str.isEmpty()){
             eqText+= str + ", ";
             eqList.append(populateItemFields(str,dal->qs_getitemtype(str)));
         }
+
     }
 
 
    //check for eq on q8 ronin.  Add eq for q14
     // POW
     if(characterType != "Samurai"){
-        eqText+= q14item+ ", ";
-        eqList.append(populateItemFields(q16item,dal->qs_getitemtype(q16item)));
+        if(!q14item.isEmpty()){
 
+            eqText+= q14item+ ", ";
+            eqList.append(populateItemFields(q14item,dal->qs_getitemtype(q14item)));
+        }
         if(!q8item.isEmpty()){
             eqText+= q8item+ ", ";
             eqList.append(populateItemFields(q8item,dal->qs_getitemtype(q8item)));

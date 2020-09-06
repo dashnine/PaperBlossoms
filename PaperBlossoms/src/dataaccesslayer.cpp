@@ -392,7 +392,7 @@ QStringList DataAccessLayer::qsl_getupbringingskills2(const QString upbringing )
 QString DataAccessLayer::qs_getregionring(const QString region)
 {
     QSqlQuery query;
-    query.prepare("SELECT ring_tr FROM regions WHERE name_tr = :region");
+    query.prepare("SELECT ring_increase_tr FROM regions WHERE name_tr = :region");
     query.bindValue(0, region);
     query.exec();
     while (query.next()) {
@@ -408,7 +408,7 @@ QString DataAccessLayer::qs_getregionring(const QString region)
 QStringList DataAccessLayer::qsl_getregionskills(const QString region ){
     QStringList out;
     QSqlQuery query;
-    query.prepare("SELECT skill_tr FROM regions WHERE name_tr = :region");
+    query.prepare("SELECT skill_increase_tr FROM regions WHERE name_tr = :region");
     query.bindValue(0, region);
     query.exec();
     while (query.next()) {
