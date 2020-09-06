@@ -799,7 +799,9 @@ def schools_to_db(db_conn):
             rank INTEGER,
             advance TEXT,
             type TEXT,
-            special_access INTEGER
+            special_access INTEGER,
+            min_allowable_rank INTEGER,
+            max_allowable_rank INTEGER
         )''',
         tr_fields = ['school', 'advance']
     )
@@ -887,14 +889,16 @@ def schools_to_db(db_conn):
 
         # Write to curriculum table
         db_conn.executemany(
-            'INSERT INTO base_curriculum VALUES (?,?,?,?,?)',
+            'INSERT INTO base_curriculum VALUES (?,?,?,?,?,?,?)',
             [
                 (
                     school['name'],
                     advancement['rank'],
                     advancement['advance'],
                     advancement['type'],
-                    int(advancement['special_access'])
+                    int(advancement['special_access']),
+                    advancement['allowable_rank']['min'] if 'allowable_rank' in advancement else None,
+                    advancement['allowable_rank']['max'] if 'allowable_rank' in advancement else None
                 )
                 for advancement in school['curriculum']
             ]
@@ -1024,8 +1028,10 @@ def patterns_to_db(db_conn):
     with open('json/item_patterns.json', encoding = 'utf8') as f:
         item_patterns = json.load(f)
     
-    # Write item patterns to item pattern table
+    # Write item patterns to item pattern and techniques table
     for pattern in item_patterns:
+
+        # Write to item pattern table
         db_conn.execute(
             'INSERT INTO base_item_patterns VALUES (?,?,?,?,?)',
             (
@@ -1036,6 +1042,31 @@ def patterns_to_db(db_conn):
                 pattern['rarity_modifier']
             )
         )
+        
+        # Write to techniques table
+        db_conn.execute(
+            '''INSERT INTO base_techniques VALUES (
+                :category,
+                :subcategory,
+                :name,
+                :restriction,
+                :reference_book,
+                :reference_page,
+                :rank,
+                :xp
+            )''',
+            {
+                'category': 'Item Patterns',
+                'subcategory': None,
+                'name': pattern['name'],
+                'restriction': None,
+                'reference_book': pattern['reference']['book'],
+                'reference_page': pattern['reference']['page'],
+                'rank': 1,
+                'xp': pattern['xp_cost']
+            }
+        )
+
 
 
 def bonds_to_db(db_conn):
@@ -1057,7 +1088,7 @@ def bonds_to_db(db_conn):
         tr_fields = ['name', 'bond_ability_name']
     )
 
-    # Read titles from JSON
+    # Read bonds from JSON
     with open('json/bonds.json', encoding = 'utf8') as f:
         bonds = json.load(f)
     
@@ -1071,6 +1102,148 @@ def bonds_to_db(db_conn):
                 bond['reference']['book'],
                 bond['reference']['page']
             )
+        )
+
+
+def regions_to_db(db_conn):
+
+    # Create regions table
+    create_tables(
+        db_conn,
+        'regions',
+        '''CREATE TABLE {} (
+            name TEXT PRIMARY KEY,
+            ring_increase TEXT,
+            skill_increase TEXT,
+            glory INTEGER,
+            type TEXT,
+            subtype TEXT,
+            reference_book TEXT,
+            reference_page INTEGER
+        )''',
+        desc_fields = 'name',
+        tr_fields = ['name', 'ring_increase', 'skill_increase', 'type', 'subtype']
+    )
+
+    # Read regions from JSON
+    with open('json/regions.json', encoding = 'utf8') as f:
+        regions = json.load(f)
+    
+    # Write to regions table
+    for region in regions:
+        db_conn.execute(
+            'INSERT INTO base_regions VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+            (
+                region['name'],
+                region['ring_increase'],
+                region['skill_increase'],
+                region['glory'],
+                region['type'],
+                region['subtype'] if 'subtype' in region else None,
+                region['reference']['book'],
+                region['reference']['page']
+            )
+        )
+
+
+def upbringings_to_db(db_conn):
+
+    # Create upbringings table
+    create_tables(
+        db_conn,
+        'upbringings',
+        '''CREATE TABLE {} (
+            name TEXT PRIMARY KEY,
+            reference_book TEXT,
+            reference_page INTEGER,
+            status_modification INTEGER,
+            starting_wealth_value INTEGER,
+            starting_wealth_unit TEXT,
+            starting_item TEXT
+        )''',
+        desc_fields = 'name',
+        tr_fields = ['name']
+    )
+    create_tables(
+        db_conn,
+        'upbringing_skill_increases',
+        '''CREATE TABLE {} (
+            upbringing TEXT,
+            set_id INTEGER,
+            set_size INTEGER,
+            skill TEXT
+        )''',
+        tr_fields = ['upbringing', 'skill']
+    )
+    create_tables(
+        db_conn,
+        'upbringing_rings',
+        '''CREATE TABLE {} (
+            upbringing TEXT,
+            ring TEXT
+        )''',
+        tr_fields = ['upbringing', 'ring']
+    )
+
+    # Read upbringings JSON
+    with open('json/upbringings.json', encoding = 'utf8') as f:
+        upbringings = json.load(f)
+    
+    # Write to upbringings tables
+    for upbringing in upbringings:
+
+        # Write to upbringing table
+        db_conn.execute(
+            '''INSERT INTO base_upbringings VALUES (
+                :name,
+                :reference_book,
+                :reference_page,
+                :status_modification,
+                :starting_wealth_value,
+                :starting_wealth_unit,
+                :starting_item
+            )''',
+            {
+                'name': upbringing['name'],
+                'reference_book': upbringing['reference']['book'],
+                'reference_page': upbringing['reference']['page'],
+                'status_modification': upbringing['status_modification'],
+                'starting_wealth_value': upbringing['starting_wealth']['value'],
+                'starting_wealth_unit': upbringing['starting_wealth']['unit'],
+                'starting_item': upbringing['starting_item'] if 'starting_item' in upbringing else None
+            }
+        )
+
+        # Write to upbringing skill increases table
+        for skill_set_id, skill_set in enumerate(upbringing['skill_increases']):
+            db_conn.executemany(
+                '''INSERT INTO base_upbringing_skill_increases VALUES (
+                    :upbringing,
+                    :set_id,
+                    :set_size,
+                    :skill
+                )''',
+                [
+                    {
+                        'upbringing': upbringing['name'],
+                        'set_id': skill_set_id,
+                        'set_size': skill_set['size'],
+                        'skill': skill
+                    }
+                    for skill in skill_set['set']
+                ]
+            )
+        
+        # Write to upbringing rings table
+        db_conn.executemany(
+            'INSERT INTO base_upbringing_rings VALUES (:upbringing, :ring)',
+            [
+                {
+                    'upbringing': upbringing['name'],
+                    'ring': ring
+                }
+                for ring in upbringing['ring_increase']['set']
+            ]
         )
 
 
@@ -1119,6 +1292,7 @@ def main():
     titles_to_db(db_conn)
     patterns_to_db(db_conn)
     bonds_to_db(db_conn)
+    regions_to_db(db_conn)
 
     # Equipment
     qualities_to_db(db_conn)
@@ -1130,6 +1304,7 @@ def main():
     clans_to_db(db_conn)
     heritage_to_db(db_conn)
     schools_to_db(db_conn)
+    upbringings_to_db(db_conn)
 
     # Commit and close connection
     db_conn.commit()

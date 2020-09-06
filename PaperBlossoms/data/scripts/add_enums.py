@@ -77,6 +77,7 @@ def get_clans(data_dir):
     with open(data_dir.joinpath('json/clans.json')) as f:
         clans = json.load(f)
     clans_enum = [ clan['name'] for clan in clans ]
+    clans_enum = clans_enum + ['Rōnin', "Ujik", "Qamarist", "Ivory Kingdoms"]
     
     return clans_enum
 
@@ -110,6 +111,17 @@ def get_techniques(data_dir):
     ]
 
     return technique_categories_enum, technique_subcategories_enum, techniques_enum
+
+
+def get_item_patterns(data_dir):
+    with open(data_dir.joinpath('json/item_patterns.json'), encoding = 'utf8') as f:
+        item_patterns = json.load(f)
+    item_patterns_enum = [
+        item_pattern['name']
+        for item_pattern in item_patterns
+    ]
+
+    return item_patterns_enum
 
 
 def get_qualities(data_dir):
@@ -163,7 +175,7 @@ def get_advantages(data_dir):
 
 
 def get_books():
-    books_enum = ['Core', 'EE', 'SL', 'Mantis', 'GMK', 'CoS']
+    books_enum = ['Core', 'EE', 'SL', 'Mantis', 'GMK', 'CoS', 'PoW']
 
     return books_enum
 
@@ -207,6 +219,21 @@ def write_rings(data_dir, rings_enum):
         rings_enum + ['any']
     )
 
+    print('... to regions')
+    write_enums(
+        data_dir.joinpath('json_schema/regions.schema.json'),
+        'ring_increase',
+        rings_enum
+    )
+
+    print('... to upbringings')
+    write_enums_with_parent(
+        data_dir.joinpath('json_schema/upbringings.schema.json'),
+        'ring_increase',
+        'set',
+        rings_enum + ['any']
+    )
+
     return rings_enum
 
 
@@ -241,6 +268,21 @@ def write_skills(data_dir, skills_enum):
         'starting_skills',
         'set',
         skills_enum
+    )
+
+    print('... to regions')
+    write_enums(
+        data_dir.joinpath('json_schema/regions.schema.json'),
+        'skill_increase',
+        skills_enum
+    )
+
+    print('... to upbringings')
+    write_enums_with_parent(
+        data_dir.joinpath('json_schema/upbringings.schema.json'),
+        'skill_increase',
+        'set',
+        skills_enum + ['any']
     )
 
 
@@ -303,7 +345,14 @@ def write_equipment(data_dir, equipment_enum):
                 "Two Weapons of Rarity 6 or Lower",
                 "One Weapon of Rarity 6 or Lower",
                 "Two Items of Rarity 4 or Lower",
-                "One Sword of Rarity 7 or Lower"
+                "One Sword of Rarity 7 or Lower",
+                "One weapon of your signature weapon category of rarity 8 or lower",
+                "Yumi and quiver of arrows with three special arrows",
+                "One Item of Rarity 3 or Lower",
+                "One Item of Rarity 5 or Lower",
+                "One professional kit",
+                "One Item of Rarity 6 or Lower",
+                "One Item of Rarity 4 or Lower"
             ]
         )
     )
@@ -379,6 +428,20 @@ def write_books(data_dir, books_enum):
         books_enum
     )
 
+    print('... to bonds')
+    write_enums(
+        data_dir.joinpath('json_schema/bonds.schema.json'),
+        'book',
+        books_enum
+    )
+
+    print('... to item patterns')
+    write_enums(
+        data_dir.joinpath('json_schema/item_patterns.schema.json'),
+        'book',
+        books_enum
+    )
+
 
 def write_resistance(data_dir, resistance_enum):
 
@@ -415,6 +478,13 @@ def write_currency(data_dir, currency_enum):
         currency_enum
     )
 
+    print('... to upbringings')
+    write_enums(
+        data_dir.joinpath('json_schema/upbringings.schema.json'),
+        'unit',
+        currency_enum
+    )
+
 
 def write_advance(data_dir, skill_groups_enum, skills_enum, technique_categories_enum, technique_subcategories_enum, techniques_enum):
 
@@ -445,12 +515,13 @@ def main(option):
         write_rings(data_dir, get_rings(data_dir))
     if option is None or 'clans' in option:
         write_clans(data_dir, get_clans(data_dir))
-    if option is None or 'skills' in option:
+    if option is None or 'skills' in option or 'techniques' in option:
         skill_groups_enum, skills_enum = get_skills(data_dir)
         write_skills(data_dir, skills_enum)
-    if option is None or 'techniques' in option:
         technique_categories_enum, technique_subcategories_enum, techniques_enum = get_techniques(data_dir)
-        write_techniques(data_dir, techniques_enum, technique_subcategories_enum, technique_categories_enum)
+        item_patterns_enum = get_item_patterns(data_dir)
+        write_techniques(data_dir, techniques_enum + item_patterns_enum, technique_subcategories_enum, technique_categories_enum)
+        write_advance(data_dir, skill_groups_enum, skills_enum, technique_categories_enum, technique_subcategories_enum, techniques_enum)
     if option is None or 'qualities' in option:
         write_qualities(data_dir, get_qualities(data_dir))
     if option is None or 'equipment' in option:
@@ -463,8 +534,6 @@ def main(option):
         write_resistance(data_dir, get_resistance())
     if option is None or 'currency' in option:
         write_currency(data_dir, get_currency())
-    if option is None or 'skills' in option or 'techniques' in option:
-        write_advance(data_dir, skill_groups_enum, skills_enum, technique_categories_enum, technique_subcategories_enum, techniques_enum)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description = 'Utility to add enums to json schema')

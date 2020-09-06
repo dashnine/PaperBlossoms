@@ -43,5 +43,32 @@
         },
         "xp_cost": 5,
         "rarity_modifier": 4
+    },
+    {
+        "name": "Spirit of the Qamarist Pattern",
+        "reference": {
+            "book": "PoW",
+            "page": 117
+        },
+        "xp_cost": 5,
+        "rarity_modifier": 4
+    },
+    {
+        "name": "Ghostlands Yodhaniya Pattern",
+        "reference": {
+            "book": "PoW",
+            "page": 117
+        },
+        "xp_cost": 6,
+        "rarity_modifier": 4
+    },
+    {
+        "name": "Kökejin's Heart of the Wind Pattern",
+        "reference": {
+            "book": "PoW",
+            "page": 117
+        },
+        "xp_cost": 8,
+        "rarity_modifier": 5
     }
 ]
