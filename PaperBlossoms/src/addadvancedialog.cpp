@@ -515,7 +515,7 @@ QString AddAdvanceDialog::getResult() const {
                                tr<< techModel.item(curIndex.row(),c)->text();
                        //}
                }
-               row += tr.at(TechQuery::NAME);
+               row += tr.at(TechQuery::NAME)+"|";
     }
     else{
         row += ui->advchooser_combobox->currentText() + "|";

@@ -1572,7 +1572,7 @@ void DataAccessLayer::qsm_getschoolcurriculum(QSqlQueryModel * const model, cons
 {
 
     QSqlQuery query;
-    query.prepare(  "SELECT rank, advance_tr, type, special_access                  " //select main list
+    query.prepare(  "SELECT rank, advance_tr, type, special_access, min_allowable_rank, max_allowable_rank                  " //select main list
                     "FROM curriculum                                             " // from table
                     "WHERE school_tr = ?                                            "
                     );
@@ -1621,14 +1621,24 @@ void DataAccessLayer::qsm_getschoolcurriculumbyrank(QSqlQueryModel * const model
 
 }
 */
-QStringList DataAccessLayer::qsl_gettechbygroup(const QString group,const int rank){
+QStringList DataAccessLayer::qsl_gettechbygroup(const QString group,const int minrank, int maxrank){
     //have to use Like here, since the subcategory for Kata is 'General Kata' or 'Close Combat Kata'
     QStringList out;
+    //QString grouplike = '%'+group+'%';
     QSqlQuery query;
-    query.prepare("SELECT name_tr FROM techniques WHERE subcategory LIKE ? and rank <= ?");
-    query.bindValue(0, QString("%%1%").arg(group));
-    query.bindValue(1, rank);
+     query.prepare("SELECT name_tr FROM techniques WHERE category = ? and rank <= ? and rank >= ? "
+                  "UNION "
+     "SELECT name_tr FROM techniques WHERE subcategory = ? and rank <= ? and rank >= ?  "
+     );
+    query.bindValue(0, group);
+    query.bindValue(1, maxrank);
+    query.bindValue(2, minrank);
+    query.bindValue(3, group);
+    query.bindValue(4, maxrank);
+    query.bindValue(5, minrank);
     query.exec();
+    //qDebug() << getLastExecutedQuery(query);
+
     while (query.next()) {
         const QString cname = query.value(0).toString();
         out<< cname;

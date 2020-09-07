@@ -181,7 +181,7 @@ public:
     void qsm_getschoolcurriculum(QSqlQueryModel * const model, const QString school);
     //void qsm_getschoolcurriculumbyrank(QSqlQueryModel * const model, const QString school, const int rank);
     QStringList qsl_getskillsbygroup(const QString group);
-    QStringList qsl_gettechbygroup(const QString group, const int rank);
+    QStringList qsl_gettechbygroup(const QString group, const int minrank, const int maxrank);
     QStringList qsl_getskillsandgroup();
     QStringList qsl_gettitles();
     QString qs_gettitleref(const QString title);
