@@ -9438,6 +9438,7 @@
     },
     {
         "name": "Worldly R\u014dnin Path",
+        "clan": "Rōnin",
         "reference": {
             "book": "Core",
             "page": 87
@@ -18848,8 +18849,12 @@
                 "set": ["One Item of Rarity 5 or Lower"]
             },
             {
-                "size": 2,
-                "set": ["Trinket", "Trinket"]
+                "size": 1,
+                "set": ["Trinket"]
+            },
+            {
+                "size": 1,
+                "set": ["Trinket"]
             }
         ],
         "curriculum": [
@@ -19106,8 +19111,16 @@
                 "set": ["One Weapon of Rarity 6 or Lower"]
             },
             {
-                "size": 3,
-                "set": ["Shuriken", "Shuriken", "Shuriken"]
+                "size": 1,
+                "set": ["Shuriken"]
+            },
+            {
+                "size": 1,
+                "set": ["Shuriken"]
+            },
+            {
+                "size": 1,
+                "set": ["Shuriken"]
             },
             {
                 "size": 1,
@@ -19118,8 +19131,16 @@
                 "set": ["Two Items of Rarity 4 or Lower"]
             },
             {
-                "size": 3,
-                "set": ["Knife", "Knife", "Knife"]
+                "size": 1,
+                "set": ["Knife"]
+            },
+            {
+                "size": 1,
+                "set": ["Knife"]
+            },
+            {
+                "size": 1,
+                "set": ["Knife"]
             },
             {
                 "size": 1,
@@ -19341,7 +19362,7 @@
         "mastery_ability": "Crack Not a Single Twig"
     },
     {
-        "name": "Voice of the Wolds",
+        "name": "Voice of the Wilds",
         "reference": {
             "book": "PoW",
             "page": 52
@@ -19377,7 +19398,7 @@
             },
             {
                 "size": 1,
-                "set": ["One professional kit"]
+                "set": ["Alchemy Kit [common]", "Alchemy Kit [rare]", "Cooking Kit", "Fishing Kit", "Mason's Kit", "Tailor's Kit", "Weaver's Kit"]
             },
             {
                 "size": 1,

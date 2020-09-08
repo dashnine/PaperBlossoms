@@ -14,11 +14,12 @@
         },
         "skill_increases": [
             {
-                "size": 2,
-                "set": [
-                    "Culture",
-                    "Design"
-                ]
+                "size": 1,
+                "set": ["Culture"]
+            },
+            {
+                "size": 1,
+                "set": ["Design"]
             }
         ],
         "status_modification": -2,
@@ -39,7 +40,11 @@
         },
         "skill_increases": [
             {
-                "size": 2,
+                "size": 1,
+                "set": ["any"]
+            },
+            {
+                "size": 1,
                 "set": ["any"]
             }
         ],
@@ -62,11 +67,12 @@
         },
         "skill_increases": [
             {
-                "size": 2,
-                "set": [
-                    "Labor",
-                    "Fitness"
-                ]
+                "size": 1,
+                "set": ["Labor"]
+            },
+            {
+                "size": 1,
+                "set": ["Fitness"]
             }
         ],
         "status_modification": 4,
@@ -90,11 +96,12 @@
         },
         "skill_increases": [
             {
-                "size": 2,
-                "set": [
-                    "Aesthetics",
-                    "Courtesy"
-                ]
+                "size": 1,
+                "set": ["Aesthetics"]
+            },
+            {
+                "size": 1,
+                "set": ["Courtesy"]
             }
         ],
         "status_modification": -20,
