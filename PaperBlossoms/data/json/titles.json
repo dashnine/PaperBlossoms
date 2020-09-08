@@ -1326,5 +1326,224 @@
                 "special_access": true
             }
         ]
+    },
+    {
+        "name": "In Service to a Lord",
+        "reference": {
+            "book": "PoW",
+            "page": 186
+        },
+        "social_awards": [
+            {
+                "award_attribute": "status",
+                "base_award": 10,
+                "constraint": {
+                    "type": "max",
+                    "value": 35
+                }
+            }
+        ],
+        "xp_to_completion": 24,
+        "title_ability": "Privileged Position",
+        "advancements": [
+            {
+                "name": "Martial skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Social skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Culture",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Government",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Kata",
+                "type": "technique_group",
+                "special_access": true,
+                "rank": 2
+            },
+            {
+                "name": "Wolf's Proposal",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Fluent Bargaining",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "Perfect Land Sect Member",
+        "reference": {
+            "book": "PoW",
+            "page": 186
+        },
+        "social_awards": [
+            {
+                "award_attribute": "status",
+                "base_award": -5,
+                "constraint": {
+                    "type": "min",
+                    "value": 15
+                }
+            }
+        ],
+        "xp_to_completion": 24,
+        "title_ability": "Trustworthy Cadence",
+        "advancements": [
+            {
+                "name": "Scholar skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Courtesy",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Fitness",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Labor",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Water Shūji",
+                "type": "technique_group",
+                "special_access": true,
+                "rank": 2
+            },
+            {
+                "name": "Roar of Encouragement",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Rallying Cry",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "Ghostlands Warrior",
+        "reference": {
+            "book": "PoW",
+            "page": 186
+        },
+        "social_awards": [
+            {
+                "award_attribute": "status",
+                "base_award": 0
+            }
+        ],
+        "xp_to_completion": 36,
+        "title_ability": "Eyes of the Yodhaniya",
+        "advancements": [
+            {
+                "name": "Martial skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Command",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Medicine",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Survival",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Earth Needs No Eyes",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Soaring Slice",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Cleansing of Coral and Gold",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "Astradhari",
+        "reference": {
+            "book": "PoW",
+            "page": 187
+        },
+        "social_awards": [
+            {
+                "award_attribute": "status",
+                "base_award": 0
+            }
+        ],
+        "xp_to_completion": 36,
+        "title_ability": "Sacred Mantras",
+        "advancements": [
+            {
+                "name": "Scholar skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Martial skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Command",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Courtesy",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Rituals",
+                "type": "technique_group",
+                "special_access": true,
+                "rank": 3
+            },
+            {
+                "name": "Summoning Mantra: [Implement Name]",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Touchstone of Courage",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
     }
 ]
