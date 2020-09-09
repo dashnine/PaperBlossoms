@@ -354,6 +354,7 @@ void NewCharWizardPage7::initializePage()
                                        //PoW
         "One weapon of your signature weapon category of rarity 8 or lower",
         "One Item of Rarity 3 or Lower",
+        "One Item of Rarity 4 or Lower",
         "One Item of Rarity 5 or Lower",
         "One Item of Rarity 6 or Lower"//,
         //"Yumi and quiver of arrows with three special arrows" //special -- handle at end
