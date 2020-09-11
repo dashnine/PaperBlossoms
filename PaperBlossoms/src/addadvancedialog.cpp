@@ -146,7 +146,7 @@ void AddAdvanceDialog::validatePage(){
                         itemrow << new QStandardItem(cell);              // turn this into qstandarditems to match other paradigms
                     }
                     if(itemrow.at(0)->text() == "Technique"){            //if it's a tech advance
-                        if((itemrow.at(1)->text() == name)){
+                        if((itemrow.at(1)->text() == name) && name != "Summoning Mantra: [Implement Name]"){ //you can buy Summoning mantra multiple times
                             ui->warnlabel->setText("Invalid selection: '"+name+"' is already learned.");
                             ok = false;
                         }
@@ -229,6 +229,13 @@ void AddAdvanceDialog::populateTechModel(){
             if( (tech.at(TechQuery::CATEGORY)) == "Mahō"                ||
                     (tech.at(TechQuery::CATEGORY)) == "Item Patterns"       ||
                     (tech.at(TechQuery::CATEGORY)) == "Signature Scrolls"   ){
+                addTechRow(tech);
+                continue;
+
+            }
+            //get tech that everyone has access to:
+            if( (tech.at(TechQuery::CATEGORY)) == "Astradhari Techniques" && //the astradhari title grants the ability to learn Astradhari techniques
+                    (character->titles.contains("Astradhari") )){
                 addTechRow(tech);
                 continue;
 
