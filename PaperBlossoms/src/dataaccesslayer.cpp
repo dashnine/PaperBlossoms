@@ -2360,6 +2360,7 @@ bool DataAccessLayer::importCSV(const QString filepath, const QString tablename,
                 }
             }
             req.chop(1); // remove the trailing comma
+            req.append(getVersionCorrection(tablename,line)); //handle any special cases cause by updates to data
             req.append(");"); // close the "VALUES([...]" with a ");"
             const bool isuccess = query.exec(req.replace("%0A","\n")); //fix the encoded %0A
             if(!isuccess) {
@@ -2379,4 +2380,16 @@ bool DataAccessLayer::importCSV(const QString filepath, const QString tablename,
         return !success;
     }
     return success;
+}
+
+QString DataAccessLayer::getVersionCorrection(QString tablename, QStringList line){
+    QString toAppend = "";
+
+    if(tablename == "user_curriculum"){
+        if(line.count()==5){ //PoW added two new columns. These can default to null, in which case the old functionality works.
+            toAppend.append(",\"\",\"\"");
+        }
+    }
+
+    return toAppend;
 }

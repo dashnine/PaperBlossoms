@@ -60,7 +60,7 @@ public:
         "user_title_advancements",
         "user_titles",
         "user_weapon_qualities",
-        "user_weapons"
+        "user_weapons",
         "user_bonds"
     }; //list of tables to export/import
 
@@ -261,6 +261,7 @@ private:
     QString escapedCSV(QString unexc);
     QStringList parseCSV(const QString &string);
     bool queryToCsv(const QString querystr, QString filename);
+    QString getVersionCorrection(QString tablename, QStringList line);
 };
 
 #endif // DATAACCESSLAYER_H
