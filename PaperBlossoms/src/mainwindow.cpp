@@ -1031,6 +1031,14 @@ int MainWindow::isInCurriculum(const QString value, const QString type, const in
         const QSqlRecord record = curriculummodel.record(i);
         //if(record.value("rank").toInt()!=curCharacter.rank) continue; //only get items in current rank;
         if(record.value("rank").toInt()!=currank) continue; //only get items in current rank;
+        int minrank = 1;
+        int maxrank = currank;
+        QVariant varMinRank = record.value("min_allowable_rank");
+        QVariant varMaxRank = record.value("max_allowable_rank");
+        if(!varMinRank.isNull())
+            minrank = varMinRank.toInt();
+        if(!varMaxRank.isNull())
+            maxrank = varMaxRank.toInt();
         if(record.value("type").toString() == "skill_group"){
             QStringList groupskills = dal->qsl_getskillsbygroup(record.value("advance_tr").toString());
             skills.append(groupskills);
@@ -1042,7 +1050,7 @@ int MainWindow::isInCurriculum(const QString value, const QString type, const in
             techniques << record.value("advance_tr").toString();
         }
         else if(record.value("type").toString() == "technique_group"){
-            QStringList grouptech = dal->qsl_gettechbygroup(dal->untranslate(record.value("advance_tr").toString()), curCharacter.rank);
+            QStringList grouptech = dal->qsl_gettechbygroup(dal->untranslate(record.value("advance_tr").toString()), minrank, maxrank);
             techniques.append(grouptech);
         }
 
@@ -1071,6 +1079,10 @@ int MainWindow::isInTitle(const QString value, const QString adv_type, const QSt
         const QString type = titlemodel.item(i,2)->text();
         const QString spec_acc = titlemodel.item(i,3)->text();
         const QString rank = titlemodel.item(i,4)->text();
+
+        int minrank = 1;
+        int maxrank = rank.toInt();
+
         if(titlename!=title) continue; //only get items in current title;
         if(type == "skill_group"){
             const QStringList groupskills = dal->qsl_getskillsbygroup(advance);
@@ -1083,7 +1095,7 @@ int MainWindow::isInTitle(const QString value, const QString adv_type, const QSt
             techniques << advance;
         }
         else if(type == "technique_group"){
-            const QStringList grouptech = dal->qsl_gettechbygroup(dal->untranslate(advance), rank.toInt()); //special -- uses title rank
+            const QStringList grouptech = dal->qsl_gettechbygroup(dal->untranslate(advance), minrank, maxrank); //special -- uses title rank
             techniques.append(grouptech);
         }
         else if(type == "ring"){

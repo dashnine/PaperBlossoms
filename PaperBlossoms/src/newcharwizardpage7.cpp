@@ -51,6 +51,13 @@ void NewCharWizardPage7::initializePage()
     const QString clan                = field("currentClan").toString(); //get clan skills
     const QString family              = field("currentFamily").toString(); //get fam skills
     //QString familyring          = field("familyRing").toString();
+    const QString region              = field("currentRegion").toString();     //pow
+    const QString upbringing          = field("currentUpbringing").toString(); //pow
+    const QString characterType       = field("characterType").toString(); //pow
+    //QString upbringingring          = field("upbringingRing").toString(); //pow
+    const QString upbringingSkill1    = field("upbringingSkill1").toString(); //pow
+    const QString upbringingSkill2    = field("upbringingSkill2").toString(); //pow
+    const QString upbringingSkill3    = field("upbringingSkill3").toString(); //pow
 
     //p2
     const QString school              = field("currentSchool").toString();
@@ -68,8 +75,9 @@ void NewCharWizardPage7::initializePage()
     //bool hasq8skill                 =  field("q8negradio_skill").toBool();
     const QString q7skill                 =  field("q7skill").toString();
     const QString q8skill                 =  field("q8skill").toString();
+    const QString q8item                 =  field("q8item").toString();             //pow
     const QString ninjo                   =  field("q6Text").toString();
-    const QString giri                   =   field("q5Text").toString();
+    const QString giri                   =   field("q5Text").toString();            //in POW, this is 'past'.
     const QString clanrelationship        =   field("q7Text").toString();
     const QString bushido                 =   field("q8Text").toString();
 
@@ -94,6 +102,8 @@ void NewCharWizardPage7::initializePage()
     const QString noticefirst             = field("q14Text").toString();
     const QString understress             = field("q15Text").toString();
     const QString existing_relationships  = field("q16Text").toString();
+    const QString q14item                 = field("q14Item").toString();            //pow
+
 
     //p6
     const QString parentSkill = field("parentSkill").toString();
@@ -108,6 +118,8 @@ void NewCharWizardPage7::initializePage()
     const QString personalName        = field("personalName").toString();
     const QString parents         = field("q17Text").toString();
     const QString heritageSourceTable = field("q18SourceTable").toString();
+    const QString roninbond = field("q17roninBond").toString();                 //pow
+    const QString q17roninText = field("q17roninText").toString();              //pow
 
 
 
@@ -128,20 +140,50 @@ void NewCharWizardPage7::initializePage()
         lostItem+= special1 + " " + special2 + " " + secondarychoice + ", ";
     }
 
-    /////////////////// get free text values ////////////////
+
+
     QString notes = "";
-    notes +=     tr("4. Standing out in school:\n") + school_standout;
-    notes += tr("\n\n7. Clan Relationship: \n") + clanrelationship;
-    notes += tr("\n\n8. Bushido: \n") + bushido;
-    notes += tr("\n\n9. Accomplishment: \n") + q9;
-    notes += tr("\n\n10. Setback: \n") + q10;
-    notes += tr("\n\n11. At Peace: \n") + q11;
-    notes += tr("\n\n12. Anxiety: \n") + q12;
-    notes += tr("\n\n13. Important Relationship: \n") + important_relationship;
-    notes += tr("\n\n14. Distinctive Traits and Behaviors: \n") + noticefirst;
-    notes += tr("\n\n15. Under Stress: \n") + understress;
-    notes += tr("\n\n16. Existing Relationships With Other Groups: \n") + existing_relationships;
-    notes += tr("\n\n17. Parents: \n") + parents;
+
+    if(field("characterType").toString() == "Samurai"){
+
+        /////////////////// get free text values ////////////////
+        notes +=     tr("4. Standing out in school:\n") + school_standout;
+        notes += tr("\n\n7. Clan Relationship: \n") + clanrelationship;
+        notes += tr("\n\n8. Bushido: \n") + bushido;
+        notes += tr("\n\n9. Accomplishment: \n") + q9;
+        notes += tr("\n\n10. Setback: \n") + q10;
+        notes += tr("\n\n11. At Peace: \n") + q11;
+        notes += tr("\n\n12. Anxiety: \n") + q12;
+        notes += tr("\n\n13. Important Relationship: \n") + important_relationship;
+        notes += tr("\n\n14. Distinctive Traits and Behaviors: \n") + noticefirst;
+        notes += tr("\n\n15. Under Stress: \n") + understress;
+        notes += tr("\n\n16. Existing Relationships With Other Groups: \n") + existing_relationships;
+        notes += tr("\n\n17. Parents: \n") + parents;
+
+
+    }
+
+    else{
+        /////////// PoW - Ronin questions
+        /////////////////// get free text values ////////////////
+        QString notes = "";
+        notes +=     tr("4.In and out of trouble:\n") + school_standout;
+        notes += tr("\n\n7.Known for: \n") + clanrelationship;
+        notes += tr("\n\n8. Bushido: \n") + bushido;
+        notes += tr("\n\n9. Accomplishment: \n") + q9;
+        notes += tr("\n\n10. Setback: \n") + q10;
+        notes += tr("\n\n11. At Peace: \n") + q11;
+        notes += tr("\n\n12. Anxiety: \n") + q12;
+        notes += tr("\n\n13. Important Relationship: \n") + important_relationship;
+        notes += tr("\n\n14. Prized Possession: \n") + noticefirst;
+        notes += tr("\n\n15. Under Stress: \n") + understress;
+        notes += tr("\n\n16. Existing Relationships With Other Groups: \n") + existing_relationships;
+        notes += tr("\n\n17. Shared History: \n") + q17roninText;
+        notes += tr("\n\n18. Who raised you: \n") + parents;
+    }
+
+
+
 
     //if(ancestorIndex == 2){ //2 is a lost item, and not in starting gear
     if(heritage == dal->translate("Glorious Sacrifice")){ //heritage Core 2 is a lost item, and not in starting gear.  Tracking it for use later
@@ -153,17 +195,52 @@ void NewCharWizardPage7::initializePage()
 
 
     //////////////////get social stats //////////////////////
-    const int status = dal->i_getclanstatus(clan);
-    const int glory = dal->i_getfamilyglory(family);
-    const int honor = dal->i_getschoolhonor(school);
-    QMap<QString, int> socialmap = dal->qm_heritagehonorglorystatus(heritage);
-    socialmap["Status"]+=status;
-    socialmap["Glory"]+=glory;
-    socialmap["Honor"]+=honor;
-    if(hasq7GloryBoost) socialmap["Glory"]+=5;
-    if(hasq8HonorBoost) socialmap["Honor"] += 10;
+    int status = 0;
+    int glory = 0;
+    int honor = 0;
+    int wealth = 0; //koku
+    int bu = 0;
+    int zeni = 0;
+        QMap<QString, int> socialmap; //get heritage modifiers
+    //Core - Samurai
+    if(characterType == "Samurai"){
 
-    const int wealth = dal->i_getfamilywealth(family);
+
+        status = dal->i_getclanstatus(clan);
+        glory = dal->i_getfamilyglory(family);
+        honor = dal->i_getschoolhonor(school);
+        socialmap = dal->qm_heritagehonorglorystatus(heritage); //get heritage modifiers
+        socialmap["Status"]+=status;
+        socialmap["Glory"]+=glory;
+        socialmap["Honor"]+=honor;
+        if(hasq7GloryBoost) socialmap["Glory"]+=5;
+        if(hasq8HonorBoost) socialmap["Honor"] += 10;
+
+        wealth = dal->i_getfamilywealth(family);  //koku only
+
+    }
+    //PoW
+    else {
+        if(characterType=="Rōnin")              status=24;
+        else if (characterType == "Gaijin")     status = 0;
+        else                                    status = 15; //peasant
+
+        status += dal->i_getupbringingstatusmod(upbringing);
+        if (status<0) status = 0;
+
+        glory = dal->i_getregionglory(region);
+        honor = dal->i_getschoolhonor(school);
+
+        socialmap["Status"]+=status;
+        socialmap["Glory"]+=glory;
+        socialmap["Honor"]+=honor;
+        if(hasq7GloryBoost) socialmap["Glory"]+=5;
+        if(hasq8HonorBoost) socialmap["Honor"] += 10;
+
+        wealth  = dal->i_getupbringingkoku(upbringing);  //koku only
+        bu      = dal->i_getupbringingbu(upbringing);
+        zeni    = dal->i_getupbringingzeni(upbringing);
+    }
 
 
     //////////////////// Calculate which fields should be tracked and assign the contents
@@ -269,11 +346,20 @@ void NewCharWizardPage7::initializePage()
     QString eqText = "";
     QList<QStringList> eqList;
     const QStringList specialCases = { //special cases
-        dal->translate("One Weapon of Rarity 6 or Lower"),
-        dal->translate("Two Items of Rarity 4 or Lower"),
-        dal->translate("Two Weapons of Rarity 6 or Lower"),
-        dal->translate("One Sword of Rarity 7 or Lower")
-    };
+        "One Weapon of Rarity 6 or Lower",
+        "Two Items of Rarity 4 or Lower",
+        "Two Weapons of Rarity 6 or Lower",
+        "One Sword of Rarity 7 or Lower",
+
+                                       //PoW
+        "One weapon of your signature weapon category of rarity 8 or lower",
+        "One Item of Rarity 3 or Lower",
+        "One Item of Rarity 4 or Lower",
+        "One Item of Rarity 5 or Lower",
+        "One Item of Rarity 6 or Lower"//,
+        //"Yumi and quiver of arrows with three special arrows" //special -- handle at end
+                                     };
+
 
     //-----first, school eq choices -----//
     const QList<QStringList> equipsets = dal->ql_getlistsofeq(school);              //get a list of equipsets
@@ -287,22 +373,69 @@ void NewCharWizardPage7::initializePage()
                     eqText += choicesetforcombobox.first() + ", ";         //add the combobox
                     eqList.append(populateItemFields(choicesetforcombobox.first(),dal->qs_getitemtype(choicesetforcombobox.first()))) ;
                 }
+
             }
         }
     }
 
     foreach(const QString str, equipChoices.split("|")){
+
         if (!str.isEmpty() && !specialCases.contains(str)){ //skip special choices here too -- getting them next
+
+            if(str=="Yumi and quiver of arrows with three special arrows"){
+                eqText += "Yumi, ";
+                eqList.append(populateItemFields("Yumi",dal->qs_getitemtype("Yumi")));
+                eqText += "armor-piercing arrow, ";
+                eqText += "flesh-cutter arrow, ";
+                eqText += "humming-bulb arrow, ";
+                eqList.append(populateItemFields("armor-piercing arrow",dal->qs_getitemtype("armor-piercing arrow")));
+                eqList.append(populateItemFields("flesh-cutter arrow",dal->qs_getitemtype("flesh-cutter arrow")));
+                eqList.append(populateItemFields("humming-bulb arrow",dal->qs_getitemtype("humming-bulb arrow")));
+
+
+            }
+            else{
+
+
             eqText+= str + ", ";
             eqList.append(populateItemFields(str,dal->qs_getitemtype(str)));
+            }
         }
+
     }
     foreach(const QString str, equipSpecialChoices.split("|")){ //NOW add special choices
-        if (!str.isEmpty()){
+        if(!str.isEmpty()){
             eqText+= str + ", ";
             eqList.append(populateItemFields(str,dal->qs_getitemtype(str)));
         }
+
     }
+
+    //-----POW: add free items, if they exist on upbringing--------//
+    QString upbringing_item = dal->qs_getupbringingitem(upbringing);
+    if(!upbringing_item.isEmpty()){
+        eqText+= upbringing_item + ", ";
+        foreach(QString item, upbringing_item.split(", ")){
+            eqList.append(populateItemFields(item,dal->qs_getitemtype(item)));
+        }
+    }
+
+   //check for eq on q8 ronin.  Add eq for q14
+    // POW
+    if(characterType != "Samurai"){
+        if(!q14item.isEmpty()){
+
+            eqText+= q14item+ ", ";
+            eqList.append(populateItemFields(q14item,dal->qs_getitemtype(q14item)));
+        }
+        if(!q8item.isEmpty()){
+            eqText+= q8item+ ", ";
+            eqList.append(populateItemFields(q8item,dal->qs_getitemtype(q8item)));
+        }
+
+
+    }
+
     //q16
     eqText+= q16item+ ", ";
     eqList.append(populateItemFields(q16item,dal->qs_getitemtype(q16item)));
@@ -408,7 +541,7 @@ void NewCharWizardPage7::initializePage()
         si.next();
         socialText += si.key() + ":" + QString::number(si.value())+ " ";
     }
-    socialText+=tr("Wealth:")+QString::number(wealth);
+    socialText+=tr("Wealth:")+QString::number(wealth)+" koku, "+QString::number(bu)+" bu,"+QString::number(zeni)+" zeni";
     ui->nc7_sociallist_label->setText(socialText);
 
 
@@ -416,8 +549,17 @@ void NewCharWizardPage7::initializePage()
 
 
     character->name = personalName;
-    character->clan = clan;
-    character->family = family;
+    if(characterType == "Samurai"){
+        character->clan = clan;
+        character->family = family;
+    }
+    else{
+        character->clan = region;
+        character->family = upbringing;
+        character->bonds.clear();
+        character->bonds.append( dal->qsl_getbond(roninbond));
+    }
+
     character->school = school;
     //character->rings IS SET ON CALCRINGS
     //character->skills IS SET ON calcSkills;
@@ -425,14 +567,22 @@ void NewCharWizardPage7::initializePage()
     character->glory = socialmap["Glory"];
     character->status = socialmap["Status"];
     character->koku = wealth;
+    character->bu = bu; //PoW
+    character->zeni = zeni; //PoW
     character->techniques = techList;
-    character->equipment =  eqList; //TODO: Handle EQUIPMENT
+    character->equipment =  eqList;
     character->adv_disadv = advList;
     character->ninjo = ninjo;
     character->giri = giri;
     character->notes = notes;
     //notes set here, but it gets a final append when the page is closed.
-    character->heritage = heritage;
+    if(characterType == "Samurai"){ //PoW
+        character->heritage = heritage;
+    }
+    else{
+        character->heritage = "None";
+    }
+
 
 
 }
@@ -442,6 +592,14 @@ QMap<QString, int> NewCharWizardPage7::calcSkills(){
     QStringList skills;
     skills.append(dal->qsl_getclanskills(field("currentClan").toString()));
     skills.append(dal->qsl_getfamilyskills(field("currentFamily").toString()));
+
+    //////////POW
+    skills.append(dal->qsl_getregionskills(field("currentRegion").toString()));
+    skills.append(field("upbringingSkill1").toString());
+    skills.append(field("upbringingSkill2").toString());
+    skills.append(field("upbringingSkill3").toString());
+   ////////////////
+
     skills.append(field("schoolSkills").toString().split("|"));
     skills.append(field("q7skill").toString());
     skills.append(field("q8skill").toString());
@@ -642,11 +800,28 @@ QMap<QString, int> NewCharWizardPage7::calcRings(){
         ringmap[ring] = 1;
     }
 
+    if(field("characterType").toString()=="Samurai"){
     //NOW - CALCULATE EXISTING RINGS
     //clan
     ringmap[dal->qs_getclanring(field("currentClan").toString())]++;
     //family
     ringmap[field("familyRing").toString()]++;
+}
+
+
+
+    ///////////PoW
+    ///
+    ///
+else{
+    //region
+    ringmap[dal->qs_getregionring(field("currentRegion").toString())]++;
+    //upbringing
+    ringmap[field("upbringingRing").toString()]++;
+}
+    /////////////////
+
+
     //school
     QStringList schoolrings = field("ringChoices").toString().split("|");
     schoolrings.removeAll("");

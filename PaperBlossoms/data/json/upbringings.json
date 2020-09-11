@@ -1,0 +1,350 @@
+[
+    {
+        "name": "Craftperson",
+        "reference": {
+            "book": "PoW",
+            "page": 43
+        },
+        "ring_increase": {
+            "size": 1,
+            "set": [
+                "Earth",
+                "Void"
+            ]
+        },
+        "skill_increases": [
+            {
+                "size": 1,
+                "set": ["Culture"]
+            },
+            {
+                "size": 1,
+                "set": ["Design"]
+            }
+        ],
+        "status_modification": -2,
+        "starting_wealth": {
+            "value": 1,
+            "unit": "koku"
+        }
+    },
+    {
+        "name": "Fallen noble",
+        "reference": {
+            "book": "PoW",
+            "page": 43
+        },
+        "ring_increase": {
+            "size": 1,
+            "set": ["any"]
+        },
+        "skill_increases": [
+            {
+                "size": 1,
+                "set": ["any"]
+            },
+            {
+                "size": 1,
+                "set": ["any"]
+            }
+        ],
+        "status_modification": 10,
+        "starting_wealth": {
+            "value": 0,
+            "unit": "zeni"
+        },
+        "starting_item": "An heirloom worth 3 koku, wakizashi (or gaijin equivalent)"
+    },
+    {
+        "name": "Farmer",
+        "reference": {
+            "book": "PoW",
+            "page": 43
+        },
+        "ring_increase": {
+            "size": 1,
+            "set": ["Earth", "Water"]
+        },
+        "skill_increases": [
+            {
+                "size": 1,
+                "set": ["Labor"]
+            },
+            {
+                "size": 1,
+                "set": ["Fitness"]
+            }
+        ],
+        "status_modification": 4,
+        "starting_wealth": {
+            "value": 2,
+            "unit": "bu"
+        }
+    },
+    {
+        "name": "Geisha house",
+        "reference": {
+            "book": "PoW",
+            "page": 44
+        },
+        "ring_increase": {
+            "size": 1,
+            "set": [
+                "Air",
+                "Fire"
+            ]
+        },
+        "skill_increases": [
+            {
+                "size": 1,
+                "set": ["Aesthetics"]
+            },
+            {
+                "size": 1,
+                "set": ["Courtesy"]
+            }
+        ],
+        "status_modification": -20,
+        "starting_wealth": {
+            "value": 3,
+            "unit": "koku"
+        }
+    },
+    {
+        "name": "Hinin",
+        "reference": {
+            "book": "PoW",
+            "page": 44
+        },
+        "ring_increase": {
+            "size": 1,
+            "set": [
+                "Water",
+                "Void"
+            ]
+        },
+        "skill_increases": [
+            {
+                "size": 1,
+                "set": [ "Labor" ]
+            },
+            {
+                "size": 1,
+                "set": [ "Labor" ]
+            },
+            {
+                "size": 1,
+                "set": [ "Survival" ]
+            }
+        ],
+        "status_modification": -20,
+        "starting_wealth": {
+            "value": 5,
+            "unit": "zeni"
+        }
+    },
+    {
+        "name": "Hunter or fisher",
+        "reference": {
+            "book": "PoW",
+            "page": 44
+        },
+        "ring_increase": {
+            "size": 1,
+            "set": [
+                "Earth",
+                "Water"
+            ]
+        },
+        "skill_increases": [
+            {
+                "size": 1,
+                "set": [ "Labor" ]
+            },
+            {
+                "size": 1,
+                "set": [
+                    "Seafaring",
+                    "Survival"
+                ]
+            }
+        ],
+        "status_modification": 3,
+        "starting_wealth": {
+            "value": 4,
+            "unit": "bu"
+        }
+    },
+    {
+        "name": "Law enforcement",
+        "reference": {
+            "book": "PoW",
+            "page": 45
+        },
+        "ring_increase": {
+            "size": 1,
+            "set": [
+                "Air",
+                "Earth"
+            ]
+        },
+        "skill_increases": [
+            {
+                "size": 1,
+                "set": [ "Government" ]
+            },
+            {
+                "size": 1,
+                "set": [ "Command" ]
+            }
+        ],
+        "status_modification": 5,
+        "starting_wealth": {
+            "value": 1,
+            "unit": "koku"
+        }
+    },
+    {
+        "name": "Military",
+        "reference": {
+            "book": "PoW",
+            "page": 45
+        },
+        "ring_increase": {
+            "size": 2,
+            "set": [
+                "Earth",
+                "Fire"
+            ]
+        },
+        "skill_increases": [
+            {
+                "size": 1,
+                "set": [ "Command" ]
+            },
+            {
+                "size": 1,
+                "set": [ "Government" ]
+            }
+        ],
+        "status_modification": 5,
+        "starting_wealth": {
+            "value": 1,
+            "unit": "koku"
+        }
+    },
+    {
+        "name": "Rōnin family",
+        "reference": {
+            "book": "PoW",
+            "page": 45
+        },
+        "ring_increase": {
+            "size": 1,
+            "set": [ "any" ]
+        },
+        "skill_increases": [
+            {
+                "size": 1,
+                "set": ["Courtesy"]
+            },
+            {
+                "size": 1,
+                "set": ["Martial Arts [Melee]"]
+            }
+        ],
+        "status_modification": 2,
+        "starting_wealth": {
+            "value": 1,
+            "unit": "koku"
+        }
+    },
+    {
+        "name": "Organized crime",
+        "reference": {
+            "book": "PoW",
+            "page": 45
+        },
+        "ring_increase": {
+            "size": 1,
+            "set": [
+                "Air",
+                "Water"
+            ]
+        },
+        "skill_increases": [
+            {
+                "size": 1,
+                "set": ["Skulduggery"]
+            },
+            {
+                "size": 1,
+                "set": ["Games"]
+            }
+        ],
+        "status_modification": -8,
+        "starting_wealth": {
+            "value": 3,
+            "unit": "koku"
+        }
+    },
+    {
+        "name": "Street urchin",
+        "reference": {
+            "book": "PoW",
+            "page": 46
+        },
+        "ring_increase": {
+            "size": 1,
+            "set": [
+                "Air",
+                "Fire"
+            ]
+        },
+        "skill_increases": [
+            {
+                "size": 1,
+                "set": ["Skulduggery"]
+            },
+            {
+                "size": 1,
+                "set": ["Skulduggery"]
+            }
+        ],
+        "status_modification": -7,
+        "starting_wealth": {
+            "value": 4,
+            "unit": "bu"
+        }
+    },
+    {
+        "name": "Temple",
+        "reference": {
+            "book": "PoW",
+            "page": 46
+        },
+        "ring_increase": {
+            "size": 1,
+            "set": [
+                "Void",
+                "Air"
+            ]
+        },
+        "skill_increases": [
+            {
+                "size": 1,
+                "set": ["Theology"]
+            },
+            {
+                "size": 1,
+                "set": ["Courtesy"]
+            }
+        ],
+        "status_modification": 11,
+        "starting_wealth": {
+            "value": 0,
+            "unit": "zeni"
+        },
+        "starting_item": "One day's rations"
+    }
+]

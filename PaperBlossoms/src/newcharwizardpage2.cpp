@@ -38,6 +38,8 @@ NewCharWizardPage2::NewCharWizardPage2(DataAccessLayer* dal, QWidget *parent) :
     //Handle special cases
     ui->nc2_kitsune_label->setVisible(false);
     ui->nc2_kitsune_comboBox->setVisible(false);
+
+    //we're getting all schools anyways; no need for PoW handling
     QStringList kitsuneschoollist = dal->qsl_getschools(field("currentClan").toString(), true);
     kitsuneschoollist.removeAll("Kitsune Impersonator Tradition");
     ui->nc2_kitsune_comboBox->addItems(kitsuneschoollist);
@@ -58,7 +60,18 @@ NewCharWizardPage2::NewCharWizardPage2(DataAccessLayer* dal, QWidget *parent) :
     ui->nc2_schoolSpecialtRing_ComboBox->setModel(ringModel);
 
     //populate model
-    schoolModel->setStringList(dal->qsl_getschools(field("currentClan").toString()));
+    if(field("characterType").toString() == "Samurai"){
+        schoolModel->setStringList(dal->qsl_getschools(field("currentClan").toString()));
+    }
+    else if (field("characterType").toString() == "Gaijin") { //gaijin have ronin schools or their local schools
+        schoolModel->setStringList(dal->qsl_getschools(dal->qs_getregionsubtype(field("currentRegion").toString()), false, field("characterType").toString()) );
+    }
+    else{
+        schoolModel->setStringList(dal->qsl_getschools("Rōnin", false, field("characterType").toString() )); //peasants and roning just have ronin schools
+
+    }
+
+
     ringModel->setStringList(dal->qsl_getrings());
 
     registerField("currentSchool",ui->nc2_school_ComboBox,"currentText");
@@ -76,6 +89,7 @@ NewCharWizardPage2::NewCharWizardPage2(DataAccessLayer* dal, QWidget *parent) :
     //ui->nc2_schoolDesc_textEdit->setVisible(false);
 
     connect(ui->equipWidget,SIGNAL(selectionsChanged(QString)), this, SLOT(equipSelectionChanged(QString)) );
+    connect(ui->ringWidget,SIGNAL(selectionsChanged(QString)), this, SLOT(schoolRingSelectionChanged(QString)) );
     regenSummary();
 
 }
@@ -85,13 +99,25 @@ NewCharWizardPage2::~NewCharWizardPage2()
     delete ui;
 }
 
+void NewCharWizardPage2::schoolRingSelectionChanged(const QString newText){
+    regenSummary();
+    qDebug() << "CAUGHT SCHOOLRINGSELECTIONCHANGED ";
+}
+
 void NewCharWizardPage2::equipSelectionChanged(const QString newText){
     if(settingupequip) return;
     const QStringList specialCases = { //special cases
         "One Weapon of Rarity 6 or Lower",
         "Two Items of Rarity 4 or Lower",
         "Two Weapons of Rarity 6 or Lower",
-        "One Sword of Rarity 7 or Lower"
+        "One Sword of Rarity 7 or Lower",
+        //PoW
+        "One weapon of your signature weapon category of rarity 8 or lower",
+        "One Item of Rarity 3 or Lower",
+        "One Item of Rarity 4 or Lower",
+        "One Item of Rarity 5 or Lower",
+        "One Item of Rarity 6 or Lower",
+        //"Yumi and quiver of arrows with three special arrows" //special -- handle at end
     };
     ui->equipSpecialWidget->clear();
 
@@ -137,13 +163,55 @@ void NewCharWizardPage2::handleSpecCases(QString speccase){
         ui->equipSpecialWidget->addCBox(dal->qsl_getweapontypeunderrarity(7, "Swords"));
 
     }
+
+    /////////////
+    //POW
+    else if (specCase == "One weapon of your signature weapon category of rarity 8 or lower") {
+        ui->equipSpecialWidget->addCBox(dal->qsl_getweaponsunderrarity(8));
+    }
+    else if (specCase == "One Item of Rarity 3 or Lower") {
+        ui->equipSpecialWidget->addCBox(dal->qsl_getitemsunderrarity(3));
+    }
+    else if (specCase == "One Item of Rarity 4 or Lower") {
+        ui->equipSpecialWidget->addCBox(dal->qsl_getitemsunderrarity(4));
+    }
+    else if (specCase == "One Item of Rarity 5 or Lower") {
+        ui->equipSpecialWidget->addCBox(dal->qsl_getitemsunderrarity(5));
+    }
+    else if (specCase == "One Item of Rarity 6 or Lower") {
+        ui->equipSpecialWidget->addCBox(dal->qsl_getitemsunderrarity(6));
+    }
+
 }
 
 void NewCharWizardPage2::initializePage(){
 
-    const QString clan = field("currentClan").toString();
-    qDebug()<< "Initializing page 2 with clan = " << clan;
-    schoolModel->setStringList(dal->qsl_getschools(field("currentClan").toString()));
+    //const QString clan = field("currentClan").toString();
+    //qDebug()<< "Initializing page 2 with clan = " << clan;
+    //schoolModel->setStringList(dal->qsl_getschools(field("currentClan").toString()));
+
+
+    //populate model
+    if(field("characterType").toString() == "Samurai"){
+        ui->q3_groupBox->setTitle("3. What is your school, and what roles does that school fall into?");
+        ui->q4_groupBox->setTitle("4. How do you stand out within your school?");
+        schoolModel->setStringList(dal->qsl_getschools(field("currentClan").toString()));
+    }
+    else if (field("characterType").toString() == "Gaijin") { //gaijin have ronin schools or their local schools
+        ui->q3_groupBox->setTitle("3. What is your school, and what are its associated roles?");
+        ui->q4_groupBox->setTitle("4. What gets you in and out of trouble?");
+        schoolModel->setStringList(dal->qsl_getschools(dal->qs_getregionsubtype(field("currentRegion").toString()), false, field("characterType").toString()) );
+    }
+    else{
+        ui->q3_groupBox->setTitle("3. What is your school, and what are its associated roles?");
+        ui->q4_groupBox->setTitle("4. What gets you in and out of trouble?");
+        schoolModel->setStringList(dal->qsl_getschools("Rōnin", false, "Rōnin" )); //peasants and roning just have ronin schools
+
+    }
+
+
+
+
     ui->nc2_school_ComboBox->setCurrentIndex(-1);
 
     ui->nc2_unrestrictedSchool_checkBox->setChecked(false);
@@ -167,6 +235,19 @@ bool NewCharWizardPage2::validatePage(){
 void NewCharWizardPage2::on_nc2_unrestrictedSchool_checkBox_toggled(const bool checked)
 {
     schoolModel->setStringList(dal->qsl_getschools(field("currentClan").toString(), checked));
+
+    if(field("characterType").toString() == "Samurai"){
+        schoolModel->setStringList(dal->qsl_getschools(field("currentClan").toString(), checked));
+    }
+    else if (field("characterType").toString() == "Gaijin") { //gaijin have ronin schools or their local schools
+        schoolModel->setStringList(dal->qsl_getschools(dal->qs_getregionsubtype(field("currentRegion").toString()), checked, "Gaijin") );
+    }
+    else{
+        schoolModel->setStringList(dal->qsl_getschools("Rōnin", checked, "Rōnin" )); //peasants and roning just have ronin schools
+
+    }
+
+
 }
 
 //////////// Reconfigure page based on selected school //////////////////////
@@ -250,7 +331,14 @@ void NewCharWizardPage2::doEquip(const QString school){
         "One Weapon of Rarity 6 or Lower",
         "Two Items of Rarity 4 or Lower",
         "Two Weapons of Rarity 6 or Lower",
-        "One Sword of Rarity 7 or Lower"
+        "One Sword of Rarity 7 or Lower",
+        //PoW
+        "One weapon of your signature weapon category of rarity 8 or lower",
+        "One Item of Rarity 3 or Lower",
+        "One Item of Rarity 4 or Lower",
+        "One Item of Rarity 5 or Lower",
+        "One Item of Rarity 6 or Lower",
+        "Yumi and quiver of arrows with three special arrows" //special -- handle at end
     };
     const QList<QStringList> equipsets = dal->ql_getlistsofeq(schoolname);              //get a list of equipsets
     if(equipsets.count()>0){                                                //if this returned nothing, time to bail
@@ -366,29 +454,38 @@ void NewCharWizardPage2::on_nc2_skillSel_listview_doubleClicked(const QModelInde
 }
 
 
+void NewCharWizardPage2::on_nc2_schoolSpecialtRing_ComboBox_currentIndexChanged(const QString &arg1)
+{
+    //if(ui->nc2_q4_lineEdit->text().isEmpty()){
+        ui->nc2_q4_lineEdit->setText(dal->qs_getringdesc(arg1));
+    //}
+    regenSummary();
+
+}
+
 void NewCharWizardPage2::regenSummary(){
-   QString skills = "";
-   QString rings = "";
+    QString skills = "";
+    QString rings = "";
 
-   const QMap<QString, int> ringmap = calcCurrentRings();
+    const QMap<QString, int> ringmap = calcCurrentRings();
 
-   QMapIterator<QString, int> i(ringmap);
-   while (i.hasNext()) {
-       i.next();
-       if(!i.key().isEmpty()){
-        rings+="  "+i.key()+": "+QString::number(i.value())+ "\n";
-       }
-   }
+    QMapIterator<QString, int> i(ringmap);
+    while (i.hasNext()) {
+        i.next();
+        if(!i.key().isEmpty()){
+            rings+="  "+i.key()+": "+QString::number(i.value())+ "\n";
+        }
+    }
 
-   const QMap<QString, int> skillmap = calcSkills();
+    const QMap<QString, int> skillmap = calcSkills();
 
-   QMapIterator<QString, int> si(skillmap);
-   while (si.hasNext()) {
-       si.next();
-       if(!si.key().isEmpty()){
-        skills+="  "+si.key()+": "+QString::number(si.value())+ "\n";
-       }
-   }
+    QMapIterator<QString, int> si(skillmap);
+    while (si.hasNext()) {
+        si.next();
+        if(!si.key().isEmpty()){
+            skills+="  "+si.key()+": "+QString::number(si.value())+ "\n";
+        }
+    }
 
     ui->summary_label->setText("Rings:\n"+rings+"\n\nSkills:\n"+skills);
 
@@ -406,6 +503,21 @@ QMap<QString, int> NewCharWizardPage2::calcCurrentRings(){
     ringmap[dal->qs_getclanring(field("currentClan").toString())]++;
     //family
     ringmap[field("familyRing").toString()]++;
+
+
+
+    ///////////PoW
+    ///
+    ///
+
+    //region
+    ringmap[dal->qs_getregionring(field("currentRegion").toString())]++;
+    //upbringing
+    ringmap[field("upbringingRing").toString()]++;
+
+    /////////////////
+
+
     //school
     //QStringList schoolrings = dal->qsl_getschoolrings(field("currentSchool").toString());
     QStringList schoolrings = field("ringChoices").toString().split("|");
@@ -426,6 +538,15 @@ QMap<QString, int> NewCharWizardPage2::calcSkills(){
     QStringList skills;
     skills.append(dal->qsl_getclanskills(field("currentClan").toString()));
     skills.append(dal->qsl_getfamilyskills(field("currentFamily").toString()));
+
+
+    skills.append(dal->qsl_getregionskills(field("currentRegion").toString()));
+    skills.append(field("upbringingSkill1").toString());
+    skills.append(field("upbringingSkill2").toString());
+    skills.append(field("upbringingSkill3").toString());
+
+
+
     skills.append(field("schoolSkills").toString().split("|"));
     skills.append(field("q7skill").toString());
     skills.append(field("q8skill").toString());
@@ -437,56 +558,48 @@ QMap<QString, int> NewCharWizardPage2::calcSkills(){
     //get q18 skill
 
 
-    int ancestorIndex = -1;
-    QString heritage = "";
-    if(field("ancestor1checked").toBool()){
-        ancestorIndex = field("ancestor1index").toInt()+1;
-        heritage = dal->translate(field("ancestor1").toString());
-    }
-    else if (field("ancestor2checked").toBool()){
-        ancestorIndex = field("ancestor2index").toInt()+1;
-        heritage = dal->translate(field("ancestor2").toString());
-    }
+        int ancestorIndex = -1;
+        QString heritage = "";
+        if(field("ancestor1checked").toBool()){
+            ancestorIndex = field("ancestor1index").toInt()+1;
+            heritage = dal->translate(field("ancestor1").toString());
+        }
+        else if (field("ancestor2checked").toBool()){
+            ancestorIndex = field("ancestor2index").toInt()+1;
+            heritage = dal->translate(field("ancestor2").toString());
+        }
 
-    if(    //core
-           heritage ==  dal->translate("Wondrous Work") ||
-           heritage ==  dal->translate("Dynasty Builder") ||
-           heritage ==  dal->translate("Discovery") ||
-           heritage ==  dal->translate("Ruthless Victor") ||
-           heritage ==  dal->translate("Elevated for Service") ||
-           //shadowlands
-           heritage ==   dal->translate("Infamous Builder") ||
-           heritage ==   dal->translate("Lost in the Darkness") ||
-           heritage ==   dal->translate("Vengeance for the Fallen") ||
-           heritage ==   dal->translate("Tewnty Goblin Thief") ||
-           //Courts
-           heritage ==   dal->translate("Dishonorable Cheat") ||
-           heritage ==   dal->translate("Unforgivable Performance") ||
-           heritage ==   dal->translate("A Little Too Close To Heaven")
-            ){
-        skills.append(field("q18OtherEffects").toString());
+        if(    //core
+               heritage ==  dal->translate("Wondrous Work") ||
+               heritage ==  dal->translate("Dynasty Builder") ||
+               heritage ==  dal->translate("Discovery") ||
+               heritage ==  dal->translate("Ruthless Victor") ||
+               heritage ==  dal->translate("Elevated for Service") ||
+               //shadowlands
+               heritage ==   dal->translate("Infamous Builder") ||
+               heritage ==   dal->translate("Lost in the Darkness") ||
+               heritage ==   dal->translate("Vengeance for the Fallen") ||
+               heritage ==   dal->translate("Tewnty Goblin Thief") ||
+               //Courts
+               heritage ==   dal->translate("Dishonorable Cheat") ||
+               heritage ==   dal->translate("Unforgivable Performance") ||
+               heritage ==   dal->translate("A Little Too Close To Heaven")
+               ){
+            skills.append(field("q18OtherEffects").toString());
 
-    }
+        }
 
-    skills.removeAll("");
-    //initialize the skill map
-    QMap<QString, int> skillmap;
-    //skills start at 0.
+        skills.removeAll("");
+        //initialize the skill map
+        QMap<QString, int> skillmap;
+        //skills start at 0.
 
-    //clan
-    foreach(const QString skill, skills){
-        skillmap[skill]++;
-    }
+        //clan
+        foreach(const QString skill, skills){
+            skillmap[skill]++;
+        }
 
-    return skillmap;
+        return skillmap;
 }
 
 
-void NewCharWizardPage2::on_nc2_schoolSpecialtRing_ComboBox_currentIndexChanged(const QString &arg1)
-{
-    //if(ui->nc2_q4_lineEdit->text().isEmpty()){
-        ui->nc2_q4_lineEdit->setText(dal->qs_getringdesc(arg1));
-    //}
-    regenSummary();
-
-}

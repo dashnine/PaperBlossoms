@@ -186,6 +186,60 @@
                             "page": 178
                         },
                         "xp": 3
+                    },
+                    {
+                        "name": "Chaotic Scattering",
+                        "rank": 2,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 86
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Iron Shell Style",
+                        "rank": 3,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 86
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Mind's Edge",
+                        "rank": 1,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 86
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Rider's Haste",
+                        "rank": 2,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 87
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Thunderous Hooves Style",
+                        "rank": 4,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 87
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Void Embrace Style",
+                        "rank": 5,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 87
+                        },
+                        "xp": 3
                     }
                 ]
             },
@@ -290,6 +344,168 @@
                             "page": 113
                         },
                         "xp": 3
+                    },
+                    {
+                        "name": "Improvised Assault",
+                        "rank": 3,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 87
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Boar's Wrath Style",
+                        "rank": 3,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 87
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Bonebreaker Style",
+                        "rank": 5,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 88
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Daring Swing",
+                        "rank": 3,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 88
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Deflective Defense",
+                        "rank": 3,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 88
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Flashing Steel Strike",
+                        "rank": 2,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 88
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Iaijutsu Cut: Reverse Draw",
+                        "rank": 4,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 89
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Iaijutsu Cut: Sword and Sheath",
+                        "rank": 2,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 89
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Landslide Strike",
+                        "rank": 2,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 98
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Laughing Fox Style",
+                        "rank": 4,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 89
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Piercing Bolt Style",
+                        "rank": 3,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 90
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Reckless Lunge",
+                        "rank": 2,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 90
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Rushing Ox Style",
+                        "rank": 3,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 90
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Snapping Branch Strike",
+                        "rank": 1,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 90
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Swirling Tempest Style",
+                        "rank": 5,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 90
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Thunderous Blows Style",
+                        "rank": 2,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 90
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Twin Streams Style",
+                        "rank": 3,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 91
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Wheeling Sweep",
+                        "rank": 3,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 91
+                        },
+                        "xp": 3
                     }
                 ]
             },
@@ -320,6 +536,51 @@
                         "reference": {
                             "book": "Core",
                             "page": 181
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Eyeless Sight Shot",
+                        "rank": 4,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 91
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Falling Heavens Shot",
+                        "rank": 5,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 91
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Staggering Shot",
+                        "rank": 2,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 91
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Swirling Viper Style",
+                        "rank": 3,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 92
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Wasp's Spite Style",
+                        "rank": 4,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 92
                         },
                         "xp": 3
                     }
@@ -1224,6 +1485,65 @@
                             "page": 117
                         },
                         "xp": 3
+                    },
+                    {
+                        "name": "Balancing Salve",
+                        "rank": 1,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 95
+                        },
+                        "xp": 3,
+                        "restriction": "Qamarist Region"
+                    },
+                    {
+                        "name": "Elxir of Recovery",
+                        "rank": 2,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 96
+                        },
+                        "xp": 3,
+                        "restriction": "Qamarist Region"
+                    },
+                    {
+                        "name": "Fortitude Draught",
+                        "rank": 3,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 96
+                        },
+                        "xp": 3,
+                        "restriction": "Qamarist Region"
+                    },
+                    {
+                        "name": "Restorative Transmutation",
+                        "rank": 5,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 96
+                        },
+                        "xp": 3,
+                        "restriction": "Qamarist Region"
+                    },
+                    {
+                        "name": "Cleansing of Coral and Gold",
+                        "rank": 3,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 97
+                        },
+                        "xp": 3,
+                        "restriction": "Ivory Kingdoms Region"
+                    },
+                    {
+                        "name": "Wayfarer's Path",
+                        "rank": 2,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 97
+                        },
+                        "xp": 3
                     }
                 ]
             },
@@ -1375,6 +1695,33 @@
                             "page": 117
                         },
                         "xp": 3
+                    },
+                    {
+                        "name": "Flowering Deceptions",
+                        "rank": 1,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 93
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Pack Gambit",
+                        "rank": 3,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 93
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Ruse of the Moon's Reflection",
+                        "rank": 5,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 93
+                        },
+                        "xp": 3
                     }
                 ]
             },
@@ -1459,6 +1806,33 @@
                         "reference": {
                             "book": "CoS",
                             "page": 117
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Bellow of Resolve",
+                        "rank": 1,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 92
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Look Out!",
+                        "rank": 3,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 92
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Mentor's Guidance",
+                        "rank": 5,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 93
                         },
                         "xp": 3
                     }
@@ -1593,6 +1967,33 @@
                             "page": 118
                         },
                         "xp": 3
+                    },
+                    {
+                        "name": "Illuminate the Way",
+                        "rank": 1,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 94
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Goading Taunt",
+                        "rank": 3,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 94
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Roar of Encouragement",
+                        "rank": 5,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 95
+                        },
+                        "xp": 3
                     }
                 ]
             },
@@ -1686,6 +2087,42 @@
                         "reference": {
                             "book": "CoS",
                             "page": 119
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Eyes Up!",
+                        "rank": 1,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 93
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Fluent Bargaining",
+                        "rank": 2,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 94
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Malleable Formation",
+                        "rank": 3,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 94
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Watch My Back",
+                        "rank": 5,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 94
                         },
                         "xp": 3
                     }
@@ -1796,6 +2233,33 @@
                         "reference": {
                             "book": "CoS",
                             "page": 119
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Wanderer's Resolve",
+                        "rank": 1,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 95
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Tonight, I Am Your Opponent",
+                        "rank": 3,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 95
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Bond of Heroes",
+                        "rank": 5,
+                        "reference": {
+                            "book": "PoW",
+                            "page": 95
                         },
                         "xp": 3
                     }
@@ -2122,55 +2586,28 @@
         ]
     },
     {
-        "name": "Item Patterns",
+        "name": "Astradhari Techniques",
         "subcategories": [
             {
                 "name": "",
                 "techniques": [
                     {
-                        "name": "Kakita Pattern",
+                        "name": "Summoning Mantra: [Implement Name]",
                         "rank": 1,
                         "reference": {
-                            "page": 109,
-                            "book": "SL"
-                        },
-                        "xp": 6
-                    },
-                    {
-                        "name": "Kenz\u014d Blade",
-                        "rank": 1,
-                        "reference": {
-                            "book": "SL",
-                            "page": 109
-                        },
-                        "xp": 8
-                    },
-                    {
-                        "name": "Shirogane Jade Inlay",
-                        "rank": 1,
-                        "reference": {
-                            "book": "SL",
-                            "page": 109
+                            "book": "PoW",
+                            "page": 99
                         },
                         "xp": 3
                     },
                     {
-                        "name": "Uchema's Technique",
-                        "rank": 1,
+                        "name": "Countering Mantra",
+                        "rank": 4,
                         "reference": {
-                            "book": "SL",
-                            "page": 109
+                            "book": "PoW",
+                            "page": 99
                         },
-                        "xp": 4
-                    },
-                    {
-                        "name": "Yasunori Steel",
-                        "rank": 1,
-                        "reference": {
-                            "book": "SL",
-                            "page": 109
-                        },
-                        "xp": 5
+                        "xp": 3
                     }
                 ]
             }

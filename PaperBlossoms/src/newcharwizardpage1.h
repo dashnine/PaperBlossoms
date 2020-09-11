@@ -43,6 +43,14 @@ public:
     QStringListModel* familyModel;
     QStringListModel* famRingModel;
 
+    //Path of Waves Support
+    QStringListModel* regionModel;
+    QStringListModel* upbringingModel;
+    QStringListModel* upbringingRingModel;
+    QStringListModel* upbringingSkillModel1;
+    QStringListModel* upbringingSkillModel2;
+    QStringListModel* upbringingSkillModel3;
+
 
 private slots:
     void on_nc1_clan_ComboBox_currentIndexChanged(const QString &arg1);
@@ -51,12 +59,28 @@ private slots:
 
     void on_nc1_ring_ComboBox_currentIndexChanged(const QString &arg1);
 
+    void on_characterType_comboBox_currentIndexChanged(const QString &arg1);
+
+    void on_nc1_region_ComboBox_currentIndexChanged(const QString &arg1);
+
+    void on_nc1_upbringing_ComboBox_currentIndexChanged(const QString &arg1);
+
+    void on_nc1_skill1_ComboBox_currentIndexChanged(const QString &arg1);
+
+    void on_nc1_skill2_ComboBox_currentIndexChanged(const QString &arg1);
+
+    void on_nc1_skill3_ComboBox_currentIndexChanged(const QString &arg1);
+
+    void on_nc1_upbringing_ring_ComboBox_currentIndexChanged(const QString &arg1);
+
 private:
     Ui::NewCharWizardPage1 *ui;
     DataAccessLayer* dal;
     void regenSummary();
     QMap<QString, int> calcCurrentRings();
     QMap<QString, int> calcSkills();
+    void setSamuraiVisibilty(bool isSamurai);
+    bool validatePage();
 };
 
 #endif // NEWCHARWIZARDPAGE1_H

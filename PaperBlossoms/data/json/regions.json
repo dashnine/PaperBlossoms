@@ -1,0 +1,116 @@
+[
+    {
+        "name": "Urban region",
+        "ring_increase": "Air",
+        "skill_increase": "Commerce",
+        "glory": 29,
+        "type": "Rōnin",
+        "reference": {
+            "book": "PoW",
+            "page": 32
+        }
+    },
+    {
+        "name": "Rural farmland region",
+        "ring_increase": "Earth",
+        "skill_increase": "Fitness",
+        "glory": 34,
+        "type": "Rōnin",
+        "reference": {
+            "book": "PoW",
+            "page": 33
+        }
+    },
+    {
+        "name": "Sea, river or lake region",
+        "ring_increase": "Water",
+        "skill_increase": "Seafaring",
+        "glory": 32,
+        "type": "Rōnin",
+        "reference": {
+            "book": "PoW",
+            "page": 34
+        }
+    },
+    {
+        "name": "Forest region",
+        "ring_increase": "Earth",
+        "skill_increase": "Survival",
+        "glory": 30,
+        "type": "Rōnin",
+        "reference": {
+            "book": "PoW",
+            "page": 35
+        }
+    },
+    {
+        "name": "Mountain region",
+        "ring_increase": "Void",
+        "skill_increase": "Meditation",
+        "glory": 33,
+        "type": "Rōnin",
+        "reference": {
+            "book": "PoW",
+            "page": 36
+        }
+    },
+    {
+        "name": "Haunted region",
+        "ring_increase": "Fire",
+        "skill_increase": "Command",
+        "glory": 28,
+        "type": "Rōnin",
+        "reference": {
+            "book": "PoW",
+            "page": 37
+        }
+    },
+    {
+        "name": "Ujik of the Plains of Wind and Stone",
+        "ring_increase": "Water",
+        "skill_increase": "Survival",
+        "glory": 30,
+        "type": "Gaijin",
+        "subtype": "Ujik",
+        "reference": {
+            "book": "PoW",
+            "page": 39
+        }
+    },
+    {
+        "name": "Qamarists in the Cradle of the World",
+        "ring_increase": "Fire",
+        "skill_increase": "Theology",
+        "glory": 29,
+        "type": "Gaijin",
+        "subtype": "Qamarist",
+        "reference": {
+            "book": "PoW",
+            "page": 40
+        }
+    },
+    {
+        "name": "Yodha of the Ghostlands",
+        "ring_increase": "Earth",
+        "skill_increase": "Theology",
+        "glory": 29,
+        "type": "Gaijin",
+        "subtype": "Ivory Kingdoms",
+        "reference": {
+            "book": "PoW",
+            "page": 41
+        }
+    },
+    {
+        "name": "The Sheelavaan of Bhavyatapura",
+        "ring_increase": "Air",
+        "skill_increase": "Courtesy",
+        "glory": 28,
+        "type": "Gaijin",
+        "subtype": "Ivory Kingdoms",
+        "reference": {
+            "book": "PoW",
+            "page": 42
+        }
+    }
+]

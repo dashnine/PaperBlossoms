@@ -87,6 +87,12 @@
                 "bonds.json"
             ],
             "url": "./PaperBlossoms/data/json_schema/bonds.schema.json"
+        },
+        {
+            "fileMatch": [
+                "regions.json"
+            ],
+            "url": "./PaperBlossoms/data/json_schema/regions.schema.json"
         }
     ],
     "editor.suggest.localityBonus": true,

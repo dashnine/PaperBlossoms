@@ -14,16 +14,38 @@
    <string>WizardPage</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
-   <item row="0" column="0">
-    <widget class="QGroupBox" name="groupBox">
+   <item row="2" column="0">
+    <widget class="QGroupBox" name="q16_groupBox">
      <property name="title">
-      <string>14. What do people notice first upon encountering you? (Choose a distinctive style/detail.)</string>
+      <string>16. What are your preexisting relationships with other clans, families, organizations, and traditions?</string>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_3">
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0" colspan="2">
+       <widget class="QTextEdit" name="nc5_q16_textEdit"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Choose an item symbolizing this history:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QComboBox" name="nc5_q16_item_comboBox"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QGroupBox" name="q15_groupBox">
+     <property name="title">
+      <string>15. How do you react to stressful situations?</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_4">
       <item>
-       <layout class="QVBoxLayout" name="verticalLayout_2">
+       <layout class="QVBoxLayout" name="verticalLayout_5">
         <item>
-         <widget class="QTextEdit" name="nc5_q14_textEdit"/>
+         <widget class="QTextEdit" name="nc5_q15_textEdit"/>
         </item>
        </layout>
       </item>
@@ -70,40 +92,38 @@
      </layout>
     </widget>
    </item>
-   <item row="1" column="0">
-    <widget class="QGroupBox" name="groupBox_2">
+   <item row="0" column="0">
+    <widget class="QGroupBox" name="q14_groupBox">
      <property name="title">
-      <string>15. How do you react to stressful situations?</string>
+      <string>14. What do people notice first upon encountering you? (Choose a distinctive style/detail.)</string>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_4">
-      <item>
-       <layout class="QVBoxLayout" name="verticalLayout_5">
-        <item>
-         <widget class="QTextEdit" name="nc5_q15_textEdit"/>
-        </item>
-       </layout>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item row="2" column="0">
-    <widget class="QGroupBox" name="groupBox_3">
-     <property name="title">
-      <string>16. What are your preexisting relationships with other clans, families, organizations, and traditions?</string>
-     </property>
-     <layout class="QGridLayout" name="gridLayout">
-      <item row="0" column="0" colspan="2">
-       <widget class="QTextEdit" name="nc5_q16_textEdit"/>
-      </item>
+     <layout class="QGridLayout" name="gridLayout_3">
       <item row="1" column="0">
-       <widget class="QLabel" name="label">
+       <widget class="QLabel" name="q14_itemlabel">
         <property name="text">
          <string>Choose an item symbolizing this history:</string>
         </property>
        </widget>
       </item>
       <item row="1" column="1">
-       <widget class="QComboBox" name="nc5_q16_item_comboBox"/>
+       <widget class="QComboBox" name="nc5_q14_item_comboBox"/>
+      </item>
+      <item row="0" column="0" colspan="2">
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QTextEdit" name="nc5_q14_textEdit"/>
+        </item>
+       </layout>
+      </item>
+      <item row="2" column="0" colspan="2">
+       <widget class="QLabel" name="q14_warninglabel">
+        <property name="text">
+         <string>Note: if you select an item in your school kit, remove it and add Ceremonial or Resplendent to the item after character creation is complete.</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>

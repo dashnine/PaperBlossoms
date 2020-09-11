@@ -116,7 +116,7 @@ QString DataAccessLayer::translate(QString string){
         QString out = query.value(0).toString();
         return out;
     }
-    qDebug() << "Translated value for "+ string +" not found. Using original.";
+    //qDebug() << "Translated value for "+ string +" not found. Using original.";
     return string;
 }
 
@@ -211,7 +211,7 @@ QString DataAccessLayer::qs_getfamilyref(const QString family)
     return "";
 }
 
-QStringList DataAccessLayer::qsl_getfamilyrings(const QString fam ){
+QStringList DataAccessLayer::qsl_getfamilyrings(const QString fam ){    ///NOTE - ALSO USED FOR UPBRINGINGS (PoW)
     //bonus query - rings, skills
     QStringList out;
     QSqlQuery query;
@@ -227,12 +227,318 @@ QStringList DataAccessLayer::qsl_getfamilyrings(const QString fam ){
     return out;
 }
 
-QStringList DataAccessLayer::qsl_getschools(const QString clan, const bool allclans ){
+
+///////////////////////////////////
+/// PATH OF WAVES - Regions and Families
+///
+
+QStringList DataAccessLayer::qsl_getregions(QString type)
+{
+    QStringList out;
+    //clan query
+    QSqlQuery query("SELECT name_tr FROM regions WHERE type = :type ORDER BY name_tr");
+    query.bindValue(0, type);
+    query.exec();
+    while (query.next()) {
+        const QString cname = query.value(0).toString();
+        out << cname;
+//        qDebug() << cname;
+    }
+        //qDebug() << getLastExecutedQuery(query);
+
+    return out;
+}
+
+QStringList DataAccessLayer::qsl_getupbringings()
+{
+    QStringList out;
+    //family query
+    QSqlQuery query;
+    query.prepare("SELECT name_tr FROM upbringings ORDER BY name_tr");
+    query.exec();
+    while (query.next()) {
+        const QString fname = query.value(0).toString();
+        out << fname;
+//        qDebug() << fname;
+    }
+    return out;
+}
+
+QString DataAccessLayer::qs_getregiondesc(const QString region)
+{
+    QSqlQuery query;
+    query.prepare("SELECT description FROM regions WHERE name_tr = :region");
+    query.bindValue(0, region);
+    query.exec();
+    while (query.next()) {
+        const QString desc = query.value(0).toString();
+//        qDebug() << desc;
+        return desc;
+    }
+    qWarning() << "ERROR - Region" + region + " not found while searching for desc.";
+    return "";
+}
+
+QString DataAccessLayer::qs_getregionref(const QString region)
+{
+    QSqlQuery query;
+    query.prepare("SELECT reference_book, reference_page FROM regions WHERE name_tr = :region");
+    query.bindValue(0, region);
+    query.exec();
+    while (query.next()) {
+        QString ref = query.value(0).toString() + " ";
+        ref += query.value(1).toString();
+//        qDebug() << desc;
+        return ref;
+    }
+    qWarning() << "ERROR - Region" + region + " not found while searching for ref.";
+    return "";
+}
+
+QString DataAccessLayer::qs_getupbringingdesc(const QString upbringing)
+{
+    QSqlQuery query;
+    query.prepare("SELECT description FROM upbringings WHERE name_tr = :upbringing");
+    query.bindValue(0, upbringing);
+    query.exec();
+    while (query.next()) {
+        const QString desc = query.value(0).toString();
+//        qDebug() << desc;
+        return desc;
+    }
+    qWarning() << "ERROR - Family" + upbringing + " not found while searching for desc.";
+    return "";
+}
+
+QString DataAccessLayer::qs_getupbringingref(const QString upbringing)
+{
+    QSqlQuery query;
+    query.prepare("SELECT reference_book, reference_page FROM upbringings WHERE name_tr = :upbringing");
+    query.bindValue(0, upbringing);
+    query.exec();
+    while (query.next()) {
+        QString ref = query.value(0).toString() + " ";
+        ref += query.value(1).toString();
+//        qDebug() << desc;
+        return ref;
+    }
+    qWarning() << "ERROR - Family" + upbringing + " not found while searching for desc.";
+    return "";
+}
+
+QStringList DataAccessLayer::qsl_getupbringingrings(const QString upbringing ){
+    //bonus query - rings, skills
+    QStringList out;
+    QSqlQuery query;
+    query.prepare("SELECT ring_tr FROM upbringing_rings WHERE upbringing_tr = :upbringing");
+    query.bindValue(0, upbringing);
+    query.exec();
+    while (query.next()) {
+        const QString cname = query.value(0).toString();
+        //        qDebug() << cname;
+        if(cname == "any"){
+            out<<translate("Air");
+            out<<translate("Earth");
+            out<<translate("Fire");
+            out<<translate("Water");
+            out<<translate("Void");
+        }
+        else{
+            out<< cname;
+        }
+    }
+    //model->setQuery(query);
+    return out;
+}
+
+
+QStringList DataAccessLayer::qsl_getupbringingskillsbyset(const QString upbringing, const int setID ){
+    QStringList out;
+    QSqlQuery query;
+    query.prepare("SELECT skill_tr FROM upbringing_skill_increases WHERE upbringing_tr = :upbringing AND set_id = :setID");
+    query.bindValue(0, upbringing);
+    query.bindValue(1, setID);
+    query.exec();
+    while (query.next()) {
+        const QString cname = query.value(0).toString();
+
+        if(cname == "any"){
+            out = qsl_getskills();
+            return out;
+        }
+        else{
+
+            out<< cname;
+        }
+    }
+    return out;
+}
+
+QStringList DataAccessLayer::qsl_getupbringingskills2(const QString upbringing ){
+    QStringList out;
+    QSqlQuery query;
+    query.prepare("SELECT skill_tr FROM upbringing_skill_2 WHERE upbringing_tr = :upbringing");
+    query.bindValue(0, upbringing);
+    query.exec();
+    while (query.next()) {
+        const QString cname = query.value(0).toString();
+        out<< cname;
+    }
+    return out;
+}
+
+
+
+QString DataAccessLayer::qs_getregionring(const QString region)
+{
+    QSqlQuery query;
+    query.prepare("SELECT ring_increase_tr FROM regions WHERE name_tr = :region");
+    query.bindValue(0, region);
+    query.exec();
+    while (query.next()) {
+        const QString ring = query.value(0).toString();
+//        qDebug() << ring;
+        return ring;
+    }
+    qWarning() << "ERROR - Region" + region + " not found while searching for rings.";
+    return "";
+}
+
+//TODO: this is a QStringList, but only returns 1 skill right now.  Refactor?
+QStringList DataAccessLayer::qsl_getregionskills(const QString region ){
+    QStringList out;
+    QSqlQuery query;
+    query.prepare("SELECT skill_increase_tr FROM regions WHERE name_tr = :region");
+    query.bindValue(0, region);
+    query.exec();
+    while (query.next()) {
+        const QString cname = query.value(0).toString();
+//        qDebug() << cname;
+        out<< cname;
+    }
+    return out;
+}
+
+
+QString DataAccessLayer::qs_getregionsubtype(const QString region)
+{
+    QSqlQuery query;
+    query.prepare("SELECT subtype FROM regions WHERE name_tr = :region");
+    query.bindValue(0, region);
+    query.exec();
+    while (query.next()) {
+        QString subtype = query.value(0).toString();
+        return subtype;
+    }
+    qWarning() << "ERROR - Region" + region + " not found while searching for ref.";
+    return "";
+}
+
+int DataAccessLayer::i_getupbringingstatusmod(const QString upbringing){
+    int out = 0;
+    QSqlQuery query;
+    query.prepare("SELECT status_modification FROM upbringings WHERE name_tr = :upbringing");
+    query.bindValue(0, upbringing);
+    query.exec();
+    while (query.next()) {
+        out = query.value(0).toInt();
+    }
+    return out;
+}
+
+QString DataAccessLayer::qs_getupbringingitem(const QString upbringing){ //some upbringings add a free item
+    QString out = "";
+    QSqlQuery query;
+    query.prepare("SELECT starting_item FROM upbringings WHERE name_tr = :upbringing");
+    query.bindValue(0, upbringing);
+    query.exec();
+    while (query.next()) {
+        out = query.value(0).toString();
+    }
+    return out;
+}
+
+int DataAccessLayer::i_getregionglory(const QString region){
+    int out = 0;
+    QSqlQuery query;
+    query.prepare("SELECT glory FROM regions WHERE name_tr = :region");
+    query.bindValue(0, region);
+    query.exec();
+    while (query.next()) {
+        out = query.value(0).toInt();
+    }
+    return out;
+}
+
+int DataAccessLayer::i_getupbringingkoku(const QString upbringing){
+    int out = 0;
+    QSqlQuery query;
+    query.prepare("SELECT koku FROM upbringings WHERE name_tr = :upbringing");
+    query.bindValue(0, upbringing);
+    query.exec();
+    while (query.next()) {
+        out = query.value(0).toInt();
+
+    }
+    return out;
+}
+
+int DataAccessLayer::i_getupbringingbu(const QString upbringing){
+    int out = 0;
+    QSqlQuery query;
+    query.prepare("SELECT bu FROM upbringings WHERE name_tr = :upbringing");
+    query.bindValue(0, upbringing);
+    query.exec();
+    while (query.next()) {
+        out = query.value(0).toInt();
+
+    }
+    return out;
+}
+
+int DataAccessLayer::i_getupbringingzeni(const QString upbringing){
+    int out = 0;
+    QSqlQuery query;
+    query.prepare("SELECT zeni FROM upbringings WHERE name_tr = :upbringing");
+    query.bindValue(0, upbringing);
+    query.exec();
+    while (query.next()) {
+        out = query.value(0).toInt();
+
+    }
+    return out;
+}
+
+
+//////////////////////////////////////////
+
+
+
+
+
+
+
+//adjusted for PoW
+
+QStringList DataAccessLayer::qsl_getschools(const QString clan, const bool allclans, const QString type ){
     QStringList out;
     QSqlQuery query;
     if(!allclans){
+        if(type == "Samurai"){
         query.prepare("SELECT name_tr FROM schools WHERE clan_tr = :clan");
         query.bindValue(0, clan);
+        }
+        else if (type == "Gaijin"){
+            query.prepare(QString("SELECT name_tr FROM schools WHERE clan_tr = :clan OR clan_tr = :ronin")); // in this case, clan  == region's subtype (Gaijin group, e.g. Ujik)
+            query.bindValue(0, clan);
+            query.bindValue(1, QString("Rōnin"));
+        }
+        else{
+            query.prepare(QString("SELECT name_tr FROM schools WHERE clan_tr = :clan")); // in this case, clan  == region
+            query.bindValue(0, clan);
+        }
+
+
     }
     else{
         query.prepare("SELECT name_tr FROM schools");
@@ -243,6 +549,8 @@ QStringList DataAccessLayer::qsl_getschools(const QString clan, const bool allcl
 //        qDebug() << result;
         out<< result;
     }
+        qDebug() << getLastExecutedQuery(query);
+
     return out;
 
 }
@@ -1035,6 +1343,57 @@ QString DataAccessLayer::getLastExecutedQuery(const QSqlQuery& query)
  return str;
 }
 
+QList<QStringList> DataAccessLayer::ql_getalltechniques(){
+    QList<QStringList> out;
+    QSqlQuery query;
+    query.prepare(
+    "SELECT distinct name_tr, category, subcategory, rank,                                      "
+    "       xp, reference_book, reference_page,restriction_tr                                   "
+    "FROM techniques                                                                            "
+                );
+    query.exec();
+    while (query.next()) {
+        QStringList row;
+        row << query.value(0).toString();
+        row << query.value(1).toString();
+        row << query.value(2).toString();
+        row << query.value(3).toString();
+        row << query.value(4).toString();
+        row << query.value(5).toString();
+        row << query.value(6).toString();
+        row << query.value(7).toString();
+        out << row;
+
+    }
+    return out;
+}
+
+QList<QStringList> DataAccessLayer::qsl_getschoolcurriculum(const QString school)
+{
+    QList<QStringList> out;
+    QSqlQuery query;
+    query.prepare(  "SELECT rank, advance_tr, type, special_access, min_allowable_rank, max_allowable_rank                  " //select main list
+                    "FROM curriculum                                             " // from table
+                    "WHERE school_tr = ?                                            "
+                    );
+        query.bindValue(0, school);
+        query.exec();
+
+        while (query.next()) {
+            QStringList row;
+            row << query.value(0).toString();
+            row << query.value(1).toString();
+            row << query.value(2).toString();
+            row << query.value(3).toString();
+            row << query.value(4).toString();
+            row << query.value(5).toString();
+            out << row;
+
+        }
+        return out;
+
+}
+
 void DataAccessLayer::qsm_gettechniquetable(QSqlQueryModel * const model, const QString rank, const QString school, const QString title, const bool norestrictions)
 {
     //technique query
@@ -1161,6 +1520,20 @@ void DataAccessLayer::qsm_gettechniquetable(QSqlQueryModel * const model, const 
 
 }
 
+QStringList DataAccessLayer::qsl_gettechallowedbyschool(QString school){
+    QStringList out;
+    QSqlQuery query;
+    query.prepare("SELECT technique from school_techniques_available WHERE school_tr = :school");
+    query.bindValue(0, school);
+    query.exec();
+    while (query.next()) {
+        out << query.value(0).toString();
+//        qDebug() << name;
+    }
+    return out;
+
+}
+
 /*
 void DataAccessLayer::qsm_getfilteredtechniquetable(QSqlQueryModel * const model, const QString category, const QString rank, const QString school)
 {
@@ -1211,7 +1584,7 @@ void DataAccessLayer::qsm_getschoolcurriculum(QSqlQueryModel * const model, cons
 {
 
     QSqlQuery query;
-    query.prepare(  "SELECT rank, advance_tr, type, special_access                  " //select main list
+    query.prepare(  "SELECT rank, advance_tr, type, special_access, min_allowable_rank, max_allowable_rank                  " //select main list
                     "FROM curriculum                                             " // from table
                     "WHERE school_tr = ?                                            "
                     );
@@ -1260,14 +1633,24 @@ void DataAccessLayer::qsm_getschoolcurriculumbyrank(QSqlQueryModel * const model
 
 }
 */
-QStringList DataAccessLayer::qsl_gettechbygroup(const QString group,const int rank){
+QStringList DataAccessLayer::qsl_gettechbygroup(const QString group,const int minrank, int maxrank){
     //have to use Like here, since the subcategory for Kata is 'General Kata' or 'Close Combat Kata'
     QStringList out;
+    //QString grouplike = '%'+group+'%';
     QSqlQuery query;
-    query.prepare("SELECT name_tr FROM techniques WHERE subcategory LIKE ? and rank <= ?");
-    query.bindValue(0, QString("%%1%").arg(group));
-    query.bindValue(1, rank);
+     query.prepare("SELECT name_tr FROM techniques WHERE category = ? and rank <= ? and rank >= ? "
+                  "UNION "
+     "SELECT name_tr FROM techniques WHERE subcategory = ? and rank <= ? and rank >= ?  "
+     );
+    query.bindValue(0, group);
+    query.bindValue(1, maxrank);
+    query.bindValue(2, minrank);
+    query.bindValue(3, group);
+    query.bindValue(4, maxrank);
+    query.bindValue(5, minrank);
     query.exec();
+    //qDebug() << getLastExecutedQuery(query);
+
     while (query.next()) {
         const QString cname = query.value(0).toString();
         out<< cname;
@@ -1395,6 +1778,29 @@ QStringList DataAccessLayer::qsl_gettitletrack(const QString title)
         const QString sp_ac = query.value(3).toString();
         const QString rank = query.value(4).toString();
         out<< title+"|"+name+"|"+type+"|"+sp_ac+"|"+rank;
+//        qDebug() << out;
+    }
+    return out;
+}
+
+QList<QStringList> DataAccessLayer::ql_gettitletrack(const QString title)
+{
+    QList<QStringList> out;
+    QSqlQuery query;
+    query.prepare(  "SELECT title_tr, name_tr, type, special_access,rank           " //select main list
+                    "FROM title_advancements                                     " // from table
+                    "WHERE title_tr = ?                                             "
+                    );
+        query.bindValue(0, title);
+        query.exec();
+    while (query.next()) {
+        QStringList row;
+        row << query.value(0).toString();
+        row << query.value(1).toString();
+        row << query.value(2).toString();
+        row << query.value(3).toString();
+        row << query.value(4).toString();
+        out <<row;
 //        qDebug() << out;
     }
     return out;
@@ -1966,6 +2372,7 @@ bool DataAccessLayer::importCSV(const QString filepath, const QString tablename,
                 }
             }
             req.chop(1); // remove the trailing comma
+            req.append(getVersionCorrection(tablename,line)); //handle any special cases cause by updates to data
             req.append(");"); // close the "VALUES([...]" with a ");"
             const bool isuccess = query.exec(req.replace("%0A","\n")); //fix the encoded %0A
             if(!isuccess) {
@@ -1985,4 +2392,16 @@ bool DataAccessLayer::importCSV(const QString filepath, const QString tablename,
         return !success;
     }
     return success;
+}
+
+QString DataAccessLayer::getVersionCorrection(QString tablename, QStringList line){
+    QString toAppend = "";
+
+    if(tablename == "user_curriculum"){
+        if(line.count()==5){ //PoW added two new columns. These can default to null, in which case the old functionality works.
+            toAppend.append(",\"\",\"\"");
+        }
+    }
+
+    return toAppend;
 }

@@ -28,6 +28,7 @@
 #include <QSortFilterProxyModel>
 #include "dataaccesslayer.h"
 #include "character.h"
+#include <QStandardItemModel>
 
 namespace Ui {
 class AddAdvanceDialog;
@@ -67,9 +68,11 @@ private:
     bool removerestrictions;
 
     void validatePage();
-    QSqlQueryModel techModel;
+    QStandardItemModel techModel;
     QSortFilterProxyModel proxyModel;
     QSqlQueryModel curriculumModel;
+    void populateTechModel();
+    void addTechRow(QStringList tech);
 };
 
 #endif // ADDADVANCEDIALOG_H

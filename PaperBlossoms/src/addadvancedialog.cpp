@@ -27,6 +27,7 @@
 #include <QPushButton>
 #include <QSqlRecord>
 #include <QDebug>
+#include "enums.h"
 
 AddAdvanceDialog::AddAdvanceDialog(DataAccessLayer* dal, Character* character, QString sel, QString option, QWidget *parent) :
     QDialog(parent),
@@ -51,7 +52,12 @@ AddAdvanceDialog::AddAdvanceDialog(DataAccessLayer* dal, Character* character, Q
 
     ui->detailTableView->setModel(&proxyModel);
 
+
     validatePage();
+
+    populateTechModel();
+
+
     if(sel == "skill"){
         ui->advtype->setCurrentText(tr("Skill"));
         ui->advchooser_combobox->setCurrentIndex(-1);
@@ -63,22 +69,36 @@ AddAdvanceDialog::AddAdvanceDialog(DataAccessLayer* dal, Character* character, Q
         //no way to specify a group, so right now default to blank)
     }
     else if (sel == "technique"){
+
+
+
+
+        QString name = "";
         ui->advtype->setCurrentText(tr("Technique"));
         if(!option.isEmpty()) {
             QString category = dal->qs_gettechtypebyname(option);
             ui->advchooser_combobox->setCurrentIndex(-1);
             ui->advchooser_combobox->setCurrentText(category);
-            //ui->detailTableView->selectRow(techModel.f)
+            //ui->detailTableView->selectRow(techModel.findItems())
             for(int i = 0; i < proxyModel.rowCount(); ++i){
-                QModelIndex index = proxyModel.mapToSource(proxyModel.index(i,0));
-                QSqlRecord r = techModel.record(index.row());
-                QString name = r.value("name_tr").toString();
+
+                const QModelIndex curIndex = proxyModel.mapToSource(proxyModel.index(i,0));
+                //const QModelIndex curIndex = proxyModel.index(i,0);
+                if(curIndex.isValid()){
+                    name = techModel.item(curIndex.row(),TechQuery::NAME)->text();
+                }
+
+                //QModelIndex index = proxyModel.mapToSource(proxyModel.index(i,0));
+                //QSqlRecord r = techModel.record(index.row());
+                //QString name = r.value("name_tr").toString();
                 if (name == option) {
                     ui->detailTableView->selectRow(i);
+                    //on_detailTableView_clicked(curIndex);
                     on_detailTableView_clicked(proxyModel.index(i,0));
                 }
             }
         }
+
     }
     else if (sel == "technique_group"){
         ui->advtype->setCurrentText(tr("Technique"));
@@ -106,9 +126,14 @@ void AddAdvanceDialog::validatePage(){
         ok &= ui->detailTableView->currentIndex().isValid();
 
         if(ok){
+
+
+
+
             const QModelIndex curIndex = proxyModel.mapToSource(ui->detailTableView->currentIndex());
-            const QSqlRecord record = techModel.record(curIndex.row());
-            const QString name =  record.value("name_tr").toString();
+            if(!curIndex.isValid()) return;
+            QString name = techModel.item(curIndex.row(),TechQuery::NAME)->text();
+
 
             if(character->techniques.contains(name)){
                 ui->warnlabel->setText("Invalid selection: '"+name+"' is already learned.");
@@ -121,7 +146,7 @@ void AddAdvanceDialog::validatePage(){
                         itemrow << new QStandardItem(cell);              // turn this into qstandarditems to match other paradigms
                     }
                     if(itemrow.at(0)->text() == "Technique"){            //if it's a tech advance
-                        if((itemrow.at(1)->text() == name)){
+                        if((itemrow.at(1)->text() == name) && name != "Summoning Mantra: [Implement Name]"){ //you can buy Summoning mantra multiple times
                             ui->warnlabel->setText("Invalid selection: '"+name+"' is already learned.");
                             ok = false;
                         }
@@ -155,6 +180,155 @@ void AddAdvanceDialog::validatePage(){
 
 }
 
+void AddAdvanceDialog::populateTechModel(){
+    techModel.clear();
+    QStringList techheaders;
+    techheaders << "Name"<<"Type"<<"Subtype"<<"Rank"<<"XP"<<"Book"<<"Page"<<"Restriction";
+    techModel.setHorizontalHeaderLabels(techheaders);
+
+
+
+
+    //get full
+    QList<QStringList> techlist = dal->ql_getalltechniques();
+
+    //const QString rank, const QString school, const QString title, const bool norestriction
+    int rank = character->rank;
+    QList<QStringList> titletrack;
+    if(character->titles.count()>0) {
+        titletrack = dal->ql_gettitletrack(character->titles.last());
+    }
+    QStringList schooltech = dal->qsl_gettechallowedbyschool(character->school);
+    QList<QStringList> curriculum = dal->qsl_getschoolcurriculum(character->school);
+
+    foreach(const QStringList tech, techlist){
+        int tech_rank = tech.at(TechQuery::RANK).toInt();
+        //if it's unrestricted, call it a day
+        if(removerestrictions){
+            addTechRow(tech);
+            continue;
+        }
+
+
+
+        //now, check this row against filters.  If it is allowable, add the row.
+
+        //IF it is less than or equal to my rank, and....
+        if(rank >= tech_rank){
+            //category or subcategory is in my school?
+            if(schooltech.contains(tech.at(TechQuery::CATEGORY))) {
+                addTechRow(tech);
+                continue;
+            }
+            if(schooltech.contains(tech.at(TechQuery::SUBCATEGORY))) {
+                addTechRow(tech);
+                continue;
+            }
+
+            //get tech that everyone has access to:
+            if( (tech.at(TechQuery::CATEGORY)) == "Mahō"                ||
+                    (tech.at(TechQuery::CATEGORY)) == "Item Patterns"       ||
+                    (tech.at(TechQuery::CATEGORY)) == "Signature Scrolls"   ){
+                addTechRow(tech);
+                continue;
+
+            }
+            //get tech that everyone has access to:
+            if( (tech.at(TechQuery::CATEGORY)) == "Astradhari Techniques" && //the astradhari title grants the ability to learn Astradhari techniques
+                    (character->titles.contains("Astradhari") )){
+                addTechRow(tech);
+                continue;
+
+            }
+        }
+
+        //check your curriculum for this currc_rank only, looking for special access
+        bool isincurric = false;
+        foreach(QStringList curricrow, curriculum){
+            //first, get min and maxrank on the curriculum, if there is one.
+            int minrank = 1;
+            int maxrank = rank;
+            if(curricrow.count()>=Curric::MINRANK+1 && !curricrow.at(Curric::MINRANK).isEmpty()) {
+                if(!curricrow.at(Curric::MINRANK).isEmpty()) minrank=curricrow.at(Curric::MINRANK).toInt();
+            }
+            if(curricrow.count()>=Curric::MAXRANK+1 && !curricrow.at(Curric::MAXRANK).isEmpty()) {
+                if(!curricrow.at(Curric::MAXRANK).isEmpty()) maxrank=curricrow.at(Curric::MAXRANK).toInt();
+            }
+
+
+            //second, check each row of the CURRENT CURRIC_RANK's curriculum for this tech.
+            if((curricrow.at(Curric::RANK).toInt() == rank) && curricrow.at(Curric::SPEC).toInt()==1){
+                //THird: PoW: Verify that the tech we're checking falls within the min and max rank fields.
+                //    Defaults to 1 and current rank, respectively. Note: at this time, all min ranks are 1
+                if(tech_rank>= minrank && tech_rank <= maxrank){
+                    //Does it match category?
+                    if(curricrow.at(Curric::ADVANCE) == tech.at(TechQuery::CATEGORY)) {
+                        addTechRow(tech);
+                        isincurric = true;
+                        break; //break back to main loop
+                    }
+                    //does it match subcategory?
+                    if(curricrow.at(Curric::ADVANCE) == tech.at(TechQuery::SUBCATEGORY)) {
+                        isincurric = true;
+                        addTechRow(tech);
+                        break; //break back to main loop
+                    }
+                }
+                if(curricrow.at(Curric::ADVANCE) == tech.at(TechQuery::NAME)){
+                    //if it maches name, there's no need to check the rank range-- just add it
+                    isincurric = true;
+                    addTechRow(tech);
+                    break; //break back to main loop
+                }
+            }
+        }
+        if(isincurric) continue; //next tech if we found it
+        //now do the same for title
+        bool isintitle = false;
+        foreach(QStringList titlerow, titletrack){
+
+            //at this time, titles don't have a minimum rank -- max rank is TRANK, min rank is 1.
+            if(     (titlerow.at(Title::TRANK).isEmpty()||(tech.at(TechQuery::RANK)<=titlerow.at(Title::TRANK)))
+                     && ( titlerow.at(Title::SPEC).toInt()==1) ){
+                if(titlerow.at(Title::ADVANCE) == tech.at(TechQuery::CATEGORY)) {
+                    addTechRow(tech);
+                    isintitle = true;
+                    break; //break back to main loop
+                }
+                if(titlerow.at(Title::ADVANCE) == tech.at(TechQuery::SUBCATEGORY)) {
+                    addTechRow(tech);
+                    isintitle = true;
+                    break; //break back to main loop
+                }
+                if(titlerow.at(Title::ADVANCE) == tech.at(TechQuery::NAME)){
+                    addTechRow(tech);
+                    isintitle = true;
+                    break; //break back to main loop
+                }
+            }
+        }
+        if(isintitle) continue; //next tech if we found it
+    }
+
+
+
+
+
+
+        //if it gets here, discard it
+        //addTechRow(tech);
+
+}
+
+void AddAdvanceDialog::addTechRow(QStringList tech){
+    QList<QStandardItem*> itemrow;
+    foreach (const QString t, tech){
+        //now, do the real work for the tables
+        itemrow << new QStandardItem(t);
+    }
+    techModel.appendRow(itemrow);
+}
+
 void AddAdvanceDialog::on_advtype_currentIndexChanged(const QString &arg1)
 {
     if(arg1 == tr("Skill")){
@@ -181,17 +355,30 @@ void AddAdvanceDialog::on_advtype_currentIndexChanged(const QString &arg1)
         //get a list of types that can be chosen at this time
         QSet<QString> types;
         if(character->titles.count()==0){
-            dal->qsm_gettechniquetable(&techModel, QString::number(character->rank),character->school, "", removerestrictions);
+            //dal->qsm_gettechniquetable(&techModel, QString::number(character->rank),character->school, "", removerestrictions);
+            populateTechModel();
 
         }
         else{
 
 
-            dal->qsm_gettechniquetable(&techModel, QString::number(character->rank),character->school, character->titles.last(), removerestrictions);
+            //dal->qsm_gettechniquetable(&techModel, QString::number(character->rank),character->school, character->titles.last(), removerestrictions);
+            populateTechModel();
        }
         for(int i = 0; i<techModel.rowCount(); ++i){
+            /*
             const QSqlRecord record = techModel.record(i);
             types << record.value("Category").toString();
+            */
+            for(int r = 0; r < techModel.rowCount();++r){
+                    QStringList row;
+                    for(int c = 0; c < techModel.columnCount();++c){
+                            //if(!titlemodel.item(r,c)->text().isEmpty()){
+                                    row<< techModel.item(r,c)->text();
+                            //}
+                    }
+                    types << row.at(TechQuery::CATEGORY);
+            }
         }
         qDebug()<< types;
         QStringList typelist;
@@ -276,13 +463,13 @@ void AddAdvanceDialog::on_advchooser_combobox_currentIndexChanged(const QString 
     else{
         //QSet<QString> types;
         if(character->titles.count()==0){
-            dal->qsm_gettechniquetable(&techModel, QString::number(character->rank),character->school, "", removerestrictions);
+            //dal->qsm_gettechniquetable(&techModel, QString::number(character->rank),character->school, "", removerestrictions);
+            populateTechModel();
 
         }
         else{
-
-
-            dal->qsm_gettechniquetable(&techModel, QString::number(character->rank),character->school, character->titles.last(), removerestrictions);
+            //dal->qsm_gettechniquetable(&techModel, QString::number(character->rank),character->school, character->titles.last(), removerestrictions);
+            populateTechModel();
        }
         // for(int i = 0; i<techModel.rowCount(); ++i){
        //     QSqlRecord record = techModel.record(i);
@@ -327,8 +514,15 @@ QString AddAdvanceDialog::getResult() const {
     //row += ui->advtype->currentText() + "|";
     if(ui->advtype->currentText() == tr("Technique")){
        const QModelIndex curIndex = proxyModel.mapToSource(ui->detailTableView->currentIndex());
-       const QSqlRecord record = techModel.record(curIndex.row());
-       row += record.value("name_tr").toString()+"|";
+       //const QSqlRecord record = techModel.record(curIndex.row());
+       //row += record.value("name_tr").toString()+"|";
+               QStringList tr;
+               for(int c = 0; c < techModel.columnCount();++c){
+                       //if(!titlemodel.item(r,c)->text().isEmpty()){
+                               tr<< techModel.item(curIndex.row(),c)->text();
+                       //}
+               }
+               row += tr.at(TechQuery::NAME)+"|";
     }
     else{
         row += ui->advchooser_combobox->currentText() + "|";
@@ -351,11 +545,9 @@ QString AddAdvanceDialog::getResult() const {
 
 void AddAdvanceDialog::on_detailTableView_clicked(const QModelIndex &index)
 {
-    Q_UNUSED(index)
-
+    //QModelIndex curIndex = proxyModel.mapToSource(index);
     QModelIndex curIndex = proxyModel.mapToSource(index);
-    QSqlRecord record = techModel.record(curIndex.row());
-    const int cost = record.value("xp").toInt();
+    const int cost = techModel.item(curIndex.row(),TechQuery::XP)->text().toInt();
     const int rounded = qRound(double(cost)/2.0);
     const QString text = QString::number(ui->halfxp_checkBox->isChecked()?rounded:cost);
 

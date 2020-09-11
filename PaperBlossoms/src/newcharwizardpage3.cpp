@@ -42,17 +42,21 @@ NewCharWizardPage3::NewCharWizardPage3(DataAccessLayer *dal, QWidget *parent) :
     q7group.addButton(ui->nc3_q7_pos_radioButton);
     q7group.addButton(ui->nc3_q7_neg_radioButton);
     q8group.addButton(ui->nc3_q8_pos_radioButton);
+    q8group.addButton(ui->nc3_q8_mid_radioButton);
     q8group.addButton(ui->nc3_q8_neg_radioButton);
 
     ui->nc3_q7_comboBox->setEnabled(false);
     ui->nc3_q8_comboBox->setEnabled(false);
+    ui->nc3_q8_item_comboBox->setEnabled(false);
 
     registerField("q7skill", ui->nc3_q7_comboBox, "currentText");
     registerField("q8skill", ui->nc3_q8_comboBox, "currentText");
+    registerField("q8item", ui->nc3_q8_item_comboBox, "currentText");
 
     registerField("q7posradio_glory", ui->nc3_q7_pos_radioButton);
     registerField("q7negradio_skill", ui->nc3_q7_neg_radioButton);
     registerField("q8posradio_honor", ui->nc3_q8_pos_radioButton);
+    registerField("q8midradio_skill", ui->nc3_q8_mid_radioButton);
     registerField("q8negradio_skill", ui->nc3_q8_neg_radioButton);
 
     registerField("q5Text",ui->nc3_q5_textEdit, "plainText");
@@ -76,17 +80,52 @@ bool NewCharWizardPage3::validatePage(){
         msg.exec();
         return false;
     }
-    if(!ui->nc3_q8_neg_radioButton->isChecked() && !ui->nc3_q8_pos_radioButton->isChecked()){
+    if(!ui->nc3_q8_neg_radioButton->isChecked() && !ui->nc3_q8_pos_radioButton->isChecked()&& !ui->nc3_q8_mid_radioButton->isChecked()){
         QMessageBox msg;
         msg.setText("Error: choose an option for Question 8.");
         msg.exec();
         return false;
     }
+        if(field("characterType").toString() == "Samurai" && ui->nc3_q8_mid_radioButton->isChecked()){
+            QMessageBox msg;
+            msg.setText("Error: choose an option for Question 8.");
+            msg.exec();
+            return false;
+        }
     return true;
 }
 
 void NewCharWizardPage3::initializePage()
 {
+
+    ///////////////////////PoW: Set Ronin Questions if needed:
+    //populate model
+    if(field("characterType").toString() == "Samurai"){
+        ui->q5_groupBox->setTitle("5. Who is your lord, and what is your duty to them?");
+        ui->q6_groupBox->setTitle("6. What do you long for, and how might this impede your duty?");
+        ui->q7_groupBox->setTitle("7. What is your relationship with your clan?");
+        ui->q8_groupBox->setTitle("8. What do you think of Bushido?");
+
+        ui->nc3_q8_item_comboBox->setVisible(false);
+        ui->nc3_q8_mid_radioButton->setVisible(false);
+        ui->nc3_q8_mid_radioButton->setChecked(false);
+    }
+    else{
+        ui->q5_groupBox->setTitle("5. What is your past, and how does it affect you?");
+        ui->q6_groupBox->setTitle("6. What do you long for, and how might your past impact your Ninjo?");
+        ui->q7_groupBox->setTitle("7. What are you known for?");
+        ui->q8_groupBox->setTitle("8. What do you think of Bushido?");
+
+        ui->nc3_q8_item_comboBox->setVisible(true);
+        ui->nc3_q8_mid_radioButton->setVisible(true);
+    }
+
+    ui->nc3_q8_item_comboBox->addItems(dal->qsl_getitemsunderrarity(5));
+
+    ////////////////////////////////
+
+
+
     //TODO - CLEAN UP SKILL MANAGEMENT
     const QString clan = field("currentClan").toString();
     const QString family = field("currentFamily").toString();
@@ -119,6 +158,10 @@ void NewCharWizardPage3::initializePage()
     ui->nc3_q8_comboBox->addItems(q8skills);
     ui->nc3_q7_comboBox->setCurrentIndex(-1);
     ui->nc3_q8_comboBox->setCurrentIndex(-1);
+    ui->nc3_q8_item_comboBox->setCurrentIndex(-1);
+
+
+
     regenSummary();
 
 
@@ -138,29 +181,54 @@ void NewCharWizardPage3::on_nc3_q8_neg_radioButton_toggled(const bool checked)
 
 }
 
+//PoW
+void NewCharWizardPage3::on_nc3_q8_mid_radioButton_toggled(bool checked)
+{
+    ui->nc3_q8_item_comboBox->setEnabled(checked);
+    if(!checked) ui->nc3_q8_item_comboBox->setCurrentIndex(-1);
+}
+///////
+
+void NewCharWizardPage3::on_nc3_q7_comboBox_currentIndexChanged(const QString &arg1)
+{
+    Q_UNUSED(arg1);
+    regenSummary();
+
+}
+
+void NewCharWizardPage3::on_nc3_q8_comboBox_currentIndexChanged(const QString &arg1)
+{
+    Q_UNUSED(arg1);
+    regenSummary();
+
+}
+
+
+
+
 void NewCharWizardPage3::regenSummary(){
-   QString skills = "";
-   QString rings = "";
+    QString skills = "";
+    QString rings = "";
 
-   const QMap<QString, int> ringmap = calcCurrentRings();
+    const QMap<QString, int> ringmap = calcCurrentRings();
 
-   QMapIterator<QString, int> i(ringmap);
-   while (i.hasNext()) {
-       i.next();
-       if(!i.key().isEmpty()){
-        rings+="  "+i.key()+": "+QString::number(i.value())+ "\n";
-       }
-   }
+    QMapIterator<QString, int> i(ringmap);
+    while (i.hasNext()) {
+        i.next();
+        if(!i.key().isEmpty()){
+            rings+="  "+i.key()+": "+QString::number(i.value())+ "\n";
+        }
+    }
 
-   const QMap<QString, int> skillmap = calcSkills();
+    const QMap<QString, int> skillmap = calcSkills();
 
-   QMapIterator<QString, int> si(skillmap);
-   while (si.hasNext()) {
-       si.next();
-       if(!si.key().isEmpty()){
-        skills+="  "+si.key()+": "+QString::number(si.value())+ "\n";
-       }
-   }
+    QMapIterator<QString, int> si(skillmap);
+    while (si.hasNext()) {
+        si.next();
+        if(!si.key().isEmpty()){
+            skills+="  "+si.key()+": "+QString::number(si.value())+ "\n";
+        }
+    }
 
     ui->summary_label->setText("Rings:\n"+rings+"\n\nSkills:\n"+skills);
 
@@ -178,6 +246,21 @@ QMap<QString, int> NewCharWizardPage3::calcCurrentRings(){
     ringmap[dal->qs_getclanring(field("currentClan").toString())]++;
     //family
     ringmap[field("familyRing").toString()]++;
+
+
+
+    ///////////PoW
+    ///
+    ///
+
+    //region
+    ringmap[dal->qs_getregionring(field("currentRegion").toString())]++;
+    //upbringing
+    ringmap[field("upbringingRing").toString()]++;
+
+    /////////////////
+
+
     //school
     //QStringList schoolrings = dal->qsl_getschoolrings(field("currentSchool").toString());
     QStringList schoolrings = field("ringChoices").toString().split("|");
@@ -198,6 +281,15 @@ QMap<QString, int> NewCharWizardPage3::calcSkills(){
     QStringList skills;
     skills.append(dal->qsl_getclanskills(field("currentClan").toString()));
     skills.append(dal->qsl_getfamilyskills(field("currentFamily").toString()));
+
+
+    skills.append(dal->qsl_getregionskills(field("currentRegion").toString()));
+    skills.append(field("upbringingSkill1").toString());
+    skills.append(field("upbringingSkill2").toString());
+    skills.append(field("upbringingSkill3").toString());
+
+
+
     skills.append(field("schoolSkills").toString().split("|"));
     skills.append(field("q7skill").toString());
     skills.append(field("q8skill").toString());
@@ -209,60 +301,49 @@ QMap<QString, int> NewCharWizardPage3::calcSkills(){
     //get q18 skill
 
 
-    int ancestorIndex = -1;
-    QString heritage = "";
-    if(field("ancestor1checked").toBool()){
-        ancestorIndex = field("ancestor1index").toInt()+1;
-        heritage = dal->translate(field("ancestor1").toString());
-    }
-    else if (field("ancestor2checked").toBool()){
-        ancestorIndex = field("ancestor2index").toInt()+1;
-        heritage = dal->translate(field("ancestor2").toString());
-    }
+        int ancestorIndex = -1;
+        QString heritage = "";
+        if(field("ancestor1checked").toBool()){
+            ancestorIndex = field("ancestor1index").toInt()+1;
+            heritage = dal->translate(field("ancestor1").toString());
+        }
+        else if (field("ancestor2checked").toBool()){
+            ancestorIndex = field("ancestor2index").toInt()+1;
+            heritage = dal->translate(field("ancestor2").toString());
+        }
 
-    if(    //core
-           heritage ==  dal->translate("Wondrous Work") ||
-           heritage ==  dal->translate("Dynasty Builder") ||
-           heritage ==  dal->translate("Discovery") ||
-           heritage ==  dal->translate("Ruthless Victor") ||
-           heritage ==  dal->translate("Elevated for Service") ||
-           //shadowlands
-           heritage ==   dal->translate("Infamous Builder") ||
-           heritage ==   dal->translate("Lost in the Darkness") ||
-           heritage ==   dal->translate("Vengeance for the Fallen") ||
-           heritage ==   dal->translate("Tewnty Goblin Thief") ||
-           //Courts
-           heritage ==   dal->translate("Dishonorable Cheat") ||
-           heritage ==   dal->translate("Unforgivable Performance") ||
-           heritage ==   dal->translate("A Little Too Close To Heaven")
-            ){
-        skills.append(field("q18OtherEffects").toString());
+        if(    //core
+               heritage ==  dal->translate("Wondrous Work") ||
+               heritage ==  dal->translate("Dynasty Builder") ||
+               heritage ==  dal->translate("Discovery") ||
+               heritage ==  dal->translate("Ruthless Victor") ||
+               heritage ==  dal->translate("Elevated for Service") ||
+               //shadowlands
+               heritage ==   dal->translate("Infamous Builder") ||
+               heritage ==   dal->translate("Lost in the Darkness") ||
+               heritage ==   dal->translate("Vengeance for the Fallen") ||
+               heritage ==   dal->translate("Tewnty Goblin Thief") ||
+               //Courts
+               heritage ==   dal->translate("Dishonorable Cheat") ||
+               heritage ==   dal->translate("Unforgivable Performance") ||
+               heritage ==   dal->translate("A Little Too Close To Heaven")
+               ){
+            skills.append(field("q18OtherEffects").toString());
 
-    }
+        }
 
-    skills.removeAll("");
-    //initialize the skill map
-    QMap<QString, int> skillmap;
-    //skills start at 0.
+        skills.removeAll("");
+        //initialize the skill map
+        QMap<QString, int> skillmap;
+        //skills start at 0.
 
-    //clan
-    foreach(const QString skill, skills){
-        skillmap[skill]++;
-    }
+        //clan
+        foreach(const QString skill, skills){
+            skillmap[skill]++;
+        }
 
-    return skillmap;
+        return skillmap;
 }
 
-void NewCharWizardPage3::on_nc3_q7_comboBox_currentIndexChanged(const QString &arg1)
-{
-    Q_UNUSED(arg1);
-    regenSummary();
 
-}
 
-void NewCharWizardPage3::on_nc3_q8_comboBox_currentIndexChanged(const QString &arg1)
-{
-    Q_UNUSED(arg1);
-    regenSummary();
-
-}

@@ -47,15 +47,20 @@ NewCharWizardPage6::NewCharWizardPage6(DataAccessLayer *dal, QWidget *parent) :
     registerField("ancestor1checked",ui->nc6_q18_ancestor1_radioButton);
     registerField("ancestor2checked",ui->nc6_q18_ancestor2_radioButton);
     registerField("q18OtherEffects",ui->nc6_q18_otherComboBox,"currentText");
-    registerField("q18OtherEffectsIndex*",ui->nc6_q18_otherComboBox);
+    registerField("q18OtherEffectsIndex",ui->nc6_q18_otherComboBox);
     registerField("q18SecondaryChoice",ui->nc6_q18_secondaryChoice_comboBox,"currentText");
     registerField("q18Spec1",ui->nc6_q18_special1_comboBox,"currentText");
     registerField("q18Spec2",ui->nc6_q18_special2_comboBox,"currentText");
+
 
     registerField("q17Text", ui->nc6_q17_lineEdit);
     registerField("personalName",ui->nc6_q19_personalName_lineEdit);
 
     registerField("q18SourceTable",ui->heritagetable_comboBox,"currentText");
+
+    //POW
+    registerField("q17roninBond",ui->nc6_bond_comboBox,"currentText");
+    registerField("q17roninText",ui->nc6_q17r_lineEdit);
 
 }
 
@@ -84,6 +89,9 @@ void NewCharWizardPage6::initializePage()
     skills.append(dal->qsl_getfamilyskills(family));
     skills.append(field("q7skill").toString());
     skills.append(field("q8skill").toString());
+    skills.append(field("upbringingSkill1").toString());
+    skills.append(field("upbringingSkill2").toString());
+    skills.append(field("upbringingSkill3").toString());
     if(field("q13DisadvChecked").toBool() == true){
         qDebug() << "Question 13 chose disadvantage.  Adding skill: " << field("q13skill").toString();
         skills.append(field("q13skill").toString());
@@ -104,6 +112,32 @@ void NewCharWizardPage6::initializePage()
     ui->nc6_q18_ancestor2_comboBox->setCurrentIndex(-1);
 
    buildq18UI();
+
+
+   //POW
+
+   ////////PoW
+   ///
+   ///
+
+   ui->nc6_bond_comboBox->clear();
+   QStringList bonds = dal->qsl_getbonds();
+   ui->nc6_bond_comboBox->addItems(bonds);
+
+   if(field("characterType").toString() == "Samurai"){
+       ui->q17ronin_groupbox->setVisible(false);
+       ui->q17s_q18r_groupBox->setTitle("17. How would your parents describe you?");
+       ui->q18s_groupbox->setVisible(true);
+
+   }
+   else{
+       ui->q17ronin_groupbox->setVisible(true);
+       ui->q17s_q18r_groupBox->setTitle("18. Who raised you?");
+       ui->q18s_groupbox->setVisible(false);
+   }
+
+
+
 
 }
 
@@ -651,31 +685,6 @@ void NewCharWizardPage6::on_nc6_q18_otherComboBox_currentIndexChanged(const QStr
     buildq18UI();
 }
 
-QMap<QString, int> NewCharWizardPage6::calcCurrentRings(){
-    QMap<QString, int> ringmap;
-    QStringList ringlist = dal->qsl_getrings();
-    foreach (const QString ring, ringlist) {
-        ringmap[ring] = 1;
-    }
-
-    //NOW - CALCULATE EXISTING RINGS
-    //clan
-    ringmap[dal->qs_getclanring(field("currentClan").toString())]++;
-    //family
-    ringmap[field("familyRing").toString()]++;
-    //school
-    //QStringList schoolrings = dal->qsl_getschoolrings(field("currentSchool").toString());
-    QStringList schoolrings = field("ringChoices").toString().split("|");
-    schoolrings.removeAll("");
-
-    foreach (const QString r, schoolrings){
-        ringmap[r]++;
-    }
-    //standout
-    ringmap[field("schoolSpecialRing").toString()]++;
-    qDebug() << ringmap;
-    return ringmap;
-}
 
 void NewCharWizardPage6::on_nc6_q18_otherrollButton_clicked()
 {
@@ -710,134 +719,6 @@ void NewCharWizardPage6::on_heritagetable_comboBox_currentIndexChanged(const QSt
 }
 
 
-void NewCharWizardPage6::regenSummary(){
-   QString skills = "";
-   QString rings = "";
-
-   const QMap<QString, int> ringmap = calcSumRings();
-
-   QMapIterator<QString, int> i(ringmap);
-   while (i.hasNext()) {
-       i.next();
-       if(!i.key().isEmpty()){
-        rings+="  "+i.key()+": "+QString::number(i.value())+ "\n";
-       }
-   }
-
-   const QMap<QString, int> skillmap = calcSkills();
-
-   QMapIterator<QString, int> si(skillmap);
-   while (si.hasNext()) {
-       si.next();
-       if(!si.key().isEmpty()){
-        skills+="  "+si.key()+": "+QString::number(si.value())+ "\n";
-       }
-   }
-
-    ui->summary_label->setText(tr("Rings:")+"\n"+rings+"\n\n"+tr("Skills:")+"\n"+skills);
-
-}
-
-
-QMap<QString, int> NewCharWizardPage6::calcSumRings(){
-
-    //initialize the ring map
-    QMap<QString, int> ringmap;
-    const QStringList ringlist = dal->qsl_getrings();
-    foreach (const QString ring, ringlist) {
-        ringmap[ring] = 1;
-    }
-
-    //NOW - CALCULATE EXISTING RINGS
-    //clan
-    ringmap[dal->qs_getclanring(field("currentClan").toString())]++;
-    //family
-    ringmap[field("familyRing").toString()]++;
-    //school
-    QStringList schoolrings = field("ringChoices").toString().split("|");
-    schoolrings.removeAll("");
-    //QStringList schoolrings = dal->qsl_getschoolrings(field("currentSchool").toString());
-    foreach (const QString r, schoolrings){
-        ringmap[r]++;
-    }
-    //standout
-    ringmap[field("schoolSpecialRing").toString()]++;
-
-    //check for ringswap on part 6
-    if(field("q18OtherEffects").toString() == dal->translate("Ring Exchange") ||
-       field("q18OtherEffects").toString() == dal->translate("Void ring exchange") ||
-       field("q18OtherEffects").toString() == dal->translate("Air/Fire ring exchange")
-            ){
-        ringmap[field("q18Spec1").toString()]++;
-        ringmap[field("q18Spec2").toString()]--;
-        qDebug()<< "adjusting based on Ring Exchange";
-    }
-    return ringmap;
-
-}
-
-QMap<QString, int> NewCharWizardPage6::calcSkills(){
-
-
-    QStringList skills;
-    skills.append(dal->qsl_getclanskills(field("currentClan").toString()));
-    skills.append(dal->qsl_getfamilyskills(field("currentFamily").toString()));
-    skills.append(field("schoolSkills").toString().split("|"));
-    skills.append(field("q7skill").toString());
-    skills.append(field("q8skill").toString());
-    if(field("q13DisadvChecked").toBool() == true){
-        qDebug() << "Question 13 chose disadvantage.  Adding skill: " << field("q13skill").toString();
-        skills.append(field("q13skill").toString());
-    }
-    skills.append(field("parentSkill").toString());
-    //get q18 skill
-
-
-    int ancestorIndex = -1;
-    QString heritage = "";
-    if(field("ancestor1checked").toBool()){
-        ancestorIndex = field("ancestor1index").toInt()+1;
-        heritage = dal->untranslate(field("ancestor1").toString());
-    }
-    else if (field("ancestor2checked").toBool()){
-        ancestorIndex = field("ancestor2index").toInt()+1;
-        heritage = dal->untranslate(field("ancestor2").toString());
-    }
-
-    if(    //core
-           heritage == "Wondrous Work" ||
-           heritage ==  "Dynasty Builder" ||
-           heritage ==  "Discovery" ||
-           heritage ==  "Ruthless Victor" ||
-           heritage ==  "Elevated for Service" ||
-           //shadowlands
-           heritage ==   "Infamous Builder" ||
-           heritage ==   "Lost in the Darkness" ||
-           heritage ==   "Vengeance for the Fallen" ||
-           heritage ==   "Tewnty Goblin Thief" ||
-           //Courts
-           heritage ==   dal->translate("Dishonorable Cheat") ||
-           heritage ==   dal->translate("Unforgivable Performance") ||
-           heritage ==   dal->translate("A Little Too Close To Heaven")
-            ){
-        skills.append(field("q18OtherEffects").toString());
-
-    }
-
-    skills.removeAll("");
-    //initialize the skill map
-    QMap<QString, int> skillmap;
-    //skills start at 0.
-
-    //clan
-    foreach(const QString skill, skills){
-        skillmap[skill]++;
-    }
-
-    return skillmap;
-}
-
-
 
 void NewCharWizardPage6::on_nc6_q18_special1_comboBox_currentIndexChanged(const QString &arg1)
 {
@@ -858,3 +739,149 @@ void NewCharWizardPage6::on_nc6_q17_comboBox_currentIndexChanged(const QString &
     Q_UNUSED(arg1);
    regenSummary();
 }
+
+
+////////////////TODO - Unify this across all wiz pages
+
+
+void NewCharWizardPage6::regenSummary(){
+    QString skills = "";
+    QString rings = "";
+
+    const QMap<QString, int> ringmap = calcCurrentRings();
+
+    QMapIterator<QString, int> i(ringmap);
+    while (i.hasNext()) {
+        i.next();
+        if(!i.key().isEmpty()){
+            rings+="  "+i.key()+": "+QString::number(i.value())+ "\n";
+        }
+    }
+
+    const QMap<QString, int> skillmap = calcSkills();
+
+    QMapIterator<QString, int> si(skillmap);
+    while (si.hasNext()) {
+        si.next();
+        if(!si.key().isEmpty()){
+            skills+="  "+si.key()+": "+QString::number(si.value())+ "\n";
+        }
+    }
+
+    ui->summary_label->setText("Rings:\n"+rings+"\n\nSkills:\n"+skills);
+
+}
+
+QMap<QString, int> NewCharWizardPage6::calcCurrentRings(){
+    QMap<QString, int> ringmap;
+    QStringList ringlist = dal->qsl_getrings();
+    foreach (const QString ring, ringlist) {
+        ringmap[ring] = 1;
+    }
+
+    //NOW - CALCULATE EXISTING RINGS
+    //clan
+    ringmap[dal->qs_getclanring(field("currentClan").toString())]++;
+    //family
+    ringmap[field("familyRing").toString()]++;
+
+
+
+    ///////////PoW
+    ///
+    ///
+
+    //region
+    ringmap[dal->qs_getregionring(field("currentRegion").toString())]++;
+    //upbringing
+    ringmap[field("upbringingRing").toString()]++;
+
+    /////////////////
+
+
+    //school
+    //QStringList schoolrings = dal->qsl_getschoolrings(field("currentSchool").toString());
+    QStringList schoolrings = field("ringChoices").toString().split("|");
+    schoolrings.removeAll("");
+
+    foreach (const QString r, schoolrings){
+        ringmap[r]++;
+    }
+    //standout
+    ringmap[field("schoolSpecialRing").toString()]++;
+    qDebug() << ringmap;
+    return ringmap;
+}
+
+QMap<QString, int> NewCharWizardPage6::calcSkills(){
+
+
+    QStringList skills;
+    skills.append(dal->qsl_getclanskills(field("currentClan").toString()));
+    skills.append(dal->qsl_getfamilyskills(field("currentFamily").toString()));
+
+
+    //POW
+    skills.append(dal->qsl_getregionskills(field("currentRegion").toString()));
+    skills.append(field("upbringingSkill1").toString());
+    skills.append(field("upbringingSkill2").toString());
+    skills.append(field("upbringingSkill3").toString());
+
+
+
+
+    skills.append(field("schoolSkills").toString().split("|"));
+    skills.append(field("q7skill").toString());
+    skills.append(field("q8skill").toString());
+    if(field("q13DisadvChecked").toBool() == true){
+        qDebug() << "Question 13 chose disadvantage.  Adding skill: " << field("q13skill").toString();
+        skills.append(field("q13skill").toString());
+    }
+    skills.append(field("parentSkill").toString());
+    //get q18 skill
+
+
+        int ancestorIndex = -1;
+        QString heritage = "";
+        if(field("ancestor1checked").toBool()){
+            ancestorIndex = field("ancestor1index").toInt()+1;
+            heritage = dal->translate(field("ancestor1").toString());
+        }
+        else if (field("ancestor2checked").toBool()){
+            ancestorIndex = field("ancestor2index").toInt()+1;
+            heritage = dal->translate(field("ancestor2").toString());
+        }
+
+        if(    //core
+               heritage ==  dal->translate("Wondrous Work") ||
+               heritage ==  dal->translate("Dynasty Builder") ||
+               heritage ==  dal->translate("Discovery") ||
+               heritage ==  dal->translate("Ruthless Victor") ||
+               heritage ==  dal->translate("Elevated for Service") ||
+               //shadowlands
+               heritage ==   dal->translate("Infamous Builder") ||
+               heritage ==   dal->translate("Lost in the Darkness") ||
+               heritage ==   dal->translate("Vengeance for the Fallen") ||
+               heritage ==   dal->translate("Tewnty Goblin Thief") ||
+               //Courts
+               heritage ==   dal->translate("Dishonorable Cheat") ||
+               heritage ==   dal->translate("Unforgivable Performance") ||
+               heritage ==   dal->translate("A Little Too Close To Heaven")
+               ){
+            skills.append(field("q18OtherEffects").toString());
+
+        }
+
+        skills.removeAll("");
+        //initialize the skill map
+        QMap<QString, int> skillmap;
+        //skills start at 0.
+
+        //clan
+        foreach(const QString skill, skills){
+            skillmap[skill]++;
+        }
+
+        return skillmap;
+}
+

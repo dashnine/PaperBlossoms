@@ -59,29 +59,29 @@ Diese Anwendung wird mit Qt 5 erstellt, das unter der LGPLv3 lizenziert ist: htt
     </message>
     <message>
         <location filename="ui/addadvancedialog.ui" line="39"/>
-        <location filename="src/addadvancedialog.cpp" line="55"/>
-        <location filename="src/addadvancedialog.cpp" line="60"/>
-        <location filename="src/addadvancedialog.cpp" line="159"/>
-        <location filename="src/addadvancedialog.cpp" line="263"/>
-        <location filename="src/addadvancedialog.cpp" line="316"/>
+        <location filename="src/addadvancedialog.cpp" line="62"/>
+        <location filename="src/addadvancedialog.cpp" line="67"/>
+        <location filename="src/addadvancedialog.cpp" line="334"/>
+        <location filename="src/addadvancedialog.cpp" line="451"/>
+        <location filename="src/addadvancedialog.cpp" line="504"/>
         <source>Skill</source>
         <translation>Fähigkeit</translation>
     </message>
     <message>
         <location filename="ui/addadvancedialog.ui" line="44"/>
-        <location filename="src/addadvancedialog.cpp" line="65"/>
-        <location filename="src/addadvancedialog.cpp" line="83"/>
+        <location filename="src/addadvancedialog.cpp" line="77"/>
         <location filename="src/addadvancedialog.cpp" line="104"/>
-        <location filename="src/addadvancedialog.cpp" line="177"/>
-        <location filename="src/addadvancedialog.cpp" line="319"/>
-        <location filename="src/addadvancedialog.cpp" line="327"/>
+        <location filename="src/addadvancedialog.cpp" line="125"/>
+        <location filename="src/addadvancedialog.cpp" line="352"/>
+        <location filename="src/addadvancedialog.cpp" line="507"/>
+        <location filename="src/addadvancedialog.cpp" line="515"/>
         <source>Technique</source>
         <translation>Technik</translation>
     </message>
     <message>
         <location filename="ui/addadvancedialog.ui" line="49"/>
-        <location filename="src/addadvancedialog.cpp" line="213"/>
-        <location filename="src/addadvancedialog.cpp" line="269"/>
+        <location filename="src/addadvancedialog.cpp" line="401"/>
+        <location filename="src/addadvancedialog.cpp" line="457"/>
         <source>Ring</source>
         <translation>Ring</translation>
     </message>
@@ -99,59 +99,82 @@ can only be taken with GM approval.</source>
 können nur mit GM-Genehmigung genommen werden.</translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="116"/>
+        <location filename="ui/addadvancedialog.ui" line="81"/>
+        <source>Remove All Restrictions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/addadvancedialog.ui" line="123"/>
         <source>Special Training: Half the XP cost 
 (Requires GM Approval)</source>
         <translation>Spezielles Training: Die Hälfte der XP-Kosten 
 (Erfordert GM-Genehmigung)</translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="137"/>
+        <location filename="ui/addadvancedialog.ui" line="144"/>
         <source>This will cost: </source>
         <translation>Das kostet: </translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="144"/>
+        <location filename="ui/addadvancedialog.ui" line="151"/>
         <source>##</source>
         <translatorcomment>No change</translatorcomment>
         <translation>##</translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="151"/>
+        <location filename="ui/addadvancedialog.ui" line="158"/>
         <source>XP.</source>
         <translatorcomment>No Change</translatorcomment>
         <translation>XP.</translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="173"/>
+        <location filename="ui/addadvancedialog.ui" line="180"/>
         <source>Advance progress in:</source>
         <translation>Fortschritte machen im:</translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="179"/>
+        <location filename="ui/addadvancedialog.ui" line="186"/>
         <source>Curriculum</source>
         <translatorcomment>No change</translatorcomment>
         <translation>Curriculum</translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="186"/>
+        <location filename="ui/addadvancedialog.ui" line="193"/>
         <source>Title</source>
         <translation>Titel</translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="201"/>
+        <location filename="ui/addadvancedialog.ui" line="208"/>
         <source>Reason:</source>
         <translation>Grund:</translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="217"/>
+        <location filename="ui/addadvancedialog.ui" line="224"/>
         <source>Tattoo, GM Award</source>
         <translation>Tattoo, GM Belohnung</translation>
     </message>
     <message>
-        <location filename="ui/addadvancedialog.ui" line="226"/>
+        <location filename="ui/addadvancedialog.ui" line="233"/>
         <source>Free (None)</source>
         <translation>Kostenlos (keine)</translation>
+    </message>
+</context>
+<context>
+    <name>AddBondDialog</name>
+    <message>
+        <location filename="ui/addbonddialog.ui" line="14"/>
+        <source>Add Personal Trait</source>
+        <translation type="unfinished">Persönliche Eigenschaft hinzufügen</translation>
+    </message>
+    <message>
+        <location filename="ui/addbonddialog.ui" line="20"/>
+        <source>Choose a bond to add.  Note: Requires GM approval.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/addbonddialog.ui" line="30"/>
+        <source>Note: Adding Bonds requires 3 XP, and does not count towards Curriculum or Title. Removing this bond will not automatically remove the associated Advance.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -664,38 +687,40 @@ können nur mit GM-Genehmigung genommen werden.</translation>
         <translation>Vorteile</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="363"/>
+        <location filename="ui/mainwindow.ui" line="384"/>
         <source>Distinctions</source>
         <translatorcomment>Semantics may not be right</translatorcomment>
         <translation>Merkmale</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="370"/>
+        <location filename="ui/mainwindow.ui" line="377"/>
         <source>Passions</source>
         <translation>Leidenschaften</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="433"/>
+        <location filename="ui/mainwindow.ui" line="363"/>
         <location filename="ui/mainwindow.ui" line="447"/>
-        <location filename="ui/mainwindow.ui" line="540"/>
-        <location filename="ui/mainwindow.ui" line="554"/>
-        <location filename="ui/mainwindow.ui" line="645"/>
-        <location filename="ui/mainwindow.ui" line="762"/>
-        <location filename="ui/mainwindow.ui" line="818"/>
-        <location filename="ui/mainwindow.ui" line="943"/>
-        <location filename="ui/mainwindow.ui" line="1024"/>
+        <location filename="ui/mainwindow.ui" line="470"/>
+        <location filename="ui/mainwindow.ui" line="547"/>
+        <location filename="ui/mainwindow.ui" line="605"/>
+        <location filename="ui/mainwindow.ui" line="717"/>
+        <location filename="ui/mainwindow.ui" line="834"/>
+        <location filename="ui/mainwindow.ui" line="890"/>
+        <location filename="ui/mainwindow.ui" line="1019"/>
+        <location filename="ui/mainwindow.ui" line="1100"/>
         <source>Add</source>
         <translation>Hinzufügen</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="440"/>
+        <location filename="ui/mainwindow.ui" line="370"/>
         <location filename="ui/mainwindow.ui" line="454"/>
-        <location filename="ui/mainwindow.ui" line="547"/>
+        <location filename="ui/mainwindow.ui" line="540"/>
         <location filename="ui/mainwindow.ui" line="561"/>
-        <location filename="ui/mainwindow.ui" line="652"/>
-        <location filename="ui/mainwindow.ui" line="769"/>
-        <location filename="ui/mainwindow.ui" line="825"/>
-        <location filename="ui/mainwindow.ui" line="950"/>
+        <location filename="ui/mainwindow.ui" line="585"/>
+        <location filename="ui/mainwindow.ui" line="724"/>
+        <location filename="ui/mainwindow.ui" line="841"/>
+        <location filename="ui/mainwindow.ui" line="897"/>
+        <location filename="ui/mainwindow.ui" line="1026"/>
         <source>Remove</source>
         <translation>Entfernen</translation>
     </message>
@@ -705,449 +730,468 @@ können nur mit GM-Genehmigung genommen werden.</translation>
         <translation>Nachteile</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="470"/>
+        <location filename="ui/mainwindow.ui" line="554"/>
         <source>Adversities</source>
         <translatorcomment>Semantics</translatorcomment>
         <translation>Widrigkeiten</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="477"/>
+        <location filename="ui/mainwindow.ui" line="533"/>
         <source>Anxieties</source>
         <translation>Ängste</translation>
     </message>
     <message>
         <location filename="ui/mainwindow.ui" line="572"/>
+        <source>Bonds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/mainwindow.ui" line="578"/>
+        <source>Upgrade</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/mainwindow.ui" line="644"/>
         <source>Techniques</source>
         <translation>Techniken</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="598"/>
+        <location filename="ui/mainwindow.ui" line="670"/>
         <source>Equipment</source>
         <translation>Ausrüstung</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="604"/>
+        <location filename="ui/mainwindow.ui" line="676"/>
         <source>Other</source>
         <translation>Sonstiges</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="680"/>
+        <location filename="ui/mainwindow.ui" line="752"/>
         <source>koku</source>
         <translation>Koku</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="694"/>
+        <location filename="ui/mainwindow.ui" line="766"/>
         <source>bu</source>
         <translation>Bu</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="708"/>
+        <location filename="ui/mainwindow.ui" line="780"/>
         <source>zeni</source>
         <translation>Zeni</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="721"/>
+        <location filename="ui/mainwindow.ui" line="793"/>
         <source>Weapons</source>
         <translation>Waffen</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="777"/>
+        <location filename="ui/mainwindow.ui" line="849"/>
         <source>Armor</source>
         <translatorcomment>german plural</translatorcomment>
         <translation>Rüstungen</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="837"/>
+        <location filename="ui/mainwindow.ui" line="909"/>
         <source>Advancement</source>
         <translation>Fortschritt</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="845"/>
+        <location filename="ui/mainwindow.ui" line="917"/>
         <source>Total Earned:</source>
         <translation>Gesamtverdient:</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="868"/>
+        <location filename="ui/mainwindow.ui" line="944"/>
         <source>Total Spent:</source>
         <translation>Gesamtausgaben:</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="875"/>
+        <location filename="ui/mainwindow.ui" line="951"/>
         <source>##</source>
         <translatorcomment>No change</translatorcomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="884"/>
+        <location filename="ui/mainwindow.ui" line="960"/>
         <source>Curriculum</source>
         <translation>Curriculum</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="914"/>
-        <location filename="ui/mainwindow.ui" line="993"/>
+        <location filename="ui/mainwindow.ui" line="990"/>
+        <location filename="ui/mainwindow.ui" line="1069"/>
         <source>StatusLabel</source>
         <translatorcomment>No Change</translatorcomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="924"/>
+        <location filename="ui/mainwindow.ui" line="1000"/>
         <source>Advances</source>
         <translation>Fortschritte</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="987"/>
+        <location filename="ui/mainwindow.ui" line="1063"/>
         <source>Title</source>
         <translation>Titel</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1044"/>
         <source>Note: Status awards must be manually added.</source>
-        <translation>Hinweis: Statusauszeichnungen müssen manuell hinzugefügt werden.</translation>
+        <translation type="vanished">Hinweis: Statusauszeichnungen müssen manuell hinzugefügt werden.</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1066"/>
+        <location filename="ui/mainwindow.ui" line="1142"/>
         <source>Summary</source>
         <translation>Zusammenfassung</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1078"/>
+        <location filename="ui/mainwindow.ui" line="1154"/>
         <source>Techniques:</source>
         <translation>Techniken:</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1123"/>
+        <location filename="ui/mainwindow.ui" line="1199"/>
         <source>Rings:</source>
         <translation>Ringe:</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1152"/>
+        <location filename="ui/mainwindow.ui" line="1228"/>
         <source>Abilities:</source>
         <translatorcomment>Not 1on1 but Skills and Abilities would have the same translation otherwise.</translatorcomment>
         <translation>Talente:</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1165"/>
+        <location filename="ui/mainwindow.ui" line="1241"/>
         <source>Adv/Disadvantages: </source>
         <translation>Vor-/Nachteile: </translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1207"/>
+        <location filename="ui/mainwindow.ui" line="1283"/>
         <source>Skills:</source>
         <translation>Fähigkeiten:</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1243"/>
+        <location filename="ui/mainwindow.ui" line="1319"/>
         <source>File</source>
         <translation>Datei</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1255"/>
+        <location filename="ui/mainwindow.ui" line="1331"/>
         <source>Tools</source>
         <translation>Werkzeuge</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1259"/>
+        <location filename="ui/mainwindow.ui" line="1335"/>
         <source>Export</source>
         <translation>Exportieren</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1266"/>
+        <location filename="ui/mainwindow.ui" line="1342"/>
         <source>Import</source>
         <translation>Importieren</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1273"/>
+        <location filename="ui/mainwindow.ui" line="1349"/>
         <source>Developer Tools</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1388"/>
+        <location filename="ui/mainwindow.ui" line="1464"/>
         <source>Translate For Locale...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1289"/>
+        <location filename="ui/mainwindow.ui" line="1365"/>
         <source>Help</source>
         <translation>Hilfe</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1308"/>
+        <location filename="ui/mainwindow.ui" line="1120"/>
+        <source>Note: Status/Honor/Glory awards must be manually added.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/mainwindow.ui" line="1384"/>
         <source>New...</source>
         <translation>Neu...</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1313"/>
+        <location filename="ui/mainwindow.ui" line="1389"/>
         <source>Save As...</source>
         <translation>Speichern als...</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1318"/>
+        <location filename="ui/mainwindow.ui" line="1394"/>
         <source>Open...</source>
         <translation>Öffnen...</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1323"/>
+        <location filename="ui/mainwindow.ui" line="1399"/>
         <source>Generate Character Sheet...</source>
         <translation>Charakterbogen generieren...</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1328"/>
+        <location filename="ui/mainwindow.ui" line="1404"/>
         <source>About</source>
         <translation>Über</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1333"/>
+        <location filename="ui/mainwindow.ui" line="1409"/>
         <source>Export User Data Tables...</source>
         <translation>Benutzerdatentabellen exportieren.....</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1338"/>
+        <location filename="ui/mainwindow.ui" line="1414"/>
         <source>Import User Data Tables...</source>
         <translation>Benutzerdatentabellen importieren.....</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1343"/>
+        <location filename="ui/mainwindow.ui" line="1419"/>
         <source>Open Application Data Directory</source>
         <translation>Anwendungsdatenverzeichnis öffnen</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1348"/>
+        <location filename="ui/mainwindow.ui" line="1424"/>
         <source>Exit</source>
         <translation>Beenden</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1353"/>
+        <location filename="ui/mainwindow.ui" line="1429"/>
         <source>Export to XML...</source>
         <translation>Zu XML exportieren...</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1358"/>
+        <location filename="ui/mainwindow.ui" line="1434"/>
         <source>Description Editor</source>
         <translation>Beschreibungseditor</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1363"/>
+        <location filename="ui/mainwindow.ui" line="1439"/>
         <source>Export All User Data Tables...</source>
         <translation>Alle Benutzerdatentabellen exportieren.....</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1368"/>
+        <location filename="ui/mainwindow.ui" line="1444"/>
         <source>Import All User Data Tables...</source>
         <translation>Alle Benutzerdatentabellen importieren.....</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1373"/>
+        <location filename="ui/mainwindow.ui" line="1449"/>
         <source>Export User Descriptions Table...</source>
         <translation>Benutzerbeschreibungstabelle exportieren.....</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1378"/>
+        <location filename="ui/mainwindow.ui" line="1454"/>
         <source>Import User Descriptions Table...</source>
         <translation>Benutzerbeschreibungstabelle importieren.....</translation>
     </message>
     <message>
-        <location filename="ui/mainwindow.ui" line="1383"/>
+        <location filename="ui/mainwindow.ui" line="1459"/>
         <source>Export Translation CSV...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="235"/>
-        <location filename="src/mainwindow.cpp" line="1503"/>
-        <location filename="src/mainwindow.cpp" line="1514"/>
+        <location filename="src/mainwindow.cpp" line="240"/>
+        <location filename="src/mainwindow.cpp" line="1557"/>
+        <location filename="src/mainwindow.cpp" line="1568"/>
         <source>Closing Character Profile</source>
         <translation>Charakterprofil schließen</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="590"/>
-        <location filename="src/mainwindow.cpp" line="1563"/>
+        <location filename="src/mainwindow.cpp" line="617"/>
+        <location filename="src/mainwindow.cpp" line="1617"/>
         <source>Save File As...</source>
         <translation>Speichern als...</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="590"/>
+        <location filename="src/mainwindow.cpp" line="617"/>
         <source>Paper Blossoms Character Profile (*.pbc)</source>
         <translatorcomment>No change</translatorcomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="601"/>
-        <location filename="src/mainwindow.cpp" line="678"/>
+        <location filename="src/mainwindow.cpp" line="628"/>
+        <location filename="src/mainwindow.cpp" line="708"/>
         <source>Unable to open file</source>
         <translation>Kann Datei nicht öffnen</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="665"/>
+        <location filename="src/mainwindow.cpp" line="695"/>
         <source>Load...</source>
         <translation>Lade...</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="665"/>
+        <location filename="src/mainwindow.cpp" line="695"/>
         <source>Paper Blossoms Character (*.pbc);;Any (*)</source>
         <translatorcomment>No Change</translatorcomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="671"/>
+        <location filename="src/mainwindow.cpp" line="701"/>
         <source>Opening Profile</source>
         <translation>Profil öffnen</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="691"/>
+        <location filename="src/mainwindow.cpp" line="721"/>
         <source>Incompatible Save File</source>
         <translation>Inkompatible Speicherdatei</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="691"/>
+        <location filename="src/mainwindow.cpp" line="721"/>
         <source>This save file was created with an incompatible version of Paper Blossoms. Aborting import.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="705"/>
+        <location filename="src/mainwindow.cpp" line="745"/>
         <source>Incompatible Locale</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="705"/>
+        <location filename="src/mainwindow.cpp" line="745"/>
         <source>This save file was created with a different locale (</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="706"/>
+        <location filename="src/mainwindow.cpp" line="746"/>
         <source>Aborting import. To load this save file, you can change your DB locale to </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="707"/>
+        <location filename="src/mainwindow.cpp" line="747"/>
         <source> in </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="707"/>
+        <location filename="src/mainwindow.cpp" line="747"/>
         <source> and relaunch the application.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="977"/>
+        <location filename="src/mainwindow.cpp" line="1019"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="977"/>
+        <location filename="src/mainwindow.cpp" line="1019"/>
         <source>Unable to load some Title data. This character depends on data that isn&apos;t present, and may be inconsistent. Did you need to import custom data?</source>
         <translation>Es ist nicht möglich, einige Titeldaten zu laden. Dieser Charakter basiert auf Daten, die nicht vorhanden sind, und kann inkonsistent sein. Mussten Sie benutzerdefinierte Daten importieren?</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1160"/>
+        <location filename="src/mainwindow.cpp" line="1214"/>
         <source>Open File</source>
         <translation>Datei öffnen</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1162"/>
+        <location filename="src/mainwindow.cpp" line="1216"/>
         <source>All files (*.*);;JPEG (*.jpg *.jpeg);;PNG (*.png)</source>
         <translatorcomment>No change</translatorcomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1171"/>
+        <location filename="src/mainwindow.cpp" line="1225"/>
         <source>Image Viewer</source>
         <translation>Bildbetrachter</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1172"/>
+        <location filename="src/mainwindow.cpp" line="1226"/>
         <source>Cannot load %1.</source>
         <translatorcomment>May be right syntax?</translatorcomment>
         <translation>Kann %1 nicht laden.</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1449"/>
+        <location filename="src/mainwindow.cpp" line="1503"/>
         <source>Choose an export directory...</source>
         <translation>Wählen Sie ein Exportverzeichnis.....</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1459"/>
-        <location filename="src/mainwindow.cpp" line="1857"/>
+        <location filename="src/mainwindow.cpp" line="1513"/>
+        <location filename="src/mainwindow.cpp" line="1911"/>
         <source>Error Exporting Data</source>
         <translation>Fehler beim Exportieren von Daten</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1463"/>
-        <location filename="src/mainwindow.cpp" line="1861"/>
+        <location filename="src/mainwindow.cpp" line="1517"/>
+        <location filename="src/mainwindow.cpp" line="1915"/>
         <source>Export Complete</source>
         <translation>Export abgeschlossen</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1472"/>
+        <location filename="src/mainwindow.cpp" line="1526"/>
         <source>Warning</source>
         <translation>Warnung</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1473"/>
+        <location filename="src/mainwindow.cpp" line="1527"/>
         <source>Choose a folder containing exported data...</source>
         <translation>Wählen Sie einen Ordner mit exportierten Daten.....</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1484"/>
-        <location filename="src/mainwindow.cpp" line="1878"/>
+        <location filename="src/mainwindow.cpp" line="1538"/>
+        <location filename="src/mainwindow.cpp" line="1932"/>
         <source>Error Importing Data</source>
         <translation>Fehler beim Datenimport</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1488"/>
-        <location filename="src/mainwindow.cpp" line="1882"/>
+        <location filename="src/mainwindow.cpp" line="1542"/>
+        <location filename="src/mainwindow.cpp" line="1936"/>
         <source>Import Complete</source>
         <translation>Import abgeschlossen</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1563"/>
+        <location filename="src/mainwindow.cpp" line="1617"/>
         <source>Paper Blossoms Character XML (*.xml)</source>
         <translatorcomment>No change</translatorcomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1574"/>
+        <location filename="src/mainwindow.cpp" line="1628"/>
         <source>Unable to open XML file for writing.</source>
         <translation>Es ist nicht möglich, die XML-Datei zum Schreiben zu öffnen.</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1847"/>
+        <location filename="src/mainwindow.cpp" line="1901"/>
         <source>Export User Descriptions...</source>
         <translation>Benutzerbeschreibungen exportieren.....</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1847"/>
-        <location filename="src/mainwindow.cpp" line="1894"/>
-        <location filename="src/mainwindow.cpp" line="1973"/>
+        <location filename="src/mainwindow.cpp" line="1901"/>
+        <location filename="src/mainwindow.cpp" line="1948"/>
+        <location filename="src/mainwindow.cpp" line="2027"/>
         <source>CSV (*.csv)</source>
         <translatorcomment>No change</translatorcomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1870"/>
+        <location filename="src/mainwindow.cpp" line="1924"/>
         <source>Import User Descriptions...</source>
         <translation>Benutzerbeschreibungen importieren.....</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1870"/>
+        <location filename="src/mainwindow.cpp" line="1924"/>
         <source>CSV (*.csv);;Any (*)</source>
         <translatorcomment>No change</translatorcomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1894"/>
-        <location filename="src/mainwindow.cpp" line="1973"/>
+        <location filename="src/mainwindow.cpp" line="1948"/>
+        <location filename="src/mainwindow.cpp" line="2027"/>
         <source>Export Translation File...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1903"/>
-        <location filename="src/mainwindow.cpp" line="1982"/>
+        <location filename="src/mainwindow.cpp" line="1957"/>
+        <location filename="src/mainwindow.cpp" line="2036"/>
         <source>Error exporting translation data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1907"/>
-        <location filename="src/mainwindow.cpp" line="1986"/>
+        <location filename="src/mainwindow.cpp" line="1961"/>
+        <location filename="src/mainwindow.cpp" line="2040"/>
         <source>Translation Template Export Complete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/mainwindow.cpp" line="2101"/>
+        <source>Upgrading Bond</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1160,33 +1204,74 @@ können nur mit GM-Genehmigung genommen werden.</translation>
         <translation></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage1.ui" line="20"/>
+        <location filename="ui/newcharwizardpage1.ui" line="22"/>
+        <source>Character Type:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/newcharwizardpage1.ui" line="30"/>
+        <source>Samurai</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/newcharwizardpage1.ui" line="35"/>
+        <source>Rōnin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/newcharwizardpage1.ui" line="40"/>
+        <source>Gaijin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/newcharwizardpage1.ui" line="45"/>
+        <source>Peasant</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/newcharwizardpage1.ui" line="55"/>
         <source>1. What Clan do you belong to?</source>
         <translation>1. Zu welchem Klan gehörst du?</translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage1.ui" line="79"/>
+        <location filename="ui/newcharwizardpage1.ui" line="160"/>
+        <source>1. What region does your character come from?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/newcharwizardpage1.ui" line="201"/>
+        <source>2. What was your character&apos;s upbringing?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/newcharwizardpage1.ui" line="223"/>
+        <source>Choose Skills:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/newcharwizardpage1.ui" line="319"/>
         <source>Summary</source>
         <translation>Zusammenfassung</translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage1.ui" line="85"/>
+        <location filename="ui/newcharwizardpage1.ui" line="325"/>
         <source>SUMMARY</source>
         <translatorcomment>No change</translatorcomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage1.ui" line="101"/>
+        <location filename="ui/newcharwizardpage1.ui" line="96"/>
         <source>2. What Family do you belong to?</source>
         <translation>2. Zu welcher Familie gehörst du?</translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage1.ui" line="126"/>
+        <location filename="ui/newcharwizardpage1.ui" line="121"/>
+        <location filename="ui/newcharwizardpage1.ui" line="236"/>
         <source>Choose a Ring:</source>
         <translation>Wähle einen Ring aus:</translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage1.cpp" line="37"/>
+        <location filename="src/newcharwizardpage1.cpp" line="38"/>
         <source>Part 1: Clan and Family</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1312,7 +1397,7 @@ können nur mit GM-Genehmigung genommen werden.</translation>
     </message>
     <message>
         <location filename="ui/newcharwizardpage3.ui" line="107"/>
-        <location filename="ui/newcharwizardpage3.ui" line="146"/>
+        <location filename="ui/newcharwizardpage3.ui" line="133"/>
         <source>Conflicted - Choose a Skill</source>
         <translation>Konflikt - Wähle eine Fähigkeit aus</translation>
     </message>
@@ -1322,9 +1407,14 @@ können nur mit GM-Genehmigung genommen werden.</translation>
         <translation>8. Was hältst du von Bushido?</translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage3.ui" line="133"/>
+        <location filename="ui/newcharwizardpage3.ui" line="143"/>
         <source>Positive - +10 Honor</source>
         <translation>Positiv - +10 Ehre</translation>
+    </message>
+    <message>
+        <location filename="ui/newcharwizardpage3.ui" line="162"/>
+        <source>Divergent - Choose an item:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/newcharwizardpage3.cpp" line="39"/>
@@ -1431,35 +1521,41 @@ können nur mit GM-Genehmigung genommen werden.</translation>
         <translation></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage5.ui" line="20"/>
+        <location filename="ui/newcharwizardpage5.ui" line="98"/>
         <source>14. What do people notice first upon encountering you? (Choose a distinctive style/detail.)</source>
         <translation>14. Was bemerken die Menschen zuerst, wenn sie dir begegnen? (Wählen Sie einen unverwechselbaren Stil/Detail.)</translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage5.ui" line="54"/>
+        <location filename="ui/newcharwizardpage5.ui" line="76"/>
         <source>Summary</source>
         <translation>Zusammenfassung</translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage5.ui" line="60"/>
+        <location filename="ui/newcharwizardpage5.ui" line="82"/>
         <source>SUMMARY</source>
         <translatorcomment>No change</translatorcomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage5.ui" line="76"/>
+        <location filename="ui/newcharwizardpage5.ui" line="42"/>
         <source>15. How do you react to stressful situations?</source>
         <translation>15. Wie reagierst du auf Stresssituationen?</translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage5.ui" line="92"/>
+        <location filename="ui/newcharwizardpage5.ui" line="20"/>
         <source>16. What are your preexisting relationships with other clans, families, organizations, and traditions?</source>
         <translation>16. Wie sind deine bereits bestehenden Beziehungen zu anderen Klans, Familien, Organisationen und Traditionen?</translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage5.ui" line="101"/>
+        <location filename="ui/newcharwizardpage5.ui" line="29"/>
+        <location filename="ui/newcharwizardpage5.ui" line="104"/>
         <source>Choose an item symbolizing this history:</source>
         <translation>Wähle einen Gegenstand, der diese Geschichte symbolisiert:</translation>
+    </message>
+    <message>
+        <location filename="ui/newcharwizardpage5.ui" line="121"/>
+        <source>Note: if you select an item in your school kit, remove it and add Ceremonial or Resplendent to the item after character creation is complete.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/newcharwizardpage5.cpp" line="32"/>
@@ -1476,12 +1572,12 @@ können nur mit GM-Genehmigung genommen werden.</translation>
         <translation></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage6.ui" line="26"/>
+        <location filename="ui/newcharwizardpage6.ui" line="94"/>
         <source>17. How would your parents describe you?</source>
         <translation>17. Wie würden deine Eltern dich beschreiben?</translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage6.ui" line="38"/>
+        <location filename="ui/newcharwizardpage6.ui" line="106"/>
         <source>Choose a 0-rank skill:</source>
         <translation>Wähle eine 0 Rang Fähigkeit aus:</translation>
     </message>
@@ -1491,90 +1587,100 @@ können nur mit GM-Genehmigung genommen werden.</translation>
         <translation>Zusammenfassung</translation>
     </message>
     <message>
+        <location filename="ui/newcharwizardpage6.ui" line="26"/>
+        <source>17. What shared history do you have with your group?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/newcharwizardpage6.ui" line="38"/>
+        <source>Choose a bond:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="ui/newcharwizardpage6.ui" line="72"/>
         <source>SUMMARY</source>
         <translatorcomment>No change</translatorcomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage6.ui" line="94"/>
+        <location filename="ui/newcharwizardpage6.ui" line="122"/>
         <source>18. Who were you named to honor?</source>
         <translation>18. Wem wurdest du zu Ehren genannt?</translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage6.ui" line="100"/>
+        <location filename="ui/newcharwizardpage6.ui" line="128"/>
         <source>Choose Ancestor 2</source>
         <translation>Wähle Vorfahre 2</translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage6.ui" line="107"/>
+        <location filename="ui/newcharwizardpage6.ui" line="135"/>
         <source>Ancestor 2</source>
         <translation>Vorfahre 2</translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage6.ui" line="116"/>
-        <location filename="ui/newcharwizardpage6.ui" line="196"/>
-        <location filename="ui/newcharwizardpage6.ui" line="258"/>
+        <location filename="ui/newcharwizardpage6.ui" line="144"/>
+        <location filename="ui/newcharwizardpage6.ui" line="224"/>
+        <location filename="ui/newcharwizardpage6.ui" line="286"/>
         <source>Roll</source>
         <translation>Wurf</translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage6.ui" line="138"/>
-        <location filename="ui/newcharwizardpage6.ui" line="187"/>
+        <location filename="ui/newcharwizardpage6.ui" line="166"/>
+        <location filename="ui/newcharwizardpage6.ui" line="215"/>
         <source>MOD</source>
         <translatorcomment>No change</translatorcomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage6.ui" line="163"/>
+        <location filename="ui/newcharwizardpage6.ui" line="191"/>
         <source>Ancestor 1</source>
         <translation>Vorfahre 1</translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage6.ui" line="206"/>
+        <location filename="ui/newcharwizardpage6.ui" line="234"/>
         <source>Choose Ancestor 1</source>
         <translation>Wähle Vorfahre 2</translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage6.ui" line="226"/>
+        <location filename="ui/newcharwizardpage6.ui" line="254"/>
         <source>Other Effects</source>
         <translation>Andere Effekte</translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage6.ui" line="236"/>
+        <location filename="ui/newcharwizardpage6.ui" line="264"/>
         <source>Gain:</source>
         <translation>Bekomme:</translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage6.ui" line="246"/>
+        <location filename="ui/newcharwizardpage6.ui" line="274"/>
         <source>Choose from:</source>
         <translation>Wähle aus:</translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage6.ui" line="269"/>
+        <location filename="ui/newcharwizardpage6.ui" line="297"/>
         <source>SPECIAL:</source>
         <translatorcomment>No change</translatorcomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage6.ui" line="276"/>
+        <location filename="ui/newcharwizardpage6.ui" line="304"/>
         <source>SPEC_1</source>
         <translatorcomment>No change</translatorcomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage6.ui" line="286"/>
+        <location filename="ui/newcharwizardpage6.ui" line="314"/>
         <source>SPEC_2</source>
         <translatorcomment>No change</translatorcomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage6.ui" line="314"/>
+        <location filename="ui/newcharwizardpage6.ui" line="342"/>
         <source>Heritage Table:</source>
         <translation>Erbtabelle:</translation>
     </message>
     <message>
-        <location filename="ui/newcharwizardpage6.ui" line="333"/>
+        <location filename="ui/newcharwizardpage6.ui" line="361"/>
         <source>19. What is your personal name?</source>
         <translation>19. Wie lautet dein persönlicher Name?</translation>
     </message>
@@ -1584,83 +1690,81 @@ können nur mit GM-Genehmigung genommen werden.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="159"/>
-        <location filename="src/newcharwizardpage6.cpp" line="185"/>
+        <location filename="src/newcharwizardpage6.cpp" line="193"/>
+        <location filename="src/newcharwizardpage6.cpp" line="219"/>
         <source>H:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="162"/>
-        <location filename="src/newcharwizardpage6.cpp" line="188"/>
+        <location filename="src/newcharwizardpage6.cpp" line="196"/>
+        <location filename="src/newcharwizardpage6.cpp" line="222"/>
         <source>G:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="165"/>
-        <location filename="src/newcharwizardpage6.cpp" line="191"/>
+        <location filename="src/newcharwizardpage6.cpp" line="199"/>
+        <location filename="src/newcharwizardpage6.cpp" line="225"/>
         <source>S:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="247"/>
-        <location filename="src/newcharwizardpage6.cpp" line="571"/>
-        <location filename="src/newcharwizardpage6.cpp" line="630"/>
+        <location filename="src/newcharwizardpage6.cpp" line="281"/>
+        <location filename="src/newcharwizardpage6.cpp" line="605"/>
+        <location filename="src/newcharwizardpage6.cpp" line="664"/>
         <source>No Change</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="295"/>
+        <location filename="src/newcharwizardpage6.cpp" line="329"/>
         <source>Choose an item quality. The GM chooses another item quality.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="298"/>
+        <location filename="src/newcharwizardpage6.cpp" line="332"/>
         <source>Player-chosen Quality:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="299"/>
+        <location filename="src/newcharwizardpage6.cpp" line="333"/>
         <source>GM-chosen Quality:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="360"/>
+        <location filename="src/newcharwizardpage6.cpp" line="394"/>
         <source>Choose a ring to raise, and a ring to lower.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="363"/>
-        <location filename="src/newcharwizardpage6.cpp" line="416"/>
-        <location filename="src/newcharwizardpage6.cpp" line="428"/>
+        <location filename="src/newcharwizardpage6.cpp" line="397"/>
+        <location filename="src/newcharwizardpage6.cpp" line="450"/>
+        <location filename="src/newcharwizardpage6.cpp" line="462"/>
         <source>Raise:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="364"/>
-        <location filename="src/newcharwizardpage6.cpp" line="417"/>
-        <location filename="src/newcharwizardpage6.cpp" line="429"/>
+        <location filename="src/newcharwizardpage6.cpp" line="398"/>
+        <location filename="src/newcharwizardpage6.cpp" line="451"/>
+        <location filename="src/newcharwizardpage6.cpp" line="463"/>
         <source>Lower:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="413"/>
+        <location filename="src/newcharwizardpage6.cpp" line="447"/>
         <source>You may raise the Void Ring and choose a ring to lower.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="425"/>
+        <location filename="src/newcharwizardpage6.cpp" line="459"/>
         <source>You may choose a ring to lower and raise the Fire or Air Ring.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="737"/>
         <source>Rings:</source>
-        <translation type="unfinished">Ringe:</translation>
+        <translation type="obsolete">Ringe:</translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="737"/>
         <source>Skills:</source>
-        <translation type="unfinished">Fähigkeiten:</translation>
+        <translation type="obsolete">Fähigkeiten:</translation>
     </message>
 </context>
 <context>
@@ -1754,13 +1858,13 @@ können nur mit GM-Genehmigung genommen werden.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage7.cpp" line="133"/>
+        <location filename="src/newcharwizardpage7.cpp" line="150"/>
         <source>4. Standing out in school:
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage7.cpp" line="134"/>
+        <location filename="src/newcharwizardpage7.cpp" line="151"/>
         <source>
 
 7. Clan Relationship: 
@@ -1768,7 +1872,8 @@ können nur mit GM-Genehmigung genommen werden.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage7.cpp" line="135"/>
+        <location filename="src/newcharwizardpage7.cpp" line="152"/>
+        <location filename="src/newcharwizardpage7.cpp" line="172"/>
         <source>
 
 8. Bushido: 
@@ -1776,7 +1881,8 @@ können nur mit GM-Genehmigung genommen werden.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage7.cpp" line="136"/>
+        <location filename="src/newcharwizardpage7.cpp" line="153"/>
+        <location filename="src/newcharwizardpage7.cpp" line="173"/>
         <source>
 
 9. Accomplishment: 
@@ -1784,7 +1890,8 @@ können nur mit GM-Genehmigung genommen werden.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage7.cpp" line="137"/>
+        <location filename="src/newcharwizardpage7.cpp" line="154"/>
+        <location filename="src/newcharwizardpage7.cpp" line="174"/>
         <source>
 
 10. Setback: 
@@ -1792,7 +1899,8 @@ können nur mit GM-Genehmigung genommen werden.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage7.cpp" line="138"/>
+        <location filename="src/newcharwizardpage7.cpp" line="155"/>
+        <location filename="src/newcharwizardpage7.cpp" line="175"/>
         <source>
 
 11. At Peace: 
@@ -1800,7 +1908,8 @@ können nur mit GM-Genehmigung genommen werden.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage7.cpp" line="139"/>
+        <location filename="src/newcharwizardpage7.cpp" line="156"/>
+        <location filename="src/newcharwizardpage7.cpp" line="176"/>
         <source>
 
 12. Anxiety: 
@@ -1808,7 +1917,8 @@ können nur mit GM-Genehmigung genommen werden.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage7.cpp" line="140"/>
+        <location filename="src/newcharwizardpage7.cpp" line="157"/>
+        <location filename="src/newcharwizardpage7.cpp" line="177"/>
         <source>
 
 13. Important Relationship: 
@@ -1816,7 +1926,7 @@ können nur mit GM-Genehmigung genommen werden.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage7.cpp" line="141"/>
+        <location filename="src/newcharwizardpage7.cpp" line="158"/>
         <source>
 
 14. Distinctive Traits and Behaviors: 
@@ -1824,7 +1934,8 @@ können nur mit GM-Genehmigung genommen werden.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage7.cpp" line="142"/>
+        <location filename="src/newcharwizardpage7.cpp" line="159"/>
+        <location filename="src/newcharwizardpage7.cpp" line="179"/>
         <source>
 
 15. Under Stress: 
@@ -1832,7 +1943,8 @@ können nur mit GM-Genehmigung genommen werden.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage7.cpp" line="143"/>
+        <location filename="src/newcharwizardpage7.cpp" line="160"/>
+        <location filename="src/newcharwizardpage7.cpp" line="180"/>
         <source>
 
 16. Existing Relationships With Other Groups: 
@@ -1840,7 +1952,7 @@ können nur mit GM-Genehmigung genommen werden.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage7.cpp" line="144"/>
+        <location filename="src/newcharwizardpage7.cpp" line="161"/>
         <source>
 
 17. Parents: 
@@ -1848,7 +1960,45 @@ können nur mit GM-Genehmigung genommen werden.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage7.cpp" line="149"/>
+        <location filename="src/newcharwizardpage7.cpp" line="170"/>
+        <source>4.In and out of trouble:
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage7.cpp" line="171"/>
+        <source>
+
+7.Known for: 
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage7.cpp" line="178"/>
+        <source>
+
+14. Prized Possession: 
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage7.cpp" line="181"/>
+        <source>
+
+17. Shared History: 
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage7.cpp" line="182"/>
+        <source>
+
+18. Who raised you: 
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage7.cpp" line="191"/>
         <source>
 
 18. Glorious Sacrifice: 
@@ -1856,22 +2006,22 @@ One of your ancestors perished honorably in battle, </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage7.cpp" line="150"/>
+        <location filename="src/newcharwizardpage7.cpp" line="192"/>
         <source>and their signature </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage7.cpp" line="150"/>
+        <location filename="src/newcharwizardpage7.cpp" line="192"/>
         <source> was lost. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage7.cpp" line="411"/>
+        <location filename="src/newcharwizardpage7.cpp" line="544"/>
         <source>Wealth:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage7.cpp" line="728"/>
+        <location filename="src/newcharwizardpage7.cpp" line="903"/>
         <source>
 
 20. Death:
