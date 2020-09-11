@@ -18620,7 +18620,7 @@
             },
             {
                 "rank": 1,
-                "advance": "FLowering Deceptions",
+                "advance": "Flowering Deceptions",
                 "type": "technique",
                 "special_access": false
             },
@@ -20260,7 +20260,11 @@
                 "rank": 1,
                 "advance": "Water Invocations",
                 "type": "technique_group",
-                "special_access": true
+                "special_access": true,
+                "allowable_rank": {
+                    "max": 2,
+                    "min": 1
+                }
             },
             {
                 "rank": 1,
@@ -20390,7 +20394,7 @@
                 "rank": 4,
                 "advance": "Earth Invocations",
                 "type": "technique_group",
-                "special_access": false,
+                "special_access": true,
                 "allowable_rank": {
                     "min": 1,
                     "max": 5
