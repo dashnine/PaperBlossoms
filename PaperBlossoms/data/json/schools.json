@@ -19630,7 +19630,7 @@
                 "rank": 5,
                 "advance": "Ever-Changing Waves",
                 "type": "technique",
-                "special_access": false
+                "special_access": true
             }
         ],
         "mastery_ability": "Elemental Charmer"
@@ -19680,7 +19680,7 @@
             },
             {
                 "size": 1,
-                "set": ["Two Items of Rarity 4 or Lower"]
+                "set": ["One Item of Rarity 4 or Lower"]
             },
             {
                 "size": 1,
@@ -21126,7 +21126,7 @@
                 "rank": 1,
                 "advance": "Bellow of Resolve",
                 "type": "technique",
-                "special_access": false
+                "special_access": true
             },
             {
                 "rank": 2,
