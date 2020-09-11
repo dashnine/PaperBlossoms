@@ -437,11 +437,23 @@ QString DataAccessLayer::qs_getregionsubtype(const QString region)
 int DataAccessLayer::i_getupbringingstatusmod(const QString upbringing){
     int out = 0;
     QSqlQuery query;
-    query.prepare("SELECT status_mod FROM upbringings WHERE name_tr = :upbringing");
+    query.prepare("SELECT status_modification FROM upbringings WHERE name_tr = :upbringing");
     query.bindValue(0, upbringing);
     query.exec();
     while (query.next()) {
         out = query.value(0).toInt();
+    }
+    return out;
+}
+
+QString DataAccessLayer::qs_getupbringingitem(const QString upbringing){ //some upbringings add a free item
+    QString out = "";
+    QSqlQuery query;
+    query.prepare("SELECT starting_item FROM upbringings WHERE name_tr = :upbringing");
+    query.bindValue(0, upbringing);
+    query.exec();
+    while (query.next()) {
+        out = query.value(0).toString();
     }
     return out;
 }

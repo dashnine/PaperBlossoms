@@ -360,6 +360,7 @@ void NewCharWizardPage7::initializePage()
         //"Yumi and quiver of arrows with three special arrows" //special -- handle at end
                                      };
 
+
     //-----first, school eq choices -----//
     const QList<QStringList> equipsets = dal->ql_getlistsofeq(school);              //get a list of equipsets
     if(equipsets.count()>0){                                                //if this returned nothing, time to bail
@@ -410,6 +411,14 @@ void NewCharWizardPage7::initializePage()
 
     }
 
+    //-----POW: add free items, if they exist on upbringing--------//
+    QString upbringing_item = dal->qs_getupbringingitem(upbringing);
+    if(!upbringing_item.isEmpty()){
+        eqText+= upbringing_item + ", ";
+        foreach(QString item, upbringing_item.split(", ")){
+            eqList.append(populateItemFields(item,dal->qs_getitemtype(item)));
+        }
+    }
 
    //check for eq on q8 ronin.  Add eq for q14
     // POW

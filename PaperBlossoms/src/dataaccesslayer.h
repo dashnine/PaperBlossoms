@@ -247,6 +247,7 @@ public:
     int i_getupbringingkoku(const QString upbringing);
     int i_getupbringingbu(const QString upbringing);
     int i_getupbringingzeni(const QString upbringing);
+    QString qs_getupbringingitem(const QString upbringing);
 
     //tech refactor
     QList<QStringList> ql_getalltechniques();
