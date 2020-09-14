@@ -5,13 +5,13 @@ Author: @meow9th
 
 The application database is [paperblossoms.db](paperblossoms.db), a SQLite database. However, in order to make data entry easier, more reliable and more maintainable, data is never entered directly into `paperblossoms.db`. Instead, data is entered in [JSON](json/) files, which are then flattened and normalized into `paperblossoms.db` with the Python script [json_to_db.py](scripts/json_to_db.py). Below, I describe the structure of the application database and the data entry system I devised to minimize tedium and maximize reliability.
 
-If you want to help with data entry, you may want to skip to the section [Data entry tasks](#data-entry-tasks). When you get confused, you can refer to [Application database](#application-database) and [Data entry system](#data-entry-system) for a more thorough explanation of how everything works.
+If you want to help with data entry, you may want to skip to the section [Contributing data](#contributing-data). When you get confused, you can refer to [Application database](#application-database) and [Data entry system](#data-entry-system) for a more thorough explanation of how everything works.
 
 Throughout this guide, I assume working knowledge of JSON, JSON schemas, SQL databases, Python and VS Code.
 
 Directory contents:
 
-- [i18n](i18n/): See [Translations](#translations)
+- [i18n/](i18n/): See [Translations](#translations)
 - [json/](json/): See [JSON data](#json-data)
 - [json_schema/](json_schema/): See [JSON schemas](#json-schemas)
 - [scripts/](scripts/): See [Scripts](#scripts)
@@ -243,9 +243,9 @@ How the application fetches translations:
 - The `i18n` table is part of the view definition for each entity. Every field in the application database that could be translated has a translation field with the `*_tr` suffix, which is populated in the view definition of the entity with the appropriate `i18n.string_tr` value, or the untranslated value if a translation isn't available.
 - During runtime, the application queries the application database, fetching the `*_tr` values.
 
-## Data entry tasks
+## Contributing data
 
-Below, I describe how to enter base data. Customer user data is user-specific, and is not meant to be released with the application. Translations have a [separate process](https://github.com/dashnine/PaperBlossoms/wiki/Translation), and can be provided for both the UI and the database.
+Below, I describe how to contribute base data. Customer user data is user-specific, and is not meant to be released with the application. Translations have a [separate process](https://github.com/dashnine/PaperBlossoms/wiki/Translation), and can be provided for both the UI and the database.
 
 Contribution guidelines:
 
@@ -253,7 +253,7 @@ Contribution guidelines:
 - Coordinate with @dashnine about changes to the application database schema or the JSON schemas. Open [an issue](https://github.com/dashnine/PaperBlossoms/issues/new/choose) or [draft PR](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests#draft-pull-requests) to make your intention to do so explicit.
 - It is polite to refresh `enum`s in JSON schemas if you add any data which go into `enum`s.
 
-### Add a new instance of an existing entity
+### Contribute a new instance of an existing entity
 
 Follow these steps if you'd like to add a new school, clan, weapon, or any new instance of an entity already captured in an existing JSON file.
 
@@ -272,7 +272,7 @@ Optional:
 
 See [Scripts](#scripts) above for more detail and example usage for each of the scripts mentioned above.
 
-### Add a new entity
+### Contribute a new entity
 
 1. Write a new JSON schema.
     - Run `add_default_snippets_to_schema.py`
@@ -292,14 +292,14 @@ Optional:
 
 6. Update `add_enums.py` to read `enum`s from the new JSON file as applicable. Run the updated `add_enums.py` to add those options to other JSON schemas as applicable.
 
-### Add a new book
+### Contribute a new book
 
 Published books are perhaps the most frequently employed `enum` across all JSON schemas. The list of valid books is hard-coded in `add_enums.py`, in the function `get_books()`.
 
 1. Add the book title abbreviation to the list `books_enum` in `get_books()` in `add_enums.py`.
 2. Run `add_enums.py` without any arguments to add the books to all JSON schemas.
 
-To add data from the new book, see sections above on [adding new instances](#add-a-new-instance-of-an-existing-entity) and [adding new entities](#add-a-new-entity).
+To add data from the new book, see sections above on [adding new instances](#contribute-a-new-instance-of-an-existing-entity) and [adding new entities](#contribute-a-new-entity).
 
 ### Common hitches
 
