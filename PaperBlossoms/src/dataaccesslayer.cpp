@@ -62,7 +62,17 @@ DataAccessLayer::DataAccessLayer(QString locale)
         const int ret = msgBox.exec();
 
         if(ret == QMessageBox::Yes){
-            QFile::remove(targetpath);
+            bool dbexists = QFile::exists(targetpath);
+
+
+            if(!QFile::remove(targetpath) && dbexists){
+                QMessageBox msgBox;
+                msgBox.setText("Error");
+                msgBox.setInformativeText("Unable to remove the old data. To remove old data, manually delete paperblossoms.db.");
+                msgBox.setStandardButtons(QMessageBox::Yes);
+                msgBox.setDefaultButton(QMessageBox::Yes);
+                msgBox.exec();
+            }
         }
     }
 
