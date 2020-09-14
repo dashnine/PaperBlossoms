@@ -1124,6 +1124,13 @@ void MainWindow::on_addTitle_pushButton_clicked()
         qDebug() << "Accepted: getting title.";
        m_dirtyDataFlag = true;
        curCharacter.titles.append(addtitledialog.getResult());
+       //special handlers for adv/disadv in titles
+       if(addtitledialog.getResult()=="The Damned"){
+           if(!curCharacter.adv_disadv.contains("Ferocity")) curCharacter.adv_disadv.append("Ferocity");
+       }
+       else if(addtitledialog.getResult()=="Moon Cultist"){
+           curCharacter.adv_disadv.append("Dark Secret");
+       }
        populateUI();
     }
     else{
