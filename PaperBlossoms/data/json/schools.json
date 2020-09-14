@@ -21574,5 +21574,2518 @@
             }
         ],
         "mastery_ability": "Tower of Ivory"
+    },
+    {
+        "name": "Agasha Alchemist School",
+        "reference": {
+            "book": "CR",
+            "page": 88
+        },
+        "role": ["Shugenja"],
+        "clan": "Dragon",
+        "ring_increase": ["Fire", "Water"],
+        "starting_skills": {
+            "size": 3,
+            "set": ["Martial Arts [Ranged]", "Medicine", "Meditation", "Performance", "Survival", "Theology"]
+        },
+        "honor": 40,
+        "techniques_available": ["Invocations", "Rituals", "Shūji"],
+        "starting_techniques": [
+            {
+                "size": 3,
+                "set": ["Amaterasu's Gaze", "Fukurokujin's Wit", "Path to Inner Peace", "The Cleansing Fire", "The Fires from Within"]
+            },
+            {
+                "size": 2,
+                "set": ["Shallow Waters", "Stirring the Embers", "Truth Burns through Lies"]
+            }
+        ],
+        "school_ability": "Flesh of the Elements",
+        "starting_outfit": [
+            {
+                "size": 1,
+                "set": ["Traveling Clothes"]
+            },
+            {
+                "size": 1,
+                "set": ["One Weapon of Rarity 7 or Lower"]
+            },
+            {
+                "size": 1,
+                "set": ["Blowgun"]
+            },
+            {
+                "size": 1,
+                "set": ["Wakizashi"]
+            },
+            {
+                "size": 1,
+                "set": ["Medicine Kit"]
+            },
+            {
+                "size": 1,
+                "set": ["Omamori"]
+            },
+            {
+                "size": 1,
+                "set": ["Set of glass vials"]
+            },
+            {
+                "size": 1,
+                "set": ["Satchel of Ingredients"]
+            }
+        ],
+        "curriculum": [
+            {
+                "rank": 1,
+                "advance": "Scholar skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Martial Arts [Ranged]",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Performance",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Smithing",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Fire Invocations",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Water Invocations",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Hawk's Precision",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 1,
+                "advance": "Fires of Purity",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 2,
+                "advance": "Scholar skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Martial Arts [Ranged]",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Performance",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Survival",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Earth Invocations",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Air Invocations",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Dazzling Performance",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 2,
+                "advance": "Pelting Hail Style",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Social skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Commerce",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Medicine",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Sentiment",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Shūji",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Bravado",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 3,
+                "advance": "Path of Beasts",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Scholar skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Martial Arts [Ranged]",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Performance",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Smithing",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Invocations",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Ranged Combat Kata",
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "rank": 4,
+                "advance": "Rain of Ten Thousand Lotuses",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 5,
+                "advance": "Social skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Commerce",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Martial Arts [Ranged]",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Survival",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Invocations",
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "rank": 5,
+                "advance": "Heart of the Lady Sun",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Sear the Wound",
+                "type": "technique",
+                "special_access": false
+            }
+        ],
+        "mastery_ability": "Experimental Concoction"
+    },
+    {
+        "name": "Asahina Envoy School",
+        "reference": 
+        {
+            "book": "CR",
+            "page": 89
+        },
+        "role": ["Courtier"],
+        "clan": "Crane",
+        "ring_increase": ["Air", "Void"],
+        "starting_skills": {
+            "size": 5,
+            "set": ["Aesthetics", "Courtesy", "Culture", "Meditation", "Performance", "Sentiment", "Theology"]
+        },
+        "honor": 50,
+        "techniques_available": ["Kata", "Rituals", "Shūji"],
+        "starting_techniques": [
+            {
+                "size": 1,
+                "set": ["Tea Ceremony"]
+            },
+            {
+                "size": 1,
+                "set": ["Cadence", "Shallow Waters", "Weight of Duty"]
+            }
+        ],
+        "school_ability": "Soul of Ceremony",
+        "starting_outfit": [
+            {
+                "size": 1,
+                "set": ["Traveling Clothes"]
+            },
+            {
+                "size": 1,
+                "set": ["Ceremonial Clothes"]
+            },
+            {
+                "size": 1,
+                "set": ["Sanctified Robes"]
+            },
+            {
+                "size": 1,
+                "set": ["Wakizashi"]
+            },
+            {
+                "size": 1,
+                "set": ["Knife", "Bō"]
+            },
+            {
+                "size": 1,
+                "set": ["Scroll Satchel"]
+            },
+            {
+                "size": 1,
+                "set": ["Calligraphy Set"]
+            },
+            {
+                "size": 1,
+                "set": ["Tea Set (portable)"]
+            },
+            {
+                "size": 1,
+                "set": ["Traveling Pack"]
+            },
+            {
+                "size": 1,
+                "set": ["Attendant"]
+            },
+            {
+                "size": 1,
+                "set": ["Rokugani Pony"]
+            }
+        ],
+        "curriculum": [
+            {
+                "rank": 1,
+                "advance": "Social skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Aesthetics",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Culture",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Government",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Air Shūji",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Lady Doji's Decree",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 1,
+                "advance": "Divination",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Scholar skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Command",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Design",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Performance",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Fire Shūji",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Dazzling Performance",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 2,
+                "advance": "Blessing of the Dance",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 3,
+                "advance": "Social skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Commerce",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Culture",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Theology",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Air Shūji",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Blessed Union",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Prayer of Protection",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 4,
+                "advance": "Artisan skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Courtesy",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Performance",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Sentiment",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Water Shūji",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Rituals",
+                "type": "technique_group",
+                "special_access": true,
+                "allowable_rank": {
+                    "max": 5,
+                    "min": 1
+                }
+            },
+            {
+                "rank": 4,
+                "advance": "Buoyant Arrival",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 5,
+                "advance": "Social skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Aesthetics",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Culture",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Design",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Void Shūji",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Bend with the Storm",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "The Immovable Hand of Peace",
+                "type": "technique",
+                "special_access": false
+            }
+        ],
+        "mastery_ability": "Favored Counselor"
+    },
+    {
+        "name": "Ishiken Initiate School",
+        "reference": {
+            "book": "CR",
+            "page": 82
+        },
+        "role": ["Sage", "Shugenja"],
+        "clan": "Phoenix",
+        "ring_increase": ["Void", "any"],
+        "starting_skills": {
+            "size": 3,
+            "set": ["Fitness", "Medicine", "Meditation", "Sentiment", "Survival", "Theology"]
+        },
+        "honor": 40,
+        "techniques_available": ["Inversions", "Rituals", "Shūji"],
+        "starting_techniques": [
+            {
+                "size": 1,
+                "set": ["One within the Void", "Sight beyond Existence", "Whispered Blade", "Witness the End"]
+            },
+            {
+                "size": 1,
+                "set": ["Commune with the Spirits", "Divination", "Threshold Barrier"]
+            },
+            {
+                "size": 1,
+                "set": ["All in Jest", "Ancestry Unearthed", "Cadence", "Truth Burns through Lies"]
+            }
+        ],
+        "school_ability": "Way of the Void",
+        "starting_outfit": [
+            {
+                "size": 1,
+                "set": ["Sanctified Robes"]
+            },
+            {
+                "size": 1,
+                "set": ["Wakizashi"]
+            },
+            {
+                "size": 1,
+                "set": ["Knife", "Bō"]
+            },
+            {
+                "size": 1,
+                "set": ["Scroll Satchel"]
+            },
+            {
+                "size": 1,
+                "set": ["Traveling Pack"]
+            }
+        ],
+        "curriculum": [
+            {
+                "rank": 1,
+                "advance": "Scholar skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Fitness",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Meditation",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Skulduggery",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Air Invocations",
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "rank": 1,
+                "advance": "Inversions",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Tea Ceremony",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 2,
+                "advance": "Martial skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Command",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Composition",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Theology",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Fire Invocations",
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "rank": 2,
+                "advance": "Inversions",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "All Arts Are One",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 3,
+                "advance": "Social skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Government",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Meditation",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Theology",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Water Invocations",
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "rank": 3,
+                "advance": "Inversions",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "A Samurai's Fate",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 4,
+                "advance": "Trade skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Courtesy",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Meditation",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Theology",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Earth Invocations",
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "rank": 4,
+                "advance": "Inversions",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "The Immovable Hand of Peace",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 5,
+                "advance": "Scholar skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Fitness",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Meditation",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Survival",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Invocations",
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "rank": 5,
+                "advance": "Inversions",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Rouse the Soul",
+                "type": "technique",
+                "special_access": false
+            }
+        ],
+        "mastery_ability": "Essence of Emptiness"
+    },
+    {
+        "name": "Kaito Spirit Seeker School",
+        "reference": {
+            "book": "CR",
+            "page": 83
+        },
+        "role": ["Bushi", "Shugenja"],
+        "clan": "Phoenix",
+        "ring_increase": ["Earth", "Water"],
+        "starting_skills": {
+            "size": 5,
+            "set": ["Composition", "Courtesy", "Games", "Martial Arts [Ranged]", "Performance", "Sentiment", "Theology"]
+        },
+        "honor": 45,
+        "techniques_available": ["Invocations", "Kata", "Rituals"],
+        "starting_techniques": [
+            {
+                "size": 2,
+                "set": ["Armor of Earth", "Extinguish", "Dominion of Suijin", "Tempest of Air"]
+            },
+            {
+                "size": 2,
+                "set": ["Striking as Air", "Striking as Earth", "Striking as Fire", "Striking as Water"]
+            }
+        ],
+        "school_ability": "The Body is a Shrine",
+        "starting_outfit": [
+            {
+                "size": 1,
+                "set": ["Traveling Clothes"]
+            },
+            {
+                "size": 1,
+                "set": ["Sanctified Robes"]
+            },
+            {
+                "size": 1,
+                "set": ["Yumi"]
+            },
+            {
+                "size": 1,
+                "set": ["Quiver of Arrows"]
+            },
+            {
+                "size": 1,
+                "set": ["Wakizashi"]
+            },
+            {
+                "size": 1,
+                "set": ["Knife"]
+            },
+            {
+                "size": 1,
+                "set": ["Bowyer's Kit", "Divination Kit"]
+            }
+        ],
+        "curriculum": [
+            {
+                "rank": 1,
+                "advance": "Social skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Composition",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Medicine",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Theology",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Kata",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Commune with the Spirits",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Civility Foremost",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 2,
+                "advance": "Martial skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Courtesy",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Games",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Survival",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Invocations",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Crimson Leaves Strike",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 2,
+                "advance": "Artisan's Appraisal",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 3,
+                "advance": "Martial skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Courtesy",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Performance",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Theology",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Kata",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Invocations",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Bond of the Realms",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Scholar skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Martial Arts [Ranged]",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Meditation",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Survival",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Kata",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Guardian of the Secret Gate",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 4,
+                "advance": "Buoyant Arrival",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 5,
+                "advance": "Martial skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Courtesy",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Sentiment",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Theology",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Kata",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Invocations",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Rouse the Soul",
+                "type": "technique",
+                "special_access": true
+            }
+        ],
+        "mastery_ability": "Temple of the Heart"
+    },
+    {
+        "name": "Kaiu Architect School",
+        "reference": {
+            "book": "CR",
+            "page": 84
+        },
+        "role": ["Artisan", "Courtier"],
+        "clan": "Crab",
+        "ring_increase": ["Earth", "Void"],
+        "starting_skills": {
+            "size": 5,
+            "set": ["Aesthetics", "Command", "Design", "Government", "Labor", "Martial Arts [Unarmed]", "Tactics"]
+        },
+        "honor": 45,
+        "techniques_available": ["Kata", "Rituals", "Shūji"],
+        "starting_techniques": [
+            {
+                "size": 1,
+                "set": ["Commune with the Spirits"]
+            },
+            {
+                "size": 1,
+                "set": ["Courtier's Resolve", "Honest Assessment"]
+            }
+        ],
+        "school_ability": "Every Stone Serves",
+        "starting_outfit": [
+            {
+                "size": 1,
+                "set": ["Traveling Clothes"]
+            },
+            {
+                "size": 1,
+                "set": ["Ceremonial Clothes"]
+            },
+            {
+                "size": 1,
+                "set": ["Wakizashi"]
+            },
+            {
+                "size": 1,
+                "set": ["Hammer", "Bō"]
+            },
+            {
+                "size": 1,
+                "set": ["Calligraphy Set"]
+            },
+            {
+                "size": 1,
+                "set": ["Drafting Paper"]
+            },
+            {
+                "size": 1,
+                "set": ["Fine Set of Chisels"]
+            }
+        ],
+        "curriculum": [
+            {
+                "rank": 1,
+                "advance": "Martial skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Aesthetics",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Commerce",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Labor",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Earth Shūji",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Rite of the Wheel",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 1,
+                "advance": "Threshold Barrier",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Artisan skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Fitness",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Martial Arts [Unarmed]",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Tactics",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Water Shūji",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Ebb and Flow",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 2,
+                "advance": "Open-Hand Style",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Trade skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Aesthetics",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Fitness",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Martial Arts [Unarmed]",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Earth Shūji",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Pillar of Calm",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 3,
+                "advance": "Lord Hida's Grip",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Social skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Aesthetics",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Labor",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Meditation",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Fire Shūji",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Sear the Wound",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 4,
+                "advance": "Rouse the Soul",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 5,
+                "advance": "Scholar skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Aesthetics",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Survival",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Tactics",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Void Shūji",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Soul Sunder",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Bend with the Storm",
+                "type": "technique",
+                "special_access": false
+            }
+        ],
+        "mastery_ability": "The Flower Binds the Room"
+    },
+    {
+        "name": "Kitsu Real Wanderer School",
+        "reference": {
+            "book": "Core",
+            "page": 85
+        },
+        "role": ["Shugenja", "Bushi"],
+        "clan": "Lion",
+        "ring_increase": ["Void", "Water"],
+        "starting_skills": {
+            "size": 3,
+            "set": ["Fitness", "Martial Arts [Melee]", "Meditation", "Sentiment", "Survival", "Theology"]
+        },
+        "honor": 50,
+        "techniques_available": ["Kata", "Rituals", "Shūji"],
+        "starting_techniques": [
+            {
+                "size": 3,
+                "set": ["Biting Steel", "Blessed Wind", "Courage of Seven Thunders", "Nature's Touch", "The Rushing Wave"]
+            },
+            {
+                "size": 1,
+                "set": ["Striking as Water"]
+            },
+            {
+                "size": 1,
+                "set": ["Commune with the Spirits"]
+            },
+            {
+                "size": 1,
+                "set": ["Divination"]
+            }
+        ],
+        "school_ability": "Celestial Alignment",
+        "starting_outfit": [
+            {
+                "size": 1,
+                "set": ["Traveling Clothes"]
+            },
+            {
+                "size": 1,
+                "set": ["Ceremonial Clothes"]
+            },
+            {
+                "size": 1,
+                "set": ["Katana"]
+            },
+            {
+                "size": 1,
+                "set": ["Wakizashi"]
+            },
+            {
+                "size": 1,
+                "set": ["Yari", "Bō"]
+            },
+            {
+                "size": 1,
+                "set": ["Scroll Satchel"]
+            },
+            {
+                "size": 1,
+                "set": ["Pouch of Incense"]
+            },
+            {
+                "size": 1,
+                "set": ["Traveling Pack"]
+            }
+        ],
+        "curriculum": [
+            {
+                "rank": 1,
+                "advance": "Martial skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Sentiment",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Survival",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Theology",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Water Invocations",
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "rank": 1,
+                "advance": "Rite of the Wheel",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 1,
+                "advance": "Warrior's Resolve",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Trade skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Martial Arts [Melee]",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Meditation",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Theology",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Earth Invocations",
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "rank": 2,
+                "advance": "Messenger of Chikushō-dō",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 2,
+                "advance": "Iron Forest Style",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Scholar skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Composition",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Meditation",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Tactics",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Fire Invocations",
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "rank": 3,
+                "advance": "Bond of the Realms",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 3,
+                "advance": "Thunderclap Strike",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Social skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Commerce",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Meditation",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Theology",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Air Invocations",
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "rank": 4,
+                "advance": "Crashing Wave Style",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Prayer of Protection",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Artisan skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Martial Arts [Melee]",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Meditation",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Theology",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Water Invocations",
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "rank": 5,
+                "advance": "Soul Sunder",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Rain of Ten Thousand Lotuses",
+                "type": "technique",
+                "special_access": true
+            }
+        ],
+        "mastery_ability": "Walk the Hidden Ways"
+    },
+    {
+        "name": "Moshi Sun Sentinel School",
+        "reference": {
+            "book": "CR",
+            "page": 86
+        },
+        "role": ["Bushi", "Shugenja"],
+        "clan": "Centipede",
+        "ring_increase": ["Fire", "Fire"],
+        "starting_skills": {
+            "size": 3,
+            "set": ["Courtesy", "Fitness", "Martial Arts [Melee]", "Martial Arts [Unarmed]", "Sentiment", "Theology"]
+        },
+        "honor": 55,
+        "techniques_available": ["Kata", "Rituals", "Shūji"],
+        "starting_techniques": [
+            {
+                "size": 1,
+                "set": ["Armor of Radiance"]
+            },
+            {
+                "size": 1,
+                "set": ["Biting Steel"]
+            },
+            {
+                "size": 1,
+                "set": ["Extinguish"]
+            },
+            {
+                "size": 1,
+                "set": ["Katana of Fire"]
+            },
+            {
+                "size": 1,
+                "set": ["Cleansing Rite"]
+            },
+            {
+                "size": 1,
+                "set": ["Commune with the Spirits"]
+            }
+        ],
+        "school_ability": "Blazing Tears of Lady Sun",
+        "starting_outfit": [
+            {
+                "size": 1,
+                "set": ["Sanctified Robes"]
+            },
+            {
+                "size": 1,
+                "set": ["Katana"]
+            },
+            {
+                "size": 1,
+                "set": ["Wakizashi"]
+            },
+            {
+                "size": 1,
+                "set": ["Bō"]
+            },
+            {
+                "size": 1,
+                "set": ["Scroll Satchel"]
+            },
+            {
+                "size": 1,
+                "set": ["Traveling Pack"]
+            },
+            {
+                "size": 1,
+                "set": ["Religious Texts"]
+            }
+        ],
+        "curriculum": [
+            {
+                "rank": 1,
+                "advance": "Martial skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Courtesy",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Theology",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Sentiment",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Fire Invocations",
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "rank": 1,
+                "advance": "Striking as Fire",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Fires of Purity",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 2,
+                "advance": "Scholar skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Fitness",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Martial Arts [Melee]",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Tactics",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Fire Invocations",
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "rank": 2,
+                "advance": "Crescent Moon Style",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Iron Forest Style",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Martial skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Command",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Government",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Theology",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Fire Invocations",
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "rank": 3,
+                "advance": "Thunderclap Strike",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Crimson Leaves Strike",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Scholar skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Aesthetics",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Martial Arts [Melee]",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Performance",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Fire Invocations",
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "rank": 4,
+                "advance": "Battle in the Mind",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Heart of the Lady Sun",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 5,
+                "advance": "Social skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Aesthetics",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Martial Arts [Melee]",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Theology",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Fire Invocations",
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "rank": 5,
+                "advance": "Iron in the Mountains Style",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Striking as Void",
+                "type": "technique",
+                "special_access": false
+            }
+        ],
+        "mastery_ability": "Rippling Flame"
+    },
+    {
+        "name": "Shosuro Shadowweaver School",
+        "reference": {
+            "book": "CR",
+            "page": 87
+        },
+        "role": ["Shugenja", "Bushi", "Shinobi"],
+        "clan": "Scorpion",
+        "ring_increase": ["Air", "Fire"],
+        "starting_skills": {
+            "size": 3,
+            "set": ["Courtesy", "Culture", "Fitness", "Government", "Martial Arts [Ranged]", "Skulduggery"]
+        },
+        "honor": 30,
+        "techniques_available": ["Invocations", "Kata", "Rituals"],
+        "starting_techniques": [
+            {
+                "size": 1,
+                "set": ["By the Light of the Lord Moon"]
+            },
+            {
+                "size": 1,
+                "set": ["Cloak of Night"]
+            },
+            {
+                "size": 1,
+                "set": ["Fukurokujin's Wit"]
+            },
+            {
+                "size": 1,
+                "set": ["Commune with the Spirits"]
+            },
+            {
+                "size": 1,
+                "set": ["Prey on the Weak"]
+            }
+        ],
+        "school_ability": "Sudden Nightfall",
+        "starting_outfit": [
+            {
+                "size": 1,
+                "set": ["Concealed Armor"]
+            },
+            {
+                "size": 1,
+                "set": ["Sanctified Robes"]
+            },
+            {
+                "size": 1,
+                "set": ["Wakizashi"]
+            },
+            {
+                "size": 1,
+                "set": ["Shuriken"]
+            },
+            {
+                "size": 1,
+                "set": ["Poison (per vial)"]
+            },
+            {
+                "size": 1,
+                "set": ["One Item of Rarity 4 or Lower"]
+            }
+        ],
+        "curriculum": [
+            {
+                "rank": 1,
+                "advance": "Social skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Fitness",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Government",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Martial Arts [Ranged]",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Shūji",
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "rank": 1,
+                "advance": "Skulk",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 1,
+                "advance": "Deadly Sting",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 2,
+                "advance": "Scholar skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Courtesy",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Martial Arts [Ranged]",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Skulduggery",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Invocations",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Fluid Shadows",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Lord Bayushi's Whispers",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 3,
+                "advance": "Martial skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Government",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Sentiment",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Skulduggery",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Shūji",
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "rank": 3,
+                "advance": "Dream Painter",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 3,
+                "advance": "Noxious Cloud",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 4,
+                "advance": "Social skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Culture",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Martial Arts [Ranged]",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Theology",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Invocations",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Wolf's Proposal",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 4,
+                "advance": "Pin the Fan",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 5,
+                "advance": "Martial skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Culture",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Medicine",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Skulduggery",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Shūji",
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "rank": 5,
+                "advance": "The Fading Dream",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Silencing Stroke",
+                "type": "technique",
+                "special_access": true
+            }
+        ],
+        "mastery_ability": "Shadow Assassin"
+    },
+    {
+        "name": "Utaku Stablemaster School",
+        "reference": {
+            "book": "CR",
+            "page": 88
+        },
+        "role": ["Bushi", "Sage"],
+        "clan": "Unicorn",
+        "ring_increase": ["Air", "Water"],
+        "starting_skills": {
+            "size": 5,
+            "set": ["Command", "Fitness", "Martial Arts [Melee]", "Martial Arts [Ranged]", "Sentiment", "Smithing", "Survival"]
+        },
+        "honor": 55,
+        "techniques_available": ["Kata", "Rituals", "Water Invocations", "Air Invocations"],
+        "starting_techniques": [
+            {
+                "size": 1,
+                "set": ["Nature's Touch"]
+            },
+            {
+                "size": 1,
+                "set": ["Crescent Moon Style"]
+            },
+            {
+                "size": 1,
+                "set": ["Striking as Air"]
+            },
+            {
+                "size": 1,
+                "set": ["Striking as Water"]
+            }
+        ],
+        "school_ability": "Steed of the Kami",
+        "starting_outfit": [
+            {
+                "size": 1,
+                "set": ["Ashigaru Armor"]
+            },
+            {
+                "size": 1,
+                "set": ["Traveling Clothes"]
+            },
+            {
+                "size": 1,
+                "set": ["Katana", "Scimitar"]
+            },
+            {
+                "size": 1,
+                "set": ["Wakizashi"]
+            },
+            {
+                "size": 1,
+                "set": ["Yumi"]
+            },
+            {
+                "size": 1,
+                "set": ["Quiver of Arrows"]
+            },
+            {
+                "size": 1,
+                "set": ["Knife"]
+            },
+            {
+                "size": 1,
+                "set": ["Whip"]
+            },
+            {
+                "size": 1,
+                "set": ["Traveling Pack"]
+            },
+            {
+                "size": 1,
+                "set": ["Bag of Horse Treats"]
+            }
+        ],
+        "curriculum": [
+            {
+                "rank": 1,
+                "advance": "Martial skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Command",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Sentiment",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Survival",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Call Upon the Wind",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 1,
+                "advance": "Blessing of Fertile Fields",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 2,
+                "advance": "Trade skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Fitness",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Martial Arts [Melee]",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Theology",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Kata",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Rituals",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Emboldened Steed",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 3,
+                "advance": "Martial skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Medicine",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Smithing",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Survival",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Kata",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Messenger of Chikushō-dō",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Path of Beasts",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Social skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Commerce",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Sentiment",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Survival",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Kata",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Rituals",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Guardian of the Secret Gate",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 5,
+                "advance": "Trade skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Martial Arts [Melee]",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Martial Arts [Ranged]",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Medicine",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Kata",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Rituals",
+                "type": "technique_group",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Rain of Ten Thousand Lotuses",
+                "type": "technique",
+                "special_access": false
+            }
+        ],
+        "mastery_ability": "Master of Beasts"
     }
 ]

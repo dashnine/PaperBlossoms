@@ -974,6 +974,33 @@
                             "page": 196
                         },
                         "xp": 3
+                    },
+                    {
+                        "name": "Dream Painter",
+                        "rank": 3,
+                        "reference": {
+                            "book": "CR",
+                            "page": 105
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Messenger of Chikushō-dō",
+                        "rank": 3,
+                        "reference": {
+                            "book": "CR",
+                            "page": 106
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "The Fading Dream",
+                        "rank": 5,
+                        "reference": {
+                            "book": "CR",
+                            "page": 106
+                        },
+                        "xp": 3
                     }
                 ]
             },
@@ -1132,6 +1159,33 @@
                             "page": 114
                         },
                         "xp": 3
+                    },
+                    {
+                        "name": "Bond of the Realms",
+                        "rank": 3,
+                        "reference": {
+                            "book": "CR",
+                            "page": 107
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Emboldened Steed",
+                        "rank": 3,
+                        "reference": {
+                            "book": "CR",
+                            "page": 107
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Guardian of the Secret Gate",
+                        "rank": 5,
+                        "reference": {
+                            "book": "CR",
+                            "page": 107
+                        },
+                        "xp": 3
                     }
                 ]
             },
@@ -1270,6 +1324,33 @@
                         "reference": {
                             "book": "Core",
                             "page": 206
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Amaterasu's Gaze",
+                        "rank": 1,
+                        "reference": {
+                            "book": "CR",
+                            "page": 108
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Fires of Purity",
+                        "rank": 2,
+                        "reference": {
+                            "book": "CR",
+                            "page": 108
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Heart of the Lady Sun",
+                        "rank": 5,
+                        "reference": {
+                            "book": "CR",
+                            "page": 108
                         },
                         "xp": 3
                     }
@@ -1412,6 +1493,33 @@
                             "page": 211
                         },
                         "xp": 3
+                    },
+                    {
+                        "name": "Fluid Shadows",
+                        "rank": 2,
+                        "reference": {
+                            "book": "CR",
+                            "page": 108
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Path of Beasts",
+                        "rank": 3,
+                        "reference": {
+                            "book": "CR",
+                            "page": 109
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Rain of Ten Thousand Lotuses",
+                        "rank": 5,
+                        "reference": {
+                            "book": "CR",
+                            "page": 109
+                        },
+                        "xp": 3
                     }
                 ]
             }
@@ -1456,6 +1564,15 @@
                         "reference": {
                             "book": "Core",
                             "page": 213
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Craft Shikigami",
+                        "rank": 2,
+                        "reference": {
+                            "book": "SL",
+                            "page": 114
                         },
                         "xp": 3
                     },
@@ -1544,6 +1661,15 @@
                             "page": 97
                         },
                         "xp": 3
+                    },
+                    {
+                        "name": "Rite of the Wheel",
+                        "rank": 2,
+                        "reference": {
+                            "book": "CR",
+                            "page": 111
+                        },
+                        "xp": 3
                     }
                 ]
             },
@@ -1560,20 +1686,77 @@
                         "xp": 3
                     },
                     {
-                        "name": "Craft Shikigami",
-                        "rank": 2,
-                        "reference": {
-                            "book": "SL",
-                            "page": 114
-                        },
-                        "xp": 3
-                    },
-                    {
                         "name": "Treaty Signing",
                         "rank": 2,
                         "reference": {
                             "book": "CoS",
                             "page": 116
+                        },
+                        "xp": 3
+                    }
+                ]
+            },
+            {
+                "name": "Air",
+                "techniques": [
+                    {
+                        "name": "Blessed Union",
+                        "rank": 3,
+                        "reference": {
+                            "book": "CR",
+                            "page": 110
+                        },
+                        "xp": 3
+                    }
+                ]
+            },
+            {
+                "name": "Earth",
+                "techniques": [
+                    {
+                        "name": "Blessing of Fertile Fields",
+                        "rank": 2,
+                        "reference": {
+                            "book": "CR",
+                            "page": 110
+                        },
+                        "xp": 3
+                    }
+                ]
+            },
+            {
+                "name": "Water",
+                "techniques": [
+                    {
+                        "name": "Blessing of the Dance",
+                        "rank": 3,
+                        "reference": {
+                            "book": "CR",
+                            "page": 110
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Whispers to the Moon",
+                        "rank": 5,
+                        "reference": {
+                            "book": "CR",
+                            "page": 111
+                        },
+                        "xp": 3,
+                        "restriction": "Moon Cultist"
+                    }
+                ]
+            },
+            {
+                "name": "Fire",
+                "techniques": [
+                    {
+                        "name": "Prayer of Protection",
+                        "rank": 4,
+                        "reference": {
+                            "book": "CR",
+                            "page": 110
                         },
                         "xp": 3
                     }
@@ -2608,6 +2791,160 @@
                             "page": 99
                         },
                         "xp": 3
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Inversions",
+        "subcategories": [
+            {
+                "name": "void Inversions",
+                "techniques": [
+                    {
+                        "name": "One within the Void",
+                        "rank": 1,
+                        "reference": {
+                            "book": "CR",
+                            "page": 114
+                        },
+                        "xp": 6
+                    },
+                    {
+                        "name": "Sight beyond Existence",
+                        "rank": 1,
+                        "reference": {
+                            "book": "CR",
+                            "page": 115
+                        },
+                        "xp": 6
+                    },
+                    {
+                        "name": "Whispered Blade",
+                        "rank": 1,
+                        "reference": {
+                            "book": "CR",
+                            "page": 115
+                        },
+                        "xp": 6
+                    },
+                    {
+                        "name": "Witness the End",
+                        "rank": 1,
+                        "reference": {
+                            "book": "CR",
+                            "page": 116
+                        },
+                        "xp": 6
+                    },
+                    {
+                        "name": "Distance Distorted",
+                        "rank": 2,
+                        "reference": {
+                            "book": "CR",
+                            "page": 116
+                        },
+                        "xp": 6
+                    },
+                    {
+                        "name": "Ethereal Flicker",
+                        "rank": 2,
+                        "reference": {
+                            "book": "CR",
+                            "page": 116
+                        },
+                        "xp": 6
+                    },
+                    {
+                        "name": "The Lotus Blooms",
+                        "rank": 2,
+                        "reference": {
+                            "book": "CR",
+                            "page": 117
+                        },
+                        "xp": 6
+                    },
+                    {
+                        "name": "Hurl from the Stream",
+                        "rank": 3,
+                        "reference": {
+                            "book": "CR",
+                            "page": 117
+                        },
+                        "xp": 6
+                    },
+                    {
+                        "name": "Moon on the Shifting Sea",
+                        "rank": 3,
+                        "reference": {
+                            "book": "CR",
+                            "page": 118
+                        },
+                        "xp": 6
+                    },
+                    {
+                        "name": "Shroud in Solitude",
+                        "rank": 3,
+                        "reference": {
+                            "book": "CR",
+                            "page": 118
+                        },
+                        "xp": 6
+                    },
+                    {
+                        "name": "Reality Stitch",
+                        "rank": 4,
+                        "reference": {
+                            "book": "CR",
+                            "page": 119
+                        },
+                        "xp": 6
+                    },
+                    {
+                        "name": "Shattering Caress",
+                        "rank": 4,
+                        "reference": {
+                            "book": "CR",
+                            "page": 119
+                        },
+                        "xp": 6
+                    },
+                    {
+                        "name": "Three Heartbeats",
+                        "rank": 4,
+                        "reference": {
+                            "book": "CR",
+                            "page": 119
+                        },
+                        "xp": 6
+                    },
+                    {
+                        "name": "Essence Eternal",
+                        "rank": 5,
+                        "reference": {
+                            "book": "CR",
+                            "page": 119
+                        },
+                        "xp": 6
+                    },
+                    {
+                        "name": "Slip the Cycle",
+                        "rank": 5,
+                        "reference": {
+                            "book": "CR",
+                            "page": 120
+                        },
+                        "xp": 6
+                    },
+                    {
+                        "name": "Unweave",
+                        "rank": 5,
+                        "reference": {
+                            "book": "CR",
+                            "page": 120
+                        },
+                        "xp": 6
                     }
                 ]
             }

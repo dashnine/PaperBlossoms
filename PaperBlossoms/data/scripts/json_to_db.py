@@ -316,7 +316,7 @@ def weapons_to_db(db_conn):
             rarity INTEGER,
             price_value INTEGER,
             price_unit TEXT,
-            PRIMARY KEY (name, grip)
+            PRIMARY KEY (category, name, grip)
         )''',
         desc_fields = 'name',
         tr_fields = ['category', 'name', 'skill', 'grip']

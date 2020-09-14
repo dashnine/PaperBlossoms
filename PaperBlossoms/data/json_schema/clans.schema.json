@@ -25,7 +25,8 @@
                             "Mantis",
                             "GMK",
                             "CoS",
-                            "PoW"
+                            "PoW",
+                            "CR"
                         ]
                     },
                     "page": {
@@ -126,7 +127,8 @@
                                         "Mantis",
                                         "GMK",
                                         "CoS",
-                                        "PoW"
+                                        "PoW",
+                                        "CR"
                                     ]
                                 },
                                 "page": {

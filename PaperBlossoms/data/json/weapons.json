@@ -586,6 +586,67 @@
                     "value": 50,
                     "unit": "koku"
                 }
+            },
+            {
+                "name": "Tachi",
+                "reference": {
+                    "book": "CR",
+                    "page": 98
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 1,
+                    "max": 1
+                },
+                "damage": 5,
+                "deadliness": 5,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": []
+                    },
+                    {
+                        "name": "2-hand",
+                        "effects": [
+                            {
+                                "attribute": "deadliness",
+                                "value_increase": 1
+                            }
+                        ]
+                    }
+                ],
+                "qualities": ["Ceremonial", "Cumbersome", "Razor-edged"],
+                "rarity": 8,
+                "price": {
+                    "value": 25,
+                    "unit": "koku"
+                }
+            },
+            {
+                "name": "Uchigatana",
+                "reference": {
+                    "book": "CR",
+                    "page": 98
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 1,
+                    "max": 1
+                },
+                "damage": 3,
+                "deadliness": 6,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": []
+                    }
+                ],
+                "qualities": ["Razor-edged", "Wargear"],
+                "rarity": 8,
+                "price": {
+                    "value": 16,
+                    "unit": "koku"
+                }
             }
         ]
     },
@@ -775,6 +836,41 @@
                 "rarity": 3,
                 "price": {
                     "value": 4,
+                    "unit": "koku"
+                }
+            },
+            {
+                "name": "Moshi Sun Ax",
+                "reference": {
+                    "book": "CR",
+                    "page": 98
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 1,
+                    "max": 2
+                },
+                "damage": 3,
+                "deadliness": 5,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": []
+                    },
+                    {
+                        "name": "2-hand",
+                        "effects": [
+                            {
+                                "attribute": "damage",
+                                "value_increase": 3
+                            }
+                        ]
+                    }
+                ],
+                "qualities": ["Ceremonial", "Cumbersome", "Resplendent"],
+                "rarity": 8,
+                "price": {
+                    "value": 20,
                     "unit": "koku"
                 }
             }
@@ -1381,6 +1477,76 @@
                     "value": 15,
                     "unit": "koku"
                 }
+            },
+            {
+                "name": "Moshi Sun Ax",
+                "reference": {
+                    "book": "CR",
+                    "page": 98
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 1,
+                    "max": 2
+                },
+                "damage": 3,
+                "deadliness": 5,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": []
+                    },
+                    {
+                        "name": "2-hand",
+                        "effects": [
+                            {
+                                "attribute": "damage",
+                                "value_increase": 3
+                            }
+                        ]
+                    }
+                ],
+                "qualities": ["Ceremonial", "Cumbersome", "Resplendent"],
+                "rarity": 8,
+                "price": {
+                    "value": 20,
+                    "unit": "koku"
+                }
+            },
+            {
+                "name": "Shakujō",
+                "reference": {
+                    "book": "CR",
+                    "page": 98
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 1,
+                    "max": 1
+                },
+                "damage": 4,
+                "deadliness": 1,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": []
+                    },
+                    {
+                        "name": "2-hand",
+                        "effects": [
+                            {
+                                "attribute": "damage",
+                                "value_increase": 1
+                            }
+                        ]
+                    }
+                ],
+                "qualities": ["Ceremonial"],
+                "rarity": 4,
+                "price": {
+                    "value": 5,
+                    "unit": "bu"
+                }
             }
         ]
     },
@@ -1960,6 +2126,32 @@
                 "rarity": 2,
                 "price": {
                     "value": 1,
+                    "unit": "bu"
+                }
+            },
+            {
+                "name": "Whip",
+                "reference": {
+                    "book": "CR",
+                    "page": 98
+                },
+                "skill": "Melee",
+                "range": {
+                    "min": 2,
+                    "max": 2
+                },
+                "damage": 3,
+                "deadliness": 2,
+                "grips": [
+                    {
+                        "name": "1-hand",
+                        "effects": []
+                    }
+                ],
+                "qualities": ["Snaring", "Mundane"],
+                "rarity": 2,
+                "price": {
+                    "value": 4,
                     "unit": "bu"
                 }
             }

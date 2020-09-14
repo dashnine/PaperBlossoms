@@ -964,5 +964,273 @@
             ]
         },
         "source": "CoS"
+    },
+    {
+        "roll": {
+            "min": 1,
+            "max": 1
+        },
+        "result": "Associated with a Natural Disaster",
+        "modifiers": {
+            "glory": 0,
+            "honor": -3,
+            "status": 0
+        },
+        "other_effects": {
+            "type": "Adversity",
+            "instructions": "You gain the Whispers of Failure (Fire) adversity. You may reduce the value of one of your character's rings by 1 to increase the value of a ring associated with the disease by 1 (this still cannot raise a ring above 3).",
+            "outcomes": [
+                {
+                    "outcome": "Whispers of Failure"
+                }
+            ]
+        },
+        "source": "CR"
+    },
+    {
+        "roll": {
+            "min": 2,
+            "max": 2
+        },
+        "result": "Great Treatise",
+        "modifiers": {
+            "glory": 0,
+            "honor": 0,
+            "status": 3
+        },
+        "other_effects": {
+            "type": "Skill",
+            "instructions": "Roll a ten-sided die again to determine a skill your family values; gain +1 rank in that skill.",
+            "outcomes": [
+                {
+                    "roll": {
+                        "min": 1,
+                        "max": 3
+                    },
+                    "outcome": "Composition"
+                },
+                {
+                    "roll": {
+                        "min": 4,
+                        "max": 6
+                    },
+                    "outcome": "Culture"
+                },
+                {
+                    "roll": {
+                        "min": 7,
+                        "max": 8
+                    },
+                    "outcome": "Government"
+                },
+                {
+                    "roll": {
+                        "min": 9,
+                        "max": 10
+                    },
+                    "outcome": "Theology"
+                }
+            ]
+        },
+        "source": "CR"
+    },
+    {
+        "roll": {
+            "min": 3,
+            "max": 4
+        },
+        "result": "Guardian of Forbidden Knowledge",
+        "modifiers": {
+            "glory": 0,
+            "honor": 0,
+            "status": -5
+        },
+        "other_effects": {
+            "type": "Skill",
+            "instructions": "Roll a ten-sided die again to determine the skill your family uses to guard this knowledge; gain +1 rank in that skill.",
+            "outcomes": [
+                {
+                    "roll": {
+                        "min": 1,
+                        "max": 3
+                    },
+                    "outcome": "Martial Arts [Melee]"
+                },
+                {
+                    "roll": {
+                        "min": 4,
+                        "max": 6
+                    },
+                    "outcome": "Government"
+                },
+                {
+                    "roll": {
+                        "min": 7,
+                        "max": 8
+                    },
+                    "outcome": "Theology"
+                },
+                {
+                    "roll": {
+                        "min": 9,
+                        "max": 10
+                    },
+                    "outcome": "Skulduggery"
+                }
+            ]
+        },
+        "source": "CR"
+    },
+    {
+        "roll": {
+            "min": 5,
+            "max": 6
+        },
+        "result": "Mark of the Elements",
+        "modifiers": {
+            "glory": 0,
+            "honor": 0,
+            "status": 5
+        },
+        "other_effects": {
+            "type": "Ring",
+            "instructions": "Choose one of your character's rings; you may reduce the value of that ring by 1 to increase the value of the ring associated with the element by 1 (this still cannot raise a ring above 3).",
+            "outcomes": [
+                {
+                    "outcome": "Ring exchange"
+                }
+            ]
+        },
+        "source": "CR"
+    },
+    {
+        "roll": {
+            "min": 7,
+            "max": 8
+        },
+        "result": "Sacrifice",
+        "modifiers": {
+            "glory": 5,
+            "honor": 0,
+            "status": 0
+        },
+        "other_effects": {
+            "type": "Personal Effect",
+            "instructions": "Roll a ten-sided die again and add the resulting heirloom to your starting items. You choose one item quality and the GM chooses another from the list of item qualities.",
+            "outcomes": [
+                {
+                    "roll": {
+                        "min": 1,
+                        "max": 3
+                    },
+                    "outcome": "Weapon"
+                },
+                {
+                    "roll": {
+                        "min": 4,
+                        "max": 6
+                    },
+                    "outcome": "Set of armor"
+                },
+                {
+                    "roll": {
+                        "min": 7,
+                        "max": 8
+                    },
+                    "outcome": "Valued piece of art"
+                },
+                {
+                    "roll": {
+                        "min": 9,
+                        "max": 9
+                    },
+                    "outcome": "Horse or other animal"
+                },
+                {
+                    "roll": {
+                        "min": 10,
+                        "max": 10
+                    },
+                    "outcome": "Deed to a small piece of land on the border of Phoenix territory"
+                }
+            ]
+        },
+        "source": "CR"
+    },
+    {
+        "roll": {
+            "min": 9,
+            "max": 9
+        },
+        "result": "Spirit of the Phoenix",
+        "modifiers": {
+            "glory": 3,
+            "honor": 0,
+            "status": 0
+        },
+        "other_effects": {
+            "type": "Advantage",
+            "instructions": "You gain an advantage associated with your predecessor's rebirth (this can be assigned in excess of the normal limitations on advantages at character creation). Roll a ten-sided die again and add the resulting advantage.",
+            "outcomes": [
+                {
+                    "roll": {
+                        "min": 1,
+                        "max": 2
+                    },
+                    "outcome": "Famously Kind"
+                },
+                {
+                    "roll": {
+                        "min": 3,
+                        "max": 4
+                    },
+                    "outcome": "Famously Lucky"
+                },
+                {
+                    "roll": {
+                        "min": 5,
+                        "max": 6
+                    },
+                    "outcome": "Famously Reliable"
+                },
+                {
+                    "roll": {
+                        "min": 7,
+                        "max": 8
+                    },
+                    "outcome": "Famously Successful"
+                },
+                {
+                    "roll": {
+                        "min": 9,
+                        "max": 10
+                    },
+                    "outcome": "Famously Wealthy"
+                }
+            ]
+        },
+        "source": "CR"
+    },
+    {
+        "roll": {
+            "min": 10,
+            "max": 10
+        },
+        "result": "Touched by the Fortunes",
+        "modifiers": {
+            "glory": -5,
+            "honor": 0,
+            "status": 0
+        },
+        "other_effects": {
+            "type": "Distinction",
+            "instructions": "You gain the Sixth Sense distinction (this can be assigned in excess of the normal limitations on advantages at character creation.",
+            "outcomes": [
+                {
+                    "outcome": "Sixth Sense"
+                }
+            ]
+        },
+        "source": "CR"
     }
 ]
