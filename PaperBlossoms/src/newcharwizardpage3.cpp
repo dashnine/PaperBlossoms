@@ -326,7 +326,15 @@ QMap<QString, int> NewCharWizardPage3::calcSkills(){
                //Courts
                heritage ==   dal->translate("Dishonorable Cheat") ||
                heritage ==   dal->translate("Unforgivable Performance") ||
-               heritage ==   dal->translate("A Little Too Close To Heaven")
+               heritage ==   dal->translate("A Little Too Close To Heaven")||
+               //Celestial realms
+               heritage ==   dal->translate("Great Treatise")||
+               heritage ==   dal->translate("Guardian of Forbidden Knowledge")||
+               //Celestial realms
+               heritage ==   dal->translate("Great Treatise")||
+               heritage ==   dal->translate("Guardian of Forbidden Knowledge")
+
+
                ){
             skills.append(field("q18OtherEffects").toString());
 
