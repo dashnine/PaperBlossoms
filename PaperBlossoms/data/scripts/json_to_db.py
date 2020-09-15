@@ -1279,34 +1279,65 @@ def main():
     # Open connection
     db_conn = connect_db('paperblossoms.db')
 
-    # Descriptions and translations
+    # Write data
+
+    print('Writing descriptions and translations')
     desc_to_db(db_conn)
     translations_to_db(db_conn)
 
-    # Easy tables
+    print('Writing rings')
     rings_to_db(db_conn)
+
+    print('Writing skills')
     skills_to_db(db_conn)
+
+    print('Writing techniques')
     techniques_to_db(db_conn)
+
+    print('Writing advantages and disadvantages')
     advantages_to_db(db_conn)
+
+    print('Writing question 8')
     q8_to_db(db_conn)
+
+    print('Writing titles')
     titles_to_db(db_conn)
+
+    print('Writing item patterns')
     patterns_to_db(db_conn)
+
+    print('Writing bonds')
     bonds_to_db(db_conn)
+
+    print('Writing regions')
     regions_to_db(db_conn)
 
-    # Equipment
+    print('Writing item qualities')
     qualities_to_db(db_conn)
+
+    print('Writing personal effects')
     personal_effects_to_db(db_conn)
+
+    print('Writing armor')
     armor_to_db(db_conn)
+
+    print('Writing weapons')
     weapons_to_db(db_conn)
 
-    # The big guns
+    print('Writing clans')
     clans_to_db(db_conn)
+
+    print('Writing heritage tables')
     heritage_to_db(db_conn)
+
+    print('Writing schools')
     schools_to_db(db_conn)
+
+    print('Writing upbringings')
     upbringings_to_db(db_conn)
 
     # Commit and close connection
+    print('Saving and closing database connection')
     db_conn.commit()
     db_conn.close()
 
