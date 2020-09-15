@@ -971,14 +971,14 @@ can only be taken with GM approval.</source>
     </message>
     <message>
         <location filename="src/mainwindow.cpp" line="240"/>
-        <location filename="src/mainwindow.cpp" line="1557"/>
-        <location filename="src/mainwindow.cpp" line="1568"/>
+        <location filename="src/mainwindow.cpp" line="1564"/>
+        <location filename="src/mainwindow.cpp" line="1575"/>
         <source>Closing Character Profile</source>
         <translation>Cerrando perfil de personaje</translation>
     </message>
     <message>
         <location filename="src/mainwindow.cpp" line="617"/>
-        <location filename="src/mainwindow.cpp" line="1617"/>
+        <location filename="src/mainwindow.cpp" line="1624"/>
         <source>Save File As...</source>
         <translation>Guardar archivo como...</translation>
     </message>
@@ -1054,116 +1054,116 @@ can only be taken with GM approval.</source>
         <translation>No ha sido posible cargar parte de la información de título. Este personaje necesita información que no está presente, y puede presentar inconsistencias. ¿Necesitas importar información personalizada?</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1214"/>
+        <location filename="src/mainwindow.cpp" line="1221"/>
         <source>Open File</source>
         <translation>Abrir archivo</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1216"/>
+        <location filename="src/mainwindow.cpp" line="1223"/>
         <source>All files (*.*);;JPEG (*.jpg *.jpeg);;PNG (*.png)</source>
         <translation>Todos los archivos (*.*);;JPEG (*.jpg *.jpeg);;PNG (*.png)</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1225"/>
+        <location filename="src/mainwindow.cpp" line="1232"/>
         <source>Image Viewer</source>
         <translation>Visualizador de imágenes</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1226"/>
+        <location filename="src/mainwindow.cpp" line="1233"/>
         <source>Cannot load %1.</source>
         <translation>No puede cargarse %1.</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1503"/>
+        <location filename="src/mainwindow.cpp" line="1510"/>
         <source>Choose an export directory...</source>
         <translation>Elige un directorio para exportar...</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1513"/>
-        <location filename="src/mainwindow.cpp" line="1911"/>
+        <location filename="src/mainwindow.cpp" line="1520"/>
+        <location filename="src/mainwindow.cpp" line="1918"/>
         <source>Error Exporting Data</source>
         <translation>Error al exportar datos</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1517"/>
-        <location filename="src/mainwindow.cpp" line="1915"/>
+        <location filename="src/mainwindow.cpp" line="1524"/>
+        <location filename="src/mainwindow.cpp" line="1922"/>
         <source>Export Complete</source>
         <translation>Exporación completa</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1526"/>
+        <location filename="src/mainwindow.cpp" line="1533"/>
         <source>Warning</source>
         <translation>Aviso</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1527"/>
+        <location filename="src/mainwindow.cpp" line="1534"/>
         <source>Choose a folder containing exported data...</source>
         <translation>Elige un directorio que contenga información exportada...</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1538"/>
-        <location filename="src/mainwindow.cpp" line="1932"/>
+        <location filename="src/mainwindow.cpp" line="1545"/>
+        <location filename="src/mainwindow.cpp" line="1939"/>
         <source>Error Importing Data</source>
         <translation>Error al importar información</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1542"/>
-        <location filename="src/mainwindow.cpp" line="1936"/>
+        <location filename="src/mainwindow.cpp" line="1549"/>
+        <location filename="src/mainwindow.cpp" line="1943"/>
         <source>Import Complete</source>
         <translation>Importación completa</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1617"/>
+        <location filename="src/mainwindow.cpp" line="1624"/>
         <source>Paper Blossoms Character XML (*.xml)</source>
         <translation>XML de personaje de Pétalos de papel (*.xml)</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1628"/>
+        <location filename="src/mainwindow.cpp" line="1635"/>
         <source>Unable to open XML file for writing.</source>
         <translation>No ha sido posible abrir el archivo XML para su escritura.</translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1901"/>
+        <location filename="src/mainwindow.cpp" line="1908"/>
         <source>Export User Descriptions...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1901"/>
-        <location filename="src/mainwindow.cpp" line="1948"/>
-        <location filename="src/mainwindow.cpp" line="2027"/>
+        <location filename="src/mainwindow.cpp" line="1908"/>
+        <location filename="src/mainwindow.cpp" line="1955"/>
+        <location filename="src/mainwindow.cpp" line="2034"/>
         <source>CSV (*.csv)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1924"/>
+        <location filename="src/mainwindow.cpp" line="1931"/>
         <source>Import User Descriptions...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1924"/>
+        <location filename="src/mainwindow.cpp" line="1931"/>
         <source>CSV (*.csv);;Any (*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1948"/>
-        <location filename="src/mainwindow.cpp" line="2027"/>
+        <location filename="src/mainwindow.cpp" line="1955"/>
+        <location filename="src/mainwindow.cpp" line="2034"/>
         <source>Export Translation File...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1957"/>
-        <location filename="src/mainwindow.cpp" line="2036"/>
+        <location filename="src/mainwindow.cpp" line="1964"/>
+        <location filename="src/mainwindow.cpp" line="2043"/>
         <source>Error exporting translation data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="1961"/>
-        <location filename="src/mainwindow.cpp" line="2040"/>
+        <location filename="src/mainwindow.cpp" line="1968"/>
+        <location filename="src/mainwindow.cpp" line="2047"/>
         <source>Translation Template Export Complete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="2101"/>
+        <location filename="src/mainwindow.cpp" line="2108"/>
         <source>Upgrading Bond</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1646,72 +1646,83 @@ can only be taken with GM approval.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="193"/>
-        <location filename="src/newcharwizardpage6.cpp" line="219"/>
+        <location filename="src/newcharwizardpage6.cpp" line="194"/>
+        <location filename="src/newcharwizardpage6.cpp" line="220"/>
         <source>H:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="196"/>
-        <location filename="src/newcharwizardpage6.cpp" line="222"/>
+        <location filename="src/newcharwizardpage6.cpp" line="197"/>
+        <location filename="src/newcharwizardpage6.cpp" line="223"/>
         <source>G:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="199"/>
-        <location filename="src/newcharwizardpage6.cpp" line="225"/>
+        <location filename="src/newcharwizardpage6.cpp" line="200"/>
+        <location filename="src/newcharwizardpage6.cpp" line="226"/>
         <source>S:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="281"/>
-        <location filename="src/newcharwizardpage6.cpp" line="605"/>
-        <location filename="src/newcharwizardpage6.cpp" line="664"/>
+        <location filename="src/newcharwizardpage6.cpp" line="282"/>
+        <location filename="src/newcharwizardpage6.cpp" line="290"/>
+        <location filename="src/newcharwizardpage6.cpp" line="295"/>
+        <location filename="src/newcharwizardpage6.cpp" line="631"/>
+        <location filename="src/newcharwizardpage6.cpp" line="690"/>
+        <location filename="src/newcharwizardpage6.cpp" line="717"/>
+        <location filename="src/newcharwizardpage6.cpp" line="741"/>
         <source>No Change</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="329"/>
+        <location filename="src/newcharwizardpage6.cpp" line="341"/>
         <source>Choose an item quality. The GM chooses another item quality.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="332"/>
+        <location filename="src/newcharwizardpage6.cpp" line="344"/>
         <source>Player-chosen Quality:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="333"/>
+        <location filename="src/newcharwizardpage6.cpp" line="345"/>
         <source>GM-chosen Quality:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="394"/>
+        <location filename="src/newcharwizardpage6.cpp" line="407"/>
         <source>Choose a ring to raise, and a ring to lower.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="397"/>
-        <location filename="src/newcharwizardpage6.cpp" line="450"/>
-        <location filename="src/newcharwizardpage6.cpp" line="462"/>
+        <location filename="src/newcharwizardpage6.cpp" line="410"/>
+        <location filename="src/newcharwizardpage6.cpp" line="464"/>
+        <location filename="src/newcharwizardpage6.cpp" line="476"/>
+        <location filename="src/newcharwizardpage6.cpp" line="488"/>
         <source>Raise:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="398"/>
-        <location filename="src/newcharwizardpage6.cpp" line="451"/>
-        <location filename="src/newcharwizardpage6.cpp" line="463"/>
+        <location filename="src/newcharwizardpage6.cpp" line="411"/>
+        <location filename="src/newcharwizardpage6.cpp" line="465"/>
+        <location filename="src/newcharwizardpage6.cpp" line="477"/>
+        <location filename="src/newcharwizardpage6.cpp" line="489"/>
         <source>Lower:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="447"/>
+        <location filename="src/newcharwizardpage6.cpp" line="461"/>
         <source>You may raise the Void Ring and choose a ring to lower.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage6.cpp" line="459"/>
+        <location filename="src/newcharwizardpage6.cpp" line="473"/>
         <source>You may choose a ring to lower and raise the Fire or Air Ring.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/newcharwizardpage6.cpp" line="485"/>
+        <source>You may choose a ring to raise and a ring to lower.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1969,12 +1980,12 @@ One of your ancestors perished honorably in battle, </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage7.cpp" line="544"/>
+        <location filename="src/newcharwizardpage7.cpp" line="553"/>
         <source>Wealth:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/newcharwizardpage7.cpp" line="903"/>
+        <location filename="src/newcharwizardpage7.cpp" line="916"/>
         <source>
 
 20. Death:
