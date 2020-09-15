@@ -22,7 +22,7 @@ Basic export and import functionality have been provided in the tools menu.  By 
 ## Contributing
 Paper Blossoms is written in C++, with Qt5. Application data is stored in a sqlite database, and accessed exclusively through the interface provided in dataaccesslayer.cpp -- any new queries to the data should be made there.  Save files have version numbers associated; going forward, modifications will attempt to use these version numbers to check and handle save file compatibility.  I'm happy to accept and review pull requests, and will be populating tasks and feature requests on this github page!  A general overview of the code is in the wiki, and we hope to have more added in the near future.
 
-If you would like to make a contribution to the data, consult the .json files stored in the data folder of the source.  For the sake of track-ability, we're making edits there, and then generating the paperblossoms.db file with the included python scripts.
+If you would like to make a contribution to the data, consult the [data contribution guide](PaperBlossoms/data/README.md).
 
 If you would like to contribute a translation of the UI, you'll need to modify a .ts file for your locale.  I've added notes [here](https://github.com/dashnine/PaperBlossoms/wiki/Translation).
 

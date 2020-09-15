@@ -16,7 +16,7 @@
                 "type": "string"
             },
             "reference": {
-                "description": "Page reference for clan",
+                "description": "Page reference for bond",
                 "type": "object",
                 "properties": {
                     "book": {
@@ -43,7 +43,7 @@
                 ],
                 "defaultSnippets": [
                     {
-                        "label": "New Page reference for clan",
+                        "label": "New Page reference for bond",
                         "body": {
                             "book": "$1",
                             "page": "^$2"
