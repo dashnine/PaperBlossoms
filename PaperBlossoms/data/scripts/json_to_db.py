@@ -98,8 +98,14 @@ def rings_to_db(db_conn):
     # Write rings to rings table
     for ring in rings:
         db_conn.execute(
-            'INSERT INTO base_rings VALUES (?,?)',
-            (ring['name'], ring['outstanding_quality'])
+            '''INSERT INTO base_rings VALUES (
+                :name,
+                :outstanding_quality
+            )''',
+            {
+                'name': ring['name'],
+                'outstanding_quality': ring['outstanding_quality']
+            }
         )
 
 
@@ -124,8 +130,14 @@ def skills_to_db(db_conn):
     for skill_group in skill_groups:
         for skill in skill_group['skills']:
             db_conn.execute(
-                'INSERT INTO base_skills VALUES (?,?)',
-                (skill_group['name'], skill)
+                '''INSERT INTO base_skills VALUES (
+                    :skill_group,
+                    :skill
+                )''',
+                {
+                    'skill_group': skill_group['name'],
+                    'skill': skill
+                }
             )
 
 
@@ -151,12 +163,16 @@ def qualities_to_db(db_conn):
     # Write qualities to qualities table
     for quality in qualities:
         db_conn.execute(
-            'INSERT INTO base_qualities VALUES (?,?,?)',
-            (
-                quality['name'],
-                quality['reference']['book'],
-                quality['reference']['page']
-            )
+            '''INSERT INTO base_qualities VALUES (
+                :quality,
+                :reference_book,
+                :reference_page
+            )''',
+            {
+                'quality': quality['name'],
+                'reference_book': quality['reference']['book'],
+                'reference_page': quality['reference']['page']
+            }
         )
 
 
@@ -198,23 +214,36 @@ def personal_effects_to_db(db_conn):
 
         # Write personal effects to personal effects table
         db_conn.execute(
-            'INSERT INTO base_personal_effects VALUES (?,?,?,?,?,?)',
-            (
-                item['name'],
-                item['reference']['book'],
-                item['reference']['page'],
-                item['price']['value'] if 'price' in item else None,
-                item['price']['unit'] if 'price' in item else None,
-                item['rarity'] if 'rarity' in item else None
-            )
+            '''INSERT INTO base_personal_effects VALUES (
+                :name,
+                :reference_book,
+                :reference_page,
+                :price_value,
+                :price_unit,
+                :rarity
+            )''',
+            {
+                'name': item['name'],
+                'reference_book': item['reference']['book'],
+                'reference_page': item['reference']['page'],
+                'price_value': item['price']['value'] if 'price' in item else None,
+                'price_unit': item['price']['unit'] if 'price' in item else None,
+                'rarity': item['rarity'] if 'rarity' in item else None
+            }
         )
 
         # Write personal effect qualities
         if 'qualities' in item:
             db_conn.executemany(
-                'INSERT INTO base_personal_effect_qualities VALUES (?,?)',
+                '''INSERT INTO base_personal_effect_qualities VALUES (
+                    :personal_effect,
+                    :quality
+                )''',
                 [
-                    (item['name'], quality)
+                    {
+                        'personal_effect': item['name'],
+                        'quality': quality
+                    }
                     for quality in item['qualities']
                 ]
             )
@@ -268,31 +297,48 @@ def armor_to_db(db_conn):
 
         # Write to armor table
         db_conn.execute(
-            'INSERT INTO base_armor VALUES (?,?,?,?,?,?)',
-            (
-                piece['name'],
-                piece['reference']['book'],
-                piece['reference']['page'],
-                piece['rarity'],
-                piece['price']['value'],
-                piece['price']['unit']
-            )
+            '''INSERT INTO base_armor VALUES (
+                :name,
+                :reference_book,
+                :reference_page,
+                :rarity,
+                :price_value,
+                :price_unit
+            )''',
+            {
+                'name': piece['name'],
+                'reference_book': piece['reference']['book'],
+                'reference_page': piece['reference']['page'],
+                'rarity': piece['rarity'],
+                'price_value': piece['price']['value'],
+                'price_unit': piece['price']['unit']
+            }
         )
         # Write to resistance values table
         for resistance_value in piece['resistance_values']:
             db_conn.execute(
-                'INSERT INTO base_armor_resistance VALUES (?,?,?)',
-                (
-                    piece['name'],
-                    resistance_value['category'],
-                    resistance_value['value']
-                )
+                '''INSERT INTO base_armor_resistance VALUES (
+                    :armor,
+                    :resistance_category,
+                    :resistance_value
+                )''',
+                {
+                    'armor': piece['name'],
+                    'resistance_category': resistance_value['category'],
+                    'resistance_value': resistance_value['value']
+                }
             )
         # Write to qualities table
         for quality in piece['qualities']:
             db_conn.execute(
-                'INSERT INTO base_armor_qualities VALUES (?,?)',
-                (piece['name'], quality)
+                '''INSERT INTO base_armor_qualities VALUES (
+                    :armor,
+                    :quality
+                )''',
+                {
+                    'armor': piece['name'],
+                    'quality': quality
+                }
             )
 
 
@@ -344,13 +390,27 @@ def weapons_to_db(db_conn):
 
                 # Write to weapons table
                 db_conn.execute(
-                    'INSERT INTO base_weapons VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)',
-                    (
-                        category['name'],
-                        weapon['name'],
-                        weapon['reference']['book'],
-                        weapon['reference']['page'],
-                        (
+                    '''INSERT INTO base_weapons VALUES (
+                        :category,
+                        :name,
+                        :reference_book,
+                        :reference_page,
+                        :skill,
+                        :grip,
+                        :range_min,
+                        :range_max,
+                        :damage,
+                        :deadliness,
+                        :rarity,
+                        :price_value,
+                        :price_unit
+                    )''',
+                    {
+                        'category': category['name'],
+                        'name': weapon['name'],
+                        'reference_book': weapon['reference']['book'],
+                        'reference_page': weapon['reference']['page'],
+                        'skill': (
                             weapon['skill']
                             if not any([
                                 effect['attribute'] == 'skill'
@@ -362,8 +422,8 @@ def weapons_to_db(db_conn):
                                 if effect['attribute'] == 'skill'
                             ].pop()
                         ),
-                        grip['name'],
-                        (
+                        'grip': grip['name'],
+                        'range_min': (
                             weapon['range']['min']
                             if not any([
                                 effect['attribute'] == 'range'
@@ -375,7 +435,7 @@ def weapons_to_db(db_conn):
                                 if effect['attribute'] == 'range'
                             ].pop()
                         ),
-                        (
+                        'range_max': (
                             weapon['range']['max']
                             if not any([
                                 effect['attribute'] == 'range'
@@ -387,7 +447,7 @@ def weapons_to_db(db_conn):
                                 if effect['attribute'] == 'range'
                             ].pop()
                         ),
-                        (
+                        'damage': (
                             weapon['damage']
                             if not any([
                                 effect['attribute'] == 'damage'
@@ -399,7 +459,7 @@ def weapons_to_db(db_conn):
                                 if effect['attribute'] == 'damage'
                             ].pop()
                         ),
-                        (
+                        'deadliness': (
                             weapon['deadliness']
                             if not any([
                                 effect['attribute'] == 'deadliness'
@@ -411,18 +471,26 @@ def weapons_to_db(db_conn):
                                 if effect['attribute'] == 'deadliness'
                             ].pop()
                         ),
-                        weapon['rarity'],
-                        weapon['price']['value'],
-                        weapon['price']['unit']
-                    )
+                        'rarity': weapon['rarity'],
+                        'price_value': weapon['price']['value'],
+                        'price_unit': weapon['price']['unit']
+                    }
                 )
 
                 # Write grip effect to qualities table
                 if any([effect['attribute'] == 'quality' for effect in grip['effects']]):
                     db_conn.executemany(
-                        'INSERT INTO base_weapon_qualities VALUES (?,?,?)',
+                        '''INSERT INTO base_weapon_qualities VALUES (
+                            :weapon,
+                            :grip,
+                            :quality
+                        )''',
                         [
-                            (weapon['name'], grip['name'], effect['value'])
+                            {
+                                'weapon': weapon['name'],
+                                'grip': grip['name'],
+                                'quality': effect['value']
+                            }
                             for effect in grip['effects']
                             if effect['attribute'] == 'quality'
                         ]
@@ -430,9 +498,17 @@ def weapons_to_db(db_conn):
 
             # Write to qualities table
             db_conn.executemany(
-                'INSERT INTO base_weapon_qualities VALUES (?,?,?)',
+                '''INSERT INTO base_weapon_qualities VALUES (
+                    :weapon,
+                    :grip,
+                    :quality
+                )''',
                 [
-                    (weapon['name'], None, quality)
+                    {
+                        'weapon': weapon['name'],
+                        'grip': None,
+                        'quality': quality
+                    }
                     for quality in weapon['qualities']
                 ]
             )
@@ -467,17 +543,26 @@ def techniques_to_db(db_conn):
         for subcategory in category['subcategories']:
             for technique in subcategory['techniques']:
                 db_conn.execute(
-                    'INSERT INTO base_techniques VALUES (?,?,?,?,?,?,?,?)',
-                    (
-                        category['name'],
-                        subcategory['name'],
-                        technique['name'],
-                        technique['restriction'] if 'restriction' in technique else None,
-                        technique['reference']['book'],
-                        technique['reference']['page'],
-                        technique['rank'],
-                        technique['xp']
-                    )
+                    '''INSERT INTO base_techniques VALUES (
+                        :category,
+                        :subcategory,
+                        :name,
+                        :restriction,
+                        :reference_book,
+                        :reference_page,
+                        :rank,
+                        :xp
+                    )''',
+                    {
+                        'category': category['name'],
+                        'subcategory': subcategory['name'],
+                        'name': technique['name'],
+                        'restriction': technique['restriction'] if 'restriction' in technique else None,
+                        'reference_book': technique['reference']['book'],
+                        'reference_page': technique['reference']['page'],
+                        'rank': technique['rank'],
+                        'xp': technique['xp']
+                    }
                 )
 
 
@@ -508,16 +593,24 @@ def advantages_to_db(db_conn):
     for category in advantage_categories:
         for entry in category['entries']:
             db_conn.execute(
-                'INSERT INTO base_advantages_disadvantages VALUES (?,?,?,?,?,?,?)',
-                (
-                    category['name'],
-                    entry['name'],
-                    entry['reference']['book'],
-                    entry['reference']['page'],
-                    entry['ring'],
-                    ', '.join(entry['types']),
-                    entry['effects']
-                )
+                '''INSERT INTO base_advantages_disadvantages VALUES (
+                    :category,
+                    :name,
+                    :reference_book,
+                    :reference_page,
+                    :ring,
+                    :types,
+                    :effects
+                )''',
+                {
+                    'category': category['name'],
+                    'name': entry['name'],
+                    'reference_book': entry['reference']['book'],
+                    'reference_page': entry['reference']['page'],
+                    'ring': entry['ring'],
+                    'types': ', '.join(entry['types']),
+                    'effects': entry['effects']
+                }
             )
 
 
@@ -536,8 +629,8 @@ def q8_to_db(db_conn):
 
     # Write question 8 to table
     db_conn.executemany(
-        'INSERT INTO base_unorthodox_skills VALUES (?)',
-        [(skill,) for skill in question_8[1]['outcome']['values']]
+        'INSERT INTO base_unorthodox_skills VALUES (:skill)',
+        [{'skill': skill,} for skill in question_8[1]['outcome']['values']]
     )
 
 
@@ -601,47 +694,73 @@ def clans_to_db(db_conn):
 
         # Write to clans table
         db_conn.execute(
-            'INSERT INTO base_clans VALUES (?,?,?,?,?,?,?)',
-            (
-                clan['name'],
-                clan['reference']['book'],
-                clan['reference']['page'],
-                clan['type'],
-                clan['ring_increase'],
-                clan['skill_increase'],
-                clan['status']
-            )
+            '''INSERT INTO base_clans VALUES (
+                :name,
+                :reference_book,
+                :reference_page,
+                :type,
+                :ring,
+                :skill,
+                :status
+            )''',
+            {
+                'name': clan['name'],
+                'reference_book': clan['reference']['book'],
+                'reference_page': clan['reference']['page'],
+                'type': clan['type'],
+                'ring': clan['ring_increase'],
+                'skill': clan['skill_increase'],
+                'status': clan['status']
+            }
         )
 
         for family in clan['families']:
 
             # Write to families table
             db_conn.execute(
-                'INSERT INTO base_families VALUES (?,?,?,?,?,?)',
-                (
-                    clan['name'],
-                    family['name'],
-                    family['reference']['book'],
-                    family['reference']['page'],
-                    family['glory'],
-                    family['wealth']
-                )
+                '''INSERT INTO base_families VALUES (
+                    :clan,
+                    :name,
+                    :reference_book,
+                    :reference_page,
+                    :glory,
+                    :wealth
+                )''',
+                {
+                    'clan': clan['name'],
+                    'name': family['name'],
+                    'reference_book': family['reference']['book'],
+                    'reference_page': family['reference']['page'],
+                    'glory': family['glory'],
+                    'wealth': family['wealth']
+                }
             )
 
             # Write to family rings table
             db_conn.executemany(
-                'INSERT INTO base_family_rings VALUES (?,?)',
+                '''INSERT INTO base_family_rings VALUES (
+                    :family,
+                    :ring
+                )''',
                 [
-                    (family['name'], ring)
+                    {
+                        'family': family['name'],
+                        'ring': ring
+                    }
                     for ring in family['ring_increase']
                 ]
             )
 
             # Write to family skills table
             db_conn.executemany(
-                'INSERT INTO base_family_skills VALUES (?,?)',
+                '''INSERT INTO base_family_skills VALUES (
+                    :family,
+                    :skill)''',
                 [
-                    (family['name'], skill)
+                    {
+                        'family': family['name'],
+                        'skill': skill
+                    }
                     for skill in family['skill_increase']
                 ]
             )
@@ -687,31 +806,46 @@ def heritage_to_db(db_conn):
 
         # Write to samurai heritage table
         db_conn.execute(
-            'INSERT INTO base_samurai_heritage VALUES (?,?,?,?,?,?,?,?,?)',
-            (
-                ancestor['source'],
-                ancestor['roll']['min'],
-                ancestor['roll']['max'],
-                ancestor['result'],
-                ancestor['modifiers']['glory'],
-                ancestor['modifiers']['honor'],
-                ancestor['modifiers']['status'],
-                ancestor['other_effects']['type'],
-                ancestor['other_effects']['instructions']
-            )
+            '''INSERT INTO base_samurai_heritage VALUES (
+                :source,
+                :roll_min,
+                :roll_max,
+                :ancestor,
+                :modifier_glory,
+                :modifier_honor,
+                :modifier_status,
+                :effect_type,
+                :effect_instructions
+            )''',
+            {
+                'source': ancestor['source'],
+                'roll_min': ancestor['roll']['min'],
+                'roll_max': ancestor['roll']['max'],
+                'ancestor': ancestor['result'],
+                'modifier_glory': ancestor['modifiers']['glory'],
+                'modifier_honor': ancestor['modifiers']['honor'],
+                'modifier_status': ancestor['modifiers']['status'],
+                'effect_type': ancestor['other_effects']['type'],
+                'effect_instructions': ancestor['other_effects']['instructions']
+            }
         )
 
         # Write to heritage effects table
         if 'outcomes' in ancestor['other_effects']:
             db_conn.executemany(
-                'INSERT INTO base_heritage_effects VALUES (?,?,?,?)',
+                '''INSERT INTO base_heritage_effects VALUES (
+                    :ancestor,
+                    :roll_min,
+                    :roll_max,
+                    :outcome
+                )''',
                 [
-                    (
-                        ancestor['result'],
-                        effect['roll']['min'] if 'roll' in effect else None,
-                        effect['roll']['max'] if 'roll' in effect else None,
-                        effect['outcome']
-                    )
+                    {
+                        'ancestor': ancestor['result'],
+                        'roll_min': effect['roll']['min'] if 'roll' in effect else None,
+                        'roll_max': effect['roll']['max'] if 'roll' in effect else None,
+                        'outcome': effect['outcome']
+                    }
                     for effect in ancestor['other_effects']['outcomes']
                 ]
             )
@@ -815,44 +949,73 @@ def schools_to_db(db_conn):
 
         # Write to schools table
         db_conn.execute(
-            'INSERT INTO base_schools VALUES (?,?,?,?,?,?,?,?,?,?)',
-            (
-                school['name'],
-                school['reference']['book'],
-                school['reference']['page'],
-                ', '.join(school['role']),
-                school['clan'] if 'clan' in school else None,
-                school['starting_skills']['size'],
-                school['honor'],
-                school['advantage_disadvantage'] if 'advantage_disadvantage' in school else None,
-                school['school_ability'],
-                school['mastery_ability'],
-            )
+            '''INSERT INTO base_schools VALUES (
+                :name,
+                :reference_book,
+                :reference_page,
+                :role,
+                :clan,
+                :starting_skills_size,
+                :honor,
+                :advantage_disadvantage,
+                :school_ability_name,
+                :mastery_ability_name
+            )''',
+            {
+                'name': school['name'],
+                'reference_book': school['reference']['book'],
+                'reference_page': school['reference']['page'],
+                'role': ', '.join(school['role']),
+                'clan': school['clan'] if 'clan' in school else None,
+                'starting_skills_size': school['starting_skills']['size'],
+                'honor': school['honor'],
+                'advantage_disadvantage': school['advantage_disadvantage'] if 'advantage_disadvantage' in school else None,
+                'school_ability_name': school['school_ability'],
+                'mastery_ability_name': school['mastery_ability'],
+            }
         )
 
         # Write to school rings table
         db_conn.executemany(
-            'INSERT INTO base_school_rings VALUES (?,?)',
+            '''INSERT INTO base_school_rings VALUES (
+                :school,
+                :ring
+            )''',
             [
-                (school['name'], ring)
+                {
+                    'school': school['name'],
+                    'ring': ring
+                }
                 for ring in school['ring_increase']
             ]
         )
 
         # Write to school starting skill table
         db_conn.executemany(
-            'INSERT INTO base_school_starting_skills VALUES (?,?)',
+            '''INSERT INTO base_school_starting_skills VALUES (
+                :school,
+                :skill
+            )''',
             [
-                (school['name'], skill)
+                {
+                    'school': school['name'],
+                    'skill': skill
+                }
                 for skill in school['starting_skills']['set']
             ]
         )
 
         # Write to school techniques available table
         db_conn.executemany(
-            'INSERT INTO base_school_techniques_available VALUES (?,?)',
+            '''INSERT INTO base_school_techniques_available VALUES (
+                :school,
+                :technique
+            )''',
             [
-                (school['name'], technique)
+                {
+                    'school': school['name'],
+                    'technique': technique
+                }
                 for technique in school['techniques_available']
             ]
         )
@@ -860,14 +1023,19 @@ def schools_to_db(db_conn):
         # Write to school starting techniques table
         for technique_set_id, technique_set in enumerate(school['starting_techniques']):
             db_conn.executemany(
-                'INSERT INTO base_school_starting_techniques VALUES (?,?,?,?)',
+                '''INSERT INTO base_school_starting_techniques VALUES (
+                    :school,
+                    :set_id,
+                    :set_size,
+                    :technique
+                )''',
                 [
-                    (
-                        school['name'],
-                        technique_set_id,
-                        technique_set['size'],
-                        technique
-                    )
+                    {
+                        'school': school['name'],
+                        'set_id': technique_set_id,
+                        'set_size': technique_set['size'],
+                        'technique': technique
+                    }
                     for technique in technique_set['set']
                 ]
             )
@@ -875,31 +1043,44 @@ def schools_to_db(db_conn):
         # Write to schools starting outfit table
         for equipment_set_id, equipment_set in enumerate(school['starting_outfit']):
             db_conn.executemany(
-                'INSERT INTO base_school_starting_outfit VALUES (?,?,?,?)',
+                '''INSERT INTO base_school_starting_outfit VALUES (
+                    :school,
+                    :set_id,
+                    :set_size,
+                    :equipment
+                )''',
                 [
-                    (
-                        school['name'],
-                        equipment_set_id,
-                        equipment_set['size'],
-                        piece
-                    )
+                    {
+                        'school': school['name'],
+                        'set_id': equipment_set_id,
+                        'set_size': equipment_set['size'],
+                        'equipment': piece
+                    }
                     for piece in equipment_set['set']
                 ]
             )
 
         # Write to curriculum table
         db_conn.executemany(
-            'INSERT INTO base_curriculum VALUES (?,?,?,?,?,?,?)',
+            '''INSERT INTO base_curriculum VALUES (
+                :school,
+                :rank,
+                :advance,
+                :type,
+                :special_access,
+                :min_allowable_rank,
+                :max_allowable_rank
+            )''',
             [
-                (
-                    school['name'],
-                    advancement['rank'],
-                    advancement['advance'],
-                    advancement['type'],
-                    int(advancement['special_access']),
-                    advancement['allowable_rank']['min'] if 'allowable_rank' in advancement else None,
-                    advancement['allowable_rank']['max'] if 'allowable_rank' in advancement else None
-                )
+                {
+                    'school': school['name'],
+                    'rank': advancement['rank'],
+                    'advance': advancement['advance'],
+                    'type': advancement['type'],
+                    'special_access': int(advancement['special_access']),
+                    'min_allowable_rank': advancement['allowable_rank']['min'] if 'allowable_rank' in advancement else None,
+                    'max_allowable_rank': advancement['allowable_rank']['max'] if 'allowable_rank' in advancement else None
+                }
                 for advancement in school['curriculum']
             ]
         )
@@ -964,44 +1145,64 @@ def titles_to_db(db_conn):
 
         # Write to titles table
         db_conn.execute(
-            'INSERT INTO base_titles VALUES (?,?,?,?,?)',
-            (
-                title['name'],
-                title['reference']['book'],
-                title['reference']['page'],
-                title['xp_to_completion'],
-                title['title_ability'],
-            )
+            '''INSERT INTO base_titles VALUES (
+                :name,
+                :reference_book,
+                :reference_page,
+                :xp_to_completion,
+                :title_ability_name
+            )''',
+            {
+                'name': title['name'],
+                'reference_book': title['reference']['book'],
+                'reference_page': title['reference']['page'],
+                'xp_to_completion': title['xp_to_completion'],
+                'title_ability_name': title['title_ability'],
+            }
         )
 
         # Write to title awards table
         db_conn.executemany(
-            'INSERT INTO base_title_awards VALUES (?,?,?,?,?,?,?)',
+            '''INSERT INTO base_title_awards VALUES (
+                :title,
+                :social_attribute,
+                :base_award,
+                :constraint_type,
+                :constraint_value,
+                :constraint_min,
+                :constraint_max
+            )''',
             [
-                (
-                    title['name'],
-                    award['award_attribute'],
-                    award['base_award'],
-                    award['constraint']['type'] if 'constraint' in award else None,
-                    award['constraint']['value'] if 'constraint' in award and 'value' in award['constraint'] else None,
-                    award['constraint']['range'][0] if 'constraint' in award and 'range' in award['constraint'] else None,
-                    award['constraint']['range'][1] if 'constraint' in award and 'range' in award['constraint'] else None
-                )
+                {
+                    'title': title['name'],
+                    'social_attribute': award['award_attribute'],
+                    'base_award': award['base_award'],
+                    'constraint_type': award['constraint']['type'] if 'constraint' in award else None,
+                    'constraint_value': award['constraint']['value'] if 'constraint' in award and 'value' in award['constraint'] else None,
+                    'constraint_min': award['constraint']['range'][0] if 'constraint' in award and 'range' in award['constraint'] else None,
+                    'constraint_max': award['constraint']['range'][1] if 'constraint' in award and 'range' in award['constraint'] else None
+                }
                 for award in title['social_awards']
             ]
         )
 
         # Write to title advancement table
         db_conn.executemany(
-            'INSERT INTO base_title_advancements VALUES (?,?,?,?,?)',
+            '''INSERT INTO base_title_advancements VALUES (
+                :title,
+                :rank,
+                :name,
+                :type,
+                :special_access
+            )''',
             [
-                (
-                    title['name'],
-                    advancement['rank'] if 'rank' in advancement else None,
-                    advancement['name'],
-                    advancement['type'],
-                    advancement['special_access']
-                )
+                {
+                    'title': title['name'],
+                    'rank': advancement['rank'] if 'rank' in advancement else None,
+                    'name': advancement['name'],
+                    'type': advancement['type'],
+                    'special_access': advancement['special_access']
+                }
                 for advancement in title['advancements']
             ]
         )
@@ -1033,14 +1234,20 @@ def patterns_to_db(db_conn):
 
         # Write to item pattern table
         db_conn.execute(
-            'INSERT INTO base_item_patterns VALUES (?,?,?,?,?)',
-            (
-                pattern['name'],
-                pattern['reference']['book'],
-                pattern['reference']['page'],
-                pattern['xp_cost'],
-                pattern['rarity_modifier']
-            )
+            '''INSERT INTO base_item_patterns VALUES (
+                :name,
+                :reference_book,
+                :reference_page,
+                :xp_cost,
+                :rarity_modifier
+            )''',
+            {
+                'name': pattern['name'],
+                'reference_book': pattern['reference']['book'],
+                'reference_page': pattern['reference']['page'],
+                'xp_cost': pattern['xp_cost'],
+                'rarity_modifier': pattern['rarity_modifier']
+            }
         )
         
         # Write to techniques table
@@ -1095,13 +1302,18 @@ def bonds_to_db(db_conn):
     # Write to bonds table
     for bond in bonds:
         db_conn.execute(
-            'INSERT INTO base_bonds VALUES (?,?,?,?)',
-            (
-                bond['name'],
-                bond['ability'],
-                bond['reference']['book'],
-                bond['reference']['page']
-            )
+            '''INSERT INTO base_bonds VALUES (
+                :name,
+                :bond_ability_name,
+                :reference_book,
+                :reference_page
+            )''',
+            {
+                'name': bond['name'],
+                'bond_ability_name': bond['ability'],
+                'reference_book': bond['reference']['book'],
+                'reference_page': bond['reference']['page']
+            }
         )
 
 
@@ -1132,17 +1344,26 @@ def regions_to_db(db_conn):
     # Write to regions table
     for region in regions:
         db_conn.execute(
-            'INSERT INTO base_regions VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
-            (
-                region['name'],
-                region['ring_increase'],
-                region['skill_increase'],
-                region['glory'],
-                region['type'],
-                region['subtype'] if 'subtype' in region else None,
-                region['reference']['book'],
-                region['reference']['page']
-            )
+            '''INSERT INTO base_regions VALUES (
+                :name,
+                :ring_increase,
+                :skill_increase,
+                :glory,
+                :type,
+                :subtype,
+                :reference_book,
+                :reference_page
+            )''',
+            {
+                'name': region['name'],
+                'ring_increase': region['ring_increase'],
+                'skill_increase': region['skill_increase'],
+                'glory': region['glory'],
+                'type': region['type'],
+                'subtype': region['subtype'] if 'subtype' in region else None,
+                'reference_book': region['reference']['book'],
+                'reference_page': region['reference']['page']
+            }
         )
 
 
@@ -1277,6 +1498,7 @@ def main():
     )
 
     # Open connection
+    print('Opening database connection')
     db_conn = connect_db('paperblossoms.db')
 
     # Write data
