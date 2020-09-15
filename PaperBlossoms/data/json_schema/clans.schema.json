@@ -19,11 +19,11 @@
                         "description": "Book in which reference can be found",
                         "type": "string",
                         "enum": [
-                            "Core",
+                            "GMK",
                             "EE",
                             "SL",
                             "Mantis",
-                            "GMK",
+                            "Core",
                             "CoS",
                             "PoW"
                         ]
@@ -60,41 +60,41 @@
                 "description": "Ring for which the clan grants an increase in rank",
                 "type": "string",
                 "enum": [
-                    "Air",
                     "Earth",
+                    "Air",
+                    "Void",
                     "Fire",
-                    "Water",
-                    "Void"
+                    "Water"
                 ]
             },
             "skill_increase": {
                 "description": "Skill for which the clan grants an increase in rank",
                 "type": "string",
                 "enum": [
-                    "Aesthetics",
-                    "Composition",
-                    "Design",
-                    "Smithing",
-                    "Command",
-                    "Courtesy",
-                    "Games",
-                    "Performance",
-                    "Culture",
-                    "Government",
-                    "Medicine",
                     "Sentiment",
-                    "Theology",
-                    "Fitness",
+                    "Government",
+                    "Aesthetics",
+                    "Medicine",
                     "Martial Arts [Melee]",
-                    "Martial Arts [Ranged]",
-                    "Martial Arts [Unarmed]",
-                    "Meditation",
-                    "Tactics",
-                    "Commerce",
                     "Labor",
-                    "Seafaring",
+                    "Fitness",
+                    "Tactics",
+                    "Martial Arts [Unarmed]",
+                    "Culture",
+                    "Design",
+                    "Commerce",
+                    "Courtesy",
                     "Skulduggery",
-                    "Survival"
+                    "Martial Arts [Ranged]",
+                    "Theology",
+                    "Composition",
+                    "Seafaring",
+                    "Meditation",
+                    "Performance",
+                    "Games",
+                    "Smithing",
+                    "Survival",
+                    "Command"
                 ]
             },
             "status": {
@@ -120,11 +120,11 @@
                                     "description": "Book in which reference can be found",
                                     "type": "string",
                                     "enum": [
-                                        "Core",
+                                        "GMK",
                                         "EE",
                                         "SL",
                                         "Mantis",
-                                        "GMK",
+                                        "Core",
                                         "CoS",
                                         "PoW"
                                     ]
@@ -155,11 +155,11 @@
                                 "description": "Ring for which family may grant a rank",
                                 "type": "string",
                                 "enum": [
-                                    "Air",
                                     "Earth",
+                                    "Air",
+                                    "Void",
                                     "Fire",
-                                    "Water",
-                                    "Void"
+                                    "Water"
                                 ]
                             }
                         },
@@ -170,30 +170,30 @@
                                 "description": "Skill for which family grants a rank",
                                 "type": "string",
                                 "enum": [
-                                    "Aesthetics",
-                                    "Composition",
-                                    "Design",
-                                    "Smithing",
-                                    "Command",
-                                    "Courtesy",
-                                    "Games",
-                                    "Performance",
-                                    "Culture",
-                                    "Government",
-                                    "Medicine",
                                     "Sentiment",
-                                    "Theology",
-                                    "Fitness",
+                                    "Government",
+                                    "Aesthetics",
+                                    "Medicine",
                                     "Martial Arts [Melee]",
-                                    "Martial Arts [Ranged]",
-                                    "Martial Arts [Unarmed]",
-                                    "Meditation",
-                                    "Tactics",
-                                    "Commerce",
                                     "Labor",
-                                    "Seafaring",
+                                    "Fitness",
+                                    "Tactics",
+                                    "Martial Arts [Unarmed]",
+                                    "Culture",
+                                    "Design",
+                                    "Commerce",
+                                    "Courtesy",
                                     "Skulduggery",
-                                    "Survival"
+                                    "Martial Arts [Ranged]",
+                                    "Theology",
+                                    "Composition",
+                                    "Seafaring",
+                                    "Meditation",
+                                    "Performance",
+                                    "Games",
+                                    "Smithing",
+                                    "Survival",
+                                    "Command"
                                 ]
                             }
                         },

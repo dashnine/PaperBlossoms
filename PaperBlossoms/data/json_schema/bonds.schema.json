@@ -23,11 +23,11 @@
                         "description": "Book in which reference can be found",
                         "type": "string",
                         "enum": [
-                            "Core",
+                            "GMK",
                             "EE",
                             "SL",
                             "Mantis",
-                            "GMK",
+                            "Core",
                             "CoS",
                             "PoW"
                         ]

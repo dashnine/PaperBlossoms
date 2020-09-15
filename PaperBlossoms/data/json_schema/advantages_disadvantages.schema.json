@@ -30,11 +30,11 @@
                                     "description": "Book in which reference can be found",
                                     "type": "string",
                                     "enum": [
-                                        "Core",
+                                        "GMK",
                                         "EE",
                                         "SL",
                                         "Mantis",
-                                        "GMK",
+                                        "Core",
                                         "CoS",
                                         "PoW"
                                     ]
@@ -62,11 +62,11 @@
                             "description": "Ring associated with advantage or disadvantage",
                             "type": "string",
                             "enum": [
-                                "Air",
                                 "Earth",
+                                "Air",
+                                "Void",
                                 "Fire",
-                                "Water",
-                                "Void"
+                                "Water"
                             ]
                         },
                         "types": {

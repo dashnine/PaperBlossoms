@@ -30,11 +30,11 @@
                                     "description": "Book in which reference can be found",
                                     "type": "string",
                                     "enum": [
-                                        "Core",
+                                        "GMK",
                                         "EE",
                                         "SL",
                                         "Mantis",
-                                        "GMK",
+                                        "Core",
                                         "CoS",
                                         "PoW"
                                     ]
@@ -181,23 +181,23 @@
                                 "description": "Weapon quality",
                                 "type": "string",
                                 "enum": [
-                                    "Ceremonial",
-                                    "Concealable",
                                     "Cumbersome",
-                                    "Damaged",
-                                    "Destroyed",
-                                    "Durable",
-                                    "Forbidden",
                                     "Mundane",
-                                    "Prepare",
-                                    "Razor-edged",
-                                    "Resplendent",
                                     "Sacred",
-                                    "Snaring",
-                                    "Subtle",
-                                    "Unholy",
                                     "Wargear",
-                                    "Prepare (2)"
+                                    "Durable",
+                                    "Damaged",
+                                    "Forbidden",
+                                    "Prepare",
+                                    "Subtle",
+                                    "Destroyed",
+                                    "Concealable",
+                                    "Razor-edged",
+                                    "Prepare (2)",
+                                    "Ceremonial",
+                                    "Snaring",
+                                    "Resplendent",
+                                    "Unholy"
                                 ]
                             }
                         },
@@ -217,9 +217,9 @@
                                     "description": "Monetary unit",
                                     "type": "string",
                                     "enum": [
-                                        "koku",
                                         "bu",
-                                        "zeni"
+                                        "zeni",
+                                        "koku"
                                     ]
                                 }
                             },

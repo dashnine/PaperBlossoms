@@ -62,12 +62,12 @@
                             "description": "Ring which can be elected",
                             "type": "string",
                             "enum": [
-                                "Air",
                                 "Earth",
-                                "Fire",
-                                "Water",
+                                "Air",
                                 "Void",
-                                "any"
+                                "any",
+                                "Fire",
+                                "Water"
                             ]
                         }
                     }
@@ -160,9 +160,9 @@
                         "description": "Monetary unit",
                         "type": "string",
                         "enum": [
-                            "koku",
                             "bu",
-                            "zeni"
+                            "zeni",
+                            "koku"
                         ]
                     }
                 },

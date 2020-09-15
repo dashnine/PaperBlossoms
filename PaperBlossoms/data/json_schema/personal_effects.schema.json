@@ -19,11 +19,11 @@
                         "description": "Book in which reference can be found",
                         "type": "string",
                         "enum": [
-                            "Core",
+                            "GMK",
                             "EE",
                             "SL",
                             "Mantis",
-                            "GMK",
+                            "Core",
                             "CoS",
                             "PoW"
                         ]
@@ -59,9 +59,9 @@
                         "description": "Monetary unit",
                         "type": "string",
                         "enum": [
-                            "koku",
                             "bu",
-                            "zeni"
+                            "zeni",
+                            "koku"
                         ]
                     }
                 },
@@ -90,22 +90,22 @@
                     "description": "Item quality",
                     "type": "string",
                     "enum": [
-                        "Ceremonial",
-                        "Concealable",
                         "Cumbersome",
-                        "Damaged",
-                        "Destroyed",
-                        "Durable",
-                        "Forbidden",
                         "Mundane",
-                        "Prepare",
-                        "Razor-edged",
-                        "Resplendent",
                         "Sacred",
-                        "Snaring",
+                        "Wargear",
+                        "Durable",
+                        "Damaged",
+                        "Forbidden",
+                        "Prepare",
                         "Subtle",
-                        "Unholy",
-                        "Wargear"
+                        "Destroyed",
+                        "Concealable",
+                        "Razor-edged",
+                        "Ceremonial",
+                        "Snaring",
+                        "Resplendent",
+                        "Unholy"
                     ]
                 }
             }
