@@ -19,14 +19,14 @@
                         "description": "Book in which reference can be found",
                         "type": "string",
                         "enum": [
+                            "CR",
+                            "CoS",
                             "Core",
                             "EE",
-                            "SL",
-                            "Mantis",
                             "GMK",
-                            "CoS",
+                            "Mantis",
                             "PoW",
-                            "CR"
+                            "SL"
                         ]
                     },
                     "page": {
@@ -64,8 +64,8 @@
                     "Air",
                     "Earth",
                     "Fire",
-                    "Water",
-                    "Void"
+                    "Void",
+                    "Water"
                 ]
             },
             "skill_increase": {
@@ -73,29 +73,29 @@
                 "type": "string",
                 "enum": [
                     "Aesthetics",
-                    "Composition",
-                    "Design",
-                    "Smithing",
                     "Command",
+                    "Commerce",
+                    "Composition",
                     "Courtesy",
-                    "Games",
-                    "Performance",
                     "Culture",
-                    "Government",
-                    "Medicine",
-                    "Sentiment",
-                    "Theology",
+                    "Design",
                     "Fitness",
+                    "Games",
+                    "Government",
+                    "Labor",
                     "Martial Arts [Melee]",
                     "Martial Arts [Ranged]",
                     "Martial Arts [Unarmed]",
+                    "Medicine",
                     "Meditation",
-                    "Tactics",
-                    "Commerce",
-                    "Labor",
+                    "Performance",
                     "Seafaring",
+                    "Sentiment",
                     "Skulduggery",
-                    "Survival"
+                    "Smithing",
+                    "Survival",
+                    "Tactics",
+                    "Theology"
                 ]
             },
             "status": {
@@ -121,14 +121,14 @@
                                     "description": "Book in which reference can be found",
                                     "type": "string",
                                     "enum": [
+                                        "CR",
+                                        "CoS",
                                         "Core",
                                         "EE",
-                                        "SL",
-                                        "Mantis",
                                         "GMK",
-                                        "CoS",
+                                        "Mantis",
                                         "PoW",
-                                        "CR"
+                                        "SL"
                                     ]
                                 },
                                 "page": {
@@ -160,8 +160,8 @@
                                     "Air",
                                     "Earth",
                                     "Fire",
-                                    "Water",
-                                    "Void"
+                                    "Void",
+                                    "Water"
                                 ]
                             }
                         },
@@ -173,29 +173,29 @@
                                 "type": "string",
                                 "enum": [
                                     "Aesthetics",
-                                    "Composition",
-                                    "Design",
-                                    "Smithing",
                                     "Command",
+                                    "Commerce",
+                                    "Composition",
                                     "Courtesy",
-                                    "Games",
-                                    "Performance",
                                     "Culture",
-                                    "Government",
-                                    "Medicine",
-                                    "Sentiment",
-                                    "Theology",
+                                    "Design",
                                     "Fitness",
+                                    "Games",
+                                    "Government",
+                                    "Labor",
                                     "Martial Arts [Melee]",
                                     "Martial Arts [Ranged]",
                                     "Martial Arts [Unarmed]",
+                                    "Medicine",
                                     "Meditation",
-                                    "Tactics",
-                                    "Commerce",
-                                    "Labor",
+                                    "Performance",
                                     "Seafaring",
+                                    "Sentiment",
                                     "Skulduggery",
-                                    "Survival"
+                                    "Smithing",
+                                    "Survival",
+                                    "Tactics",
+                                    "Theology"
                                 ]
                             }
                         },
