@@ -982,6 +982,9 @@
             "outcomes": [
                 {
                     "outcome": "Whispers of Failure"
+                },
+                {
+                    "outcome": "Ring Exchange"
                 }
             ]
         },
@@ -1097,7 +1100,7 @@
             "instructions": "Choose one of your character's rings; you may reduce the value of that ring by 1 to increase the value of the ring associated with the element by 1 (this still cannot raise a ring above 3).",
             "outcomes": [
                 {
-                    "outcome": "Ring exchange"
+                    "outcome": "Ring Exchange"
                 }
             ]
         },
