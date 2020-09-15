@@ -49,14 +49,14 @@
                                                 "description": "Book in which reference can be found",
                                                 "type": "string",
                                                 "enum": [
+                                                    "CR",
+                                                    "CoS",
                                                     "Core",
                                                     "EE",
-                                                    "SL",
-                                                    "Mantis",
                                                     "GMK",
-                                                    "CoS",
+                                                    "Mantis",
                                                     "PoW",
-                                                    "CR"
+                                                    "SL"
                                                 ]
                                             },
                                             "page": {

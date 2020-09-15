@@ -65,8 +65,8 @@
                                 "Air",
                                 "Earth",
                                 "Fire",
-                                "Water",
                                 "Void",
+                                "Water",
                                 "any"
                             ]
                         }
@@ -160,8 +160,8 @@
                         "description": "Monetary unit",
                         "type": "string",
                         "enum": [
-                            "koku",
                             "bu",
+                            "koku",
                             "zeni"
                         ]
                     }
