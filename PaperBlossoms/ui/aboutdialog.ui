@@ -48,7 +48,7 @@
       </sizepolicy>
      </property>
      <property name="text">
-      <string>Paper Blossoms is an Open Source character generator for Legend of the Five Rings, a roleplaying game by Fantasy Flight Games.  The application and author(s) are not affiliated with FFG or any other official L5R party.  Legend of the Five Rings and all associated content is property of Fantasy Flight Games.  PaperBlossoms is licensed under the GPLv3, and is Copyright (c) 2019 Kyle Hankins (dashnine).  Data modeling and data entry provided by @meow9th. 
+      <string>Paper Blossoms is an Open Source character generator for Legend of the Five Rings, a roleplaying game by Fantasy Flight Games.  The application and author(s) are not affiliated with FFG or any other official L5R party.  Legend of the Five Rings and all associated content is property of Fantasy Flight Games.  PaperBlossoms is licensed under the GPLv3, and is Copyright (c) 2020 Kyle Hankins (dashnine).  Data modeling and data entry provided by @meow9th. 
 
 To contact the project, send an email to paperblossoms.L5R@gmail.com!
 Ring images are property of FFG; the assets used here were taken from www.imperialadvisor.com (original by /u/mproud on reddit) and modified to work with the application; these can be removed immediately upon request by any owning party. 
