@@ -1,6 +1,6 @@
 # Data
 
-Last updated: PoW release (v1.3)  
+Last updated: CR release (v1.31)  
 Author: @meow9th
 
 The application database is [paperblossoms.db](paperblossoms.db), a SQLite database. However, in order to make data entry easier, more reliable and more maintainable, data is never entered directly into `paperblossoms.db`. Instead, data is entered in [JSON](json/) files, which are then flattened and normalized into `paperblossoms.db` with the Python script [json_to_db.py](scripts/json_to_db.py). Below, I describe the structure of the application database and the data entry system I devised to minimize tedium and maximize reliability.
@@ -18,7 +18,7 @@ Directory contents:
 
 ## Contributing data
 
-Below, I describe how to contribute base data. Customer user data is user-specific, and is not meant to be released with the application. [§Translations](#translations) have a [separate process](https://github.com/dashnine/PaperBlossoms/wiki/Translation), and can be provided for both the UI and the database. See [§Application database](#application-database) for more detail about the sources of data and how they're combined.
+Below, I describe how to contribute base data. Custom data is user-specific, and is not meant to be released with the application. [§Translations](#translations) have a [separate contribution process](https://github.com/dashnine/PaperBlossoms/wiki/Translation), and can be provided for both the UI and the database. See [§Application database](#application-database) for more detail about the sources of data and how they're combined. Thus, the contribution guide here focuses on base data.
 
 Contribution guidelines:
 
@@ -39,7 +39,7 @@ Follow these steps if you'd like to add a new school, clan, weapon, or any new i
     - Trigger an autocompletion proposal with <kbd>ctrl</kbd>-<kbd>space</kbd>.
     - Type characters to narrow down string autocompletion proposals.
     - Navigate between fields in the snippet with <kbd>tab</kbd>.
-    - Nested JSON objects come with snippets too. Trigger the snippet for a nested object with <kbd>ctrl</kbd>-<kbd>space</kbd> once your cursor is within the `{}` that indicate the object.
+    - Nested JSON objects come with snippets too. Trigger the snippet for a nested object with <kbd>ctrl</kbd>-<kbd>space</kbd> once your cursor is within the `{}` that indicate the nested object.
 2. Validate the JSON data with `validate_json.py`.
 3. Generate the application database with `json_to_db.py`.
 
@@ -76,7 +76,7 @@ Optional:
 Published books are perhaps the most frequently employed `enum` across all JSON schemas. The list of valid books is hard-coded in `add_enums.py`, in the function `get_books()`.
 
 1. Add the book title abbreviation to the list `books_enum` in `get_books()` in `add_enums.py`.
-2. Run `add_enums.py` without any arguments to add the books to all JSON schemas.
+2. Run `add_enums.py --option books` to add the new book to all JSON schemas.
 
 To add data from the new book, see sections above on [adding new instances](#contribute-a-new-instance-of-an-existing-entity) and [adding new entities](#contribute-a-new-entity).
 
@@ -87,14 +87,14 @@ Below I list a miscellaneous grab-bag of common headaches and 'what now?' phenom
 - School starting outfits are the worst (make that: schools are the worst, but starting outfits are the worst part of schools). Starting outfits frequently include equipment which is not included or described anywhere else. In those cases, I default to creating a new item in `personal_effects.json` with the name and the reference pointing to the school page. The exception is general descriptions like `Two Items of Rarity 4 or Lower`. For those, I coordinate with @dashnine, who handles them specially in the application code, and add them as a legal option in `add_enums.py`.
 - Multi-cursor in VS Code frequently triggers for me when editing JSON files with snippets, at which point exiting out of multi-cursor mode also exits me out of tab navigation within a snippet. If you figure out how to prevent this annoying behaviour, let me know.
 - All files are encoded in UTF-8. I typically enter non-ASCII characters directly from character map utilities.
-- Speaking of encoding in UTF-8, the Python function `json.load()` defaults to `encoding = 'utf8'` on *nix systems but not on Windows. I have not yet refactored `json.load()` to specify `encoding = 'utf8'` everywhere (only the ones I happened to work on while on Windows), so if you are on Windows and run any scripts which call `json.load()` without encoding argument, you'll get an error. Simply fix the offending function call to specify encoding and try again. (Then include it in your PR!)
+- Speaking of encoding in UTF-8, the Python function `json.load()` defaults to `encoding = 'utf8'` on *nix systems but not on Windows. I have not yet refactored `json.load()` to specify `encoding = 'utf8'` everywhere (only the ones I happened to work on while on Windows), so if you are on Windows and run any scripts which call `json.load()` without the `encoding` argument, you'll get an error. Simply fix the offending function call to specify encoding and try again. (Then include it in your PR!)
 - None of the data entry system has been tested on Mac, but in theory all the technology is cross-platform. See encoding note above for why I'm skeptical that the system will work trouble-free.
 
 ## Application database
 
 `paperblossoms.db` is the application database. Throughout this guide, I use the terms 'application database' and `paperblossoms.db` interchangeably.
 
-There are three sources of data which you will find in your own copy of the application database:
+There are three sources of data which you will find in the application database:
 
 - Base data (`base_*` tables): The data entered from the books, included as part of the application release. This is the data that is entered in JSON and then imported into `paperblossoms.db`.
 - Custom user data (`user_*` tables, `*desc*` columns): Data that the user enters in their own local copy of Paper Blossoms. Custom additions to the game, like new schools or new advantages, are stored in `user_` tables. `*desc*` columns exist for storing descriptions (e.g., for each technique). The Paper Blossoms team does not distribute this data to avoid infringing on FFG's copyright on the L5R books, but users who own the books may choose to enter verbatim text if they so wish, and store it with the application for display on, e.g., their character sheets. 
@@ -224,7 +224,7 @@ Here's a relatively simple example which features default snippets and `enum`s, 
 
 Again, the most complicated example is [schools.schema.json](json_schema/schools.schema.json).
 
-In order to get the magical default snippet behaviour, VS Code must be [configured to map](https://code.visualstudio.com/docs/languages/json#_mapping-to-a-schema-in-the-workspace) a JSON file with its schema. Personally, I map using the `json.schemas` field in [workspace settings](https://code.visualstudio.com/docs/getstarted/settings). To improve portability, I provide `vscode_workspace_settings.json` which contain all the mappings, as well as a few settings I find useful. Your mileage may vary.
+In order to get the magical default snippet behaviour, VS Code must be [configured to map](https://code.visualstudio.com/docs/languages/json#_mapping-to-a-schema-in-the-workspace) a JSON file with its schema. Personally, I map using the `json.schemas` field in [workspace settings](https://code.visualstudio.com/docs/getstarted/settings). To improve portability, I provide `vscode_workspace_settings.json` which contain all the mappings, as well as a few settings I find useful. Your mileage may vary. Copy what you like from the provided file into your own workspace settings file.
 
 ### Scripts
 
@@ -258,10 +258,30 @@ Validated weapons.json
 Validated advantages_disadvantages.json
 ```
 
-`json_to_db.py` is the workhorse script for converting JSON data into SQLite data. It constructs the entire SQLite database, including base data, custom data, and translations. It loads data from each JSON and writes that data to SQLite tables in a flattened and normalized way. It takes no arguments and doesn't write to stdout.
+`json_to_db.py` is the workhorse script for converting JSON data into SQLite data. It constructs the entire SQLite database, including base data, custom data, and translations. It loads data from each JSON and writes that data to SQLite tables in a flattened and normalized way. It takes no arguments and outputs entities being written to the database as it goes through the JSON files.
 
 ```
-$ python3 PaperBlossoms/data/scripts/json_to_db.py
+$ python3 PaperBlossoms/data/scripts/json_to_db.py 
+Opening database connection
+Writing descriptions and translations
+Writing rings
+Writing skills
+Writing techniques
+Writing advantages and disadvantages
+Writing question 8
+Writing titles
+Writing item patterns
+Writing bonds
+Writing regions
+Writing item qualities
+Writing personal effects
+Writing armor
+Writing weapons
+Writing clans
+Writing heritage tables
+Writing schools
+Writing upbringings
+Saving and closing database connection
 ```
 
 Other scripts modify the data entry system via the JSON schemas.

@@ -30,14 +30,14 @@
                                     "description": "Book in which reference can be found",
                                     "type": "string",
                                     "enum": [
+                                        "CR",
+                                        "CoS",
                                         "Core",
                                         "EE",
-                                        "SL",
-                                        "Mantis",
                                         "GMK",
-                                        "CoS",
+                                        "Mantis",
                                         "PoW",
-                                        "CR"
+                                        "SL"
                                     ]
                                 },
                                 "page": {
@@ -191,14 +191,14 @@
                                     "Forbidden",
                                     "Mundane",
                                     "Prepare",
+                                    "Prepare (2)",
                                     "Razor-edged",
                                     "Resplendent",
                                     "Sacred",
                                     "Snaring",
                                     "Subtle",
                                     "Unholy",
-                                    "Wargear",
-                                    "Prepare (2)"
+                                    "Wargear"
                                 ]
                             }
                         },
@@ -218,8 +218,8 @@
                                     "description": "Monetary unit",
                                     "type": "string",
                                     "enum": [
-                                        "koku",
                                         "bu",
+                                        "koku",
                                         "zeni"
                                     ]
                                 }

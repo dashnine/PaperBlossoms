@@ -18,8 +18,8 @@
                     "Air",
                     "Earth",
                     "Fire",
-                    "Water",
-                    "Void"
+                    "Void",
+                    "Water"
                 ]
             },
             "skill_increase": {
@@ -27,29 +27,29 @@
                 "type": "string",
                 "enum": [
                     "Aesthetics",
-                    "Composition",
-                    "Design",
-                    "Smithing",
                     "Command",
+                    "Commerce",
+                    "Composition",
                     "Courtesy",
-                    "Games",
-                    "Performance",
                     "Culture",
-                    "Government",
-                    "Medicine",
-                    "Sentiment",
-                    "Theology",
+                    "Design",
                     "Fitness",
+                    "Games",
+                    "Government",
+                    "Labor",
                     "Martial Arts [Melee]",
                     "Martial Arts [Ranged]",
                     "Martial Arts [Unarmed]",
+                    "Medicine",
                     "Meditation",
-                    "Tactics",
-                    "Commerce",
-                    "Labor",
+                    "Performance",
                     "Seafaring",
+                    "Sentiment",
                     "Skulduggery",
-                    "Survival"
+                    "Smithing",
+                    "Survival",
+                    "Tactics",
+                    "Theology"
                 ]
             },
             "glory": {
