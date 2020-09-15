@@ -48,7 +48,7 @@ def add_enums_with_parent(schema_object, property_parent, target_property, enum)
 def write_enums(schema_filename, target_property, enum):
     with open(schema_filename) as f:
         schema_object = json.load(f)
-    schema_object = add_enums(schema_object, target_property, list(set(enum)))
+    schema_object = add_enums(schema_object, target_property, sorted(set(enum)))
     with open(schema_filename, 'w') as f:
         json.dump(schema_object, f, indent = 4)
 
@@ -58,7 +58,7 @@ def write_enums(schema_filename, target_property, enum):
 def write_enums_with_parent(schema_filename, property_parent, target_property, enum):
     with open(schema_filename) as f:
         schema_object = json.load(f)
-    schema_object = add_enums_with_parent(schema_object, property_parent, target_property, list(set(enum)))
+    schema_object = add_enums_with_parent(schema_object, property_parent, target_property, sorted(set(enum)))
     with open(schema_filename, 'w') as f:
         json.dump(schema_object, f, indent = 4)
 

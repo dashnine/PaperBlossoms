@@ -19,13 +19,13 @@
                         "description": "Book in which reference can be found",
                         "type": "string",
                         "enum": [
-                            "GMK",
-                            "EE",
-                            "SL",
-                            "Mantis",
-                            "Core",
                             "CoS",
-                            "PoW"
+                            "Core",
+                            "EE",
+                            "GMK",
+                            "Mantis",
+                            "PoW",
+                            "SL"
                         ]
                     },
                     "page": {
@@ -60,8 +60,8 @@
                         "type": "string",
                         "enum": [
                             "bu",
-                            "zeni",
-                            "koku"
+                            "koku",
+                            "zeni"
                         ]
                     }
                 },
@@ -90,22 +90,22 @@
                     "description": "Item quality",
                     "type": "string",
                     "enum": [
-                        "Cumbersome",
-                        "Mundane",
-                        "Sacred",
-                        "Wargear",
-                        "Durable",
-                        "Damaged",
-                        "Forbidden",
-                        "Prepare",
-                        "Subtle",
-                        "Destroyed",
-                        "Concealable",
-                        "Razor-edged",
                         "Ceremonial",
-                        "Snaring",
+                        "Concealable",
+                        "Cumbersome",
+                        "Damaged",
+                        "Destroyed",
+                        "Durable",
+                        "Forbidden",
+                        "Mundane",
+                        "Prepare",
+                        "Razor-edged",
                         "Resplendent",
-                        "Unholy"
+                        "Sacred",
+                        "Snaring",
+                        "Subtle",
+                        "Unholy",
+                        "Wargear"
                     ]
                 }
             }

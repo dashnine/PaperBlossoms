@@ -62,12 +62,12 @@
                             "description": "Ring which can be elected",
                             "type": "string",
                             "enum": [
-                                "Earth",
                                 "Air",
-                                "Void",
-                                "any",
+                                "Earth",
                                 "Fire",
-                                "Water"
+                                "Void",
+                                "Water",
+                                "any"
                             ]
                         }
                     }
@@ -161,8 +161,8 @@
                         "type": "string",
                         "enum": [
                             "bu",
-                            "zeni",
-                            "koku"
+                            "koku",
+                            "zeni"
                         ]
                     }
                 },

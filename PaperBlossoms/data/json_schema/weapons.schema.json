@@ -30,13 +30,13 @@
                                     "description": "Book in which reference can be found",
                                     "type": "string",
                                     "enum": [
-                                        "GMK",
-                                        "EE",
-                                        "SL",
-                                        "Mantis",
-                                        "Core",
                                         "CoS",
-                                        "PoW"
+                                        "Core",
+                                        "EE",
+                                        "GMK",
+                                        "Mantis",
+                                        "PoW",
+                                        "SL"
                                     ]
                                 },
                                 "page": {
@@ -181,23 +181,23 @@
                                 "description": "Weapon quality",
                                 "type": "string",
                                 "enum": [
-                                    "Cumbersome",
-                                    "Mundane",
-                                    "Sacred",
-                                    "Wargear",
-                                    "Durable",
-                                    "Damaged",
-                                    "Forbidden",
-                                    "Prepare",
-                                    "Subtle",
-                                    "Destroyed",
-                                    "Concealable",
-                                    "Razor-edged",
-                                    "Prepare (2)",
                                     "Ceremonial",
-                                    "Snaring",
+                                    "Concealable",
+                                    "Cumbersome",
+                                    "Damaged",
+                                    "Destroyed",
+                                    "Durable",
+                                    "Forbidden",
+                                    "Mundane",
+                                    "Prepare",
+                                    "Prepare (2)",
+                                    "Razor-edged",
                                     "Resplendent",
-                                    "Unholy"
+                                    "Sacred",
+                                    "Snaring",
+                                    "Subtle",
+                                    "Unholy",
+                                    "Wargear"
                                 ]
                             }
                         },
@@ -218,8 +218,8 @@
                                     "type": "string",
                                     "enum": [
                                         "bu",
-                                        "zeni",
-                                        "koku"
+                                        "koku",
+                                        "zeni"
                                     ]
                                 }
                             },
