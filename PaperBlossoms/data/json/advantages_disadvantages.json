@@ -631,6 +631,36 @@
                 "ring": "Void",
                 "types": ["Interpersonal", "Physical"],
                 "effects": ""
+            },
+            {
+                "name": "Famously Kind",
+                "reference": {
+                    "book": "CR",
+                    "page": 89
+                },
+                "ring": "Water",
+                "types": ["Fame", "Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Portentous Birth",
+                "reference": {
+                    "book": "CR",
+                    "page": 89
+                },
+                "ring": "Fire",
+                "types": ["Interpersonal", "Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Talented Herbalist",
+                "reference": {
+                    "book": "CR",
+                    "page": 89
+                },
+                "ring": "Earth",
+                "types": ["Mental"],
+                "effects": ""
             }
         ]
     },
@@ -985,6 +1015,56 @@
                 },
                 "ring": "Air",
                 "types": ["Fame", "Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Bathing",
+                "reference": {
+                    "book": "CR",
+                    "page": 90
+                },
+                "ring": "Water",
+                "types": ["Interpersonal", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Festivals",
+                "reference": {
+                    "book": "CR",
+                    "page": 90
+                },
+                "ring": "Fire",
+                "types": ["Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Kabuki",
+                "reference": {
+                    "book": "CR",
+                    "page": 90
+                },
+                "ring": "Air",
+                "types": ["Interpersonal", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Kyūdō",
+                "reference": {
+                    "book": "CR",
+                    "page": 90
+                },
+                "ring": "Void",
+                "types": ["Mental", "Physical"],
+                "effects": ""
+            },
+            {
+                "name": "Religious Study",
+                "reference": {
+                    "book": "CR",
+                    "page": 90
+                },
+                "ring": "Void",
+                "types": ["Mental", "Spiritual"],
                 "effects": ""
             }
         ]
@@ -1761,6 +1841,46 @@
                 "ring": "Void",
                 "types": ["Interpersonal", "Mental"],
                 "effects": ""
+            },
+            {
+                "name": "Elemental Deficiency [Air]",
+                "reference": {
+                    "book": "CR",
+                    "page": 93
+                },
+                "ring": "Air",
+                "types": ["Mental", "Physical", "Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Elemental Deficiency [Earth]",
+                "reference": {
+                    "book": "CR",
+                    "page": 93
+                },
+                "ring": "Earth",
+                "types": ["Mental", "Physical", "Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Elemental Deficiency [Fire]",
+                "reference": {
+                    "book": "CR",
+                    "page": 94
+                },
+                "ring": "Fire",
+                "types": ["Mental", "Physical", "Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Elemental Deficiency [Water]",
+                "reference": {
+                    "book": "CR",
+                    "page": 94
+                },
+                "ring": "Water",
+                "types": ["Mental", "Physical", "Spiritual"],
+                "effects": ""
             }
         ]
     },
@@ -2095,6 +2215,46 @@
                 },
                 "ring": "Earth",
                 "types": ["Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Conspiracy",
+                "reference": {
+                    "book": "CR",
+                    "page": 91
+                },
+                "ring": "Earth",
+                "types": ["Interpersonal", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Omen of Bad Luck",
+                "reference": {
+                    "book": "CR",
+                    "page": 92
+                },
+                "ring": "Water",
+                "types": ["Interpersonal", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Uncleanliness",
+                "reference": {
+                    "book": "CR",
+                    "page": 92
+                },
+                "ring": "Air",
+                "types": ["Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Vanity",
+                "reference": {
+                    "book": "CR",
+                    "page": 92
+                },
+                "ring": "Void",
+                "types": ["Interpersonal", "Mental"],
                 "effects": ""
             }
         ]

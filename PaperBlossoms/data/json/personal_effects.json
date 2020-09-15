@@ -193,6 +193,42 @@
         "rarity": 2
     },
     {
+        "name": "Boon of Fukurokujin [Omamori]",
+        "reference": {
+            "book": "Core",
+            "page": 243
+        },
+        "price": {
+            "value": 5,
+            "unit": "bu"
+        },
+        "rarity": 2
+    },
+    {
+        "name": "Boon of Bishamon [Omamori]",
+        "reference": {
+            "book": "Core",
+            "page": 243
+        },
+        "price": {
+            "value": 5,
+            "unit": "bu"
+        },
+        "rarity": 2
+    },
+    {
+        "name": "Boon of Benten [Omamori]",
+        "reference": {
+            "book": "Core",
+            "page": 243
+        },
+        "price": {
+            "value": 5,
+            "unit": "bu"
+        },
+        "rarity": 2
+    },
+    {
         "name": "Personal Seal or Chop",
         "reference": {
             "book": "Core",
@@ -1258,6 +1294,183 @@
         "reference": {
             "book": "PoW",
             "page": 59
+        }
+    },
+    {
+        "name": "The Horagai of Sacred Rains",
+        "reference": {
+            "book": "CR",
+            "page": 96
+        },
+        "rarity": 10,
+        "qualities": ["Resplendent", "Sacred"]
+    },
+    {
+        "name": "Daikoku's Mallet",
+        "reference": {
+            "book": "CR",
+            "page": 96
+        },
+        "rarity": 10,
+        "qualities": ["Durable", "Sacred", "Subtle"]
+    },
+    {
+        "name": "Candles of the Moth",
+        "reference": {
+            "book": "CR",
+            "page": 96
+        },
+        "price": {
+            "value": 10,
+            "unit": "koku"
+        },
+        "rarity": 9,
+        "qualities": ["Ceremonial", "Sacred", "Subtle"]
+    },
+    {
+        "name": "Boon of Hotei [Omamori]",
+        "reference": {
+            "book": "CR",
+            "page": 97
+        },
+        "price": {
+            "value": 5,
+            "unit": "bu"
+        },
+        "rarity": 2
+    },
+    {
+        "name": "Boon of Jurōjin [Omamori]",
+        "reference": {
+            "book": "CR",
+            "page": 97
+        },
+        "price": {
+            "value": 5,
+            "unit": "bu"
+        },
+        "rarity": 2
+    },
+    {
+        "name": "Boon of Kisshōten [Omamori]",
+        "reference": {
+            "book": "CR",
+            "page": 97
+        },
+        "price": {
+            "value": 5,
+            "unit": "bu"
+        },
+        "rarity": 2
+    },
+    {
+        "name": "Willow-Leaf [Arrow]",
+        "reference": {
+            "book": "Core",
+            "page": 236
+        } 
+    },
+    {
+        "name": "Armor-Piercing [Arrow]",
+        "reference": {
+            "book": "Core",
+            "page": 236
+        }
+    },
+    {
+        "name": "Flesh-Cutter [Arrow]",
+        "reference": {
+            "book": "Core",
+            "page": 236
+        }
+    },
+    {
+        "name": "Humming-Bulb [Arrow]",
+        "reference": {
+            "book": "Core",
+            "page": 236
+        }
+    },
+    {
+        "name": "Fire-Blossom [Arrow]",
+        "reference": {
+            "book": "CR",
+            "page": 97
+        },
+        "price": {
+            "value": 5,
+            "unit": "bu"
+        },
+        "rarity": 6
+    },
+    {
+        "name": "Hamaya [Arrow]",
+        "reference": {
+            "book": "CR",
+            "page": 97
+        },
+        "price": {
+            "value": 1,
+            "unit": "koku"
+        },
+        "rarity": 8
+    },
+    {
+        "name": "Soul-Star [Arrow]",
+        "reference": {
+            "book": "CR",
+            "page": 97
+        },
+        "price": {
+            "value": 2,
+            "unit": "koku"
+        },
+        "rarity": 8
+    },
+    {
+        "name": "Satchel of Ingredients",
+        "reference": {
+            "book": "CR",
+            "page": 88
+        },
+        "price": {
+            "value": 10,
+            "unit": "bu"
+        } 
+    },
+    {
+        "name": "Drafting Paper",
+        "reference": {
+            "book": "CR",
+            "page": 84
+        } 
+    },
+    {
+        "name": "Fine Set of Chisels",
+        "reference": {
+            "book": "CR",
+            "page": 84
+        }
+    },
+    {
+        "name": "Pouch of Incense",
+        "reference": {
+            "book": "CR",
+            "page": 85
+        }
+    },
+    {
+        "name": "Religious Texts",
+        "reference": {
+            "book": "CR",
+            "page": 86
+        }
+    },
+    {
+        "name": "Bag of Horse Treats",
+        "reference": {
+            "book": "CR",
+            "page": 88
         }
     }
 ]

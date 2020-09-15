@@ -320,5 +320,51 @@
             "value": 4,
             "unit": "bu"
         }
+    },
+    {
+        "name": "The Golden Obi of the Sun Goddess",
+        "reference": {
+            "book": "CR",
+            "page": 96
+        },
+        "resistance_values": [
+            {
+                "category": "Physical",
+                "value": 3
+            },
+            {
+                "category": "Supernatural",
+                "value": 6
+            }
+        ],
+        "qualities": ["Ceremonial", "Resplendent", "Sacred"],
+        "rarity": 10,
+        "price": {
+            "value": 0,
+            "unit": "koku"
+        }
+    },
+    {
+        "name": "Robes of Judgment",
+        "reference": {
+            "book": "CR",
+            "page": 97
+        },
+        "resistance_values": [
+            {
+                "category": "Physical",
+                "value": 1
+            },
+            {
+                "category": "Supernatural",
+                "value": 4
+            }
+        ],
+        "qualities": ["Ceremonial", "Cumbersome", "Wargear"],
+        "rarity": 9,
+        "price": {
+            "value": 10,
+            "unit": "koku"
+        }
     }
 ]

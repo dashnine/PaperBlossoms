@@ -70,5 +70,14 @@
         },
         "xp_cost": 8,
         "rarity_modifier": 5
+    },
+    {
+        "name": "Agasha Pattern",
+        "reference": {
+            "book": "CR",
+            "page": 105
+        },
+        "xp_cost": 6,
+        "rarity_modifier": 4
     }
 ]

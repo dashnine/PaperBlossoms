@@ -561,5 +561,29 @@
                 "wealth": 5
             }
         ]
+    },
+    {
+        "name": "Centipede",
+        "reference": {
+            "book": "CR",
+            "page": 79
+        },
+        "type": "Minor",
+        "ring_increase": "Fire",
+        "skill_increase": "Theology",
+        "status": 30,
+        "families": [
+            {
+                "name": "Moshi",
+                "reference": {
+                    "book": "CR",
+                    "page": 79
+                },
+                "ring_increase": ["Air", "Fire"],
+                "skill_increase": ["Fitness", "Meditation"],
+                "glory": 40,
+                "wealth": 3
+            }
+        ]
     }
 ]

@@ -446,7 +446,10 @@ void NewCharWizardPage7::initializePage()
             heritage == dal->translate("Famous Deed") ||
             //shadowlands
             //courts
-            heritage == dal->translate("Triumph Over the Lion")
+            heritage == dal->translate("Triumph Over the Lion") ||
+            //CR
+            heritage == dal->translate("Sacrifice")
+
                 ){ //item
         if(!secondarychoice.isEmpty()){
 
@@ -506,7 +509,9 @@ void NewCharWizardPage7::initializePage()
     //core
     if(heritage == dal->translate("Imperial Heritage")||
        heritage == dal->translate("Blood and Mortar") ||
-       heritage == dal->translate("Triumph During Gempuku")
+       heritage == dal->translate("Triumph During Gempuku")||
+       heritage == dal->translate("Spirit of the Phoenix") ||
+       heritage == dal->translate("Touched by the Fortunes")
 
             ){
         advText+= othereffects + ", ";
@@ -529,6 +534,10 @@ void NewCharWizardPage7::initializePage()
     else if(heritage == dal->translate("Elegant Craftsman")){
         advText+= dal->translate("Isolation")+", ";
         advList.append(dal->translate("Isolation"));
+    }
+    else if(heritage == dal->translate("Associated with a Natural Disaster")){
+        advText+= dal->translate("Whispers of Failure")+", ";
+        advList.append(dal->translate("Whispers of Failure"));
     }
     if(advText.length()>=2) advText.chop(2);
     ui->nc7_advlist_label->setText(advText);
@@ -636,7 +645,11 @@ QMap<QString, int> NewCharWizardPage7::calcSkills(){
            //Courts
            heritage ==   dal->translate("Dishonorable Cheat") ||
            heritage ==   dal->translate("Unforgivable Performance") ||
-           heritage ==   dal->translate("A Little Too Close To Heaven")
+           heritage ==   dal->translate("A Little Too Close To Heaven")||
+           //Celestial realms
+           heritage ==   dal->translate("Great Treatise")||
+           heritage ==   dal->translate("Guardian of Forbidden Knowledge")
+
             ){
         skills.append(field("q18OtherEffects").toString());
 

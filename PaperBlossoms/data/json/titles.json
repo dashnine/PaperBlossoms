@@ -1545,5 +1545,322 @@
                 "special_access": true
             }
         ]
+    },
+    {
+        "name": "Bond with a Spirit [Air]",
+        "reference": {
+            "book": "CR",
+            "page": 140
+        },
+        "social_awards": [
+            {
+                "award_attribute": "status",
+                "base_award": 5,
+                "constraint": {
+                    "type": "max",
+                    "value": 40
+                }
+            },
+            {
+                "award_attribute": "glory",
+                "base_award": 5,
+                "constraint": {
+                    "type": "max",
+                    "value": 40
+                }
+            }
+        ],
+        "xp_to_completion": 25,
+        "title_ability": "Spiritual Protector",
+        "advancements": [
+            {
+                "name": "Scholar skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Aesthetics",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Games",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Meditation",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Air Invocations",
+                "type": "technique_group",
+                "special_access": true,
+                "rank": 1
+            },
+            {
+                "name": "Commune with the Spirits",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Blessing of Fertile Fields",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "Bond with a Spirit [Earth]",
+        "reference": {
+            "book": "CR",
+            "page": 140
+        },
+        "social_awards": [
+            {
+                "award_attribute": "status",
+                "base_award": 5,
+                "constraint": {
+                    "type": "max",
+                    "value": 40
+                }
+            },
+            {
+                "award_attribute": "glory",
+                "base_award": 5,
+                "constraint": {
+                    "type": "max",
+                    "value": 40
+                }
+            }
+        ],
+        "xp_to_completion": 25,
+        "title_ability": "Spiritual Protector",
+        "advancements": [
+            {
+                "name": "Scholar skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Aesthetics",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Games",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Meditation",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Earth Invocations",
+                "type": "technique_group",
+                "special_access": true,
+                "rank": 1
+            },
+            {
+                "name": "Commune with the Spirits",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Blessing of Fertile Fields",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "Bond with a Spirit [Fire]",
+        "reference": {
+            "book": "CR",
+            "page": 140
+        },
+        "social_awards": [
+            {
+                "award_attribute": "status",
+                "base_award": 5,
+                "constraint": {
+                    "type": "max",
+                    "value": 40
+                }
+            },
+            {
+                "award_attribute": "glory",
+                "base_award": 5,
+                "constraint": {
+                    "type": "max",
+                    "value": 40
+                }
+            }
+        ],
+        "xp_to_completion": 25,
+        "title_ability": "Spiritual Protector",
+        "advancements": [
+            {
+                "name": "Scholar skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Aesthetics",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Games",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Meditation",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Fire Invocations",
+                "type": "technique_group",
+                "special_access": true,
+                "rank": 1
+            },
+            {
+                "name": "Commune with the Spirits",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Blessing of Fertile Fields",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "Bond with a Spirit [Water]",
+        "reference": {
+            "book": "CR",
+            "page": 140
+        },
+        "social_awards": [
+            {
+                "award_attribute": "status",
+                "base_award": 5,
+                "constraint": {
+                    "type": "max",
+                    "value": 40
+                }
+            },
+            {
+                "award_attribute": "glory",
+                "base_award": 5,
+                "constraint": {
+                    "type": "max",
+                    "value": 40
+                }
+            }
+        ],
+        "xp_to_completion": 25,
+        "title_ability": "Spiritual Protector",
+        "advancements": [
+            {
+                "name": "Scholar skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Aesthetics",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Games",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Meditation",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Water Invocations",
+                "type": "technique_group",
+                "special_access": true,
+                "rank": 1
+            },
+            {
+                "name": "Commune with the Spirits",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Blessing of Fertile Fields",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "Moon Cultist",
+        "reference": {
+            "book": "CR",
+            "page": 140
+        },
+        "social_awards": [
+            {
+                "award_attribute": "honor",
+                "base_award": -5,
+                "constraint": {
+                    "type": "min",
+                    "value": 15
+                }
+            }
+        ],
+        "xp_to_completion": 30,
+        "title_ability": "Swallow the Light",
+        "advancements": [
+            {
+                "name": "Scholar skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Composition",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Courtesy",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Fitness",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Water Invocations",
+                "type": "technique_group",
+                "special_access": false,
+                "rank": 2
+            },
+            {
+                "name": "Hands of Tides",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Whispers to the Moon",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
     }
 ]
