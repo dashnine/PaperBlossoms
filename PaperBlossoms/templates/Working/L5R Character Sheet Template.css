@@ -1,0 +1,264 @@
+body
+{
+	padding: 0 20px; 
+	font: 16px Georgia, Serif;   
+}
+
+page
+{
+	border: 1px solid blue;
+	display: block;
+	width: 850px;
+	height: 1100px;
+	padding: 50px;
+}
+section
+{
+	display: inline-block;
+}
+section.rings
+{
+	border: 1px solid red;
+	clear: right;
+	display: block;
+	height: 250px;
+	width: 250px;
+	float: right;
+}
+section.header
+{
+	display: block;
+	height: 125px;
+	width: 650px;
+}
+section.skills
+{
+	width: 300px;
+}
+section.skills>h
+{
+	background-color: black;
+	border: 2px solid black;
+	color: white;
+	display: block;
+	font-weight: bold;
+	height: 30px;
+	margin-bottom: 2px;
+	text-align: right;
+	vertical-align: middle;
+	width: 100%;
+}
+section.center
+{
+	width: 100px;
+}
+section.description
+{
+	width: 350px;
+}
+
+img.logo
+{
+	height: 150px;
+	width: 150px;
+	padding: 2px;
+	display: inline-block;
+	vertical-align: top;
+}
+ring
+{
+	border: 1px solid black;
+	height: 600px;
+	width: 600px;
+}
+
+skillgroup
+{
+	background: white;
+	border: 2px solid black;
+	display: block;
+	font-size: 14px;
+	position: relative;
+	overflow: hidden;
+	width: 300px;
+	margin-bottom: 3px;
+}
+skillgroup h1
+{
+	font: 16px Georgia, Serif;
+	font-weight: bold;
+	background: black;
+	color: white;
+	padding: 10px 0px;
+	margin: 0;
+	line-height: 1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-align: center;
+	vertical-align: middle;
+
+	transform: rotate(90deg) translateX(36px); 	/* 90 degrees, total height */
+	transform-origin: 36px 0px; 			/* total height, 0px */
+}
+/* Sizing specific to individual skill groups */
+skillgroup.artisan, skillgroup.social
+{
+	height: 131px;	/* number of skill lines * 22px - 1px */
+}
+skillgroup.artisan h1, skillgroup.social h1
+{
+	width: 131px;	/* same as parent's height */
+}
+skillgroup.artisan approaches, skillgroup.social approaches
+{
+	padding: 21px 0px 22px;	/* vertically center 90px block in parent */
+}
+skillgroup.martial
+{
+	height: 175px;	/* number of skill lines * 24px - 1px */
+}
+skillgroup.martial h1
+{
+	width: 175px;	/* same as parent's height */
+}
+skillgroup.martial approaches
+{
+	padding: 42px 0px 43px;	/* vertically center 90px block in parent */
+}
+skillgroup.scholar, skillgroup.trade
+{
+	height: 153px;	/* number of skill lines * 24px - 1px */
+}
+skillgroup.scholar h1, skillgroup.trade h1
+{
+	width: 153px;	/* same as parent's height */
+}
+skillgroup.scholar approaches, skillgroup.trade approaches
+{
+	padding: 31px 0px 32px;	/* vertically center 90px block in parent */
+}
+skillgroup skills
+{
+	display: block;
+	width: 150px;
+
+	transform: translateX(44px) translateY(0px);     
+}
+skillgroup skills skill
+{
+	border-bottom: solid 1px grey;
+	display: inline-block;
+	font-variant: small-caps;
+	height: 20px;
+	padding-top: 1px;
+	text-align: right;
+	width: 150px;
+	vertical-align: middle;
+}
+skillgroup skills subgroup name
+{
+	border-right: solid 1px grey;
+	border-bottom: solid 1px grey;
+	display: block;
+	float: left;
+	font-variant: small-caps;
+	height: 23px;
+	padding-top: 21px;
+	padding-bottom: 21px;
+	text-align: center;
+	vertical-align: middle;
+	width: 59px;
+}
+skillgroup skills skill.sub
+{
+	clear: left;
+	width: 90px;
+}
+skillgroup skills skill ranks
+{
+	display: inline-block;
+	text-align: center;
+	border: solid 1.5px black;
+	height: 17px;
+	width: 18px;
+	border-radius: 6px;
+	margin-left: 5px;
+	overflow: hidden;
+	text-align: center;
+	vertical-align: middle;
+}
+skillgroup approaches
+{
+	clear: both;
+	border-left: solid 1px black;
+	display: block;
+	float: right;
+	font-size: 12px;
+	height: 100px;
+	margin-right: 10px;
+	text-align: right;
+	width: 90px;
+}
+skillgroup approaches approach
+{
+	
+	background-repeat: no-repeat;
+	background-position: right center;
+	display: block;
+	height: 18px;
+	margin-right: 20px;
+	text-align: right;
+	vertical-align: middle;
+}
+
+skillgroup approaches approach.air:after
+{
+	background-image: url('./images/air.png');
+}
+skillgroup approaches approach.earth:after
+{
+	background-image: url('./images/earth.png');
+}
+skillgroup approaches approach.fire:after
+{
+	background-image: url('./images/fire.png');
+}
+skillgroup approaches approach.water:after
+{
+	background-image: url('./images/water.png');
+}
+skillgroup approaches approach.void:after
+{
+	background-image: url('./images/void.png');
+}
+
+note
+{
+	display: block;
+	width: 300px;
+	height: 100px;
+	border: solid 2px black;
+}
+section.header note
+{
+	display: inline-block;
+	height: 110px;
+}
+section.skills note
+{
+	height: 160px;
+}
+section.description note
+{
+}
+note h
+{
+	display: block;
+	background-color: black;
+	color: white;
+	font: 16px Georgia, Serif;
+	font-weight: bold;
+	text-align: center;
+	vertical-align: middle;
+}
