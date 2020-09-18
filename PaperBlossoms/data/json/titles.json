@@ -1862,5 +1862,48 @@
                 "special_access": true
             }
         ]
+    },
+    {
+        "name": "Spirit Hunter",
+        "reference": {
+            "book": "DT",
+            "page": 21
+        },
+        "social_awards": [
+            {
+                "award_attribute": "status",
+                "base_award": 5
+            }
+        ],
+        "xp_to_completion": 12,
+        "title_ability": "Celestial Influence",
+        "advancements": [
+            {
+                "name": "Martial skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Social skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Government",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Theology",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Rituals",
+                "type": "technique_group",
+                "special_access": true,
+                "rank": 1
+            }
+        ]
     }
 ]

@@ -1632,6 +1632,32 @@
                 }
             },
             {
+                "name": "Ceremonial Yumi",
+                "reference": {
+                    "book": "DT",
+                    "page": 25
+                },
+                "skill": "Ranged",
+                "range": {
+                    "min": 2,
+                    "max": 5
+                },
+                "damage": 5,
+                "deadliness": 3,
+                "grips": [
+                    {
+                        "name": "2-hand",
+                        "effects": []
+                    }
+                ],
+                "qualities": ["Ceremonial"],
+                "rarity": 7,
+                "price": {
+                    "value": 15,
+                    "unit": "koku"
+                }
+            },
+            {
                 "name": "Storm Bow",
                 "reference": {
                     "book": "SL",
