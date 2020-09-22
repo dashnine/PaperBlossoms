@@ -124,10 +124,10 @@ QString DataAccessLayer::translate(QString string){
     query.exec();
     while (query.next()) {
         QString out = query.value(0).toString();
-        return out;
+        if(!out.isEmpty()) return out;
     }
     //qDebug() << "Translated value for "+ string +" not found. Using original.";
-    return string;
+    return string; //fall through to here if there are no populated transated values, and return the original value rather than the empty str
 }
 
 QStringList DataAccessLayer::qsl_getclans()
