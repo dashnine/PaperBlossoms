@@ -67,6 +67,7 @@ void NewCharWizardPage7::initializePage()
     const QString schoolSkills        = field("schoolSkills").toString();
     const QString schoolSpecialRing   = field("schoolSpecialRing").toString();
     const QString school_standout     = field("q4Text").toString();
+    const QString otherchoice         = field("schoolotherchoice").toString();
 
     //p3
     const bool hasq7GloryBoost            =  field("q7posradio_glory").toBool();
@@ -491,6 +492,10 @@ void NewCharWizardPage7::initializePage()
             advList.append(dal->translate(advdisadv));
             advText+=dal->translate(advdisadv)+", ";
         }
+    }
+    if(!otherchoice.isEmpty()) {
+            advList.append(otherchoice);
+            advText+=otherchoice+", ";
     }
 
     if(pickedAdv){
