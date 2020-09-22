@@ -366,5 +366,24 @@
             "value": 10,
             "unit": "koku"
         }
+    },
+    {
+        "name": "Resplendent Traveling Clothes",
+        "reference": {
+            "book": "DT",
+            "page": 25
+        },
+        "resistance_values": [
+            {
+                "category": "Physical",
+                "value": 2
+            }
+        ],
+        "qualities": ["Durable", "Resplendent"],
+        "rarity": 4,
+        "price": {
+            "value": 1,
+            "unit": "koku"
+        }
     }
 ]

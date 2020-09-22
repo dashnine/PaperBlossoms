@@ -38,12 +38,18 @@ NewCharWizardPage2::NewCharWizardPage2(DataAccessLayer* dal, QWidget *parent) :
     //Handle special cases
     ui->nc2_kitsune_label->setVisible(false);
     ui->nc2_kitsune_comboBox->setVisible(false);
+    ui->label_extra_choice->setVisible(false);
+    ui->nc2_otherchoice_comboBox->setVisible(false);
 
     //we're getting all schools anyways; no need for PoW handling
     QStringList kitsuneschoollist = dal->qsl_getschools(field("currentClan").toString(), true);
     kitsuneschoollist.removeAll("Kitsune Impersonator Tradition");
     ui->nc2_kitsune_comboBox->addItems(kitsuneschoollist);
     ui->nc2_kitsune_comboBox->setCurrentIndex(-1);
+
+    ui->nc2_otherchoice_comboBox->addItem("Haunting");
+    ui->nc2_otherchoice_comboBox->addItem("Omen of Bad Luck");
+    ui->nc2_otherchoice_comboBox->setCurrentIndex(-1);
 
     settingupequip = false;
 
@@ -85,6 +91,7 @@ NewCharWizardPage2::NewCharWizardPage2(DataAccessLayer* dal, QWidget *parent) :
     registerField("schoolSpecialRingIndex*",ui->nc2_schoolSpecialtRing_ComboBox);
     registerField("schoolSkills*",ui->nc2_HIDDEN_skillLineEdit);
     registerField("q4Text",ui->nc2_q4_lineEdit);
+    registerField("schoolotherchoice",ui->nc2_otherchoice_comboBox,"currentText");
 
     //ui->nc2_schoolDesc_textEdit->setVisible(false);
 
@@ -258,11 +265,25 @@ void NewCharWizardPage2::on_nc2_school_ComboBox_currentIndexChanged(const QStrin
         ui->nc2_kitsune_label->setVisible(true);
         ui->nc2_kitsune_comboBox->setVisible(true);
         ui->nc2_kitsune_comboBox->setCurrentIndex(0);
+        ui->label_extra_choice->setVisible(false);
+        ui->nc2_otherchoice_comboBox->setVisible(false);
+        ui->nc2_otherchoice_comboBox->setCurrentIndex(-1);
+    }
+    else if(arg1 == "Mazoku's Enforcer Tradition"){
+        ui->nc2_kitsune_label->setVisible(false);
+        ui->nc2_kitsune_comboBox->setVisible(false);
+        ui->nc2_kitsune_comboBox->setCurrentIndex(-1);
+        ui->label_extra_choice->setVisible(true);
+        ui->nc2_otherchoice_comboBox->setVisible(true);
+        ui->nc2_otherchoice_comboBox->setCurrentIndex(0);
     }
     else{
         ui->nc2_kitsune_label->setVisible(false);
         ui->nc2_kitsune_comboBox->setVisible(false);
         ui->nc2_kitsune_comboBox->setCurrentIndex(-1);
+        ui->label_extra_choice->setVisible(false);
+        ui->nc2_otherchoice_comboBox->setVisible(false);
+        ui->nc2_otherchoice_comboBox->setCurrentIndex(-1);
     }
 
     //set the desc
