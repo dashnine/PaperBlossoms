@@ -54,7 +54,6 @@ int main(int argc, char *argv[])
         else if(settinglocale.toLower()=="es") defaultLocaleDB = "es";
         else if(settinglocale.toLower()=="fr") defaultLocaleDB = "fr";
         else if(settinglocale.toLower()=="de") defaultLocaleDB = "de";
-        else if(settinglocale.toLower()=="pl") defaultLocaleDB = "pl";
         else if(settinglocale.toLower()=="test") defaultLocaleDB = "test";
         else defaultLocaleDB = "en";
 
@@ -71,7 +70,6 @@ int main(int argc, char *argv[])
         else if(settinglocale.toLower()=="es") defaultLocaleUI = "es";
         else if(settinglocale.toLower()=="fr") defaultLocaleUI = "fr";
         else if(settinglocale.toLower()=="de") defaultLocaleUI = "de";
-        else if(settinglocale.toLower()=="pl") defaultLocaleUI = "pl";
         else if(settinglocale.toLower()=="test") defaultLocaleUI = "test";
         else defaultLocaleUI = "en";
 
@@ -85,7 +83,6 @@ int main(int argc, char *argv[])
         else if(arg1.toLower()=="es") defaultLocaleDB = defaultLocaleUI = "es";
         else if(arg1.toLower()=="fr") defaultLocaleDB = defaultLocaleUI = "fr";
         else if(arg1.toLower()=="de") defaultLocaleDB = defaultLocaleUI = "de";
-        else if(arg1.toLower()=="pl") defaultLocaleDB = defaultLocaleUI = "pl";
         else if(arg1.toLower()=="test") defaultLocaleDB = defaultLocaleUI = "test";
     }
     qDebug()<< "localeDB = " + defaultLocaleDB;
