@@ -56,7 +56,7 @@ See [§Scripts](#scripts) for more detail and example usage for each of the scri
 1. Write a new [§JSON schema](#json-schemas).
     - Run `add_default_snippets_to_schema.py`
     - Modify `add_enums.py` to write `enum`s to the new JSON schema as applicable. Run the updated `add_enums.py`.
-2. Set up a mapping beween the new JSON schema and the new JSON file.
+2. Set up a mapping beween the new JSON schema and the new JSON file in both your own workspace settings and also [vscode_workspace_settings.json](vscode_workspace_settings.json).
 3. Enter data in the new JSON file.
     - Trigger an autocompletion proposal with <kbd>ctrl</kbd>-<kbd>space</kbd>.
     - Type characters to narrow dConsult wiown string autocompletion proposals.
