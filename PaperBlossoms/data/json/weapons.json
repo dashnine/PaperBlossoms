@@ -1189,7 +1189,7 @@
                         "effects": []
                     }
                 ],
-                "qualities": ["Ceremonial", "Ceremonial"],
+                "qualities": ["Ceremonial", "Concealable"],
                 "rarity": 7,
                 "price": {
                     "value": 15,
