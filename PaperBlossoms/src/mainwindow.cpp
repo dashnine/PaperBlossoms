@@ -55,6 +55,7 @@
 #include "edituserdescriptionsdialog.h"
 #include "dblocalisationeditordialog.h"
 #include <QFileInfo>
+#include <QCloseEvent>
 
 
 
