@@ -118,6 +118,10 @@ void NewCharWizardPage2::equipSelectionChanged(const QString newText){
         "Two Items of Rarity 4 or Lower",
         "Two Weapons of Rarity 6 or Lower",
         "One Sword of Rarity 7 or Lower",
+
+        //FoV
+        "Two Weapons of Rarity 7 or Lower",
+
         //PoW
         "One weapon of your signature weapon category of rarity 8 or lower",
         "One Item of Rarity 3 or Lower",
@@ -159,7 +163,6 @@ void NewCharWizardPage2::handleSpecCases(QString speccase){
     else if (specCase == "Two Weapons of Rarity 6 or Lower"){
         ui->equipSpecialWidget->addCBox(dal->qsl_getweaponsunderrarity(6));
         ui->equipSpecialWidget->addCBox(dal->qsl_getweaponsunderrarity(6));
-
     }
     else if (specCase == "Two Items of Rarity 4 or Lower") {
         ui->equipSpecialWidget->addCBox(dal->qsl_getitemsunderrarity(4));
@@ -188,7 +191,11 @@ void NewCharWizardPage2::handleSpecCases(QString speccase){
     else if (specCase == "One Item of Rarity 6 or Lower") {
         ui->equipSpecialWidget->addCBox(dal->qsl_getitemsunderrarity(6));
     }
-
+    //FoV
+    else if (specCase == "Two Weapons of Rarity 7 or Lower"){
+        ui->equipSpecialWidget->addCBox(dal->qsl_getweaponsunderrarity(7));
+        ui->equipSpecialWidget->addCBox(dal->qsl_getweaponsunderrarity(7));
+    }
 }
 
 void NewCharWizardPage2::initializePage(){
@@ -353,6 +360,8 @@ void NewCharWizardPage2::doEquip(const QString school){
         "Two Items of Rarity 4 or Lower",
         "Two Weapons of Rarity 6 or Lower",
         "One Sword of Rarity 7 or Lower",
+        //FoV
+        "Two Weapons of Rarity 7 or Lower",
         //PoW
         "One weapon of your signature weapon category of rarity 8 or lower",
         "One Item of Rarity 3 or Lower",

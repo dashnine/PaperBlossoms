@@ -14,6 +14,20 @@
         }
     },
     {
+        "name": "Sumai Garb",
+        "reference": {
+            "book": "FoV",
+            "page": 76
+        },
+        "resistance_values": [],
+        "qualities": [],
+        "rarity": 2,
+        "price": {
+            "value": 1,
+            "unit": "koku"
+        }
+    },
+    {
         "name": "Common Clothes",
         "reference": {
             "book": "Core",

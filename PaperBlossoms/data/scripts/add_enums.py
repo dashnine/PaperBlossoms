@@ -175,7 +175,7 @@ def get_advantages(data_dir):
 
 
 def get_books():
-    books_enum = ['Core', 'EE', 'SL', 'Mantis', 'GMK', 'CoS', 'PoW', 'CR', 'DT']
+    books_enum = ['Core', 'EE', 'SL', 'Mantis', 'GMK', 'CoS', 'PoW', 'FoV', 'CR', 'DT']
 
     return books_enum
 
@@ -343,6 +343,7 @@ def write_equipment(data_dir, equipment_enum):
                 "Traveling Pack",
                 "Kitsune Starting Outfit",
                 "Two Weapons of Rarity 6 or Lower",
+                "Two Weapons of Rarity 7 or Lower",
                 "One Weapon of Rarity 6 or Lower",
                 "Two Items of Rarity 4 or Lower",
                 "One Sword of Rarity 7 or Lower",

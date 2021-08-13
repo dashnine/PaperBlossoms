@@ -54,6 +54,7 @@
                                                     "Core",
                                                     "DT",
                                                     "EE",
+                                                    "FoV",
                                                     "GMK",
                                                     "Mantis",
                                                     "PoW",
@@ -94,9 +95,10 @@
                                         "label": "New Technique",
                                         "body": {
                                             "name": "$1",
+                                            "restriction": "$2",
                                             "rank": "^$3",
                                             "reference": "^$4",
-                                            "xp": "^${5:3}"
+                                            "xp": "^$5"
                                         }
                                     }
                                 ]

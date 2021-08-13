@@ -506,6 +506,33 @@
                             "page": 91
                         },
                         "xp": 3
+                    },
+                    {
+                        "name": "Fierce Badger Style",
+                        "rank": 2,
+                        "reference": {
+                            "book": "FoV",
+                            "page": 95
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Thicket's Embrace Style",
+                        "rank": 3,
+                        "reference": {
+                            "book": "FoV",
+                            "page": 95
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Shattering Tide Style",
+                        "rank": 3,
+                        "reference": {
+                            "book": "FoV",
+                            "page": 95
+                        },
+                        "xp": 3
                     }
                 ]
             },
@@ -1670,6 +1697,33 @@
                             "page": 111
                         },
                         "xp": 3
+                    },
+                    {
+                        "name": "Beseech Akodo's Judgment",
+                        "rank": 3,
+                        "reference": {
+                            "book": "FoV",
+                            "page": 96
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Beseech Shiba's Calm",
+                        "rank": 3,
+                        "reference": {
+                            "book": "FoV",
+                            "page": 97
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Beseech Togashi's Vision",
+                        "rank": 3,
+                        "reference": {
+                            "book": "FoV",
+                            "page": 98
+                        },
+                        "xp": 3
                     }
                 ]
             },
@@ -1693,6 +1747,33 @@
                             "page": 116
                         },
                         "xp": 3
+                    },
+                    {
+                        "name": "Beseech Doji's Wisdom",
+                        "rank": 4,
+                        "reference": {
+                            "book": "FoV",
+                            "page": 96
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Imbue Thunder",
+                        "rank": 4,
+                        "reference": {
+                            "book": "FoV",
+                            "page": 98
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Imbue Outburst",
+                        "rank": 3,
+                        "reference": {
+                            "book": "FoV",
+                            "page": 74
+                        },
+                        "xp": 3
                     }
                 ]
             },
@@ -1705,6 +1786,15 @@
                         "reference": {
                             "book": "CR",
                             "page": 110
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Beseech Bayushi's Absolution",
+                        "rank": 4,
+                        "reference": {
+                            "book": "FoV",
+                            "page": 96
                         },
                         "xp": 3
                     }
@@ -1745,6 +1835,15 @@
                         },
                         "xp": 3,
                         "restriction": "Moon Cultist"
+                    },
+                    {
+                        "name": "Beseech Shinjo's Empathy",
+                        "rank": 2,
+                        "reference": {
+                            "book": "FoV",
+                            "page": 98
+                        },
+                        "xp": 3
                     }
                 ]
             },
@@ -1757,6 +1856,15 @@
                         "reference": {
                             "book": "CR",
                             "page": 110
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Beseech Hida's Might",
+                        "rank": 2,
+                        "reference": {
+                            "book": "FoV",
+                            "page": 97
                         },
                         "xp": 3
                     }
@@ -1905,6 +2013,33 @@
                             "page": 93
                         },
                         "xp": 3
+                    },
+                    {
+                        "name": "Borrowed Courage",
+                        "rank": 1,
+                        "reference": {
+                            "book": "FoV",
+                            "page": 99
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Clouds Parted by Steel",
+                        "rank": 2,
+                        "reference": {
+                            "book": "FoV",
+                            "page": 99
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Entice with Falsehoods",
+                        "rank": 4,
+                        "reference": {
+                            "book": "FoV",
+                            "page": 99
+                        },
+                        "xp": 3
                     }
                 ]
             },
@@ -2016,6 +2151,33 @@
                         "reference": {
                             "book": "PoW",
                             "page": 93
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Fortress of Necessity",
+                        "rank": 1,
+                        "reference": {
+                            "book": "FoV",
+                            "page": 100
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Great Anvil's Measure",
+                        "rank": 2,
+                        "reference": {
+                            "book": "FoV",
+                            "page": 100
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Steady the Hammer",
+                        "rank": 4,
+                        "reference": {
+                            "book": "FoV",
+                            "page": 100
                         },
                         "xp": 3
                     }
@@ -2177,6 +2339,51 @@
                             "page": 95
                         },
                         "xp": 3
+                    },
+                    {
+                        "name": "Call the Wild",
+                        "rank": 3,
+                        "reference": {
+                            "book": "FoV",
+                            "page": 101
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Righteous Example",
+                        "rank": 1,
+                        "reference": {
+                            "book": "FoV",
+                            "page": 101
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Sting of Warrior's Pride",
+                        "rank": 2,
+                        "reference": {
+                            "book": "FoV",
+                            "page": 101
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "To Smash the Heart",
+                        "rank": 4,
+                        "reference": {
+                            "book": "FoV",
+                            "page": 102
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Incite True Nature",
+                        "rank": 3,
+                        "reference": {
+                            "book": "FoV",
+                            "page": 79
+                        },
+                        "xp": 3
                     }
                 ]
             },
@@ -2306,6 +2513,33 @@
                         "reference": {
                             "book": "PoW",
                             "page": 94
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Coursing March Chant",
+                        "rank": 1,
+                        "reference": {
+                            "book": "FoV",
+                            "page": 102
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Preserve Strength",
+                        "rank": 2,
+                        "reference": {
+                            "book": "FoV",
+                            "page": 102
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Your Enemy's Arrows",
+                        "rank": 4,
+                        "reference": {
+                            "book": "FoV",
+                            "page": 103
                         },
                         "xp": 3
                     }
@@ -2443,6 +2677,33 @@
                         "reference": {
                             "book": "PoW",
                             "page": 95
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Battle of No Escape",
+                        "rank": 2,
+                        "reference": {
+                            "book": "FoV",
+                            "page": 103
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Moment of Glory",
+                        "rank": 3,
+                        "reference": {
+                            "book": "FoV",
+                            "page": 104
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Victory Without a Sword",
+                        "rank": 6,
+                        "reference": {
+                            "book": "FoV",
+                            "page": 104
                         },
                         "xp": 3
                     }
@@ -2724,6 +2985,51 @@
                         "reference": {
                             "book": "CoS",
                             "page": 116
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Employ Terrible Thunder",
+                        "rank": 2,
+                        "reference": {
+                            "book": "FoV",
+                            "page": 105
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Swift Scouting",
+                        "rank": 1,
+                        "reference": {
+                            "book": "FoV",
+                            "page": 105
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "The Patient Viper",
+                        "rank": 2,
+                        "reference": {
+                            "book": "FoV",
+                            "page": 106
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Vanish in the Shadows",
+                        "rank": 3,
+                        "reference": {
+                            "book": "FoV",
+                            "page": 106
+                        },
+                        "xp": 3
+                    },
+                    {
+                        "name": "Wreak Havoc",
+                        "rank": 4,
+                        "reference": {
+                            "book": "FoV",
+                            "page": 107
                         },
                         "xp": 3
                     }

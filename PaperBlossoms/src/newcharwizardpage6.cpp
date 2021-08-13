@@ -76,6 +76,7 @@ void NewCharWizardPage6::initializePage()
     ui->heritagetable_comboBox->addItem("SL");
     ui->heritagetable_comboBox->addItem("CoS");
     ui->heritagetable_comboBox->addItem("CR");
+    ui->heritagetable_comboBox->addItem("FoV");
     ui->heritagetable_comboBox->setCurrentIndex(0);
 
     /////////////////SKILLBOX - Q17

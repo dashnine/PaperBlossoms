@@ -24,7 +24,7 @@
                 ],
                 "defaultSnippets": [
                     {
-                        "label": "New Range of die values associated with this famous relative",
+                        "label": "New Range of die value associated with this famous relative",
                         "body": {
                             "min": "^$1",
                             "max": "^$2"
@@ -140,7 +140,7 @@
                         "body": {
                             "type": "$1",
                             "instructions": "$2",
-                            "outcomes": "^$3"
+                            "outcomes": "^[$3]"
                         }
                     }
                 ]

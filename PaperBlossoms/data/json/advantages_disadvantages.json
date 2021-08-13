@@ -661,6 +661,26 @@
                 "ring": "Earth",
                 "types": ["Mental"],
                 "effects": ""
+            },
+            {
+                "name": "Guiding Ancestor",
+                "reference": {
+                    "book": "FoV",
+                    "page": 82
+                },
+                "ring": "Void",
+                "types": ["Spiritual"],
+                "effects": ""
+            },
+            {
+                "name": "Traditional Adherent",
+                "reference": {
+                    "book": "FoV",
+                    "page": 82
+                },
+                "ring": "Earth",
+                "types": ["Mental"],
+                "effects": ""
             }
         ]
     },
@@ -1066,6 +1086,26 @@
                 "ring": "Void",
                 "types": ["Mental", "Spiritual"],
                 "effects": ""
+            },
+            {
+                "name": "Ancestry",
+                "reference": {
+                    "book": "FoV",
+                    "page": 83
+                },
+                "ring": "Earth",
+                "types": ["Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Glorious Deeds",
+                "reference": {
+                    "book": "FoV",
+                    "page": 83
+                },
+                "ring": "Fire",
+                "types": ["Martial", "Social"],
+                "effects": ""
             }
         ]
     },
@@ -1319,7 +1359,7 @@
                     "page": 122
                 },
                 "ring": "Earth",
-                "types": ["Physical (Appearance"],
+                "types": ["Physical (Appearance)"],
                 "effects": ""
             },
             {
@@ -1881,6 +1921,16 @@
                 "ring": "Water",
                 "types": ["Mental", "Physical", "Spiritual"],
                 "effects": ""
+            },
+            {
+                "name": "Blood Feud",
+                "reference": {
+                    "book": "FoV",
+                    "page": 83
+                },
+                "ring": "Water",
+                "types": ["Interpersonal", "Social"],
+                "effects": ""
             }
         ]
     },
@@ -2255,6 +2305,26 @@
                 },
                 "ring": "Void",
                 "types": ["Interpersonal", "Mental"],
+                "effects": ""
+            },
+            {
+                "name": "Belligerent",
+                "reference": {
+                    "book": "FoV",
+                    "page": 85
+                },
+                "ring": "Earth",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Braggart",
+                "reference": {
+                    "book": "FoV",
+                    "page": 85
+                },
+                "ring": "Water",
+                "types": ["Interpersonal"],
                 "effects": ""
             }
         ]
