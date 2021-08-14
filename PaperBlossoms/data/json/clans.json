@@ -585,5 +585,29 @@
                 "wealth": 3
             }
         ]
+    },
+    {
+        "name": "Badger",
+        "reference": {
+            "book": "FoV",
+            "page": 71
+        },
+        "type": "Minor",
+        "ring_increase": "Earth",
+        "skill_increase": "Martial Arts [Unarmed]",
+        "status": 25,
+        "families": [
+            {
+                "name": "Ichir\u014d",
+                "reference": {
+                    "book": "FoV",
+                    "page": 71
+                },
+                "ring_increase": ["Earth", "Fire"],
+                "skill_increase": ["Fitness", "Tactics"],
+                "glory": 35,
+                "wealth": 3
+            }
+        ]
     }
 ]

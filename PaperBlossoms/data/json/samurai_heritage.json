@@ -1235,5 +1235,419 @@
             ]
         },
         "source": "CR"
+    },
+    {
+        "roll": {
+            "min": 1,
+            "max": 1
+        },
+        "result": "Born on the Battlefield",
+        "other_effects": {
+            "type": "Distinction",
+            "instructions": "You gain the Guiding Ancestor (Void) distinction (see page 82).",
+            "outcomes": [
+                {
+                    "outcome": "Guiding Ancestor"
+                }
+            ]
+        },
+        "modifiers": {
+            "glory": -3,
+            "honor": 0,
+            "status": 0
+        },
+        "source": "FoV"
+    },
+    {
+        "roll": {
+            "min": 2,
+            "max": 2
+        },
+        "result": "Strategic Mastermind",
+        "other_effects": {
+            "type": "Skill",
+            "instructions": "Roll a ten-sided die to determine a skill you learned by studying your ancestor's deeds.",
+            "outcomes": [
+                {
+                    "roll": {
+                        "min": 1,
+                        "max": 2
+                    },
+                    "outcome": "Tactics"
+                },
+                {
+                    "roll": {
+                        "min": 3,
+                        "max": 4
+                    },
+                    "outcome": "Command"
+                },
+                {
+                    "roll": {
+                        "min": 5,
+                        "max": 6
+                    },
+                    "outcome": "Government"
+                },
+                {
+                    "roll": {
+                        "min": 7,
+                        "max": 8
+                    },
+                    "outcome": "Culture"
+                },
+                {
+                    "roll": {
+                        "min": 9,
+                        "max": 9
+                    },
+                    "outcome": "Commerce"
+                },
+                {
+                    "roll": {
+                        "min": 10,
+                        "max": 10
+                    },
+                    "outcome": "Theology"
+                }
+            ]
+        },
+        "modifiers": {
+            "glory": 5,
+            "honor": -5,
+            "status": 0
+        },
+        "source": "FoV"
+    },
+    {
+        "roll": {
+            "min": 3,
+            "max": 3
+        },
+        "result": "Victory against the Crane",
+        "other_effects": {
+            "type": "starting item",
+            "instructions": "Roll a ten-sided die and add this following family heirloom to your starting items. In addition to its other properties, this item is a battlefield heirloom (see page 90).",
+            "outcomes": [
+                {
+                    "roll": {
+                        "min": 1,
+                        "max": 3
+                    },
+                    "outcome": "Any weapon"
+                },
+                {
+                    "roll": {
+                        "min": 4,
+                        "max": 6
+                    },
+                    "outcome": "Any game set"
+                },
+                {
+                    "roll": {
+                        "min": 7,
+                        "max": 8
+                    },
+                    "outcome": "Other item relevant to your ancestor's victory"
+                },
+                {
+                    "roll": {
+                        "min": 9,
+                        "max": 9
+                    },
+                    "outcome": "horse or other animal"
+                },
+                {
+                    "roll": {
+                        "min": 10,
+                        "max": 10
+                    },
+                    "outcome": "The deed to a small piece of land on the border of Crane territory"
+                }
+            ]
+        },
+        "modifiers": {
+            "glory": 3,
+            "honor": 0,
+            "status": 0
+        },
+        "source": "FoV"
+    },
+    {
+        "roll": {
+            "min": 4,
+            "max": 4
+        },
+        "result": "Victory against Invaders",
+        "other_effects": {
+            "type": "Skill",
+            "instructions": "Roll a ten-sided die to determine a skill you learned to honor your ancestor.",
+            "outcomes": [
+                {
+                    "roll": {
+                        "min": 1,
+                        "max": 2
+                    },
+                    "outcome": "Command"
+                },
+                {
+                    "roll": {
+                        "min": 3,
+                        "max": 4
+                    },
+                    "outcome": "Government"
+                },
+                {
+                    "roll": {
+                        "min": 5,
+                        "max": 6
+                    },
+                    "outcome": "Tactics"
+                },
+                {
+                    "roll": {
+                        "min": 7,
+                        "max": 8
+                    },
+                    "outcome": "Survival"
+                },
+                {
+                    "roll": {
+                        "min": 9,
+                        "max": 9
+                    },
+                    "outcome": "Theology"
+                },
+                {
+                    "roll": {
+                        "min": 10,
+                        "max": 10
+                    },
+                    "outcome": "Meditation"
+                }
+            ]
+        },
+        "modifiers": {
+            "glory": 0,
+            "honor": 3,
+            "status": 0
+        },
+        "source": "FoV"
+    },
+    {
+        "roll": {
+            "min": 5,
+            "max": 5
+        },
+        "result": "Shamed by Defeat",
+        "other_effects": {
+            "type": "Skill",
+            "instructions": "Choose one of the starting skills for your school in which your character has no ranks; gain +1 rank in that skill.",
+            "outcomes": [
+                {
+                    "outcome": "Aesthetics"
+                },
+                {
+                    "outcome": "Composition"
+                },
+                {
+                    "outcome": "Design"
+                },
+                {
+                    "outcome": "Smithing"
+                },
+                {
+                    "outcome": "Command"
+                },
+                {
+                    "outcome": "Courtesy"
+                },
+                {
+                    "outcome": "Games"
+                },
+                {
+                    "outcome": "Performance"
+                },
+                {
+                    "outcome": "Culture"
+                },
+                {
+                    "outcome": "Government"
+                },
+                {
+                    "outcome": "Medicine"
+                },
+                {
+                    "outcome": "Sentiment"
+                },
+                {
+                    "outcome": "Theology"
+                },
+                {
+                    "outcome": "Fitness"
+                },
+                {
+                    "outcome": "Martial Arts [Melee]"
+                },
+                {
+                    "outcome": "Martial Arts [Ranged]"
+                },
+                {
+                    "outcome": "Martial Arts [Unarmed]"
+                },
+                {
+                    "outcome": "Meditation"
+                },
+                {
+                    "outcome": "Tactics"
+                },
+                {
+                    "outcome": "Commerce"
+                },
+                {
+                    "outcome": "Labor"
+                },
+                {
+                    "outcome": "Seafaring"
+                },
+                {
+                    "outcome": "Skulduggery"
+                },
+                {
+                    "outcome": "Survival"
+                }
+            ]
+        },
+        "modifiers": {
+            "glory": -3,
+            "honor": 0,
+            "status": 0
+        },
+        "source": "FoV"
+    },
+    {
+        "roll": {
+            "min": 6,
+            "max": 6
+        },
+        "result": "Blade of 10,000 Battles",
+        "other_effects": {
+            "type": "starting item",
+            "instructions": "Choose a weapon and add it to your starting outfit. At the GM's discretion, certain weapons may be inappropriate choices and cannot be selected. In addition to being a weapon, this item is a battlefield heirloom (see page 90).",
+            "outcomes": [
+                {
+                    "outcome": "Any weapon"
+                }
+            ]
+        },
+        "modifiers": {
+            "glory": 3,
+            "honor": 0,
+            "status": 0
+        },
+        "source": "FoV"
+    },
+    {
+        "roll": {
+            "min": 7,
+            "max": 7
+        },
+        "result": "Lost Heirloom",
+        "other_effects": {
+            "type": "lost family heirloom",
+            "instructions": "Choose a weapon to be the lost heirloom, which is now held by some individual or group hostile to you or your clan. At the GM's discretion, certain weapons may be inappropriate choices and cannot be selected. In addition to being a weapon, this item is a battlefield heirloom (see page 90).",
+            "outcomes": [
+                {
+                    "outcome": "weapon"
+                }
+            ]
+        },
+        "modifiers": {
+            "glory": -3,
+            "honor": 5,
+            "status": 0
+        },
+        "source": "FoV"
+    },
+    {
+        "roll": {
+            "min": 8,
+            "max": 8
+        },
+        "result": "Selfless Sentinel",
+        "other_effects": {
+            "type": "Distinction",
+            "instructions": "Gain the Traditional Adherent (Earth) distinction (see page 82).",
+            "outcomes": [
+                {
+                    "outcome": "Traditional Adherent"
+                }
+            ]
+        },
+        "modifiers": {
+            "glory": -3,
+            "honor": 5,
+            "status": 0
+        },
+        "source": "FoV"
+    },
+    {
+        "roll": {
+            "min": 9,
+            "max": 9
+        },
+        "result": "Mighty Conqueror",
+        "other_effects": {
+            "type": "other",
+            "instructions": "Choose one: double your starting koku, add one item of rarity 6 or lowe to your starting items that is a battlefield heirloom (see page 90) in addition to its other properties, or gain the Glorious Deeds passion (see page 83).",
+            "outcomes": [
+                {
+                    "outcome": "Double your starting koku"
+                },
+                {
+                    "outcome": "Item (Rank 6 or lower)"
+                },
+                {
+                    "outcome": "Glorious Deeds"
+                }
+            ]
+        },
+        "modifiers": {
+            "glory": 3,
+            "honor": -3,
+            "status": 0
+        },
+        "source": "FoV"
+    },
+    {
+        "roll": {
+            "min": 10,
+            "max": 10
+        },
+        "result": "Right Hand of the Emperor",
+        "other_effects": {
+            "type": "Distinction",
+            "instructions": "Gain the Support of [One Group] distinction. The group chosen must be the Seppun, Otomo, or Miya family, or the Imperial Legions",
+            "outcomes": [
+                {
+                    "outcome": "Support of Seppun"
+                },
+                {
+                    "outcome": "Support of Otomo"
+                },
+                {
+                    "outcome": "Support of Miya"
+                },
+                {
+                    "outcome": "Support of Imperial Legions"
+                }
+            ]
+        },
+        "modifiers": {
+            "glory": 0,
+            "honor": 0,
+            "status": 3
+        },
+        "source": "FoV"
     }
 ]

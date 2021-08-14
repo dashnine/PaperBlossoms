@@ -35,6 +35,7 @@
                                         "Core",
                                         "DT",
                                         "EE",
+                                        "FoV",
                                         "GMK",
                                         "Mantis",
                                         "PoW",
@@ -76,7 +77,25 @@
                             "type": "array",
                             "items": {
                                 "description": "Type associated with advantage or disadvantage",
-                                "type": "string"
+                                "type": "string",
+                                "enum": [
+                                    "Interpersonal",
+                                    "Interpersonal (Name)",
+                                    "Social",
+                                    "Mental",
+                                    "Mental and Interpersonal (Culture)",
+                                    "Spiritual",
+                                    "Physical",
+                                    "Physical (Appearance)",
+                                    "Virtue",
+                                    "Curse",
+                                    "Scar",
+                                    "Physical or Mental",
+                                    "Flaw",
+                                    "Fame",
+                                    "Martial",
+                                    "Infamy"
+                                ]
                             }
                         },
                         "effects": {

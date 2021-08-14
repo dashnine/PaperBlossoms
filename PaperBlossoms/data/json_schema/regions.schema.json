@@ -72,13 +72,16 @@
                         "description": "Book in which reference can be found",
                         "type": "string",
                         "enum": [
-                            "Core",
-                            "EE",
-                            "SL",
-                            "Mantis",
-                            "GMK",
+                            "CR",
                             "CoS",
-                            "PoW"
+                            "Core",
+                            "DT",
+                            "EE",
+                            "GMK",
+                            "Mantis",
+                            "PoW",
+                            "SL",
+                            "FoV"
                         ]
                     },
                     "page": {

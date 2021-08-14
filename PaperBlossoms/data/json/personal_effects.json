@@ -1472,5 +1472,110 @@
             "book": "CR",
             "page": 88
         }
+    },
+    {
+        "name": "Animal Helm",
+        "reference": {
+            "book": "FoV",
+            "page": 90
+        }
+    },
+    {
+        "name": "Blasting Powder (1 Charge)",
+        "reference": {
+            "book": "FoV",
+            "page": 90
+        }
+    },
+    {
+        "name": "Battlefield Heirloom",
+        "reference": {
+            "book": "FoV",
+            "page": 90
+        }
+    },
+    {
+        "name": "Battlefield Medical Pack",
+        "reference": {
+            "book": "FoV",
+            "page": 90
+        }
+    },
+    {
+        "name": "Brilliant Flare",
+        "reference": {
+            "book": "FoV",
+            "page": 90
+        }
+    },
+    {
+        "name": "Gunbai",
+        "reference": {
+            "book": "FoV",
+            "page": 91
+        }
+    },
+    {
+        "name": "Memp\u014d",
+        "reference": {
+            "book": "FoV",
+            "page": 91
+        }
+    },
+    {
+        "name": "Saihai",
+        "reference": {
+            "book": "FoV",
+            "page": 91
+        }
+    },
+    {
+        "name": "Sashimono",
+        "reference": {
+            "book": "FoV",
+            "page": 91
+        }
+    },
+    {
+        "name": "Smoking Pipe",
+        "reference": {
+            "book": "FoV",
+            "page": 91
+        }
+    },
+    {
+        "name": "Tetsubishi",
+        "reference": {
+            "book": "FoV",
+            "page": 91
+        }
+    },
+    {
+        "name": "Uma-Jirushi",
+        "reference": {
+            "book": "FoV",
+            "page": 91
+        }
+    },
+    {
+        "name": "Satchel of Messages",
+        "reference": {
+            "book": "FoV",
+            "page": 78
+        }
+    },
+    {
+        "name": "Bonded Animal",
+        "reference": {
+            "book": "Core",
+            "page": 326
+        }
+    },
+    {
+        "name": "Two Bonded Animals",
+        "reference": {
+            "book": "Core",
+            "page": 326
+        }
     }
 ]
