@@ -413,6 +413,46 @@
                 "effects": ""
             },
             {
+                "name": "Support of Seppun",
+                "reference": {
+                    "book": "FoV",
+                    "page": 87
+                },
+                "ring": "Water",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Support of Otomo",
+                "reference": {
+                    "book": "FoV",
+                    "page": 87
+                },
+                "ring": "Water",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Support of Miya",
+                "reference": {
+                    "book": "FoV",
+                    "page": 87
+                },
+                "ring": "Water",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
+                "name": "Support of Imperial Legions",
+                "reference": {
+                    "book": "FoV",
+                    "page": 87
+                },
+                "ring": "Water",
+                "types": ["Interpersonal"],
+                "effects": ""
+            },
+            {
                 "name": "Animal Trainer",
                 "reference": {
                     "book": "EE",

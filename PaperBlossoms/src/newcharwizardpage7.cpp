@@ -121,6 +121,7 @@ void NewCharWizardPage7::initializePage()
     const QString heritageSourceTable = field("q18SourceTable").toString();
     const QString roninbond = field("q17roninBond").toString();                 //pow
     const QString q17roninText = field("q17roninText").toString();              //pow
+    const bool q18DoubleKoku = field("q18DoubleKoku").toString() == "1";
 
 
 
@@ -218,6 +219,11 @@ void NewCharWizardPage7::initializePage()
         if(hasq8HonorBoost) socialmap["Honor"] += 10;
 
         wealth = dal->i_getfamilywealth(family);  //koku only
+
+        //FoV only
+        if (q18DoubleKoku) {
+            wealth *= 2;
+        }
 
     }
     //PoW
@@ -450,7 +456,11 @@ void NewCharWizardPage7::initializePage()
             //courts
             heritage == dal->translate("Triumph Over the Lion") ||
             //CR
-            heritage == dal->translate("Sacrifice")
+            heritage == dal->translate("Sacrifice") ||
+            //FOV
+            heritage == dal->translate("Sacrifice") ||
+            heritage == dal->translate("Blade of 10,000 Battles") ||
+            heritage == dal->translate("Victory against the Crane")
 
                 ){ //item
         if(!secondarychoice.isEmpty()){
@@ -460,7 +470,10 @@ void NewCharWizardPage7::initializePage()
         }
     }
     //if(ancestorIndex == 10){
-    if(heritage == dal->translate("Unusual Name Origin")){
+    if (
+            heritage == dal->translate("Unusual Name Origin") ||
+            heritage == dal->translate("Mighty Conqueror")
+            ) {
         if(othereffects == dal->translate("Item (Rank 6 or Lower)")){
             if(!secondarychoice.isEmpty()){
                 eqText+= secondarychoice + ", ";
@@ -519,7 +532,11 @@ void NewCharWizardPage7::initializePage()
        heritage == dal->translate("Blood and Mortar") ||
        heritage == dal->translate("Triumph During Gempuku")||
        heritage == dal->translate("Spirit of the Phoenix") ||
-       heritage == dal->translate("Touched by the Fortunes")
+       heritage == dal->translate("Touched by the Fortunes") ||
+       heritage == dal->translate("Born on the Battlefield") ||
+       heritage == dal->translate("Selfless Sentinel") ||
+       heritage == dal->translate("Right Hand of the Emperor") ||
+       (heritage == dal->translate("Mighty Conqueror") && othereffects == dal->translate("Glorious Deeds"))
 
             ){
         advText+= othereffects + ", ";
@@ -656,8 +673,11 @@ QMap<QString, int> NewCharWizardPage7::calcSkills(){
            heritage ==   dal->translate("A Little Too Close To Heaven")||
            //Celestial realms
            heritage ==   dal->translate("Great Treatise")||
-           heritage ==   dal->translate("Guardian of Forbidden Knowledge")
-
+           heritage ==   dal->translate("Guardian of Forbidden Knowledge")||
+           //FoV
+           heritage ==   dal->translate("Strategic Mastermind")||
+           heritage ==   dal->translate("Victory against Invaders")||
+           heritage ==   dal->translate("Shamed by Defeat")
             ){
         skills.append(field("q18OtherEffects").toString());
 
