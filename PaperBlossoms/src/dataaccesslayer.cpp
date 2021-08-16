@@ -444,6 +444,39 @@ QString DataAccessLayer::qs_getregionsubtype(const QString region)
     return "";
 }
 
+QStringList DataAccessLayer::qsl_gettechniquessubtypes()
+{
+    QSqlQuery query;
+    query.prepare("SELECT subcategory FROM base_techniques GROUP BY subcategory");
+    query.exec();
+    QStringList out;
+    while (query.next()) {
+        const QString cname = query.value(0).toString();
+        out << cname;
+    }
+
+    //    qDebug() << out;
+    return out;
+}
+
+QStringList DataAccessLayer::qsl_gettechniquesbysubcategory(const QString subcategory, const int minRank, const int maxRank)
+{
+    QSqlQuery query;
+    query.prepare("SELECT name FROM base_techniques WHERE subcategory = :subcategory AND rank <= :minRank AND rank >= :maxRank");
+    query.bindValue(0, subcategory);
+    query.bindValue(1, minRank);
+    query.bindValue(2, maxRank);
+    query.exec();
+    QStringList out;
+    while (query.next()) {
+        const QString cname = query.value(0).toString();
+        out << cname;
+    }
+
+    //    qDebug() << out;
+    return out;
+}
+
 int DataAccessLayer::i_getupbringingstatusmod(const QString upbringing){
     int out = 0;
     QSqlQuery query;

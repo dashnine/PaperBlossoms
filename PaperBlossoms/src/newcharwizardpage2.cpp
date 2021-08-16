@@ -305,6 +305,8 @@ void NewCharWizardPage2::on_nc2_school_ComboBox_currentIndexChanged(const QStrin
     skillOptModel->setStringList(dal->qsl_getschoolskills(arg1)); //set list with school contents
     skillSelModel->setStringList( QStringList{} );  //clear prior selections, since this changed
 
+    const QStringList subcategories = dal->qsl_gettechniquessubtypes();
+
     //TECHNIQUES//
     ui->techWidget->clear();
     const QList<QStringList> techsets = dal->ql_getlistsoftech(arg1);
@@ -312,9 +314,31 @@ void NewCharWizardPage2::on_nc2_school_ComboBox_currentIndexChanged(const QStrin
         int choosenum = techsets.at(row).at(0).toInt();
         for(int boxcount = 0; boxcount < choosenum;++boxcount){
             QStringList choicesetforcombobox = techsets.at(row);
+            QStringList map;
             choicesetforcombobox.removeFirst();
-            qDebug() << "Adding Box: " << choicesetforcombobox ;
-            ui->techWidget->addCBox(choicesetforcombobox, "Choose a technique:");
+
+            bool added = false;
+            for (const auto& option : choicesetforcombobox){
+                added = false;
+                for (const auto& subcategory : subcategories){
+                    if (added){
+                        break;
+                    }
+
+                    if (subcategory == option) {
+                        map << dal->qsl_gettechniquesbysubcategory(option, 1, 1);
+                        added = true;
+                    }
+                }
+
+                if (added == false) {
+                    map << option;
+                }
+            }
+
+            qDebug() << "Adding Box: " << map ;
+
+            ui->techWidget->addCBox(map, "Choose a technique:");
         }
     }
 

@@ -26782,7 +26782,7 @@
         "mastery_ability": "The Herd Flourishes Together"
     },
     {
-        "name": "Isawa Tensai School",
+        "name": "Isawa Tensai School (Fire)",
         "clan": "Phoenix",
         "reference": {
             "book": "FoV",
@@ -26791,7 +26791,7 @@
         "role": [
             "Shugenja"
         ],
-        "ring_increase": [ "any", "any" ],
+        "ring_increase": [ "Fire", "Fire" ],
         "starting_skills": {
             "size": 3,
             "set": [ "Courtesy", "Martial Arts [Unarmed]", "Meditation", "Sentiment", "Survival", "Theology" ]
@@ -26801,12 +26801,7 @@
         "starting_techniques": [
             {
                 "size": 1,
-                "set": [
-                    "Extinguish",
-                    "Grasp of Earth",
-                    "Path to Inner Peace",
-                    "Tempest of Air"
-                ]
+                "set": [ "Fire Invocations" ]
             },
             {
                 "size": 2,
@@ -26867,7 +26862,7 @@
             },
             {
                 "rank": 1,
-                "advance": "Invocations",
+                "advance": "Fire Invocations",
                 "type": "technique_group",
                 "special_access": true,
                 "allowable_rank": {
@@ -26913,7 +26908,7 @@
             },
             {
                 "rank": 2,
-                "advance": "Invocations",
+                "advance": "Fire Invocations",
                 "type": "technique_group",
                 "allowable_rank": {
                     "max": 3,
@@ -26959,7 +26954,7 @@
             },
             {
                 "rank": 3,
-                "advance": "Invocations",
+                "advance": "Fire Invocations",
                 "allowable_rank": {
                     "max": 4,
                     "min": 1
@@ -27005,7 +27000,7 @@
             },
             {
                 "rank": 4,
-                "advance": "Invocations",
+                "advance": "Fire Invocations",
                 "allowable_rank": {
                     "max": 5,
                     "min": 1
@@ -27051,7 +27046,871 @@
             },
             {
                 "rank": 5,
-                "advance": "Invocations",
+                "advance": "Fire Invocations",
+                "type": "technique_group",
+                "allowable_rank": {
+                    "max": 5,
+                    "min": 1
+                },
+                "special_access": true
+            },
+            {
+                "rank": 5,
+                "advance": "Rouse the Soul",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Striking as Void",
+                "type": "technique",
+                "special_access": true
+            }
+        ],
+        "mastery_ability": "Attuned Invocation"
+    },
+    {
+        "name": "Isawa Tensai School (Water)",
+        "clan": "Phoenix",
+        "reference": {
+            "book": "FoV",
+            "page": 75
+        },
+        "role": [
+            "Shugenja"
+        ],
+        "ring_increase": [ "any", "any" ],
+        "starting_skills": {
+            "size": 3,
+            "set": [ "Courtesy", "Martial Arts [Unarmed]", "Meditation", "Sentiment", "Survival", "Theology" ]
+        },
+        "honor": 50,
+        "techniques_available": [ "Invocations", "Rituals", "Sh\u016bji" ],
+        "starting_techniques": [
+            {
+                "size": 1,
+                "set": [ "Water Invocations" ]
+            },
+            {
+                "size": 2,
+                "set": [ "Cleansing Rite", "Commune with the Spirits", "Threshold Barrier" ]
+            },
+            {
+                "size": 2,
+                "set": [ "Ancestry Unearthed", "Borrowed Courage", "Truth Burns through Lies", "Shallow Waters" ]
+            }
+        ],
+        "school_ability": "Elemental Inspiration",
+        "starting_outfit": [
+            {
+                "size": 1,
+                "set": [ "Sanctified Robes" ]
+            },
+            {
+                "size": 1,
+                "set": [ "Traveling Clothes" ]
+            },
+            {
+                "size": 1,
+                "set": [ "Wakizashi" ]
+            },
+            {
+                "size": 1,
+                "set": [ "Scroll Satchel" ]
+            },
+            {
+                "size": 1,
+                "set": [ "Traveling Pack" ]
+            }
+        ],
+        "curriculum": [
+            {
+                "rank": 1,
+                "advance": "Scholar skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Courtesy",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Meditation",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Survival",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Water Invocations",
+                "type": "technique_group",
+                "special_access": true,
+                "allowable_rank": {
+                    "max": 2,
+                    "min": 1
+                }
+            },
+            {
+                "rank": 1,
+                "advance": "Sting of Warrior's Pride",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 1,
+                "advance": "Divination",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Social skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Culture",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Martial Arts [Unarmed]",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Theology",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Water Invocations",
+                "type": "technique_group",
+                "allowable_rank": {
+                    "max": 3,
+                    "min": 1
+                },
+                "special_access": true
+            },
+            {
+                "rank": 2,
+                "advance": "Beseech Shiba's Calm",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 2,
+                "advance": "Open-Hand Style",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 3,
+                "advance": "Martial skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Performance",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Sentiment",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Theology",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Water Invocations",
+                "allowable_rank": {
+                    "max": 4,
+                    "min": 1
+                },
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "rank": 3,
+                "advance": "Incite True Nature",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Battle in the Mind",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 4,
+                "advance": "Scholar skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Fitness",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Meditation",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Survival",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Water Invocations",
+                "allowable_rank": {
+                    "max": 5,
+                    "min": 1
+                },
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "rank": 4,
+                "advance": "A Samurai's Fate",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Pillar of Calm",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Social skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Government",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Sentiment",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Theology",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Water Invocations",
+                "type": "technique_group",
+                "allowable_rank": {
+                    "max": 5,
+                    "min": 1
+                },
+                "special_access": true
+            },
+            {
+                "rank": 5,
+                "advance": "Rouse the Soul",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Striking as Void",
+                "type": "technique",
+                "special_access": true
+            }
+        ],
+        "mastery_ability": "Attuned Invocation"
+    },
+    {
+        "name": "Isawa Tensai School (Air)",
+        "clan": "Phoenix",
+        "reference": {
+            "book": "FoV",
+            "page": 75
+        },
+        "role": [
+            "Shugenja"
+        ],
+        "ring_increase": [ "any", "any" ],
+        "starting_skills": {
+            "size": 3,
+            "set": [ "Courtesy", "Martial Arts [Unarmed]", "Meditation", "Sentiment", "Survival", "Theology" ]
+        },
+        "honor": 50,
+        "techniques_available": [ "Invocations", "Rituals", "Sh\u016bji" ],
+        "starting_techniques": [
+            {
+                "size": 1,
+                "set": [ "Air Invocations" ]
+            },
+            {
+                "size": 2,
+                "set": [ "Cleansing Rite", "Commune with the Spirits", "Threshold Barrier" ]
+            },
+            {
+                "size": 2,
+                "set": [ "Ancestry Unearthed", "Borrowed Courage", "Truth Burns through Lies", "Shallow Waters" ]
+            }
+        ],
+        "school_ability": "Elemental Inspiration",
+        "starting_outfit": [
+            {
+                "size": 1,
+                "set": [ "Sanctified Robes" ]
+            },
+            {
+                "size": 1,
+                "set": [ "Traveling Clothes" ]
+            },
+            {
+                "size": 1,
+                "set": [ "Wakizashi" ]
+            },
+            {
+                "size": 1,
+                "set": [ "Scroll Satchel" ]
+            },
+            {
+                "size": 1,
+                "set": [ "Traveling Pack" ]
+            }
+        ],
+        "curriculum": [
+            {
+                "rank": 1,
+                "advance": "Scholar skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Courtesy",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Meditation",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Survival",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Air Invocations",
+                "type": "technique_group",
+                "special_access": true,
+                "allowable_rank": {
+                    "max": 2,
+                    "min": 1
+                }
+            },
+            {
+                "rank": 1,
+                "advance": "Sting of Warrior's Pride",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 1,
+                "advance": "Divination",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Social skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Culture",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Martial Arts [Unarmed]",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Theology",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Air Invocations",
+                "type": "technique_group",
+                "allowable_rank": {
+                    "max": 3,
+                    "min": 1
+                },
+                "special_access": true
+            },
+            {
+                "rank": 2,
+                "advance": "Beseech Shiba's Calm",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 2,
+                "advance": "Open-Hand Style",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 3,
+                "advance": "Martial skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Performance",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Sentiment",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Theology",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Air Invocations",
+                "allowable_rank": {
+                    "max": 4,
+                    "min": 1
+                },
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "rank": 3,
+                "advance": "Incite True Nature",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Battle in the Mind",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 4,
+                "advance": "Scholar skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Fitness",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Meditation",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Survival",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Air Invocations",
+                "allowable_rank": {
+                    "max": 5,
+                    "min": 1
+                },
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "rank": 4,
+                "advance": "A Samurai's Fate",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Pillar of Calm",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Social skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Government",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Sentiment",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Theology",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Air Invocations",
+                "type": "technique_group",
+                "allowable_rank": {
+                    "max": 5,
+                    "min": 1
+                },
+                "special_access": true
+            },
+            {
+                "rank": 5,
+                "advance": "Rouse the Soul",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Striking as Void",
+                "type": "technique",
+                "special_access": true
+            }
+        ],
+        "mastery_ability": "Attuned Invocation"
+    },
+    {
+        "name": "Isawa Tensai School (Earth)",
+        "clan": "Phoenix",
+        "reference": {
+            "book": "FoV",
+            "page": 75
+        },
+        "role": [
+            "Shugenja"
+        ],
+        "ring_increase": [ "any", "any" ],
+        "starting_skills": {
+            "size": 3,
+            "set": [ "Courtesy", "Martial Arts [Unarmed]", "Meditation", "Sentiment", "Survival", "Theology" ]
+        },
+        "honor": 50,
+        "techniques_available": [ "Invocations", "Rituals", "Sh\u016bji" ],
+        "starting_techniques": [
+            {
+                "size": 1,
+                "set": [ "Earth Invocations" ]
+            },
+            {
+                "size": 2,
+                "set": [ "Cleansing Rite", "Commune with the Spirits", "Threshold Barrier" ]
+            },
+            {
+                "size": 2,
+                "set": [ "Ancestry Unearthed", "Borrowed Courage", "Truth Burns through Lies", "Shallow Waters" ]
+            }
+        ],
+        "school_ability": "Elemental Inspiration",
+        "starting_outfit": [
+            {
+                "size": 1,
+                "set": [ "Sanctified Robes" ]
+            },
+            {
+                "size": 1,
+                "set": [ "Traveling Clothes" ]
+            },
+            {
+                "size": 1,
+                "set": [ "Wakizashi" ]
+            },
+            {
+                "size": 1,
+                "set": [ "Scroll Satchel" ]
+            },
+            {
+                "size": 1,
+                "set": [ "Traveling Pack" ]
+            }
+        ],
+        "curriculum": [
+            {
+                "rank": 1,
+                "advance": "Scholar skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Courtesy",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Meditation",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Survival",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 1,
+                "advance": "Earth Invocations",
+                "type": "technique_group",
+                "special_access": true,
+                "allowable_rank": {
+                    "max": 2,
+                    "min": 1
+                }
+            },
+            {
+                "rank": 1,
+                "advance": "Sting of Warrior's Pride",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 1,
+                "advance": "Divination",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Social skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Culture",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Martial Arts [Unarmed]",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Theology",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 2,
+                "advance": "Earth Invocations",
+                "type": "technique_group",
+                "allowable_rank": {
+                    "max": 3,
+                    "min": 1
+                },
+                "special_access": true
+            },
+            {
+                "rank": 2,
+                "advance": "Beseech Shiba's Calm",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 2,
+                "advance": "Open-Hand Style",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 3,
+                "advance": "Martial skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Performance",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Sentiment",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Theology",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Earth Invocations",
+                "allowable_rank": {
+                    "max": 4,
+                    "min": 1
+                },
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "rank": 3,
+                "advance": "Incite True Nature",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 3,
+                "advance": "Battle in the Mind",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "rank": 4,
+                "advance": "Scholar skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Fitness",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Meditation",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Survival",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Earth Invocations",
+                "allowable_rank": {
+                    "max": 5,
+                    "min": 1
+                },
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "rank": 4,
+                "advance": "A Samurai's Fate",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 4,
+                "advance": "Pillar of Calm",
+                "type": "technique",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Social skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Government",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Sentiment",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Theology",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "rank": 5,
+                "advance": "Earth Invocations",
                 "type": "technique_group",
                 "allowable_rank": {
                     "max": 5,
