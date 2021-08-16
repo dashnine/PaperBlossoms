@@ -27079,7 +27079,7 @@
         "role": [
             "Shugenja"
         ],
-        "ring_increase": [ "any", "any" ],
+        "ring_increase": [ "Water", "Water" ],
         "starting_skills": {
             "size": 3,
             "set": [ "Courtesy", "Martial Arts [Unarmed]", "Meditation", "Sentiment", "Survival", "Theology" ]
@@ -27367,7 +27367,7 @@
         "role": [
             "Shugenja"
         ],
-        "ring_increase": [ "any", "any" ],
+        "ring_increase": [ "Air", "Air" ],
         "starting_skills": {
             "size": 3,
             "set": [ "Courtesy", "Martial Arts [Unarmed]", "Meditation", "Sentiment", "Survival", "Theology" ]
@@ -27655,7 +27655,7 @@
         "role": [
             "Shugenja"
         ],
-        "ring_increase": [ "any", "any" ],
+        "ring_increase": [ "Earth", "Earth" ],
         "starting_skills": {
             "size": 3,
             "set": [ "Courtesy", "Martial Arts [Unarmed]", "Meditation", "Sentiment", "Survival", "Theology" ]
