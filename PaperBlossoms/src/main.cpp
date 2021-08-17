@@ -41,8 +41,9 @@ int main(int argc, char *argv[])
     defaultLocaleDB.truncate(defaultLocaleDB.lastIndexOf('_'));
     defaultLocaleUI.truncate(defaultLocaleUI.lastIndexOf('_'));
     QString settingfile = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + "/settings.ini";
-    qDebug()<< settingfile;
+    qDebug() << "Settings file: " << settingfile;
     QSettings settings(settingfile, QSettings::IniFormat);
+
     if(!settings.contains("localeDB")){
         //initialize the locale to the system locale (which would be the default anyways).
         settings.setValue("localeDB",defaultLocaleDB);

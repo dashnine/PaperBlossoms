@@ -26,34 +26,36 @@
 #include <QWizard>
 #include <QLabel>
 #include <QVBoxLayout>
-#include "newcharacterwizard.h"
+#include "characterwizard/newcharacterwizard.h"
+#include "dependency/dependencybuilder.h"
+#include "dependency/databasedependency.h"
 #include <QDebug>
 #include "character.h"
 #include <QDir>
 #include <QFileDialog>
 #include <QMessageBox>
-#include "aboutdialog.h"
-#include "addadvancedialog.h"
-#include "addtitledialog.h"
+#include "dialog/aboutdialog.h"
+#include "dialog/addadvancedialog.h"
+#include "dialog/addtitledialog.h"
 #include <QSqlRecord>
 #include <QSqlQueryModel>
 #include <QStyledItemDelegate>
 #include <QColor>
 #include <QPalette>
-#include "additemdialog.h"
+#include "dialog/additemdialog.h"
 #include "enums.h"
 #include "clicklabel.h"
-#include "adddisadvdialog.h"
-#include "addbonddialog.h"
+#include "dialog/adddisadvdialog.h"
+#include "dialog/addbonddialog.h"
 #include "pboutputdata.h"
-#include "renderdialog.h"
+#include "dialog/renderdialog.h"
 #include <QDesktopServices>
 #include <QCoreApplication>
 #include <QApplication>
 #include <QFontDatabase>
 #include <QtXml>
-#include "edituserdescriptionsdialog.h"
-#include "dblocalisationeditordialog.h"
+#include "dialog/edituserdescriptionsdialog.h"
+#include "dialog/dblocalisationeditordialog.h"
 #include <QFileInfo>
 #include <QCloseEvent>
 
@@ -100,8 +102,8 @@ MainWindow::MainWindow(QString locale, QWidget *parent) :
     }
     else{
         curLocale = locale;
-
     }
+    
     this->setStyleSheet("QMainWindow {background-image:url(:/images/resources/sakura_PNG37.png); background-position: center;background-repeat:no-repeat }" );
     this->setWindowIcon(QIcon(":/images/resources/sakura.png"));
     //int id = QFontDatabase::addApplicationFont(":/images/resources/Bradley Hand Bold.ttf");
@@ -116,7 +118,7 @@ MainWindow::MainWindow(QString locale, QWidget *parent) :
 #endif
     ui->character_name_label->setFont(scriptfont);
 
-    dal = new DataAccessLayer(locale);
+    deps = (new DependencyBuilder())->build(locale);
 
     ui->character_name_label->setVisible(false);
     ui->tabWidget->setVisible(false);
@@ -126,7 +128,7 @@ MainWindow::MainWindow(QString locale, QWidget *parent) :
     ui->actionGenerate_Character_Sheet->setEnabled(false);
     ui->status_groupBox->setVisible(false);
 
-    QStringList skills = dal->qsl_getskills();
+    QStringList skills = deps->skillsRepository->qsl_getskills();
     foreach (QString skill, skills) {
         this->curCharacter.baseskills[skill] = 0;
     }
@@ -234,7 +236,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_actionNew_triggered()
 {
 
-    NewCharacterWizard wizard(dal);
+    NewCharacterWizard wizard(deps);
     const int result = wizard.exec();
     if (result == QDialog::Accepted){
         if(m_dirtyDataFlag == true){ //if data is dirty, allow user to escape out.
@@ -284,12 +286,12 @@ void MainWindow::populateUI(){
 
     //---------------INITIALIZE SKILL AND RING RANKS --------------------
     //note -- doesn't touch base values on the character
-    const QStringList skills = dal->qsl_getskills(); //get all skills
+    const QStringList skills = deps->skillsRepository->qsl_getskills(); //get all skills
     //initialise skillranks
     foreach (const QString skill, skills) {
         curCharacter.skillranks[skill] = 0;
     }
-    const QStringList rings = dal->qsl_getrings(); //get all rings
+    const QStringList rings = deps->ringsRepository->qsl_getrings(); //get all rings
     foreach (const QString ring, rings) {
         curCharacter.ringranks[ring] = 0;
     }
@@ -325,7 +327,7 @@ void MainWindow::populateUI(){
 
 
     //--------------------CURRICULUM ------------------------------------------
-    dal->qsm_getschoolcurriculum(&curriculummodel, curCharacter.school);
+    deps->schoolsRepository->qsm_getschoolcurriculum(&curriculummodel, curCharacter.school);
     for(int i = 0; i<curriculummodel.rowCount(); ++i){
         QSqlRecord record = curriculummodel.record(i);
        // if(record.value("special_access").toInt()==1){
@@ -338,7 +340,7 @@ void MainWindow::populateUI(){
     titlemodel.clear();
     if(curCharacter.titles.count()>0)
         foreach (const QString title, curCharacter.titles) {
-            QStringList track = dal->qsl_gettitletrack(title);
+        QStringList track = deps->titlesRepository->qsl_gettitletrack(title);
             foreach (const QString row, track) {
                 QStringList cells = row.split("|");
                 QString tname = cells.at(0);
@@ -375,7 +377,7 @@ void MainWindow::populateUI(){
     //-------------------SET TITLE ---------------------------
     QList<int> titleXPcounts;
     foreach(QString title, curCharacter.titles) {
-        titleXPcounts << dal->qs_gettitlexp(title).toInt();
+        titleXPcounts << deps->titlesRepository->qs_gettitlexp(title).toInt();
     }
     const QPair<QString, int> titledata = recalcTitle(titleXPcounts);
     QString curTitle = titledata.first;
@@ -396,24 +398,24 @@ void MainWindow::populateUI(){
 
     curCharacter.abilities.clear();
     QString abiltext = "";
-    curCharacter.abilities << dal->qsl_getschoolability(curCharacter.school);
-    abiltext+=dal->qsl_getschoolability(curCharacter.school).at(0) + ", ";
+    curCharacter.abilities << deps->schoolsRepository->qsl_getschoolability(curCharacter.school);
+    abiltext+=deps->schoolsRepository->qsl_getschoolability(curCharacter.school).at(0) + ", ";
     if(curCharacter.rank > 5) {
-        curCharacter.abilities << dal->qsl_getschoolmastery(curCharacter.school);
-        abiltext+= dal->qsl_getschoolmastery(curCharacter.school).at(0)+", ";
+        curCharacter.abilities << deps->schoolsRepository->qsl_getschoolmastery(curCharacter.school);
+        abiltext+= deps->schoolsRepository->qsl_getschoolmastery(curCharacter.school).at(0)+", ";
     }
     foreach (const QString title, curCharacter.titles) {
         if(title != curTitle) { //there should be no way to get a title that isn't curtitle without finishing it.  So the extras are fininshed - get abilities
-                curCharacter.abilities << dal->qsl_gettitlemastery(title);
-                const QStringList abl = dal->qsl_gettitlemastery(title);
+            curCharacter.abilities << deps->titlesRepository->qsl_gettitlemastery(title);
+            const QStringList abl = deps->titlesRepository->qsl_gettitlemastery(title);
                 if(abl.count()>0){
                     abiltext+=abl.at(0)+", ";
                 }
         }
     }
     foreach (const QStringList bond, curCharacter.bonds) {
-                curCharacter.abilities << dal->qsl_getbondability(bond.at(0));
-                const QStringList abl = dal->qsl_getbondability(bond.at(0));
+        curCharacter.abilities << deps->bondsRepository->qsl_getbondability(bond.at(0));
+        const QStringList abl = deps->bondsRepository->qsl_getbondability(bond.at(0));
                 if(abl.count()>0){
                     abiltext+=abl.at(0)+", ";
                 }
@@ -427,19 +429,19 @@ void MainWindow::populateUI(){
     QMapIterator<QString, int> ei(curCharacter.baserings); //grab an english version of the baserings
     while (ei.hasNext()) {
         ei.next();
-        engringmap[dal->untranslate(ei.key())] += ei.value();                //add 'Air' (etc) for each extra
+        engringmap[deps->dal->untranslate(ei.key())] += ei.value();                //add 'Air' (etc) for each extra
     }
     QMapIterator<QString, int> i(curCharacter.ringranks);
     while (i.hasNext()) {
         i.next();
         ringmap[i.key()] += i.value();                //add 'Air' (etc) for each extra
-        engringmap[dal->untranslate(i.key())] += i.value();
+        engringmap[deps->dal->untranslate(i.key())] += i.value();
     }
-    ringtext += dal->translate("Air")+ " " +QString::number(ringmap[dal->translate("Air")]) + ", ";
-    ringtext += dal->translate("Earth")+  " " +QString::number(ringmap[dal->translate("Earth")]) + ", ";
-    ringtext += dal->translate("Fire")+  " " +QString::number(ringmap[dal->translate("Fire")]) + ", ";
-    ringtext += dal->translate("Water")+ " " + QString::number(ringmap[dal->translate("Water")]) + ", ";
-    ringtext += dal->translate("Void")+ " " +QString::number(ringmap[dal->translate("Void")]);
+    ringtext += deps->dal->translate("Air")+ " " +QString::number(ringmap[deps->dal->translate("Air")]) + ", ";
+    ringtext += deps->dal->translate("Earth")+  " " +QString::number(ringmap[deps->dal->translate("Earth")]) + ", ";
+    ringtext += deps->dal->translate("Fire")+  " " +QString::number(ringmap[deps->dal->translate("Fire")]) + ", ";
+    ringtext += deps->dal->translate("Water")+ " " + QString::number(ringmap[deps->dal->translate("Water")]) + ", ";
+    ringtext += deps->dal->translate("Void")+ " " +QString::number(ringmap[deps->dal->translate("Void")]);
 
     ui->ring_label->setText(ringtext);
     ui->ringWidget->setRings(engringmap);
@@ -447,7 +449,7 @@ void MainWindow::populateUI(){
     //------------------SET SKILL TABLE AND VALUES -----------------
     skillmodel.clear();
     QString skilltext = "";
-    const QStringList skillgrouplist = dal->qsl_getskillsandgroup();
+    const QStringList skillgrouplist = deps->skillsRepository->qsl_getskillsandgroup();
     foreach (const QString skill, skillgrouplist) {
 
         //generate row and add it to skill model
@@ -500,23 +502,23 @@ void MainWindow::populateUI(){
     bondmodel.setHorizontalHeaderLabels(bondheaders);
 
     //---------------CALCULATE DERIVED STATS ------------------------------//
-    ui->endurance_label->setText(QString::number(( curCharacter.baserings[dal->translate("Earth")]
-                                                +  curCharacter.ringranks[dal->translate("Earth")]
-                                                +  curCharacter.baserings[dal->translate("Fire")]
-                                                +  curCharacter.ringranks[dal->translate("Fire")])*2));
-    ui->composure_label->setText(QString::number(( curCharacter.baserings[dal->translate("Earth")]
-                                                 + curCharacter.ringranks[dal->translate("Earth")]
-                                                 + curCharacter.baserings[dal->translate("Water")]
-                                                 + curCharacter.ringranks[dal->translate("Water")])*2));
-    ui->focus_label->setText(QString::number( curCharacter.baserings[dal->translate("Fire")]
-                                            + curCharacter.ringranks[dal->translate("Fire")]
-                                            + curCharacter.baserings[dal->translate("Air")]
-                                            + curCharacter.ringranks[dal->translate("Air")]  ));
+    ui->endurance_label->setText(QString::number(( curCharacter.baserings[deps->dal->translate("Earth")]
+                                                +  curCharacter.ringranks[deps->dal->translate("Earth")]
+                                                +  curCharacter.baserings[deps->dal->translate("Fire")]
+                                                +  curCharacter.ringranks[deps->dal->translate("Fire")])*2));
+    ui->composure_label->setText(QString::number(( curCharacter.baserings[deps->dal->translate("Earth")]
+                                                 + curCharacter.ringranks[deps->dal->translate("Earth")]
+                                                 + curCharacter.baserings[deps->dal->translate("Water")]
+                                                 + curCharacter.ringranks[deps->dal->translate("Water")])*2));
+    ui->focus_label->setText(QString::number( curCharacter.baserings[deps->dal->translate("Fire")]
+                                            + curCharacter.ringranks[deps->dal->translate("Fire")]
+                                            + curCharacter.baserings[deps->dal->translate("Air")]
+                                            + curCharacter.ringranks[deps->dal->translate("Air")]  ));
     ui->vigilance_label->setText(
-                QString::number(qRound(double(curCharacter.baserings[dal->translate("Water")]
-                                            + curCharacter.ringranks[dal->translate("Water")]
-                                            + curCharacter.baserings[dal->translate("Air")]
-                                            + curCharacter.ringranks[dal->translate("Air")])/2.0))); //round up, because the FAQ was cruel.
+                QString::number(qRound(double(curCharacter.baserings[deps->dal->translate("Water")]
+                                            + curCharacter.ringranks[deps->dal->translate("Water")]
+                                            + curCharacter.baserings[deps->dal->translate("Air")]
+                                            + curCharacter.ringranks[deps->dal->translate("Air")])/2.0))); //round up, because the FAQ was cruel.
 
     ui->glory_spinBox->setValue(curCharacter.glory );
     ui->honor_spinBox->setValue(curCharacter.honor );
@@ -532,7 +534,7 @@ void MainWindow::populateUI(){
     foreach(const QString str, curCharacter.techniques){
         techlist += str + ", ";
         QList<QStandardItem*> itemrow;
-        foreach (const QString t, dal->qsl_gettechbyname(str)){
+        foreach (const QString t, deps->techniquesRepository->qsl_gettechbyname(str)){
             //now, do the real work for the tables
             itemrow << new QStandardItem(t);
         }
@@ -546,7 +548,7 @@ void MainWindow::populateUI(){
         }
         if(itemrow.at(0)->text() == "Technique"){            //if it's a tech advance
             QList<QStandardItem*> techrow;                   //create a row for the techModel
-            foreach (const QString t, dal->qsl_gettechbyname(itemrow.at(1)->text())){ //grab a qstringlist...
+            foreach (const QString t, deps->techniquesRepository->qsl_gettechbyname(itemrow.at(1)->text())){ //grab a qstringlist...
                 techrow << new QStandardItem(t);                                //and convert it into qstandarditems for the row
             }
             techlist+=itemrow.at(1)->text()+", ";                                    //add it to the techlist
@@ -572,7 +574,7 @@ void MainWindow::populateUI(){
     foreach(const QString str, curCharacter.adv_disadv){
         advlist += str + ", "; //populate the string
 
-        const QStringList dis_advdata = dal->qsl_getadvdisadvbyname(str);
+        const QStringList dis_advdata = deps->advantagesRepository->qsl_getadvdisadvbyname(str);
         QList<QStandardItem*> itemrow;
         foreach (const QString adv_disadv_str, dis_advdata){
             //now, do the real work for the tables
@@ -799,7 +801,7 @@ void MainWindow::on_actionOpen_triggered()
 
 void MainWindow::on_addadvance_button_clicked()
 {
-    AddAdvanceDialog addadvancedialog(dal, &curCharacter);
+    AddAdvanceDialog addadvancedialog(deps, &curCharacter);
     const int result = addadvancedialog.exec();
     if (result == QDialog::Accepted){
         qDebug() << "Accepted: getting advance.";
@@ -1041,7 +1043,7 @@ int MainWindow::isInCurriculum(const QString value, const QString type, const in
         if(!varMaxRank.isNull())
             maxrank = varMaxRank.toInt();
         if(record.value("type").toString() == "skill_group"){
-            QStringList groupskills = dal->qsl_getskillsbygroup(record.value("advance_tr").toString());
+            QStringList groupskills = deps->skillsRepository->qsl_getskillsbygroup(record.value("advance_tr").toString());
             skills.append(groupskills);
         }
         else if (record.value("type").toString() == "skill"){
@@ -1051,7 +1053,7 @@ int MainWindow::isInCurriculum(const QString value, const QString type, const in
             techniques << record.value("advance_tr").toString();
         }
         else if(record.value("type").toString() == "technique_group"){
-            QStringList grouptech = dal->qsl_gettechbygroup(dal->untranslate(record.value("advance_tr").toString()), minrank, maxrank);
+            QStringList grouptech = deps->techniquesRepository->qsl_gettechbygroup(deps->dal->untranslate(record.value("advance_tr").toString()), minrank, maxrank);
             techniques.append(grouptech);
         }
 
@@ -1086,7 +1088,7 @@ int MainWindow::isInTitle(const QString value, const QString adv_type, const QSt
 
         if(titlename!=title) continue; //only get items in current title;
         if(type == "skill_group"){
-            const QStringList groupskills = dal->qsl_getskillsbygroup(advance);
+            const QStringList groupskills = deps->skillsRepository->qsl_getskillsbygroup(advance);
             skills.append(groupskills);
         }
         else if (type == "skill"){
@@ -1096,7 +1098,7 @@ int MainWindow::isInTitle(const QString value, const QString adv_type, const QSt
             techniques << advance;
         }
         else if(type == "technique_group"){
-            const QStringList grouptech = dal->qsl_gettechbygroup(dal->untranslate(advance), minrank, maxrank); //special -- uses title rank
+            const QStringList grouptech = deps->techniquesRepository->qsl_gettechbygroup(deps->dal->untranslate(advance), minrank, maxrank); //special -- uses title rank
             techniques.append(grouptech);
         }
         else if(type == "ring"){
@@ -1119,7 +1121,7 @@ int MainWindow::isInTitle(const QString value, const QString adv_type, const QSt
 
 void MainWindow::on_addTitle_pushButton_clicked()
 {
-    AddTitleDialog addtitledialog(dal, &curCharacter);
+    AddTitleDialog addtitledialog(deps, &curCharacter);
     const int result = addtitledialog.exec();
     if (result == QDialog::Accepted){
         qDebug() << "Accepted: getting title.";
@@ -1163,7 +1165,7 @@ void MainWindow::on_zeni_spinBox_valueChanged(const int arg1)
 
 void MainWindow::on_add_weapon_pushButton_clicked()
 {
-    AddItemDialog additemdialog(dal, &curCharacter,"Weapon");
+    AddItemDialog additemdialog(deps, &curCharacter,"Weapon");
     const int result = additemdialog.exec();
     if (result == QDialog::Accepted){
         qDebug() << "Accepted: getting item";
@@ -1178,7 +1180,7 @@ void MainWindow::on_add_weapon_pushButton_clicked()
 
 void MainWindow::on_add_armor_pushButton_clicked()
 {
-    AddItemDialog additemdialog(dal, &curCharacter,"Armor");
+    AddItemDialog additemdialog(deps, &curCharacter,"Armor");
     const int result = additemdialog.exec();
     if (result == QDialog::Accepted){
         qDebug() << "Accepted: getting item";
@@ -1193,7 +1195,7 @@ void MainWindow::on_add_armor_pushButton_clicked()
 
 void MainWindow::on_add_other_pushButton_clicked()
 {
-    AddItemDialog additemdialog(dal, &curCharacter,"Other");
+    AddItemDialog additemdialog(deps, &curCharacter,"Other");
     const int result = additemdialog.exec();
     if (result == QDialog::Accepted){
         qDebug() << "Accepted: getting item";
@@ -1245,7 +1247,7 @@ void MainWindow::on_image_label_clicked()
 
 void MainWindow::on_addDistinction_pushButton_clicked()
 {
-    AddDisAdvDialog adddisadvdialog(dal, &curCharacter,"Distinctions");
+    AddDisAdvDialog adddisadvdialog(deps, &curCharacter,"Distinctions");
     const int result = adddisadvdialog.exec();
     if (result == QDialog::Accepted){
         qDebug() << "Accepted: getting distrinction";
@@ -1260,7 +1262,7 @@ void MainWindow::on_addDistinction_pushButton_clicked()
 
 void MainWindow::on_addPassion_pushButton_clicked()
 {
-    AddDisAdvDialog adddisadvdialog(dal, &curCharacter,"Passions");
+    AddDisAdvDialog adddisadvdialog(deps, &curCharacter,"Passions");
     const int result = adddisadvdialog.exec();
     if (result == QDialog::Accepted){
         qDebug() << "Accepted: getting distrinction";
@@ -1276,7 +1278,7 @@ void MainWindow::on_addPassion_pushButton_clicked()
 
 void MainWindow::on_addAdversity_pushButton_clicked()
 {
-    AddDisAdvDialog adddisadvdialog(dal, &curCharacter,"Adversities");
+    AddDisAdvDialog adddisadvdialog(deps, &curCharacter,"Adversities");
     const int result = adddisadvdialog.exec();
     if (result == QDialog::Accepted){
         qDebug() << "Accepted: getting distrinction";
@@ -1291,7 +1293,7 @@ void MainWindow::on_addAdversity_pushButton_clicked()
 
 void MainWindow::on_addAnxiety_pushButton_clicked()
 {
-    AddDisAdvDialog adddisadvdialog(dal, &curCharacter,"Anxieties");
+    AddDisAdvDialog adddisadvdialog(deps, &curCharacter,"Anxieties");
     const int result = adddisadvdialog.exec();
     if (result == QDialog::Accepted){
         qDebug() << "Accepted: getting distrinction";
@@ -1514,8 +1516,8 @@ void MainWindow::on_actionExport_User_Tables_triggered()
     else
     {
         bool success = true;
-        foreach(QString tablename, dal->user_tables){
-            success &= dal->tableToCsv(fileName,tablename);
+        foreach(QString tablename, deps->dal->user_tables){
+            success &= deps->dal->tableToCsv(fileName,tablename);
         }
         if(!success){
             QMessageBox::information(this, tr("Error Exporting Data"), "One or more errors occured exporting user data. Please check write permissions in the target folder.");
@@ -1538,9 +1540,9 @@ void MainWindow::on_actionImport_User_Data_Tables_triggered()
     else
     {
         bool success = true;
-        foreach(QString tablename, dal->user_tables){
+        foreach(QString tablename, deps->dal->user_tables){
         //dal->queryToCsv(fileName,tablename);
-            success &= dal->importCSV(fileName, tablename);
+        success &= deps->dal->importCSV(fileName, tablename);
         }
         if(!success){
             QMessageBox::information(this, tr("Error Importing Data"), "Data import encoutered one or more errors. Your database may be inconsistent or incomplete. Recommend restoring default DB.");
@@ -1698,19 +1700,19 @@ void MainWindow::on_actionExport_to_XML_triggered()
         //get rings
         QDomElement rings = document.createElement("Rings");
         QDomElement air = document.createElement("Air");
-        air.setAttribute("value", curCharacter.baserings[dal->translate("Air")]+curCharacter.ringranks[dal->translate("Air")]);
+        air.setAttribute("value", curCharacter.baserings[deps->dal->translate("Air")]+curCharacter.ringranks[deps->dal->translate("Air")]);
         rings.appendChild(air);
         QDomElement earth = document.createElement("Earth");
-        earth.setAttribute("value", curCharacter.baserings[dal->translate("Earth")]+curCharacter.ringranks[dal->translate("Earth")]);
+        earth.setAttribute("value", curCharacter.baserings[deps->dal->translate("Earth")]+curCharacter.ringranks[deps->dal->translate("Earth")]);
         rings.appendChild(earth);
         QDomElement fire = document.createElement("Fire");
-        fire.setAttribute("value", curCharacter.baserings[dal->translate("Fire")]+curCharacter.ringranks[dal->translate("Fire")]);
+        fire.setAttribute("value", curCharacter.baserings[deps->dal->translate("Fire")]+curCharacter.ringranks[deps->dal->translate("Fire")]);
         rings.appendChild(fire);
         QDomElement water = document.createElement("Water");
-        water.setAttribute("value", curCharacter.baserings[dal->translate("Water")]+curCharacter.ringranks[dal->translate("Water")]);
+        water.setAttribute("value", curCharacter.baserings[deps->dal->translate("Water")]+curCharacter.ringranks[deps->dal->translate("Water")]);
         rings.appendChild(water);
         QDomElement voidring = document.createElement("Void");
-        voidring.setAttribute("value", curCharacter.baserings[dal->translate("Void")]+curCharacter.ringranks[dal->translate("Void")]);
+        voidring.setAttribute("value", curCharacter.baserings[deps->dal->translate("Void")]+curCharacter.ringranks[deps->dal->translate("Void")]);
         rings.appendChild(voidring);
         root.appendChild(rings);
         //other character basics
@@ -1885,7 +1887,7 @@ void MainWindow::on_actionExport_to_XML_triggered()
 
 void MainWindow::on_actionDescription_Editor_triggered()
 {
-    EditUserDescriptionsDialog dialog(dal);
+    EditUserDescriptionsDialog dialog(deps);
     const int result = dialog.exec();
     if (result == QDialog::Accepted){
         dialog.doFinish(true);
@@ -1914,7 +1916,7 @@ void MainWindow::on_actionExport_User_Descriptions_Table_triggered()
         qDebug()<<QString("Filename = ") + fileName;
 
         bool success = true;
-        success &= dal->tableToCsv(fileName,"user_descriptions", false);
+        success &= deps->dal->tableToCsv(fileName,"user_descriptions", false);
         if(!success){
             QMessageBox::information(this, tr("Error Exporting Data"), "One or more errors occured exporting user data. Please check write permissions for the target file.");
 
@@ -1935,7 +1937,7 @@ void MainWindow::on_actionImport_User_Descriptions_Table_triggered()
     else
     {
         bool success = true;
-        success &= dal->importCSV(fileName, "user_descriptions", false);
+        success &= deps->dal->importCSV(fileName, "user_descriptions", false);
         if(!success){
             QMessageBox::information(this, tr("Error Importing Data"), "Data import encoutered one or more errors. Your database may be inconsistent or incomplete. Recommend restoring default DB.");
 
@@ -1959,7 +1961,7 @@ void MainWindow::on_actionExport_Translation_CSV_triggered()
     else
     {
         qDebug()<<QString("Filename = ") + fileName;
-        success = dal->exportTranslatableCSV(fileName);
+        success = deps->dal->exportTranslatableCSV(fileName);
     }
     if(!success){
         QMessageBox::information(this, tr("Error exporting translation data"), "Data export encoutered one or more errors. Your file may be corrupt or incomplete.");
@@ -1983,7 +1985,7 @@ void MainWindow::on_curriculum_tableView_doubleClicked(const QModelIndex &index)
     //    return;
     //}
 
-    AddAdvanceDialog addadvancedialog(dal, &curCharacter, type, advance);
+    AddAdvanceDialog addadvancedialog(deps, &curCharacter, type, advance);
     const int result = addadvancedialog.exec();
     if (result == QDialog::Accepted){
         qDebug() << "Accepted: getting advance.";
@@ -2004,7 +2006,7 @@ void MainWindow::on_title_tableview_doubleClicked(const QModelIndex &index)
     QString advance = titlemodel.item(srcindex.row(),Title::ADVANCE)->text();
 
 
-    AddAdvanceDialog addadvancedialog(dal, &curCharacter, type, advance);
+    AddAdvanceDialog addadvancedialog(deps, &curCharacter, type, advance);
     const int result = addadvancedialog.exec();
     if (result == QDialog::Accepted){
         qDebug() << "Accepted: getting advance.";
@@ -2025,7 +2027,7 @@ void MainWindow::on_family_lineEdit_textEdited(const QString &arg1)
 
 void MainWindow::on_actionTranslate_For_Locale_triggered()
 {
-    DBLocalisationEditorDialog dialog(dal);
+    DBLocalisationEditorDialog dialog(deps);
     const int result = dialog.exec();
     if (result == QDialog::Accepted){
         dialog.doFinish(true);
@@ -2038,7 +2040,7 @@ void MainWindow::on_actionTranslate_For_Locale_triggered()
         else
         {
             qDebug()<<QString("Filename = ") + fileName;
-            success = dal->exportTranslatableCSV(fileName);
+            success = deps->dal->exportTranslatableCSV(fileName);
         }
         if(!success){
             QMessageBox::information(this, tr("Error exporting translation data"), "Data export encoutered one or more errors. Your file may be corrupt or incomplete.");
@@ -2062,7 +2064,7 @@ void MainWindow::on_actionTranslate_For_Locale_triggered()
 
 void MainWindow::on_bondAdd_pushButton_clicked()
 {
-    AddBondDialog addbonddialog(dal, &curCharacter,"Bonds");
+    AddBondDialog addbonddialog(deps, &curCharacter,"Bonds");
     const int result = addbonddialog.exec();
     if (result == QDialog::Accepted){
         qDebug() << "Accepted: getting bond";

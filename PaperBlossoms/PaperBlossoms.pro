@@ -25,58 +25,90 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += \
-    src/aboutdialog.cpp \
-    src/addbonddialog.cpp \
-    src/dblocalisationeditordialog.cpp \
+    src/dependency/databasedependency.cpp \
+    src/dependency/dependencybuilder.cpp \
+    src/dialog/aboutdialog.cpp \
+    src/dialog/addadvancedialog.cpp \
+    src/dialog/addbonddialog.cpp \
+    src/dialog/adddisadvdialog.cpp \
+    src/dialog/additemdialog.cpp \
+    src/dialog/addtitledialog.cpp \
+    src/dialog/dblocalisationeditordialog.cpp \
+    src/dialog/edituserdescriptionsdialog.cpp \
+    src/dialog/renderdialog.cpp \
     src/mainwindow.cpp \
-    src/addadvancedialog.cpp \
-    src/adddisadvdialog.cpp \
-    src/additemdialog.cpp \
-    src/addtitledialog.cpp \
     src/character.cpp \
     src/clicklabel.cpp \
-    src/dataaccesslayer.cpp \
+    src/repository/abstractrepository.cpp \
+    src/repository/advantagesrepository.cpp \
+    src/repository/bondsrepository.cpp \
+    src/repository/clansrepository.cpp \
+    src/repository/dataaccesslayer.cpp \
     src/dynamicchoicewidget.cpp \
     src/main.cpp \
-    src/newcharacterwizard.cpp \
-    src/newcharwizardpage1.cpp \
-    src/newcharwizardpage2.cpp \
-    src/newcharwizardpage3.cpp \
-    src/newcharwizardpage4.cpp \
-    src/newcharwizardpage5.cpp \
-    src/newcharwizardpage6.cpp \
-    src/newcharwizardpage7.cpp \
+    src/characterwizard/newcharacterwizard.cpp \
+    src/characterwizard/newcharwizardpage1.cpp \
+    src/characterwizard/newcharwizardpage2.cpp \
+    src/characterwizard/newcharwizardpage3.cpp \
+    src/characterwizard/newcharwizardpage4.cpp \
+    src/characterwizard/newcharwizardpage5.cpp \
+    src/characterwizard/newcharwizardpage6.cpp \
+    src/characterwizard/newcharwizardpage7.cpp \
     src/pboutputdata.cpp \
-    src/renderdialog.cpp \
-    src/ringviewer.cpp \
-    src/edituserdescriptionsdialog.cpp
+    src/repository/familiesrepository.cpp \
+    src/repository/hertiagesrepository.cpp \
+    src/repository/inventoryrepository.cpp \
+    src/repository/regionsrepository.cpp \
+    src/repository/ringsrepository.cpp \
+    src/repository/schoolsrepository.cpp \
+    src/repository/skillsrepository.cpp \
+    src/repository/techniquesrepository.cpp \
+    src/repository/titlesrepository.cpp \
+    src/repository/upbringingsrepository.cpp \
+    src/ringviewer.cpp
 
 HEADERS += \
-    src/aboutdialog.h \
-    src/addbonddialog.h \
-    src/dblocalisationeditordialog.h \
+    src/dependency/databasedependency.h \
+    src/dependency/dependencybuilder.h \
+    src/dialog/aboutdialog.h \
+    src/dialog/addadvancedialog.h \
+    src/dialog/addbonddialog.h \
+    src/dialog/adddisadvdialog.h \
+    src/dialog/additemdialog.h \
+    src/dialog/addtitledialog.h \
+    src/dialog/dblocalisationeditordialog.h \
+    src/dialog/edituserdescriptionsdialog.h \
+    src/dialog/renderdialog.h \
     src/mainwindow.h \
-    src/addadvancedialog.h \
-    src/adddisadvdialog.h \
-    src/additemdialog.h \
-    src/addtitledialog.h \
     src/character.h \
     src/clicklabel.h \
-    src/dataaccesslayer.h \
+    src/repository/abstractrepository.h \
+    src/repository/advantagesrepository.h \
+    src/repository/bondsrepository.h \
+    src/repository/clansrepository.h \
+    src/repository/dataaccesslayer.h \
     src/dynamicchoicewidget.h \
     src/enums.h \
-    src/newcharacterwizard.h \
-    src/newcharwizardpage1.h \
-    src/newcharwizardpage2.h \
-    src/newcharwizardpage3.h \
-    src/newcharwizardpage4.h \
-    src/newcharwizardpage5.h \
-    src/newcharwizardpage6.h \
-    src/newcharwizardpage7.h \
+    src/characterwizard/newcharacterwizard.h \
+    src/characterwizard/newcharwizardpage1.h \
+    src/characterwizard/newcharwizardpage2.h \
+    src/characterwizard/newcharwizardpage3.h \
+    src/characterwizard/newcharwizardpage4.h \
+    src/characterwizard/newcharwizardpage5.h \
+    src/characterwizard/newcharwizardpage6.h \
+    src/characterwizard/newcharwizardpage7.h \
     src/pboutputdata.h \
-    src/renderdialog.h \
-    src/ringviewer.h \
-    src/edituserdescriptionsdialog.h
+    src/repository/familiesRepository.h \
+    src/repository/hertiagesrepository.h \
+    src/repository/inventoryrepository.h \
+    src/repository/regionsrepository.h \
+    src/repository/ringsrepository.h \
+    src/repository/schoolsrepository.h \
+    src/repository/skillsrepository.h \
+    src/repository/techniquesrepository.h \
+    src/repository/titlesrepository.h \
+    src/repository/upbringingsrepository.h \
+    src/ringviewer.h
 
 FORMS += \
     ui/aboutdialog.ui \

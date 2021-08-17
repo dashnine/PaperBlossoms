@@ -25,7 +25,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "dataaccesslayer.h"
+#include "dependency/databasedependency.h"
+#include "dependency/databasedependency.h"
 #include "character.h"
 #include <QStringListModel>
 #include <QStandardItemModel>
@@ -153,7 +154,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    DataAccessLayer* dal;
+    DatabaseDependency* deps;
     Character curCharacter;
     void populateUI();
     bool m_dirtyDataFlag;
