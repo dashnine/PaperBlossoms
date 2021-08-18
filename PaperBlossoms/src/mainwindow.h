@@ -59,6 +59,8 @@ private slots:
 
     void on_addTitle_pushButton_clicked();
 
+    void on_removeTitle_pushButton_clicked();
+
     void on_koku_spinBox_valueChanged(const int arg1);
 
     void on_bu_spinBox_valueChanged(const int arg1);

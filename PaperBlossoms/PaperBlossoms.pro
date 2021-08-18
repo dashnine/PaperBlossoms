@@ -65,7 +65,18 @@ SOURCES += \
     src/repository/techniquesrepository.cpp \
     src/repository/titlesrepository.cpp \
     src/repository/upbringingsrepository.cpp \
-    src/ringviewer.cpp
+    src/ringviewer.cpp \
+    src/tabs/advancementpage.cpp \
+    src/tabs/backgroundpage.cpp \
+    src/tabs/bondspage.cpp \
+    src/tabs/characterdatapage.cpp \
+    src/tabs/equipmentpage.cpp \
+    src/tabs/personaltraitspage.cpp \
+    src/tools/common.cpp \
+    src/tools/developer.cpp \
+    src/tools/export.cpp \
+    src/tools/file.cpp \
+    src/tools/import.cpp
 
 HEADERS += \
     src/dependency/databasedependency.h \
