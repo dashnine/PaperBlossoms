@@ -34,6 +34,7 @@ NewCharWizardPage6::NewCharWizardPage6(DataAccessLayer *dal, QWidget *parent) :
     this->setTitle(tr("Part 6: Ancestry and Family"));
     ui->setupUi(this);
     this->dal = dal;
+    ui->nc6_HIDDEN_DoubleKoku->setVisible(false); //holds a skill string
     curAncestorBox = NULL;
 
     srand(time(NULL));
@@ -62,6 +63,8 @@ NewCharWizardPage6::NewCharWizardPage6(DataAccessLayer *dal, QWidget *parent) :
     registerField("q17roninBond",ui->nc6_bond_comboBox,"currentText");
     registerField("q17roninText",ui->nc6_q17r_lineEdit);
 
+    //FoV
+    registerField("q18DoubleKoku*", ui->nc6_HIDDEN_DoubleKoku);
 }
 
 NewCharWizardPage6::~NewCharWizardPage6()
@@ -327,7 +330,9 @@ void NewCharWizardPage6::buildq18UI(){ //this is all still in initializePage
     else if(curAncestor == dal->translate("Famous Deed") ||
             curAncestor == dal->translate("Glorious Sacrifice") ||
             curAncestor == dal->translate("Triumph Over the Lion") ||
-            curAncestor == dal->translate("Sacrifice")
+            curAncestor == dal->translate("Sacrifice") ||
+            curAncestor == dal->translate("Blade of 10,000 Battles") ||
+            curAncestor == dal->translate("Victory against the Crane")
 
             ){
         //Item Selection
@@ -362,9 +367,12 @@ void NewCharWizardPage6::buildq18UI(){ //this is all still in initializePage
         ui->nc6_q18_spec2_label->setText("");
 
     }
-    else if (curAncestor == dal->translate("Imperial Heritage")||
-             curAncestor == dal->translate("Triumph During Gempuku")||
-             curAncestor == dal->translate("Touched by the Fortunes")
+    else if (curAncestor == dal->translate("Imperial Heritage") ||
+             curAncestor == dal->translate("Triumph During Gempuku") ||
+             curAncestor == dal->translate("Touched by the Fortunes") ||
+             curAncestor == dal->translate("Born on the Battlefield") ||
+             curAncestor == dal->translate("Selfless Sentinel") ||
+             curAncestor == dal->translate("Right Hand of the Emperor")
 
              ){
         //Advantage
@@ -424,6 +432,37 @@ void NewCharWizardPage6::buildq18UI(){ //this is all still in initializePage
             ui->nc6_q18_spec1_label->setText("");
             ui->nc6_q18_spec2_label->setText("");
 
+        }
+    }
+    else if (curAncestor == dal->translate("Mighty Conqueror")) {
+        ui->nc6_q18_otherLabel->setVisible(true);
+        ui->nc6_q18_otherComboBox->setVisible(true);
+        ui->nc6_q18_otherrollButton->setVisible(false);
+
+        if(ui->nc6_q18_otherComboBox->currentText() == dal->translate("Item (Rank 6 or Lower)")){
+            ui->nc6_q18_secondaryChoice_comboBox->setVisible(true);
+            ui->nc6_q18_secondaryChoice_label->setVisible(true);
+
+            ui->nc6_q18_special1_comboBox->setVisible(false);
+            ui->nc6_q18_special2_comboBox->setVisible(false);
+            ui->nc6_q18_specialInstruction_label->setVisible(false);
+            ui->nc6_q18_specialInstruction_label->setText("");
+            ui->nc6_q18_spec1_label->setVisible(false);
+            ui->nc6_q18_spec2_label->setVisible(false);
+            ui->nc6_q18_spec1_label->setText("");
+            ui->nc6_q18_spec2_label->setText("");
+        }
+        else{ //equipment
+            ui->nc6_q18_secondaryChoice_comboBox->setVisible(false);
+            ui->nc6_q18_secondaryChoice_label->setVisible(false);
+            ui->nc6_q18_special1_comboBox->setVisible(false);
+            ui->nc6_q18_special2_comboBox->setVisible(false);
+            ui->nc6_q18_specialInstruction_label->setVisible(false);
+            ui->nc6_q18_specialInstruction_label->setText("");
+            ui->nc6_q18_spec1_label->setVisible(false);
+            ui->nc6_q18_spec2_label->setVisible(false);
+            ui->nc6_q18_spec1_label->setText("");
+            ui->nc6_q18_spec2_label->setText("");
         }
     }
     /////////////////////////////////////////////
@@ -591,7 +630,7 @@ void NewCharWizardPage6::on_nc6_q18_otherComboBox_currentIndexChanged(const QStr
             break;
         case 10:
             ////////////////// Heritage 10
-            if (effectresult == dal->translate("Item (Rank 6 or lower)")){
+            if (effectresult == dal->translate("Item (Rank 6 or Lower)")){
                 //do item adds
                 ui->nc6_q18_secondaryChoice_comboBox->addItems(dal->qsl_getitemsunderrarity(6));
             }
@@ -706,6 +745,50 @@ void NewCharWizardPage6::on_nc6_q18_otherComboBox_currentIndexChanged(const QStr
                 }
             }
             break;
+        }
+
+    }
+
+    //Fields of Victory
+    else if(ui->heritagetable_comboBox->currentText() == "FoV"){
+        switch (heritageRow) {
+            case 3:
+            case 6:
+            case 7:
+                if (effectresult == dal->translate("weapon")){
+                    ui->nc6_q18_secondaryChoice_comboBox->addItems(dal->qsl_getitemsbytype("Weapon"));
+                } else if (effectresult == dal->translate("Any weapon")) {
+                    ui->nc6_q18_secondaryChoice_comboBox->addItems(dal->qsl_getitemsbytype("Weapon"));
+                } else if (effectresult == dal->translate("Any game set")) {
+                    ui->nc6_q18_secondaryChoice_comboBox->addItem(dal->translate("Game Set"));
+                } else if (effectresult == dal->translate("Other item relevant to your ancestor's victory")) {
+                    ui->nc6_q18_secondaryChoice_comboBox->addItems(dal->qsl_getitemsbytype("Item"));
+                } else if (effectresult == dal->translate("horse or other animal")) {
+                    ui->nc6_q18_secondaryChoice_comboBox->addItem(dal->translate("Horse"));
+                    ui->nc6_q18_secondaryChoice_comboBox->addItem(dal->translate("Animal"));
+                } else if (effectresult == dal->translate("The deed to a small piece of land on the border of Crane territory")) {
+                    ui->nc6_q18_secondaryChoice_comboBox->addItem(dal->translate("Estate"));
+                }
+
+                ui->nc6_q18_special1_comboBox->addItems(dal->qsl_getqualities());
+                ui->nc6_q18_special2_comboBox->addItems(dal->qsl_getqualities());
+
+                break;
+            case 9:
+                ui->nc6_HIDDEN_DoubleKoku->setText("0");
+
+                if (effectresult == dal->translate("Item (Rank 6 or Lower)")){
+                    ui->nc6_q18_secondaryChoice_comboBox->addItems(dal->qsl_getitemsunderrarity(6));
+
+                    ui->nc6_q18_special1_comboBox->addItems(dal->qsl_getqualities());
+                    ui->nc6_q18_special2_comboBox->addItems(dal->qsl_getqualities());
+                } else if (effectresult == dal->translate("Double your starting koku")) {
+                    ui->nc6_HIDDEN_DoubleKoku->setText("1");
+                }
+
+                break;
+            default:
+                break;
         }
 
     }
@@ -977,7 +1060,12 @@ QMap<QString, int> NewCharWizardPage6::calcSkills(){
                heritage ==   dal->translate("A Little Too Close To Heaven")||
                //Celestial realms
                heritage ==   dal->translate("Great Treatise")||
-               heritage ==   dal->translate("Guardian of Forbidden Knowledge")
+               heritage ==   dal->translate("Guardian of Forbidden Knowledge")||
+
+               //FoV
+               heritage ==   dal->translate("Strategic Mastermind")||
+               heritage ==   dal->translate("Victory against Invaders")||
+               heritage ==   dal->translate("Shamed by Defeat")
 
                ){
             skills.append(field("q18OtherEffects").toString());

@@ -300,7 +300,7 @@ def write_techniques(data_dir, techniques_enum, technique_subcategories_enum, te
         data_dir.joinpath('json_schema/schools.schema.json'),
         'starting_techniques',
         'set',
-        techniques_enum
+        techniques_enum + technique_subcategories_enum
     )
 
 
