@@ -842,24 +842,24 @@ QMap<QString, int> NewCharWizardPage7::calcRings(){
     }
 
     if(field("characterType").toString()=="Samurai"){
-    //NOW - CALCULATE EXISTING RINGS
-    //clan
-    ringmap[dal->qs_getclanring(field("currentClan").toString())]++;
-    //family
-    ringmap[field("familyRing").toString()]++;
-}
+        //NOW - CALCULATE EXISTING RINGS
+        //clan
+        ringmap[dal->qs_getclanring(field("currentClan").toString())]++;
+        //family
+        ringmap[field("familyRing").toString()]++;
+    }
 
 
 
     ///////////PoW
     ///
     ///
-else{
-    //region
-    ringmap[dal->qs_getregionring(field("currentRegion").toString())]++;
-    //upbringing
-    ringmap[field("upbringingRing").toString()]++;
-}
+    else{
+        //region
+        ringmap[dal->qs_getregionring(field("currentRegion").toString())]++;
+        //upbringing
+        ringmap[field("upbringingRing").toString()]++;
+    }
     /////////////////
 
 
