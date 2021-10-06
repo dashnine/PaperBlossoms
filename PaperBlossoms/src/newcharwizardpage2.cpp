@@ -79,6 +79,7 @@ NewCharWizardPage2::NewCharWizardPage2(DataAccessLayer* dal, QWidget *parent) :
 
 
     ringModel->setStringList(dal->qsl_getrings());
+    ui->nc2_school_ComboBox->setCurrentIndex(-1);
 
     registerField("currentSchool",ui->nc2_school_ComboBox,"currentText");
     registerField("currentSchoolIndex*",ui->nc2_school_ComboBox);
