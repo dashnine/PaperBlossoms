@@ -36,7 +36,6 @@ NewCharWizardPage1::NewCharWizardPage1(DataAccessLayer* dal, QWidget *parent) :
     ui->setupUi(this);
     this->dal = dal;
     this->setTitle(tr("Part 1: Clan and Family"));
-
     //initialize models
     clanModel = new QStringListModel;
     familyModel = new QStringListModel;
@@ -98,6 +97,9 @@ NewCharWizardPage1::NewCharWizardPage1(DataAccessLayer* dal, QWidget *parent) :
 
     setSamuraiVisibilty(true);
 
+
+    ui->characterType_comboBox->setCurrentIndex(-1);
+    ui->characterType_comboBox->setCurrentIndex(0);
     regenSummary();
 }
 
@@ -168,6 +170,8 @@ void NewCharWizardPage1::on_nc1_clan_ComboBox_currentIndexChanged(const QString 
     }
     else {
         ui->nc1_clan_TextEdit->setText("");
+        ui->nc1_family_ComboBox->setCurrentIndex(-1);
+        ui->nc1_family_TextEdit->setText("");
     }
 
 
@@ -225,6 +229,7 @@ void NewCharWizardPage1::regenSummary(){
 QMap<QString, int> NewCharWizardPage1::calcCurrentRings(){
     QMap<QString, int> ringmap;
     QStringList ringlist = dal->qsl_getrings();
+
 
     foreach (const QString ring, ringlist) {
         ringmap[ring] = 1;

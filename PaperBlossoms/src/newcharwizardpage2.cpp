@@ -88,7 +88,7 @@ NewCharWizardPage2::NewCharWizardPage2(DataAccessLayer* dal, QWidget *parent) :
     registerField("ringChoices",ui->ringWidget,"selections",SIGNAL(selectionsChanged));
     //registerField("techstring*",ui->nc2_completePlaceholder_lineEdit);
     registerField("schoolSpecialRing",ui->nc2_schoolSpecialtRing_ComboBox,"currentText");
-    registerField("schoolSpecialRingIndex*",ui->nc2_schoolSpecialtRing_ComboBox);
+    registerField("schoolSpecialRingIndex",ui->nc2_schoolSpecialtRing_ComboBox);
     registerField("schoolSkills*",ui->nc2_HIDDEN_skillLineEdit);
     registerField("q4Text",ui->nc2_q4_lineEdit);
     registerField("schoolotherchoice",ui->nc2_otherchoice_comboBox,"currentText");
@@ -575,13 +575,15 @@ QMap<QString, int> NewCharWizardPage2::calcCurrentRings(){
         /////////////////
     }
 
-    //school
-    //QStringList schoolrings = dal->qsl_getschoolrings(field("currentSchool").toString());
-    QStringList schoolrings = field("ringChoices").toString().split("|");
-    schoolrings.removeAll("");
+    if(ui->nc2_school_ComboBox->currentIndex()!=-1){
+        //school
+        //QStringList schoolrings = dal->qsl_getschoolrings(field("currentSchool").toString());
+        QStringList schoolrings = field("ringChoices").toString().split("|");
+        schoolrings.removeAll("");
 
-    foreach (const QString r, schoolrings){
-        ringmap[r]++;
+        foreach (const QString r, schoolrings){
+            ringmap[r]++;
+        }
     }
     //standout
     ringmap[field("schoolSpecialRing").toString()]++;
