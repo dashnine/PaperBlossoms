@@ -64,7 +64,7 @@ NewCharWizardPage6::NewCharWizardPage6(DataAccessLayer *dal, QWidget *parent) :
     registerField("q17roninText",ui->nc6_q17r_lineEdit);
 
     //FoV
-    registerField("q18DoubleKoku*", ui->nc6_HIDDEN_DoubleKoku);
+    registerField("q18DoubleKoku", ui->nc6_HIDDEN_DoubleKoku);
 }
 
 NewCharWizardPage6::~NewCharWizardPage6()

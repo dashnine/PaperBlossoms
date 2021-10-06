@@ -121,7 +121,7 @@ void NewCharWizardPage7::initializePage()
     const QString heritageSourceTable = field("q18SourceTable").toString();
     const QString roninbond = field("q17roninBond").toString();                 //pow
     const QString q17roninText = field("q17roninText").toString();              //pow
-    const bool q18DoubleKoku = field("q18DoubleKoku").toString() == "1";
+    const bool q18DoubleKoku = field("q18DoubleKoku").toString() == "1";        //fov
 
 
 
