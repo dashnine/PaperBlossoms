@@ -2063,7 +2063,7 @@
                 "special_access": false
             },
             {
-                "name": "Meditation",
+                "name": "Medicine",
                 "type": "skill",
                 "special_access": false
             },
@@ -2620,7 +2620,7 @@
         "social_awards": [
             {
                 "award_attribute": "glory",
-                "base_award": 10,
+                "base_award": 20,
                 "constraint": {
                     "type": "max",
                     "value": 100

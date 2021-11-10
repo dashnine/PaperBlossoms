@@ -24727,7 +24727,7 @@
         "starting_outfit": [
             {
                 "size": 1,
-                "set": [ "Resplendent Traveling Clothes" ]
+                "set": [ "Traveling Clothes" ]
             },
             {
                 "size": 1,
@@ -25488,7 +25488,7 @@
             },
             {
                 "rank": 3,
-                "advance": "Imbue Outburst",
+                "advance": "Imbue Thunder",
                 "type": "technique",
                 "special_access": true
             },
@@ -25619,6 +25619,7 @@
             {
                 "size": 1,
                 "set": [
+                    "Fortress of Necessity",
                     "Stonewall Tactics",
                     "Weight of Duty"
                 ]
@@ -25895,7 +25896,7 @@
                 "rank": 5,
                 "advance": "The Immovable Hand of Peace",
                 "type": "technique",
-                "special_access": true
+                "special_access": false
             }
         ],
         "mastery_ability": "Unbreakable Resolve"
@@ -26216,8 +26217,12 @@
         "techniques_available": [ "Kata", "Rituals", "Sh\u016bji" ],
         "starting_techniques": [
             {
+                "size": 2,
+                "set": [ "Coursing March Chant", "Courtier's Resolve", "Honest Assessment", "Stirring the Embers" ]
+            },
+            {
                 "size": 1,
-                "set": [ "Courtier's Resolve", "Honest Assessment", "Stirring the Embers" ]
+                "set": [ "Ichirō Pattern" ]
             }
         ],
         "school_ability": "Hide of Iron",
@@ -26776,7 +26781,7 @@
                 "rank": 5,
                 "advance": "Striking as Void",
                 "type": "technique",
-                "special_access": true
+                "special_access": false
             }
         ],
         "mastery_ability": "The Herd Flourishes Together"
