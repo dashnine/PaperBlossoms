@@ -79,5 +79,86 @@
         },
         "xp_cost": 6,
         "rarity_modifier": 4
+    },
+    {
+        "name": "Akodo Pattern",
+        "reference": {
+            "book": "FoV",
+            "page": 93
+        },
+        "xp_cost": 6,
+        "rarity_modifier": 4
+    },
+    {
+        "name": "Burning Water Pattern",
+        "reference": {
+            "book": "FoV",
+            "page": 93
+        },
+        "xp_cost": 6,
+        "rarity_modifier": 4
+    },
+    {
+        "name": "Concealment Pattern",
+        "reference": {
+            "book": "FoV",
+            "page": 93
+        },
+        "xp_cost": 6,
+        "rarity_modifier": 4
+    },
+    {
+        "name": "Deadly Fangs Pattern",
+        "reference": {
+            "book": "FoV",
+            "page": 94
+        },
+        "xp_cost": 7,
+        "rarity_modifier": 4
+    },
+    {
+        "name": "Fearsome Snarl Pattern",
+        "reference": {
+            "book": "FoV",
+            "page": 94
+        },
+        "xp_cost": 3,
+        "rarity_modifier": 1
+    },
+    {
+        "name": "Ichir\u014d Pattern",
+        "reference": {
+            "book": "FoV",
+            "page": 94
+        },
+        "xp_cost": 4,
+        "rarity_modifier": -1
+    },
+    {
+        "name": "Mountain Silk Pattern",
+        "reference": {
+            "book": "FoV",
+            "page": 94
+        },
+        "xp_cost": 6,
+        "rarity_modifier": 3
+    },
+    {
+        "name": "Screaming Fire Pattern",
+        "reference": {
+            "book": "FoV",
+            "page": 94
+        },
+        "xp_cost": 6,
+        "rarity_modifier": 4
+    },
+    {
+        "name": "Toriyama's Endurance Pattern",
+        "reference": {
+            "book": "FoV",
+            "page": 94
+        },
+        "xp_cost": 3,
+        "rarity_modifier": 3
     }
 ]

@@ -1472,5 +1472,173 @@
             "book": "CR",
             "page": 88
         }
+    },
+    {
+        "name": "Animal Helm",
+        "reference": {
+            "book": "FoV",
+            "page": 90
+        },
+        "price": {
+            "value": 1,
+            "unit": "koku"
+        },
+        "rarity": 9,
+        "qualities": ["Wargear"]
+    },
+    {
+        "name": "Blasting Powder (1 Charge)",
+        "reference": {
+            "book": "FoV",
+            "page": 90
+        },
+        "price": {
+            "value": 20,
+            "unit": "koku"
+        },
+        "rarity": 9,
+        "qualities": ["Ceremonial", "Forbidden to non-shugenja"]
+    },
+    {
+        "name": "Battlefield Heirloom",
+        "reference": {
+            "book": "FoV",
+            "page": 90
+        }
+    },
+    {
+        "name": "Battlefield Medical Pack",
+        "reference": {
+            "book": "FoV",
+            "page": 90
+        },
+        "price": {
+            "value": 2,
+            "unit": "bu"
+        },
+        "rarity": 3
+    },
+    {
+        "name": "Brilliant Flare",
+        "reference": {
+            "book": "FoV",
+            "page": 90
+        },
+        "price": {
+            "value": 1,
+            "unit": "koku"
+        },
+        "rarity": 6,
+        "qualities": ["Wargear"]
+    },
+    {
+        "name": "Gunbai",
+        "reference": {
+            "book": "FoV",
+            "page": 91
+        },
+        "price": {
+            "value": 3,
+            "unit": "koku"
+        },
+        "rarity": 4,
+        "qualities": ["Ceremonial", "Wargear"]
+    },
+    {
+        "name": "Memp\u014d",
+        "reference": {
+            "book": "FoV",
+            "page": 91
+        },
+        "price": {
+            "value": 5,
+            "unit": "koku"
+        },
+        "rarity": 4,
+        "qualities": ["Ceremonial", "Wargear"]
+    },
+    {
+        "name": "Saihai",
+        "reference": {
+            "book": "FoV",
+            "page": 91
+        },
+        "price": {
+            "value": 4,
+            "unit": "bu"
+        },
+        "rarity": 3,
+        "qualities": ["Ceremonial", "Wargear"]
+    },
+    {
+        "name": "Sashimono",
+        "reference": {
+            "book": "FoV",
+            "page": 91
+        },
+        "price": {
+            "value": 6,
+            "unit": "bu"
+        },
+        "rarity": 2,
+        "qualities": ["Wargear"]
+    },
+    {
+        "name": "Smoking Pipe",
+        "reference": {
+            "book": "FoV",
+            "page": 91
+        },
+        "price": {
+            "value": 1,
+            "unit": "bu"
+        },
+        "rarity": 2
+    },
+    {
+        "name": "Tetsubishi",
+        "reference": {
+            "book": "FoV",
+            "page": 91
+        },
+        "price": {
+            "value": 5,
+            "unit": "bu"
+        },
+        "rarity": 4
+    },
+    {
+        "name": "Uma-Jirushi",
+        "reference": {
+            "book": "FoV",
+            "page": 91
+        },
+        "price": {
+            "value": 3,
+            "unit": "koku"
+        },
+        "rarity": 7,
+        "qualities": ["Resplendent", "Wargear"]
+    },
+    {
+        "name": "Satchel of Messages",
+        "reference": {
+            "book": "FoV",
+            "page": 78
+        }
+    },
+    {
+        "name": "Bonded Animal",
+        "reference": {
+            "book": "FoV",
+            "page": 80
+        }
+    },
+    {
+        "name": "Two Bonded Animals",
+        "reference": {
+            "book": "FoV",
+            "page": 80
+        }
     }
 ]

@@ -16,8 +16,20 @@
                 "type": "object",
                 "properties": {
                     "book": {
-                        "description": "Book in which reference can be found",
-                        "type": "string"
+                          "description": "Book in which reference can be found",
+                          "type": "string",
+                          "enum": [
+                            "CR",
+                            "CoS",
+                            "Core",
+                            "DT",
+                            "EE",
+                            "GMK",
+                            "Mantis",
+                            "PoW",
+                            "SL",
+                            "FoV"
+                          ]
                     },
                     "page": {
                         "description": "Page on which reference can be found",

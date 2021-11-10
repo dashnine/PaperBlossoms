@@ -79,6 +79,7 @@ NewCharWizardPage2::NewCharWizardPage2(DataAccessLayer* dal, QWidget *parent) :
 
 
     ringModel->setStringList(dal->qsl_getrings());
+    ui->nc2_school_ComboBox->setCurrentIndex(-1);
 
     registerField("currentSchool",ui->nc2_school_ComboBox,"currentText");
     registerField("currentSchoolIndex*",ui->nc2_school_ComboBox);
@@ -88,7 +89,7 @@ NewCharWizardPage2::NewCharWizardPage2(DataAccessLayer* dal, QWidget *parent) :
     registerField("ringChoices",ui->ringWidget,"selections",SIGNAL(selectionsChanged));
     //registerField("techstring*",ui->nc2_completePlaceholder_lineEdit);
     registerField("schoolSpecialRing",ui->nc2_schoolSpecialtRing_ComboBox,"currentText");
-    registerField("schoolSpecialRingIndex*",ui->nc2_schoolSpecialtRing_ComboBox);
+    registerField("schoolSpecialRingIndex",ui->nc2_schoolSpecialtRing_ComboBox);
     registerField("schoolSkills*",ui->nc2_HIDDEN_skillLineEdit);
     registerField("q4Text",ui->nc2_q4_lineEdit);
     registerField("schoolotherchoice",ui->nc2_otherchoice_comboBox,"currentText");
@@ -118,6 +119,10 @@ void NewCharWizardPage2::equipSelectionChanged(const QString newText){
         "Two Items of Rarity 4 or Lower",
         "Two Weapons of Rarity 6 or Lower",
         "One Sword of Rarity 7 or Lower",
+
+        //FoV
+        "Two Weapons of Rarity 7 or Lower",
+
         //PoW
         "One weapon of your signature weapon category of rarity 8 or lower",
         "One Item of Rarity 3 or Lower",
@@ -159,7 +164,6 @@ void NewCharWizardPage2::handleSpecCases(QString speccase){
     else if (specCase == "Two Weapons of Rarity 6 or Lower"){
         ui->equipSpecialWidget->addCBox(dal->qsl_getweaponsunderrarity(6));
         ui->equipSpecialWidget->addCBox(dal->qsl_getweaponsunderrarity(6));
-
     }
     else if (specCase == "Two Items of Rarity 4 or Lower") {
         ui->equipSpecialWidget->addCBox(dal->qsl_getitemsunderrarity(4));
@@ -188,7 +192,11 @@ void NewCharWizardPage2::handleSpecCases(QString speccase){
     else if (specCase == "One Item of Rarity 6 or Lower") {
         ui->equipSpecialWidget->addCBox(dal->qsl_getitemsunderrarity(6));
     }
-
+    //FoV
+    else if (specCase == "Two Weapons of Rarity 7 or Lower"){
+        ui->equipSpecialWidget->addCBox(dal->qsl_getweaponsunderrarity(7));
+        ui->equipSpecialWidget->addCBox(dal->qsl_getweaponsunderrarity(7));
+    }
 }
 
 void NewCharWizardPage2::initializePage(){
@@ -298,6 +306,8 @@ void NewCharWizardPage2::on_nc2_school_ComboBox_currentIndexChanged(const QStrin
     skillOptModel->setStringList(dal->qsl_getschoolskills(arg1)); //set list with school contents
     skillSelModel->setStringList( QStringList{} );  //clear prior selections, since this changed
 
+    const QStringList subcategories = dal->qsl_gettechniquessubtypes();
+
     //TECHNIQUES//
     ui->techWidget->clear();
     const QList<QStringList> techsets = dal->ql_getlistsoftech(arg1);
@@ -305,9 +315,31 @@ void NewCharWizardPage2::on_nc2_school_ComboBox_currentIndexChanged(const QStrin
         int choosenum = techsets.at(row).at(0).toInt();
         for(int boxcount = 0; boxcount < choosenum;++boxcount){
             QStringList choicesetforcombobox = techsets.at(row);
+            QStringList map;
             choicesetforcombobox.removeFirst();
-            qDebug() << "Adding Box: " << choicesetforcombobox ;
-            ui->techWidget->addCBox(choicesetforcombobox, "Choose a technique:");
+
+            bool added = false;
+            for (const auto& option : choicesetforcombobox){
+                added = false;
+                for (const auto& subcategory : subcategories){
+                    if (added){
+                        break;
+                    }
+
+                    if (subcategory == option) {
+                        map << dal->qsl_gettechniquesbysubcategory(option, 1, 1);
+                        added = true;
+                    }
+                }
+
+                if (added == false) {
+                    map << option;
+                }
+            }
+
+            qDebug() << "Adding Box: " << map ;
+
+            ui->techWidget->addCBox(map, "Choose a technique:");
         }
     }
 
@@ -353,6 +385,8 @@ void NewCharWizardPage2::doEquip(const QString school){
         "Two Items of Rarity 4 or Lower",
         "Two Weapons of Rarity 6 or Lower",
         "One Sword of Rarity 7 or Lower",
+        //FoV
+        "Two Weapons of Rarity 7 or Lower",
         //PoW
         "One weapon of your signature weapon category of rarity 8 or lower",
         "One Item of Rarity 3 or Lower",
@@ -519,33 +553,38 @@ QMap<QString, int> NewCharWizardPage2::calcCurrentRings(){
         ringmap[ring] = 1;
     }
 
-    //NOW - CALCULATE EXISTING RINGS
-    //clan
-    ringmap[dal->qs_getclanring(field("currentClan").toString())]++;
-    //family
-    ringmap[field("familyRing").toString()]++;
 
+    if(field("characterType").toString()=="Samurai"){
+        //NOW - CALCULATE EXISTING RINGS
+        //clan
+        ringmap[dal->qs_getclanring(field("currentClan").toString())]++;
+        //family
+        ringmap[field("familyRing").toString()]++;
 
+    }
+    else{
 
-    ///////////PoW
-    ///
-    ///
+        ///////////PoW
+        ///
+        ///
 
-    //region
-    ringmap[dal->qs_getregionring(field("currentRegion").toString())]++;
-    //upbringing
-    ringmap[field("upbringingRing").toString()]++;
+        //region
+        ringmap[dal->qs_getregionring(field("currentRegion").toString())]++;
+        //upbringing
+        ringmap[field("upbringingRing").toString()]++;
 
-    /////////////////
+        /////////////////
+    }
 
+    if(ui->nc2_school_ComboBox->currentIndex()!=-1){
+        //school
+        //QStringList schoolrings = dal->qsl_getschoolrings(field("currentSchool").toString());
+        QStringList schoolrings = field("ringChoices").toString().split("|");
+        schoolrings.removeAll("");
 
-    //school
-    //QStringList schoolrings = dal->qsl_getschoolrings(field("currentSchool").toString());
-    QStringList schoolrings = field("ringChoices").toString().split("|");
-    schoolrings.removeAll("");
-
-    foreach (const QString r, schoolrings){
-        ringmap[r]++;
+        foreach (const QString r, schoolrings){
+            ringmap[r]++;
+        }
     }
     //standout
     ringmap[field("schoolSpecialRing").toString()]++;

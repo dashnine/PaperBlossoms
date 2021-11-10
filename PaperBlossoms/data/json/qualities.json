@@ -110,5 +110,12 @@
             "book": "Core",
             "page": 241
         }
+    },
+    {
+        "name": "Forbidden to non-shugenja",
+        "reference": {
+            "book": "FoV",
+            "page": 90
+        }
     }
 ]

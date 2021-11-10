@@ -36,7 +36,6 @@ NewCharWizardPage1::NewCharWizardPage1(DataAccessLayer* dal, QWidget *parent) :
     ui->setupUi(this);
     this->dal = dal;
     this->setTitle(tr("Part 1: Clan and Family"));
-
     //initialize models
     clanModel = new QStringListModel;
     familyModel = new QStringListModel;
@@ -98,6 +97,9 @@ NewCharWizardPage1::NewCharWizardPage1(DataAccessLayer* dal, QWidget *parent) :
 
     setSamuraiVisibilty(true);
 
+
+    ui->characterType_comboBox->setCurrentIndex(-1);
+    ui->characterType_comboBox->setCurrentIndex(0);
     regenSummary();
 }
 
@@ -168,6 +170,8 @@ void NewCharWizardPage1::on_nc1_clan_ComboBox_currentIndexChanged(const QString 
     }
     else {
         ui->nc1_clan_TextEdit->setText("");
+        ui->nc1_family_ComboBox->setCurrentIndex(-1);
+        ui->nc1_family_TextEdit->setText("");
     }
 
 
@@ -225,30 +229,34 @@ void NewCharWizardPage1::regenSummary(){
 QMap<QString, int> NewCharWizardPage1::calcCurrentRings(){
     QMap<QString, int> ringmap;
     QStringList ringlist = dal->qsl_getrings();
+
+
     foreach (const QString ring, ringlist) {
         ringmap[ring] = 1;
     }
 
-    //NOW - CALCULATE EXISTING RINGS
-    //clan
-    ringmap[dal->qs_getclanring(field("currentClan").toString())]++;
-    //family
-    ringmap[field("familyRing").toString()]++;
 
+    if(field("characterType").toString()=="Samurai"){
+        //NOW - CALCULATE EXISTING RINGS
+        //clan
+        ringmap[dal->qs_getclanring(field("currentClan").toString())]++;
+        //family
+        ringmap[field("familyRing").toString()]++;
+    }
 
 
     ///////////PoW
     ///
     ///
-
-    //region
-    ringmap[dal->qs_getregionring(field("currentRegion").toString())]++;
-    //upbringing
-    ringmap[field("upbringingRing").toString()]++;
-
+    else{
+        //region
+        ringmap[dal->qs_getregionring(field("currentRegion").toString())]++;
+        //upbringing
+        ringmap[field("upbringingRing").toString()]++;
+    }
     /////////////////
 
-
+/*  //For now, let's not calc school since that comes later...
     //school
     //QStringList schoolrings = dal->qsl_getschoolrings(field("currentSchool").toString());
     QStringList schoolrings = field("ringChoices").toString().split("|");
@@ -259,6 +267,8 @@ QMap<QString, int> NewCharWizardPage1::calcCurrentRings(){
     }
     //standout
     ringmap[field("schoolSpecialRing").toString()]++;
+
+*/
     qDebug() << ringmap;
     return ringmap;
 }

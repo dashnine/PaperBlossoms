@@ -249,6 +249,10 @@ public:
     int i_getupbringingzeni(const QString upbringing);
     QString qs_getupbringingitem(const QString upbringing);
 
+    //FoV
+    QStringList qsl_gettechniquessubtypes();
+    QStringList qsl_gettechniquesbysubcategory(const QString subcategory, const int minRank, const int maxRank);
+
     //tech refactor
     QList<QStringList> ql_getalltechniques();
     QList<QStringList> qsl_getschoolcurriculum(const QString school);

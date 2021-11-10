@@ -1905,5 +1905,833 @@
                 "rank": 1
             }
         ]
+    },
+    {
+        "name": "Ashigaru",
+        "reference": {
+            "book": "FoV",
+            "page": 131
+        },
+        "social_awards": [
+            {
+                "award_attribute": "status",
+                "base_award": 3,
+                "constraint": {
+                    "type": "max",
+                    "value": 19
+                }
+            },
+            {
+                "award_attribute": "glory",
+                "base_award": 5,
+                "constraint": {
+                    "type": "max",
+                    "value": 29
+                }
+            }
+        ],
+        "xp_to_completion": 20,
+        "title_ability": "A Thousand Stinging Cuts",
+        "advancements": [
+            {
+                "name": "Martial skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Courtesy",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Command",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Survival",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Kata",
+                "rank": 2,
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "name": "Thicket's Embrace Style",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Slippery Maneuvers",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "Deathseeker",
+        "reference": {
+            "book": "FoV",
+            "page": 132
+        },
+        "social_awards": [
+            {
+                "award_attribute": "status",
+                "base_award": -25,
+                "constraint": {
+                    "type": "min",
+                    "value": 20
+                }
+            }
+        ],
+        "xp_to_completion": 8,
+        "title_ability": "Kifu's Oath",
+        "advancements": [
+            {
+                "name": "Martial skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Courtesy",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Labor",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Theology",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Kata",
+                "type": "technique_group",
+                "rank": 3,
+                "special_access": true
+            },
+            {
+                "name": "A Samurai's Fate",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Moment of Glory",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "Elemental Guard",
+        "reference": {
+            "book": "FoV",
+            "page": 132
+        },
+        "social_awards": [
+            {
+                "award_attribute": "status",
+                "base_award": 10
+            },
+            {
+                "award_attribute": "glory",
+                "base_award": 10
+            }
+        ],
+        "xp_to_completion": 20,
+        "title_ability": "Wrath of the Elements",
+        "advancements": [
+            {
+                "name": "Martial skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Command",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Government",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Medicine",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Beseech Shiba's Calm",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Tactical Assessment",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Warrior's Resolve",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "Elemental Legionnaire",
+        "reference": {
+            "book": "FoV",
+            "page": 133
+        },
+        "social_awards": [
+            {
+                "award_attribute": "status",
+                "base_award": 10
+            },
+            {
+                "award_attribute": "glory",
+                "base_award": 10
+            }
+        ],
+        "xp_to_completion": 24,
+        "title_ability": "Strength of the Elements",
+        "advancements": [
+            {
+                "name": "Martial skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Command",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Medicine",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Smithing",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Kata",
+                "rank": 3,
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "name": "Great Anvil's Measure",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Moment of Glory",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "General",
+        "reference": {
+            "book": "FoV",
+            "page": 133
+        },
+        "social_awards": [
+            {
+                "award_attribute": "status",
+                "base_award": 25,
+                "constraint": {
+                    "type": "max",
+                    "value": 85
+                }
+            },
+            {
+                "award_attribute": "glory",
+                "base_award": 10
+            }
+        ],
+        "xp_to_completion": 50,
+        "title_ability": "Superior Command",
+        "advancements": [
+            {
+                "name": "Social skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Martial skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Government",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Survival",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Kata",
+                "rank": 2,
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "name": "Rituals",
+                "rank": 3,
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Sh\u016bji",
+                "rank": 4,
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "Lion's Pride Warrior",
+        "reference": {
+            "book": "FoV",
+            "page": 133
+        },
+        "social_awards": [
+            {
+                "award_attribute": "status",
+                "base_award": 20,
+                "constraint": {
+                    "type": "max",
+                    "value": 59
+                }
+            },
+            {
+                "award_attribute": "glory",
+                "base_award": 10
+            }
+        ],
+        "xp_to_completion": 24,
+        "title_ability": "Fury of Matsu",
+        "advancements": [
+            {
+                "name": "Martial skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Command",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Sentiment",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Survival",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Kata",
+                "rank": 3,
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "name": "A Samurai's Fate",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Battle of No Escape",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "Master Saboteur",
+        "reference": {
+            "book": "FoV",
+            "page": 134
+        },
+        "social_awards": [],
+        "xp_to_completion": 40,
+        "title_ability": "Ender of Works",
+        "advancements": [
+            {
+                "name": "Trade skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Government",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Martial Arts [Unarmed]",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Medicine",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Ninjutsu",
+                "rank": 2,
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "name": "Imbue Thunder",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Wreak Havoc",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "Poet of War",
+        "reference": {
+            "book": "FoV",
+            "page": 134
+        },
+        "social_awards": [
+            {
+                "award_attribute": "glory",
+                "base_award": 10,
+                "constraint": {
+                    "type": "max",
+                    "value": 55
+                }
+            }
+        ],
+        "xp_to_completion": 20,
+        "title_ability": "The Hand of Our Ancestors",
+        "advancements": [
+            {
+                "name": "Social skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Composition",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Culture",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Sentiment",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Fire Sh\u016bji",
+                "rank": 2,
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "name": "Borrowed Courage",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Coursing March Chant",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "Quartermaster",
+        "reference": {
+            "book": "FoV",
+            "page": 135
+        },
+        "social_awards": [
+            {
+                "award_attribute": "status",
+                "base_award": 5,
+                "constraint": {
+                    "type": "max",
+                    "value": 35
+                }
+            }
+        ],
+        "xp_to_completion": 24,
+        "title_ability": "Procurement and Supply",
+        "advancements": [
+            {
+                "name": "Trade skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Courtesy",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Government",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Tactics",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Air Sh\u016bji",
+                "rank": 2,
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "name": "Water Sh\u016bji",
+                "rank": 2,
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "name": "Fortress of Necessity",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "Renowned Warrior",
+        "reference": {
+            "book": "FoV",
+            "page": 135
+        },
+        "social_awards": [
+            {
+                "award_attribute": "status",
+                "base_award": 5,
+                "constraint": {
+                    "type": "max",
+                    "value": 40
+                }
+            },
+            {
+                "award_attribute": "glory",
+                "base_award": 5
+            }
+        ],
+        "xp_to_completion": 16,
+        "title_ability": "Behold the Legend",
+        "advancements": [
+            {
+                "name": "Martial skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Command",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Culture",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Performance",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Kata",
+                "rank": 2,
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "name": "Heartpiercing Strike",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Righteous Example",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "Spirit Caller",
+        "reference": {
+            "book": "FoV",
+            "page": 136
+        },
+        "social_awards": [
+            {
+                "award_attribute": "status",
+                "base_award": 15,
+                "constraint": {
+                    "type": "max",
+                    "value": 40
+                }
+            }
+        ],
+        "xp_to_completion": 38,
+        "title_ability": "Eyes of the Ancestors",
+        "advancements": [
+            {
+                "name": "Scholar skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Courtesy",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Meditation",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Performance",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Rituals",
+                "rank": 2,
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "name": "Ancestry Unearthed",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Preserve Strength",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "Sumai Master",
+        "reference": {
+            "book": "FoV",
+            "page": 136
+        },
+        "social_awards": [
+            {
+                "award_attribute": "status",
+                "base_award": 10,
+                "constraint": {
+                    "type": "max",
+                    "value": 35
+                }
+            },
+            {
+                "award_attribute": "glory",
+                "base_award": 10,
+                "constraint": {
+                    "type": "max",
+                    "value": 50
+                }
+            }
+        ],
+        "xp_to_completion": 30,
+        "title_ability": "Unsurpassed Soul",
+        "advancements": [
+            {
+                "name": "Social skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Culture",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Martial Arts [Unarmed]",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Theology",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Kata",
+                "rank": 2,
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "name": "Beseech Hida's Might",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Fierce Badger Style",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "Sword-Saint",
+        "reference": {
+            "book": "FoV",
+            "page": 136
+        },
+        "social_awards": [
+            {
+                "award_attribute": "glory",
+                "base_award": 20,
+                "constraint": {
+                    "type": "max",
+                    "value": 100
+                }
+            }
+        ],
+        "xp_to_completion": 24,
+        "title_ability": "Invincible Blade",
+        "advancements": [
+            {
+                "name": "Martial Arts [Melee]",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Meditation",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Smithing",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Tactics",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Close Combat Kata",
+                "rank": 5,
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "name": "Soul Sunder",
+                "type": "technique",
+                "special_access": true
+            },
+            {
+                "name": "Victory Without a Sword",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
+    },
+    {
+        "name": "War College Graduate",
+        "reference": {
+            "book": "FoV",
+            "page": 137
+        },
+        "social_awards": [
+            {
+                "award_attribute": "status",
+                "base_award": 10,
+                "constraint": {
+                    "type": "max",
+                    "value": 40
+                }
+            },
+            {
+                "award_attribute": "glory",
+                "base_award": 5,
+                "constraint": {
+                    "type": "max",
+                    "value": 60
+                }
+            }
+        ],
+        "xp_to_completion": 36,
+        "title_ability": "Learned from History",
+        "advancements": [
+            {
+                "name": "Martial skills",
+                "type": "skill_group",
+                "special_access": false
+            },
+            {
+                "name": "Command",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Culture",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Government",
+                "type": "skill",
+                "special_access": false
+            },
+            {
+                "name": "Kata",
+                "rank": 3,
+                "type": "technique_group",
+                "special_access": true
+            },
+            {
+                "name": "Sh\u016bji",
+                "type": "technique",
+                "rank": 3,
+                "special_access": true
+            },
+            {
+                "name": "Beseech Akodo's Judgment",
+                "type": "technique",
+                "special_access": true
+            }
+        ]
     }
 ]
