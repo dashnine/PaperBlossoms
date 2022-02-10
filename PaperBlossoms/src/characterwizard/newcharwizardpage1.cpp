@@ -228,7 +228,7 @@ void NewCharWizardPage1::regenSummary(){
 
 QMap<QString, int> NewCharWizardPage1::calcCurrentRings(){
     QMap<QString, int> ringmap;
-    QStringList ringlist = deps->regionsRepository->qsl_getrings();
+    QStringList ringlist = deps->ringsRepository->qsl_getrings();
 
     foreach (const QString ring, ringlist) {
         ringmap[ring] = 1;
@@ -238,7 +238,7 @@ QMap<QString, int> NewCharWizardPage1::calcCurrentRings(){
     if(field("characterType").toString()=="Samurai"){
         //NOW - CALCULATE EXISTING RINGS
         //clan
-        ringmap[deps->regionsRepository->qs_getclanring(field("currentClan").toString())]++;
+        ringmap[deps->clansRepository->qs_getclanring(field("currentClan").toString())]++;
         //family
         ringmap[field("familyRing").toString()]++;
     }
