@@ -580,7 +580,9 @@ void AddAdvanceDialog::on_free_radioButton_toggled(const bool checked)
 void AddAdvanceDialog::on_halfxp_checkBox_toggled(bool checked)
 {
     Q_UNUSED(checked);
-    on_detailTableView_clicked(ui->detailTableView->currentIndex());
+    if(ui->advtype->currentText() == "Technique" && ui->detailTableView->currentIndex().isValid()){
+        on_detailTableView_clicked(ui->detailTableView->currentIndex());
+    }
     on_advchooser_combobox_currentIndexChanged(ui->advchooser_combobox->currentText());
     validatePage();
 }

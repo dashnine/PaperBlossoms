@@ -120,24 +120,27 @@ QMap<QString, int> NewCharWizardPage5::calcCurrentRings(){
     }
 
     //NOW - CALCULATE EXISTING RINGS
-    //clan
-    ringmap[deps->clansRepository->qs_getclanring(field("currentClan").toString())]++;
-    //family
-    ringmap[field("familyRing").toString()]++;
 
+    if(field("characterType").toString()=="Samurai"){
+        //clan
+        ringmap[deps->clansRepository->qs_getclanring(field("currentClan").toString())]++;
+        //family
+        ringmap[field("familyRing").toString()]++;
 
+    }
+    else{
 
-    ///////////PoW
-    ///
-    ///
+        ///////////PoW
+        ///
+        ///
 
-    //region
-    ringmap[deps->regionsRepository->qs_getregionring(field("currentRegion").toString())]++;
-    //upbringing
-    ringmap[field("upbringingRing").toString()]++;
+        //region
+        ringmap[deps->regionsRepository->qs_getregionring(field("currentRegion").toString())]++;
+        //upbringing
+        ringmap[field("upbringingRing").toString()]++;
 
-    /////////////////
-
+        /////////////////
+    }
 
     //school
     //QStringList schoolrings = dal->qsl_getschoolrings(field("currentSchool").toString());

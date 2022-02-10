@@ -101,6 +101,7 @@
                         "Destroyed",
                         "Durable",
                         "Forbidden",
+                        "Forbidden to non-shugenja",
                         "Mundane",
                         "Prepare",
                         "Razor-edged",

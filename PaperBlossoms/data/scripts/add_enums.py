@@ -92,7 +92,7 @@ def get_skills(data_dir):
 
 
 def get_techniques(data_dir):
-    with open(data_dir.joinpath('json/techniques.json')) as f:
+    with open(data_dir.joinpath('json/techniques.json'), encoding = 'utf8') as f:
         technique_categories = json.load(f)
     technique_categories_enum = [
         category['name'] for category in technique_categories

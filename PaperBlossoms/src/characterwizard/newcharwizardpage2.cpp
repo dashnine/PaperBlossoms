@@ -79,6 +79,7 @@ NewCharWizardPage2::NewCharWizardPage2(DatabaseDependency* deps, QWidget *parent
 
 
     ringModel->setStringList(deps->ringsRepository->qsl_getrings());
+    ui->nc2_school_ComboBox->setCurrentIndex(-1);
 
     registerField("currentSchool",ui->nc2_school_ComboBox,"currentText");
     registerField("currentSchoolIndex*",ui->nc2_school_ComboBox);
@@ -88,7 +89,7 @@ NewCharWizardPage2::NewCharWizardPage2(DatabaseDependency* deps, QWidget *parent
     registerField("ringChoices",ui->ringWidget,"selections",SIGNAL(selectionsChanged));
     //registerField("techstring*",ui->nc2_completePlaceholder_lineEdit);
     registerField("schoolSpecialRing",ui->nc2_schoolSpecialtRing_ComboBox,"currentText");
-    registerField("schoolSpecialRingIndex*",ui->nc2_schoolSpecialtRing_ComboBox);
+    registerField("schoolSpecialRingIndex",ui->nc2_schoolSpecialtRing_ComboBox);
     registerField("schoolSkills*",ui->nc2_HIDDEN_skillLineEdit);
     registerField("q4Text",ui->nc2_q4_lineEdit);
     registerField("schoolotherchoice",ui->nc2_otherchoice_comboBox,"currentText");
@@ -552,33 +553,38 @@ QMap<QString, int> NewCharWizardPage2::calcCurrentRings(){
         ringmap[ring] = 1;
     }
 
-    //NOW - CALCULATE EXISTING RINGS
-    //clan
-    ringmap[deps->clansRepository->qs_getclanring(field("currentClan").toString())]++;
-    //family
-    ringmap[field("familyRing").toString()]++;
 
+    if(field("characterType").toString()=="Samurai"){
+        //NOW - CALCULATE EXISTING RINGS
+        //clan
+        ringmap[deps->clansRepository->qs_getclanring(field("currentClan").toString())]++;
+        //family
+        ringmap[field("familyRing").toString()]++;
 
+    }
+    else{
 
-    ///////////PoW
-    ///
-    ///
+        ///////////PoW
+        ///
+        ///
 
-    //region
-    ringmap[deps->regionsRepository->qs_getregionring(field("currentRegion").toString())]++;
-    //upbringing
-    ringmap[field("upbringingRing").toString()]++;
+        //region
+        ringmap[deps->regionsRepository->qs_getregionring(field("currentRegion").toString())]++;
+        //upbringing
+        ringmap[field("upbringingRing").toString()]++;
 
-    /////////////////
+        /////////////////
+    }
 
+    if(ui->nc2_school_ComboBox->currentIndex()!=-1){
+        //school
+        //QStringList schoolrings = dal->qsl_getschoolrings(field("currentSchool").toString());
+        QStringList schoolrings = field("ringChoices").toString().split("|");
+        schoolrings.removeAll("");
 
-    //school
-    //QStringList schoolrings = dal->qsl_getschoolrings(field("currentSchool").toString());
-    QStringList schoolrings = field("ringChoices").toString().split("|");
-    schoolrings.removeAll("");
-
-    foreach (const QString r, schoolrings){
-        ringmap[r]++;
+        foreach (const QString r, schoolrings){
+            ringmap[r]++;
+        }
     }
     //standout
     ringmap[field("schoolSpecialRing").toString()]++;

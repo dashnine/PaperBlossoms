@@ -121,7 +121,7 @@ void NewCharWizardPage7::initializePage()
     const QString heritageSourceTable = field("q18SourceTable").toString();
     const QString roninbond = field("q17roninBond").toString();                 //pow
     const QString q17roninText = field("q17roninText").toString();              //pow
-    const bool q18DoubleKoku = field("q18DoubleKoku").toString() == "1";
+    const bool q18DoubleKoku = field("q18DoubleKoku").toString() == "1";        //fov
 
 
 
@@ -842,24 +842,24 @@ QMap<QString, int> NewCharWizardPage7::calcRings(){
     }
 
     if(field("characterType").toString()=="Samurai"){
-    //NOW - CALCULATE EXISTING RINGS
-    //clan
-    ringmap[deps->clansRepository->qs_getclanring(field("currentClan").toString())]++;
-    //family
-    ringmap[field("familyRing").toString()]++;
-}
+        //NOW - CALCULATE EXISTING RINGS
+        //clan
+        ringmap[deps->clansRepository->qs_getclanring(field("currentClan").toString())]++;
+        //family
+        ringmap[field("familyRing").toString()]++;
+    }
 
 
 
     ///////////PoW
     ///
     ///
-else{
-    //region
-    ringmap[deps->regionsRepository->qs_getregionring(field("currentRegion").toString())]++;
-    //upbringing
-    ringmap[field("upbringingRing").toString()]++;
-}
+    else{
+        //region
+        ringmap[deps->regionsRepository->qs_getregionring(field("currentRegion").toString())]++;
+        //upbringing
+        ringmap[field("upbringingRing").toString()]++;
+    }
     /////////////////
 
 
