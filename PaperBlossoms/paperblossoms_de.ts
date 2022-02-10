@@ -100,7 +100,7 @@ können nur mit GM-Genehmigung genommen werden.</translation>
     </message>
     <message>
         <location filename="ui/addadvancedialog.ui" line="81"/>
-        <source>Remove All Restrictions</source>
+        <source>Ignore All Restrictions</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

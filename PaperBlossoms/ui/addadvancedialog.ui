@@ -78,7 +78,7 @@ can only be taken with GM approval.</string>
      <item row="1" column="0">
       <widget class="QCheckBox" name="restrictioncheckBox">
        <property name="text">
-        <string>Remove All Restrictions</string>
+        <string>Ignore All Restrictions</string>
        </property>
       </widget>
      </item>
