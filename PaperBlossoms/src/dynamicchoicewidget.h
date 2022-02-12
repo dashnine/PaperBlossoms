@@ -30,7 +30,7 @@
 #include <QGridLayout>
 #include <QStandardItemModel>
 #include <QMap>
-#include "dataaccesslayer.h"
+#include "dependency/databasedependency.h"
 
 namespace Ui {
 class DynamicChoiceWidget;
