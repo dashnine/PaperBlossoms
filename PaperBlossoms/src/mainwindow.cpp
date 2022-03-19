@@ -1640,6 +1640,7 @@ void MainWindow::on_actionExport_to_XML_triggered()
         //build the root
         QDomDocument document;
         QDomElement root = document.createElement("Character");
+        document.appendChild(document.createProcessingInstruction("xml", "version=\"1.0\" encoding=\"utf-8\""));
         document.appendChild(root);
 
         //add root nodes
@@ -1877,6 +1878,7 @@ void MainWindow::on_actionExport_to_XML_triggered()
 
         //now, output the document to the file
         QTextStream stream(&file);
+        stream.setCodec("UTF-8");
         stream << document.toString();
         file.close();
     }
