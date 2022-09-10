@@ -25,7 +25,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "dataaccesslayer.h"
+#include "dependency/databasedependency.h"
+#include "dependency/databasedependency.h"
 #include "character.h"
 #include <QStringListModel>
 #include <QStandardItemModel>
@@ -57,6 +58,8 @@ private slots:
     void on_remove_pushButton_clicked();
 
     void on_addTitle_pushButton_clicked();
+
+    void on_removeTitle_pushButton_clicked();
 
     void on_koku_spinBox_valueChanged(const int arg1);
 
@@ -153,7 +156,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    DataAccessLayer* dal;
+    DatabaseDependency* deps;
     Character curCharacter;
     void populateUI();
     bool m_dirtyDataFlag;
