@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>L5R Character Sheet</title>
+		<link rel="stylesheet" type="text/css" href="L5R%20Character%20Sheet%20Template.css" />
+	</head>
+	<body>
+<page>
+<section class="rings">
+	<ring class="air">Air</ring>
+	<ring class="earth">Earth</ring>
+	<ring class="fire">Fire</ring>
+	<ring class="water">Water</ring>
+	<ring class="void">Void</ring>
+</section>
+<section class="header">
+	<img href="./Images/$CLAN.png" alt="$CLAN logo" class="logo" />
+	<note>
+		<h>Name, Title & Description</h>
+		$NAME, $SCHOOL_TITLE<br />
+		$DESCRIPTION
+	</note>
+</section>
+
+<section class="skills">
+	<h>Skill&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Approach&nbsp;&nbsp;&nbsp;</h>
+	<skillgroup class="artisan">
+		<h1>Artisan</h1>
+		<approaches>
+			<approach class="air">Refine</approach>
+			<approach class="earth">Restore</approach>
+			<approach class="fire">Invent</approach>
+			<approach class="water">Adapt</approach>
+			<approach class="void">Attune</approach>
+		</approaches>
+		<skills>
+			<skill>Aesthetics<ranks>$Artisan_Aesthetics_Ranks</ranks></skill>
+			<skill>Composition<ranks>$Artisan_Composition_Ranks</ranks></skill>
+			<skill>Design<ranks>$Artisan_Design_Ranks</ranks></skill>
+			<skill>Smithing<ranks>$Artisan_Smithing_Ranks</ranks></skill>
+			<skill>&nbsp;<ranks>$Artisan_Other1_Ranks</ranks></skill>
+			<skill>&nbsp;<ranks>$Artisan_Other2_Ranks</ranks></skill>
+		</skills>
+	</skillgroup>
+	<skillgroup class="martial">
+		<h1>Martial</h1>
+		<approaches>
+			<approach class="air">Feint</approach>
+			<approach class="earth">Withstand</approach>
+			<approach class="fire">Overwhelm</approach>
+			<approach class="water">Shift</approach>
+			<approach class="void">Sacrifice</approach>
+		</approaches>
+		<skills>
+			<skill>Fitness<ranks>$Artisan_Aesthetics_Ranks</ranks></skill>
+			<skill>Meditation<ranks>$Artisan_Composition_Ranks</ranks></skill>
+			<skill>Tactics<ranks>$Artisan_Design_Ranks</ranks></skill>
+			<subgroup>
+				<name>Martial Arts</name>
+				<skill class="sub">Melee<ranks>$Artisan_Smithing_Ranks</ranks></skill>
+				<skill class="sub">Ranged<ranks>$Artisan_Smithing_Ranks</ranks></skill>
+				<skill class="sub">Unarmed<ranks>$Artisan_Smithing_Ranks</ranks></skill>
+			</subgroup>
+			<skill>&nbsp;<ranks>$Artisan_Other1_Ranks</ranks></skill>
+			<skill>&nbsp;<ranks>$Artisan_Other2_Ranks</ranks></skill>
+		</skills>
+	</skillgroup>
+	<skillgroup class="social">
+		<h1>Social</h1>
+		<approaches>
+			<approach class="air">Trick</approach>
+			<approach class="earth">Reason</approach>
+			<approach class="fire">Incite</approach>
+			<approach class="water">Charm</approach>
+			<approach class="void">Enlighten</approach>
+		</approaches>
+		<skills>
+			<skill>Command<ranks>$Artisan_Aesthetics_Ranks</ranks></skill>
+			<skill>Courtesy<ranks>$Artisan_Composition_Ranks</ranks></skill>
+			<skill>Games<ranks>$Artisan_Design_Ranks</ranks></skill>
+			<skill>Performance<ranks>$Artisan_Smithing_Ranks</ranks></skill>
+			<skill>&nbsp;<ranks>$Artisan_Other1_Ranks</ranks></skill>
+			<skill>&nbsp;<ranks>$Artisan_Other2_Ranks</ranks></skill>
+		</skills>
+	</skillgroup>
+	<skillgroup class="scholar">
+		<h1>Scholar</h1>
+		<approaches>
+			<approach class="air">Analyse</approach>
+			<approach class="earth">Recall</approach>
+			<approach class="fire">Theorise</approach>
+			<approach class="water">Survey</approach>
+			<approach class="void">Sense</approach>
+		</approaches>
+		<skills>
+			<skill>Culture<ranks>$Artisan_Aesthetics_Ranks</ranks></skill>
+			<skill>Government<ranks>$Artisan_Composition_Ranks</ranks></skill>
+			<skill>Sentiment<ranks>$Artisan_Design_Ranks</ranks></skill>
+			<skill>Theology<ranks>$Artisan_Smithing_Ranks</ranks></skill>
+			<skill>Medicine<ranks>$Artisan_Smithing_Ranks</ranks></skill>
+			<skill>&nbsp;<ranks>$Artisan_Other1_Ranks</ranks></skill>
+			<skill>&nbsp;<ranks>$Artisan_Other2_Ranks</ranks></skill>
+		</skills>
+	</skillgroup>
+	<skillgroup class="trade">
+		<h1>Trade</h1>
+		<approaches>
+			<approach class="air">Con</approach>
+			<approach class="earth">Produce</approach>
+			<approach class="fire">Innovate</approach>
+			<approach class="water">Exchange</approach>
+			<approach class="void">Subsist</approach>
+		</approaches>
+		<skills>
+			<skill>Commerce<ranks>$Artisan_Aesthetics_Ranks</ranks></skill>
+			<skill>Labour<ranks>$Artisan_Composition_Ranks</ranks></skill>
+			<skill>Seafaring<ranks>$Artisan_Design_Ranks</ranks></skill>
+			<skill>Skulduggery<ranks>$Artisan_Smithing_Ranks</ranks></skill>
+			<skill>Survival<ranks>$Artisan_Smithing_Ranks</ranks></skill>
+			<skill>&nbsp;<ranks>$Artisan_Other1_Ranks</ranks></skill>
+			<skill>&nbsp;<ranks>$Artisan_Other2_Ranks</ranks></skill>
+		</skills>
+	</skillgroup>
+	<note>
+		<h>Personality, Habits & Quirks</h>
+		$PERSONALITY<br />
+		$HABITS<br />
+		$QUIRKS
+	</note>
+</section>
+<section class="center">
+	<dice>
+		<img class="dice" />Skill Dice
+		<img class="dice" />Ring Dice
+	</dice>
+	<stat>
+		Honor
+	</stat>
+	<stat>
+		Glory
+	</stat>
+	<stat>
+		Status
+	</stat>
+	<glyph>Success</glyph>
+	<glyph>Explosive Success</glyph>
+	<glyph>Opportunity</glyph>
+	<glyph>Strife</glyph>
+	<bushido>Righteousness</bushido>
+	<bushido>Courtesy</bushido>
+	<bushido>Courage</bushido>
+	<bushido>Honour</bushido>
+	<bushido>Compassion</bushido>
+	<bushido>Sincerity & Integrity</bushido>
+	<bushido>Duty & Loyalty</bushido>
+</section>
+<section class="description">
+	<note>
+		<h>Ninjō</h>
+		$NINJO
+	</note>
+	<note>
+		<h>Giri</h>
+		$GIRI
+	</note>
+	<note>
+		<h>Distinctions</h>
+		$DISTINCTIONS_DESCRIPTION<br />
+		<br />
+		$DISTINCTION_1<br />
+		$DISTINCTION_2
+	</note>
+	<note>
+		<h>Adversities</h>
+		$ADVERSITIES_DESCRIPTION<br />
+		<br />
+		$ADVERSITY_1<br />
+		$ADVERSITY_2
+	</note>
+	<note>
+		<h>Passions</h>
+		$PASSIONS_DESCRIPTION<br />
+		<br />
+		$PASSION_1<br />
+		$PASSION_2
+	</note>
+	<note>
+		<h>Anxieties</h>
+		$ANXIETIES_DESCRIPTION<br />
+		<br />
+		$ANXIETY_1<br />
+		$ANXIETY_2
+	</note>
+</section>
+</page>
+	</body>
+</html>
