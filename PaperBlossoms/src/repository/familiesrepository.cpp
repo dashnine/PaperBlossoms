@@ -2,7 +2,7 @@
 // Created by Maciej Kruszewski on 17.08.2021.
 //
 
-#include "familiesRepository.h"
+#include "familiesrepository.h"
 #include <QSqlDatabase>
 #include <QSqlQueryModel>
 #include <QSqlQuery>

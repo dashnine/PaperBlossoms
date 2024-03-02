@@ -36,8 +36,8 @@
 #include "../PaperBlossoms/src/repository/advantagesrepository.cpp"
 #include "../PaperBlossoms/src/repository/abstractrepository.h"
 #include "../PaperBlossoms/src/repository/abstractrepository.cpp"
-#include "../PaperBlossoms/src/repository/familiesRepository.h"
-#include "../PaperBlossoms/src/repository/familiesRepository.cpp"
+#include "../PaperBlossoms/src/repository/familiesrepository.h"
+#include "../PaperBlossoms/src/repository/familiesrepository.cpp"
 
 class TestMain : public QObject {
     Q_OBJECT
