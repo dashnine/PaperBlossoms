@@ -1318,7 +1318,7 @@
      <x>0</x>
      <y>0</y>
      <width>640</width>
-     <height>24</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -1350,6 +1350,7 @@
      </property>
      <addaction name="actionImport_User_Descriptions_Table"/>
      <addaction name="actionImport_User_Data_Tables"/>
+     <addaction name="actionImport_Official_PDF"/>
     </widget>
     <widget class="QMenu" name="menuAdvanced">
      <property name="title">
@@ -1469,6 +1470,11 @@
   <action name="actionTranslate_For_Locale">
    <property name="text">
     <string>Translate For Locale...</string>
+   </property>
+  </action>
+  <action name="actionImport_Official_PDF">
+   <property name="text">
+    <string>Import Official PDF...</string>
    </property>
   </action>
  </widget>

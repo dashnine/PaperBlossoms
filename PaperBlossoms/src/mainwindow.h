@@ -119,6 +119,8 @@ private slots:
 
     void on_actionImport_User_Data_Tables_triggered();
 
+    void on_actionImport_Official_PDF_triggered();
+
     void on_actionOpen_Application_Data_Directory_triggered();
 
     void on_actionExit_triggered();
@@ -194,6 +196,8 @@ private:
     void setColumnsHidden();
     void closeEvent(QCloseEvent * const event);
     QString curLocale;
+
+    bool pythonInitialized;
 };
 
 #endif // MAINWINDOW_H

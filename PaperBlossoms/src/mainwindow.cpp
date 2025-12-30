@@ -192,6 +192,7 @@ MainWindow::MainWindow(QString locale, QWidget *parent) :
 
     m_dirtyDataFlag = false;
 
+    this->pythonInitialized = false;
 }
 
 MainWindow::~MainWindow()
