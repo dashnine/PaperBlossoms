@@ -138,6 +138,8 @@ public:
 
     bool importCSV(const QString filepath, const QString tablename, bool isDir = true);
 
+    int importCSVFlexible(const QString filepath, const QString tablename, bool isDir, bool doDelete, bool doOverwrite, QString primaryKey, int keyIndex);
+
     QStringList qsl_getdescribablenames();
 
     bool exportTranslatableCSV(QString filename);

@@ -393,6 +393,113 @@ bool DataAccessLayer::importCSV(const QString filepath, const QString tablename,
     return success;
 }
 
+bool handle_error(QSqlQuery query)
+{
+    qDebug() << "SQL request failed: " + query.lastQuery();
+    QSqlError error = query.lastError();
+    if (error.type() != QSqlError::NoError)
+    {
+        qDebug() << "Text: " + error.text();
+        qDebug() << "Driver Text: " + error.driverText();
+        qDebug() << "DB Text: " + error.databaseText();
+        return true;
+    }
+    QSqlDatabase::database().rollback();
+    return false;
+}
+
+//NOTE - THIS ALLOWS DIRECT INJECTION OF DATA--BAD THINGS CAN HAPPEN.
+//based on https://dustri.org/b/import-cvs-to-sqlite-with-qt.html
+int DataAccessLayer::importCSVFlexible(const QString filepath, const QString tablename, bool isDir, bool doDelete, bool doOverwrite, const QString keyName, int keyIndex) {
+    bool success;
+    QFile f;
+    if (isDir) {
+        f.setFileName(filepath + "/" + tablename + ".csv");
+    } else {
+        f.setFileName(filepath);
+    }
+    //QFile f(filepath+"/"+tablename+".csv");
+    if (!f.open(QIODevice::ReadOnly)) {
+        qDebug() << "Failure opening " + f.fileName();
+        return -1;
+    }
+    QSqlDatabase::database().transaction();
+    QSqlQuery query;
+    if (doDelete)
+    {
+        doOverwrite = false;
+        success = query.exec("DELETE FROM " + tablename);
+        if (!success) {
+            qDebug() << "Could not delete " + tablename;
+        }
+    }
+    QTextStream ts(&f);
+    ts.setCodec("UTF-8");
+
+    QStringList keyList = QStringList();
+    if (!doDelete)
+    {
+        QString req = "SELECT " + keyName + " FROM " + tablename;
+        success = query.exec(req);
+        if (!success)
+        {
+            qDebug() << "Could not read primary key from " + tablename;
+            handle_error(query);
+            return -1;
+        }
+        while (query.next())
+        {
+            QString key = query.value(0).toString();
+            keyList.append(key);
+        }
+    }
+
+    int recordsAdded = 0;
+    while (!ts.atEnd()) {
+        // split every lines on comma
+        const QStringList line = parseCSV(ts.readLine());
+        QString curKey = line.at(keyIndex);
+        if (!doDelete && keyList.contains(curKey))
+        {
+            if (!doOverwrite)
+                continue;
+            success = query.exec("DELETE FROM " + tablename + " WHERE " + keyName + " = \""  + curKey + "\"");
+            if (!success)
+            {
+                handle_error(query);
+                return -1;
+            }
+        }
+        QString req = "INSERT INTO " + tablename + " VALUES(";
+        /*for every values on a line,
+            append it to the INSERT request*/
+        for (int i = 0; i < line.length(); ++i) {
+            if (line.at(i).isEmpty()) {
+                req.append("NULL");
+                req.append(",");
+            } else {
+                req.append("\"" + line.at(i) + "\""); //needed quotes to get SQLITE to recognize it
+                req.append(",");
+            }
+        }
+        req.chop(1); // remove the trailing comma
+        req.append(getVersionCorrection(tablename, line)); //handle any special cases cause by updates to data
+        req.append(");"); // close the "VALUES([...]" with a ");"
+        bool isuccess = query.exec(req.replace("%0A", "\n")); //fix the encoded %0A
+        if (!isuccess) {
+            if (!handle_error(query))
+            {
+                qDebug() << "Insertion failed: " + req;
+            }
+            return -1;
+        }
+        recordsAdded += 1;
+    }
+    QSqlDatabase::database().commit();
+    f.close();
+    return recordsAdded;
+}
+
 QString DataAccessLayer::getVersionCorrection(QString tablename, QStringList line) {
     QString toAppend = "";
 
