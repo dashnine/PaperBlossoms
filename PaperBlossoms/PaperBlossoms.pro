@@ -142,21 +142,8 @@ FORMS += \
     ui/ringviewer.ui \
     ui/edituserdescriptionsdialog.ui
 
-# Copy the DB file into the build whenever build is run.
-# using shell_path() to correct path depending on platform
-# escaping quotes and backslashes for file paths
-# This excellent little gem comes from https://stackoverflow.com/a/36438513
-#copydata.commands = $(COPY_FILE) \"$$shell_path($$PWD\\data\\testdb.db)\" \"$$shell_path($$OUT_PWD)\"
-#copydata.commands = $(COPY_FILE) \"$$shell_path($$PWD\\data\\paperblossoms.db)\" \"$$shell_path($$OUT_PWD)\"
-#first.depends = $(first) copydata
-#export(first.depends)
-#export(copydata.commands)
-#QMAKE_EXTRA_TARGETS += first copydata
-
 RESOURCES += \
     resources.qrc
-
-#DISTFILES +=
 
 TRANSLATIONS += paperblossoms_en.ts \
                 paperblossoms_fr.ts \
@@ -167,3 +154,38 @@ win32:RC_ICONS += resources/sakura.ico
 macx: ICON = resources/sakura.icns
 
 #QMAKE_RESOURCE_FLAGS += -no-compress
+
+LIBS += -L$$PWD/extras/lib -lpython314
+
+INCLUDEPATH += $$PWD/extras/python/include
+DEPENDPATH += $$PWD/extras/python/include
+
+win32:CONFIG(release, debug|release): TARGETDIR = $$OUT_PWD/release
+else:win32:CONFIG(debug, debug|release): TARGETDIR = $$OUT_PWD/debug
+else:macosx: TARGETDIR = $$OUT_PWD/{AppName}.app/Contents/MacOS
+else:TARGETDIR = $$OUT_PWD
+
+
+json.files = $$PWD/data/json
+json.path = $$TARGETDIR
+INSTALLS += json
+
+python.files = $$PWD/extras/python/python314.dll \
+               $$PWD/extras/python/python314._pth \
+               $$PWD/extras/python/python314.zip \
+               $$PWD/extras/python/python3.dll \
+               $$PWD/extras/python/libcrypto-3.dll \
+               $$PWD/extras/python/libffi-8.dll \
+               $$PWD/extras/python/libssl-3.dll \
+               $$PWD/extras/python/vcruntime140.dll \
+               $$PWD/extras/python/vcruntime140_1.dll
+python.path = $$TARGETDIR
+INSTALLS += python
+
+
+pylibs.files = $$PWD/extras/python/pylibs
+pylibs.path = $$TARGETDIR
+INSTALLS += pylibs
+
+!prefix_build:!equals(OUT_PWD, $$PWD): \
+    COPIES += json python pylibs
