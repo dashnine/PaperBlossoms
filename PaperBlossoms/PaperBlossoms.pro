@@ -187,5 +187,16 @@ pylibs.files = $$PWD/extras/python/pylibs
 pylibs.path = $$TARGETDIR
 INSTALLS += pylibs
 
+licenses.files = $$PWD/extras/licenses
+licenses.path = $$TARGETDIR
+INSTALLS += licenses
+
+pysrc.files = $$PWD/pysrc/scrape.py
+pysrc.path = $$TARGETDIR/pylibs
+INSTALLS += pylibs
+
+
+QMAKE_CLEAN += $$TARGETDIR/pylibs/scrape.py
+
 !prefix_build:!equals(OUT_PWD, $$PWD): \
-    COPIES += json python pylibs
+    COPIES += json python pylibs pysrc licenses
