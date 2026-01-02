@@ -182,18 +182,18 @@ def find_local_pdfs() -> dict[str, PdfReader]:
     return find_dir_pdfs(".") + find_dir_pdfs("./pdfs")
 
 def handle_file(path: str) -> tuple[str, int, str]:
-    from pypdf._crypt_providers._cryptography import (
-        CryptAES,
-        CryptRC4,
-        aes_cbc_decrypt,
-        aes_cbc_encrypt,
-        aes_ecb_decrypt,
-        aes_ecb_encrypt,
-        crypt_provider,
-        rc4_decrypt,
-        rc4_encrypt,
-    )
-    from pypdf._utils import Version
+    # from pypdf._crypt_providers._cryptography import (
+        # CryptAES,
+        # CryptRC4,
+        # aes_cbc_decrypt,
+        # aes_cbc_encrypt,
+        # aes_ecb_decrypt,
+        # aes_ecb_encrypt,
+        # crypt_provider,
+        # rc4_decrypt,
+        # rc4_encrypt,
+    # )
+    # from pypdf._utils import Version
     pdfs = {}
     info = get_pdf_info(path)
     if info is None:
