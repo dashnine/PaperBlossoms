@@ -55,6 +55,7 @@ Since Github is not always good about listing who has helped out on a project, I
 * aajabrams
 * OpenNinjia
 * MJKruszewski
+* Cvelth
 * ruronin (French UI & DB Translation)
 * Albertorius (Spanish UI & DB Translation)
 * Tylsar (German UI & DB Translation)
