@@ -2,7 +2,7 @@
 > [!IMPORTANT]
 > **A new version of Paper Blossoms is available!** Paper Blossoms has been rebuilt with Flutter and now runs on **macOS, Windows, Linux, and Android** from a single codebase — same guided character creation and PDF export, plus a page-by-page book-audited data set and a localized interface (English, French, German, Spanish).
 >
-> 📦 **Get it here: [paperblossoms-flutter](https://github.com/dashnine/paperblossoms-flutter)** — prebuilt downloads on the [releases page](https://github.com/dashnine/paperblossoms-flutter/releases). Your `user_descriptions.csv` from this app imports directly into the new one.
+> 📦 **It lives in a new repository: get it here: [paperblossoms-flutter](https://github.com/dashnine/paperblossoms-flutter)** — prebuilt downloads on the [releases page](https://github.com/dashnine/paperblossoms-flutter/releases). Your `user_descriptions.csv` from this app imports directly into the new one.
 >
 > This Qt version remains available, but new development happens in the Flutter repository.
 
