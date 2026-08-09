@@ -29,7 +29,13 @@
 #include <QFile>
 #include <QSettings>
 #include <QStandardPaths>
-#include <QTextCodec>
+
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+    #include <QtCore/QTextCodec>
+#else
+    #include <QtCore5Compat/QTextCodec>
+#endif
+
 
 int main(int argc, char *argv[])
 {
@@ -40,7 +46,7 @@ int main(int argc, char *argv[])
     defaultLocaleDB = defaultLocaleUI = QLocale::system().name();
     defaultLocaleDB.truncate(defaultLocaleDB.lastIndexOf('_'));
     defaultLocaleUI.truncate(defaultLocaleUI.lastIndexOf('_'));
-    QString settingfile = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + "/settings.ini";
+    QString settingfile = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/settings.ini";
     qDebug() << "Settings file: " << settingfile;
     QSettings settings(settingfile, QSettings::IniFormat);
 

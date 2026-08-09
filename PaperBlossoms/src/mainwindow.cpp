@@ -47,8 +47,8 @@ public:
     {
         QStyledItemDelegate::initStyleOption(option, index);
 
-        QStyleOptionViewItemV4 *optionV4 =
-                qstyleoption_cast<QStyleOptionViewItemV4*>(option);
+        QStyleOptionViewItem *optionV4 =
+                qstyleoption_cast<QStyleOptionViewItem*>(option);
 
         const QAbstractItemModel * model = index.model();
         int isSpecAccess = model->data(model->index(index.row(), 3)).toInt();

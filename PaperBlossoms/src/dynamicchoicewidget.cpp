@@ -39,8 +39,8 @@ DynamicChoiceWidget::DynamicChoiceWidget( QWidget *parent) :
 
     frameLayout = new QGridLayout(baseFrame);
     baseFrame->setLayout(frameLayout);
-    ui->verticalLayout_2->setMargin(0);
-    frameLayout->setMargin(0);
+    ui->verticalLayout_2->setContentsMargins(0,0,0,0);
+    frameLayout->setContentsMargins(0,0,0,0);
     m_isValid = true;
 
     //ui->verticalLayout_2->setSizeConstraint(QLayout::SetFixedSize);
@@ -251,8 +251,8 @@ void DynamicChoiceWidget::clear(){
     baseFrame->setLayout(frameLayout);
     //this->setMinimumHeight(3);
 
-    ui->verticalLayout_2->setMargin(0);
-    frameLayout->setMargin(0);
+    ui->verticalLayout_2->setContentsMargins(0,0,0,0);
+    frameLayout->setContentsMargins(0,0,0,0);
 
     emit dataChanged(getCurrent());
     validateBox();

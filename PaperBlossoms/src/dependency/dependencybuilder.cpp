@@ -4,7 +4,7 @@
 #include "../repository/bondsrepository.h"
 #include "../repository/clansrepository.h"
 #include "../repository/dataaccesslayer.h"
-#include "../repository/familiesRepository.h"
+#include "../repository/familiesrepository.h"
 #include "../repository/hertiagesrepository.h"
 #include "../repository/inventoryrepository.h"
 #include "../repository/regionsrepository.h"

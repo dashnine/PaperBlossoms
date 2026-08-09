@@ -386,7 +386,7 @@ void AddAdvanceDialog::on_advtype_currentIndexChanged(const QString &arg1)
             typelist<<str;
         }
 
-        qSort(typelist);
+        typelist.sort(Qt::CaseInsensitive);
         ui->advchooser_combobox->addItems(typelist);
 
         //tech cost is variable now -- hide the text and clear it

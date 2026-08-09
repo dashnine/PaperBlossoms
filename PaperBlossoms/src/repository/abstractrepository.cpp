@@ -14,10 +14,15 @@
 
 QString AbstractRepository::getLastExecutedQuery(const QSqlQuery &query) {
     QString str = query.executedQuery();
-    QMapIterator <QString, QVariant> it(query.boundValues());
-    while (it.hasNext()) {
-        it.next();
-        str.replace(it.key(), it.value().toString());
+    //QMapIterator<QString, QVariant> it(query.boundValues());
+    QStringList keys(query.boundValueNames());
+    QVariantList it(query.boundValues());
+    //while (it.hasNext()) {
+    //    it.next();
+    //    str.replace(it.key(), it.value().toString());
+    //}
+    for (qsizetype i = 0; i < it.size(); ++i) {
+        str.replace(keys.at(i), it.at(i).toString());
     }
     return str;
 }

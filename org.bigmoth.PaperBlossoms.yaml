@@ -1,0 +1,26 @@
+    app-id: org.bigmoth.PaperBlossoms
+    runtime: org.kde.Platform
+    runtime-version: '6.9' # Or the latest stable version
+    sdk: org.kde.Sdk
+    base: io.qt.qtwebengine.BaseApp
+    base-version: '6.9'    
+    command: PaperBlossoms
+    modules:
+      - name: PaperBlossoms
+        buildsystem: qmake # Or qmake, meson, etc.
+        build-options:
+          env:
+            - QMAKEPATH=/app
+        config-opts:
+          - QMAKE_INCDIR+=/app/include/QtWebEngine
+          - QMAKE_INCDIR+=/app/include/QtWebEngineCore
+          - QMAKE_INCDIR+=/app/include/QtWebEngineWidgets
+        sources:
+          - type: git
+            url: https://github.com/FakeSalamander/PaperBlossoms.git
+            branch: master
+        cleanup-commands:
+          - /app/cleanup-BaseApp.sh
+#         finish-args:
+#          - --socket=wayland
+        # Add any other necessary build commands or dependencies here

@@ -33,6 +33,7 @@
 #include <QFileDialog>
 #include <QDesktopServices>
 #include <QWebEngineSettings>
+#include <QTextStream>
 
 RenderDialog::RenderDialog(PBOutputData* charData, QWidget *parent) :
     QDialog(parent),
@@ -587,7 +588,7 @@ QString RenderDialog::generateHtml() {
 
         QTextStream stream(tempFile);
 
-        stream<< html << endl;
+        stream<< html << Qt::endl;
 
         tempFile->close();
     }
@@ -608,11 +609,11 @@ void RenderDialog::on_printButton_clicked()
 {
     //QPrinter printer;
     printer.setOutputFormat(QPrinter::NativeFormat);
-    printer.setPageMargins(0.4,0.4,0.4,0.4,QPrinter::Inch);
+    printer.setPageMargins(QMarginsF(0.4,0.4,0.4,0.4),QPageLayout::Inch);
     QPrintDialog *dialog = new QPrintDialog(&printer);
     if ( dialog->exec() == QDialog::Accepted)
-            //ui->webView->print(&printer);
-            ui->webView->page()->print(&printer, [=](bool){});
+            ui->webView->print(&printer);
+            //ui->webView->page()->print(&printer, [=](bool){});
 }
 
 void RenderDialog::on_cancelButton_clicked()
