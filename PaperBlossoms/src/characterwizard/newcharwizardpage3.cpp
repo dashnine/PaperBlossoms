@@ -189,14 +189,14 @@ void NewCharWizardPage3::on_nc3_q8_mid_radioButton_toggled(bool checked)
 }
 ///////
 
-void NewCharWizardPage3::on_nc3_q7_comboBox_currentIndexChanged(const QString &arg1)
+void NewCharWizardPage3::on_nc3_q7_comboBox_currentTextChanged(const QString &arg1)
 {
     Q_UNUSED(arg1);
     regenSummary();
 
 }
 
-void NewCharWizardPage3::on_nc3_q8_comboBox_currentIndexChanged(const QString &arg1)
+void NewCharWizardPage3::on_nc3_q8_comboBox_currentTextChanged(const QString &arg1)
 {
     Q_UNUSED(arg1);
     regenSummary();

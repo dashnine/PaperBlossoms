@@ -30,6 +30,8 @@
 #include "../enums.h"
 #include <QPrintDialog>
 #include <QPrinter>
+#include <QPageLayout>
+#include <QPageSize>
 #include <QFileDialog>
 #include <QDesktopServices>
 #include <QWebEngineSettings>
@@ -570,7 +572,7 @@ QString RenderDialog::generateHtml() {
 
         QTextStream stream(&file);
 
-        stream<< html << endl;
+        stream<< html << Qt::endl;
 
         file.close();
     }
@@ -587,7 +589,7 @@ QString RenderDialog::generateHtml() {
 
         QTextStream stream(tempFile);
 
-        stream<< html << endl;
+        stream<< html << Qt::endl;
 
         tempFile->close();
     }
@@ -608,11 +610,29 @@ void RenderDialog::on_printButton_clicked()
 {
     //QPrinter printer;
     printer.setOutputFormat(QPrinter::NativeFormat);
-    printer.setPageMargins(0.4,0.4,0.4,0.4,QPrinter::Inch);
+    printer.setPageLayout(QPageLayout(QPageSize(QPageSize::Letter),
+                                       QPageLayout::Portrait,
+                                       QMarginsF(0.4, 0.4, 0.4, 0.4),
+                                       QPageLayout::Inch));
     QPrintDialog *dialog = new QPrintDialog(&printer);
     if ( dialog->exec() == QDialog::Accepted)
             //ui->webView->print(&printer);
-            ui->webView->page()->print(&printer, [=](bool){});
+            // QWebEnginePage::print() was removed in Qt6; use printToPdf() instead.
+            // Note: This changes the behavior — the printer selected in the dialog
+            // is ignored, and a PDF file is generated and opened in the default
+            // PDF viewer instead. For a true print-to-printer workflow, the PDF
+            // output could be sent to QPrinter in a follow-up step.
+            ui->webView->page()->printToPdf([this](const QByteArray &pdfData) {
+                QTemporaryFile pdfFile;
+                pdfFile.setAutoRemove(false);
+                if (pdfFile.open()) {
+                    pdfFile.write(pdfData);
+                    const QString pdfPath = pdfFile.fileName() + ".pdf";
+                    pdfFile.close();
+                    QFile::rename(pdfFile.fileName(), pdfPath);
+                    QDesktopServices::openUrl(QUrl::fromLocalFile(pdfPath));
+                }
+            });
 }
 
 void RenderDialog::on_cancelButton_clicked()

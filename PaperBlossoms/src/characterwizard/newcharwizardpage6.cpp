@@ -188,7 +188,7 @@ void NewCharWizardPage6::on_nc6_q18_ancestor2_rollButton_clicked()
 
 }
 
-void NewCharWizardPage6::on_nc6_q18_ancestor1_comboBox_currentIndexChanged(const QString &arg1)
+void NewCharWizardPage6::on_nc6_q18_ancestor1_comboBox_currentTextChanged(const QString &arg1)
 {
    if(arg1.isEmpty()) {
        ui->nc6_q18_ancestor1_modLabel->setText("");
@@ -214,7 +214,7 @@ void NewCharWizardPage6::on_nc6_q18_ancestor1_comboBox_currentIndexChanged(const
     }
 }
 
-void NewCharWizardPage6::on_nc6_q18_ancestor2_comboBox_currentIndexChanged(const QString &arg1)
+void NewCharWizardPage6::on_nc6_q18_ancestor2_comboBox_currentTextChanged(const QString &arg1)
 {
     if(arg1.isEmpty()) {
         ui->nc6_q18_ancestor2_modLabel->setText("");
@@ -582,7 +582,7 @@ void NewCharWizardPage6::buildq18UI(){ //this is all still in initializePage
     regenSummary();
 }
 
-void NewCharWizardPage6::on_nc6_q18_otherComboBox_currentIndexChanged(const QString &arg1)
+void NewCharWizardPage6::on_nc6_q18_otherComboBox_currentTextChanged(const QString &arg1)
 {
     if(curAncestorBox == NULL) return; //TODO: error handling here?
     const int heritageRow = curAncestorBox->currentIndex()+1;
@@ -945,7 +945,7 @@ void NewCharWizardPage6::on_nc6_q18_otherrollButton_clicked()
 
 }
 
-void NewCharWizardPage6::on_heritagetable_comboBox_currentIndexChanged(const QString &arg1)
+void NewCharWizardPage6::on_heritagetable_comboBox_currentTextChanged(const QString &arg1)
 {
     ui->nc6_q18_ancestor1_comboBox->clear();
     ui->nc6_q18_ancestor2_comboBox->clear();
@@ -959,21 +959,21 @@ void NewCharWizardPage6::on_heritagetable_comboBox_currentIndexChanged(const QSt
 
 
 
-void NewCharWizardPage6::on_nc6_q18_special1_comboBox_currentIndexChanged(const QString &arg1)
+void NewCharWizardPage6::on_nc6_q18_special1_comboBox_currentTextChanged(const QString &arg1)
 {
     Q_UNUSED(arg1);
     regenSummary();
 
 }
 
-void NewCharWizardPage6::on_nc6_q18_special2_comboBox_currentIndexChanged(const QString &arg1)
+void NewCharWizardPage6::on_nc6_q18_special2_comboBox_currentTextChanged(const QString &arg1)
 {
     Q_UNUSED(arg1);
     regenSummary();
 
 }
 
-void NewCharWizardPage6::on_nc6_q17_comboBox_currentIndexChanged(const QString &arg1)
+void NewCharWizardPage6::on_nc6_q17_comboBox_currentTextChanged(const QString &arg1)
 {
     Q_UNUSED(arg1);
    regenSummary();

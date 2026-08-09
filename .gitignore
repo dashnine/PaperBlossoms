@@ -6,3 +6,16 @@ Old_testdb.db
 PaperBlossoms.pro.user.4.8-pre1
 *.DS_Store
 .vs
+
+# Qt build artifacts
+*.o
+.qmake.stash
+Makefile
+PaperBlossoms/PaperBlossoms
+TestPaperBlossoms/TestPaperBlossoms
+TestPaperBlossoms/target_wrapper.sh
+PaperBlossoms/moc_predefs.h
+TestPaperBlossoms/moc_predefs.h
+PaperBlossoms/qrc_*.cpp
+PaperBlossoms/ui_*.h
+PaperBlossoms/moc_*.cpp

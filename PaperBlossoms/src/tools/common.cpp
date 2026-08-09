@@ -127,7 +127,7 @@ void MainWindow::on_actionAbout_triggered() {
 }
 
 void MainWindow::on_actionOpen_Application_Data_Directory_triggered() {
-    const QUrl url("file:///" + QStandardPaths::writableLocation(QStandardPaths::DataLocation));
+    const QUrl url("file:///" + QStandardPaths::writableLocation(QStandardPaths::AppDataLocation));
     QDesktopServices::openUrl(url);
 }
 

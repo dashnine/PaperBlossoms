@@ -151,7 +151,7 @@ bool NewCharWizardPage1::validatePage(){
     return true;
 }
 
-void NewCharWizardPage1::on_nc1_clan_ComboBox_currentIndexChanged(const QString &arg1)
+void NewCharWizardPage1::on_nc1_clan_ComboBox_currentTextChanged(const QString &arg1)
 {
     qDebug() << "Selecting Families for clan = " + arg1;
     //populate model from data
@@ -178,7 +178,7 @@ void NewCharWizardPage1::on_nc1_clan_ComboBox_currentIndexChanged(const QString 
     regenSummary();
 }
 
-void NewCharWizardPage1::on_nc1_family_ComboBox_currentIndexChanged(const QString &arg1)
+void NewCharWizardPage1::on_nc1_family_ComboBox_currentTextChanged(const QString &arg1)
 {
     qDebug() << "Selecting Rings for family = " + arg1;
     famRingModel->setStringList(deps->familiesRepository->qsl_getfamilyrings( arg1 ));
@@ -346,13 +346,13 @@ QMap<QString, int> NewCharWizardPage1::calcSkills(){
         return skillmap;
 }
 
-void NewCharWizardPage1::on_nc1_ring_ComboBox_currentIndexChanged(const QString &arg1)
+void NewCharWizardPage1::on_nc1_ring_ComboBox_currentTextChanged(const QString &arg1)
 {
     Q_UNUSED(arg1);
     regenSummary();
 }
 
-void NewCharWizardPage1::on_characterType_comboBox_currentIndexChanged(const QString &arg1)
+void NewCharWizardPage1::on_characterType_comboBox_currentTextChanged(const QString &arg1)
 {
     setSamuraiVisibilty(ui->characterType_comboBox->currentText()=="Samurai");
     QString type = arg1;
@@ -374,7 +374,7 @@ void NewCharWizardPage1::on_characterType_comboBox_currentIndexChanged(const QSt
     regenSummary();
 }
 
-void NewCharWizardPage1::on_nc1_region_ComboBox_currentIndexChanged(const QString &arg1)
+void NewCharWizardPage1::on_nc1_region_ComboBox_currentTextChanged(const QString &arg1)
 {
 
     QString regionring = "+1 " + deps->regionsRepository->qs_getregionring(arg1);
@@ -394,7 +394,7 @@ void NewCharWizardPage1::on_nc1_region_ComboBox_currentIndexChanged(const QStrin
     regenSummary();
 }
 
-void NewCharWizardPage1::on_nc1_upbringing_ComboBox_currentIndexChanged(const QString &arg1)
+void NewCharWizardPage1::on_nc1_upbringing_ComboBox_currentTextChanged(const QString &arg1)
 {
     qDebug() << "Selecting Rings for upbringing = " + arg1;
     upbringingRingModel->setStringList(deps->upbringingsRepository->qsl_getupbringingrings( arg1 ));
@@ -414,25 +414,25 @@ void NewCharWizardPage1::on_nc1_upbringing_ComboBox_currentIndexChanged(const QS
     regenSummary();
 }
 
-void NewCharWizardPage1::on_nc1_skill1_ComboBox_currentIndexChanged(const QString &arg1)
+void NewCharWizardPage1::on_nc1_skill1_ComboBox_currentTextChanged(const QString &arg1)
 {
     Q_UNUSED(arg1);
     regenSummary();
 }
 
-void NewCharWizardPage1::on_nc1_skill2_ComboBox_currentIndexChanged(const QString &arg1)
+void NewCharWizardPage1::on_nc1_skill2_ComboBox_currentTextChanged(const QString &arg1)
 {
     Q_UNUSED(arg1);
     regenSummary();
 }
 
-void NewCharWizardPage1::on_nc1_skill3_ComboBox_currentIndexChanged(const QString &arg1)
+void NewCharWizardPage1::on_nc1_skill3_ComboBox_currentTextChanged(const QString &arg1)
 {
     Q_UNUSED(arg1);
     regenSummary();
 }
 
-void NewCharWizardPage1::on_nc1_upbringing_ring_ComboBox_currentIndexChanged(const QString &arg1)
+void NewCharWizardPage1::on_nc1_upbringing_ring_ComboBox_currentTextChanged(const QString &arg1)
 {
     Q_UNUSED(arg1);
     regenSummary();

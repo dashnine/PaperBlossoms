@@ -42,15 +42,15 @@ public:
 
 private slots:
     void ringsChanged(const QString dynamicRingString);
-    void on_nc7_repRing_1_comboBox_currentIndexChanged(const QString &arg1);
+    void on_nc7_repRing_1_comboBox_currentTextChanged(const QString &arg1);
 
-    void on_nc7_repRing_2_comboBox_currentIndexChanged(const QString &arg1);
+    void on_nc7_repRing_2_comboBox_currentTextChanged(const QString &arg1);
 
-    void on_nc7_repSkill_1_comboBox_currentIndexChanged(const QString &arg1);
+    void on_nc7_repSkill_1_comboBox_currentTextChanged(const QString &arg1);
 
-    void on_nc7_repSkill_2_comboBox_currentIndexChanged(const QString &arg1);
+    void on_nc7_repSkill_2_comboBox_currentTextChanged(const QString &arg1);
 
-    void on_nc7_repSkill_3_comboBox_currentIndexChanged(const QString &arg1);
+    void on_nc7_repSkill_3_comboBox_currentTextChanged(const QString &arg1);
 
 private:
     Ui::NewCharWizardPage7 *ui;

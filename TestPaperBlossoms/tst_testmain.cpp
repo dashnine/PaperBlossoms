@@ -37,7 +37,7 @@
 #include "../PaperBlossoms/src/repository/abstractrepository.h"
 #include "../PaperBlossoms/src/repository/abstractrepository.cpp"
 #include "../PaperBlossoms/src/repository/familiesRepository.h"
-#include "../PaperBlossoms/src/repository/familiesRepository.cpp"
+#include "../PaperBlossoms/src/repository/familiesrepository.cpp"
 
 class TestMain : public QObject {
     Q_OBJECT
@@ -80,7 +80,7 @@ private
 
 TestMain::TestMain() {
 
-    QString targetpath = QStandardPaths::writableLocation(QStandardPaths::DataLocation);
+    QString targetpath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
     if (QDir(targetpath).exists()) {
         QMessageBox msgBox;
         msgBox.setText("TESTING");

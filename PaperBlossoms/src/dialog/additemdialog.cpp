@@ -78,7 +78,7 @@ AddItemDialog::~AddItemDialog()
     delete ui;
 }
 
-void AddItemDialog::on_itemtemplate_combobox_currentIndexChanged(const QString &arg1)
+void AddItemDialog::on_itemtemplate_combobox_currentTextChanged(const QString &arg1)
 {
     clearFields();
     // Populate base values

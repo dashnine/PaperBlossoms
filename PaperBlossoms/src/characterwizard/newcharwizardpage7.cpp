@@ -168,7 +168,6 @@ void NewCharWizardPage7::initializePage()
     else{
         /////////// PoW - Ronin questions
         /////////////////// get free text values ////////////////
-        QString notes = "";
         notes +=     tr("4.In and out of trouble:\n") + school_standout;
         notes += tr("\n\n7.Known for: \n") + clanrelationship;
         notes += tr("\n\n8. Bushido: \n") + bushido;
@@ -1042,7 +1041,7 @@ void NewCharWizardPage7::ringsChanged(const QString dynamicRingString){
 
 }
 
-void NewCharWizardPage7::on_nc7_repRing_1_comboBox_currentIndexChanged(const QString &arg1)
+void NewCharWizardPage7::on_nc7_repRing_1_comboBox_currentTextChanged(const QString &arg1)
 {
     Q_UNUSED(arg1);
     ui->nc7_repRing_2_comboBox->clear();
@@ -1066,7 +1065,7 @@ void NewCharWizardPage7::on_nc7_repRing_1_comboBox_currentIndexChanged(const QSt
     this->setVis();
 }
 
-void NewCharWizardPage7::on_nc7_repRing_2_comboBox_currentIndexChanged(const QString &arg1)
+void NewCharWizardPage7::on_nc7_repRing_2_comboBox_currentTextChanged(const QString &arg1)
 {
     Q_UNUSED(arg1);
     const QMap<QString, int> ringmap = calcRings();
@@ -1082,7 +1081,7 @@ void NewCharWizardPage7::on_nc7_repRing_2_comboBox_currentIndexChanged(const QSt
     this->setVis();
 }
 
-void NewCharWizardPage7::on_nc7_repSkill_1_comboBox_currentIndexChanged(const QString &arg1)
+void NewCharWizardPage7::on_nc7_repSkill_1_comboBox_currentTextChanged(const QString &arg1)
 {
     Q_UNUSED(arg1);
     ui->nc7_repSkill_2_comboBox->clear();
@@ -1114,7 +1113,7 @@ void NewCharWizardPage7::on_nc7_repSkill_1_comboBox_currentIndexChanged(const QS
     this->setVis();
 }
 
-void NewCharWizardPage7::on_nc7_repSkill_2_comboBox_currentIndexChanged(const QString &arg1)
+void NewCharWizardPage7::on_nc7_repSkill_2_comboBox_currentTextChanged(const QString &arg1)
 {
     Q_UNUSED(arg1);
     ui->nc7_repSkill_3_comboBox->clear();
@@ -1146,7 +1145,7 @@ void NewCharWizardPage7::on_nc7_repSkill_2_comboBox_currentIndexChanged(const QS
     this->setVis();
 }
 
-void NewCharWizardPage7::on_nc7_repSkill_3_comboBox_currentIndexChanged(const QString &arg1)
+void NewCharWizardPage7::on_nc7_repSkill_3_comboBox_currentTextChanged(const QString &arg1)
 {
     Q_UNUSED(arg1);
 

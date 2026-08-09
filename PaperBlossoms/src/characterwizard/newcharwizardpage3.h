@@ -45,9 +45,9 @@ private slots:
 
     void on_nc3_q8_neg_radioButton_toggled(const bool checked);
 
-    void on_nc3_q7_comboBox_currentIndexChanged(const QString &arg1);
+    void on_nc3_q7_comboBox_currentTextChanged(const QString &arg1);
 
-    void on_nc3_q8_comboBox_currentIndexChanged(const QString &arg1);
+    void on_nc3_q8_comboBox_currentTextChanged(const QString &arg1);
 
 
 

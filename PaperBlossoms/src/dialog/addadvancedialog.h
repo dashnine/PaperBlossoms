@@ -44,9 +44,9 @@ public:
 
     QString getResult() const;
 private slots:
-    void on_advtype_currentIndexChanged(const QString &arg1);
+    void on_advtype_currentTextChanged(const QString &arg1);
 
-    void on_advchooser_combobox_currentIndexChanged(const QString &arg1);
+    void on_advchooser_combobox_currentTextChanged(const QString &arg1);
 
     void on_curriculum_radioButton_clicked();
 

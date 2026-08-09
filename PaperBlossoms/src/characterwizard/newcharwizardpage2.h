@@ -50,7 +50,7 @@ public:
 
 private slots:
     void on_nc2_unrestrictedSchool_checkBox_toggled(const bool checked);
-    void on_nc2_school_ComboBox_currentIndexChanged(const QString &arg1);
+    void on_nc2_school_ComboBox_currentTextChanged(const QString &arg1);
     void on_nc2_skillAdd_pushButton_clicked();
     void on_nc2_skillRem_pushButton_clicked();
 
@@ -65,7 +65,7 @@ private slots:
     void on_nc2_skillSel_listview_doubleClicked(const QModelIndex &index);
 
 
-    void on_nc2_schoolSpecialtRing_ComboBox_currentIndexChanged(const QString &arg1);
+    void on_nc2_schoolSpecialtRing_ComboBox_currentTextChanged(const QString &arg1);
 
 private:
     Ui::NewCharWizardPage2 *ui;

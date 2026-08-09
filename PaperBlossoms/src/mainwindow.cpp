@@ -47,16 +47,13 @@ public:
     {
         QStyledItemDelegate::initStyleOption(option, index);
 
-        QStyleOptionViewItemV4 *optionV4 =
-                qstyleoption_cast<QStyleOptionViewItemV4*>(option);
-
         const QAbstractItemModel * model = index.model();
         int isSpecAccess = model->data(model->index(index.row(), 3)).toInt();
         int rank = model->data(model->index(index.row(), 0)).toInt();
 
-        //if(rank%2==0) optionV4->backgroundBrush = QBrush(QColor(210,175,0,5));
-        if(rank == character->rank) optionV4->backgroundBrush = QBrush(QColor(210,175,0,50));
-        if(isSpecAccess) optionV4->palette.setColor(QPalette::Text, Qt::blue);
+        //if(rank%2==0) option->backgroundBrush = QBrush(QColor(210,175,0,5));
+        if(rank == character->rank) option->backgroundBrush = QBrush(QColor(210,175,0,50));
+        if(isSpecAccess) option->palette.setColor(QPalette::Text, Qt::blue);
     }
 };
 //-----------------------------------------------------------------------

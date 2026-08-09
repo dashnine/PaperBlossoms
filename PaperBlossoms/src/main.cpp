@@ -29,18 +29,17 @@
 #include <QFile>
 #include <QSettings>
 #include <QStandardPaths>
-#include <QTextCodec>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    //QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
+    // QTextCodec not needed in Qt6 - UTF-8 is the default encoding
 
     QString defaultLocaleDB, defaultLocaleUI;
     defaultLocaleDB = defaultLocaleUI = QLocale::system().name();
     defaultLocaleDB.truncate(defaultLocaleDB.lastIndexOf('_'));
     defaultLocaleUI.truncate(defaultLocaleUI.lastIndexOf('_'));
-    QString settingfile = QStandardPaths::writableLocation(QStandardPaths::DataLocation) + "/settings.ini";
+    QString settingfile = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/settings.ini";
     qDebug() << "Settings file: " << settingfile;
     QSettings settings(settingfile, QSettings::IniFormat);
 

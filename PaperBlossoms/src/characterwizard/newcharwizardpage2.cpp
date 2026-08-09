@@ -275,7 +275,7 @@ void NewCharWizardPage2::on_nc2_unrestrictedSchool_checkBox_toggled(const bool c
 }
 
 //////////// Reconfigure page based on selected school //////////////////////
-void NewCharWizardPage2::on_nc2_school_ComboBox_currentIndexChanged(const QString &arg1)
+void NewCharWizardPage2::on_nc2_school_ComboBox_currentTextChanged(const QString &arg1)
 {
     //handle special cases
     if(arg1 == "Kitsune Impersonator Tradition"){
@@ -521,7 +521,7 @@ void NewCharWizardPage2::on_nc2_skillSel_listview_doubleClicked(const QModelInde
 }
 
 
-void NewCharWizardPage2::on_nc2_schoolSpecialtRing_ComboBox_currentIndexChanged(const QString &arg1)
+void NewCharWizardPage2::on_nc2_schoolSpecialtRing_ComboBox_currentTextChanged(const QString &arg1)
 {
     //if(ui->nc2_q4_lineEdit->text().isEmpty()){
     ui->nc2_q4_lineEdit->setText(deps->ringsRepository->qs_getringdesc(arg1));

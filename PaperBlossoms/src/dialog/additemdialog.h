@@ -43,7 +43,7 @@ public:
 
     QList<QStringList> getResult() const;
 private slots:
-    void on_itemtemplate_combobox_currentIndexChanged(const QString &arg1);
+    void on_itemtemplate_combobox_currentTextChanged(const QString &arg1);
 
     void on_qual_add_pushButton_clicked();
 

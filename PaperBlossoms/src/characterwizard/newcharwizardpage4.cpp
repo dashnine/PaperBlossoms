@@ -118,7 +118,7 @@ void NewCharWizardPage4::on_nc4_q13_disadv_radioButton_toggled(const bool checke
 }
 
 
-void NewCharWizardPage4::on_nc4_q13_skill_comboBox_currentIndexChanged(const QString &arg1)
+void NewCharWizardPage4::on_nc4_q13_skill_comboBox_currentTextChanged(const QString &arg1)
 {
     Q_UNUSED(arg1);
     regenSummary();

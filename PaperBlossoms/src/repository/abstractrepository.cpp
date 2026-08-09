@@ -14,10 +14,12 @@
 
 QString AbstractRepository::getLastExecutedQuery(const QSqlQuery &query) {
     QString str = query.executedQuery();
-    QMapIterator <QString, QVariant> it(query.boundValues());
-    while (it.hasNext()) {
-        it.next();
-        str.replace(it.key(), it.value().toString());
+    const QVariantList values = query.boundValues();
+    for (int i = 0; i < values.size(); ++i) {
+        const QString name = query.boundValueName(i);
+        if (!name.isEmpty()) {
+            str.replace(name, values.at(i).toString());
+        }
     }
     return str;
 }

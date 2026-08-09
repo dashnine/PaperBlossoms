@@ -45,24 +45,24 @@ private slots:
 
     void on_nc6_q18_ancestor2_rollButton_clicked();
 
-    void on_nc6_q18_ancestor1_comboBox_currentIndexChanged(const QString &arg1);
+    void on_nc6_q18_ancestor1_comboBox_currentTextChanged(const QString &arg1);
 
-    void on_nc6_q18_ancestor2_comboBox_currentIndexChanged(const QString &arg1);
+    void on_nc6_q18_ancestor2_comboBox_currentTextChanged(const QString &arg1);
 
     void on_nc6_q18_ancestor1_radioButton_toggled(bool checked);
     void on_nc6_q18_ancestor2_radioButton_toggled(bool checked);
 
-    void on_nc6_q18_otherComboBox_currentIndexChanged(const QString &arg1);
+    void on_nc6_q18_otherComboBox_currentTextChanged(const QString &arg1);
 
     void on_nc6_q18_otherrollButton_clicked();
 
-    void on_heritagetable_comboBox_currentIndexChanged(const QString &arg1);
+    void on_heritagetable_comboBox_currentTextChanged(const QString &arg1);
 
-    void on_nc6_q18_special1_comboBox_currentIndexChanged(const QString &arg1);
+    void on_nc6_q18_special1_comboBox_currentTextChanged(const QString &arg1);
 
-    void on_nc6_q18_special2_comboBox_currentIndexChanged(const QString &arg1);
+    void on_nc6_q18_special2_comboBox_currentTextChanged(const QString &arg1);
 
-    void on_nc6_q17_comboBox_currentIndexChanged(const QString &arg1);
+    void on_nc6_q17_comboBox_currentTextChanged(const QString &arg1);
 
 private:
     Ui::NewCharWizardPage6 *ui;

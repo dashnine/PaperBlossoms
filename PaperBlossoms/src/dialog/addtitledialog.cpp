@@ -42,7 +42,7 @@ AddTitleDialog::~AddTitleDialog()
     delete ui;
 }
 
-void AddTitleDialog::on_title_combobox_currentIndexChanged(const QString &arg1)
+void AddTitleDialog::on_title_combobox_currentTextChanged(const QString &arg1)
 {
 
     title = arg1;

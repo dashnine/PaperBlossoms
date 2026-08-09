@@ -24,6 +24,7 @@
 #include "addadvancedialog.h"
 #include "ui_addadvancedialog.h"
 #include "../repository/dataaccesslayer.h"
+#include <algorithm>
 #include <QPushButton>
 #include <QSqlRecord>
 #include <QDebug>
@@ -329,7 +330,7 @@ void AddAdvanceDialog::addTechRow(QStringList tech){
     techModel.appendRow(itemrow);
 }
 
-void AddAdvanceDialog::on_advtype_currentIndexChanged(const QString &arg1)
+void AddAdvanceDialog::on_advtype_currentTextChanged(const QString &arg1)
 {
     if(arg1 == tr("Skill")){
         ui->advchooser_combobox->clear();
@@ -386,7 +387,7 @@ void AddAdvanceDialog::on_advtype_currentIndexChanged(const QString &arg1)
             typelist<<str;
         }
 
-        qSort(typelist);
+        std::sort(typelist.begin(), typelist.end());
         ui->advchooser_combobox->addItems(typelist);
 
         //tech cost is variable now -- hide the text and clear it
@@ -443,7 +444,7 @@ void AddAdvanceDialog::on_advtype_currentIndexChanged(const QString &arg1)
     validatePage();
 }
 
-void AddAdvanceDialog::on_advchooser_combobox_currentIndexChanged(const QString &arg1)
+void AddAdvanceDialog::on_advchooser_combobox_currentTextChanged(const QString &arg1)
 {
 
 
@@ -583,7 +584,7 @@ void AddAdvanceDialog::on_halfxp_checkBox_toggled(bool checked)
     if(ui->advtype->currentText() == "Technique" && ui->detailTableView->currentIndex().isValid()){
         on_detailTableView_clicked(ui->detailTableView->currentIndex());
     }
-    on_advchooser_combobox_currentIndexChanged(ui->advchooser_combobox->currentText());
+    on_advchooser_combobox_currentTextChanged(ui->advchooser_combobox->currentText());
     validatePage();
 }
 

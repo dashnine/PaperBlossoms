@@ -8,6 +8,7 @@
 #include <QDomDocument>
 #include <QSqlRecord>
 #include <QBuffer>
+#include <QRegularExpression>
 
 void MainWindow::on_actionExport_User_Tables_triggered() {
     qDebug() << QString("Homepath = ") + QDir::homePath();
@@ -38,7 +39,7 @@ void MainWindow::on_actionExport_to_XML_triggered() {
     QString cname = this->curCharacter.family + " " + curCharacter.name;
     if (cname.isEmpty())
         cname = "untitled";
-    cname.remove(QRegExp("[^a-zA-Z\\d\\s]"));
+    cname.remove(QRegularExpression("[^a-zA-Z\\d\\s]"));
     QString fileName = QFileDialog::getSaveFileName(this, tr("Save File As..."),
                                                     QDir::homePath() + "/" + cname + ".xml",
                                                     tr("Paper Blossoms Character XML (*.xml)"));
@@ -300,7 +301,7 @@ void MainWindow::on_actionExport_to_XML_triggered() {
 
         //now, output the document to the file
         QTextStream stream(&file);
-        stream.setCodec("UTF-8");
+        // No setCodec needed in Qt6 - UTF-8 is the default encoding
         stream << document.toString();
         file.close();
     }
@@ -312,7 +313,7 @@ void MainWindow::on_actionExport_User_Descriptions_Table_triggered() {
     QString cname = this->curCharacter.family + " " + curCharacter.name;
     if (cname.isEmpty())
         cname = "untitled";
-    cname.remove(QRegExp("[^a-zA-Z\\d\\s]"));
+    cname.remove(QRegularExpression("[^a-zA-Z\\d\\s]"));
     QString fileName = QFileDialog::getSaveFileName(this, tr("Export User Descriptions..."),
                                                     QDir::homePath() + "/user_descriptions.csv", tr("CSV (*.csv)"));
     if (fileName.isEmpty())

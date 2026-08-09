@@ -36,7 +36,7 @@
 #include <QSqlTableModel>
 
 DataAccessLayer::DataAccessLayer(QString locale) {
-    QString targetpath = QStandardPaths::writableLocation(QStandardPaths::DataLocation);
+    QString targetpath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
     if (!QDir(targetpath).exists()) {
         QDir().mkdir(targetpath);
     }
@@ -216,7 +216,7 @@ bool DataAccessLayer::tableToCsv(const QString filepath, const QString tablename
         return false;
     }
     QTextStream outStream(&csvFile);
-    outStream.setCodec("UTF-8");
+    // No setCodec needed in Qt6 - UTF-8 is the default encoding
     while (query.next()) {
         const QSqlRecord record = query.record();
         for (int i = 0, recCount = record.count(); i < recCount; ++i) {
@@ -247,7 +247,7 @@ bool DataAccessLayer::queryToCsv(const QString querystr, QString filename) //DAN
         return false;
     }
     QTextStream outStream(&csvFile);
-    outStream.setCodec("UTF-8");
+    // No setCodec needed in Qt6 - UTF-8 is the default encoding
     while (query.next()) {
         const QSqlRecord record = query.record();
         for (int i = 0, recCount = record.count(); i < recCount; ++i) {
@@ -354,7 +354,7 @@ bool DataAccessLayer::importCSV(const QString filepath, const QString tablename,
             qDebug() << "Could not delete " + tablename;
         }
         QTextStream ts(&f);
-        ts.setCodec("UTF-8");
+        // No setCodec needed in Qt6 - UTF-8 is the default encoding
 
         while (!ts.atEnd()) {
 
